@@ -3,28 +3,29 @@ import { useState } from 'react';
 const Technologies = () => {
   const [activeTab, setActiveTab] = useState('all');
 
+  // Removed 'level' percentages. Added structural architecture layers instead.
   const techStack = [
-    { name: "JavaScript (ES6+)", category: "languages", level: "95%", status: "OPTIMIZED", color: "text-amber-400 border-amber-500/25 bg-amber-500/5" },
-    { name: "TypeScript", category: "languages", level: "85%", status: "STABLE", color: "text-blue-400 border-blue-500/25 bg-blue-500/5" },
-    { name: "PHP", category: "languages", level: "90%", status: "STABLE", color: "text-indigo-400 border-indigo-500/25 bg-indigo-500/5" },
-    { name: "C# (.NET)", category: "languages", level: "80%", status: "READY", color: "text-purple-400 border-purple-500/25 bg-purple-500/5" },
-    { name: "HTML5 / CSS3", category: "languages", level: "95%", status: "OPTIMIZED", color: "text-orange-400 border-orange-500/25 bg-orange-500/5" },
-    { name: "SQL", category: "languages", level: "90%", status: "STABLE", color: "text-sky-400 border-sky-500/25 bg-sky-500/5" },
+    { name: "JavaScript (ES6+)", category: "languages", layer: "CORE_LOGIC", status: "OPTIMIZED", color: "text-amber-400 border-amber-500/25 bg-amber-500/5" },
+    { name: "TypeScript", category: "languages", layer: "TYPE_SAFETY", status: "STABLE", color: "text-blue-400 border-blue-500/25 bg-blue-500/5" },
+    { name: "PHP", category: "languages", layer: "BACKEND_ENGINE", status: "STABLE", color: "text-indigo-400 border-indigo-500/25 bg-indigo-500/5" },
+    { name: "C# (.NET)", category: "languages", layer: "COMPILED_LOGIC", status: "READY", color: "text-purple-400 border-purple-500/25 bg-purple-500/5" },
+    { name: "HTML5 / CSS3", category: "languages", layer: "MARKUP_STYLE", status: "OPTIMIZED", color: "text-orange-400 border-orange-500/25 bg-orange-500/5" },
+    { name: "SQL", category: "languages", layer: "DATA_QUERY", status: "STABLE", color: "text-sky-400 border-sky-500/25 bg-sky-500/5" },
     
-    { name: "React.js", category: "frameworks", level: "95%", status: "ACTIVE", color: "text-accent-blue border-accent-blue/25 bg-accent-blue/5" },
-    { name: "Angular", category: "frameworks", level: "85%", status: "LOADED", color: "text-rose-400 border-rose-500/25 bg-rose-500/5" },
-    { name: "Node.js", category: "frameworks", level: "90%", status: "ACTIVE", color: "text-emerald-400 border-emerald-400/25 bg-emerald-400/5" },
-    { name: "Express.js", category: "frameworks", level: "90%", status: "ACTIVE", color: "text-neutral-300 border-neutral-500/25 bg-neutral-500/5" },
-    { name: "Tailwind CSS", category: "frameworks", level: "95%", status: "STABLE", color: "text-cyan-400 border-cyan-400/25 bg-cyan-400/5" },
-    { name: "Bootstrap", category: "frameworks", level: "95%", status: "STABLE", color: "text-purple-400 border-purple-400/25 bg-purple-400/5" },
-    { name: "Sequelize ORM", category: "frameworks", level: "85%", status: "LOADED", color: "text-blue-400 border-blue-400/25 bg-blue-400/5" },
+    { name: "React.js", category: "frameworks", layer: "UI_COMPONENT", status: "ACTIVE", color: "text-accent-blue border-accent-blue/25 bg-accent-blue/5" },
+    { name: "Angular", category: "frameworks", layer: "UI_FRAMEWORK", status: "LOADED", color: "text-rose-400 border-rose-500/25 bg-rose-500/5" },
+    { name: "Node.js", category: "frameworks", layer: "RUNTIME_ENV", status: "ACTIVE", color: "text-emerald-400 border-emerald-400/25 bg-emerald-400/5" },
+    { name: "Express.js", category: "frameworks", layer: "API_ROUTING", status: "ACTIVE", color: "text-neutral-300 border-neutral-500/25 bg-neutral-500/5" },
+    { name: "Tailwind CSS", category: "frameworks", layer: "UTILITY_STYLE", status: "STABLE", color: "text-cyan-400 border-cyan-400/25 bg-cyan-400/5" },
+    { name: "Bootstrap", category: "frameworks", layer: "LAYOUT_STYLE", status: "STABLE", color: "text-purple-400 border-purple-400/25 bg-purple-400/5" },
+    { name: "Sequelize ORM", category: "frameworks", layer: "DATA_MAPPING", status: "LOADED", color: "text-blue-400 border-blue-400/25 bg-blue-400/5" },
 
-    { name: "AWS Cloud Infrastructure", category: "ops", level: "85%", status: "VERIFIED", color: "text-amber-500 border-amber-500/25 bg-amber-500/5" },
-    { name: "Git & GitHub", category: "ops", level: "95%", status: "STABLE", color: "text-slate-300 border-slate-500/25 bg-slate-500/5" },
-    { name: "Postman API Client", category: "ops", level: "90%", status: "STABLE", color: "text-orange-400 border-orange-400/25 bg-orange-400/5" },
-    { name: "Jira / Asana", category: "ops", level: "85%", status: "MONITORED", color: "text-blue-500 border-blue-500/25 bg-blue-500/5" },
-    { name: "OpenAPI / Swagger", category: "ops", level: "80%", status: "READY", color: "text-emerald-500 border-emerald-500/25 bg-emerald-500/5" },
-    { name: "Vite Build Tool", category: "ops", level: "90%", status: "OPTIMIZED", color: "text-yellow-400 border-yellow-400/25 bg-yellow-400/5" }
+    { name: "AWS Cloud Infrastructure", category: "ops", layer: "INFRASTRUCTURE", status: "VERIFIED", color: "text-amber-500 border-amber-500/25 bg-amber-500/5" },
+    { name: "Git & GitHub", category: "ops", layer: "VERSION_CTRL", status: "STABLE", color: "text-slate-300 border-slate-500/25 bg-slate-500/5" },
+    { name: "Postman API Client", category: "ops", layer: "API_TESTING", status: "STABLE", color: "text-orange-400 border-orange-400/25 bg-orange-400/5" },
+    { name: "Jira / Asana", category: "ops", layer: "AGILE_FLOW", status: "MONITORED", color: "text-blue-500 border-blue-500/25 bg-blue-500/5" },
+    { name: "OpenAPI / Swagger", category: "ops", layer: "DOCS_SCHEMA", status: "READY", color: "text-emerald-500 border-emerald-500/25 bg-emerald-500/5" },
+    { name: "Vite Build Tool", category: "ops", layer: "COMPILATION", status: "OPTIMIZED", color: "text-yellow-400 border-yellow-400/25 bg-yellow-400/5" }
   ];
 
   const categories = [
@@ -78,28 +79,25 @@ const Technologies = () => {
           {filteredTech.map((tech, index) => (
             <div 
               key={index}
-              className="p-5 rounded-xl bg-card-dark/40 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col justify-between font-mono relative overflow-hidden group"
+              className="p-5 rounded-xl bg-card-dark/40 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col justify-between font-mono relative overflow-hidden group min-h-[110px]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="flex items-center justify-between gap-4">
-                <span className="text-text-primary font-bold text-sm tracking-wide font-sans">{tech.name}</span>
+                <span className="text-text-primary font-bold text-sm tracking-wide font-sans group-hover:text-accent-blue transition-colors">{tech.name}</span>
                 <span className={`text-[9px] font-bold px-2 py-0.5 rounded border ${tech.color}`}>
                   {tech.status}
                 </span>
               </div>
 
-              {/* Status Performance Bar */}
-              <div className="mt-5 space-y-1.5">
-                <div className="flex items-center justify-between text-[10px] text-text-secondary/50">
-                  <span>COMPILING_EFFICIENCY</span>
-                  <span className="text-text-primary font-bold">{tech.level}</span>
-                </div>
-                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-accent-blue to-accent-purple transition-all duration-500 ease-out" 
-                    style={{ width: tech.level }}
-                  />
+              {/* Clean System Logs Instead of Progress Bars */}
+              <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/[0.03]">
+                <span className="text-[10px] text-text-secondary/40 tracking-wider uppercase">
+                  // {tech.layer}
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1 h-1 rounded-full bg-accent-blue/50 group-hover:bg-accent-blue transition-colors" />
+                  <span className="text-[10px] text-text-secondary/60">SYS_READY</span>
                 </div>
               </div>
             </div>
