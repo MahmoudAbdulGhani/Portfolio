@@ -4,8 +4,9 @@ const Projects = () => {
   const engineeringProjects = [
     {
       name: "Medicare Hub",
+      type: "Healthcare dashboard",
       stack: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Email Integration", "AWS SNS Alerts"],
-      description: "An advanced, feature-rich medical clinic dashboard system designed to optimize doctor schedules and handle user health requests. Built with an intricate frontend engine featuring client-side routing logic, automated booking matrices, and scalable cloud notification channels.",
+      description: "A medical clinic dashboard for doctor schedules, user health requests, booking logic, and automated communication channels.",
       features: [
         "Integrated transactional mail mechanisms for continuous automated user appointment updates.",
         "Engineered AWS SNS broadcast hooks to process immediate emergency SMS routes safely.",
@@ -16,8 +17,9 @@ const Projects = () => {
     },
     {
       name: "Home Services Web Application",
+      type: "Marketplace frontend",
       stack: ["React.js", "Vite", "Tailwind CSS", "Component Architecture", "Agile Deployment"],
-      description: "A production-grade modern marketplace application developed during my Software Engineering Internship at The Digital Hub. Built following strict SDLC workflows to turn complex Figma designs into responsive layout components.",
+      description: "A modern marketplace interface developed during Mahmoud's Software Engineering Internship at The Digital Hub.",
       features: [
         "Architected reusable responsive UI components within React, minimizing system redundancy levels.",
         "Implemented clean flexible layout configurations using Tailwind CSS to adjust cleanly across phone, desktop, and tablet screens.",
@@ -28,8 +30,9 @@ const Projects = () => {
     },
     {
       name: "Phone Store E-Commerce System",
+      type: "Full-stack commerce",
       stack: ["PHP (MVC)", "JavaScript", "MySQL", "CSS3", "Session Authentication"],
-      description: "A complete full-stack web storefront platform integrated with custom relational database schemas to safely process mobile product inventories, cart states, and administrative catalogs.",
+      description: "A complete storefront platform with custom database schemas for inventory, cart state, sessions, and admin catalog control.",
       features: [
         "Designed normalized SQL indexing rules to support high-speed processing of product tables.",
         "Built a modular PHP Model-View-Controller framework containing object parsing blocks and secure authentication layers.",
@@ -40,8 +43,9 @@ const Projects = () => {
     },
     {
       name: "Doctor's Appointments Desktop App",
+      type: "Desktop scheduling",
       stack: ["C#", ".NET Windows Forms", "SQL Server", "Relational Architecture"],
-      description: "A structured administrative desktop client system created to handle patient chart entries, complex scheduling tracking, and historical audit reporting metrics.",
+      description: "An administrative desktop app for patient entries, scheduling, role access, and SQL Server reporting workflows.",
       features: [
         "Wrote highly optimized stored procedures inside SQL Server to process rapid concurrent table additions.",
         "Crafted role management dashboard logic to divide operator privileges cleanly between system agents and medical managers.",
@@ -53,22 +57,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative bg-bg-dark border-t border-white/5">
+    <section id="projects" className="py-24 relative section-panel">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="space-y-2 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-purple/5 border border-accent-purple/10 font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-pulse" />
-            <span className="text-[10px] tracking-widest text-accent-purple uppercase">PRODUCTION_DEPLOYMENTS</span>
-          </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-text-primary">Engineering Projects</h2>
+          <div className="section-label">Selected project proof</div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-text-primary">Built around Mahmoud's actual work</h2>
           <p className="text-text-secondary text-sm max-w-xl">
-            A verified directory of operational systems built with clean interface logic, reliable data engines, and managed cloud channels.
+            Four concrete systems showing frontend delivery, backend structure, database thinking, and QA-aware implementation.
           </p>
         </div>
 
-        {/* Refactored to leverage modular ProjectCard components cleanly */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {engineeringProjects.map((project, index) => (
             <ProjectCard key={index} project={project} />

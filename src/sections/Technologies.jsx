@@ -40,31 +40,28 @@ const Technologies = () => {
     : techStack.filter(t => t.category === activeTab);
 
   return (
-    <section id="technologies" className="py-24 relative bg-bg-dark border-t border-white/5">
+    <section id="technologies" className="py-24 relative section-panel">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Block */}
         <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 mb-12">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/10 font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] tracking-widest text-emerald-400 uppercase">STACK_TELEMETRY_LOGS</span>
-            </div>
+            <div className="section-label">Stack Mahmoud uses</div>
             <h2 className="text-3xl font-extrabold tracking-tight text-text-primary">Technologies & Tools</h2>
             <p className="text-text-secondary text-sm max-w-xl">
-              Live efficiency map of languages, compilation tools, and frameworks verified across full-stack applications.
+              Languages, frameworks, databases, and delivery tools used across Mahmoud's portfolio projects.
             </p>
           </div>
 
           {/* Tab Filters */}
-          <div className="flex flex-wrap gap-1.5 font-mono text-[11px] bg-card-dark/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-sm self-start xl:self-auto">
+          <div className="flex flex-wrap gap-1.5 font-mono text-[11px] bg-card-dark/60 p-1.5 rounded-lg border border-white/10 backdrop-blur-sm self-start xl:self-auto">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
                 className={`px-3 py-2 rounded-lg transition-all duration-300 uppercase tracking-wider cursor-pointer ${
                   activeTab === cat.id
-                    ? "bg-gradient-to-r from-accent-blue to-accent-purple text-bg-dark font-bold shadow-md"
+                    ? "bg-accent-gold text-bg-dark font-bold shadow-md"
                     : "text-text-secondary hover:text-white"
                 }`}
               >
@@ -79,7 +76,7 @@ const Technologies = () => {
           {filteredTech.map((tech, index) => (
             <div 
               key={index}
-              className="p-5 rounded-xl bg-card-dark/40 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col justify-between font-mono relative overflow-hidden group min-h-[110px]"
+              className="p-5 rounded-lg bg-card-dark/70 border border-white/10 hover:border-accent-gold/30 transition-all duration-300 flex flex-col justify-between font-mono relative overflow-hidden group min-h-[110px]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
