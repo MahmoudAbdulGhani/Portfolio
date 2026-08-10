@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
+const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Technologies", href: "#technologies" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-
-  const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Technologies", href: "#technologies" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   // Intersection Observer to highlight active navigation markers dynamically
   useEffect(() => {
@@ -47,7 +47,7 @@ const Header = () => {
           </div>
           <div className="hidden sm:block">
             <span className="block font-display text-sm font-bold text-white">Mahmoud Hussein Abdul Ghani</span>
-            <span className="text-xs text-text-secondary">Software engineer portfolio</span>
+            <span className="text-xs text-text-secondary">Junior Full-Stack Software Engineer</span>
           </div>
         </a>
 

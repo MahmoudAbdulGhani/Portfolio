@@ -1,31 +1,31 @@
 const HireMe = () => {
   const valuePropositions = [
     {
-      title: "Adaptable & Multi-Stack Native",
-      metric: "[ LEARNING_MINDSET ]",
-      desc: "Proven capabilities crossing backend architectures (Node.js/PHP), UI platforms (React/Angular), and systems testing suites to solve deployment pipeline roadblocks cleanly."
+      title: "Collaborative Full-Stack Delivery",
+      metric: "[ FULL_STACK ]",
+      desc: "Shipped three team projects end-to-end at The Digital Hub — from bookings with payments to real-time audio — across React, Next.js and Angular with Node.js and NestJS backends."
     },
     {
-      title: "Rigorous Component Optimization",
+      title: "Security & Architecture Aware",
       metric: "[ CODE_QUALITY ]",
-      desc: "Committed to producing cleanly isolated UI structures, writing parameterized secure raw SQL data queries, and avoiding layout bloat to assure quick user performance metrics."
+      desc: "Auth flows built on JWT, OTP and RBAC, time-slot conflict detection, typed contracts, and parameterized queries — code engineered to stay reliable and understandable after launch."
     },
     {
-      title: "Technical Clarity & Communication",
+      title: "Clear Communication & Growth",
       metric: "[ AGILITY ]",
-      desc: "Experienced technical instructor who translated complicated engineering principles into simple workflows. Fluent English communicator optimized for cross-functional scrum groups."
+      desc: "Technical instructor experienced at translating complex engineering concepts into simple workflows, with fluent English communication for cross-functional teams."
     }
   ];
 
   return (
     <section id="hireme" className="py-24 relative section-panel">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
-        
+
         {/* Section Header */}
         <div className="space-y-3 max-w-xl">
           <div className="section-label">Why hire Mahmoud</div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Useful across frontend, backend, data, and QA conversations.
+            Contributing across frontend, backend, data, and real-time systems.
           </h2>
         </div>
 

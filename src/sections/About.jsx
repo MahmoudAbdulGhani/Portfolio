@@ -1,10 +1,10 @@
 const About = () => {
   const journeyTimeline = [
     {
-      milestone: "01 // Software Engineering Intern",
-      facility: "The Digital Hub",
-      meta: "Current Focus",
-      details: "Building adaptive frontends, translating Figma mockups into interactive UI components, and optimizing production deployments."
+      milestone: "01 // Full-Stack Developer",
+      facility: "The Digital Hub by UNRWA",
+      meta: "Training Program",
+      details: "Collaborative full-stack development across three shipped products: GameZone Arena (Next.js, TypeScript, MongoDB, Stripe), Lobby (Angular, NestJS, Supabase, LiveKit) and UniHub (React, Node.js, Express, MongoDB)."
     },
     {
       milestone: "02 // Backend Engineering Layer",
@@ -16,7 +16,7 @@ const About = () => {
       milestone: "03 // Quality Assurance Engine",
       facility: "Oigetit",
       meta: "Verification & Telemetry",
-      details: "Conducted continuous boundary testing, trace level log debugging, and evaluated system flows to catch and fix core script anomalies."
+      details: "Conducted continuous boundary testing, trace-level log debugging, and evaluated system flows to catch and fix core script anomalies."
     },
     {
       milestone: "04 // Web Development Trainer",
@@ -31,32 +31,41 @@ const About = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-        
+
         {/* Left Side Bio Card */}
         <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
           <div className="section-label">About Mahmoud</div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Full-stack foundations, practical delivery, and a clear testing mindset.
+            A computer science foundation applied to modern full-stack engineering.
           </h2>
-          
+
           <div className="space-y-4 text-text-secondary text-sm leading-relaxed font-sans">
             <p>
-              I am a software engineer from Tripoli, Lebanon, building across frontend interfaces, backend logic, relational databases, and QA workflows.
+              I am a computer science graduate and junior full-stack software engineer from Tripoli,
+              Lebanon, building products across React, Next.js and Angular frontends with Node.js,
+              Express and NestJS backends.
             </p>
             <p>
-              My work is shaped by real project constraints: turning Figma designs into responsive React screens, structuring MVC backends, writing safer SQL flows, and checking behavior before it reaches users.
+              My recent work through The Digital Hub by UNRWA has been collaborative — reservations
+              with payments, real-time communication with audio and screen sharing, and role-based
+              university systems — shipped in teams across monorepos, authentication, REST APIs and
+              databases.
+            </p>
+            <p>
+              I care about secure authentication, clean APIs, and responsive interfaces, and about
+              software that stays understandable after launch.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 pt-4 font-mono">
             <div className="p-4 rounded-lg bg-white/[0.025] border border-white/10">
-              <span className="block text-2xl font-bold text-white tracking-tight">4+</span>
-              <span className="text-[10px] text-text-secondary uppercase tracking-wider block mt-1">Work areas</span>
+              <span className="block text-2xl font-bold text-white tracking-tight">6+</span>
+              <span className="text-[10px] text-text-secondary uppercase tracking-wider block mt-1">Projects engineered</span>
             </div>
             <div className="p-4 rounded-lg bg-white/[0.025] border border-white/10">
-              <span className="block text-2xl font-bold text-accent-gold tracking-tight">MHA</span>
-              <span className="text-[10px] text-text-secondary uppercase tracking-wider block mt-1">Personal brand</span>
+              <span className="block text-2xl font-bold text-accent-gold tracking-tight">3</span>
+              <span className="text-[10px] text-text-secondary uppercase tracking-wider block mt-1">Full-stack ecosystems</span>
             </div>
           </div>
         </div>
@@ -70,12 +79,12 @@ const About = () => {
 
           <div className="space-y-4">
             {journeyTimeline.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative p-6 rounded-lg bg-card-dark/70 border border-white/10 hover:border-accent-gold/30 hover:bg-white/[0.025] transition-all duration-300"
               >
                 <div className="absolute top-0 left-6 w-16 h-px bg-gradient-to-r from-accent-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-3 mb-3">
                   <div>
                     <h3 className="font-display font-bold text-base text-white tracking-wide group-hover:text-accent-gold transition-colors">
@@ -89,7 +98,7 @@ const About = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <p className="text-text-secondary text-xs sm:text-sm font-sans leading-relaxed">
                   {item.details}
                 </p>

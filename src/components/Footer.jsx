@@ -6,6 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-text-secondary">
         <div className="text-center md:text-left">
           <span className="block font-display font-bold text-text-primary">Mahmoud Hussein Abdul Ghani</span>
+          <span className="block text-xs">Junior Full-Stack Software Engineer</span>
           <span className="text-xs">© {currentYear} Portfolio built around Mahmoud's engineering work.</span>
         </div>
 

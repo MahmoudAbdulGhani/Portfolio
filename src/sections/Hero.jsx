@@ -1,14 +1,15 @@
 const focusAreas = [
-  "React interfaces",
-  "MVC backends",
-  "SQL data models",
-  "QA diagnostics",
+  "React · Next.js",
+  "Angular",
+  "Node.js · NestJS",
+  "REST APIs",
+  "Real-time systems",
 ];
 
 const portfolioMarks = [
   { label: "Based in", value: "Tripoli, Lebanon" },
-  { label: "Portfolio lane", value: "Full-stack junior engineer" },
-  { label: "Project proof", value: "Clinic, services, commerce, desktop apps" },
+  { label: "Current focus", value: "Junior full-stack engineer" },
+  { label: "Project proof", value: "Reservations, real-time platform, university system" },
 ];
 
 const Hero = () => {
@@ -19,16 +20,17 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center py-12 relative z-10">
         <div className="lg:col-span-7 space-y-8">
-          <div className="section-label">Mahmoud Hussein Abdul Ghani</div>
+          <div className="section-label">Junior Full-Stack Software Engineer</div>
 
           <div className="space-y-5">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-text-primary leading-[1.02]">
-              I build practical software for real workflows.
+              I build full-stack products for real workflows.
             </h1>
 
             <p className="text-text-secondary text-base sm:text-lg max-w-2xl leading-relaxed">
-              Software engineer focused on responsive frontends, reliable backend structures,
-              normalized databases, and testing habits that keep products understandable after launch.
+              Software engineer crafting responsive React and Angular interfaces backed by
+              Node.js and NestJS APIs, MongoDB and Supabase data layers, and real-time
+              communication — through collaborative engineering at The Digital Hub by UNRWA.
             </p>
           </div>
 
@@ -78,7 +80,7 @@ const Hero = () => {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="font-display text-xl font-bold text-white">MHA Portfolio</p>
-                    <p className="mt-1 text-sm text-text-secondary">Selected engineering work, built by Mahmoud.</p>
+                    <p className="mt-1 text-sm text-text-secondary">Selected engineering work, built with real teams.</p>
                   </div>
                   <span className="rounded-lg border border-accent-green/30 bg-accent-green/10 px-3 py-1 text-xs font-bold text-accent-green">
                     Available
