@@ -215,7 +215,7 @@ export function Cv() {
               <section className="mt-7">
                 <SectionTitle>Projects</SectionTitle>
                 {projects.map((p) => (
-                  <article key={p.id} className="cv-entry">
+                  <article key={p.slug} className="cv-entry">
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="text-[13.5px] font-bold text-slate-900">
                         <Link

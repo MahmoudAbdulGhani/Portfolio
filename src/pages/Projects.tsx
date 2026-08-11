@@ -69,7 +69,7 @@ export function Projects() {
             <AnimatePresence mode="popLayout" initial={false}>
               {filtered.map((project, i) => (
                 <motion.div
-                  key={project.id}
+                  key={project.slug}
                   layout
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}

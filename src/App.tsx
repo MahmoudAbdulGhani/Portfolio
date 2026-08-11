@@ -7,6 +7,7 @@ import { Projects } from "./pages/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
+import { PortfolioAssistant } from "./components/PortfolioAssistant";
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
 
@@ -52,6 +53,7 @@ function PublicLayout() {
         <Outlet />
       </div>
       <Footer />
+      <PortfolioAssistant />
     </div>
   );
 }

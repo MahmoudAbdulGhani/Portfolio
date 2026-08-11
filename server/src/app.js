@@ -4,6 +4,7 @@ import cors from "cors";
 import { prisma } from "./lib/prisma.js";
 import publicRouter from "./routes/public.js";
 import adminRouter from "./routes/admin.js";
+import assistantRouter from "./routes/assistant.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, time: new Date().toISOString() });
 });
 
+app.use("/api/assistant", assistantRouter);
 app.use("/api", publicRouter);
 app.use("/api/admin", adminRouter);
 

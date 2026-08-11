@@ -1,6 +1,7 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { existsSync } from "node:fs";
+import express from "express";
 import { app, prisma } from "./app.js";
 
 // Keep the standalone backend default aligned with Vite's local proxy target.

@@ -96,7 +96,7 @@ export function Technologies() {
         ) : (
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((tech, i) => (
-              <Reveal key={tech.id} delay={Math.min(i * 0.04, 0.3)}>
+              <Reveal key={`${tech.category}-${tech.name}-${i}`} delay={Math.min(i * 0.04, 0.3)}>
                 <div className="group flex min-h-[96px] flex-col justify-between border-t border-line p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-surface/40">
                   <span className="text-sm font-semibold text-ink transition-colors duration-200 group-hover:text-accent">
                     {tech.name}

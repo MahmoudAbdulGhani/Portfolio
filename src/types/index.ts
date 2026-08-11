@@ -115,3 +115,7 @@ export interface AnalyticsSummary {
   viewsByProject: { name: string; slug: string; views: number }[];
   recentMessages: Message[];
 }
+
+export interface AssistantResponse {
+  answer: string;
+}
