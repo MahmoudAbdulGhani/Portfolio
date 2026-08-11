@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Project" ALTER COLUMN "tagline" DROP NOT NULL,
+ALTER COLUMN "description" DROP NOT NULL,
+ALTER COLUMN "overview" DROP NOT NULL,
+ALTER COLUMN "problem" DROP NOT NULL,
+ALTER COLUMN "solution" DROP NOT NULL;

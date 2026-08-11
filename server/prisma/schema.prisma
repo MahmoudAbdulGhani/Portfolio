@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Profile {
+  id         String       @id @default(cuid())
+  name       String
+  shortName  String
+  title      String
+  tagline    String
+  bio        String
+  location   String
+  email      String
+  phone      String
+  photo      String?
+  resumeUrl  String?
+  languages  String?
+  experience Experience[]
+  socials    SocialLink[]
+  updatedAt  DateTime     @updatedAt
+}
+
+model Experience {
+  id        String  @id @default(cuid())
+  milestone String
+  facility  String
+  meta      String
+  details   String
+  order     Int     @default(0)
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String
+}
+
+model SocialLink {
+  id        String  @id @default(cuid())
+  label     String
+  url       String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String
+}
+
+model Technology {
+  id       String @id @default(cuid())
+  name     String @unique
+  category String
+  order    Int    @default(0)
+}
+
+model Skill {
+  id       String @id @default(cuid())
+  name     String @unique
+  category String
+  order    Int    @default(0)
+}
+
+model Education {
+  id      String  @id @default(cuid())
+  school  String
+  degree  String
+  field   String?
+  period  String?
+  details String?
+  order   Int     @default(0)
+}
+
+model Certification {
+  id     String  @id @default(cuid())
+  title  String
+  issuer String
+  year   String?
+  url    String?
+  order  Int     @default(0)
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  type        String
+  tagline     String?
+  description String?
+  overview    String?
+  problem     String?
+  solution    String?
+  features    String[]
+  stack       String[]
+  team        String[]
+  program     String?
+  github      String?
+  demo        String?
+  featured    Boolean   @default(false)
+  published   Boolean   @default(true)
+  /// Persisted as a six-digit hex accent color (#RRGGBB).
+  visual      String    @default("#5966A0")
+  order       Int       @default(0)
+  views       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
