@@ -10,7 +10,9 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "test:assistant": "node scripts/test-assistant-context.mjs",
+    "test:job-match": "node scripts/test-job-match.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

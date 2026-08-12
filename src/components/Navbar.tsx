@@ -9,6 +9,7 @@ import { cn } from "../lib/format";
 const navItems = [
   { to: "/", label: "Home", end: true },
   { to: "/projects", label: "Projects", end: false },
+  { to: "/job-match", label: "AI Job Match", end: false },
   { to: "/contact", label: "Contact", end: false },
 ];
 

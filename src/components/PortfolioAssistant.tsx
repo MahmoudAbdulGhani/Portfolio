@@ -1,13 +1,14 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUp, FiCpu, FiExternalLink, FiMessageSquare, FiRefreshCw, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
 import { api } from "../lib/api";
+import { useProject } from "../lib/hooks";
 import type { AssistantResponse } from "../types";
 
 type Message = { id: number; role: "user" | "assistant"; text: string; failedQuestion?: string };
 
-const suggestions = [
+const generalSuggestions = [
   ["Recruiter overview", "Summarize Mahmoud for a recruiter."],
   ["Best projects", "What are Mahmoud's strongest projects?"],
   ["Technical skills", "What technologies and technical skills does Mahmoud know?"],
@@ -40,6 +41,9 @@ function AssistantText({ text }: { text: string }) {
 }
 
 export function PortfolioAssistant() {
+  const { pathname } = useLocation();
+  const projectSlug = matchPath("/projects/:slug", pathname)?.params.slug;
+  const { data: project } = useProject(projectSlug ?? "", { enabled: Boolean(projectSlug) });
   const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -47,6 +51,18 @@ export function PortfolioAssistant() {
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const nextId = useRef(0);
+  const submitting = useRef(false);
+  const requestController = useRef<AbortController | null>(null);
+  const suggestions = projectSlug
+    ? [
+        ["How was this built?", "How was this project built?"],
+        ["Technologies used", "What technologies are used in this project?"],
+        ["Key features", "What are this project's key technical features?"],
+        ["Mahmoud's contribution", "What was Mahmoud's contribution to this project?"],
+      ] as const
+    : generalSuggestions;
+
+  useEffect(() => () => requestController.current?.abort(), []);
 
   useEffect(() => {
     if (!open) return;
@@ -65,21 +81,30 @@ export function PortfolioAssistant() {
 
   async function ask(value: string) {
     const trimmed = value.trim();
-    if (!trimmed || loading) return;
+    if (!trimmed || submitting.current) return;
+    submitting.current = true;
+    const controller = new AbortController();
+    requestController.current = controller;
     setQuestion("");
     setLoading(true);
     setMessages((current) => [...current, { id: nextId.current++, role: "user", text: trimmed }]);
     try {
       const result = await api<AssistantResponse>("/assistant", {
         method: "POST",
-        body: JSON.stringify({ question: trimmed }),
+        body: JSON.stringify({ question: trimmed, ...(projectSlug ? { projectSlug } : {}) }),
+        signal: controller.signal,
       });
       setMessages((current) => [...current, { id: nextId.current++, role: "assistant", text: result.answer }]);
     } catch (error) {
+      if (controller.signal.aborted) return;
       const text = error instanceof Error ? error.message : "The assistant is temporarily unavailable.";
       setMessages((current) => [...current, { id: nextId.current++, role: "assistant", text, failedQuestion: trimmed }]);
     } finally {
-      setLoading(false);
+      if (requestController.current === controller) {
+        requestController.current = null;
+        submitting.current = false;
+        setLoading(false);
+      }
     }
   }
 
@@ -112,7 +137,7 @@ export function PortfolioAssistant() {
             <header className="flex items-center justify-between border-b border-line bg-surface-2/70 px-4 py-3.5">
               <div className="flex items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent text-white shadow-sm shadow-accent/30"><FiCpu size={17} /></span>
-                <div><h2 className="text-sm font-bold text-ink">Ask Mahmoud AI</h2><p className="text-[11px] text-muted">Professional portfolio assistant</p></div>
+                <div><h2 className="text-sm font-bold text-ink">{project ? `Ask about ${project.name}` : "Ask Mahmoud AI"}</h2><p className="text-[11px] text-muted">{projectSlug ? "Project-aware portfolio assistant" : "Professional portfolio assistant"}</p></div>
               </div>
               <button type="button" className="btn-icon-sm text-muted hover:bg-surface-3 hover:text-ink" onClick={() => setOpen(false)} aria-label="Close assistant"><FiX /></button>
             </header>
@@ -121,7 +146,7 @@ export function PortfolioAssistant() {
               {messages.length === 0 && (
                 <div>
                   <div className="rounded-xl border border-accent/15 bg-accent/5 p-3.5 text-sm leading-relaxed text-muted">
-                    I can help you quickly evaluate Mahmoud's projects, skills, experience, and fit for a role.
+                    {project ? `Ask about ${project.name}, or about Mahmoud's wider skills and experience.` : "I can help you quickly evaluate Mahmoud's projects, skills, experience, and fit for a role."}
                   </div>
                   <p className="mb-2 mt-5 text-[11px] font-semibold uppercase tracking-wider text-faint">Suggested questions</p>
                   <div className="grid grid-cols-2 gap-2">
@@ -147,7 +172,7 @@ export function PortfolioAssistant() {
 
             <form onSubmit={submit} className="border-t border-line bg-surface p-3">
               <div className="flex items-end gap-2 rounded-xl border border-line bg-surface-2 p-2 focus-within:border-accent/50 focus-within:ring-2 focus-within:ring-accent/10">
-                <textarea ref={inputRef} value={question} onChange={(event) => setQuestion(event.target.value.slice(0, 600))} onKeyDown={onKeyDown} rows={1} placeholder="Ask about Mahmoud's experience…" aria-label="Your question" className="max-h-28 min-h-9 flex-1 resize-none bg-transparent px-1 py-2 text-sm text-ink outline-none placeholder:text-faint" disabled={loading} />
+                <textarea ref={inputRef} value={question} onChange={(event) => setQuestion(event.target.value.slice(0, 600))} onKeyDown={onKeyDown} rows={1} placeholder={project ? `Ask about ${project.name}…` : "Ask about Mahmoud's experience…"} aria-label="Your question" className="max-h-28 min-h-9 flex-1 resize-none bg-transparent px-1 py-2 text-sm text-ink outline-none placeholder:text-faint" disabled={loading} />
                 <button type="submit" disabled={loading || !question.trim()} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent text-white transition-all hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-40" aria-label="Send question"><FiArrowUp /></button>
               </div>
               <p className="mt-1.5 text-center text-[10px] text-faint">Portfolio answers grounded in Mahmoud's published data</p>

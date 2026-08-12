@@ -6,6 +6,7 @@ import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Contact } from "./pages/Contact";
+import { JobMatch } from "./pages/JobMatch";
 import { NotFound } from "./pages/NotFound";
 import { PortfolioAssistant } from "./components/PortfolioAssistant";
 
@@ -46,6 +47,8 @@ const Certifications = lazy(() =>
 );
 
 function PublicLayout() {
+  const { pathname } = useLocation();
+  const assistantContext = pathname.match(/^\/projects\/([^/]+)$/)?.[1] ?? "general";
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -53,7 +56,7 @@ function PublicLayout() {
         <Outlet />
       </div>
       <Footer />
-      <PortfolioAssistant />
+      <PortfolioAssistant key={assistantContext} />
     </div>
   );
 }
@@ -88,6 +91,7 @@ export function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/job-match" element={<JobMatch />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 
