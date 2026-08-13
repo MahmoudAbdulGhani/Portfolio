@@ -4,18 +4,22 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { FiLoader, FiLock, FiLogIn } from "react-icons/fi";
 import { PageMeta } from "../../components/PageMeta";
 import { Logo } from "../../components/Logo";
-import { isAuthenticated, saveSession } from "../../lib/admin-session";
-import { useLogin } from "../../lib/hooks";
+import { useLogin, useSessionStatus } from "../../lib/hooks";
 
 export function Login() {
   const [email, setEmail] = useState("Mahmoud.Abdulghani@outlook.com");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const login = useLogin();
+  const session = useSessionStatus();
   const navigate = useNavigate();
 
-  if (isAuthenticated()) {
+  if (session.data?.admin) {
     return <Navigate to="/admin/dashboard" replace />;
+  }
+
+  if (session.isPending) {
+    return <main className="flex min-h-screen items-center justify-center text-sm text-muted">Checking session…</main>;
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -28,8 +32,7 @@ export function Login() {
     login.mutate(
       { email: email.trim(), password },
       {
-        onSuccess: ({ token, admin }) => {
-          saveSession({ token, admin });
+        onSuccess: () => {
           navigate("/admin/dashboard", { replace: true });
         },
         onError: (err) => setError(err.message),

@@ -16,11 +16,11 @@ import {
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { useAuth, useMessages } from "../../lib/hooks";
+import { useAuth, useLogout, useMessages } from "../../lib/hooks";
 import { Logo } from "../../components/Logo";
 import { PageMeta } from "../../components/PageMeta";
 import { cn } from "../../lib/format";
-import { getSession, signOut } from "../../lib/admin-session";
+import type { AuthUser } from "../../types";
 
 interface NavItem {
   to: string;
@@ -55,12 +55,17 @@ const navGroups: { label: string; items: NavItem[] }[] = [
 
 function SidebarContent({
   unread,
+  admin,
   onNavigate,
 }: {
   unread: number;
+  admin: AuthUser;
   onNavigate?: () => void;
 }) {
-  const session = getSession();
+  const logout = useLogout();
+  const handleLogout = () => {
+    logout.mutate(undefined, { onSettled: () => { window.location.href = "/admin"; } });
+  };
   return (
     <>
       <div className="flex h-16 items-center gap-3 border-b border-line px-6">
@@ -72,7 +77,7 @@ function SidebarContent({
 
       <div className="flex items-center gap-3 border-b border-line px-6 py-4">
         <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent/15 font-mono text-xs font-bold text-accent">
-          {session?.admin.name
+          {admin.name
             .split(" ")
             .map((n) => n[0])
             .slice(0, 2)
@@ -80,10 +85,10 @@ function SidebarContent({
         </span>
         <span className="min-w-0">
           <span className="block truncate text-sm font-semibold text-ink">
-            {session?.admin.name}
+            {admin.name}
           </span>
           <span className="block truncate text-[11px] text-faint">
-            {session?.admin.email}
+            {admin.email}
           </span>
         </span>
       </div>
@@ -138,10 +143,7 @@ function SidebarContent({
         </Link>
         <button
           type="button"
-          onClick={() => {
-            signOut();
-            window.location.href = "/admin";
-          }}
+          onClick={handleLogout}
           className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-semibold text-muted transition-colors hover:bg-surface-2 hover:text-danger"
         >
           <FiLogOut size={17} />
@@ -154,18 +156,22 @@ function SidebarContent({
 
 export function AdminLayout() {
   const navigate = useNavigate();
-  const { data: messages } = useMessages();
   const auth = useAuth();
+  const { data: messages } = useMessages(auth.isSuccess);
   const [mobileNav, setMobileNav] = useState(false);
   const unread = (messages ?? []).filter((m) => !m.read).length;
-  const session = getSession();
 
   useEffect(() => {
     if (auth.isError) {
-      signOut();
       navigate("/admin", { replace: true });
     }
   }, [auth.isError, navigate]);
+
+  useEffect(() => {
+    const onUnauthorized = () => navigate("/admin", { replace: true });
+    window.addEventListener("admin:unauthorized", onUnauthorized);
+    return () => window.removeEventListener("admin:unauthorized", onUnauthorized);
+  }, [navigate]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -184,7 +190,11 @@ export function AdminLayout() {
     };
   }, [mobileNav]);
 
-  if (!session) {
+  if (auth.isPending) {
+    return <div className="flex min-h-screen items-center justify-center text-sm text-muted">Checking session…</div>;
+  }
+
+  if (auth.isError || !auth.data) {
     return <Navigate to="/admin" replace />;
   }
 
@@ -193,7 +203,7 @@ export function AdminLayout() {
       <PageMeta title="Admin" />
       <div className="flex min-h-screen bg-bg">
         <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col border-r border-line bg-surface lg:flex">
-          <SidebarContent unread={unread} />
+          <SidebarContent unread={unread} admin={auth.data} />
         </aside>
 
         <AnimatePresence>
@@ -228,6 +238,7 @@ export function AdminLayout() {
                 </button>
                 <SidebarContent
                   unread={unread}
+                  admin={auth.data}
                   onNavigate={() => setMobileNav(false)}
                 />
               </motion.div>
@@ -263,8 +274,8 @@ export function AdminLayout() {
               <button
                 type="button"
                 onClick={() => {
-                  signOut();
-                  window.location.href = "/admin";
+                  fetch(`${import.meta.env.VITE_API_URL ?? "/api"}/admin/auth/logout`, { method: "POST", credentials: "include" })
+                    .finally(() => { window.location.href = "/admin"; });
                 }}
                 className="btn-ghost-danger btn-icon-sm"
                 aria-label="Sign out"

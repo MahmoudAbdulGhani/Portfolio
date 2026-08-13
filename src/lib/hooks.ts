@@ -98,18 +98,27 @@ export function useCertifications() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Admin queries (require the JWT session)                            */
+/*  Admin queries (authenticated by an HttpOnly cookie)               */
 /* ------------------------------------------------------------------ */
 
 export function useAuth() {
   return useQuery({
     queryKey: ["auth"],
     queryFn: () => api<AuthUser>("/admin/me"),
+    retry: false,
   });
 }
 
-export function useMessages() {
-  return useQuery({ queryKey: ["messages"], queryFn: () => api<Message[]>("/admin/messages") });
+export function useSessionStatus() {
+  return useQuery({
+    queryKey: ["auth", "session"],
+    queryFn: () => api<{ admin: AuthUser | null }>("/admin/auth/session"),
+    retry: false,
+  });
+}
+
+export function useMessages(enabled = true) {
+  return useQuery({ queryKey: ["messages"], queryFn: () => api<Message[]>("/admin/messages"), enabled });
 }
 
 export function useAnalytics() {
@@ -174,12 +183,23 @@ export function useAdminCertifications() {
 /* ------------------------------------------------------------------ */
 
 export function useLogin() {
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: (input: { email: string; password: string }) =>
-      api<{ token: string; admin: AuthUser }>("/admin/auth/login", {
+      api<{ admin: AuthUser }>("/admin/auth/login", {
         method: "POST",
         body: JSON.stringify(input),
       }),
+    onSuccess: ({ admin }) => {
+      qc.setQueryData(["auth"], admin);
+      qc.setQueryData(["auth", "session"], { admin });
+    },
+  });
+}
+
+export function useLogout() {
+  return useMutation({
+    mutationFn: () => api<void>("/admin/auth/logout", { method: "POST" }),
   });
 }
 

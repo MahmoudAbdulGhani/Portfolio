@@ -2,7 +2,7 @@ import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../lib/prisma.js";
-import { requireAuth, signToken } from "../middleware/auth.js";
+import { clearAuthCookie, getAuthenticatedAdminId, requireAuth, setAuthCookie, signToken } from "../middleware/auth.js";
 
 const router = Router();
 
@@ -43,10 +43,30 @@ router.post("/auth/login", async (req, res, next) => {
       return res.status(401).json({ message: "Invalid email or password." });
     }
 
-    res.json({
-      token: signToken(admin.id),
-      admin: { id: admin.id, email: admin.email, name: admin.name },
+    setAuthCookie(res, signToken(admin.id));
+    res.json({ admin: { id: admin.id, email: admin.email, name: admin.name } });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/auth/logout", (_req, res) => {
+  clearAuthCookie(res);
+  res.status(204).end();
+});
+
+// A passive login-page probe uses 200 for both states so an expected signed-out
+// state does not appear as a failed request in the browser console.
+router.get("/auth/session", async (req, res, next) => {
+  try {
+    const adminId = getAuthenticatedAdminId(req);
+    if (!adminId) return res.json({ admin: null });
+    const admin = await prisma.admin.findUnique({
+      where: { id: adminId },
+      select: { id: true, email: true, name: true },
     });
+    if (!admin) clearAuthCookie(res);
+    return res.json({ admin });
   } catch (error) {
     next(error);
   }

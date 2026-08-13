@@ -1,5 +1,3 @@
-import { getSession, signOut } from "./admin-session";
-
 const API_BASE: string = import.meta.env.VITE_API_URL ?? "/api";
 
 export { API_BASE };
@@ -18,18 +16,14 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
     ...(init?.headers as Record<string, string> | undefined),
   };
 
-  if (path.startsWith("/admin")) {
-    const token = getSession()?.token;
-    if (token) headers.Authorization = `Bearer ${token}`;
-  }
-
   const res = await fetch(`${API_BASE}${path}`, {
+    credentials: "include",
     headers,
     ...init,
   });
 
-  if (res.status === 401 && path.startsWith("/admin")) {
-    signOut();
+  if (res.status === 401 && path.startsWith("/admin") && path !== "/admin/auth/login") {
+    window.dispatchEvent(new Event("admin:unauthorized"));
   }
 
   if (!res.ok) {
