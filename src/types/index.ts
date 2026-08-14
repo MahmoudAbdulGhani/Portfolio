@@ -19,6 +19,12 @@ export interface Project {
   featured: boolean;
   published: boolean;
   visual: string;
+  coverImage?: string | null;
+  screenshots?: string[];
+  myRole?: string | null;
+  contributions?: string[];
+  ownership?: string | null;
+  teamSize?: number | null;
   order: number;
   views: number;
   createdAt: string;
@@ -60,10 +66,17 @@ export interface Certification {
 
 export interface ExperienceItem {
   id?: string;
-  milestone: string;
-  facility: string;
-  meta: string;
-  details: string;
+  milestone?: string;
+  facility?: string;
+  meta?: string;
+  details?: string;
+  role?: string | null;
+  company?: string | null;
+  description?: string | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  isCurrent?: boolean;
+  location?: string | null;
   order?: number;
 }
 

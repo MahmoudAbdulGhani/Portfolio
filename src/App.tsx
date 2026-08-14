@@ -45,6 +45,10 @@ const Education = lazy(() =>
 const Certifications = lazy(() =>
   import("./pages/admin/Certifications").then((m) => ({ default: m.Certifications })),
 );
+const CvManager = lazy(() =>
+  import("./pages/admin/CvManager").then((m) => ({ default: m.CvManager })),
+);
+const ExperienceAdmin = lazy(() => import("./pages/admin/Experience").then((m) => ({ default: m.ExperienceAdmin })));
 
 function PublicLayout() {
   const { pathname } = useLocation();
@@ -108,6 +112,8 @@ export function App() {
             <Route path="skills" element={<Skills />} />
             <Route path="education" element={<Education />} />
             <Route path="certifications" element={<Certifications />} />
+            <Route path="cv" element={<CvManager />} />
+            <Route path="experience" element={<ExperienceAdmin />} />
             <Route path="messages" element={<Messages />} />
             <Route path="settings" element={<Settings />} />
           </Route>

@@ -8,6 +8,7 @@ const projectSelect = {
   slug: true, name: true, type: true, tagline: true, description: true,
   overview: true, problem: true, solution: true, features: true, stack: true,
   team: true, program: true, github: true, demo: true, featured: true,
+  myRole: true, contributions: true, ownership: true, teamSize: true,
 };
 
 export async function getPortfolioContext(projectSlug) {
@@ -18,7 +19,7 @@ export async function getPortfolioContext(projectSlug) {
         location: true, languages: true, resumeUrl: true,
         experience: {
           orderBy: { order: "asc" },
-          select: { milestone: true, facility: true, meta: true, details: true },
+          select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, description: true },
         },
         socials: { select: { label: true, url: true } },
       },

@@ -23,7 +23,8 @@ import type {
    it here so the public site can render instantly and fall back gracefully if
    the API is unreachable. */
 
-export const seedProfile = profileData as Profile;
+// Public experience is intentionally never sourced from the static profile copy.
+export const seedProfile = { ...profileData, experience: [] } as Profile;
 export const seedTechnologies = technologiesData as Technology[];
 export const seedSkills = skillsData as Skill[];
 export const seedProjects = projectsData as Project[];

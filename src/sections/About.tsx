@@ -10,8 +10,17 @@ const stats = [
 ];
 
 export function About() {
-  const { data: profile } = useProfile();
+  const { data: profile, isLoading, isError } = useProfile();
   const experience = profile?.experience ?? [];
+  const datePart = (value?: string | null) => {
+    const match = value?.match(/^(\d{4})-(\d{2})$/);
+    return match ? `${match[2]}/${match[1]}` : "";
+  };
+  const dateRange = (item: (typeof experience)[number]) => {
+    const start = datePart(item.startDate);
+    const end = item.isCurrent ? "Present" : datePart(item.endDate);
+    return [start, end].filter(Boolean).join(" – ");
+  };
 
   return (
     <section id="about" className="section relative bg-bg-soft">
@@ -20,22 +29,21 @@ export function About() {
           <Reveal>
             <span className="eyebrow">About Mahmoud</span>
             <h2 className="heading mt-4">
-              A computer science foundation applied to modern full-stack
-              engineering.
+              Computer science graduate building practical web applications.
             </h2>
           </Reveal>
 
           <Reveal delay={0.08}>
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted">
               <p>
-                Computer science graduate and junior full-stack engineer from
+                Computer science graduate and junior full-stack developer from
                 Tripoli, Lebanon — building with React, Next.js and Angular on
                 the frontend and Node.js, Express and NestJS on the backend.
               </p>
               <p>
-                Recent work at The Digital Hub by UNRWA shipped in teams across
-                monorepos, authentication, REST APIs and databases — products
-                designed to stay understandable long after launch.
+                At The Digital Hub by UNRWA, I worked in teams on authentication,
+                REST APIs, databases, and responsive interfaces for three web
+                applications.
               </p>
             </div>
           </Reveal>
@@ -82,6 +90,8 @@ export function About() {
           </Reveal>
 
           <ol className="relative space-y-10 before:absolute before:bottom-2 before:left-[5px] before:top-2 before:w-px before:bg-line-strong">
+            {isLoading && <li className="pl-8 text-sm text-muted">Loading experience…</li>}
+            {isError && <li className="pl-8 text-sm text-muted">Experience is temporarily unavailable.</li>}
             {experience.map((item, i) => (
               <li key={i} className="relative pl-8">
                 <span
@@ -91,15 +101,16 @@ export function About() {
                 <Reveal delay={Math.min(i * 0.06, 0.24)}>
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
                     <div className="min-w-0">
-                      <span className="chip">{item.meta}</span>
+                      {dateRange(item) && <span className="chip">{dateRange(item)}</span>}
                       <h3 className="mt-2.5 font-display text-base font-bold text-ink">
-                        {item.milestone}
+                        {item.role || item.milestone}
                       </h3>
                       <p className="mt-0.5 text-sm font-medium text-accent">
-                        {item.facility}
+                        {item.company || item.facility}
                       </p>
+                      {item.location && <p className="mt-1 text-xs font-medium text-faint">{item.location}</p>}
                       <p className="mt-2 text-sm leading-relaxed text-muted">
-                        {item.details}
+                        {item.description || item.details}
                       </p>
                     </div>
                   </div>

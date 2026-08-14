@@ -2,8 +2,6 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   seedCertifications,
   seedEducation,
-  seedProfile,
-  seedProjects,
   seedSkills,
   seedTechnologies,
 } from "../data/portfolio";
@@ -20,8 +18,8 @@ import type {
 } from "../types";
 import { api } from "./api";
 
-const getProfile = () => api<Profile>("/profile").catch(() => seedProfile);
-const getProjects = () => api<Project[]>("/projects").catch(() => seedProjects);
+const getProfile = () => api<Profile>("/profile");
+const getProjects = () => api<Project[]>("/projects");
 const getTechnologies = () =>
   api<Technology[]>("/technologies").catch(() => seedTechnologies);
 const getSkills = () => api<Skill[]>("/skills").catch(() => seedSkills);
@@ -38,9 +36,6 @@ export function useProfile() {
   return useQuery({
     queryKey: ["profile"],
     queryFn: getProfile,
-    // Render the canonical portfolio copy immediately while the live profile
-    // refreshes in the background (important for the first viewport).
-    placeholderData: seedProfile,
   });
 }
 
@@ -48,7 +43,7 @@ export function useProjects() {
   return useQuery({
     queryKey: ["projects"],
     queryFn: getProjects,
-    placeholderData: seedProjects,
+    staleTime: 10 * 60_000,
   });
 }
 
@@ -56,12 +51,7 @@ export function useProject(slug: string, options?: { enabled?: boolean }) {
   return useQuery({
     queryKey: ["project", slug],
     enabled: options?.enabled,
-    placeholderData: () => seedProjects.find((project) => project.slug === slug),
-    queryFn: () => api<Project>(`/projects/${slug}`).catch(() => {
-      const seed = seedProjects.find((p) => p.slug === slug);
-      if (!seed) throw new Error("Project not found");
-      return seed;
-    }),
+    queryFn: () => api<Project>(`/projects/${slug}`),
   });
 }
 
@@ -224,6 +214,7 @@ export function useSubmitMessage() {
       email: string;
       subject: string;
       message: string;
+      website: string;
     }) =>
       api<Message>("/messages", {
         method: "POST",

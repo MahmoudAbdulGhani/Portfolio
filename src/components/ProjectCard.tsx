@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <Link to={`/projects/${project.slug}`} aria-label={project.name} tabIndex={-1}>
         <div className="project-card-media transition-transform duration-500 ease-out group-hover:scale-[1.02]">
-          <ProjectVisual visual={project.visual} name={project.name} />
+          <ProjectVisual visual={project.visual} name={project.name} image={project.coverImage} type={project.type} stack={project.stack} className="aspect-video h-auto" />
         </div>
       </Link>
 

@@ -113,7 +113,7 @@ export function Hero() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-ok/25 bg-ok/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ok">
                 <span className="h-1.5 w-1.5 rounded-full bg-ok" aria-hidden />
-                Open
+                Open to opportunities
               </span>
             </div>
 
@@ -133,10 +133,10 @@ export function Hero() {
               data-hero-copy
               className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
             >
-              Full-stack software engineer from Tripoli, Lebanon. I ship
-              responsive React and Angular interfaces backed by Node.js and
-              NestJS APIs, MongoDB and Supabase data layers, and real-time
-              systems — built collaboratively at The Digital Hub by UNRWA.
+              Junior full-stack developer from Tripoli, Lebanon. I build
+              responsive React and Angular interfaces with Node.js and NestJS
+              APIs. Recent team projects at The Digital Hub include booking,
+              university management, and real-time communication.
             </p>
 
             <div

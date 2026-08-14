@@ -68,18 +68,6 @@ async function main() {
     },
   });
 
-  await prisma.experience.deleteMany({ where: { profileId: profile.id } });
-  await prisma.experience.createMany({
-    data: profileData.experience.map((e, i) => ({
-      milestone: e.milestone,
-      facility: e.facility,
-      meta: e.meta,
-      details: e.details,
-      order: i,
-      profileId: profile.id,
-    })),
-  });
-
   await prisma.socialLink.deleteMany({ where: { profileId: profile.id } });
   await prisma.socialLink.createMany({
     data: profileData.socials.map((s) => ({

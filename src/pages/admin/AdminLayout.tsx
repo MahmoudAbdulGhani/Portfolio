@@ -6,6 +6,8 @@ import {
   FiBarChart2,
   FiBookOpen,
   FiCode,
+  FiFileText,
+  FiBriefcase,
   FiFolder,
   FiLogOut,
   FiMail,
@@ -37,10 +39,12 @@ const navGroups: { label: string; items: NavItem[] }[] = [
     label: "Content",
     items: [
       { to: "/admin/projects", label: "Projects", icon: FiFolder },
+      { to: "/admin/experience", label: "Experience", icon: FiBriefcase },
       { to: "/admin/technologies", label: "Technologies", icon: FiCode },
       { to: "/admin/skills", label: "Skills", icon: FiUser },
       { to: "/admin/education", label: "Education", icon: FiBookOpen },
       { to: "/admin/certifications", label: "Certifications", icon: FiAward },
+      { to: "/admin/cv", label: "CV Manager", icon: FiFileText },
     ],
   },
   {

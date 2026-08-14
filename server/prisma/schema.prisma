@@ -41,6 +41,13 @@ model Experience {
   facility  String
   meta      String
   details   String
+  role        String?
+  company     String?
+  description String?
+  startDate   String?
+  endDate     String?
+  isCurrent   Boolean @default(false)
+  location    String?
   order     Int     @default(0)
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
   profileId String
@@ -107,10 +114,25 @@ model Project {
   published   Boolean   @default(true)
   /// Persisted as a six-digit hex accent color (#RRGGBB).
   visual      String    @default("#5966A0")
+  coverImage   String?
+  screenshots String[]
+  myRole       String?
+  contributions String[]
+  ownership    String?
+  teamSize     Int?
   order       Int       @default(0)
   views       Int       @default(0)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+}
+
+model RateLimitBucket {
+  key         String   @id
+  windowStart DateTime
+  count       Int      @default(0)
+  updatedAt   DateTime @updatedAt
+
+  @@index([updatedAt])
 }
 
 model Message {
@@ -121,4 +143,14 @@ model Message {
   message   String
   read      Boolean  @default(false)
   createdAt DateTime @default(now())
+}
+
+model CvConfiguration {
+  id                  String   @id @default("default")
+  professionalSummary String?
+  header              Json
+  application         Json
+  master              Json
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }

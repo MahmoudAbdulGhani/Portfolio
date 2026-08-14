@@ -25,7 +25,9 @@ function AssistantText({ text }: { text: string }) {
         const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
         if (!match) return <span key={index}>{part}</span>;
         const [, label, href] = match;
-        const internal = href.startsWith("/") && !href.startsWith("/api/");
+        const internal = /^\/projects\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(href);
+        const safeExternal = /^https?:\/\//i.test(href) || href === "/api/cv.pdf";
+        if (!internal && !safeExternal) return <span key={index}>{label}</span>;
         return internal ? (
           <Link key={index} to={href} className="font-semibold text-accent hover:text-accent-strong" onClick={(event) => event.stopPropagation()}>
             {label} <FiExternalLink className="inline" size={12} />
@@ -132,12 +134,12 @@ export function PortfolioAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-3 bottom-20 z-[70] flex max-h-[min(680px,calc(100dvh-6rem))] flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-2xl sm:inset-x-auto sm:right-6 sm:w-[410px]"
+            className="fixed inset-x-2 bottom-[4.75rem] z-[70] flex max-h-[calc(100dvh-5.25rem)] min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-2xl sm:inset-x-auto sm:bottom-20 sm:right-6 sm:max-h-[min(680px,calc(100dvh-6rem))] sm:w-[410px] sm:rounded-2xl"
           >
             <header className="flex items-center justify-between border-b border-line bg-surface-2/70 px-4 py-3.5">
-              <div className="flex items-center gap-3">
+              <div className="flex min-w-0 items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent text-white shadow-sm shadow-accent/30"><FiCpu size={17} /></span>
-                <div><h2 className="text-sm font-bold text-ink">{project ? `Ask about ${project.name}` : "Ask Mahmoud AI"}</h2><p className="text-[11px] text-muted">{projectSlug ? "Project-aware portfolio assistant" : "Professional portfolio assistant"}</p></div>
+                <div className="min-w-0"><h2 className="truncate text-sm font-bold text-ink">{project ? `Ask about ${project.name}` : "Ask Mahmoud AI"}</h2><p className="truncate text-[11px] text-muted">{projectSlug ? "Project-aware portfolio assistant" : "Professional portfolio assistant"}</p></div>
               </div>
               <button type="button" className="btn-icon-sm text-muted hover:bg-surface-3 hover:text-ink" onClick={() => setOpen(false)} aria-label="Close assistant"><FiX /></button>
             </header>
@@ -149,7 +151,7 @@ export function PortfolioAssistant() {
                     {project ? `Ask about ${project.name}, or about Mahmoud's wider skills and experience.` : "I can help you quickly evaluate Mahmoud's projects, skills, experience, and fit for a role."}
                   </div>
                   <p className="mb-2 mt-5 text-[11px] font-semibold uppercase tracking-wider text-faint">Suggested questions</p>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2 min-[390px]:grid-cols-2">
                     {suggestions.map(([label, prompt], index) => (
                       <motion.button key={label} type="button" initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.04 * index }} onClick={() => void ask(prompt)} className="rounded-lg border border-line bg-surface-2 px-3 py-2.5 text-left text-xs font-semibold text-muted transition-colors hover:border-accent/40 hover:text-accent">
                         {label}
@@ -172,7 +174,7 @@ export function PortfolioAssistant() {
 
             <form onSubmit={submit} className="border-t border-line bg-surface p-3">
               <div className="flex items-end gap-2 rounded-xl border border-line bg-surface-2 p-2 focus-within:border-accent/50 focus-within:ring-2 focus-within:ring-accent/10">
-                <textarea ref={inputRef} value={question} onChange={(event) => setQuestion(event.target.value.slice(0, 600))} onKeyDown={onKeyDown} rows={1} placeholder={project ? `Ask about ${project.name}…` : "Ask about Mahmoud's experience…"} aria-label="Your question" className="max-h-28 min-h-9 flex-1 resize-none bg-transparent px-1 py-2 text-sm text-ink outline-none placeholder:text-faint" disabled={loading} />
+                <textarea ref={inputRef} value={question} onChange={(event) => setQuestion(event.target.value.slice(0, 600))} onKeyDown={onKeyDown} rows={1} placeholder={project ? `Ask about ${project.name}…` : "Ask about Mahmoud's experience…"} aria-label="Your question" className="min-h-9 min-w-0 flex-1 resize-none bg-transparent px-1 py-2 text-sm text-ink outline-none placeholder:text-faint sm:max-h-28" disabled={loading} />
                 <button type="submit" disabled={loading || !question.trim()} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent text-white transition-all hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-40" aria-label="Send question"><FiArrowUp /></button>
               </div>
               <p className="mt-1.5 text-center text-[10px] text-faint">Portfolio answers grounded in Mahmoud's published data</p>
@@ -181,9 +183,9 @@ export function PortfolioAssistant() {
         )}
       </AnimatePresence>
 
-      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Ask Mahmoud AI" : "Open Ask Mahmoud AI"} className="fixed bottom-4 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full bg-accent px-4 text-sm font-bold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-accent-strong sm:right-6">
+      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Ask Mahmoud AI" : "Open Ask Mahmoud AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full bg-accent px-3.5 text-sm font-bold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-accent-strong sm:bottom-4 sm:right-6 sm:px-4">
         {open ? <FiX size={17} /> : <FiMessageSquare size={17} />}
-        <span>{open ? "Close" : "Ask Mahmoud AI"}</span>
+        <span className="max-[359px]:hidden">{open ? "Close" : "Ask Mahmoud AI"}</span>
       </motion.button>
     </>
   );

@@ -1,32 +1,33 @@
 import { Router } from "express";
 import { generateWithGemini, sendGeminiError } from "../lib/gemini.js";
 import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
+import { consumeRateLimit } from "../lib/rate-limit.js";
+import { assistantSchema } from "../lib/validation.js";
+import { createHash } from "node:crypto";
+import { getClientIp } from "../lib/client-ip.js";
 
 const router = Router();
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 12;
 const MAX_QUESTION_LENGTH = 600;
 const PROJECT_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const requestLog = new Map();
-
-function isRateLimited(key) {
-  const now = Date.now();
-  const recent = (requestLog.get(key) ?? []).filter((time) => now - time < WINDOW_MS);
-  recent.push(now); requestLog.set(key, recent);
-  return recent.length > MAX_REQUESTS;
-}
 
 router.post("/", async (req, res, next) => {
   try {
-    const question = typeof req.body?.question === "string" ? req.body.question.trim() : "";
-    const projectSlug = typeof req.body?.projectSlug === "string" ? req.body.projectSlug.trim() : undefined;
-    if (!question) return res.status(400).json({ message: "Please enter a question." });
-    if (question.length > MAX_QUESTION_LENGTH) return res.status(400).json({ message: `Questions must be ${MAX_QUESTION_LENGTH} characters or fewer.` });
+    const parsed = assistantSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: `Enter a valid question of ${MAX_QUESTION_LENGTH} characters or fewer.` });
+    const { question, projectSlug } = parsed.data;
     if (projectSlug && !PROJECT_SLUG_PATTERN.test(projectSlug)) return res.status(400).json({ message: "Invalid project identifier." });
-    if (isRateLimited(req.ip || "unknown")) {
+    const clientIp = getClientIp(req);
+    const throttle = await consumeRateLimit(`assistant:${clientIp}`, { limit: MAX_REQUESTS, windowMs: WINDOW_MS });
+    if (throttle.limited) {
+      console.warn("[security] assistant_rate_limited", { ip: clientIp });
       res.setHeader("Retry-After", "60");
       return res.status(429).json({ message: "Too many questions. Please wait a minute and try again." });
     }
+    const digest = createHash("sha256").update(`${projectSlug ?? ""}:${question.toLowerCase().replace(/\s+/g, " ")}`).digest("hex");
+    const duplicate = await consumeRateLimit(`assistant-duplicate:${clientIp}:${digest}`, { limit: 1, windowMs: 5_000 });
+    if (duplicate.limited) { console.warn("[security] assistant_duplicate", { ip: clientIp }); return res.status(429).json({ message: "This question was just submitted. Please wait a moment." }); }
 
     let context;
     try { context = await getPortfolioContextWithRetry(projectSlug); }

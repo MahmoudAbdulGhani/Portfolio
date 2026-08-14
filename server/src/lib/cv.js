@@ -1,6 +1,6 @@
 import PDFDocument from "pdfkit";
 import { createRequire } from "node:module";
-import { prisma } from "./prisma.js";
+import { resolveCvData } from "./cv-config.js";
 
 const require = createRequire(import.meta.url);
 const FONTS = {
@@ -123,38 +123,39 @@ function drawCenteredRow(doc, flow, items, size = 10.2) {
   }
 }
 
-function drawHeader(doc, flow, profile, origin) {
+function drawHeader(doc, flow, profile, origin, header) {
   const socials = profile.socials ?? [];
   const linkedin = socials.find((s) => /linkedin/i.test(s.label));
   const github = socials.find((s) => /github/i.test(s.label));
-  const name = clean(profile.name) || "Curriculum Vitae";
+  const values = header.overrides ?? {};
+  const name = clean(values.name || profile.name) || "Curriculum Vitae";
   flow.y += 1;
   const nameH = text(doc, name, LEFT, flow.y, {
     face: "bold", size: 19, align: "center",
   });
   flow.y += nameH + 3;
-  flow.y += text(doc, profile.title, LEFT, flow.y, {
+  flow.y += text(doc, header.title ? values.title || profile.title : "", LEFT, flow.y, {
     size: 14.5, align: "center",
   }) + 9;
   drawCenteredRow(doc, flow, [
-    { text: profile.email, link: profile.email ? `mailto:${clean(profile.email)}` : "" },
-    { text: profile.phone, link: profile.phone ? `tel:${clean(profile.phone).replace(/[^+\d]/g, "")}` : "" },
-    { text: profile.location },
+    { text: header.email ? values.email || profile.email : "", link: header.email ? `mailto:${clean(values.email || profile.email)}` : "" },
+    { text: header.phone ? values.phone || profile.phone : "", link: header.phone ? `tel:${clean(values.phone || profile.phone).replace(/[^+\d]/g, "")}` : "" },
+    { text: header.location ? values.location || profile.location : "" },
   ]);
   flow.y += 2;
   drawCenteredRow(doc, flow, [
-    { text: linkedin ? cleanUrl(linkedin.url) : "", link: linkedin?.url },
-    { text: github ? cleanUrl(github.url) : "", link: github?.url },
+    { text: header.linkedin ? cleanUrl(values.linkedin || linkedin?.url) : "", link: header.linkedin ? values.linkedin || linkedin?.url : "" },
+    { text: header.github ? cleanUrl(values.github || github?.url) : "", link: header.github ? values.github || github?.url : "" },
   ]);
   flow.y += 2;
-  drawCenteredRow(doc, flow, [{ text: cleanUrl(origin), link: origin }]);
+  if (header.portfolio) drawCenteredRow(doc, flow, [{ text: cleanUrl(values.portfolio || origin), link: values.portfolio || origin }]);
   flow.y += 12;
 }
 
-function drawSummary(doc, flow, bio) {
+function drawSummary(doc, flow, bio, label = "Objective") {
   if (!clean(bio)) return;
   const h = height(doc, bio, { size: 11, lineGap: 1.4 });
-  section(doc, flow, "Objective", h);
+  section(doc, flow, label, h);
   ensure(doc, flow, h);
   flow.y += text(doc, bio, LEFT, flow.y, { size: 11, lineGap: 1.4 });
 }
@@ -209,16 +210,17 @@ function experienceMetric(doc, item) {
   const rawMeta = clean(item.meta);
   const date = dateLike(rawMeta) ? rawMeta : "";
   const organization = [clean(item.facility), date ? "" : rawMeta].filter(Boolean).join(" — ");
-  const details = splitDetails(item.details);
+  const details = item.cvBullets?.length ? item.cvBullets : splitDetails(item.details);
   return 15 + height(doc, item.milestone, { face: "bold", size: 11, width: 350 })
     + height(doc, organization, { face: "italic", size: 11 })
+    + height(doc, item.cvDescription, { size: 10.5 })
     + details.reduce((sum, line) => sum + bulletHeight(doc, line), 0);
 }
 
-function drawExperience(doc, flow, experience) {
+function drawExperience(doc, flow, experience, label = "Professional Experience") {
   const entries = (experience ?? []).filter((item) => clean(item.milestone));
   if (!entries.length) return;
-  section(doc, flow, "Professional Experience", experienceMetric(doc, entries[0]));
+  section(doc, flow, label, experienceMetric(doc, entries[0]));
   for (const item of entries) {
     const needed = experienceMetric(doc, item);
     ensure(doc, flow, Math.min(needed, 150));
@@ -230,8 +232,12 @@ function drawExperience(doc, flow, experience) {
       flow.y += 1;
       flow.y += text(doc, organization, LEFT, flow.y, { face: "italic", size: 11 });
     }
+    if (clean(item.cvLocation)) { const h = height(doc, item.cvLocation, { size: 10.5 }); ensure(doc, flow, h); flow.y += 1; flow.y += text(doc, item.cvLocation, LEFT, flow.y, { size: 10.5 }); }
     flow.y += 3;
-    for (const detail of splitDetails(item.details)) bullet(doc, flow, detail);
+    if (clean(item.cvDescription)) { const h = height(doc, item.cvDescription, { size: 10.5 }); ensure(doc, flow, h); flow.y += text(doc, item.cvDescription, LEFT, flow.y, { size: 10.5 }); flow.y += 2; }
+    const details = item.cvBullets?.length ? item.cvBullets : splitDetails(item.details);
+    for (const detail of details) bullet(doc, flow, detail);
+    if (clean(item.cvTechnologies)) { const value = `Technologies: ${item.cvTechnologies}`; const h = height(doc, value, { face: "italic", size: 10.5, width: WIDTH - 9 }); ensure(doc, flow, h); flow.y += text(doc, value, LEFT + 9, flow.y, { face: "italic", size: 10.5, width: WIDTH - 9 }); }
     flow.y += 10;
   }
 }
@@ -243,9 +249,10 @@ function projectDescription(project) {
 function projectMetric(doc, project) {
   const title = [clean(project.name), projectDescription(project)].filter(Boolean).join(" — ");
   const stack = (project.stack ?? []).map(clean).filter(Boolean).join(", ");
-  const features = (project.features ?? []).map(clean).filter(Boolean);
+  const features = (project.cvBullets?.length ? project.cvBullets : project.features ?? []).map(clean).filter(Boolean);
   return height(doc, title, { face: "bold", size: 11 })
     + height(doc, stack, { face: "italic", size: 11 })
+    + height(doc, project.cvDescription, { size: 10.5 })
     + features.reduce((sum, line) => sum + bulletHeight(doc, line), 0) + 30;
 }
 
@@ -263,12 +270,10 @@ function linkLine(doc, flow, label, url) {
   flow.y += Math.max(14, linkH);
 }
 
-function drawProjects(doc, flow, projects) {
-  const entries = [...(projects ?? [])]
-    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-    .filter((project) => clean(project.name));
+function drawProjects(doc, flow, projects, label = "Projects") {
+  const entries = [...(projects ?? [])].filter((project) => clean(project.name));
   if (!entries.length) return;
-  section(doc, flow, "Projects", projectMetric(doc, entries[0]));
+  section(doc, flow, label, projectMetric(doc, entries[0]));
   for (const project of entries) {
     ensure(doc, flow, Math.min(projectMetric(doc, project), 160));
     const title = [clean(project.name), projectDescription(project)].filter(Boolean).join(" — ");
@@ -278,18 +283,19 @@ function drawProjects(doc, flow, projects) {
       flow.y += 1;
       flow.y += text(doc, stack, LEFT, flow.y, { face: "italic", size: 11, lineGap: 1 });
     }
+    if (clean(project.cvDescription)) { flow.y += 2; flow.y += text(doc, project.cvDescription, LEFT, flow.y, { size: 10.5 }); }
     flow.y += 3;
-    for (const feature of (project.features ?? []).map(clean).filter(Boolean)) bullet(doc, flow, feature);
+    for (const feature of (project.cvBullets?.length ? project.cvBullets : project.features ?? []).map(clean).filter(Boolean)) bullet(doc, flow, feature);
     linkLine(doc, flow, "Live Demo", project.demo);
     linkLine(doc, flow, "Repository", project.github);
     flow.y += 10;
   }
 }
 
-function drawEducation(doc, flow, education) {
+function drawEducation(doc, flow, education, label = "Education") {
   const entries = (education ?? []).filter((item) => clean(item.degree));
   if (!entries.length) return;
-  section(doc, flow, "Education", 50);
+  section(doc, flow, label, 50);
   for (const item of entries) {
     ensure(doc, flow, 48);
     twoColumnHeader(doc, flow, item.degree, item.period);
@@ -320,7 +326,7 @@ function skillGroupHeight(doc, group, columnWidth) {
     + group.names.reduce((sum, name) => sum + bulletHeight(doc, name, columnWidth - 3), 0) + 13;
 }
 
-function drawSkills(doc, flow, skills) {
+function drawSkills(doc, flow, skills, label = "Skills") {
   const groups = groupSkills(skills).filter((group) => group.names.length);
   if (!groups.length) return;
   const gap = 20;
@@ -333,7 +339,7 @@ function drawSkills(doc, flow, skills) {
     columnHeights[target] += skillGroupHeight(doc, group, columnWidth);
   }
   const gridHeight = Math.max(...columnHeights);
-  section(doc, flow, "Skills", Math.min(gridHeight, 100));
+  section(doc, flow, label, Math.min(gridHeight, 100));
   ensure(doc, flow, gridHeight);
   const startY = flow.y;
   columns.forEach((column, columnIndex) => {
@@ -357,10 +363,10 @@ function drawSkills(doc, flow, skills) {
   flow.y = startY + gridHeight;
 }
 
-function drawCertifications(doc, flow, certifications) {
+function drawCertifications(doc, flow, certifications, label = "Certifications & Training") {
   const entries = (certifications ?? []).filter((item) => clean(item.title));
   if (!entries.length) return;
-  section(doc, flow, "Certifications & Training", 40);
+  section(doc, flow, label, 40);
   for (const item of entries) {
     ensure(doc, flow, 40);
     twoColumnHeader(doc, flow, item.title, item.year);
@@ -369,6 +375,7 @@ function drawCertifications(doc, flow, certifications) {
       flow.y += text(doc, item.issuer, LEFT, flow.y, { face: "italic", size: 11 });
     }
     if (clean(item.url)) linkLine(doc, flow, "Credential", item.url);
+    if (clean(item.cvDescription)) { flow.y += text(doc, item.cvDescription, LEFT + 9, flow.y, { size: 10.5, width: WIDTH - 9 }); }
     flow.y += 9;
   }
 }
@@ -380,10 +387,10 @@ function parseLanguages(value) {
   }).filter((item) => item.name);
 }
 
-function drawLanguages(doc, flow, value) {
+function drawLanguages(doc, flow, value, label = "Languages") {
   const entries = parseLanguages(value);
   if (!entries.length) return;
-  section(doc, flow, "Languages", 32);
+  section(doc, flow, label, 32);
   const columnWidth = WIDTH / entries.length;
   let maxH = 0;
   entries.forEach((item, index) => {
@@ -395,20 +402,8 @@ function drawLanguages(doc, flow, value) {
   flow.y += maxH;
 }
 
-export async function generateCvPdfBuffer({ origin = "" } = {}) {
-  const profile = await prisma.profile.findFirst({
-    include: {
-      experience: { orderBy: { order: "asc" } },
-      socials: { orderBy: { id: "asc" } },
-    },
-  });
-  if (!profile) throw new Error("Profile not found.");
-  const [projects, skills, education, certifications] = await Promise.all([
-    prisma.project.findMany({ where: { published: true }, orderBy: [{ order: "asc" }, { createdAt: "asc" }] }),
-    prisma.skill.findMany({ orderBy: { order: "asc" } }),
-    prisma.education.findMany({ orderBy: { order: "asc" } }),
-    prisma.certification.findMany({ orderBy: { order: "asc" } }),
-  ]);
+export async function generateCvPdfBuffer({ origin = "", mode = "application" } = {}) {
+  const { profile, projects, skills, education, certifications, languages, configuration, mode: resolvedMode } = await resolveCvData(mode);
   const doc = new PDFDocument({
     size: "A4", margins: { top: TOP, bottom: PAGE.height - BOTTOM, left: LEFT, right: LEFT },
     bufferPages: true,
@@ -425,14 +420,15 @@ export async function generateCvPdfBuffer({ origin = "" } = {}) {
     doc.on("error", reject);
   });
   const flow = createFlow();
-  drawHeader(doc, flow, profile, origin);
-  drawSummary(doc, flow, profile.bio);
-  drawExperience(doc, flow, profile.experience);
-  drawProjects(doc, flow, projects);
-  drawEducation(doc, flow, education);
-  drawSkills(doc, flow, skills);
-  drawCertifications(doc, flow, certifications);
-  drawLanguages(doc, flow, profile.languages);
+  drawHeader(doc, flow, profile, origin, configuration.header);
+  const titles = resolvedMode.sectionTitles;
+  const renderers = {
+    summary: () => drawSummary(doc, flow, configuration.professionalSummary || profile.bio, titles.summary),
+    experience: () => drawExperience(doc, flow, profile.experience, titles.experience), projects: () => drawProjects(doc, flow, projects, titles.projects),
+    education: () => drawEducation(doc, flow, education, titles.education), skills: () => drawSkills(doc, flow, skills, titles.skills),
+    certifications: () => drawCertifications(doc, flow, certifications, titles.certifications), languages: () => drawLanguages(doc, flow, languages.join(" | "), titles.languages),
+  };
+  for (const key of resolvedMode.sections) renderers[key]?.();
   doc.end();
   return buffer;
 }

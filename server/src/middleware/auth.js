@@ -30,7 +30,8 @@ export function getAuthenticatedAdminId(req) {
   const token = readCookie(req, AUTH_COOKIE);
   if (!token) return null;
   try {
-    return jwt.verify(token, process.env.JWT_SECRET, { issuer: "portfolio-admin" }).sub;
+    const payload = jwt.verify(token, process.env.JWT_SECRET, { issuer: "portfolio-admin", algorithms: ["HS256"] });
+    return typeof payload.sub === "string" ? payload.sub : null;
   } catch {
     return null;
   }
@@ -49,5 +50,6 @@ export function signToken(adminId) {
   return jwt.sign({ sub: adminId }, process.env.JWT_SECRET, {
     expiresIn: "7d",
     issuer: "portfolio-admin",
+    algorithm: "HS256",
   });
 }

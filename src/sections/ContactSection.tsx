@@ -26,10 +26,10 @@ const contactCards = [
   { label: "WhatsApp", icon: FiMessageCircle, key: "whatsapp" as const, helper: "Start a quick message" },
 ];
 
-type FormState = { name: string; email: string; subject: string; message: string };
+type FormState = { name: string; email: string; subject: string; message: string; website: string };
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
-const initialForm: FormState = { name: "", email: "", subject: "", message: "" };
+const initialForm: FormState = { name: "", email: "", subject: "", message: "", website: "" };
 
 function validate(form: FormState): FormErrors {
   const errors: FormErrors = {};
@@ -211,6 +211,7 @@ export function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="card h-full p-6 sm:p-8">
+                <div className="absolute -left-[10000px]" aria-hidden="true"><label htmlFor="contact-website">Website</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setField("website", e.target.value)} /></div>
                 <h3 className="font-display text-lg font-bold text-ink">
                   Send a message
                 </h3>

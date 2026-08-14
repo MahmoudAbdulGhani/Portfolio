@@ -4,19 +4,19 @@ import { Reveal } from "../components/Reveal";
 
 const valuePropositions = [
   {
-    metric: "Full-Stack Delivery",
-    title: "Collaborative full-stack engineering",
-    desc: "Shipped three team products end-to-end at The Digital Hub — from bookings with payments to real-time audio — across React, Next.js and Angular with Node.js and NestJS backends.",
+    metric: "Full-Stack Work",
+    title: "Frontend and backend experience",
+    desc: "Worked with teams on three Digital Hub products, using React, Next.js, Angular, Node.js, and NestJS.",
   },
   {
-    metric: "Architecture & Security",
-    title: "Security and architecture aware",
-    desc: "Auth flows built on JWT, OTP and RBAC, time-slot conflict detection, typed contracts, and parameterized queries — code engineered to stay reliable and understandable after launch.",
+    metric: "Security",
+    title: "Practical security experience",
+    desc: "Implemented JWT, OTP, role-based access, booking conflict checks, typed contracts, and parameterized queries.",
   },
   {
     metric: "Communication",
-    title: "Clear communication and growth",
-    desc: "Technical instructor experienced at translating complex engineering concepts into simple workflows, with fluent English for cross-functional teams.",
+    title: "Clear communication",
+    desc: "Technical instructor experienced in explaining technical concepts clearly, with fluent English for collaborative teams.",
   },
 ];
 

@@ -2,9 +2,15 @@ import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../lib/prisma.js";
+import { generateCvPdfBuffer } from "../lib/cv.js";
+import { getCvCatalog, getOrCreateCvConfiguration, normalizeHeader, normalizeMode } from "../lib/cv-config.js";
+import { consumeRateLimits } from "../lib/rate-limit.js";
+import { changePasswordSchema, cvMutationSchema, loginSchema, profileMutationSchema, projectMutationSchema, routeIdSchema, slugSchema, validationMessage } from "../lib/validation.js";
 import { clearAuthCookie, getAuthenticatedAdminId, requireAuth, setAuthCookie, signToken } from "../middleware/auth.js";
+import { getClientIp } from "../lib/client-ip.js";
 
 const router = Router();
+const DUMMY_PASSWORD_HASH = "$2b$12$VyWR0jiclv4VqXmMnI/3QukirPLOLlgELqDeGEB67PLS9yv2mxiTS";
 
 const str = (value) =>
   value === undefined || value === null ? null : String(value);
@@ -20,26 +26,30 @@ const normalizeProjectAccent = (value) => {
   return hexColor.test(accent) ? accent.toUpperCase() : null;
 };
 
-const hasValidProjectAccent = (body) =>
-  body.visual === undefined || normalizeProjectAccent(body.visual) !== null;
-
 /* ------------------------------- Auth --------------------------------- */
 
 router.post("/auth/login", async (req, res, next) => {
   try {
-    const { email, password } = req.body ?? {};
-    if (!email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Email and password are required." });
-    }
+    const parsed = loginSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: "A valid email and password are required." });
+    const email = parsed.data.email.toLowerCase(); const { password } = parsed.data;
+    const ip = getClientIp(req);
+    const [ipThrottle, accountThrottle, combinedThrottle] = await consumeRateLimits([
+      { key: `login-ip:${ip}`, limit: 25, windowMs: 15 * 60 * 1000 },
+      { key: `login-account:${email}`, limit: 20, windowMs: 60 * 60 * 1000 },
+      { key: `login-combined:${ip}:${email}`, limit: 8, windowMs: 15 * 60 * 1000 },
+    ]);
+    const throttle = [ipThrottle, accountThrottle, combinedThrottle].find((item) => item.limited);
+    if (throttle) { console.warn("[security] login_rate_limited", { ip }); res.setHeader("Retry-After", String(throttle.retryAfter)); return res.status(429).json({ message: "Too many login attempts. Please try again later." }); }
 
     const admin = await prisma.admin.findUnique({
-      where: { email: String(email).trim().toLowerCase() },
+      where: { email },
     });
 
-    const ok = admin && (await bcrypt.compare(String(password), admin.passwordHash));
+    const passwordMatches = await bcrypt.compare(password, admin?.passwordHash ?? DUMMY_PASSWORD_HASH);
+    const ok = Boolean(admin && passwordMatches);
     if (!ok) {
+      console.warn("[security] login_failed", { ip });
       return res.status(401).json({ message: "Invalid email or password." });
     }
 
@@ -74,17 +84,9 @@ router.get("/auth/session", async (req, res, next) => {
 
 router.post("/auth/change-password", requireAuth, async (req, res, next) => {
   try {
-    const { currentPassword, newPassword } = req.body ?? {};
-    if (!currentPassword || !newPassword) {
-      return res
-        .status(400)
-        .json({ message: "Current and new passwords are required." });
-    }
-    if (String(newPassword).length < 10) {
-      return res
-        .status(400)
-        .json({ message: "New password must be at least 10 characters." });
-    }
+    const parsed = changePasswordSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: "Provide the current password and a new password of 10–200 characters." });
+    const { currentPassword, newPassword } = parsed.data;
 
     const admin = await prisma.admin.findUnique({ where: { id: req.adminId } });
     const ok = admin && (await bcrypt.compare(String(currentPassword), admin.passwordHash));
@@ -114,6 +116,59 @@ router.get("/me", requireAuth, async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+/* ----------------------------- CV manager ----------------------------- */
+
+router.get("/cv", requireAuth, async (_req, res, next) => {
+  try {
+    const [configuration, catalog] = await Promise.all([
+      getOrCreateCvConfiguration(), getCvCatalog(),
+    ]);
+    res.json({ configuration: { ...configuration, header: normalizeHeader(configuration.header), application: normalizeMode(configuration.application), master: normalizeMode(configuration.master) }, catalog });
+  } catch (error) { next(error); }
+});
+
+router.put("/cv", requireAuth, async (req, res, next) => {
+  try {
+    const parsed = cvMutationSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid CV configuration.") });
+    const body = parsed.data;
+    const invalidDate = (value, allowPresent = false) => value && !(allowPresent && /^present$/i.test(String(value).trim())) && !/^\d{4}-(?:[1-9]|0[1-9]|1[0-2])$/.test(String(value).trim());
+    for (const modeName of ["application", "master"]) {
+      for (const group of ["experienceOverrides", "educationOverrides", "certificationOverrides"]) {
+        for (const item of Object.values(body[modeName]?.[group] ?? {})) {
+          if (invalidDate(item?.startDate) || invalidDate(item?.endDate, true)) return res.status(400).json({ message: "Dates must use YYYY-MM (for example 2026-05); an end date may also be Present." });
+          if (item?.isCurrent && item?.endDate && !/^present$/i.test(String(item.endDate).trim())) return res.status(400).json({ message: "Current entries cannot also have a dated end date." });
+        }
+      }
+    }
+    const configuration = await prisma.cvConfiguration.upsert({
+      where: { id: "default" },
+      create: {
+        id: "default",
+        professionalSummary: typeof body.professionalSummary === "string" ? body.professionalSummary.trim().slice(0, 4000) || null : null,
+        header: normalizeHeader(body.header), application: normalizeMode(body.application), master: normalizeMode(body.master),
+      },
+      update: {
+        professionalSummary: typeof body.professionalSummary === "string" ? body.professionalSummary.trim().slice(0, 4000) || null : null,
+        header: normalizeHeader(body.header), application: normalizeMode(body.application), master: normalizeMode(body.master),
+      },
+    });
+    res.json(configuration);
+  } catch (error) { next(error); }
+});
+
+router.get("/cv/:mode.pdf", requireAuth, async (req, res, next) => {
+  try {
+    const mode = req.params.mode === "master" ? "master" : "application";
+    const origin = `${req.protocol}://${req.get("host")}`;
+    const buffer = await generateCvPdfBuffer({ origin, mode });
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", `${req.query.download === "1" ? "attachment" : "inline"}; filename="CV-${mode}.pdf"`);
+    res.setHeader("Cache-Control", "private, no-store");
+    res.send(buffer);
+  } catch (error) { next(error); }
 });
 
 /* ------------------------------ Analytics ------------------------------ */
@@ -183,16 +238,23 @@ function profileScalars(body) {
 
 function nestedExperience(profile, input) {
   const existingIds = new Set(profile.experience.map((item) => item.id));
-  const rows = input.map((item, index) => ({
+  const rows = input.map((item, index) => {
+    const role = str(item?.role ?? item?.milestone)?.trim() ?? "";
+    const company = str(item?.company ?? item?.facility)?.trim() ?? "";
+    const description = str(item?.description ?? item?.details)?.trim() ?? "";
+    const startDate = str(item?.startDate)?.trim() || null;
+    const isCurrent = Boolean(item?.isCurrent);
+    const endDate = isCurrent ? null : str(item?.endDate)?.trim() || null;
+    const displayDate = [startDate, isCurrent ? "Present" : endDate].filter(Boolean).join(" – ");
+    return {
     id: existingIds.has(item?.id) ? item.id : null,
     data: {
-      milestone: str(item?.milestone)?.trim() ?? "",
-      facility: str(item?.facility)?.trim() ?? "",
-      meta: str(item?.meta)?.trim() ?? "",
-      details: str(item?.details)?.trim() ?? "",
+      role, company, description, startDate, endDate, isCurrent,
+      location: str(item?.location)?.trim() || null,
+      milestone: role, facility: company, meta: displayDate, details: description,
       order: index,
     },
-  }));
+  }; });
   const retainedIds = rows.flatMap((item) => (item.id ? [item.id] : []));
 
   return {
@@ -241,7 +303,14 @@ router.patch("/profile", requireAuth, async (req, res, next) => {
     const profile = await prisma.profile.findFirst({ include: profileInclude });
     if (!profile) return res.status(404).json({ message: "Profile not found." });
 
-    const body = req.body ?? {};
+    const parsed = profileMutationSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid profile data.") });
+    const body = parsed.data;
+    if (Array.isArray(body.experience)) {
+      const validDate = (value) => !value || /^\d{4}-(0[1-9]|1[0-2])$/.test(String(value));
+      const invalid = body.experience.find((item) => !validDate(item?.startDate) || !validDate(item?.endDate) || (item?.isCurrent && item?.endDate));
+      if (invalid) return res.status(400).json({ message: "Experience dates must use YYYY-MM, and current roles cannot have an end date." });
+    }
     const data = profileScalars(body);
 
     if (Array.isArray(body.experience)) {
@@ -284,6 +353,12 @@ const projectFields = (body) => ({
   visual:
     body.visual !== undefined ? normalizeProjectAccent(body.visual) : undefined,
   order: body.order !== undefined ? Number(body.order) || 0 : undefined,
+  coverImage: body.coverImage !== undefined ? str(body.coverImage) : undefined,
+  screenshots: body.screenshots !== undefined ? strArr(body.screenshots) : undefined,
+  myRole: body.myRole !== undefined ? str(body.myRole) : undefined,
+  contributions: body.contributions !== undefined ? strArr(body.contributions) : undefined,
+  ownership: body.ownership !== undefined ? str(body.ownership) : undefined,
+  teamSize: body.teamSize === undefined ? undefined : body.teamSize === null ? null : Number(body.teamSize),
 });
 
 router.get("/projects", requireAuth, async (_req, res, next) => {
@@ -299,6 +374,7 @@ router.get("/projects", requireAuth, async (_req, res, next) => {
 
 router.get("/projects/:slug", requireAuth, async (req, res, next) => {
   try {
+    if (!slugSchema.safeParse(req.params.slug).success) return res.status(400).json({ message: "Invalid project identifier." });
     const project = await prisma.project.findUnique({
       where: { slug: req.params.slug },
     });
@@ -313,17 +389,14 @@ router.get("/projects/:slug", requireAuth, async (req, res, next) => {
 
 router.post("/projects", requireAuth, async (req, res, next) => {
   try {
-    const body = req.body ?? {};
+    const parsed = projectMutationSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid project data or URL.") });
+    const body = parsed.data;
     if (!body.name?.trim()) {
       return res.status(400).json({ message: "Project name is required." });
     }
     if (!body.type?.trim()) {
       return res.status(400).json({ message: "Project type is required." });
-    }
-    if (!hasValidProjectAccent(body)) {
-      return res.status(400).json({
-        message: "Accent color must be a six-digit hex value, such as #5966A0.",
-      });
     }
     const data = projectFields(body);
     if (!data.slug) {
@@ -345,12 +418,11 @@ router.post("/projects", requireAuth, async (req, res, next) => {
 
 router.patch("/projects/:id", requireAuth, async (req, res, next) => {
   try {
-    const body = req.body ?? {};
-    if (!hasValidProjectAccent(body)) {
-      return res.status(400).json({
-        message: "Accent color must be a six-digit hex value, such as #5966A0.",
-      });
-    }
+    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+    const parsed = projectMutationSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid project data or URL.") });
+    if (Object.keys(parsed.data).length === 0) return res.status(400).json({ message: "Provide at least one project field to update." });
+    const body = parsed.data;
     const project = await prisma.project.update({
       where: { id: req.params.id },
       data: projectFields(body),
@@ -363,6 +435,7 @@ router.patch("/projects/:id", requireAuth, async (req, res, next) => {
 
 router.delete("/projects/:id", requireAuth, async (req, res, next) => {
   try {
+    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
     await prisma.project.delete({ where: { id: req.params.id } });
     res.status(204).end();
   } catch (error) {
@@ -383,6 +456,11 @@ function normalizeCrudData(body, { requiredFields, optionalFields }, isPatch) {
   for (const field of [...requiredFields, ...optionalFields]) {
     if (body[field] === undefined) continue;
     const value = str(body[field])?.trim() ?? "";
+    if (value.length > 4000) return { error: `${field} is too long.` };
+    if (field === "url" && value) {
+      try { if (!["http:", "https:"].includes(new URL(value).protocol)) return { error: "url must use http or https." }; }
+      catch { return { error: "url must be a valid URL." }; }
+    }
     if (requiredFields.includes(field)) {
       if (!value) return { error: `${field} is required.` };
       data[field] = value;
@@ -436,6 +514,7 @@ function makeCrudRouter(model, config) {
 
   r.patch("/:id", requireAuth, async (req, res, next) => {
     try {
+      if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
       const body = req.body ?? {};
       const result = normalizeCrudData(body, config, true);
       if ("error" in result) return res.status(400).json({ message: result.error });
@@ -451,6 +530,7 @@ function makeCrudRouter(model, config) {
 
   r.delete("/:id", requireAuth, async (req, res, next) => {
     try {
+      if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
       await model.delete({ where: { id: req.params.id } });
       res.status(204).end();
     } catch (error) {
@@ -492,6 +572,7 @@ router.get("/messages", requireAuth, async (_req, res, next) => {
 
 router.patch("/messages/:id/read", requireAuth, async (req, res, next) => {
   try {
+    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
     const message = await prisma.message.update({
       where: { id: req.params.id },
       data: { read: true },
@@ -504,6 +585,7 @@ router.patch("/messages/:id/read", requireAuth, async (req, res, next) => {
 
 router.delete("/messages/:id", requireAuth, async (req, res, next) => {
   try {
+    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
     await prisma.message.delete({ where: { id: req.params.id } });
     res.status(204).end();
   } catch (error) {

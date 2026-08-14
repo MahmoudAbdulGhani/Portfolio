@@ -6,6 +6,9 @@ interface ProjectVisualProps {
   name: string;
   className?: string;
   showLabel?: boolean;
+  image?: string | null;
+  type?: string;
+  stack?: string[];
 }
 
 export function ProjectVisual({
@@ -13,27 +16,31 @@ export function ProjectVisual({
   name,
   className,
   showLabel = true,
+  image,
+  type,
+  stack = [],
 }: ProjectVisualProps) {
   const accent = normalizeProjectAccent(visual);
+  const initials = name.split(/\s+/).filter(Boolean).map((part) => part[0]).slice(0, 2).join("").toUpperCase();
 
   return (
     <div
       aria-hidden
-      style={{ backgroundColor: accent }}
+      style={{ backgroundColor: image ? undefined : accent }}
       className={cn(
-        "group relative h-44 overflow-hidden",
+        "group relative overflow-hidden",
+        !className && "h-44",
+        image && "project-image-frame",
         className,
       )}
     >
-      <div className="absolute inset-0 opacity-25 bg-grid" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+      {image && <img src={image} alt="" loading="lazy" decoding="async" className="project-cover-image" />}
+      {!image && <div className="project-fallback-cover"><div className="project-fallback-orbit" aria-hidden /><div className="project-fallback-top"><span>{type || "Case study"}</span><span>Selected work</span></div><div className="project-fallback-main"><span className="project-fallback-monogram">{initials}</span><div><strong>{name}</strong><span>{stack.slice(0, 3).join(" · ") || "Project case study"}</span></div></div></div>}
 
-      {showLabel && (
-        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4">
-          <span className="rounded-md bg-black/20 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90">
-            {name}
-          </span>
-          <span className="h-px flex-1 bg-white/25" />
+      {showLabel && image && (
+        <div className="project-cover-title">
+          <span className="project-cover-title-kicker">Project</span>
+          <span className="project-cover-title-name">{name}</span>
         </div>
       )}
     </div>

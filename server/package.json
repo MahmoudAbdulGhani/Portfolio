@@ -12,7 +12,9 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "test:assistant": "node scripts/test-assistant-context.mjs",
-    "test:job-match": "node scripts/test-job-match.mjs"
+    "test:job-match": "node scripts/test-job-match.mjs",
+    "test:security": "node scripts/test-security.mjs",
+    "test:runtime-db": "node scripts/verify-runtime-db.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -24,8 +26,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
+    "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.2",
-    "pdfkit": "^0.19.1"
+    "pdfkit": "^0.19.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "prisma": "^6.12.0",

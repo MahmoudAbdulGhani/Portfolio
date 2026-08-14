@@ -1,14 +1,20 @@
 import { Router } from "express";
 import { prisma } from "../lib/prisma.js";
 import { generateCvPdfBuffer } from "../lib/cv.js";
+import { contactSchema, slugSchema } from "../lib/validation.js";
+import { consumeRateLimit } from "../lib/rate-limit.js";
+import { createHash } from "node:crypto";
+import { getClientIp } from "../lib/client-ip.js";
 
 const router = Router();
 
 router.get("/profile", async (_req, res, next) => {
   try {
     const profile = await prisma.profile.findFirst({
-      include: {
-        experience: { orderBy: { order: "asc" } },
+      select: {
+        id: true, name: true, shortName: true, title: true, tagline: true, bio: true, location: true,
+        email: true, phone: true, photo: true, resumeUrl: true, languages: true, updatedAt: true,
+        experience: { orderBy: { order: "asc" }, select: { id: true, role: true, company: true, description: true, startDate: true, endDate: true, isCurrent: true, location: true, order: true } },
         socials: { orderBy: { id: "asc" } },
       },
     });
@@ -25,6 +31,7 @@ router.get("/projects", async (_req, res, next) => {
       where: { published: true },
       orderBy: [{ order: "asc" }, { createdAt: "asc" }],
     });
+    res.setHeader("Cache-Control", "public, max-age=30, s-maxage=120, stale-while-revalidate=300");
     res.json(projects);
   } catch (error) {
     next(error);
@@ -33,6 +40,7 @@ router.get("/projects", async (_req, res, next) => {
 
 router.get("/projects/:slug", async (req, res, next) => {
   try {
+    if (!slugSchema.safeParse(req.params.slug).success) return res.status(400).json({ message: "Invalid project identifier." });
     const project = await prisma.project.findFirst({
       where: { slug: req.params.slug, published: true },
     });
@@ -95,13 +103,13 @@ router.get("/certifications", async (_req, res, next) => {
 
 router.get("/cv.pdf", async (req, res, next) => {
   try {
+    const limit = await consumeRateLimit(`cv:${getClientIp(req)}`, { limit: 10, windowMs: 10 * 60 * 1000 });
+    if (limit.limited) { res.setHeader("Retry-After", String(limit.retryAfter)); return res.status(429).json({ message: "Too many CV requests. Please try again later." }); }
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin });
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader(
-      "Content-Disposition",
-      'attachment; filename="Mahmoud-Abdul-Ghani-CV.pdf"',
-    );
+    res.setHeader("Content-Disposition", `${req.query.preview === "1" ? "inline" : "attachment"}; filename="Mahmoud-Abdul-Ghani-CV.pdf"`);
+    res.setHeader("Cache-Control", "public, max-age=300");
     res.setHeader("Content-Length", buffer.length);
     res.send(buffer);
   } catch (error) {
@@ -111,24 +119,22 @@ router.get("/cv.pdf", async (req, res, next) => {
 
 router.post("/messages", async (req, res, next) => {
   try {
-    const { name, email, subject, message } = req.body ?? {};
-    if (!name?.trim() || !email?.trim() || !message?.trim()) {
-      return res
-        .status(400)
-        .json({ message: "Name, email and message are required." });
-    }
-    if (typeof email === "string" && email.length > 320) {
-      return res.status(400).json({ message: "Email is too long." });
-    }
+    if (req.body?.website) return res.status(202).json({ message: "Message received." });
+    const parsed = contactSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: "Please provide a valid name, email address, and message." });
+    const clientIp = getClientIp(req);
+    const limit = await consumeRateLimit(`contact:${clientIp}`, { limit: 5, windowMs: 60 * 60 * 1000 });
+    if (limit.limited) { console.warn("[security] contact_rate_limited", { ip: clientIp }); res.setHeader("Retry-After", String(limit.retryAfter)); return res.status(429).json({ message: "Too many messages were sent. Please try again later." }); }
+    const { name, email, subject, message } = parsed.data;
+    const digest = createHash("sha256").update(`${email.toLowerCase()}:${subject}:${message}`).digest("hex");
+    const duplicate = await consumeRateLimit(`contact-duplicate:${clientIp}:${digest}`, { limit: 1, windowMs: 10 * 60 * 1000 });
+    if (duplicate.limited) { console.warn("[security] contact_duplicate", { ip: clientIp }); return res.status(429).json({ message: "This message was already received recently." }); }
     const created = await prisma.message.create({
       data: {
-        name: String(name).trim().slice(0, 120),
-        email: String(email).trim().slice(0, 320),
-        subject: String(subject ?? "").trim().slice(0, 200),
-        message: String(message).trim().slice(0, 5000),
+        name, email, subject, message,
       },
     });
-    res.status(201).json(created);
+    res.status(201).json({ id: created.id, createdAt: created.createdAt });
   } catch (error) {
     next(error);
   }

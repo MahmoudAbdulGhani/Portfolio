@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { FiCheck, FiKey, FiLoader, FiPlus, FiTrash2 } from "react-icons/fi";
 import { useAdminProfile, useChangePassword, useUpdateProfile } from "../../lib/hooks";
-import type { ExperienceItem, Profile, SocialLink } from "../../types";
+import type { Profile, SocialLink } from "../../types";
 
 function toFormState(p: Profile) {
   return {
@@ -15,7 +15,6 @@ function toFormState(p: Profile) {
     phone: p.phone,
     photo: p.photo ?? "",
     languages: p.languages ?? "",
-    experience: p.experience.map((e) => ({ ...e })),
     socials: p.socials.map((s) => ({ ...s })),
   };
 }
@@ -30,7 +29,6 @@ const emptyForm = {
   phone: "",
   photo: "",
   languages: "",
-  experience: [] as ExperienceItem[],
   socials: [] as SocialLink[],
 };
 
@@ -55,21 +53,6 @@ export function Settings() {
 
   const set = <K extends keyof typeof form>(key: K, value: (typeof form)[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
-
-  const setExp = (i: number, key: keyof ExperienceItem, value: string) =>
-    set(
-      "experience",
-      form.experience.map((e, idx) => (idx === i ? { ...e, [key]: value } : e)),
-    );
-
-  const addExp = () =>
-    set("experience", [
-      ...form.experience,
-      { milestone: "", facility: "", meta: "", details: "" },
-    ]);
-
-  const removeExp = (i: number) =>
-    set("experience", form.experience.filter((_, idx) => idx !== i));
 
   const setSocial = (i: number, key: keyof SocialLink, value: string) =>
     set(
@@ -96,7 +79,6 @@ export function Settings() {
         phone: form.phone,
         photo: form.photo || null,
         languages: form.languages,
-        experience: form.experience.filter((x) => x.milestone || x.facility),
         socials: form.socials.filter((x) => x.label),
       },
       {
@@ -156,7 +138,7 @@ export function Settings() {
       <div>
         <h1 className="admin-heading">Settings</h1>
         <p className="mt-1 text-sm text-muted">
-          Update your public profile, experience timeline and social links.
+          Update your public profile and social links.
         </p>
       </div>
 
@@ -252,57 +234,6 @@ export function Settings() {
               onChange={(e) => set("bio", e.target.value)}
             />
           </div>
-        </div>
-
-        <div className="card space-y-4 p-6">
-          <div className="flex items-center justify-between">
-            <h2 className="font-display text-base font-bold text-ink">
-              Experience
-            </h2>
-            <button type="button" onClick={addExp} className="btn-outline btn-sm">
-              <FiPlus size={13} />
-              Add
-            </button>
-          </div>
-
-          {form.experience.map((item, i) => (
-            <div key={i} className="grid grid-cols-1 gap-3 rounded-xl border border-line bg-surface-2 p-4 sm:grid-cols-2">
-              <input
-                className="input"
-                value={item.milestone}
-                onChange={(e) => setExp(i, "milestone", e.target.value)}
-                placeholder="Milestone / role"
-              />
-              <input
-                className="input"
-                value={item.facility}
-                onChange={(e) => setExp(i, "facility", e.target.value)}
-                placeholder="Facility / company"
-              />
-              <input
-                className="input"
-                value={item.meta}
-                onChange={(e) => setExp(i, "meta", e.target.value)}
-                placeholder="Meta (e.g. 2022 — Now)"
-              />
-              <div className="flex items-center gap-2">
-                <input
-                  className="input"
-                  value={item.details}
-                  onChange={(e) => setExp(i, "details", e.target.value)}
-                  placeholder="Short description"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeExp(i)}
-                  className="btn-icon border border-line text-muted hover:border-danger/50 hover:text-danger"
-                  aria-label="Remove"
-                >
-                  <FiTrash2 size={15} />
-                </button>
-              </div>
-            </div>
-          ))}
         </div>
 
         <div className="card space-y-4 p-6">

@@ -1,7 +1,6 @@
 import { PageMeta } from "../components/PageMeta";
 import { Hero } from "../sections/Hero";
 import { About } from "../sections/About";
-import { Technologies } from "../sections/Technologies";
 import { Skills } from "../sections/Skills";
 import { Education } from "../sections/Education";
 import { Certifications } from "../sections/Certifications";
@@ -18,12 +17,11 @@ export function Home() {
       />
       <main>
         <Hero />
+        <FeaturedProjects />
         <About />
-        <Technologies />
         <Skills />
         <Education />
         <Certifications />
-        <FeaturedProjects />
         <HireCta />
         <ContactSection />
       </main>

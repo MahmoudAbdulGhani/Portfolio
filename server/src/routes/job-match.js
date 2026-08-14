@@ -2,6 +2,9 @@ import { createHash } from "node:crypto";
 import { Router } from "express";
 import { generateWithGemini, sendGeminiError } from "../lib/gemini.js";
 import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
+import { consumeRateLimit } from "../lib/rate-limit.js";
+import { jobMatchSchema } from "../lib/validation.js";
+import { getClientIp } from "../lib/client-ip.js";
 
 const router = Router();
 export const MAX_JOB_DESCRIPTION_LENGTH = 8_000;
@@ -9,17 +12,12 @@ const MIN_JOB_DESCRIPTION_LENGTH = 80;
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 4;
 const DUPLICATE_WINDOW_MS = 30_000;
-const requestLog = new Map();
-const duplicateLog = new Map();
-
-function checkRequest(ip, description) {
-  const now = Date.now();
-  const recent = (requestLog.get(ip) ?? []).filter((time) => now - time < WINDOW_MS);
-  if (recent.length >= MAX_REQUESTS) return "rate";
+async function checkRequest(ip, description) {
   const digest = createHash("sha256").update(description.toLowerCase().replace(/\s+/g, " ")).digest("hex");
-  const duplicateKey = `${ip}:${digest}`;
-  if (now - (duplicateLog.get(duplicateKey) ?? 0) < DUPLICATE_WINDOW_MS) return "duplicate";
-  recent.push(now); requestLog.set(ip, recent); duplicateLog.set(duplicateKey, now);
+  const duplicate = await consumeRateLimit(`job-duplicate:${ip}:${digest}`, { limit: 1, windowMs: DUPLICATE_WINDOW_MS });
+  if (duplicate.limited) return "duplicate";
+  const rate = await consumeRateLimit(`job:${ip}`, { limit: MAX_REQUESTS, windowMs: WINDOW_MS });
+  if (rate.limited) return "rate";
   return undefined;
 }
 
@@ -51,12 +49,13 @@ function parseResult(text, context) {
 
 router.post("/", async (req, res, next) => {
   try {
-    const jobDescription = typeof req.body?.jobDescription === "string" ? req.body.jobDescription.trim() : "";
-    if (!jobDescription) return res.status(400).json({ message: "Please paste a job description." });
-    if (jobDescription.length < MIN_JOB_DESCRIPTION_LENGTH) return res.status(400).json({ message: `Please provide at least ${MIN_JOB_DESCRIPTION_LENGTH} characters so the role can be assessed accurately.` });
-    if (jobDescription.length > MAX_JOB_DESCRIPTION_LENGTH) return res.status(400).json({ message: `Job descriptions must be ${MAX_JOB_DESCRIPTION_LENGTH.toLocaleString()} characters or fewer.` });
-    const requestIssue = checkRequest(req.ip || "unknown", jobDescription);
+    const parsed = jobMatchSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return res.status(400).json({ message: `Job descriptions must contain ${MIN_JOB_DESCRIPTION_LENGTH}–${MAX_JOB_DESCRIPTION_LENGTH.toLocaleString()} characters.` });
+    const { jobDescription } = parsed.data;
+    const clientIp = getClientIp(req);
+    const requestIssue = await checkRequest(clientIp, jobDescription);
     if (requestIssue) {
+      console.warn("[security] job_match_rate_limited", { ip: clientIp, reason: requestIssue });
       res.setHeader("Retry-After", requestIssue === "duplicate" ? "30" : "60");
       return res.status(429).json({ message: requestIssue === "duplicate" ? "This job description was just analyzed. Please wait before submitting it again." : "Too many match requests. Please wait a minute and try again." });
     }

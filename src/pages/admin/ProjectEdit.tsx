@@ -43,6 +43,12 @@ type FormState = {
   featured: boolean;
   published: boolean;
   visual: string;
+  coverImage: string;
+  screenshots: string[];
+  myRole: string;
+  contributions: string[];
+  ownership: string;
+  teamSize: number | null;
   order: number;
 };
 
@@ -64,6 +70,7 @@ const emptyForm: FormState = {
   featured: false,
   published: true,
   visual: DEFAULT_PROJECT_ACCENT,
+  coverImage: "", screenshots: [], myRole: "", contributions: [], ownership: "", teamSize: null,
   order: 99,
 };
 
@@ -86,6 +93,8 @@ function toFormState(p: Project): FormState {
     featured: p.featured,
     published: p.published,
     visual: normalizeProjectAccent(p.visual),
+    coverImage: p.coverImage ?? "", screenshots: p.screenshots ?? [], myRole: p.myRole ?? "",
+    contributions: p.contributions ?? [], ownership: p.ownership ?? "", teamSize: p.teamSize ?? null,
     order: p.order,
   };
 }
@@ -178,6 +187,16 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
 
     if (!isProjectAccent(form.visual)) {
       setError("Accent color must be a six-digit hex value, such as #5966A0.");
+      return;
+    }
+
+    const validAssetPath = (value: string) => /^https?:\/\//i.test(value) || /^\/(?!\/)[^\s]+$/.test(value);
+    if (form.coverImage && !validAssetPath(form.coverImage)) {
+      setError("Cover image must be a full URL or a public path such as /projects/lobby/cover.webp.");
+      return;
+    }
+    if (form.screenshots.some((value) => !validAssetPath(value))) {
+      setError("Put one screenshot path on each line. Each path must start with / or http(s)://.");
       return;
     }
 
@@ -460,6 +479,15 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="card space-y-5 p-6">
+          <h2 className="font-display text-base font-bold text-ink">Media &amp; personal contribution</h2>
+          <div><label htmlFor="p-cover" className="field-label">Project cover image URL or public path</label><input id="p-cover" type="text" className="input font-mono text-xs" value={form.coverImage} onChange={(e) => set("coverImage", e.target.value.trim())} placeholder="/projects/lobby/cover.webp" /></div>
+          <div><label htmlFor="p-screenshots" className="field-label">Screenshot URLs or public paths — one per line</label><textarea id="p-screenshots" className="textarea min-h-24 font-mono text-xs" value={form.screenshots.join("\n")} onChange={(e) => set("screenshots", splitLines(e.target.value))} placeholder={"/projects/lobby/friends.webp\n/projects/lobby/audio-room.webp\n/projects/lobby/community-chat.webp"} /><p className="mt-1 text-xs text-faint">Files inside public/projects are entered as /projects/… paths.</p></div>
+          <div className="grid gap-4 sm:grid-cols-2"><div><label htmlFor="p-role" className="field-label">My role</label><input id="p-role" className="input" value={form.myRole} onChange={(e) => set("myRole", e.target.value)} placeholder="e.g. Full-Stack Developer" /></div><div><label htmlFor="p-team-size" className="field-label">Team size</label><input id="p-team-size" type="number" min="1" className="input" value={form.teamSize ?? ""} onChange={(e) => set("teamSize", e.target.value ? Number(e.target.value) : null)} /></div></div>
+          <div><label htmlFor="p-ownership" className="field-label">What I personally owned</label><textarea id="p-ownership" className="textarea min-h-20" value={form.ownership} onChange={(e) => set("ownership", e.target.value)} /></div>
+          <div><label htmlFor="p-contributions" className="field-label">My contributions — one per line</label><textarea id="p-contributions" className="textarea min-h-28" value={form.contributions.join("\n")} onChange={(e) => set("contributions", splitLines(e.target.value))} /></div>
         </div>
 
         <div className="card space-y-5 p-6">

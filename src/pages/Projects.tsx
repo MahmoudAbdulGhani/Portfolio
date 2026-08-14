@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useProjects } from "../lib/hooks";
 import { PageMeta } from "../components/PageMeta";
 import { ProjectCard } from "../components/ProjectCard";
+import { ProjectCardSkeleton } from "../components/ProjectCardSkeleton";
 import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../lib/format";
 import { AnimatePresence, motion } from "framer-motion";
@@ -15,7 +16,7 @@ const filters = [
 type FilterId = (typeof filters)[number]["id"];
 
 export function Projects() {
-  const { data: projects } = useProjects();
+  const { data: projects, isLoading, isError, refetch } = useProjects();
   const [filter, setFilter] = useState<FilterId>("all");
 
   const filtered = useMemo(() => {
@@ -31,7 +32,7 @@ export function Projects() {
         title="Projects"
         description="Full-stack projects by Mahmoud Abdul Ghani — reservations with payments, real-time communication, university management, clinic systems and more."
       />
-      <main className="min-h-[60vh] pt-24 sm:pt-28">
+      <main className="min-h-[60vh] pb-20 pt-24 sm:pb-28 sm:pt-28">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
@@ -60,12 +61,15 @@ export function Projects() {
             </div>
           </div>
 
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint">
+          <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint" aria-live="polite">
+            {isLoading ? "Loading projects…" : <>
             showing {filtered.length} {filtered.length === 1 ? "project" : "projects"}
             {filter === "unrwa" ? " — The Digital Hub by UNRWA" : filter === "personal" ? " — personal work" : ""}
+            </>}
           </p>
 
           <motion.div layout className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {isLoading && Array.from({ length: 6 }, (_, index) => <ProjectCardSkeleton key={index} />)}
             <AnimatePresence mode="popLayout" initial={false}>
               {filtered.map((project, i) => (
                 <motion.div
@@ -82,7 +86,7 @@ export function Projects() {
             </AnimatePresence>
           </motion.div>
 
-          {filtered.length === 0 && (
+          {!isLoading && !isError && filtered.length === 0 && (
             <div className="mt-4 rounded-xl border border-dashed border-line bg-surface-2/40 p-14 text-center">
               <p className="text-sm font-semibold text-ink">No projects in this category yet</p>
               <p className="mt-1 text-sm text-muted">
@@ -90,6 +94,7 @@ export function Projects() {
               </p>
             </div>
           )}
+          {!isLoading && isError && <div role="alert" className="mt-4 rounded-xl border border-danger/25 bg-danger/5 p-10 text-center"><p className="text-sm font-semibold text-ink">Projects are temporarily unavailable</p><p className="mt-1 text-sm text-muted">Please try again in a moment.</p><button type="button" onClick={() => void refetch()} className="btn-outline mt-5">Try again</button></div>}
         </div>
       </main>
     </>
