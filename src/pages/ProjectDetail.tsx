@@ -159,7 +159,7 @@ export function ProjectDetail() {
               </div>
 
               <div className="min-w-0 lg:col-span-5">
-                {project.coverImage ? <button type="button" onClick={() => setActiveImage(0)} className="project-detail-cover block w-full overflow-hidden rounded-xl text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:rounded-2xl" aria-label={`View ${project.name} cover image full screen`}><ProjectVisual visual={project.visual} name={project.name} image={project.coverImage} type={project.type} stack={project.stack} className="aspect-video h-auto" /></button> : <ProjectVisual visual={project.visual} name={project.name} type={project.type} stack={project.stack} className="aspect-video h-auto rounded-xl sm:rounded-2xl" />}
+                {project.coverImage ? <button type="button" onClick={() => setActiveImage(0)} className="project-detail-cover block w-full overflow-hidden rounded-xl text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:rounded-2xl" aria-label={`View ${project.name} cover image full screen`}><ProjectVisual visual={project.visual} name={project.name} image={project.coverImage} type={project.type} stack={project.stack} priority className="aspect-video h-auto" /></button> : <ProjectVisual visual={project.visual} name={project.name} type={project.type} stack={project.stack} className="aspect-video h-auto rounded-xl sm:rounded-2xl" />}
               </div>
             </div>
           </Reveal>

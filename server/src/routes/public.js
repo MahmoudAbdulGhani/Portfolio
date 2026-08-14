@@ -8,6 +8,29 @@ import { getClientIp } from "../lib/client-ip.js";
 
 const router = Router();
 
+const xml = (value) => String(value).replace(/[<>&'\"]/g, (character) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '\"': "&quot;" })[character]);
+
+router.get("/robots.txt", (req, res) => {
+  const origin = `${req.protocol}://${req.get("host")}`;
+  res.type("text/plain").set("Cache-Control", "public, max-age=3600, s-maxage=86400").send([
+    "User-agent: *", "Allow: /", "Disallow: /admin", "Disallow: /login", `Sitemap: ${origin}/sitemap.xml`, "",
+  ].join("\n"));
+});
+
+router.get("/sitemap.xml", async (req, res, next) => {
+  try {
+    const origin = `${req.protocol}://${req.get("host")}`;
+    const projects = await prisma.project.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } });
+    const fixed = ["/", "/projects", "/contact", "/job-match", "/cv"];
+    const urls = [
+      ...fixed.map((path) => ({ path })),
+      ...projects.map((project) => ({ path: `/projects/${project.slug}`, updatedAt: project.updatedAt })),
+    ];
+    const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(({ path, updatedAt }) => `  <url><loc>${xml(`${origin}${path}`)}</loc>${updatedAt ? `<lastmod>${updatedAt.toISOString()}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
+    res.type("application/xml").set("Cache-Control", "public, max-age=3600, s-maxage=86400").send(body);
+  } catch (error) { next(error); }
+});
+
 router.get("/profile", async (_req, res, next) => {
   try {
     const profile = await prisma.profile.findFirst({

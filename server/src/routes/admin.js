@@ -125,7 +125,12 @@ router.get("/cv", requireAuth, async (_req, res, next) => {
     const [configuration, catalog] = await Promise.all([
       getOrCreateCvConfiguration(), getCvCatalog(),
     ]);
-    res.json({ configuration: { ...configuration, header: normalizeHeader(configuration.header), application: normalizeMode(configuration.application), master: normalizeMode(configuration.master) }, catalog });
+    res.json({ configuration: {
+      professionalSummary: configuration.professionalSummary,
+      header: normalizeHeader(configuration.header),
+      application: normalizeMode(configuration.application),
+      master: normalizeMode(configuration.master),
+    }, catalog });
   } catch (error) { next(error); }
 });
 

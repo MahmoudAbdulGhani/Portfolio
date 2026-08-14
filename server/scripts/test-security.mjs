@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { app, prisma } from "../src/app.js";
 import { contactSchema, cvMutationSchema, profileMutationSchema, projectMutationSchema } from "../src/lib/validation.js";
 import { consumeRateLimit, rateLimitStorageKey } from "../src/lib/rate-limit.js";
+import { normalizeMode } from "../src/lib/cv-config.js";
 import { AUTH_COOKIE, getAuthenticatedAdminId, setAuthCookie, signToken } from "../src/middleware/auth.js";
 import jwt from "jsonwebtoken";
 
@@ -22,6 +23,12 @@ try {
   assert.equal(app.get("trust proxy"), false);
   assert.equal((await request("/api/health", { headers: { origin: "https://attacker.example" } })).headers.get("access-control-allow-origin"), null);
   assert.equal((await request("/api/health", { headers: { origin: "http://localhost:5173" } })).headers.get("access-control-allow-origin"), "http://localhost:5173");
+  const robots = await request("/api/robots.txt");
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /Disallow: \/admin/);
+  const sitemap = await request("/api/sitemap.xml");
+  assert.equal(sitemap.status, 200);
+  assert.match(await sitemap.text(), /<urlset[\s>]/);
 
   const previousNodeEnv = process.env.NODE_ENV;
   process.env.NODE_ENV = "production";
@@ -53,6 +60,11 @@ try {
   assert.ok(admin);
   const authHeaders = { "content-type": "application/json", origin: base, cookie: `${AUTH_COOKIE}=${encodeURIComponent(signToken(admin.id))}` };
   assert.equal((await request("/api/admin/projects", { headers: { cookie: authHeaders.cookie } })).status, 200);
+  const cvResponse = await request("/api/admin/cv", { headers: { cookie: authHeaders.cookie } });
+  assert.equal(cvResponse.status, 200);
+  const cvPayload = await cvResponse.json();
+  assert.deepEqual(Object.keys(cvPayload.configuration).sort(), ["application", "header", "master", "professionalSummary"]);
+  assert.equal((await request("/api/admin/cv", { method: "PUT", headers: authHeaders, body: JSON.stringify(cvPayload.configuration) })).status, 200);
   assert.equal((await request("/api/admin/projects/not-an-id!", { method: "DELETE", headers: authHeaders, body: "{}" })).status, 400);
   const existingProject = await prisma.project.findFirst({ select: { id: true } });
   assert.ok(existingProject);
@@ -83,6 +95,8 @@ try {
   const cv = await prisma.cvConfiguration.findUnique({ where: { id: "default" } });
   assert.ok(cv);
   assert.equal(cvMutationSchema.safeParse({ professionalSummary: cv.professionalSummary, header: cv.header, application: cv.application, master: cv.master }).success, true);
+  assert.deepEqual(normalizeMode({ cvOnlySkills: [{ id: "cv-audit", name: "  Security testing  ", category: " Quality " }] }).cvOnlySkills,
+    [{ id: "cv-audit", name: "Security testing", category: "Quality" }]);
 
   const limitKey = `security-test:${Date.now()}`;
   assert.equal((await consumeRateLimit(limitKey, { limit: 1, windowMs: 60_000 })).limited, false);

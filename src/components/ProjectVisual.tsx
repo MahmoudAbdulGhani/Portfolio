@@ -9,6 +9,7 @@ interface ProjectVisualProps {
   image?: string | null;
   type?: string;
   stack?: string[];
+  priority?: boolean;
 }
 
 export function ProjectVisual({
@@ -19,6 +20,7 @@ export function ProjectVisual({
   image,
   type,
   stack = [],
+  priority = false,
 }: ProjectVisualProps) {
   const accent = normalizeProjectAccent(visual);
   const initials = name.split(/\s+/).filter(Boolean).map((part) => part[0]).slice(0, 2).join("").toUpperCase();
@@ -34,7 +36,7 @@ export function ProjectVisual({
         className,
       )}
     >
-      {image && <img src={image} alt="" loading="lazy" decoding="async" className="project-cover-image" />}
+      {image && <img src={image} alt="" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} decoding="async" className="project-cover-image" />}
       {!image && <div className="project-fallback-cover"><div className="project-fallback-orbit" aria-hidden /><div className="project-fallback-top"><span>{type || "Case study"}</span><span>Selected work</span></div><div className="project-fallback-main"><span className="project-fallback-monogram">{initials}</span><div><strong>{name}</strong><span>{stack.slice(0, 3).join(" · ") || "Project case study"}</span></div></div></div>}
 
       {showLabel && image && (
