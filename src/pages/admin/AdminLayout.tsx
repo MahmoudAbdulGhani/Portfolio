@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   FiArrowLeft,
   FiAward,
@@ -21,6 +21,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAuth, useLogout, useMessages } from "../../lib/hooks";
 import { Logo } from "../../components/Logo";
 import { PageMeta } from "../../components/PageMeta";
+import { ThemeToggle } from "../../components/ThemeToggle";
 import { cn } from "../../lib/format";
 import type { AuthUser } from "../../types";
 
@@ -160,10 +161,19 @@ function SidebarContent({
 
 export function AdminLayout() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const auth = useAuth();
   const { data: messages } = useMessages(auth.isSuccess);
   const [mobileNav, setMobileNav] = useState(false);
   const unread = (messages ?? []).filter((m) => !m.read).length;
+  const segments = pathname.split("/").filter(Boolean).slice(1);
+  const currentLabel = segments.length
+    ? segments[segments.length - 1] === "edit"
+      ? "Edit project"
+      : segments[segments.length - 1] === "new"
+        ? "New project"
+        : segments[segments.length - 1].replaceAll("-", " ")
+    : "Dashboard";
 
   useEffect(() => {
     if (auth.isError) {
@@ -251,7 +261,7 @@ export function AdminLayout() {
         </AnimatePresence>
 
         <div className="flex min-w-0 flex-1 flex-col lg:pl-64">
-          <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-line bg-bg/85 px-4 backdrop-blur-xl sm:px-6 lg:px-8">
+          <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-line bg-bg/92 px-4 backdrop-blur-xl sm:px-6 lg:px-8">
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -265,8 +275,14 @@ export function AdminLayout() {
               <span className="font-display text-sm font-bold text-ink lg:hidden">
                 Admin
               </span>
+              <div className="hidden items-center gap-2 text-xs sm:flex lg:flex">
+                <Link to="/admin/dashboard" className="text-faint hover:text-ink">Admin</Link>
+                <span aria-hidden="true" className="text-line-strong">/</span>
+                <span className="max-w-48 truncate font-semibold capitalize text-muted" aria-current="page">{currentLabel}</span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <Link
                 to="/"
                 className="btn-ghost btn-sm"

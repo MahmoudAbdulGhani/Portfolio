@@ -10,6 +10,7 @@ import {
 } from "react-icons/fi";
 import { ConfirmDialog } from "../ConfirmDialog";
 import { AnimatePresence, motion } from "framer-motion";
+import { AdminPageHeader } from "./AdminPageHeader";
 
 export interface CrudField {
   key: string;
@@ -193,12 +194,10 @@ export function CrudList<T extends { id: string }>({
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="admin-heading">{title}</h1>
-          <p className="mt-1.5 text-sm text-muted">{subtitle}</p>
-        </div>
-        {!showForm && (
+      <AdminPageHeader
+        title={title}
+        description={subtitle}
+        actions={!showForm ? (
           <button
             type="button"
             onClick={openCreate}
@@ -207,8 +206,8 @@ export function CrudList<T extends { id: string }>({
             <FiPlus size={15} />
             Add
           </button>
-        )}
-      </div>
+        ) : undefined}
+      />
 
       <AnimatePresence initial={false}>
       {showForm && (

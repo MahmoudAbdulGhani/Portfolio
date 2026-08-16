@@ -200,6 +200,29 @@
     @apply font-display text-2xl font-bold leading-tight tracking-tight text-ink sm:text-3xl;
   }
 
+  .admin-page-header {
+    @apply flex flex-col gap-4 border-b border-line pb-5 sm:flex-row sm:items-end sm:justify-between;
+  }
+
+  .admin-page-actions {
+    @apply flex shrink-0 flex-wrap items-center gap-2;
+  }
+
+  .admin-eyebrow {
+    @apply mb-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-accent;
+  }
+
+  .admin-scroll-table {
+    scrollbar-color: var(--border-strong) transparent;
+    scrollbar-width: thin;
+  }
+
+  @media (max-width: 639px) {
+    .admin-page-actions > :is(a, button) {
+      @apply flex-1;
+    }
+  }
+
   .text-gradient {
     background-image: linear-gradient(95deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text;

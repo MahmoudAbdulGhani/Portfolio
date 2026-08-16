@@ -13,6 +13,7 @@ import { cn, formatDate } from "../../lib/format";
 import { ProjectVisual } from "../../components/ProjectVisual";
 import { ConfirmDialog } from "../../components/ConfirmDialog";
 import type { Project } from "../../types";
+import { AdminPageHeader } from "../../components/admin/AdminPageHeader";
 
 function ProjectTableSkeleton() {
   return (
@@ -64,18 +65,12 @@ export function AdminProjects() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="admin-heading">Projects</h1>
-          <p className="mt-1.5 text-sm text-muted">
-            Create, edit, publish or remove portfolio projects.
-          </p>
-        </div>
-        <Link to="/admin/projects/new" className="btn-primary btn-sm self-start">
+      <AdminPageHeader title="Projects" description="Create, edit, publish or remove portfolio projects." actions={
+        <Link to="/admin/projects/new" className="btn-primary btn-sm">
           <FiPlus size={15} />
           New project
         </Link>
-      </div>
+      } />
 
       {error && projects && (
         <div role="status" className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-danger/25 bg-danger/5 px-4 py-3 text-sm text-muted">

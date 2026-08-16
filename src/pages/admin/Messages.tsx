@@ -21,12 +21,50 @@ export function Messages() {
   const del = useDeleteMessage();
   const [openId, setOpenId] = useState<string | null>(null);
   const [pendingDelete, setPendingDelete] = useState<Message | null>(null);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [confirmBulkDelete, setConfirmBulkDelete] = useState(false);
+  const [bulkAction, setBulkAction] = useState<"read" | "delete" | null>(null);
 
   const sorted = [...(messages ?? [])].sort(
     (a, b) =>
       new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
   );
   const unread = sorted.filter((m) => !m.read).length;
+  const allSelected = sorted.length > 0 && selected.size === sorted.length;
+  const selectedUnread = sorted.filter((m) => selected.has(m.id) && !m.read);
+
+  const toggleSelected = (id: string) => {
+    setSelected((current) => {
+      const next = new Set(current);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const markSelectedRead = async () => {
+    if (selectedUnread.length === 0) return;
+    setBulkAction("read");
+    try {
+      await Promise.all(selectedUnread.map((message) => markRead.mutateAsync(message.id)));
+      setSelected(new Set());
+    } finally {
+      setBulkAction(null);
+    }
+  };
+
+  const deleteSelected = async () => {
+    const ids = [...selected];
+    if (ids.length === 0) return;
+    setBulkAction("delete");
+    try {
+      await Promise.all(ids.map((id) => del.mutateAsync(id)));
+      setSelected(new Set());
+      setConfirmBulkDelete(false);
+    } finally {
+      setBulkAction(null);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -68,6 +106,38 @@ export function Messages() {
         </div>
       ) : (
         <div className="space-y-3">
+          <div className="sticky top-20 z-20 flex flex-col gap-3 rounded-xl border border-line bg-surface/95 p-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+            <label className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-ink">
+              <input
+                type="checkbox"
+                checked={allSelected}
+                ref={(input) => { if (input) input.indeterminate = selected.size > 0 && !allSelected; }}
+                onChange={() => setSelected(allSelected ? new Set() : new Set(sorted.map((message) => message.id)))}
+                className="h-4 w-4 accent-[var(--color-accent)]"
+              />
+              {selected.size > 0 ? `${selected.size} selected` : "Select all messages"}
+            </label>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => void markSelectedRead()}
+                disabled={selectedUnread.length === 0 || bulkAction !== null}
+                className="btn-outline btn-sm flex-1 sm:flex-none"
+              >
+                {bulkAction === "read" ? <FiLoader className="animate-spin" /> : <FiCheck />}
+                Mark as read
+              </button>
+              <button
+                type="button"
+                onClick={() => setConfirmBulkDelete(true)}
+                disabled={selected.size === 0 || bulkAction !== null}
+                className="btn-ghost-danger btn-sm flex-1 sm:flex-none"
+              >
+                {bulkAction === "delete" ? <FiLoader className="animate-spin" /> : <FiTrash2 />}
+                Delete
+              </button>
+            </div>
+          </div>
           {sorted.map((msg) => {
             const open = openId === msg.id;
             const readPending = markRead.isPending && markRead.variables === msg.id;
@@ -80,12 +150,21 @@ export function Messages() {
                   !msg.read && "border-accent/30",
                 )}
               >
-                <button
-                  type="button"
-                  onClick={() => setOpenId(open ? null : msg.id)}
-                  aria-expanded={open}
-                  className="flex w-full items-center justify-between gap-4 p-5 text-left"
-                >
+                <div className="flex items-stretch">
+                  <label className="grid shrink-0 cursor-pointer place-items-center py-5 pl-5" aria-label={`Select message from ${msg.name}`}>
+                    <input
+                      type="checkbox"
+                      checked={selected.has(msg.id)}
+                      onChange={() => toggleSelected(msg.id)}
+                      className="h-4 w-4 accent-[var(--color-accent)]"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setOpenId(open ? null : msg.id)}
+                    aria-expanded={open}
+                    className="flex min-w-0 flex-1 items-center justify-between gap-4 p-5 text-left"
+                  >
                   <div className="flex min-w-0 items-center gap-3">
                     {!msg.read ? (
                       <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
@@ -118,7 +197,8 @@ export function Messages() {
                       )}
                     />
                   </span>
-                </button>
+                  </button>
+                </div>
 
                 {open && (
                   <div className="border-t border-line px-5 py-4">
@@ -143,7 +223,10 @@ export function Messages() {
                       )}
                       <button
                         type="button"
-                        onClick={() => setPendingDelete(msg)}
+                        onClick={() => {
+                          if (selected.size > 0) setConfirmBulkDelete(true);
+                          else setPendingDelete(msg);
+                        }}
                         disabled={deletePending}
                         className="btn-ghost-danger btn-sm"
                       >
@@ -152,7 +235,7 @@ export function Messages() {
                         ) : (
                           <FiTrash2 size={14} />
                         )}
-                        Delete
+                        {selected.size > 0 ? `Delete selected (${selected.size})` : "Delete"}
                       </button>
                     </div>
                   </div>
@@ -171,9 +254,24 @@ export function Messages() {
         onCancel={() => setPendingDelete(null)}
         onConfirm={() => {
           if (pendingDelete) {
-            del.mutate(pendingDelete.id, { onSettled: () => setPendingDelete(null) });
+            del.mutate(pendingDelete.id, { onSettled: () => {
+              setSelected((current) => {
+                const next = new Set(current);
+                next.delete(pendingDelete.id);
+                return next;
+              });
+              setPendingDelete(null);
+            } });
           }
         }}
+      />
+      <ConfirmDialog
+        open={confirmBulkDelete}
+        title={`Delete ${selected.size} selected message${selected.size === 1 ? "" : "s"}?`}
+        description="The selected messages will be permanently removed. This cannot be undone."
+        confirmLabel={bulkAction === "delete" ? "Deleting..." : "Delete messages"}
+        onCancel={() => setConfirmBulkDelete(false)}
+        onConfirm={() => void deleteSelected()}
       />
     </div>
   );
