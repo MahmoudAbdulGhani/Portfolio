@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft, FiCheck, FiLoader } from "react-icons/fi";
@@ -140,6 +140,18 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [hydratedFor, setHydratedFor] = useState<string | null>(null);
   const [error, setError] = useState("");
+  const saving = create.isPending || update.isPending;
+  const initialForm = !isNew && existing ? toFormState(existing) : emptyForm;
+  const hasUnsavedChanges = JSON.stringify(form) !== JSON.stringify(initialForm);
+
+  useEffect(() => {
+    const warnBeforeUnload = (event: BeforeUnloadEvent) => {
+      if (!hasUnsavedChanges || saving) return;
+      event.preventDefault();
+    };
+    window.addEventListener("beforeunload", warnBeforeUnload);
+    return () => window.removeEventListener("beforeunload", warnBeforeUnload);
+  }, [hasUnsavedChanges, saving]);
 
   if (!isNew && existing && hydratedFor !== projectKey) {
     setHydratedFor(projectKey);
@@ -225,7 +237,6 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
     }
   };
 
-  const saving = create.isPending || update.isPending;
   const accentPreview = normalizeProjectAccent(form.visual);
 
   return (
@@ -483,7 +494,13 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
 
         <div className="card space-y-5 p-6">
           <h2 className="font-display text-base font-bold text-ink">Media &amp; personal contribution</h2>
-          <div><label htmlFor="p-cover" className="field-label">Project cover image URL or public path</label><input id="p-cover" type="text" className="input font-mono text-xs" value={form.coverImage} onChange={(e) => set("coverImage", e.target.value.trim())} placeholder="/projects/lobby/cover.webp" /></div>
+          <div>
+            <label htmlFor="p-cover" className="field-label">Cover image</label>
+            {form.coverImage && <img src={form.coverImage} alt="Current project cover preview" className="mb-3 aspect-video w-full max-w-sm rounded-lg border border-line bg-surface-2 object-cover" />}
+            <div className="flex gap-2"><input id="p-cover" type="text" className="input min-w-0 font-mono text-xs" value={form.coverImage} onChange={(e) => set("coverImage", e.target.value.trim())} placeholder="/projects/lobby/cover.webp" />{form.coverImage && <button type="button" className="btn-ghost btn-sm text-danger" onClick={() => set("coverImage", "")}>Remove</button>}</div>
+            <p className="mt-1 text-xs text-faint">Recommended: a 16:9 project screenshot.</p>
+          </div>
+          {form.screenshots.length > 0 && <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">{form.screenshots.map((screenshot, index) => <div key={`${screenshot}-${index}`} className="relative"><img src={screenshot} alt={`Screenshot ${index + 1} preview`} className="aspect-video w-full rounded-lg border border-line bg-surface-2 object-cover" /><button type="button" onClick={() => set("screenshots", form.screenshots.filter((_, itemIndex) => itemIndex !== index))} className="absolute right-1.5 top-1.5 rounded-md bg-black/75 px-2 py-1 text-[10px] font-semibold text-white">Remove</button></div>)}</div>}
           <div><label htmlFor="p-screenshots" className="field-label">Screenshot URLs or public paths — one per line</label><textarea id="p-screenshots" className="textarea min-h-24 font-mono text-xs" value={form.screenshots.join("\n")} onChange={(e) => set("screenshots", splitLines(e.target.value))} placeholder={"/projects/lobby/friends.webp\n/projects/lobby/audio-room.webp\n/projects/lobby/community-chat.webp"} /><p className="mt-1 text-xs text-faint">Files inside public/projects are entered as /projects/… paths.</p></div>
           <div className="grid gap-4 sm:grid-cols-2"><div><label htmlFor="p-role" className="field-label">My role</label><input id="p-role" className="input" value={form.myRole} onChange={(e) => set("myRole", e.target.value)} placeholder="e.g. Full-Stack Developer" /></div><div><label htmlFor="p-team-size" className="field-label">Team size</label><input id="p-team-size" type="number" min="1" className="input" value={form.teamSize ?? ""} onChange={(e) => set("teamSize", e.target.value ? Number(e.target.value) : null)} /></div></div>
           <div><label htmlFor="p-ownership" className="field-label">What I personally owned</label><textarea id="p-ownership" className="textarea min-h-20" value={form.ownership} onChange={(e) => set("ownership", e.target.value)} /></div>
@@ -552,7 +569,10 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
           </p>
         )}
 
-        <div className="flex items-center gap-3 pb-10">
+        <div className="sticky bottom-3 z-20 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface/95 p-3 shadow-card-lg backdrop-blur">
+          <span className="mr-auto text-xs font-semibold text-muted" role="status">
+            {hasUnsavedChanges ? "Unsaved changes" : isNew ? "Ready to create" : "No unsaved changes"}
+          </span>
           <button type="submit" disabled={saving} className="btn-primary px-7">
             {saving ? (
               <FiLoader size={16} className="animate-spin" />
@@ -561,7 +581,9 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
             )}
             {saving ? "Saving…" : isNew ? "Create project" : "Save changes"}
           </button>
-          <Link to="/admin/projects" className="btn-ghost">
+          <Link to="/admin/projects" className="btn-ghost" onClick={(event) => {
+            if (hasUnsavedChanges && !window.confirm("Discard your unsaved project changes?")) event.preventDefault();
+          }}>
             Cancel
           </Link>
         </div>

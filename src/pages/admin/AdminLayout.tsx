@@ -33,27 +33,27 @@ interface NavItem {
 
 const navGroups: { label: string; items: NavItem[] }[] = [
   {
-    label: "Overview",
-    items: [{ to: "/admin/dashboard", label: "Dashboard", icon: FiBarChart2 }],
-  },
-  {
     label: "Content",
     items: [
+      { to: "/admin/dashboard", label: "Dashboard", icon: FiBarChart2 },
       { to: "/admin/projects", label: "Projects", icon: FiFolder },
       { to: "/admin/experience", label: "Experience", icon: FiBriefcase },
-      { to: "/admin/technologies", label: "Technologies", icon: FiCode },
       { to: "/admin/skills", label: "Skills", icon: FiUser },
+      { to: "/admin/technologies", label: "Technologies", icon: FiCode },
       { to: "/admin/education", label: "Education", icon: FiBookOpen },
       { to: "/admin/certifications", label: "Certifications", icon: FiAward },
-      { to: "/admin/cv", label: "CV Manager", icon: FiFileText },
     ],
+  },
+  {
+    label: "Documents",
+    items: [{ to: "/admin/cv", label: "CV Manager", icon: FiFileText }],
   },
   {
     label: "Communication",
     items: [{ to: "/admin/messages", label: "Messages", icon: FiMail }],
   },
   {
-    label: "Account",
+    label: "System",
     items: [{ to: "/admin/settings", label: "Settings", icon: FiSettings }],
   },
 ];

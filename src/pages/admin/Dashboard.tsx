@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import {
   FiArrowRight,
+  FiBriefcase,
+  FiExternalLink,
   FiEye,
+  FiFileText,
   FiFolder,
   FiMail,
+  FiPlus,
   FiUsers,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
@@ -40,10 +44,6 @@ export function Dashboard() {
   const { data: analytics, isLoading: analyticsLoading } = useAnalytics();
   const { data: messages, isLoading: messagesLoading } = useMessages();
 
-  const maxViews = Math.max(
-    1,
-    ...(analytics?.viewsByProject ?? []).map((p) => p.views),
-  );
   const recent = (messages ?? []).slice(0, 4);
 
   return (
@@ -86,55 +86,14 @@ export function Dashboard() {
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="card p-6">
-          <div className="mb-5 flex items-center justify-between">
-            <h2 className="font-display text-base font-bold text-ink">
-              Views by project
-            </h2>
-            <Link
-              to="/admin/projects"
-              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
-            >
-              Manage
-              <FiArrowRight
-                size={14}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-              />
-            </Link>
+          <h2 className="font-display text-base font-bold text-ink">Quick actions</h2>
+          <p className="mt-1 text-sm text-muted">Common portfolio updates, one click away.</p>
+          <div className="mt-5 grid gap-2 sm:grid-cols-2">
+            <Link to="/admin/projects/new" className="btn-primary justify-start"><FiPlus />Add project</Link>
+            <Link to="/admin/experience" className="btn-outline justify-start"><FiBriefcase />Manage experience</Link>
+            <Link to="/admin/cv" className="btn-outline justify-start"><FiFileText />Open CV Manager</Link>
+            <Link to="/" className="btn-ghost justify-start"><FiExternalLink />View portfolio</Link>
           </div>
-
-          {analyticsLoading ? (
-            <div className="space-y-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="space-y-2">
-                  <div className="h-4 w-32 animate-pulse rounded-md bg-surface-3" />
-                  <div className="h-2 animate-pulse rounded-full bg-surface-3" />
-                </div>
-              ))}
-            </div>
-          ) : (analytics?.viewsByProject ?? []).length === 0 ? (
-            <p className="py-8 text-center text-sm text-muted">No views recorded yet.</p>
-          ) : (
-            <div className="space-y-4">
-              {(analytics?.viewsByProject ?? []).map((p) => (
-                <div key={p.slug}>
-                  <div className="mb-1.5 flex items-center justify-between gap-3 text-sm">
-                    <span className="truncate font-semibold text-ink">{p.name}</span>
-                    <span className="shrink-0 font-mono text-xs tabular-nums text-muted">
-                      {p.views.toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="h-1.5 overflow-hidden rounded-full bg-surface-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(p.views / maxViews) * 100}%` }}
-                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                      className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
         <div className="card p-6">

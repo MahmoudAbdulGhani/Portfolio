@@ -68,9 +68,9 @@ export function Footer() {
           <p className="font-mono">
             Built with React &amp; Tailwind CSS
             <span className="mx-2 text-line-strong">·</span>
-            <Link to="/admin" className="transition-colors hover:text-muted">
+            {/* <Link to="/admin" className="transition-colors hover:text-muted">
               /admin
-            </Link>
+            </Link> */}
           </p>
         </div>
       </div>
