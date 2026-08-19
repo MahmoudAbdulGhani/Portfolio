@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FiArrowLeft,
+  FiArrowRight,
   FiArrowUpRight,
   FiCheck,
   FiExternalLink,
@@ -14,11 +15,12 @@ import {
   FiUsers,
   FiX,
 } from "react-icons/fi";
-import { useProject } from "../lib/hooks";
+import { useProject, useProjects } from "../lib/hooks";
 import { PageMeta } from "../components/PageMeta";
 import { ProjectVisual } from "../components/ProjectVisual";
 import { Reveal } from "../components/Reveal";
-import { formatDate } from "../lib/format";
+import { cn, formatDate } from "../lib/format";
+import type { Project } from "../types";
 
 function DetailSkeleton() {
   return (
@@ -43,30 +45,100 @@ function DetailSkeleton() {
   );
 }
 
+function NextProjectBar({ next, visible }: { next: Project; visible: boolean }) {
+  return (
+    <nav
+      aria-label="Next project"
+      aria-hidden={!visible}
+      className={cn("next-project-bar", visible && "next-project-bar--visible")}
+    >
+      <Link
+        to={`/projects/${next.slug}`}
+        tabIndex={visible ? undefined : -1}
+        className="group flex items-center gap-3.5 rounded-xl border border-line bg-surface/90 p-3 pr-4 shadow-card-lg backdrop-blur transition-colors hover:border-accent/40"
+      >
+        <span
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-lg font-display text-sm font-bold text-white"
+          style={{ backgroundColor: next.visual || "var(--accent)" }}
+          aria-hidden
+        >
+          {next.name.charAt(0)}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
+            Next project
+          </span>
+          <span className="mt-0.5 block truncate font-display text-sm font-bold text-ink">
+            {next.name}
+          </span>
+        </span>
+        <FiArrowRight
+          size={17}
+          className="shrink-0 text-accent transition-transform duration-200 group-hover:translate-x-0.5"
+        />
+      </Link>
+    </nav>
+  );
+}
+
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const { data: project, isLoading, isError } = useProject(slug ?? "");
+  const { data: projects } = useProjects();
   const [activeImage, setActiveImage] = useState<number | null>(null);
   const [galleryExpanded, setGalleryExpanded] = useState(false);
+  const [barVisible, setBarVisible] = useState(false);
+  const topRef = useRef<HTMLDivElement>(null);
+  const galleryTriggerRef = useRef<HTMLElement | null>(null);
   const galleryImages = project
     ? [project.coverImage, ...(project.screenshots ?? [])].filter((src): src is string => Boolean(src))
     : [];
 
+  const galleryOpen = activeImage !== null;
+
+  const published = (projects ?? []).filter((p) => p.published);
+  const projectIndex = published.findIndex((p) => p.slug === slug);
+  const nextProject = projectIndex >= 0 ? published[(projectIndex + 1) % published.length] : undefined;
+  const showNextBar = Boolean(nextProject && project && nextProject.slug !== project.slug);
+
   useEffect(() => {
-    if (activeImage === null) return;
+    const trigger = topRef.current;
+    if (!trigger || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setBarVisible(!entry.isIntersecting),
+      { threshold: 0.2 },
+    );
+    observer.observe(trigger);
+    return () => observer.disconnect();
+  }, [project?.id]);
+
+  useEffect(() => {
+    if (!galleryOpen) return;
+    galleryTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const dialog = document.querySelector<HTMLElement>('[role="dialog"][aria-label$="image gallery"]');
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveImage(null);
       if (event.key === "ArrowLeft") setActiveImage((current) => current === null ? null : (current - 1 + galleryImages.length) % galleryImages.length);
       if (event.key === "ArrowRight") setActiveImage((current) => current === null ? null : (current + 1) % galleryImages.length);
+      if (event.key === "Tab") {
+        const focusable = [...(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])') ?? [])].filter((element) => element.getClientRects().length > 0);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
     };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
+    requestAnimationFrame(() => dialog?.querySelector<HTMLElement>("button")?.focus());
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
+      galleryTriggerRef.current?.focus();
     };
-  }, [activeImage, galleryImages.length]);
+  }, [galleryOpen, galleryImages.length]);
 
   if (isLoading) return <DetailSkeleton />;
 
@@ -97,6 +169,7 @@ export function ProjectDetail() {
       />
       <main id="top" className="min-h-[60vh] pb-16 pt-20 sm:pb-24 sm:pt-28">
         <div className="container-x min-w-0">
+          <div ref={topRef}>
           <Reveal>
             <Link
               to="/projects"
@@ -163,6 +236,7 @@ export function ProjectDetail() {
               </div>
             </div>
           </Reveal>
+          </div>
 
           <div className="mt-12 grid min-w-0 grid-cols-1 gap-8 sm:mt-16 sm:gap-10 lg:grid-cols-12">
             <div className="min-w-0 space-y-8 sm:space-y-10 lg:col-span-7">
@@ -294,6 +368,9 @@ export function ProjectDetail() {
           {project.screenshots && project.screenshots.length > 0 && <section className="mt-12 sm:mt-16"><div className="flex flex-wrap items-end justify-between gap-3"><div className="min-w-0"><h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Project screenshots</h2><p className="mt-1 text-sm text-muted">Select an image to view the full gallery.</p></div><span className="shrink-0 rounded-full border border-line bg-surface-2 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-faint">{project.screenshots.length} images</span></div><div className="mt-5 grid grid-cols-1 gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-2">{(galleryExpanded ? project.screenshots : project.screenshots.slice(0, 6)).map((src, index) => <button type="button" key={`${src}-${index}`} onClick={() => setActiveImage((project.coverImage ? 1 : 0) + index)} className="project-gallery-frame group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"><span className="project-gallery-image-wrap"><img src={src} alt={`${project.name} screenshot ${index + 1}`} loading="lazy" /><span className="project-gallery-expand" aria-hidden><FiMaximize2 size={16} /></span></span><span className="project-gallery-caption"><span>Screenshot {String(index + 1).padStart(2, "0")}</span><span>View full size</span></span></button>)}</div>{project.screenshots.length > 6 && <div className="mt-7 flex justify-center sm:mt-8"><button type="button" className="btn-outline group min-h-11 w-full justify-center sm:w-auto" aria-expanded={galleryExpanded} onClick={() => setGalleryExpanded((expanded) => !expanded)}>{galleryExpanded ? <><FiChevronUp size={17} />Show fewer screenshots</> : <><FiChevronDown size={17} />Show {project.screenshots.length - 6} more screenshots</>}</button></div>}</section>}
         </div>
       </main>
+      {showNextBar && nextProject && (
+        <NextProjectBar next={nextProject} visible={barVisible} />
+      )}
       {activeImage !== null && galleryImages[activeImage] && <div role="dialog" aria-modal="true" aria-label={`${project.name} image gallery`} className="fixed inset-0 z-[100] flex h-[100dvh] min-w-0 items-center justify-center overflow-hidden bg-black/95 px-2 pb-20 pt-16 sm:p-8" onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveImage(null); }}><button type="button" onClick={() => setActiveImage(null)} className="absolute right-3 top-3 z-20 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:right-6 sm:top-6" aria-label="Close gallery"><FiX size={22} /></button>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="absolute left-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Previous image"><FiChevronLeft size={28} /></button>}<img src={galleryImages[activeImage]} alt={`${project.name} full-size image ${activeImage + 1}`} className="block max-h-[calc(100dvh-9rem)] max-w-[96vw] object-contain sm:max-h-[85vh] sm:max-w-[88vw]" />{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="absolute right-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Next image"><FiChevronRight size={28} /></button>}<div className="absolute inset-x-3 bottom-3 z-20 flex items-center justify-center gap-3 sm:bottom-5">{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Previous image"><FiChevronLeft size={24} /></button>}<span className="rounded-full border border-white/10 bg-black/70 px-3 py-2 font-mono text-xs text-white">{activeImage + 1} / {galleryImages.length}</span>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Next image"><FiChevronRight size={24} /></button>}</div></div>}
     </>
   );

@@ -214,7 +214,7 @@ export function AdminLayout() {
 
   return (
     <>
-      <PageMeta title="Admin" />
+      <PageMeta title="Admin" noIndex />
       <div className="flex min-h-screen bg-bg">
         <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col border-r border-line bg-surface lg:flex">
           <SidebarContent unread={unread} admin={auth.data} />

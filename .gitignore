@@ -15,6 +15,9 @@ test-results
 .lighthouse
 *.local
 
+# CV comparison screenshots (personal artifacts, not part of the project)
+.cv-compare/
+
 # Environment / secrets
 .env
 .env.*

@@ -36,7 +36,7 @@ export function ProjectVisual({
         className,
       )}
     >
-      {image && <img src={image} alt="" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} decoding="async" className="project-cover-image" />}
+      {image && <img src={image} alt="" width={1600} height={900} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} decoding="async" className="project-cover-image" />}
       {!image && <div className="project-fallback-cover"><div className="project-fallback-orbit" aria-hidden /><div className="project-fallback-top"><span>{type || "Case study"}</span><span>Selected work</span></div><div className="project-fallback-main"><span className="project-fallback-monogram">{initials}</span><div><strong>{name}</strong><span>{stack.slice(0, 3).join(" · ") || "Project case study"}</span></div></div></div>}
 
       {showLabel && image && (

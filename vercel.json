@@ -4,9 +4,23 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.js": {
-      "maxDuration": 30
+      "maxDuration": 60
     }
   },
+  "headers": [
+    {
+      "source": "/admin",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/login",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ],
   "rewrites": [
     {
       "source": "/robots.txt",

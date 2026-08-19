@@ -360,7 +360,25 @@ export function useMarkMessageRead() {
   return useMutation({
     mutationFn: (id: string) =>
       api<Message>(`/admin/messages/${id}/read`, { method: "PATCH" }),
-    onSuccess: () => {
+    onMutate: async (id) => {
+      await qc.cancelQueries({ queryKey: ["messages"] });
+      const previous = qc.getQueryData<Message[]>(["messages"]);
+      if (previous) {
+        qc.setQueryData<Message[]>(
+          ["messages"],
+          previous.map((message) =>
+            message.id === id ? { ...message, read: true } : message,
+          ),
+        );
+      }
+      return { previous };
+    },
+    onError: (_error, _id, context) => {
+      if (context?.previous) {
+        qc.setQueryData<Message[]>(["messages"], context.previous);
+      }
+    },
+    onSettled: () => {
       void qc.invalidateQueries({ queryKey: ["messages"] });
       void qc.invalidateQueries({ queryKey: ["analytics"] });
     },

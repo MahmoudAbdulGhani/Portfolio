@@ -13,6 +13,7 @@ test.beforeEach(async ({ page }) => {
 test("admin login form is accessible", async ({ page }) => {
   await page.route("**/api/admin/auth/session", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify({ admin: null }) }));
   await page.goto("/login");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, nofollow");
   await expect(page.getByRole("heading", { name: "Admin console" })).toBeVisible();
   await expect(page.getByLabel("Email")).toBeVisible();
   await expect(page.getByLabel("Password")).toHaveAttribute("type", "password");
@@ -28,6 +29,7 @@ test("experience editing sends structured dates and current status", async ({ pa
     return route.fulfill({ contentType: "application/json", body: JSON.stringify(profile) });
   });
   await page.goto("/admin/experience");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, nofollow");
   await expect(page.getByRole("heading", { name: "Experience" })).toBeVisible();
   await page.getByLabel("Role").first().fill("Backend Developer");
   await page.getByRole("button", { name: "Save experience" }).click();

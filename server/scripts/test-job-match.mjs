@@ -2,6 +2,7 @@ import "dotenv/config";
 import assert from "node:assert/strict";
 import http from "node:http";
 import { app, prisma } from "../src/app.js";
+import { rateLimitStorageKey } from "../src/lib/rate-limit.js";
 import { MAX_JOB_DESCRIPTION_LENGTH } from "../src/routes/job-match.js";
 
 process.env.GEMINI_API_KEY = "integration-test-key";
@@ -10,6 +11,11 @@ const providerCalls = [];
 globalThis.fetch = async (_url, init) => {
   providerCalls.push(JSON.parse(init.body));
   if (providerMode === "quota") return new Response(JSON.stringify({ error: { status: "RESOURCE_EXHAUSTED" } }), { status: 429, headers: { "Content-Type": "application/json" } });
+  if (providerMode === "timeout") throw new DOMException("The operation was aborted.", "AbortError");
+  if (providerMode === "provider5xx") return new Response(JSON.stringify({ error: { status: "UNAVAILABLE" } }), { status: 503, headers: { "Content-Type": "application/json" } });
+  if (providerMode === "empty") return new Response(JSON.stringify({ candidates: [] }), { status: 200, headers: { "Content-Type": "application/json" } });
+  if (providerMode === "badBody") return new Response("<html>not json</html>", { status: 200, headers: { "Content-Type": "text/html" } });
+  if (providerMode === "truncatedJson") return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: '{"matchLevel":"Moderate Match","overallMatch":"cut off mid-stream' }] } }] }), { status: 200, headers: { "Content-Type": "application/json" } });
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({
     matchLevel: "Moderate Match",
     overallMatch: "Several requirements are supported by portfolio evidence.",
@@ -73,6 +79,35 @@ try {
   result = await post({ jobDescription: `${description} The role also requires clear technical communication.` });
   assert.equal(result.status, 429);
   assert.match(result.body.message, /usage limit/i);
+
+  await prisma.rateLimitBucket.deleteMany({ where: { key: rateLimitStorageKey("job:127.0.0.1") } });
+
+  const postFailure = async (mode, suffix) => {
+    await prisma.rateLimitBucket.deleteMany({ where: { key: rateLimitStorageKey("job:127.0.0.1") } });
+    providerMode = mode;
+    return post({ jobDescription: `${description} ${suffix}` });
+  };
+
+  result = await postFailure("timeout", "The role requires leading technical decisions across teams.");
+  assert.equal(result.status, 504);
+  assert.match(result.body.message, /took too long/i);
+
+  result = await postFailure("provider5xx", "The role requires coordinating cross-team delivery.");
+  assert.equal(result.status, 502);
+  assert.match(result.body.message, /temporarily unavailable/i);
+
+  result = await postFailure("empty", "The role requires strong analytical reasoning.");
+  assert.equal(result.status, 502);
+  assert.match(result.body.message, /temporarily unavailable/i);
+
+  result = await postFailure("badBody", "The role requires careful attention to detail.");
+  assert.equal(result.status, 502);
+  assert.match(result.body.message, /temporarily unavailable/i);
+
+  result = await postFailure("truncatedJson", "The role requires effective written communication.");
+  assert.equal(result.status, 502);
+  assert.match(result.body.message, /could not be formatted safely/i);
+
   console.log("Job matcher integration checks passed.");
 } finally {
   await new Promise((resolve) => server.close(resolve));

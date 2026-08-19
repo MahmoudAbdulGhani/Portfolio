@@ -57,9 +57,9 @@
   --border-strong: #2b344a;
   --text: #edf1fa;
   --muted: #99a3ba;
-  --faint: #6e7791;
-  --accent: #8b89ff;
-  --accent-strong: #9a99ff;
+  --faint: #78829d;
+  --accent: #5c5bd6;
+  --accent-strong: #4d4cc3;
   --accent-2: #36c1d5;
   --gold: #eeb04d;
   --ok: #2fbf88;
@@ -405,6 +405,12 @@
     outline: none;
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 14%, transparent);
   }
+  .input:focus-visible,
+  .textarea:focus-visible,
+  .select:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 
   .input-error,
   .textarea-error,
@@ -460,6 +466,62 @@
   #hero[data-gsap-hero="true"] [data-hero-copy] {
     opacity: 0;
     transform: translateY(18px);
+  }
+
+  /* --- Ambient background ------------------------------------------ */
+
+  .bg-aurora {
+    background:
+      radial-gradient(42rem 28rem at 12% -8%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 62%),
+      radial-gradient(38rem 26rem at 92% 18%, color-mix(in oklab, var(--accent-2) 12%, transparent), transparent 60%),
+      radial-gradient(30rem 22rem at 55% 110%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 65%);
+  }
+
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.04;
+  }
+
+  /* --- Scroll cue --------------------------------------------------- */
+
+  .scroll-cue {
+    position: relative;
+    width: 22px;
+    height: 34px;
+    border: 1.5px solid color-mix(in oklab, var(--muted) 55%, transparent);
+    border-radius: 999px;
+  }
+  .scroll-cue span {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    border-radius: 999px;
+    background: var(--accent);
+    animation: scroll-cue-dot 2s ease-in-out infinite;
+  }
+  @keyframes scroll-cue-dot {
+    0% { transform: translateY(0); opacity: 1; }
+    70% { transform: translateY(11px); opacity: 0; }
+    100% { transform: translateY(11px); opacity: 0; }
+  }
+
+  /* --- Sticky "Next project" bar ------------------------------------ */
+
+  .next-project-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    z-index: 40;
+    width: min(92vw, 30rem);
+    transform: translate(-50%, 150%);
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .next-project-bar--visible {
+    transform: translate(-50%, 0);
   }
 }
 

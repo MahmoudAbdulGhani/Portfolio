@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiAlertCircle, FiArrowRight, FiCheckCircle, FiRefreshCw, FiSearch, FiZap } from "react-icons/fi";
 import { api, ApiError } from "../lib/api";
@@ -6,6 +6,7 @@ import { PageMeta } from "../components/PageMeta";
 
 const MAX_LENGTH = 8_000;
 const MIN_LENGTH = 80;
+const FRONTEND_TIMEOUT_MS = 70_000;
 
 type MatchResult = {
   matchLevel: "Strong Match" | "Moderate Match" | "Partial Match" | "Limited Match";
@@ -29,7 +30,19 @@ export function JobMatch() {
   const [result, setResult] = useState<MatchResult>();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState("Comparing portfolio evidence…");
   const submitting = useRef(false);
+
+  useEffect(() => {
+    if (!loading) return;
+    const phases: Array<[number, string]> = [
+      [8_000, "Analyzing job requirements…"],
+      [20_000, "Comparing with portfolio experience…"],
+      [35_000, "Preparing match report…"],
+    ];
+    const timers = phases.map(([delay, message]) => setTimeout(() => setLoadingMessage(message), delay));
+    return () => timers.forEach((timer) => clearTimeout(timer));
+  }, [loading]);
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
@@ -38,13 +51,19 @@ export function JobMatch() {
     if (value.length < MIN_LENGTH) return setError(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
     if (value.length > MAX_LENGTH) return setError(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
     if (submitting.current) return;
-    submitting.current = true; setLoading(true); setError(""); setResult(undefined);
+    submitting.current = true; setLoading(true); setError(""); setResult(undefined); setLoadingMessage("Comparing portfolio evidence…");
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
     try {
-      const response = await api<{ result: MatchResult }>("/job-match", { method: "POST", body: JSON.stringify({ jobDescription: value }) });
+      const response = await api<{ result: MatchResult }>("/job-match", { method: "POST", body: JSON.stringify({ jobDescription: value }), signal: controller.signal });
       setResult(response.result);
     } catch (caught) {
-      setError(caught instanceof ApiError ? caught.message : "The match analysis is temporarily unavailable. Please try again.");
-    } finally { submitting.current = false; setLoading(false); }
+      if (caught instanceof Error && caught.name === "AbortError") {
+        setError("The AI job matcher took too long to respond. Please try again.");
+      } else {
+        setError(caught instanceof ApiError ? caught.message : "The AI job matcher is temporarily unavailable. Please try again.");
+      }
+    } finally { clearTimeout(timeout); submitting.current = false; setLoading(false); setLoadingMessage("Comparing portfolio evidence…"); }
   };
 
   const clear = () => { setJobDescription(""); setResult(undefined); setError(""); };
@@ -72,7 +91,7 @@ export function JobMatch() {
             </form>
 
             <div aria-live="polite" aria-busy={loading}>
-              {loading && <div className="card p-7"><div className="flex items-center gap-3 text-ink"><span className="h-5 w-5 animate-spin rounded-full border-2 border-accent/25 border-t-accent" /><span className="font-semibold">Comparing portfolio evidence…</span></div><p className="mt-3 text-sm leading-relaxed text-muted">Reviewing public skills, projects, experience, education, and certifications.</p></div>}
+              {loading && <div className="card p-7"><div className="flex items-center gap-3 text-ink"><span className="h-5 w-5 animate-spin rounded-full border-2 border-accent/25 border-t-accent" /><span className="font-semibold">{loadingMessage}</span></div><p className="mt-3 text-sm leading-relaxed text-muted">Reviewing public skills, projects, experience, education, and certifications.</p></div>}
               {!loading && !result && <div className="card border-dashed p-7"><span className="grid h-11 w-11 place-items-center rounded-xl bg-surface-2 text-accent"><FiCheckCircle /></span><h2 className="mt-5 font-display text-lg font-bold text-ink">A recruiter-friendly result</h2><p className="mt-2 text-sm leading-relaxed text-muted">You’ll see supported strengths, relevant portfolio evidence, partial matches, and requirements that aren’t demonstrated.</p><div className="mt-5 flex items-center gap-2 text-xs font-semibold text-muted"><span className="h-2 w-2 rounded-full bg-ok" />Grounded in live portfolio data</div></div>}
               {result && <article className="card overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="text-xs font-semibold uppercase tracking-[.14em] text-muted">Overall match</span><span className="tag border-accent/25 bg-accent/10 text-accent">{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p></header><div className="space-y-7 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section><h2 className="font-display text-base font-bold text-ink">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{project.name}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="rounded-xl border border-line bg-surface-2 p-4"><h2 className="font-display text-base font-bold text-ink">Recruiter Summary</h2><p className="mt-2 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
             </div>

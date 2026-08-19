@@ -23,8 +23,10 @@ export function About() {
   };
 
   return (
-    <section id="about" className="section relative bg-bg-soft">
-      <div className="container-x grid grid-cols-1 gap-16 lg:grid-cols-12">
+    <section id="about" className="section relative overflow-hidden bg-bg-soft">
+      <div className="bg-aurora pointer-events-none absolute inset-0" aria-hidden />
+      <div className="bg-grain pointer-events-none absolute inset-0" aria-hidden />
+      <div className="container-x relative grid grid-cols-1 gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
           <Reveal>
             <span className="eyebrow">About Mahmoud</span>
@@ -73,7 +75,7 @@ export function About() {
                 href={`${API_BASE}/cv.pdf`}
                 download
                 className="btn-primary group inline-flex"
-                aria-label="Download Mahmoud's CV as a PDF"
+                aria-label="Download CV as PDF"
               >
                 <FiDownload size={15} className="transition-transform duration-200 group-hover:translate-y-0.5" />
                 Download CV

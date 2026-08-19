@@ -71,7 +71,7 @@ router.post("/", async (req, res, next) => {
       const text = await generateWithGemini({
         systemInstruction: `You are a rigorous recruiter-facing job matcher. Compare the job description only with the supplied public portfolio snapshot. Do not invent or assume skills, seniority, employment, duration, achievements, or credentials. A project is evidence of project work, never employment. Distinguish professional experience, education/training, certifications, and projects. Treat related exposure as a partial match, not a strong match. State missing requirements honestly and do not automatically praise the candidate. Never calculate or return a percentage. Return JSON only with exactly these fields: matchLevel (one of "Strong Match", "Moderate Match", "Partial Match", "Limited Match"), overallMatch (string), strongMatches (string[]), relevantExperience (string[]), relevantProjects ({slug:string,evidence:string}[]), partialMatches (string[]), gaps (string[]), recruiterSummary (string). Use only project slugs present in the snapshot. Keep each item concise and evidence-based.`,
         userPrompt: `PUBLIC PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nJOB DESCRIPTION\n${jobDescription}`,
-        maxOutputTokens: 2_000,
+        maxOutputTokens: 8_192,
         responseMimeType: "application/json",
       });
       let result;

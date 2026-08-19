@@ -1,4 +1,4 @@
-const TIMEOUT_MS = 20_000;
+const TIMEOUT_MS = 40_000;
 
 function extractText(payload) {
   return payload?.candidates?.flatMap((candidate) => candidate?.content?.parts ?? [])
@@ -52,7 +52,12 @@ export async function generateWithGemini({ systemInstruction, userPrompt, maxOut
     throw new GeminiError("provider");
   }
 
-  const text = extractText(await response.json());
+  let text;
+  try {
+    text = extractText(await response.json());
+  } catch {
+    throw new GeminiError("empty");
+  }
   if (!text) throw new GeminiError("empty");
   return text;
 }

@@ -13,6 +13,7 @@ import {
 } from "../../lib/hooks";
 import { cn, formatDate } from "../../lib/format";
 import { ConfirmDialog } from "../../components/ConfirmDialog";
+import { EmptyState } from "../../components/EmptyState";
 import type { Message } from "../../types";
 
 export function Messages() {
@@ -48,6 +49,8 @@ export function Messages() {
     try {
       await Promise.all(selectedUnread.map((message) => markRead.mutateAsync(message.id)));
       setSelected(new Set());
+    } catch {
+      /* Rollback and reconciliation are handled by the mutation hooks. */
     } finally {
       setBulkAction(null);
     }
@@ -61,6 +64,8 @@ export function Messages() {
       await Promise.all(ids.map((id) => del.mutateAsync(id)));
       setSelected(new Set());
       setConfirmBulkDelete(false);
+    } catch {
+      /* Reconciliation happens through query invalidation. */
     } finally {
       setBulkAction(null);
     }
@@ -95,15 +100,10 @@ export function Messages() {
           ))}
         </div>
       ) : sorted.length === 0 ? (
-        <div className="card flex flex-col items-center gap-3 p-14 text-center">
-          <span className="grid h-12 w-12 place-items-center rounded-full bg-surface-2 text-faint">
-            <FiMail size={20} />
-          </span>
-          <p className="text-sm font-semibold text-ink">No messages yet</p>
-          <p className="max-w-xs text-sm text-muted">
-            Messages submitted through the contact form will appear here.
-          </p>
-        </div>
+        <EmptyState
+          title="No messages yet"
+          description="Messages submitted through the contact form will appear here."
+        />
       ) : (
         <div className="space-y-3">
           <div className="sticky top-20 z-20 flex flex-col gap-3 rounded-xl border border-line bg-surface/95 p-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">

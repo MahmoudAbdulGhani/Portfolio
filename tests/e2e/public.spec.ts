@@ -4,6 +4,7 @@ test("public navigation, theme, metadata, and mobile menu work", async ({ page, 
   await page.goto("/");
   await expect(page).toHaveTitle(/Mahmoud Abdul Ghani/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/$/);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
   const theme = page.getByRole("button", { name: /switch to (dark|light) mode/i }).first();
   await theme.click();
   await expect(page.locator("html")).toHaveAttribute("class", /dark/);
@@ -18,6 +19,17 @@ test("public navigation, theme, metadata, and mobile menu work", async ({ page, 
 });
 
 test("project gallery opens and supports navigation", async ({ page }) => {
+  const lobby = {
+    id: "lobby-test", slug: "lobby", name: "Lobby", type: "Communication platform",
+    tagline: "Real-time communication", description: "Project description", overview: "Overview",
+    problem: "Problem", solution: "Solution", features: ["Messaging"], stack: ["Angular", "NestJS"],
+    team: [], program: null, github: null, demo: null, featured: true, published: true,
+    visual: "#765D99", coverImage: "/projects/lobby/cover.webp",
+    screenshots: ["/projects/lobby/guest-access.webp", "/projects/lobby/friends.webp", "/projects/lobby/audio-room.webp", "/projects/lobby/community-chat.webp", "/projects/lobby/share-room.webp"],
+    myRole: "Developer", contributions: [], ownership: "", teamSize: 1, order: 1, views: 0,
+    createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+  };
+  await page.route("**/api/projects/lobby", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(lobby) }));
   await page.goto("/projects/lobby");
   await expect(page.getByRole("heading", { name: "Lobby", exact: true })).toBeVisible();
   await page.getByRole("button", { name: /view lobby cover image full screen/i }).click();
@@ -27,6 +39,7 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await expect(gallery.getByText("2 / 6")).toBeVisible();
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
+  await expect(page.getByRole("button", { name: /view lobby cover image full screen/i })).toBeFocused();
 });
 
 test("contact form validates and handles a successful submission", async ({ page }) => {

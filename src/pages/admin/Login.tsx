@@ -42,7 +42,7 @@ export function Login() {
 
   return (
     <>
-      <PageMeta title="Admin login" />
+      <PageMeta title="Admin login" noIndex />
       <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-16">
         <div className="bg-grid bg-grid-fade absolute inset-0" />
         <div className="relative z-10 w-full max-w-md">

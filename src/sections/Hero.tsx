@@ -73,6 +73,13 @@ export function Hero() {
                 ease: "none",
                 scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 },
               });
+              gsap.to("[data-hero-copy]", {
+                autoAlpha: 0.2,
+                y: -26,
+                ease: "none",
+                stagger: 0.03,
+                scrollTrigger: { trigger: hero, start: "top top", end: "75% top", scrub: 0.5 },
+              });
             });
         }, hero);
       },
@@ -94,6 +101,8 @@ export function Hero() {
       className="relative flex items-center overflow-hidden pt-24 sm:min-h-screen sm:pt-28"
     >
       <div className="bg-grid bg-grid-fade absolute inset-0" aria-hidden />
+      <div className="bg-aurora pointer-events-none absolute inset-0" aria-hidden />
+      <div className="bg-grain pointer-events-none absolute inset-0" aria-hidden />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bg to-transparent" aria-hidden />
 
       <div className="container-x relative z-10 grid grid-cols-1 items-center gap-10 py-12 sm:gap-16 sm:py-16 lg:grid-cols-12">
@@ -169,7 +178,7 @@ export function Hero() {
                 href={`${API_BASE}/cv.pdf`}
                 download
                 className="btn-ghost btn-lg"
-                aria-label="Download Mahmoud's CV as a PDF"
+                aria-label="Download CV as PDF"
               >
                 <FiDownload size={17} />
                 Download CV
@@ -238,6 +247,12 @@ export function Hero() {
             </div>
 
           </div>
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 sm:block" aria-hidden>
+        <div className="scroll-cue">
+          <span />
         </div>
       </div>
     </section>

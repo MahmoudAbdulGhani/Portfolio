@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiAlertTriangle } from "react-icons/fi";
 
@@ -22,15 +22,31 @@ export function ConfirmDialog({
   onCancel,
 }: ConfirmDialogProps) {
   const confirmRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
+  const titleId = useId();
 
   useEffect(() => {
     if (!open) return;
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onCancel();
+      if (e.key !== "Tab") return;
+      const focusable = [...(dialogRef.current?.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ) ?? [])].filter((element) => element.getClientRects().length > 0);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     };
     window.addEventListener("keydown", onKey);
     confirmRef.current?.focus();
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      returnFocusRef.current?.focus();
+    };
   }, [open, onCancel]);
 
   return (
@@ -40,9 +56,10 @@ export function ConfirmDialog({
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="confirm-title"
+          aria-labelledby={titleId}
         >
           <motion.div
+            ref={dialogRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -68,7 +85,7 @@ export function ConfirmDialog({
               </span>
               <div className="min-w-0">
                 <h2
-                  id="confirm-title"
+                  id={titleId}
                   className="font-display text-base font-bold text-ink"
                 >
                   {title}
