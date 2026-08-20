@@ -149,7 +149,9 @@ export async function resolveCvData(modeName = "application") {
     year: o?.displayDate || o?.date || formattedDate(o?.startDate, o?.endDate, o?.isCurrent) || row.year,
     cvDescription: o?.description || "",
   }; });
-  const skills = select(catalog.skills, mode.skills).map((row) => ({ ...row, category: mode.skillCategoryOverrides[row.category] || row.category }));
+  const skills = select(catalog.skills, mode.skills)
+    .filter((row) => (row.status ?? "verified") === "verified")
+    .map((row) => ({ ...row, category: mode.skillCategoryOverrides[row.category] || row.category }));
   return {
     configuration, modeName, mode,
     profile: { ...catalog.profile, experience }, projects,

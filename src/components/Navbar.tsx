@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiMenu, FiX } from "react-icons/fi";
 import { Logo } from "./Logo";
@@ -7,13 +7,14 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "../lib/format";
 
 const navItems = [
-  { to: "/", label: "Home", end: true },
+  { to: "/#hero", label: "Home", end: true },
   { to: "/projects", label: "Projects", end: false },
-  { to: "/job-match", label: "AI Job Match", end: false },
+  { to: "/job-match", label: "Job Match", end: false },
   { to: "/contact", label: "Contact", end: false },
 ];
 
 export function Navbar() {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,6 +40,13 @@ export function Navbar() {
       isActive ? "text-ink" : "text-muted hover:text-ink",
     );
 
+  const handleNavClick = (to: string) => {
+    setOpen(false);
+    if (to === "/#hero" && location.pathname === "/") {
+      requestAnimationFrame(() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -50,7 +58,7 @@ export function Navbar() {
     >
       <nav
         aria-label="Main"
-        className="container-x flex h-16 items-center justify-between"
+        className="container-x relative flex h-16 items-center justify-between"
       >
         <Logo />
 
@@ -60,6 +68,7 @@ export function Navbar() {
               key={item.to}
               to={item.to}
               end={item.end}
+              onClick={() => handleNavClick(item.to)}
               className={linkClass}
             >
               {({ isActive }) => (
@@ -68,7 +77,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="active-public-nav"
-                      className="absolute inset-x-4 bottom-0.5 h-0.5 rounded-full bg-accent"
+                      className="absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-accent"
                       transition={{ type: "spring", stiffness: 420, damping: 34 }}
                     />
                   )}
@@ -77,7 +86,7 @@ export function Navbar() {
             </NavLink>
           ))}
           <div className="ml-2 flex items-center gap-2">
-            <Link to="/contact" className="btn-primary btn-sm">
+            <Link to="/contact" className="btn-outline btn-sm">
               Hire Me
               <FiArrowRight size={14} />
             </Link>
@@ -100,6 +109,13 @@ export function Navbar() {
         </div>
       </nav>
 
+      {(scrolled || open) && (
+        <div
+          className="dimension-line pointer-events-none absolute inset-x-0 bottom-0 h-px"
+          aria-hidden
+        />
+      )}
+
       <AnimatePresence>
         {open && (
           <motion.div
@@ -121,7 +137,7 @@ export function Navbar() {
                   <NavLink
                     to={item.to}
                     end={item.end}
-                    onClick={() => setOpen(false)}
+                    onClick={() => handleNavClick(item.to)}
                     className={({ isActive }) => cn("flex items-center justify-between rounded-lg px-4 py-3 text-[15px] font-semibold transition-colors", isActive ? "bg-accent/10 text-accent" : "text-muted hover:bg-surface-2 hover:text-ink")}
                   >
                     {item.label}
@@ -132,7 +148,7 @@ export function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="btn-primary mt-2"
+                className="btn-outline mt-2"
               >
                 Hire Me
                 <FiArrowRight size={16} />

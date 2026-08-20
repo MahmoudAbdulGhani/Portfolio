@@ -12,7 +12,7 @@ export function Education() {
         <SectionHeading
           eyebrow="Academic background"
           title="Education"
-          description="A computer science foundation built at the Lebanese International University in Tripoli."
+          description="A computer science foundation in software development, databases, and systems."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">

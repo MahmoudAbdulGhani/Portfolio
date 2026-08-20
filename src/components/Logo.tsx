@@ -17,7 +17,7 @@ export function Logo({ to = "/", showLabel = true }: LogoProps) {
             Mahmoud Abdul Ghani
           </span>
           <span className="font-mono text-[11px] text-muted">
-            junior full-stack engineer
+            full-stack engineer
           </span>
         </span>
       )}

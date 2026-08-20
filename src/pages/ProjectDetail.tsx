@@ -12,7 +12,6 @@ import {
   FiChevronRight,
   FiChevronDown,
   FiChevronUp,
-  FiUsers,
   FiX,
 } from "react-icons/fi";
 import { useProject, useProjects } from "../lib/hooks";
@@ -24,20 +23,16 @@ import type { Project } from "../types";
 
 function DetailSkeleton() {
   return (
-    <main id="top" className="min-h-[60vh] pt-24 sm:pt-28">
+    <main id="top" className="min-h-[60vh] pt-16 sm:pt-20">
       <div className="container-x">
         <div className="mb-8 h-4 w-32 animate-pulse rounded-full bg-surface-3" />
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <div className="h-12 w-3/4 animate-pulse rounded-xl bg-surface-3" />
-            <div className="mt-4 h-5 w-2/3 animate-pulse rounded-lg bg-surface-3" />
-            <div className="mt-8 flex gap-3">
-              <div className="h-11 w-36 animate-pulse rounded-lg bg-surface-3" />
-              <div className="h-11 w-36 animate-pulse rounded-lg bg-surface-3" />
-            </div>
-          </div>
-          <div className="lg:col-span-5">
-            <div className="h-64 animate-pulse rounded-xl bg-surface-3" />
+        <div className="mx-auto aspect-[16/10] w-full max-w-5xl animate-pulse rounded-xl bg-surface-3" />
+        <div className="mx-auto mt-12 max-w-4xl text-center">
+          <div className="mx-auto h-12 w-3/4 animate-pulse rounded-xl bg-surface-3" />
+          <div className="mx-auto mt-4 h-5 w-2/3 animate-pulse rounded-lg bg-surface-3" />
+          <div className="mt-8 flex justify-center gap-3">
+            <div className="h-11 w-36 animate-pulse rounded-lg bg-surface-3" />
+            <div className="h-11 w-36 animate-pulse rounded-lg bg-surface-3" />
           </div>
         </div>
       </div>
@@ -55,15 +50,8 @@ function NextProjectBar({ next, visible }: { next: Project; visible: boolean }) 
       <Link
         to={`/projects/${next.slug}`}
         tabIndex={visible ? undefined : -1}
-        className="group flex items-center gap-3.5 rounded-xl border border-line bg-surface/90 p-3 pr-4 shadow-card-lg backdrop-blur transition-colors hover:border-accent/40"
+        className="group flex items-center gap-3 rounded-xl border border-line bg-surface/90 p-3 pr-4 shadow-card-lg backdrop-blur transition-colors hover:border-accent/40"
       >
-        <span
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-lg font-display text-sm font-bold text-white"
-          style={{ backgroundColor: next.visual || "var(--accent)" }}
-          aria-hidden
-        >
-          {next.name.charAt(0)}
-        </span>
         <span className="min-w-0 flex-1">
           <span className="block font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
             Next project
@@ -159,6 +147,17 @@ export function ProjectDetail() {
     );
   }
 
+  const team = project.team ?? [];
+  const contributions = project.contributions ?? [];
+  const publishYear = new Date(project.createdAt).getUTCFullYear();
+  const heroUrl = (() => {
+    try {
+      return new URL(project.demo ?? "").hostname.replace(/^www\./, "");
+    } catch {
+      return `/projects/${project.slug}`;
+    }
+  })();
+
   return (
     <>
       <PageMeta
@@ -167,42 +166,123 @@ export function ProjectDetail() {
         image={project.coverImage || "/myphoto.jpeg"}
         canonicalPath={`/projects/${project.slug}`}
       />
-      <main id="top" className="min-h-[60vh] pb-16 pt-20 sm:pb-24 sm:pt-28">
+      <main id="top" className="min-h-[60vh] pb-16 pt-16 sm:pb-24 sm:pt-20">
         <div className="container-x min-w-0">
           <div ref={topRef}>
-          <Reveal>
-            <Link
-              to="/projects"
-              className="mb-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-accent sm:mb-6"
-            >
-              <FiArrowLeft size={15} />
-              All projects
-            </Link>
+            <Reveal>
+              <Link
+                to="/projects"
+                className="mb-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-accent"
+              >
+                <FiArrowLeft size={15} />
+                All projects
+              </Link>
+            </Reveal>
 
-            <div className="grid min-w-0 grid-cols-1 gap-7 sm:gap-10 lg:grid-cols-12 lg:items-center">
-              <div className="min-w-0 lg:col-span-7">
-                <div className="mb-5 flex flex-wrap items-center gap-2">
-                  <span className="tag border-line bg-surface-2 text-muted">
-                    {project.type}
-                  </span>
-                  {project.featured && (
-                    <span className="tag border-gold/30 bg-gold/10 text-gold">
-                      Featured
-                    </span>
-                  )}
-                  {project.program && (
-                    <span className="tag border-accent/25 bg-accent/10 text-accent">
-                      {project.program}
-                    </span>
-                  )}
+            <Reveal>
+              <figure className="relative mx-auto max-w-5xl">
+                <div className="project-hero-glow" aria-hidden />
+                <div className="project-hero-window aspect-[16/10]">
+                  <div className="project-hero-chrome" aria-hidden>
+                    <span className="project-hero-url">{heroUrl}</span>
+                  </div>
+                  <div className="relative min-h-0 flex-1 overflow-hidden">
+                    <span className="project-hero-shine" aria-hidden />
+                    <span
+                      className="project-hero-corner project-hero-corner--tl"
+                      aria-hidden
+                      style={{ animationDelay: "0.6s" }}
+                    />
+                    <span
+                      className="project-hero-corner project-hero-corner--tr"
+                      aria-hidden
+                      style={{ animationDelay: "0.7s" }}
+                    />
+                    <span
+                      className="project-hero-corner project-hero-corner--bl"
+                      aria-hidden
+                      style={{ animationDelay: "0.8s" }}
+                    />
+                    <span
+                      className="project-hero-corner project-hero-corner--br"
+                      aria-hidden
+                      style={{ animationDelay: "0.9s" }}
+                    />
+                    {project.coverImage ? (
+                      <button
+                        type="button"
+                        onClick={() => setActiveImage(0)}
+                        className="block h-full w-full text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                        aria-label={`View ${project.name} cover image full screen`}
+                      >
+                        <ProjectVisual
+                          visual={project.visual}
+                          name={project.name}
+                          image={project.coverImage}
+                          type={project.type}
+                          stack={project.stack}
+                          priority
+                          variant="hero"
+                          className="h-full w-full"
+                        />
+                      </button>
+                    ) : (
+                      <ProjectVisual
+                        visual={project.visual}
+                        name={project.name}
+                        type={project.type}
+                        stack={project.stack}
+                        variant="hero"
+                        className="h-full w-full"
+                      />
+                    )}
+                  </div>
                 </div>
+                <div className="project-hero-floor" aria-hidden />
+                <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em]">
+                  <span className="flex min-w-0 items-baseline gap-2">
+                    <span className="text-accent">Fig. 01</span>
+                    <span className="text-line-strong" aria-hidden>/</span>
+                    <span className="min-w-0 truncate text-muted">{project.name}</span>
+                  </span>
+                  <span className="flex shrink-0 items-baseline gap-2 text-faint">
+                    <span>{project.type}</span>
+                    <span className="text-line-strong" aria-hidden>·</span>
+                    <span>{publishYear}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </Reveal>
 
-                <h1 className="break-words font-display text-[clamp(2.25rem,10vw,4rem)] font-bold leading-[1.06] tracking-tight text-ink">{project.name}</h1>
-                <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted sm:text-lg">
+            <Reveal>
+              <div className="mx-auto max-w-4xl pt-12 text-center sm:pt-16">
+                <span className="tech-label">{project.type}</span>
+                <h1 className="mt-4 break-words font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+                  {project.name}
+                </h1>
+                <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-muted sm:text-lg">
                   {project.tagline}
                 </p>
 
-                <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-xs text-faint">
+                  <span>{project.type}</span>
+                  <span className="text-line-strong" aria-hidden>·</span>
+                  <span>{publishYear}</span>
+                  {project.teamSize && (
+                    <>
+                      <span className="text-line-strong" aria-hidden>·</span>
+                      <span>{project.teamSize}-person team</span>
+                    </>
+                  )}
+                  {project.program && (
+                    <>
+                      <span className="text-line-strong" aria-hidden>·</span>
+                      <span>{project.program}</span>
+                    </>
+                  )}
+                </div>
+
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
                   {project.github && (
                     <a
                       href={project.github}
@@ -230,142 +310,224 @@ export function ProjectDetail() {
                   )}
                 </div>
               </div>
-
-              <div className="min-w-0 lg:col-span-5">
-                {project.coverImage ? <button type="button" onClick={() => setActiveImage(0)} className="project-detail-cover block w-full overflow-hidden rounded-xl text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:rounded-2xl" aria-label={`View ${project.name} cover image full screen`}><ProjectVisual visual={project.visual} name={project.name} image={project.coverImage} type={project.type} stack={project.stack} priority className="aspect-video h-auto" /></button> : <ProjectVisual visual={project.visual} name={project.name} type={project.type} stack={project.stack} className="aspect-video h-auto rounded-xl sm:rounded-2xl" />}
-              </div>
-            </div>
-          </Reveal>
+            </Reveal>
           </div>
 
-          <div className="mt-12 grid min-w-0 grid-cols-1 gap-8 sm:mt-16 sm:gap-10 lg:grid-cols-12">
-            <div className="min-w-0 space-y-8 sm:space-y-10 lg:col-span-7">
-              {(project.myRole || project.ownership || (project.contributions?.length ?? 0) > 0) && <Reveal><section className="card overflow-hidden border-accent/25 p-5 sm:p-6"><span className="eyebrow">My contribution</span><div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">{project.myRole && <div className="rounded-xl border border-line bg-surface-2 p-4"><span className="font-mono text-[10px] font-bold uppercase tracking-wider text-faint">My role</span><h2 className="mt-1.5 break-words font-display text-lg font-bold text-ink">{project.myRole}</h2></div>}{project.teamSize && <div className="rounded-xl border border-line bg-surface-2 p-4"><span className="font-mono text-[10px] font-bold uppercase tracking-wider text-faint">Team size</span><p className="mt-1.5 font-display text-lg font-bold text-ink">{project.teamSize} people</p></div>}</div>{project.ownership && <div className="mt-5"><h3 className="font-mono text-[10px] font-bold uppercase tracking-wider text-faint">What I personally owned</h3><p className="mt-2 break-words text-sm leading-relaxed text-muted">{project.ownership}</p></div>}{project.contributions && project.contributions.length > 0 && <div className="mt-5"><h3 className="font-mono text-[10px] font-bold uppercase tracking-wider text-faint">My contributions</h3><ul className="mt-3 space-y-2.5">{project.contributions.map((item) => <li key={item} className="flex min-w-0 gap-2.5 text-sm leading-relaxed text-muted"><FiCheck className="mt-0.5 shrink-0 text-ok" /><span className="min-w-0 break-words">{item}</span></li>)}</ul></div>}</section></Reveal>}
-              <Reveal>
-                <h2 className="font-display text-xl font-bold text-ink">
-                  Overview
-                </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                  {project.overview}
-                </p>
-              </Reveal>
+          <div className="mx-auto mt-14 max-w-4xl sm:mt-16">
+            <div className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-12">
+              <div className="min-w-0 space-y-10 lg:col-span-8">
+                <Reveal>
+                  <h2 className="tech-label">Overview</h2>
+                  <p className="mt-4 text-[17px] leading-relaxed text-muted">
+                    {project.overview}
+                  </p>
+                </Reveal>
 
-              <Reveal>
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-                  <div className="card relative overflow-hidden p-5 sm:p-6">
-                    <span className="absolute inset-x-0 top-0 h-0.5 bg-danger/60" aria-hidden />
-                    <h3 className="mb-2 font-mono text-xs font-bold uppercase tracking-wider text-danger">
-                      The problem
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted">
-                      {project.problem}
-                    </p>
+                <Reveal>
+                  <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+                    <div className="card p-5 sm:p-6">
+                      <span className="tech-label text-danger">The problem</span>
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                        {project.problem}
+                      </p>
+                    </div>
+                    <div className="card p-5 sm:p-6">
+                      <span className="tech-label text-ok">The solution</span>
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                        {project.solution}
+                      </p>
+                    </div>
                   </div>
-                  <div className="card relative overflow-hidden p-5 sm:p-6">
-                    <span className="absolute inset-x-0 top-0 h-0.5 bg-ok/60" aria-hidden />
-                    <h3 className="mb-2 font-mono text-xs font-bold uppercase tracking-wider text-ok">
-                      The solution
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted">
-                      {project.solution}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
 
-              <Reveal>
-                <h2 className="font-display text-xl font-bold text-ink">
-                  Key features
-                </h2>
-                <ul className="mt-4 space-y-3">
-                  {project.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="flex min-w-0 items-start gap-3 rounded-lg border border-line bg-surface px-3.5 py-3 text-sm text-muted sm:px-4"
-                    >
-                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ok/15 text-ok">
-                        <FiCheck size={12} />
-                      </span>
-                      <span className="min-w-0 break-words leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-
-            <div className="min-w-0 lg:col-span-5">
-              <Reveal>
-                <div className="card min-w-0 space-y-6 p-5 sm:p-6 lg:sticky lg:top-24">
-                  <div>
-                    <h3 className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-faint">
-                      Tech stack
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((tech) => (
-                        <span key={tech} className="chip">
-                          {tech}
+                <Reveal>
+                  <h2 className="tech-label">Key features</h2>
+                  <ul className="mt-4 space-y-3">
+                    {project.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex min-w-0 items-start gap-3 rounded-lg border border-line bg-surface px-3.5 py-3 text-sm text-muted sm:px-4"
+                      >
+                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ok/15 text-ok">
+                          <FiCheck size={12} />
                         </span>
-                      ))}
-                    </div>
-                  </div>
+                        <span className="min-w-0 break-words leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
 
-                  {project.team && project.team.length > 0 && (
-                    <div className="border-t border-line pt-5">
-                      <h3 className="mb-3 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-faint">
-                        <FiUsers size={13} />
-                        {project.team.length > 1 ? "Team" : "Built by"}
-                      </h3>
-                      <ul className="space-y-2">
-                        {project.team.map((member) => (
-                          <li
-                            key={member}
-                            className="flex min-w-0 items-center gap-3 text-sm text-muted"
-                          >
-                            <span className="grid h-8 w-8 place-items-center rounded-full border border-line bg-surface-2 font-mono text-[10px] font-bold text-accent">
-                              {member
-                                .split(" ")
-                                .map((n) => n[0])
-                                .slice(0, 2)
-                                .join("")}
+                <Reveal>
+                  <h2 className="tech-label">Tech stack</h2>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span key={tech} className="chip">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </Reveal>
+              </div>
+
+              <aside className="min-w-0 lg:col-span-4">
+                <Reveal>
+                  <div className="card min-w-0 space-y-6 p-5 sm:p-6">
+                    {(project.myRole || project.ownership || contributions.length > 0) && (
+                      <div>
+                        <h3 className="tech-label">My role</h3>
+                        {project.myRole && (
+                          <p className="mt-2 break-words font-display text-lg font-bold text-ink">
+                            {project.myRole}
+                          </p>
+                        )}
+                        {project.teamSize && (
+                          <p className="mt-1 font-mono text-xs text-faint">
+                            {project.teamSize} people
+                          </p>
+                        )}
+                        {project.ownership && (
+                          <p className="mt-4 text-sm leading-relaxed text-muted">
+                            <span className="block font-mono text-[10px] uppercase tracking-wider text-faint">
+                              What I owned
                             </span>
-                            <span className="min-w-0 break-words">{member}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                            {project.ownership}
+                          </p>
+                        )}
+                        {contributions.length > 0 && (
+                          <ul className="mt-4 space-y-2.5">
+                            {contributions.map((item) => (
+                              <li
+                                key={item}
+                                className="flex min-w-0 gap-2.5 text-sm leading-relaxed text-muted"
+                              >
+                                <FiCheck className="mt-0.5 shrink-0 text-ok" />
+                                <span className="min-w-0 break-words">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
 
-                  <div className="grid grid-cols-1 gap-4 border-t border-line pt-5 text-sm min-[360px]:grid-cols-2">
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-faint">
-                        Updated
-                      </span>
-                      <span className="font-semibold text-ink">
-                        {formatDate(project.updatedAt)}
-                      </span>
+                    {team.length > 0 && (
+                      <div className="border-t border-line pt-5">
+                        <h3 className="tech-label">{team.length > 1 ? "Team" : "Built by"}</h3>
+                        <ul className="mt-3 space-y-2">
+                          {team.map((member) => (
+                            <li
+                              key={member}
+                              className="flex min-w-0 items-center gap-3 text-sm text-muted"
+                            >
+                              <span className="grid h-8 w-8 place-items-center rounded-full border border-line bg-surface-2 font-mono text-[10px] font-bold text-accent">
+                                {member
+                                  .split(" ")
+                                  .map((n) => n[0])
+                                  .slice(0, 2)
+                                  .join("")}
+                              </span>
+                              <span className="min-w-0 break-words">{member}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-1 gap-4 border-t border-line pt-5 text-sm min-[360px]:grid-cols-2">
+                      <div>
+                        <span className="block font-mono text-[10px] uppercase tracking-wider text-faint">
+                          Updated
+                        </span>
+                        <span className="font-semibold text-ink">
+                          {formatDate(project.updatedAt)}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="block font-mono text-[10px] uppercase tracking-wider text-faint">
+                          Status
+                        </span>
+                        <span className="font-semibold text-ok">
+                          {project.published ? "Published" : "Draft"}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-faint">
-                        Status
-                      </span>
-                      <span className="font-semibold text-ok">
-                        {project.published ? "Published" : "Draft"}
-                      </span>
-                    </div>
+
+                    <a
+                      href="#top"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
+                    >
+                      Back to top
+                      <FiArrowUpRight size={14} />
+                    </a>
                   </div>
-
-                  <a
-                    href="#top"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
-                  >
-                    Back to top
-                    <FiArrowUpRight size={14} />
-                  </a>
-                </div>
-              </Reveal>
+                </Reveal>
+              </aside>
             </div>
+
+            {project.screenshots && project.screenshots.length > 0 && (
+              <section className="mt-14 sm:mt-16">
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <div className="min-w-0">
+                    <h2 className="tech-label">Screenshots</h2>
+                    <p className="mt-2 font-display text-xl font-bold text-ink sm:text-2xl">
+                      Gallery
+                    </p>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-line bg-surface-2 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-faint">
+                    {project.screenshots.length} images
+                  </span>
+                </div>
+                <div className="mt-5 grid grid-cols-1 gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-2">
+                  {(galleryExpanded ? project.screenshots : project.screenshots.slice(0, 6)).map((src, index) => (
+                    <button
+                      type="button"
+                      key={`${src}-${index}`}
+                      onClick={() => setActiveImage((project.coverImage ? 1 : 0) + index)}
+                      className="project-gallery-frame group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                    >
+                      <span className="project-gallery-image-wrap">
+                        <img
+                          src={src}
+                          alt={`${project.name} screenshot ${index + 1}`}
+                          loading="lazy"
+                          decoding="async"
+                          className="project-gallery-img"
+                        />
+                        <span className="project-gallery-expand" aria-hidden>
+                          <FiMaximize2 size={16} />
+                        </span>
+                      </span>
+                      <span className="project-gallery-caption">
+                        <span>Screenshot {String(index + 1).padStart(2, "0")}</span>
+                        <span>View full size</span>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                {project.screenshots.length > 6 && (
+                  <div className="mt-7 flex justify-center sm:mt-8">
+                    <button
+                      type="button"
+                      className="btn-outline group min-h-11 w-full justify-center sm:w-auto"
+                      aria-expanded={galleryExpanded}
+                      onClick={() => setGalleryExpanded((expanded) => !expanded)}
+                    >
+                      {galleryExpanded ? (
+                        <>
+                          <FiChevronUp size={17} />
+                          Show fewer screenshots
+                        </>
+                      ) : (
+                        <>
+                          <FiChevronDown size={17} />
+                          Show {project.screenshots.length - 6} more screenshots
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
+              </section>
+            )}
           </div>
-          {project.screenshots && project.screenshots.length > 0 && <section className="mt-12 sm:mt-16"><div className="flex flex-wrap items-end justify-between gap-3"><div className="min-w-0"><h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Project screenshots</h2><p className="mt-1 text-sm text-muted">Select an image to view the full gallery.</p></div><span className="shrink-0 rounded-full border border-line bg-surface-2 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-faint">{project.screenshots.length} images</span></div><div className="mt-5 grid grid-cols-1 gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-2">{(galleryExpanded ? project.screenshots : project.screenshots.slice(0, 6)).map((src, index) => <button type="button" key={`${src}-${index}`} onClick={() => setActiveImage((project.coverImage ? 1 : 0) + index)} className="project-gallery-frame group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"><span className="project-gallery-image-wrap"><img src={src} alt={`${project.name} screenshot ${index + 1}`} loading="lazy" /><span className="project-gallery-expand" aria-hidden><FiMaximize2 size={16} /></span></span><span className="project-gallery-caption"><span>Screenshot {String(index + 1).padStart(2, "0")}</span><span>View full size</span></span></button>)}</div>{project.screenshots.length > 6 && <div className="mt-7 flex justify-center sm:mt-8"><button type="button" className="btn-outline group min-h-11 w-full justify-center sm:w-auto" aria-expanded={galleryExpanded} onClick={() => setGalleryExpanded((expanded) => !expanded)}>{galleryExpanded ? <><FiChevronUp size={17} />Show fewer screenshots</> : <><FiChevronDown size={17} />Show {project.screenshots.length - 6} more screenshots</>}</button></div>}</section>}
         </div>
       </main>
       {showNextBar && nextProject && (

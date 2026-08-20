@@ -3,67 +3,96 @@ import { useSkills } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 
-const layerTones: Record<string, { dot: string; badge: string }> = {
-  Frontend: { dot: "bg-accent", badge: "border-accent/25 bg-accent/10 text-accent" },
-  Backend: { dot: "bg-accent-2", badge: "border-accent-2/30 bg-accent-2/10 text-accent-2" },
-  Data: { dot: "bg-gold", badge: "border-gold/30 bg-gold/10 text-gold" },
-  Tools: { dot: "bg-ok", badge: "border-ok/25 bg-ok/10 text-ok" },
-};
+const fallbackPillars: { title: string; status: string; items: string[] }[] = [
+  {
+    title: "Frontend",
+    status: "Used in projects",
+    items: [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "TypeScript",
+      "Tailwind CSS",
+      "Responsive Design",
+    ],
+  },
+  {
+    title: "Backend",
+    status: "Used in projects",
+    items: [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "PHP",
+      "REST APIs",
+      "JWT Authentication",
+      "RBAC",
+      "Real-Time Systems",
+    ],
+  },
+  {
+    title: "Databases",
+    status: "Used in projects",
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Supabase",
+      "Git/GitHub",
+      "Stripe",
+      "Zod",
+      "Postman",
+    ],
+  },
+];
 
 export function Skills() {
   const { data: skills } = useSkills();
 
-  const grouped = useMemo(() => {
-    const map = new Map<string, string[]>();
+  const pillars = useMemo(() => {
+    const grouped = new Map<string, { name: string; status: string }[]>();
     for (const skill of skills ?? []) {
-      const list = map.get(skill.category) ?? [];
-      list.push(skill.name);
-      map.set(skill.category, list);
+      const list = grouped.get(skill.category) ?? [];
+      list.push({ name: skill.name, status: skill.status ?? "verified" });
+      grouped.set(skill.category, list);
     }
-    return [...map.entries()];
+    if (grouped.size === 0) return fallbackPillars;
+    return [...grouped].map(([title, rows]) => ({
+      title,
+      status: rows.every((row) => row.status === "learning")
+        ? "Currently learning"
+        : rows.every((row) => row.status === "familiar") ? "Familiar with" : "Used in projects",
+      items: rows.map((row) => row.name),
+    }));
   }, [skills]);
 
   return (
-    <section id="skills" className="section relative bg-bg-soft">
+    <section id="skills" className="section relative bg-surface-2">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Capability map"
-          title="Technical strengths"
-          description="A practical view of the skills behind this portfolio: frontend delivery, backend APIs, data layers, and modern full-stack tooling."
+          eyebrow="Stack"
+          title="Technical architecture"
+          description="Technologies used across professional work, completed applications, and current project development."
         />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {grouped.map(([category, names], i) => {
-            const tone = layerTones[category] ?? {
-              dot: "bg-accent",
-              badge: "border-line bg-surface-2 text-muted",
-            };
-            return (
-              <Reveal key={category} delay={i * 0.08} variant="scale">
-                <div className="card card-hover h-full p-6">
-                  <div className="mb-5 flex items-center justify-between gap-4">
-                    <h3 className="flex items-center gap-2.5 font-display text-base font-bold text-ink">
-                      <span className={`h-2 w-2 rounded-full ${tone.dot}`} aria-hidden />
-                      {category}
-                    </h3>
-                    <span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold tabular-nums ${tone.badge}`}>
-                      {names.length}
-                    </span>
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {pillars.map((pillar, i) => (
+              <Reveal key={pillar.title} delay={Math.min(i * 0.05, 0.25)}>
+                <div className="card h-full p-6">
+                  <div className="flex flex-wrap items-center justify-between gap-2.5">
+                    <span className="tech-label">{pillar.title}</span>
+                    <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-faint">{pillar.status}</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {names.map((name) => (
-                      <span
-                        key={name}
-                        className="chip"
-                      >
-                        {name}
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {pillar.items.map((item) => (
+                      <span key={item} className="chip">
+                        {item}
                       </span>
                     ))}
                   </div>
                 </div>
               </Reveal>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

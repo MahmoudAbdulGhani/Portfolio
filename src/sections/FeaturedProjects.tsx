@@ -15,14 +15,14 @@ export function FeaturedProjects() {
       <div className="container-x">
         <SectionHeading
           eyebrow="Selected work"
-          title="Recent full-stack projects"
-          description="Team projects from The Digital Hub by UNRWA, including reservations with payments, real-time communication, and a university system."
+          title="Systems built for real workflows"
+          description="Three full-stack products engineered at the Digital Hub and independently."
         />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-2">
           {isLoading && Array.from({ length: 3 }, (_, index) => <ProjectCardSkeleton key={index} />)}
           {featured.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.08} variant="scale">
+            <Reveal key={project.slug} delay={i * 0.06}>
               <ProjectCard project={project} />
             </Reveal>
           ))}

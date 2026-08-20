@@ -23,8 +23,8 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              Junior full-stack engineer building React, Next.js and Angular
-              frontends with Node.js and NestJS backends.
+              Full-stack engineer building React, Next.js and Angular frontends
+              with Node.js and NestJS backends.
             </p>
           </div>
 
@@ -66,11 +66,7 @@ export function Footer() {
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 text-xs text-faint sm:flex-row">
           <p>© {year} {profile?.name ?? "Mahmoud Hussein Abdul Ghani"}. All rights reserved.</p>
           <p className="font-mono">
-            Built with React &amp; Tailwind CSS
-            <span className="mx-2 text-line-strong">·</span>
-            {/* <Link to="/admin" className="transition-colors hover:text-muted">
-              /admin
-            </Link> */}
+            Built with React 19 · Tailwind CSS v4 · Vite · Deployed on Vercel
           </p>
         </div>
       </div>

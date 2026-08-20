@@ -1,259 +1,152 @@
 import { Link } from "react-router-dom";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import {
-  FiArrowRight,
-  FiDownload,
-  FiGithub,
-  FiInstagram,
-  FiLinkedin,
-  FiMapPin,
-  FiMessageCircle,
-} from "react-icons/fi";
-import type { IconType } from "react-icons";
+import { motion, useReducedMotion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
 import { seedProfile } from "../data/portfolio";
 import { useProfile } from "../lib/hooks";
 import { API_BASE } from "../lib/api";
+import { CvDownloadButton } from "../components/CvDownloadButton";
 
 const focusAreas = [
-  "React · Next.js",
-  "Angular",
-  "Node.js · NestJS",
+  "React · Next.js · TypeScript",
+  "Node.js · Express.js",
   "REST APIs",
-  "Real-time systems",
+  "Authentication · RBAC",
+  "SQL · MongoDB",
 ];
-
-const socialIcons: Record<string, IconType> = {
-  github: FiGithub,
-  linkedin: FiLinkedin,
-  instagram: FiInstagram,
-  whatsapp: FiMessageCircle,
-};
 
 export function Hero() {
   const { data: profile } = useProfile();
-  // The portrait is part of the first viewport. Use the canonical local asset
-  // immediately, then let the profile query replace it only when necessary.
   const heroProfile = profile ?? seedProfile;
   const portraitSrc = profile?.photo || seedProfile.photo;
   const socials = profile?.socials ?? seedProfile.socials;
-  const heroRef = useRef<HTMLElement>(null);
-  const [motionAllowed, setMotionAllowed] = useState(
-    () => typeof window !== "undefined" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setMotionAllowed(!query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-
-  useLayoutEffect(() => {
-    const hero = heroRef.current;
-    if (!hero || !motionAllowed) return;
-
-    let cancelled = false;
-    let context: { revert: () => void } | undefined;
-    let parallax: { kill: () => void } | undefined;
-
-    void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
-      ([gsapModule, scrollTriggerModule]) => {
-        if (cancelled) return;
-        const gsap = gsapModule.default;
-        gsap.registerPlugin(scrollTriggerModule.ScrollTrigger);
-        context = gsap.context(() => {
-          const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-          timeline
-            .to("[data-hero-copy]", { autoAlpha: 1, y: 0, duration: 0.38, stagger: 0.055 })
-            .eventCallback("onComplete", () => {
-              if (!window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches) return;
-              parallax = gsap.to("[data-hero-portrait]", {
-                y: -18,
-                ease: "none",
-                scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 },
-              });
-              gsap.to("[data-hero-copy]", {
-                autoAlpha: 0.2,
-                y: -26,
-                ease: "none",
-                stagger: 0.03,
-                scrollTrigger: { trigger: hero, start: "top top", end: "75% top", scrub: 0.5 },
-              });
-            });
-        }, hero);
-      },
-      () => setMotionAllowed(false),
-    );
-
-    return () => {
-      cancelled = true;
-      parallax?.kill();
-      context?.revert();
-    };
-  }, [motionAllowed]);
+  const reduceMotion = useReducedMotion();
+  const cvHref = heroProfile.resumeUrl || `${API_BASE}/cv.pdf`;
 
   return (
     <section
       id="hero"
-      ref={heroRef}
-      data-gsap-hero={motionAllowed ? "true" : undefined}
-      className="relative flex items-center overflow-hidden pt-24 sm:min-h-screen sm:pt-28"
+      className="relative flex min-h-[88vh] items-center overflow-hidden pt-24 sm:pt-28"
     >
-      <div className="bg-grid bg-grid-fade absolute inset-0" aria-hidden />
-      <div className="bg-aurora pointer-events-none absolute inset-0" aria-hidden />
+      <div className="bg-blueprint bg-blueprint-fade absolute inset-0" aria-hidden />
+      <div className="bg-aurora pointer-events-none absolute inset-0 opacity-70" aria-hidden />
       <div className="bg-grain pointer-events-none absolute inset-0" aria-hidden />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bg to-transparent" aria-hidden />
 
-      <div className="container-x relative z-10 grid grid-cols-1 items-center gap-10 py-12 sm:gap-16 sm:py-16 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <div>
-            <div
-              data-hero-copy
-              className="mb-7 flex flex-wrap items-center gap-x-3 gap-y-2"
-            >
-              <span className="font-display text-sm font-semibold tracking-tight text-ink sm:text-[15px]">
-                {heroProfile.name}
-              </span>
-              <span className="hidden h-4 w-px bg-line sm:block" aria-hidden />
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted sm:text-sm">
-                <FiMapPin size={14} className="shrink-0 text-accent" aria-hidden />
-                {heroProfile.location}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-ok/25 bg-ok/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ok">
-                <span className="h-1.5 w-1.5 rounded-full bg-ok" aria-hidden />
-                Open to opportunities
-              </span>
-            </div>
+      <div className="container-x relative z-10 grid grid-cols-1 items-center gap-12 pb-16 pt-12 sm:pb-20 sm:pt-16 lg:grid-cols-12">
+        <motion.div
+          className="lg:col-span-7"
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="tech-label block">{heroProfile.name.toUpperCase()}</span>
 
-            <div data-hero-copy>
-              <span className="eyebrow">{heroProfile.title}</span>
-              <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
-                I build{" "}
-                <span className="text-gradient">full-stack products</span>{" "}
-                for real workflows
-                <span className="animate-blink text-accent" aria-hidden>
-                  _
-                </span>
-              </h1>
-            </div>
+          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+            Full-Stack Software
+            <br />
+            <span className="text-gradient">Engineer</span>
+          </h1>
 
-            <p
-              data-hero-copy
-              className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
-            >
-              Junior full-stack developer from Tripoli, Lebanon. I build
-              responsive React and Angular interfaces with Node.js and NestJS
-              APIs. Recent team projects at The Digital Hub include booking,
-              university management, and real-time communication.
-            </p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+            Building secure, scalable, and user-focused web applications.
+          </p>
 
-            <div
-              data-hero-copy
-              className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-muted"
-              aria-label="Focus areas"
-            >
-              {focusAreas.map((area, i) => (
-                <span key={area} className="flex items-center gap-3">
-                  {i > 0 && (
-                    <span className="h-1 w-1 rounded-full bg-line-strong" aria-hidden />
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+            I build production-ready applications using React, Next.js, TypeScript,
+            Node.js, Express.js, and modern database technologies—from REST APIs
+            and authentication to real-time communication and role-based systems.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-2.5" aria-label="Focus areas">
+            {focusAreas.map((area) => (
+              <span
+                key={area}
+                className="rounded-full border border-line bg-surface-2 px-2.5 py-1 font-mono text-xs text-faint"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <Link to="/projects" className="btn-primary btn-lg group">
+              View Projects
+              <FiArrowRight
+                size={17}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              />
+            </Link>
+            <CvDownloadButton url={cvHref} className="btn-outline btn-lg" />
+          </div>
+
+          {socials.length > 0 && (
+            <div className="mt-9 flex flex-wrap items-center gap-1 font-mono text-[11px] text-faint">
+              {socials.map((s, i) => (
+                <span key={s.id} className="flex items-center">
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    {s.label}
+                  </a>
+                  {i < socials.length - 1 && (
+                    <span className="mx-2 text-line-strong" aria-hidden>
+                      /
+                    </span>
                   )}
-                  {area}
                 </span>
               ))}
             </div>
+          )}
+        </motion.div>
 
-            <div
-              data-hero-copy
-              className="mt-10 flex flex-wrap items-center gap-3"
-            >
-              <Link to="/projects" className="btn-primary btn-lg group">
-                View Projects
-                <FiArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
-              <Link to="/contact" className="btn-outline btn-lg">
-                Contact Mahmoud
-              </Link>
-              <a
-                href={`${API_BASE}/cv.pdf`}
-                download
-                className="btn-ghost btn-lg"
-                aria-label="Download CV as PDF"
-              >
-                <FiDownload size={17} />
-                Download CV
-              </a>
-            </div>
-
-            {socials.length > 0 && (
-              <div
-                className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3"
-              >
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">
-                  Find me on
-                </span>
-                <span className="hidden h-px w-8 bg-line sm:block" aria-hidden />
-                <div className="flex items-center gap-2">
-                  {socials.map((s) => {
-                    const Icon = socialIcons[s.label.toLowerCase()] ?? FiGithub;
-                    return (
-                      <a
-                        key={s.id}
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.label}
-                        className="btn-icon border border-line bg-surface text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent"
-                      >
-                        <Icon size={16} />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div
-          data-hero-portrait
-          className="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-md"
+        <motion.div
+          className="hidden lg:col-span-5 lg:block"
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
-          <div className="relative">
+          <div className="relative mx-auto max-w-sm">
             <div
-              className="absolute -inset-4 rounded-[1.5rem] bg-accent/8 blur-2xl"
+              className="absolute -inset-3 -z-10 rounded-2xl bg-accent/8 blur-2xl"
               aria-hidden
             />
-            <div className="relative rounded-2xl bg-gradient-to-br from-accent/35 via-accent-2/20 to-transparent p-px shadow-card-lg">
-              <div className="relative overflow-hidden rounded-[calc(1rem-1px)] bg-surface-2">
-                <div className="aspect-[4/5] w-full overflow-hidden">
-                  {portraitSrc && (
-                    <img
-                      src={portraitSrc}
-                      alt={`Portrait of ${heroProfile.name}`}
-                      loading="eager"
-                      decoding="async"
-                      fetchPriority="high"
-                      width={960}
-                      height={1280}
-                      className="h-full w-full object-cover object-center transition-transform duration-700 ease-out hover:scale-[1.03]"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  )}
-                </div>
+            <div className="relative overflow-hidden rounded-xl border border-line-strong bg-surface-2 shadow-card-lg">
+              {portraitSrc && (
+                <img
+                  src={portraitSrc}
+                  alt={`Portrait of ${heroProfile.name}`}
+                  width={720}
+                  height={900}
+                  loading="eager"
+                  decoding="async"
+                  className="aspect-[4/5] w-full object-cover object-center"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              )}
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/70 to-transparent px-4 pb-3 pt-20"
+                aria-hidden
+              >
+                <span className="block font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink">
+                  {heroProfile.location}
+                </span>
+                <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                  Open to opportunities
+                </span>
               </div>
             </div>
-
+            <div className="dimension-line mt-5" aria-hidden />
+            <div className="mt-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+              <span>Full-stack systems</span>
+              <span>Profile · 001</span>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 sm:block" aria-hidden>
-        <div className="scroll-cue">
-          <span />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

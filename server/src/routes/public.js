@@ -36,7 +36,7 @@ router.get("/profile", async (_req, res, next) => {
     const profile = await prisma.profile.findFirst({
       select: {
         id: true, name: true, shortName: true, title: true, tagline: true, bio: true, location: true,
-        email: true, phone: true, photo: true, resumeUrl: true, languages: true, updatedAt: true,
+        email: true, phone: true, photo: true, resumeUrl: true, portfolioUrl: true, seoTitle: true, seoDescription: true, languages: true, updatedAt: true,
         experience: { orderBy: { order: "asc" }, select: { id: true, role: true, company: true, description: true, startDate: true, endDate: true, isCurrent: true, location: true, order: true } },
         socials: { orderBy: { id: "asc" } },
       },
@@ -131,7 +131,7 @@ router.get("/cv.pdf", async (req, res, next) => {
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin });
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", `${req.query.preview === "1" ? "inline" : "attachment"}; filename="Mahmoud-Abdul-Ghani-CV.pdf"`);
+    res.setHeader("Content-Disposition", `${req.query.preview === "1" ? "inline" : "attachment"}; filename="Mahmoud-Hussein-Abdul-Ghani-CV.pdf"`);
     res.setHeader("Cache-Control", "public, max-age=300");
     res.setHeader("Content-Length", buffer.length);
     res.send(buffer);

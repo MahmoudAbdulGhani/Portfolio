@@ -42,6 +42,7 @@ export interface Skill {
   id: string;
   name: string;
   category: string;
+  status: "verified" | "familiar" | "learning";
   order: number;
 }
 
@@ -98,6 +99,9 @@ export interface Profile {
   phone: string;
   photo: string | null;
   resumeUrl: string | null;
+  portfolioUrl: string | null;
+  seoTitle: string | null;
+  seoDescription: string | null;
   languages: string | null;
   experience: ExperienceItem[];
   socials: SocialLink[];

@@ -44,6 +44,7 @@ export const profileMutationSchema = z.object({
   name: text(160, 1).optional(), shortName: text(80, 1).optional(), title: text(200, 1).optional(), tagline: text(500).optional(),
   bio: text(6000).optional(), location: text(300).optional(), email: text(320).email().optional(), phone: text(80).optional(),
   photo: optionalPublicAsset, resumeUrl: optionalPublicAsset, languages: nullableText(1000),
+  portfolioUrl: optionalHttpUrl, seoTitle: nullableText(200), seoDescription: nullableText(500),
   experience: z.array(experienceSchema).max(50).optional(), socials: z.array(socialSchema).max(20).optional(),
 }).strict();
 export const cvMutationSchema = z.object({ professionalSummary: nullableText(4000), header: z.record(z.string(), z.unknown()), application: z.record(z.string(), z.unknown()), master: z.record(z.string(), z.unknown()) }).strict();

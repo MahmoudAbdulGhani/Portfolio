@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { Link } from "react-router-dom";
 import {
+  FiArrowRight,
   FiArrowUpRight,
   FiCheckCircle,
   FiGithub,
@@ -11,6 +13,7 @@ import {
   FiMessageCircle,
   FiPhone,
   FiSend,
+  FiZap,
 } from "react-icons/fi";
 import { useProfile, useSubmitMessage } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
@@ -141,13 +144,46 @@ export function ContactSection() {
         <SectionHeading
           eyebrow="Contact Mahmoud"
           title="Start a real conversation"
-          description="Reach out for junior software engineering roles, full-stack projects, internships, or collaboration."
+          description="Reach out for full-stack roles, contract projects, internships, or collaboration."
           align="center"
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
           <Reveal className="lg:col-span-2" variant="clip">
-            <div className="grid h-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="flex h-full flex-col gap-3">
+              <div className="rounded-xl border border-line bg-surface p-4 shadow-card">
+                <h3 className="tech-label">Why reach out</h3>
+                <ul className="mt-3 space-y-2.5 text-sm text-muted">
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                    Open to full-time roles
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent-2" aria-hidden />
+                    Contract projects
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ok" aria-hidden />
+                    Technical collaboration
+                  </li>
+                </ul>
+                <div className="mt-4 grid grid-cols-1 gap-3 border-t border-line pt-4 font-mono text-xs text-faint">
+                  <span className="flex items-center justify-between gap-2">
+                    Response time
+                    <span className="font-semibold text-ink">usually within 24h</span>
+                  </span>
+                  <span className="flex items-center justify-between gap-2">
+                    Location
+                    <span className="font-semibold text-ink">Tripoli, Lebanon</span>
+                  </span>
+                  <span className="flex items-center justify-between gap-2">
+                    Remote
+                    <span className="font-semibold text-ink">Friendly</span>
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid h-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {contactCards.map((card) => {
                 const Icon = card.icon;
                 const href = getHref(card.key);
@@ -184,6 +220,7 @@ export function ContactSection() {
                   </a>
                 );
               })}
+              </div>
             </div>
           </Reveal>
 
@@ -352,6 +389,32 @@ export function ContactSection() {
             )}
           </Reveal>
         </div>
+
+        <Reveal delay={0.12}>
+          <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-surface-2 p-6 sm:flex-row sm:items-center sm:p-7">
+            <div className="flex items-start gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
+                <FiZap size={20} />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-bold text-ink">
+                  Try the AI Job Match
+                </h3>
+                <p className="mt-1 max-w-md text-sm leading-relaxed text-muted">
+                  See how my skills align with a real job description before we
+                  even talk.
+                </p>
+              </div>
+            </div>
+            <Link to="/job-match" className="btn-outline btn-sm group shrink-0">
+              Match a job
+              <FiArrowRight
+                size={14}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

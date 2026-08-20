@@ -11,8 +11,8 @@ export function Certifications() {
       <div className="container-x">
         <SectionHeading
           eyebrow="Credentials"
-          title="Certifications & Training"
-          description="Training programs and certifications that complement the computer science degree and hands-on project work."
+          title="Training & Courses"
+          description="Completed learning programs shown separately from professional experience."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">

@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("public navigation, theme, metadata, and mobile menu work", async ({ page, isMobile }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle(/Mahmoud Abdul Ghani/);
+  await expect(page).toHaveTitle(/Mahmoud Hussein Abdul Ghani/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/$/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
   const theme = page.getByRole("button", { name: /switch to (dark|light) mode/i }).first();
@@ -52,4 +52,24 @@ test("contact form validates and handles a successful submission", async ({ page
   await page.getByLabel("Message").fill("A safe intercepted browser test message.");
   await page.getByRole("button", { name: /send message/i }).click();
   await expect(page.getByRole("heading", { name: "Message sent" })).toBeVisible();
+});
+
+test("CV download rejects text responses instead of saving cv.txt", async ({ page }) => {
+  await page.route("**/api/cv.pdf", (route) => route.fulfill({ status: 500, contentType: "text/plain", body: "CV generation failed" }));
+  await page.goto("/cv");
+  await page.getByRole("button", { name: "Download PDF" }).click();
+  await expect(page.getByRole("alert")).toContainText("CV generation failed");
+});
+
+test("Home navigation returns to the hero section", async ({ page, isMobile }) => {
+  await page.goto("/");
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  if (isMobile) {
+    await page.getByRole("button", { name: "Open menu" }).click();
+    await page.locator("#mobile-nav").getByRole("link", { name: "Home" }).click();
+  } else {
+    await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Home" }).click();
+  }
+  await expect(page).toHaveURL(/\/#hero$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(20);
 });

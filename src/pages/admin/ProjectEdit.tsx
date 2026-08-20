@@ -449,7 +449,7 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
                 className="input"
                 value={form.program ?? ""}
                 onChange={(e) => set("program", e.target.value)}
-                placeholder="e.g. The Digital Hub by UNRWA"
+                placeholder="e.g. The Digital Hub"
               />
             </div>
             <div>

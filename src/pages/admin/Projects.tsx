@@ -125,7 +125,6 @@ export function AdminProjects() {
                             <ProjectVisual
                               visual={project.visual}
                               name={project.name}
-                              showLabel={false}
                               className="h-10 w-14 rounded-lg"
                             />
                           </div>

@@ -15,6 +15,9 @@ function toFormState(p: Profile) {
     phone: p.phone,
     photo: p.photo ?? "",
     languages: p.languages ?? "",
+    portfolioUrl: p.portfolioUrl ?? "",
+    seoTitle: p.seoTitle ?? "",
+    seoDescription: p.seoDescription ?? "",
     socials: p.socials.map((s) => ({ ...s })),
   };
 }
@@ -29,6 +32,9 @@ const emptyForm = {
   phone: "",
   photo: "",
   languages: "",
+  portfolioUrl: "",
+  seoTitle: "",
+  seoDescription: "",
   socials: [] as SocialLink[],
 };
 
@@ -79,6 +85,9 @@ export function Settings() {
         phone: form.phone,
         photo: form.photo || null,
         languages: form.languages,
+        portfolioUrl: form.portfolioUrl || null,
+        seoTitle: form.seoTitle || null,
+        seoDescription: form.seoDescription || null,
         socials: form.socials.filter((x) => x.label),
       },
       {
@@ -212,6 +221,10 @@ export function Settings() {
                 placeholder="Arabic (Native), English (Fluent)"
               />
             </div>
+            <div>
+              <label htmlFor="s-portfolio" className="field-label">Production portfolio URL</label>
+              <input id="s-portfolio" type="url" className="input" value={form.portfolioUrl} onChange={(e) => set("portfolioUrl", e.target.value)} placeholder="https://your-production-domain.example" />
+            </div>
           </div>
 
           <div>
@@ -233,6 +246,16 @@ export function Settings() {
               value={form.bio}
               onChange={(e) => set("bio", e.target.value)}
             />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="s-seo-title" className="field-label">SEO title</label>
+              <input id="s-seo-title" className="input" value={form.seoTitle} onChange={(e) => set("seoTitle", e.target.value)} />
+            </div>
+            <div>
+              <label htmlFor="s-seo-description" className="field-label">SEO description</label>
+              <textarea id="s-seo-description" className="textarea min-h-24" value={form.seoDescription} onChange={(e) => set("seoDescription", e.target.value)} />
+            </div>
           </div>
         </div>
 

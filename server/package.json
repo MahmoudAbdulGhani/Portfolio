@@ -10,11 +10,13 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
+    "content:sync": "tsx scripts/sync-portfolio-content.ts",
     "db:studio": "prisma studio",
     "test:assistant": "node scripts/test-assistant-context.mjs",
     "test:job-match": "node scripts/test-job-match.mjs",
     "test:security": "node scripts/test-security.mjs",
-    "test:runtime-db": "node scripts/verify-runtime-db.mjs"
+    "test:runtime-db": "node scripts/verify-runtime-db.mjs",
+    "test:cv": "node scripts/test-cv.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

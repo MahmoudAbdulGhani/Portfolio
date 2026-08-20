@@ -18,29 +18,34 @@ model Admin {
 }
 
 model Profile {
-  id         String       @id @default(cuid())
-  name       String
-  shortName  String
-  title      String
-  tagline    String
-  bio        String
-  location   String
-  email      String
-  phone      String
-  photo      String?
-  resumeUrl  String?
-  languages  String?
-  experience Experience[]
-  socials    SocialLink[]
-  updatedAt  DateTime     @updatedAt
+  id             String       @id @default(cuid())
+  name           String
+  shortName      String
+  title          String
+  tagline        String
+  bio            String
+  location       String
+  email          String
+  phone          String
+  photo          String?
+  resumeUrl      String?
+  updatedAt      DateTime     @updatedAt
+  languages      String?
+  portfolioUrl   String?
+  seoTitle       String?
+  seoDescription String?
+  experience     Experience[]
+  socials        SocialLink[]
 }
 
 model Experience {
-  id        String  @id @default(cuid())
-  milestone String
-  facility  String
-  meta      String
-  details   String
+  id          String  @id @default(cuid())
+  milestone   String
+  facility    String
+  meta        String
+  details     String
+  order       Int     @default(0)
+  profileId   String
   role        String?
   company     String?
   description String?
@@ -48,17 +53,15 @@ model Experience {
   endDate     String?
   isCurrent   Boolean @default(false)
   location    String?
-  order     Int     @default(0)
-  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-  profileId String
+  profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 }
 
 model SocialLink {
   id        String  @id @default(cuid())
   label     String
   url       String
-  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
   profileId String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 }
 
 model Technology {
@@ -73,6 +76,7 @@ model Skill {
   name     String @unique
   category String
   order    Int    @default(0)
+  status   String @default("verified")
 }
 
 model Education {
@@ -95,35 +99,35 @@ model Certification {
 }
 
 model Project {
-  id          String    @id @default(cuid())
-  slug        String    @unique
-  name        String
-  type        String
-  tagline     String?
-  description String?
-  overview    String?
-  problem     String?
-  solution    String?
-  features    String[]
-  stack       String[]
-  team        String[]
-  program     String?
-  github      String?
-  demo        String?
-  featured    Boolean   @default(false)
-  published   Boolean   @default(true)
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  name          String
+  type          String
+  tagline       String?
+  description   String?
+  overview      String?
+  problem       String?
+  solution      String?
+  features      String[]
+  stack         String[]
+  team          String[]
+  program       String?
+  github        String?
+  demo          String?
+  featured      Boolean  @default(false)
+  published     Boolean  @default(true)
   /// Persisted as a six-digit hex accent color (#RRGGBB).
-  visual      String    @default("#5966A0")
-  coverImage   String?
-  screenshots String[]
-  myRole       String?
-  contributions String[]
-  ownership    String?
-  teamSize     Int?
-  order       Int       @default(0)
-  views       Int       @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  visual        String   @default("#5966A0")
+  order         Int      @default(0)
+  views         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  coverImage    String?
+  screenshots   String[] @default([])
+  myRole        String?
+  contributions String[] @default([])
+  ownership     String?
+  teamSize      Int?
 }
 
 model RateLimitBucket {

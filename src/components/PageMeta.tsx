@@ -5,7 +5,7 @@ interface PageMetaProps { title: string; description?: string; image?: string | 
 export function PageMeta({ title, description, image, canonicalPath, noIndex = false }: PageMetaProps) {
   useEffect(() => {
     const shouldNoIndex = noIndex || /^\/(?:admin(?:\/|$)|login\/?$)/.test(window.location.pathname);
-    const fullTitle = `${title} — Mahmoud Abdul Ghani`;
+    const fullTitle = `${title} | Mahmoud Hussein Abdul Ghani`;
     const absolute = (value: string) => new URL(value, window.location.origin).toString();
     const setMeta = (selector: string, attribute: "name" | "property", key: string, content: string) => {
       let node = document.querySelector<HTMLMetaElement>(selector);

@@ -170,7 +170,8 @@ router.get("/cv/:mode.pdf", requireAuth, async (req, res, next) => {
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin, mode });
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", `${req.query.download === "1" ? "attachment" : "inline"}; filename="CV-${mode}.pdf"`);
+    const filename = mode === "application" ? "Mahmoud-Hussein-Abdul-Ghani-CV.pdf" : "Mahmoud-Hussein-Abdul-Ghani-Master-CV.pdf";
+    res.setHeader("Content-Disposition", `${req.query.download === "1" ? "attachment" : "inline"}; filename="${filename}"`);
     res.setHeader("Cache-Control", "private, no-store");
     res.send(buffer);
   } catch (error) { next(error); }
@@ -230,6 +231,9 @@ const profileScalarKeys = [
   "phone",
   "photo",
   "resumeUrl",
+  "portfolioUrl",
+  "seoTitle",
+  "seoDescription",
   "languages",
 ];
 
@@ -466,6 +470,9 @@ function normalizeCrudData(body, { requiredFields, optionalFields }, isPatch) {
       try { if (!["http:", "https:"].includes(new URL(value).protocol)) return { error: "url must use http or https." }; }
       catch { return { error: "url must be a valid URL." }; }
     }
+    if (field === "status" && !["verified", "familiar", "learning"].includes(value)) {
+      return { error: "status must be verified, familiar, or learning." };
+    }
     if (requiredFields.includes(field)) {
       if (!value) return { error: `${field} is required.` };
       data[field] = value;
@@ -547,7 +554,7 @@ function makeCrudRouter(model, config) {
 }
 
 const technologyCrud = { requiredFields: ["name", "category"], optionalFields: [] };
-const skillCrud = { requiredFields: ["name", "category"], optionalFields: [] };
+const skillCrud = { requiredFields: ["name", "category", "status"], optionalFields: [] };
 const educationCrud = {
   requiredFields: ["school", "degree"],
   optionalFields: ["field", "period", "details"],

@@ -183,8 +183,8 @@ export function PortfolioAssistant() {
         )}
       </AnimatePresence>
 
-      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Ask Mahmoud AI" : "Open Ask Mahmoud AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full bg-accent px-3.5 text-sm font-bold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-accent-strong sm:bottom-4 sm:right-6 sm:px-4">
-        {open ? <FiX size={17} /> : <FiMessageSquare size={17} />}
+      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Ask Mahmoud AI" : "Open Ask Mahmoud AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/95 px-3.5 text-sm font-bold text-ink shadow-card-lg backdrop-blur transition-colors hover:border-accent/40 hover:text-accent sm:bottom-4 sm:right-6 sm:px-4">
+        {open ? <FiX size={17} className="text-accent" /> : <FiMessageSquare size={17} className="text-accent" />}
         <span className="max-[359px]:hidden">{open ? "Close" : "Ask Mahmoud AI"}</span>
       </motion.button>
     </>

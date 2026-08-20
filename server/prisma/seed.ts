@@ -50,6 +50,9 @@ async function main() {
       phone: profileData.phone,
       photo: profileData.photo,
       resumeUrl: profileData.resumeUrl,
+      portfolioUrl: profileData.portfolioUrl,
+      seoTitle: profileData.seoTitle,
+      seoDescription: profileData.seoDescription,
       languages: profileData.languages,
     },
     create: {
@@ -64,6 +67,9 @@ async function main() {
       phone: profileData.phone,
       photo: profileData.photo,
       resumeUrl: profileData.resumeUrl,
+      portfolioUrl: profileData.portfolioUrl,
+      seoTitle: profileData.seoTitle,
+      seoDescription: profileData.seoDescription,
       languages: profileData.languages,
     },
   });
@@ -77,6 +83,20 @@ async function main() {
     })),
   });
 
+  for (const [index, item] of profileData.experience.entries()) {
+    const existing = await prisma.experience.findFirst({
+      where: { profileId: profile.id, company: item.company },
+    });
+    const data = {
+      milestone: item.milestone, facility: item.facility, meta: item.meta, details: item.details,
+      role: item.role, company: item.company, description: item.details,
+      startDate: item.startDate, endDate: item.endDate, isCurrent: item.isCurrent,
+      location: item.location, order: index,
+    };
+    if (existing) await prisma.experience.update({ where: { id: existing.id }, data });
+    else await prisma.experience.create({ data: { ...data, profileId: profile.id } });
+  }
+
   /* ------------------------------ Technologies ----------------------------- */
 
   for (const [i, tech] of technologiesData.entries()) {
@@ -89,11 +109,13 @@ async function main() {
 
   /* --------------------------------- Skills -------------------------------- */
 
+  await prisma.skill.deleteMany({ where: { name: { notIn: skillsData.map((skill) => skill.name) } } });
+
   for (const [i, skill] of skillsData.entries()) {
     await prisma.skill.upsert({
       where: { name: skill.name },
-      update: { category: skill.category, order: i },
-      create: { name: skill.name, category: skill.category, order: i },
+      update: { category: skill.category, status: skill.status ?? "verified", order: i },
+      create: { name: skill.name, category: skill.category, status: skill.status ?? "verified", order: i },
     });
   }
 
@@ -119,6 +141,9 @@ async function main() {
         featured: project.featured,
         published: project.published,
         visual: project.visual,
+        myRole: "myRole" in project ? project.myRole : null,
+        contributions: "contributions" in project ? project.contributions : [],
+        ownership: "ownership" in project ? project.ownership : null,
         order: project.order,
       },
       create: {
@@ -139,6 +164,9 @@ async function main() {
         featured: project.featured,
         published: project.published,
         visual: project.visual,
+        myRole: "myRole" in project ? project.myRole : null,
+        contributions: "contributions" in project ? project.contributions : [],
+        ownership: "ownership" in project ? project.ownership : null,
         order: project.order,
       },
     });
@@ -170,6 +198,8 @@ async function main() {
   }
 
   /* ---------------------------- Certifications ----------------------------- */
+
+  await prisma.certification.deleteMany({ where: { id: { notIn: certificationsData.map((cert) => cert.id) } } });
 
   for (const [i, cert] of certificationsData.entries()) {
     await prisma.certification.upsert({

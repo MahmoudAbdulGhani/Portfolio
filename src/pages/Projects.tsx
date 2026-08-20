@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const filters = [
   { id: "all", label: "All Projects" },
-  { id: "unrwa", label: "UNRWA" },
+  { id: "unrwa", label: "Digital Hub" },
   { id: "personal", label: "Personal" },
 ] as const;
 
@@ -64,11 +64,11 @@ export function Projects() {
           <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint" aria-live="polite">
             {isLoading ? "Loading projects…" : <>
             showing {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-            {filter === "unrwa" ? " — The Digital Hub by UNRWA" : filter === "personal" ? " — personal work" : ""}
+            {filter === "unrwa" ? " — The Digital Hub" : filter === "personal" ? " — personal work" : ""}
             </>}
           </p>
 
-          <motion.div layout className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <motion.div layout className="mt-4 space-y-2">
             {isLoading && Array.from({ length: 6 }, (_, index) => <ProjectCardSkeleton key={index} />)}
             <AnimatePresence mode="popLayout" initial={false}>
               {filtered.map((project, i) => (

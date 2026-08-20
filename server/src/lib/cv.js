@@ -402,8 +402,173 @@ function drawLanguages(doc, flow, value, label = "Languages") {
   flow.y += maxH;
 }
 
+const APPLICATION = {
+  left: 39,
+  right: 39,
+  top: 32,
+  bottom: 816,
+  body: 9.5,
+  ink: "#172033",
+  muted: "#4b5563",
+  accent: "#155e75",
+};
+
+function drawApplicationCv(doc, data, origin) {
+  const { profile, projects, skills, education, certifications, configuration } = data;
+  const left = APPLICATION.left;
+  const width = PAGE.width - APPLICATION.left - APPLICATION.right;
+  let y = APPLICATION.top;
+
+  const write = (value, x = left, options = {}) => {
+    const copy = clean(value);
+    if (!copy) return 0;
+    const size = options.size ?? APPLICATION.body;
+    const face = options.face ?? "regular";
+    const textWidth = options.width ?? width;
+    const lineGap = options.lineGap ?? 0.7;
+    font(doc, face, size);
+    const h = doc.heightOfString(copy, { width: textWidth, lineGap });
+    doc.fillColor(options.color ?? APPLICATION.ink).text(copy, x, y, {
+      width: textWidth, lineGap, align: options.align, link: options.link,
+      underline: false, continued: options.continued,
+    });
+    return h;
+  };
+  const heading = (label) => {
+    y += 5;
+    write(label.toUpperCase(), left, { face: "bold", size: 10.2, color: APPLICATION.accent });
+    y += 12;
+    doc.moveTo(left, y).lineTo(left + width, y).lineWidth(0.7).strokeColor("#8ba8b2").stroke();
+    y += 4;
+  };
+  const bulletLine = (value) => {
+    const bulletWidth = 10;
+    write("•", left + 2, { size: APPLICATION.body, width: bulletWidth });
+    const h = write(value, left + bulletWidth, { width: width - bulletWidth });
+    y += h + 1.2;
+  };
+  const linkedLabels = (items, size = 9.4) => {
+    const separator = "  |  ";
+    font(doc, "regular", size);
+    const parts = items.filter((item) => clean(item.label) && clean(item.url));
+    const line = parts.map((item) => clean(item.label)).join(separator);
+    const total = doc.widthOfString(line);
+    const startX = left + (width - total) / 2;
+    text(doc, line, startX, y, { size, width: total + 2, color: APPLICATION.muted });
+    let x = startX;
+    parts.forEach((item, index) => {
+      if (index) {
+        x += doc.widthOfString(separator);
+      }
+      const label = clean(item.label);
+      const labelWidth = doc.widthOfString(label);
+      doc.link(x, y, labelWidth, size + 2, item.url);
+      x += labelWidth;
+    });
+    y += size + 3;
+  };
+  const datedTitle = (title, date) => {
+    font(doc, "regular", APPLICATION.body);
+    const dateWidth = date ? doc.widthOfString(clean(date)) + 2 : 0;
+    const titleHeight = write(title, left, { face: "bold", size: 10, width: width - dateWidth - 10 });
+    if (date) text(doc, date, left + width - dateWidth, y, { size: 9.4, width: dateWidth, align: "right", color: APPLICATION.muted });
+    y += titleHeight;
+  };
+
+  const socials = profile.socials ?? [];
+  const github = configuration.header.overrides?.github || socials.find((item) => /github/i.test(item.label))?.url;
+  const linkedin = configuration.header.overrides?.linkedin || socials.find((item) => /linkedin/i.test(item.label))?.url;
+  const portfolioCandidate = configuration.header.overrides?.portfolio || profile.portfolioUrl || origin;
+  const portfolio = /^(?!https?:\/\/(?:localhost|127\.0\.0\.1)(?::|\/|$))https?:\/\//i.test(portfolioCandidate) ? portfolioCandidate : "";
+  const name = configuration.header.overrides?.name || profile.name;
+  const title = configuration.header.overrides?.title || profile.title;
+  y += write(name, left, { face: "bold", size: 20.5, align: "center", color: APPLICATION.ink });
+  y += 1;
+  y += write(title, left, { face: "bold", size: 11.5, align: "center", color: APPLICATION.accent });
+  y += 2;
+  linkedLabels([
+    { label: profile.location, url: "https://www.google.com/maps/search/?api=1&query=Tripoli%2C%20Lebanon" },
+    { label: configuration.header.overrides?.phone || profile.phone, url: `tel:${clean(configuration.header.overrides?.phone || profile.phone).replace(/[^+\d]/g, "")}` },
+    { label: configuration.header.overrides?.email || profile.email, url: `mailto:${configuration.header.overrides?.email || profile.email}` },
+  ]);
+  linkedLabels([
+    { label: "LinkedIn", url: linkedin }, { label: "GitHub", url: github }, { label: "Portfolio", url: portfolio },
+  ]);
+
+  heading("Professional Summary");
+  const summary = configuration.professionalSummary || "Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and relational and NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks. Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI-powered application features.";
+  y += write(summary, left, { lineGap: 0.8 });
+
+  heading("Professional Experience");
+  profile.experience.slice(0, 2).forEach((item, index) => {
+    const organization = clean(item.facility);
+    datedTitle(`${item.milestone} — ${organization}`, dateLike(item.meta) ? item.meta : "");
+    y += 1.5;
+    const experienceBullets = item.cvBullets?.length ? item.cvBullets : index === 0 ? [
+      "Completing an intensive full-stack software engineering and AI program focused on modern architecture and production-ready applications.",
+      "Developing type-safe React and Next.js applications with Zustand and TanStack Query, while building REST APIs using Node.js, Express.js, FastAPI, and Django REST Framework.",
+      "Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest.",
+      "Applying SOLID principles and clean architecture in Agile teams; integrating LLM and Cognitive APIs and deploying documented applications with Vercel and Render.",
+    ] : [
+      "Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration interfaces.",
+      "Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.",
+    ];
+    experienceBullets.slice(0, index === 0 ? 4 : 2).forEach(bulletLine);
+    if (index === 0) y += 1;
+  });
+
+  heading("Project Experience");
+  projects.slice(0, 3).forEach((project) => {
+    const links = [["GitHub", project.github], ["Live Demo", project.demo]].filter(([, url]) => clean(url));
+    const suffix = links.map(([label]) => label).join(" | ");
+    const projectLine = `${project.name}${suffix ? ` | ${suffix}` : ""}`;
+    datedTitle(projectLine, "");
+    if (links.length) {
+      font(doc, "bold", 10);
+      let x = left + doc.widthOfString(clean(project.name)) + doc.widthOfString(" | ");
+      links.forEach(([label, url], index) => {
+        if (index) {
+          x += doc.widthOfString(" | ");
+        }
+        const labelWidth = doc.widthOfString(label);
+        doc.link(x, y - 11.5, labelWidth, 12, url); x += labelWidth;
+      });
+    }
+    const stack = (project.stack ?? []).join(", ");
+    const evidence = project.cvBullets?.[0] || projectDescription(project);
+    bulletLine(evidence);
+    if (stack) {
+      y += write(`Technologies: ${stack}`, left + 10, { face: "italic", size: 9.2, width: width - 10, color: APPLICATION.muted }) + 0.5;
+    }
+  });
+
+  heading("Technical Skills");
+  for (const group of groupSkills(skills)) {
+    const h = write(`${group.category}: ${group.names.join(", ")}`, left);
+    y += h + 0.8;
+  }
+
+  heading("Education");
+  education.slice(0, 1).forEach((item) => {
+    datedTitle(item.degree, item.period);
+    y += write(item.school, left, { face: "italic" });
+  });
+
+  const filteredCertifications = certifications.filter((item) => !/digital hub|unrwa/i.test(`${item.title} ${item.issuer}`)).slice(0, 2);
+  if (filteredCertifications.length) {
+    heading("Certifications");
+    filteredCertifications.forEach((item) => {
+      datedTitle(item.title, item.year);
+      y += write(item.issuer, left, { face: "italic", color: APPLICATION.muted });
+    });
+  }
+
+  if (y > APPLICATION.bottom) throw new Error(`Application CV exceeds one A4 page (${Math.ceil(y - APPLICATION.bottom)}pt overflow).`);
+}
+
 export async function generateCvPdfBuffer({ origin = "", mode = "application" } = {}) {
-  const { profile, projects, skills, education, certifications, languages, configuration, mode: resolvedMode } = await resolveCvData(mode);
+  const data = await resolveCvData(mode);
+  const { profile, projects, skills, education, certifications, languages, configuration, mode: resolvedMode } = data;
   const doc = new PDFDocument({
     size: "A4", margins: { top: TOP, bottom: PAGE.height - BOTTOM, left: LEFT, right: LEFT },
     bufferPages: true,
@@ -420,6 +585,11 @@ export async function generateCvPdfBuffer({ origin = "", mode = "application" } 
     doc.on("error", reject);
   });
   const flow = createFlow();
+  if (mode === "application") {
+    drawApplicationCv(doc, data, origin);
+    doc.end();
+    return buffer;
+  }
   drawHeader(doc, flow, profile, origin, configuration.header);
   const titles = resolvedMode.sectionTitles;
   const renderers = {

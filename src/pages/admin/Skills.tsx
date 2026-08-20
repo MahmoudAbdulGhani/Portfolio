@@ -11,6 +11,7 @@ import type { Skill } from "../../types";
 const columns: CrudColumn<Skill>[] = [
   { key: "name", label: "Skill" },
   { key: "category", label: "Category" },
+  { key: "status", label: "Evidence status" },
   { key: "order", label: "Order" },
 ];
 
@@ -23,11 +24,16 @@ export function Skills() {
   return (
     <CrudList
       title="Skills"
-      subtitle="The capability map shown in the Technical strengths section."
+      subtitle="Manage capability categories and evidence status. Only verified skills are eligible for the application CV."
       columns={columns}
       fields={[
         { key: "name", label: "Name", placeholder: "e.g. REST APIs", required: true },
         { key: "category", label: "Category", placeholder: "e.g. Frontend, Backend, Data, Tools", required: true },
+        { key: "status", label: "Evidence status", required: true, options: [
+          { value: "verified", label: "Used in projects / professional work" },
+          { value: "familiar", label: "Familiar with" },
+          { value: "learning", label: "Currently learning" },
+        ] },
         { key: "order", label: "Display order", placeholder: "0" },
       ]}
       items={data}
