@@ -12,7 +12,6 @@ import {
   FiLogOut,
   FiMail,
   FiMenu,
-  FiSettings,
   FiUser,
   FiX,
 } from "react-icons/fi";
@@ -33,11 +32,16 @@ interface NavItem {
 
 const navGroups: { label: string; items: NavItem[] }[] = [
   {
-    label: "Content",
+    label: "Overview",
+    items: [{ to: "/admin/dashboard", label: "Dashboard", icon: FiBarChart2 }],
+  },
+  {
+    label: "Portfolio content",
     items: [
-      { to: "/admin/dashboard", label: "Dashboard", icon: FiBarChart2 },
-      { to: "/admin/projects", label: "Projects", icon: FiFolder },
+      { to: "/admin/settings", label: "Profile & Hero", icon: FiUser },
+      { to: "/admin/site-content", label: "About & Sections", icon: FiFileText },
       { to: "/admin/experience", label: "Experience", icon: FiBriefcase },
+      { to: "/admin/projects", label: "Projects", icon: FiFolder },
       { to: "/admin/skills", label: "Skills", icon: FiUser },
       { to: "/admin/technologies", label: "Technologies", icon: FiCode },
       { to: "/admin/education", label: "Education", icon: FiBookOpen },
@@ -45,16 +49,12 @@ const navGroups: { label: string; items: NavItem[] }[] = [
     ],
   },
   {
-    label: "Documents",
+    label: "Publishing",
     items: [{ to: "/admin/cv", label: "CV Manager", icon: FiFileText }],
   },
   {
     label: "Communication",
     items: [{ to: "/admin/messages", label: "Messages", icon: FiMail }],
-  },
-  {
-    label: "System",
-    items: [{ to: "/admin/settings", label: "Settings", icon: FiSettings }],
   },
 ];
 
@@ -305,8 +305,8 @@ export function AdminLayout() {
             </div>
           </header>
 
-          <main className="flex-1 p-5 sm:p-8">
-            <Outlet />
+          <main className="flex-1 p-4 sm:p-6 xl:p-8">
+            <div className="mx-auto w-full max-w-[1480px]"><Outlet /></div>
           </main>
         </div>
       </div>

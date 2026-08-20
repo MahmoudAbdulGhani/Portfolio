@@ -5,6 +5,7 @@ interface AdminPageHeaderProps {
   description?: string;
   eyebrow?: string;
   actions?: ReactNode;
+  meta?: ReactNode;
 }
 
 export function AdminPageHeader({
@@ -12,6 +13,7 @@ export function AdminPageHeader({
   description,
   eyebrow,
   actions,
+  meta,
 }: AdminPageHeaderProps) {
   return (
     <header className="admin-page-header">
@@ -23,6 +25,7 @@ export function AdminPageHeader({
             {description}
           </p>
         )}
+        {meta && <div className="mt-3 flex flex-wrap items-center gap-2">{meta}</div>}
       </div>
       {actions && <div className="admin-page-actions">{actions}</div>}
     </header>

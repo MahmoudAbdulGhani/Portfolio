@@ -1,18 +1,21 @@
 import { FiBookOpen } from "react-icons/fi";
-import { useEducation } from "../lib/hooks";
+import { useEducation, useSiteSection } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
+import { PublicDataState } from "../components/PublicDataState";
 
 export function Education() {
-  const { data: education } = useEducation();
+  const { data: education, isLoading, isError, refetch } = useEducation();
+  const { data: section } = useSiteSection("education");
+  if (isLoading || isError) return <PublicDataState loading={isLoading} error={isError} onRetry={() => void refetch()} label="education" />;
 
   return (
     <section id="education" className="section relative">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Academic background"
-          title="Education"
-          description="A computer science foundation in software development, databases, and systems."
+          eyebrow={section?.eyebrow ?? ""}
+          title={section?.heading ?? ""}
+          description={section?.description ?? ""}
         />
 
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -29,10 +32,12 @@ export function Education() {
                         {edu.degree}
                       </h3>
                       <p className="mt-0.5 text-sm text-muted">{edu.school}</p>
+                      {edu.field && <p className="mt-0.5 text-xs text-faint">{edu.field}</p>}
+                      {edu.location && <p className="mt-0.5 text-xs text-faint">{edu.location}</p>}
                     </div>
                   </div>
-                  {edu.period && (
-                    <span className="chip shrink-0">{edu.period}</span>
+                  {(edu.period || edu.startDate || edu.endDate) && (
+                    <span className="chip shrink-0">{edu.period || [edu.startDate, edu.endDate].filter(Boolean).join(" – ")}</span>
                   )}
                 </div>
                 {edu.details && (

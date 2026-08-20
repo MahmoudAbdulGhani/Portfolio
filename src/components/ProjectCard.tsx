@@ -3,12 +3,6 @@ import { FiArrowRight } from "react-icons/fi";
 import type { Project } from "../types";
 import { ProjectVisual } from "./ProjectVisual";
 
-const impactNotes: Record<string, string> = {
-  "gamezone-arena": "Live availability · time-slot conflict detection · Stripe payments",
-  lobby: "Persistent identities · temporary guest rooms · real-time voice",
-  unihub: "Role-based portals for students, professors and administrators",
-};
-
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group grid grid-cols-1 items-start gap-8 border-t border-line py-12 lg:grid-cols-12">
@@ -20,9 +14,9 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {project.tagline || project.description}
         </p>
-        {impactNotes[project.slug] && (
+        {project.impactSummary && (
           <p className="mt-2 font-mono text-[11px] text-faint">
-            {impactNotes[project.slug]}
+            {project.impactSummary}
           </p>
         )}
         <div className="mt-5 flex flex-wrap gap-2">
@@ -55,6 +49,7 @@ export function ProjectCard({ project }: { project: Project }) {
               visual={project.visual}
               name={project.name}
               image={project.coverImage}
+              imageAlt={project.imageAlt}
               type={project.type}
               stack={project.stack}
               className="aspect-video h-auto"

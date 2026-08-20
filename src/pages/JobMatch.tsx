@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiAlertCircle, FiArrowRight, FiCheckCircle, FiRefreshCw, FiSearch, FiZap } from "react-icons/fi";
 import { api, ApiError } from "../lib/api";
 import { PageMeta } from "../components/PageMeta";
+import { useSiteSection } from "../lib/hooks";
 
 const MAX_LENGTH = 8_000;
 const MIN_LENGTH = 80;
@@ -36,6 +37,7 @@ function ListSection({ title, items, tone = "default" }: { title: string; items:
 }
 
 export function JobMatch() {
+  const { data: section } = useSiteSection("jobMatch");
   const [jobDescription, setJobDescription] = useState("");
   const [result, setResult] = useState<MatchResult>();
   const [error, setError] = useState("");
@@ -79,7 +81,7 @@ export function JobMatch() {
   const clear = () => { setJobDescription(""); setResult(undefined); setError(""); };
 
   return <>
-    <PageMeta title="Job Match" description="Compare a job description with Mahmoud's verified portfolio skills, projects, experience, education, and certifications." />
+    <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
     <main className="min-h-screen pt-16">
       <section className="section relative overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-accent/8 to-transparent" />

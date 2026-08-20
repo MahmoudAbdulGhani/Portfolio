@@ -19,6 +19,7 @@ const expectedPrivileges = {
   Message: ["SELECT", "INSERT", "UPDATE", "DELETE"],
   RateLimitBucket: ["SELECT", "INSERT", "UPDATE", "DELETE"],
   CvConfiguration: ["SELECT", "INSERT", "UPDATE"],
+  SiteSection: ["SELECT", "INSERT", "UPDATE", "DELETE"],
 };
 
 function assert(condition, message) {
@@ -82,7 +83,7 @@ try {
       for (const model of [
         "admin", "profile", "experience", "socialLink", "project", "technology",
         "skill", "education", "certification", "message", "rateLimitBucket",
-        "cvConfiguration",
+        "cvConfiguration", "siteSection",
       ]) {
         await tx[model].count();
       }

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { FiCheck, FiKey, FiLoader, FiPlus, FiTrash2 } from "react-icons/fi";
+import { FiArrowDown, FiArrowUp, FiCheck, FiKey, FiLoader, FiPlus, FiTrash2 } from "react-icons/fi";
 import { useAdminProfile, useChangePassword, useUpdateProfile } from "../../lib/hooks";
 import type { Profile, SocialLink } from "../../types";
 
 function toFormState(p: Profile) {
   return {
     name: p.name,
+    shortName: p.shortName,
     title: p.title,
     tagline: p.tagline,
     bio: p.bio,
@@ -18,12 +19,25 @@ function toFormState(p: Profile) {
     portfolioUrl: p.portfolioUrl ?? "",
     seoTitle: p.seoTitle ?? "",
     seoDescription: p.seoDescription ?? "",
+    resumeUrl: p.resumeUrl ?? "",
+    professionalSummary: p.professionalSummary ?? "",
+    availabilityStatus: p.availabilityStatus ?? "",
+    availabilityText: p.availabilityText ?? "",
+    responseTime: p.responseTime ?? "",
+    remoteAvailability: p.remoteAvailability ?? "",
+    openToOpportunities: p.openToOpportunities,
+    heroLabel: p.heroLabel ?? "",
+    profileReference: p.profileReference ?? "",
+    whatsappNumber: p.whatsappNumber ?? "",
+    whatsappMessage: p.whatsappMessage ?? "",
+    focusAreasText: p.focusAreas.join("\n"),
     socials: p.socials.map((s) => ({ ...s })),
   };
 }
 
 const emptyForm = {
   name: "",
+  shortName: "",
   title: "",
   tagline: "",
   bio: "",
@@ -35,6 +49,8 @@ const emptyForm = {
   portfolioUrl: "",
   seoTitle: "",
   seoDescription: "",
+  resumeUrl: "", professionalSummary: "", availabilityStatus: "", availabilityText: "", responseTime: "", remoteAvailability: "",
+  openToOpportunities: true, heroLabel: "", profileReference: "", whatsappNumber: "", whatsappMessage: "", focusAreasText: "",
   socials: [] as SocialLink[],
 };
 
@@ -66,10 +82,17 @@ export function Settings() {
       form.socials.map((s, idx) => (idx === i ? { ...s, [key]: value } : s)),
     );
 
-  const addSocial = () => set("socials", [...form.socials, { label: "", url: "" }]);
+  const addSocial = () => set("socials", [...form.socials, { label: "", url: "", platform: "link", username: "", order: form.socials.length, showInHero: true, showInContact: true, showInFooter: true, showOnCv: false, published: true }]);
 
   const removeSocial = (i: number) =>
     set("socials", form.socials.filter((_, idx) => idx !== i));
+  const moveSocial = (index: number, delta: number) => {
+    const target = index + delta;
+    if (target < 0 || target >= form.socials.length) return;
+    const next = [...form.socials];
+    [next[index], next[target]] = [next[target], next[index]];
+    set("socials", next);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -77,6 +100,7 @@ export function Settings() {
     update.mutate(
       {
         name: form.name,
+        shortName: form.shortName,
         title: form.title,
         tagline: form.tagline,
         bio: form.bio,
@@ -88,7 +112,14 @@ export function Settings() {
         portfolioUrl: form.portfolioUrl || null,
         seoTitle: form.seoTitle || null,
         seoDescription: form.seoDescription || null,
-        socials: form.socials.filter((x) => x.label),
+        resumeUrl: form.resumeUrl || null,
+        professionalSummary: form.professionalSummary || null,
+        availabilityStatus: form.availabilityStatus || null, availabilityText: form.availabilityText || null,
+        responseTime: form.responseTime || null, remoteAvailability: form.remoteAvailability || null,
+        openToOpportunities: form.openToOpportunities, heroLabel: form.heroLabel || null, profileReference: form.profileReference || null,
+        whatsappNumber: form.whatsappNumber || null, whatsappMessage: form.whatsappMessage || null,
+        focusAreas: form.focusAreasText.split("\n").map((item) => item.trim()).filter(Boolean),
+        socials: form.socials.filter((x) => x.label).map((social, order) => ({ ...social, order })),
       },
       {
         onSuccess: (saved) => {
@@ -165,6 +196,7 @@ export function Settings() {
                 onChange={(e) => set("name", e.target.value)}
               />
             </div>
+            <div><label htmlFor="s-short-name" className="field-label">Short name</label><input id="s-short-name" className="input" value={form.shortName} onChange={(e) => set("shortName", e.target.value)} /></div>
             <div>
               <label htmlFor="s-title" className="field-label">Title</label>
               <input
@@ -237,6 +269,7 @@ export function Settings() {
               placeholder="/myphoto.jpeg"
             />
           </div>
+          <div><label htmlFor="s-resume" className="field-label">Resume URL</label><input id="s-resume" className="input" value={form.resumeUrl} onChange={(e) => set("resumeUrl", e.target.value)} placeholder="/api/cv.pdf or https://…" /></div>
 
           <div>
             <label htmlFor="s-bio" className="field-label">Bio</label>
@@ -247,6 +280,10 @@ export function Settings() {
               onChange={(e) => set("bio", e.target.value)}
             />
           </div>
+          <div><label htmlFor="s-summary" className="field-label">Professional summary</label><textarea id="s-summary" className="textarea min-h-28" value={form.professionalSummary} onChange={(e) => set("professionalSummary", e.target.value)} /></div>
+          <div className="grid gap-4 sm:grid-cols-2"><label className="field-label">Availability status<input className="input mt-1" value={form.availabilityStatus} onChange={(e) => set("availabilityStatus", e.target.value)} /></label><label className="field-label">Hero availability text<input className="input mt-1" value={form.availabilityText} onChange={(e) => set("availabilityText", e.target.value)} /></label><label className="field-label">Response time<input className="input mt-1" value={form.responseTime} onChange={(e) => set("responseTime", e.target.value)} /></label><label className="field-label">Remote availability<input className="input mt-1" value={form.remoteAvailability} onChange={(e) => set("remoteAvailability", e.target.value)} /></label><label className="field-label">Hero label<input className="input mt-1" value={form.heroLabel} onChange={(e) => set("heroLabel", e.target.value)} /></label><label className="field-label">Profile reference<input className="input mt-1" value={form.profileReference} onChange={(e) => set("profileReference", e.target.value)} /></label><label className="field-label">WhatsApp number<input className="input mt-1" value={form.whatsappNumber} onChange={(e) => set("whatsappNumber", e.target.value)} /></label><label className="field-label">WhatsApp message<input className="input mt-1" value={form.whatsappMessage} onChange={(e) => set("whatsappMessage", e.target.value)} /></label></div>
+          <label className="field-label">Focus areas (one per line)<textarea className="textarea mt-1 min-h-28" value={form.focusAreasText} onChange={(e) => set("focusAreasText", e.target.value)} /></label>
+          <label className="flex items-center gap-2 text-sm font-semibold text-ink"><input type="checkbox" checked={form.openToOpportunities} onChange={(e) => set("openToOpportunities", e.target.checked)} />Open to opportunities</label>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="s-seo-title" className="field-label">SEO title</label>
@@ -284,6 +321,9 @@ export function Settings() {
                 onChange={(e) => setSocial(i, "url", e.target.value)}
                 placeholder="https://…"
               />
+              <input className="input w-full sm:w-32" value={s.platform ?? "link"} onChange={(e) => setSocial(i, "platform", e.target.value)} placeholder="Platform" />
+              <input className="input w-full sm:w-40" value={s.username ?? ""} onChange={(e) => setSocial(i, "username", e.target.value)} placeholder="Display username" />
+              <div className="flex flex-wrap gap-2 text-xs text-muted">{(["published", "showInHero", "showInContact", "showInFooter", "showOnCv"] as const).map((key) => <label key={key} className="flex items-center gap-1"><input type="checkbox" checked={s[key] !== false} onChange={(e) => set("socials", form.socials.map((item, index) => index === i ? { ...item, [key]: e.target.checked } : item))} />{key.replace("showIn", "")}</label>)}</div>
               <button
                 type="button"
                 onClick={() => removeSocial(i)}
@@ -292,6 +332,8 @@ export function Settings() {
               >
                 <FiTrash2 size={15} />
               </button>
+              <button type="button" className="btn-icon border border-line" disabled={i === 0} onClick={() => moveSocial(i, -1)} aria-label={`Move ${s.label || "social link"} up`}><FiArrowUp size={15} /></button>
+              <button type="button" className="btn-icon border border-line" disabled={i === form.socials.length - 1} onClick={() => moveSocial(i, 1)} aria-label={`Move ${s.label || "social link"} down`}><FiArrowDown size={15} /></button>
             </div>
           ))}
         </div>

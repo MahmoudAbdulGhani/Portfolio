@@ -1,11 +1,12 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { Prisma } from "@prisma/client";
+import { z } from "zod";
 import { prisma } from "../lib/prisma.js";
 import { generateCvPdfBuffer } from "../lib/cv.js";
 import { getCvCatalog, getOrCreateCvConfiguration, normalizeHeader, normalizeMode } from "../lib/cv-config.js";
 import { consumeRateLimits } from "../lib/rate-limit.js";
-import { changePasswordSchema, cvMutationSchema, loginSchema, profileMutationSchema, projectMutationSchema, routeIdSchema, slugSchema, validationMessage } from "../lib/validation.js";
+import { changePasswordSchema, cvMutationSchema, loginSchema, profileMutationSchema, projectMutationSchema, routeIdSchema, siteSectionSchema, slugSchema, validationMessage } from "../lib/validation.js";
 import { clearAuthCookie, getAuthenticatedAdminId, requireAuth, setAuthCookie, signToken } from "../middleware/auth.js";
 import { getClientIp } from "../lib/client-ip.js";
 
@@ -170,7 +171,7 @@ router.get("/cv/:mode.pdf", requireAuth, async (req, res, next) => {
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin, mode });
     res.setHeader("Content-Type", "application/pdf");
-    const filename = mode === "application" ? "Mahmoud-Hussein-Abdul-Ghani-CV.pdf" : "Mahmoud-Hussein-Abdul-Ghani-Master-CV.pdf";
+    const filename = mode === "application" ? "portfolio-cv.pdf" : "portfolio-master-cv.pdf";
     res.setHeader("Content-Disposition", `${req.query.download === "1" ? "attachment" : "inline"}; filename="${filename}"`);
     res.setHeader("Cache-Control", "private, no-store");
     res.send(buffer);
@@ -235,13 +236,15 @@ const profileScalarKeys = [
   "seoTitle",
   "seoDescription",
   "languages",
+  "professionalSummary", "availabilityStatus", "availabilityText", "responseTime", "remoteAvailability",
+  "openToOpportunities", "heroLabel", "profileReference", "whatsappNumber", "whatsappMessage", "focusAreas",
 ];
 
 function profileScalars(body) {
   return Object.fromEntries(
     profileScalarKeys
       .filter((key) => body[key] !== undefined)
-      .map((key) => [key, str(body[key])]),
+      .map((key) => [key, key === "openToOpportunities" ? Boolean(body[key]) : key === "focusAreas" ? strArr(body[key]) : str(body[key])]),
   );
 }
 
@@ -260,6 +263,9 @@ function nestedExperience(profile, input) {
     data: {
       role, company, description, startDate, endDate, isCurrent,
       location: str(item?.location)?.trim() || null,
+      workArrangement: str(item?.workArrangement)?.trim() || null,
+      bullets: strArr(item?.bullets), technologies: strArr(item?.technologies), published: item?.published !== false,
+      showOnCv: item?.showOnCv !== false, cvDescription: str(item?.cvDescription)?.trim() || null, cvBullets: strArr(item?.cvBullets),
       milestone: role, facility: company, meta: displayDate, details: description,
       order: index,
     },
@@ -283,6 +289,10 @@ function nestedSocials(profile, input) {
       data: {
         label: str(item?.label)?.trim() ?? "",
         url: str(item?.url)?.trim() ?? "",
+        platform: str(item?.platform)?.trim() || "link", username: str(item?.username)?.trim() || null,
+        icon: str(item?.icon)?.trim() || null, order: Number(item?.order) || 0,
+        showInHero: item?.showInHero !== false, showInContact: item?.showInContact !== false,
+        showInFooter: item?.showInFooter !== false, showOnCv: item?.showOnCv !== false, published: item?.published !== false,
       },
     }))
     .filter((item) => item.data.label);
@@ -368,6 +378,26 @@ const projectFields = (body) => ({
   contributions: body.contributions !== undefined ? strArr(body.contributions) : undefined,
   ownership: body.ownership !== undefined ? str(body.ownership) : undefined,
   teamSize: body.teamSize === undefined ? undefined : body.teamSize === null ? null : Number(body.teamSize),
+  impactSummary: body.impactSummary !== undefined ? str(body.impactSummary) : undefined,
+  imageAlt: body.imageAlt !== undefined ? str(body.imageAlt) : undefined,
+  showOnCv: body.showOnCv !== undefined ? Boolean(body.showOnCv) : undefined,
+  showOnPortfolio: body.showOnPortfolio !== undefined ? Boolean(body.showOnPortfolio) : undefined,
+  cvDescription: body.cvDescription !== undefined ? str(body.cvDescription) : undefined,
+  cvBullets: body.cvBullets !== undefined ? strArr(body.cvBullets) : undefined,
+});
+
+router.get("/site-content", requireAuth, async (_req, res, next) => {
+  try { res.json(await prisma.siteSection.findMany({ where: { key: { not: { startsWith: "_migration:" } } }, orderBy: { order: "asc" } })); }
+  catch (error) { next(error); }
+});
+
+router.put("/site-content", requireAuth, async (req, res, next) => {
+  try {
+    const input = z.array(siteSectionSchema).max(50).safeParse(req.body ?? []);
+    if (!input.success) return res.status(400).json({ message: validationMessage(input, "Invalid site content.") });
+    await prisma.$transaction(input.data.map((section) => prisma.siteSection.upsert({ where: { key: section.key }, update: section, create: section })));
+    res.json(await prisma.siteSection.findMany({ where: { key: { not: { startsWith: "_migration:" } } }, orderBy: { order: "asc" } }));
+  } catch (error) { next(error); }
 });
 
 router.get("/projects", requireAuth, async (_req, res, next) => {
@@ -454,14 +484,17 @@ router.delete("/projects/:id", requireAuth, async (req, res, next) => {
 
 /* --------------------------- Generic entities -------------------------- */
 
-function normalizeCrudData(body, { requiredFields, optionalFields }, isPatch) {
-  const allowedFields = new Set([...requiredFields, ...optionalFields, "order"]);
+function normalizeCrudData(body, { requiredFields, optionalFields, booleanFields = [] }, isPatch) {
+  const allowedFields = new Set([...requiredFields, ...optionalFields, ...booleanFields, "order"]);
   const unknownFields = Object.keys(body).filter((key) => !allowedFields.has(key));
   if (unknownFields.length) {
     return { error: `Unsupported field: ${unknownFields[0]}.` };
   }
 
   const data = {};
+  for (const field of booleanFields) {
+    if (body[field] !== undefined) data[field] = body[field] === true || body[field] === "true";
+  }
   for (const field of [...requiredFields, ...optionalFields]) {
     if (body[field] === undefined) continue;
     const value = str(body[field])?.trim() ?? "";
@@ -557,11 +590,13 @@ const technologyCrud = { requiredFields: ["name", "category"], optionalFields: [
 const skillCrud = { requiredFields: ["name", "category", "status"], optionalFields: [] };
 const educationCrud = {
   requiredFields: ["school", "degree"],
-  optionalFields: ["field", "period", "details"],
+  optionalFields: ["field", "period", "details", "location", "startDate", "endDate", "cvDescription"],
+  booleanFields: ["published", "showOnCv"],
 };
 const certificationCrud = {
   requiredFields: ["title", "issuer"],
-  optionalFields: ["year", "url"],
+  optionalFields: ["year", "url", "issueDate", "expectedDate", "duration", "credentialId", "description", "cvDescription"],
+  booleanFields: ["published", "showOnCv"],
 };
 
 router.use("/technologies", makeCrudRouter(prisma.technology, technologyCrud));

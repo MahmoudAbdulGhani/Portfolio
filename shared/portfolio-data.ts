@@ -1,9 +1,6 @@
-/* Canonical portfolio content.
-   Shared by:
-   - the React app (src/data/portfolio.ts re-exports from here as seed fallback)
-   - the server seed script (server/prisma/seed.ts imports from here)
-
-   Single source of truth for the data migrated into PostgreSQL. */
+/* Historical bootstrap content retained for fresh local databases and audited
+   migrations. PostgreSQL is authoritative at runtime; the React application
+   never imports this file or falls back to it after an API failure. */
 
 export const profileData = {
   id: "profile-main",

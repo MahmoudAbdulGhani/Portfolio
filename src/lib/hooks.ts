@@ -1,10 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  seedCertifications,
-  seedEducation,
-  seedSkills,
-  seedTechnologies,
-} from "../data/portfolio";
 import type {
   AnalyticsSummary,
   AuthUser,
@@ -15,21 +9,19 @@ import type {
   Project,
   Skill,
   Technology,
+  SiteSection,
 } from "../types";
 import { api } from "./api";
 
 const getProfile = () => api<Profile>("/profile");
 const getProjects = () => api<Project[]>("/projects");
-const getTechnologies = () =>
-  api<Technology[]>("/technologies").catch(() => seedTechnologies);
-const getSkills = () => api<Skill[]>("/skills").catch(() => seedSkills);
-const getEducation = () =>
-  api<Education[]>("/education").catch(() => seedEducation);
-const getCertifications = () =>
-  api<Certification[]>("/certifications").catch(() => seedCertifications);
+const getTechnologies = () => api<Technology[]>("/technologies");
+const getSkills = () => api<Skill[]>("/skills");
+const getEducation = () => api<Education[]>("/education");
+const getCertifications = () => api<Certification[]>("/certifications");
 
 /* ------------------------------------------------------------------ */
-/*  Public queries (fall back to canonical seed data)                  */
+/*  Public queries (database/API authoritative; no silent fixtures)    */
 /* ------------------------------------------------------------------ */
 
 export function useProfile() {
@@ -59,7 +51,6 @@ export function useTechnologies() {
   return useQuery({
     queryKey: ["technologies"],
     queryFn: getTechnologies,
-    placeholderData: seedTechnologies,
   });
 }
 
@@ -67,7 +58,6 @@ export function useSkills() {
   return useQuery({
     queryKey: ["skills"],
     queryFn: getSkills,
-    placeholderData: seedSkills,
   });
 }
 
@@ -75,7 +65,6 @@ export function useEducation() {
   return useQuery({
     queryKey: ["education"],
     queryFn: getEducation,
-    placeholderData: seedEducation,
   });
 }
 
@@ -83,8 +72,28 @@ export function useCertifications() {
   return useQuery({
     queryKey: ["certifications"],
     queryFn: getCertifications,
-    placeholderData: seedCertifications,
   });
+}
+
+export function useSiteContent() {
+  return useQuery({ queryKey: ["site-content"], queryFn: () => api<SiteSection[]>("/site-content") });
+}
+
+export function useSiteSection(key: string) {
+  const query = useSiteContent();
+  return { ...query, data: query.data?.find((section) => section.key === key) };
+}
+
+export function useAdminSiteContent() {
+  return useQuery({ queryKey: ["site-content", "admin"], queryFn: () => api<SiteSection[]>("/admin/site-content") });
+}
+
+export function useUpdateSiteContent() {
+  const qc = useQueryClient();
+  return useMutation({ mutationFn: (sections: SiteSection[]) => api<SiteSection[]>("/admin/site-content", { method: "PUT", body: JSON.stringify(sections.map((section) => ({ key: section.key, eyebrow: section.eyebrow, heading: section.heading, description: section.description, ctaLabel: section.ctaLabel, ctaUrl: section.ctaUrl, visible: section.visible, order: section.order, content: section.content }))) }), onSuccess: (sections) => {
+    qc.setQueryData(["site-content", "admin"], sections);
+    void qc.invalidateQueries({ queryKey: ["site-content"] });
+  } });
 }
 
 /* ------------------------------------------------------------------ */

@@ -20,7 +20,7 @@ router.get("/robots.txt", (req, res) => {
 router.get("/sitemap.xml", async (req, res, next) => {
   try {
     const origin = `${req.protocol}://${req.get("host")}`;
-    const projects = await prisma.project.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } });
+    const projects = await prisma.project.findMany({ where: { published: true, showOnPortfolio: true }, select: { slug: true, updatedAt: true } });
     const fixed = ["/", "/projects", "/contact", "/job-match", "/cv"];
     const urls = [
       ...fixed.map((path) => ({ path })),
@@ -37,8 +37,10 @@ router.get("/profile", async (_req, res, next) => {
       select: {
         id: true, name: true, shortName: true, title: true, tagline: true, bio: true, location: true,
         email: true, phone: true, photo: true, resumeUrl: true, portfolioUrl: true, seoTitle: true, seoDescription: true, languages: true, updatedAt: true,
-        experience: { orderBy: { order: "asc" }, select: { id: true, role: true, company: true, description: true, startDate: true, endDate: true, isCurrent: true, location: true, order: true } },
-        socials: { orderBy: { id: "asc" } },
+        professionalSummary: true, availabilityStatus: true, availabilityText: true, responseTime: true, remoteAvailability: true,
+        openToOpportunities: true, heroLabel: true, profileReference: true, whatsappNumber: true, whatsappMessage: true, focusAreas: true,
+        experience: { where: { published: true }, orderBy: { order: "asc" } },
+        socials: { where: { published: true }, orderBy: { order: "asc" } },
       },
     });
     if (!profile) return res.status(404).json({ message: "Profile not found." });
@@ -48,10 +50,17 @@ router.get("/profile", async (_req, res, next) => {
   }
 });
 
+router.get("/site-content", async (_req, res, next) => {
+  try {
+    const sections = await prisma.siteSection.findMany({ where: { visible: true, key: { not: { startsWith: "_migration:" } } }, orderBy: { order: "asc" } });
+    res.json(sections);
+  } catch (error) { next(error); }
+});
+
 router.get("/projects", async (_req, res, next) => {
   try {
     const projects = await prisma.project.findMany({
-      where: { published: true },
+      where: { published: true, showOnPortfolio: true },
       orderBy: [{ order: "asc" }, { createdAt: "asc" }],
     });
     res.setHeader("Cache-Control", "public, max-age=30, s-maxage=120, stale-while-revalidate=300");
@@ -65,7 +74,7 @@ router.get("/projects/:slug", async (req, res, next) => {
   try {
     if (!slugSchema.safeParse(req.params.slug).success) return res.status(400).json({ message: "Invalid project identifier." });
     const project = await prisma.project.findFirst({
-      where: { slug: req.params.slug, published: true },
+      where: { slug: req.params.slug, published: true, showOnPortfolio: true },
     });
     if (!project) {
       return res.status(404).json({ message: "Project not found." });
@@ -104,7 +113,7 @@ router.get("/skills", async (_req, res, next) => {
 
 router.get("/education", async (_req, res, next) => {
   try {
-    const education = await prisma.education.findMany({
+    const education = await prisma.education.findMany({ where: { published: true },
       orderBy: { order: "asc" },
     });
     res.json(education);
@@ -115,7 +124,7 @@ router.get("/education", async (_req, res, next) => {
 
 router.get("/certifications", async (_req, res, next) => {
   try {
-    const certifications = await prisma.certification.findMany({
+    const certifications = await prisma.certification.findMany({ where: { published: true },
       orderBy: { order: "asc" },
     });
     res.json(certifications);
@@ -131,7 +140,7 @@ router.get("/cv.pdf", async (req, res, next) => {
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin });
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", `${req.query.preview === "1" ? "inline" : "attachment"}; filename="Mahmoud-Hussein-Abdul-Ghani-CV.pdf"`);
+    res.setHeader("Content-Disposition", `${req.query.preview === "1" ? "inline" : "attachment"}; filename="portfolio-cv.pdf"`);
     res.setHeader("Cache-Control", "public, max-age=300");
     res.setHeader("Content-Length", buffer.length);
     res.send(buffer);

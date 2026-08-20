@@ -34,6 +34,17 @@ model Profile {
   portfolioUrl   String?
   seoTitle       String?
   seoDescription String?
+  professionalSummary String?
+  availabilityStatus String?
+  availabilityText String?
+  responseTime String?
+  remoteAvailability String?
+  openToOpportunities Boolean @default(true)
+  heroLabel String?
+  profileReference String?
+  whatsappNumber String?
+  whatsappMessage String?
+  focusAreas String[] @default([])
   experience     Experience[]
   socials        SocialLink[]
 }
@@ -53,6 +64,13 @@ model Experience {
   endDate     String?
   isCurrent   Boolean @default(false)
   location    String?
+  workArrangement String?
+  bullets     String[] @default([])
+  technologies String[] @default([])
+  published   Boolean @default(true)
+  showOnCv    Boolean @default(true)
+  cvDescription String?
+  cvBullets   String[] @default([])
   profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 }
 
@@ -60,6 +78,15 @@ model SocialLink {
   id        String  @id @default(cuid())
   label     String
   url       String
+  platform  String @default("link")
+  username  String?
+  icon      String?
+  order     Int @default(0)
+  showInHero Boolean @default(true)
+  showInContact Boolean @default(true)
+  showInFooter Boolean @default(true)
+  showOnCv Boolean @default(true)
+  published Boolean @default(true)
   profileId String
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 }
@@ -87,6 +114,12 @@ model Education {
   period  String?
   details String?
   order   Int     @default(0)
+  location String?
+  startDate String?
+  endDate String?
+  published Boolean @default(true)
+  showOnCv Boolean @default(true)
+  cvDescription String?
 }
 
 model Certification {
@@ -96,6 +129,14 @@ model Certification {
   year   String?
   url    String?
   order  Int     @default(0)
+  issueDate String?
+  expectedDate String?
+  duration String?
+  credentialId String?
+  description String?
+  published Boolean @default(true)
+  showOnCv Boolean @default(true)
+  cvDescription String?
 }
 
 model Project {
@@ -128,6 +169,25 @@ model Project {
   contributions String[] @default([])
   ownership     String?
   teamSize      Int?
+  impactSummary String?
+  imageAlt      String?
+  showOnCv      Boolean @default(true)
+  showOnPortfolio Boolean @default(true)
+  cvDescription String?
+  cvBullets     String[] @default([])
+}
+
+model SiteSection {
+  key         String   @id
+  eyebrow     String?
+  heading     String?
+  description String?
+  ctaLabel    String?
+  ctaUrl      String?
+  visible     Boolean  @default(true)
+  order       Int      @default(0)
+  content     Json     @default("{}")
+  updatedAt   DateTime @updatedAt
 }
 
 model RateLimitBucket {

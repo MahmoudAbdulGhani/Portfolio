@@ -1,5 +1,19 @@
 import { expect, test } from "@playwright/test";
 
+const profile = { id: "profile-test", name: "Mahmoud Hussein Abdul Ghani", shortName: "Mahmoud Abdul Ghani", title: "Full-Stack Software Engineer", tagline: "Building secure applications.", bio: "Database-backed biography.", location: "Tripoli, Lebanon", email: "test@example.com", phone: "+961 70 000 000", photo: null, resumeUrl: null, portfolioUrl: null, seoTitle: "Mahmoud Hussein Abdul Ghani | Full-Stack Software Engineer", seoDescription: "Portfolio description", languages: "English", experience: [], socials: [], professionalSummary: "Professional summary", availabilityStatus: "Open to roles", availabilityText: "Open to opportunities", responseTime: "Within 24h", remoteAvailability: "Remote friendly", openToOpportunities: true, heroLabel: "Full-stack systems", profileReference: "Profile · 001", whatsappNumber: "+96170000000", whatsappMessage: "Hello", focusAreas: ["React", "Node.js"] };
+const sections = [
+  { key: "hero", heading: "Full-Stack Software Engineer", description: "Building secure applications.", eyebrow: null, ctaLabel: "View Projects", ctaUrl: "/projects", visible: true, order: 0, content: { introduction: "Database hero introduction" } },
+  { key: "projectsPage", heading: "Projects", description: "Project collection", eyebrow: "Portfolio", ctaLabel: null, ctaUrl: null, visible: true, order: 1, content: { seoTitle: "Projects", seoDescription: "Projects description", filters: [{ id: "all", label: "All Projects" }] } },
+  { key: "contact", heading: "Start a real conversation", description: "Contact description", eyebrow: "Contact", ctaLabel: null, ctaUrl: null, visible: true, order: 2, content: { availabilityOptions: ["Open to roles"], successHeading: "Message sent", successMessage: "Thanks, your email", formHeading: "Send a message", formDescription: "Reply soon", jobMatchHeading: "Try Job Match", jobMatchText: "Compare a role", jobMatchCta: "Match a job" } },
+  { key: "seo", heading: null, description: null, eyebrow: null, ctaLabel: null, ctaUrl: null, visible: true, order: 3, content: { titleTemplate: "%s | Mahmoud Hussein Abdul Ghani", defaultTitle: "Full-Stack Software Engineer", defaultDescription: "Portfolio", pages: { contact: { title: "Contact", description: "Contact description" } } } },
+  { key: "cvPage", heading: "Resume", description: "Professional curriculum vitae.", eyebrow: null, ctaLabel: null, ctaUrl: null, visible: true, order: 4, content: { downloadLabel: "Download PDF", backLabel: "Back to portfolio", unavailableText: "Use Download PDF if preview is unavailable." } },
+];
+
+test.beforeEach(async ({ page }) => {
+  await page.route("**/api/profile", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(profile) }));
+  await page.route("**/api/site-content", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(sections) }));
+});
+
 test("public navigation, theme, metadata, and mobile menu work", async ({ page, isMobile }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/Mahmoud Hussein Abdul Ghani/);

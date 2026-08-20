@@ -15,6 +15,8 @@ import { cn, formatDate } from "../../lib/format";
 import { ConfirmDialog } from "../../components/ConfirmDialog";
 import { EmptyState } from "../../components/EmptyState";
 import type { Message } from "../../types";
+import { AdminPageHeader } from "../../components/admin/AdminPageHeader";
+import { SearchField, StatusBadge } from "../../components/admin/AdminUI";
 
 export function Messages() {
   const { data: messages, isLoading } = useMessages();
@@ -25,13 +27,19 @@ export function Messages() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [confirmBulkDelete, setConfirmBulkDelete] = useState(false);
   const [bulkAction, setBulkAction] = useState<"read" | "delete" | null>(null);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState<"all" | "unread" | "read">("all");
 
   const sorted = [...(messages ?? [])].sort(
     (a, b) =>
       new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
   );
   const unread = sorted.filter((m) => !m.read).length;
-  const allSelected = sorted.length > 0 && selected.size === sorted.length;
+  const visible = sorted.filter((message) => {
+    const matchesSearch = `${message.name} ${message.email} ${message.subject} ${message.message}`.toLowerCase().includes(search.trim().toLowerCase());
+    return matchesSearch && (filter === "all" || (filter === "unread" ? !message.read : message.read));
+  });
+  const allSelected = visible.length > 0 && visible.every((message) => selected.has(message.id));
   const selectedUnread = sorted.filter((m) => selected.has(m.id) && !m.read);
 
   const toggleSelected = (id: string) => {
@@ -73,17 +81,7 @@ export function Messages() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="admin-heading">Messages</h1>
-        <p className="mt-1.5 text-sm text-muted">
-          Messages sent through the contact form.
-        </p>
-        {unread > 0 && (
-          <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-            {unread} unread
-          </p>
-        )}
-      </div>
+      <AdminPageHeader title="Messages" description="Review messages submitted through the public contact form." meta={<StatusBadge tone={unread ? "info" : "neutral"}>{unread ? `${unread} unread` : "Inbox clear"}</StatusBadge>} />
 
       {isLoading ? (
         <div className="space-y-3">
@@ -106,13 +104,17 @@ export function Messages() {
         />
       ) : (
         <div className="space-y-3">
+          <div className="flex flex-col gap-3 rounded-xl border border-line bg-surface p-3 sm:flex-row">
+            <SearchField value={search} onChange={setSearch} placeholder="Search sender, subject, or message…" label="Search messages" />
+            <select className="select sm:w-40" aria-label="Filter messages" value={filter} onChange={(event) => setFilter(event.target.value as typeof filter)}><option value="all">All messages</option><option value="unread">Unread</option><option value="read">Read</option></select>
+          </div>
           <div className="sticky top-20 z-20 flex flex-col gap-3 rounded-xl border border-line bg-surface/95 p-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
             <label className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-ink">
               <input
                 type="checkbox"
                 checked={allSelected}
                 ref={(input) => { if (input) input.indeterminate = selected.size > 0 && !allSelected; }}
-                onChange={() => setSelected(allSelected ? new Set() : new Set(sorted.map((message) => message.id)))}
+                onChange={() => setSelected(allSelected ? new Set() : new Set(visible.map((message) => message.id)))}
                 className="h-4 w-4 accent-[var(--color-accent)]"
               />
               {selected.size > 0 ? `${selected.size} selected` : "Select all messages"}
@@ -138,7 +140,7 @@ export function Messages() {
               </button>
             </div>
           </div>
-          {sorted.map((msg) => {
+          {visible.map((msg) => {
             const open = openId === msg.id;
             const readPending = markRead.isPending && markRead.variables === msg.id;
             const deletePending = del.isPending && del.variables === msg.id;
@@ -243,6 +245,7 @@ export function Messages() {
               </div>
             );
           })}
+          {visible.length === 0 && <EmptyState title="No matching messages" description="Try a different search term or inbox filter." />}
         </div>
       )}
 

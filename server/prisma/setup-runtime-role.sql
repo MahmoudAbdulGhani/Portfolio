@@ -52,6 +52,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."Technology" TO portfolio_a
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."Skill" TO portfolio_app;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."Education" TO portfolio_app;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."Certification" TO portfolio_app;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."SiteSection" TO portfolio_app;
 
 -- Contact inbox and server-side abuse protection.
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public."Message" TO portfolio_app;

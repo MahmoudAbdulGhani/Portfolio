@@ -1,53 +1,12 @@
 import { useMemo } from "react";
-import { useSkills } from "../lib/hooks";
+import { useSkills, useSiteSection } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
-
-const fallbackPillars: { title: string; status: string; items: string[] }[] = [
-  {
-    title: "Frontend",
-    status: "Used in projects",
-    items: [
-      "React.js",
-      "Next.js",
-      "Angular",
-      "TypeScript",
-      "Tailwind CSS",
-      "Responsive Design",
-    ],
-  },
-  {
-    title: "Backend",
-    status: "Used in projects",
-    items: [
-      "Node.js",
-      "Express.js",
-      "NestJS",
-      "PHP",
-      "REST APIs",
-      "JWT Authentication",
-      "RBAC",
-      "Real-Time Systems",
-    ],
-  },
-  {
-    title: "Databases",
-    status: "Used in projects",
-    items: [
-      "PostgreSQL",
-      "MongoDB",
-      "MySQL",
-      "Supabase",
-      "Git/GitHub",
-      "Stripe",
-      "Zod",
-      "Postman",
-    ],
-  },
-];
+import { PublicDataState } from "../components/PublicDataState";
 
 export function Skills() {
-  const { data: skills } = useSkills();
+  const { data: skills, isLoading, isError, refetch } = useSkills();
+  const { data: section } = useSiteSection("skills");
 
   const pillars = useMemo(() => {
     const grouped = new Map<string, { name: string; status: string }[]>();
@@ -56,7 +15,7 @@ export function Skills() {
       list.push({ name: skill.name, status: skill.status ?? "verified" });
       grouped.set(skill.category, list);
     }
-    if (grouped.size === 0) return fallbackPillars;
+    if (grouped.size === 0) return [];
     return [...grouped].map(([title, rows]) => ({
       title,
       status: rows.every((row) => row.status === "learning")
@@ -65,14 +24,15 @@ export function Skills() {
       items: rows.map((row) => row.name),
     }));
   }, [skills]);
+  if (isLoading || isError) return <PublicDataState loading={isLoading} error={isError} onRetry={() => void refetch()} label="skills" />;
 
   return (
     <section id="skills" className="section relative bg-surface-2">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Stack"
-          title="Technical architecture"
-          description="Technologies used across professional work, completed applications, and current project development."
+          eyebrow={section?.eyebrow ?? ""}
+          title={section?.heading ?? ""}
+          description={section?.description ?? ""}
         />
 
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">

@@ -1,22 +1,25 @@
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
-import { useProjects } from "../lib/hooks";
+import { useProjects, useSiteSection } from "../lib/hooks";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectCardSkeleton } from "../components/ProjectCardSkeleton";
 import { SectionHeading } from "../components/SectionHeading";
 import { Reveal } from "../components/Reveal";
+import { PublicDataState } from "../components/PublicDataState";
 
 export function FeaturedProjects() {
-  const { data: projects, isLoading } = useProjects();
+  const { data: projects, isLoading, isError, refetch } = useProjects();
+  const { data: section } = useSiteSection("featuredProjects");
   const featured = (projects ?? []).filter((p) => p.featured).slice(0, 3);
+  if (isError) return <PublicDataState loading={false} error onRetry={() => void refetch()} label="featured projects" />;
 
   return (
     <section id="projects" className="section relative">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Selected work"
-          title="Systems built for real workflows"
-          description="Three full-stack products engineered at the Digital Hub and independently."
+          eyebrow={section?.eyebrow ?? ""}
+          title={section?.heading ?? ""}
+          description={section?.description ?? ""}
         />
 
         <div className="space-y-2">
@@ -30,7 +33,7 @@ export function FeaturedProjects() {
 
         <Reveal className="mt-12 flex justify-center">
           <Link to="/projects" className="btn-outline btn-lg group">
-            View all projects
+            {section?.ctaLabel}
             <FiArrowRight
               size={16}
               className="transition-transform duration-200 group-hover:translate-x-0.5"

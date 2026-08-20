@@ -1,26 +1,19 @@
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { seedProfile } from "../data/portfolio";
-import { useProfile } from "../lib/hooks";
+import { useProfile, useSiteSection } from "../lib/hooks";
 import { API_BASE } from "../lib/api";
 import { CvDownloadButton } from "../components/CvDownloadButton";
 
-const focusAreas = [
-  "React · Next.js · TypeScript",
-  "Node.js · Express.js",
-  "REST APIs",
-  "Authentication · RBAC",
-  "SQL · MongoDB",
-];
-
 export function Hero() {
-  const { data: profile } = useProfile();
-  const heroProfile = profile ?? seedProfile;
-  const portraitSrc = profile?.photo || seedProfile.photo;
-  const socials = profile?.socials ?? seedProfile.socials;
+  const { data: profile, isLoading, isError, refetch } = useProfile();
+  const { data: section } = useSiteSection("hero");
+  const introduction = typeof section?.content.introduction === "string" ? section.content.introduction : "";
   const reduceMotion = useReducedMotion();
-  const cvHref = heroProfile.resumeUrl || `${API_BASE}/cv.pdf`;
+  if (isLoading) return <section id="hero" className="flex min-h-[88vh] items-center justify-center"><span className="text-sm text-muted">Loading profile…</span></section>;
+  if (isError || !profile) return <section id="hero" className="flex min-h-[88vh] items-center justify-center"><button className="btn-outline" onClick={() => void refetch()}>Retry loading profile</button></section>;
+  const cvHref = profile.resumeUrl || `${API_BASE}/cv.pdf`;
+  const socials = profile.socials.filter((social) => social.showInHero !== false);
 
   return (
     <section
@@ -39,26 +32,22 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="tech-label block">{heroProfile.name.toUpperCase()}</span>
+          <span className="tech-label block">{profile.name.toUpperCase()}</span>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            Full-Stack Software
-            <br />
-            <span className="text-gradient">Engineer</span>
+            {section?.heading || profile.title}
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            Building secure, scalable, and user-focused web applications.
+            {section?.description || profile.tagline}
           </p>
 
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-            I build production-ready applications using React, Next.js, TypeScript,
-            Node.js, Express.js, and modern database technologies—from REST APIs
-            and authentication to real-time communication and role-based systems.
+            {introduction || profile.bio}
           </p>
 
           <div className="mt-7 flex flex-wrap gap-2.5" aria-label="Focus areas">
-            {focusAreas.map((area) => (
+            {profile.focusAreas.map((area) => (
               <span
                 key={area}
                 className="rounded-full border border-line bg-surface-2 px-2.5 py-1 font-mono text-xs text-faint"
@@ -70,7 +59,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <Link to="/projects" className="btn-primary btn-lg group">
-              View Projects
+              {section?.ctaLabel}
               <FiArrowRight
                 size={17}
                 className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -114,10 +103,10 @@ export function Hero() {
               aria-hidden
             />
             <div className="relative overflow-hidden rounded-xl border border-line-strong bg-surface-2 shadow-card-lg">
-              {portraitSrc && (
+              {profile.photo && (
                 <img
-                  src={portraitSrc}
-                  alt={`Portrait of ${heroProfile.name}`}
+                  src={profile.photo}
+                  alt={`Portrait of ${profile.name}`}
                   width={720}
                   height={900}
                   loading="eager"
@@ -133,17 +122,17 @@ export function Hero() {
                 aria-hidden
               >
                 <span className="block font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink">
-                  {heroProfile.location}
+                  {profile.location}
                 </span>
                 <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                  Open to opportunities
+                  {profile.availabilityText}
                 </span>
               </div>
             </div>
             <div className="dimension-line mt-5" aria-hidden />
             <div className="mt-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
-              <span>Full-stack systems</span>
-              <span>Profile · 001</span>
+              <span>{profile.heroLabel}</span>
+              <span>{profile.profileReference}</span>
             </div>
           </div>
         </motion.div>

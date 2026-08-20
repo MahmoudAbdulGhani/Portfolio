@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useProjects } from "../lib/hooks";
+import { useProjects, useSiteSection } from "../lib/hooks";
 import { PageMeta } from "../components/PageMeta";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectCardSkeleton } from "../components/ProjectCardSkeleton";
@@ -7,21 +7,20 @@ import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../lib/format";
 import { AnimatePresence, motion } from "framer-motion";
 
-const filters = [
-  { id: "all", label: "All Projects" },
-  { id: "unrwa", label: "Digital Hub" },
-  { id: "personal", label: "Personal" },
-] as const;
-
-type FilterId = (typeof filters)[number]["id"];
+type FilterId = "all" | "program" | "personal";
+type ProjectFilter = { id: FilterId; label: string };
 
 export function Projects() {
   const { data: projects, isLoading, isError, refetch } = useProjects();
+  const { data: section } = useSiteSection("projectsPage");
+  const filters = Array.isArray(section?.content.filters) ? section.content.filters as ProjectFilter[] : [];
+  const seoTitle = typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? "";
+  const seoDescription = typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? "";
   const [filter, setFilter] = useState<FilterId>("all");
 
   const filtered = useMemo(() => {
     const all = projects ?? [];
-    if (filter === "unrwa") return all.filter((p) => p.program);
+    if (filter === "program") return all.filter((p) => p.program);
     if (filter === "personal") return all.filter((p) => !p.program);
     return all;
   }, [projects, filter]);
@@ -29,16 +28,16 @@ export function Projects() {
   return (
     <>
       <PageMeta
-        title="Projects"
-        description="Full-stack projects by Mahmoud Abdul Ghani — reservations with payments, real-time communication, university management, clinic systems and more."
+        title={seoTitle}
+        description={seoDescription}
       />
       <main className="min-h-[60vh] pb-20 pt-24 sm:pb-28 sm:pt-28">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
-              eyebrow="Portfolio"
-              title="Projects"
-              description="A selection of collaborative and personal full-stack work — from reservation platforms with payments to real-time communication systems."
+              eyebrow={section?.eyebrow ?? ""}
+              title={section?.heading ?? ""}
+              description={section?.description ?? ""}
               className="mb-0"
             />
 
@@ -64,7 +63,7 @@ export function Projects() {
           <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint" aria-live="polite">
             {isLoading ? "Loading projects…" : <>
             showing {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-            {filter === "unrwa" ? " — The Digital Hub" : filter === "personal" ? " — personal work" : ""}
+            {filter === "program" ? " — program work" : filter === "personal" ? " — personal work" : ""}
             </>}
           </p>
 

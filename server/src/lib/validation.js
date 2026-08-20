@@ -31,6 +31,8 @@ export const projectMutationSchema = z.object({
   visual: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), order: z.number().int().min(-10000).max(10000).optional(),
   coverImage: optionalPublicAsset, screenshots: z.array(publicAsset).max(12).optional(), myRole: nullableText(300),
   contributions: stringArray(30, 1000).optional(), ownership: nullableText(4000), teamSize: z.union([z.number().int().min(1).max(10000), z.null()]).optional(),
+  impactSummary: nullableText(1000), imageAlt: nullableText(500), showOnCv: z.boolean().optional(), showOnPortfolio: z.boolean().optional(),
+  cvDescription: nullableText(3000), cvBullets: stringArray(20, 1000).optional(),
 }).strict();
 
 const experienceSchema = z.object({
@@ -38,14 +40,29 @@ const experienceSchema = z.object({
   profileId: id.optional(),
   startDate: month, endDate: month, isCurrent: z.boolean().optional(), location: nullableText(300), order: z.number().int().optional(),
   milestone: text(200).optional(), facility: text(200).optional(), meta: text(200).optional(), details: text(4000).optional(),
+  workArrangement: nullableText(120), bullets: stringArray(30, 1000).optional(), technologies: stringArray(30, 120).optional(),
+  published: z.boolean().optional(), showOnCv: z.boolean().optional(), cvDescription: nullableText(3000), cvBullets: stringArray(30, 1000).optional(),
 }).strict().refine((item) => !(item.isCurrent && item.endDate), "Current roles cannot have an end date.");
-const socialSchema = z.object({ id: id.optional(), profileId: id.optional(), label: text(80, 1), url: httpUrl }).strict();
+const socialSchema = z.object({ id: id.optional(), profileId: id.optional(), label: text(80, 1), url: httpUrl,
+  platform: text(80).optional(), username: nullableText(160), icon: nullableText(80), order: z.number().int().optional(),
+  showInHero: z.boolean().optional(), showInContact: z.boolean().optional(), showInFooter: z.boolean().optional(),
+  showOnCv: z.boolean().optional(), published: z.boolean().optional(),
+}).strict();
 export const profileMutationSchema = z.object({
   name: text(160, 1).optional(), shortName: text(80, 1).optional(), title: text(200, 1).optional(), tagline: text(500).optional(),
   bio: text(6000).optional(), location: text(300).optional(), email: text(320).email().optional(), phone: text(80).optional(),
   photo: optionalPublicAsset, resumeUrl: optionalPublicAsset, languages: nullableText(1000),
   portfolioUrl: optionalHttpUrl, seoTitle: nullableText(200), seoDescription: nullableText(500),
   experience: z.array(experienceSchema).max(50).optional(), socials: z.array(socialSchema).max(20).optional(),
+  professionalSummary: nullableText(4000), availabilityStatus: nullableText(200), availabilityText: nullableText(300),
+  responseTime: nullableText(200), remoteAvailability: nullableText(200), openToOpportunities: z.boolean().optional(),
+  heroLabel: nullableText(200), profileReference: nullableText(200), whatsappNumber: nullableText(80),
+  whatsappMessage: nullableText(500), focusAreas: stringArray(20, 120).optional(),
+}).strict();
+export const siteSectionSchema = z.object({
+  key: z.string().regex(/^[A-Za-z][A-Za-z0-9_-]{1,79}$/), eyebrow: nullableText(200), heading: nullableText(300),
+  description: nullableText(2000), ctaLabel: nullableText(120), ctaUrl: nullableText(1000), visible: z.boolean(),
+  order: z.number().int().min(-1000).max(1000), content: z.record(z.string(), z.unknown()),
 }).strict();
 export const cvMutationSchema = z.object({ professionalSummary: nullableText(4000), header: z.record(z.string(), z.unknown()), application: z.record(z.string(), z.unknown()), master: z.record(z.string(), z.unknown()) }).strict();
 

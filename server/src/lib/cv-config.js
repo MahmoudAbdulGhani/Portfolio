@@ -17,14 +17,14 @@ const orderedIds = (rows) => [...rows]
 
 export async function getCvCatalog() {
   const profile = await prisma.profile.findFirst({
-    include: { experience: { orderBy: { order: "asc" } }, socials: { orderBy: { id: "asc" } } },
+    include: { experience: { where: { showOnCv: true }, orderBy: { order: "asc" } }, socials: { where: { showOnCv: true, published: true }, orderBy: { order: "asc" } } },
   });
   if (!profile) throw new Error("Profile not found.");
   const [projects, skills, education, certifications] = await Promise.all([
-    prisma.project.findMany({ orderBy: [{ order: "asc" }, { createdAt: "asc" }] }),
+    prisma.project.findMany({ where: { showOnCv: true }, orderBy: [{ order: "asc" }, { createdAt: "asc" }] }),
     prisma.skill.findMany({ orderBy: { order: "asc" } }),
-    prisma.education.findMany({ orderBy: { order: "asc" } }),
-    prisma.certification.findMany({ orderBy: { order: "asc" } }),
+    prisma.education.findMany({ where: { showOnCv: true }, orderBy: { order: "asc" } }),
+    prisma.certification.findMany({ where: { showOnCv: true }, orderBy: { order: "asc" } }),
   ]);
   const languages = String(profile.languages ?? "").split(/[,;|]/).map((value) => value.trim()).filter(Boolean);
   return { profile, projects, skills, education, certifications, languages };
@@ -127,27 +127,27 @@ export async function resolveCvData(modeName = "application") {
     return { ...row, name: override?.name || row.name, tagline: override?.subtitle || row.tagline,
       stack: override?.techStack ? override.techStack.split(/[,;|]/).map((v) => v.trim()).filter(Boolean) : row.stack,
       demo: override?.demo || row.demo, github: override?.github || row.github,
-      ...(override?.description ? { cvDescription: override.description } : {}),
-      cvBullets: override?.bullets?.length ? override.bullets : modeName === "application" ? row.features.slice(0, 2) : row.features };
+      cvDescription: override?.description || row.cvDescription || "",
+      cvBullets: override?.bullets?.length ? override.bullets : row.cvBullets?.length ? row.cvBullets : modeName === "application" ? row.features.slice(0, 2) : row.features };
   });
   const experience = select(catalog.profile.experience, mode.experience).map((row) => {
     const override = mode.experienceOverrides[row.id];
     return { ...row, milestone: override?.role || row.role || row.milestone, facility: override?.company || row.company || row.facility,
       meta: override?.displayDate || formattedDate(override?.startDate, override?.endDate, override?.isCurrent) || formattedDate(row.startDate, row.endDate, row.isCurrent) || row.meta,
       cvLocation: override?.location || row.location || "", cvTechnologies: override?.technologies || "",
-      ...(override?.description ? { cvDescription: override.description } : {}), details: row.description || row.details,
-      ...(override?.bullets?.length ? { cvBullets: override.bullets } : {}) };
+      cvDescription: override?.description || row.cvDescription || "", details: row.description || row.details,
+      cvBullets: override?.bullets?.length ? override.bullets : row.cvBullets?.length ? row.cvBullets : row.bullets };
   });
   const education = select(catalog.education, mode.education).map((row) => { const o = mode.educationOverrides[row.id]; return {
     ...row, degree: o?.degree || row.degree, school: o?.institution || row.school,
     period: o?.displayDate || formattedDate(o?.startDate, o?.endDate, false) || row.period,
     field: [o?.location, o?.gpa && `GPA: ${o.gpa}`].filter(Boolean).join(" | ") || row.field,
-    details: o?.details || row.details,
+    details: o?.details || row.cvDescription || row.details,
   }; });
   const certifications = select(catalog.certifications, mode.certifications).map((row) => { const o = mode.certificationOverrides[row.id]; return {
     ...row, title: o?.name || row.title, issuer: [o?.provider || row.issuer, o?.duration, o?.location].filter(Boolean).join(" | "),
     year: o?.displayDate || o?.date || formattedDate(o?.startDate, o?.endDate, o?.isCurrent) || row.year,
-    cvDescription: o?.description || "",
+    cvDescription: o?.description || row.cvDescription || "",
   }; });
   const skills = select(catalog.skills, mode.skills)
     .filter((row) => (row.status ?? "verified") === "verified")

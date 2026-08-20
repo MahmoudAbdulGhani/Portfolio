@@ -15,19 +15,12 @@ import {
   FiSend,
   FiZap,
 } from "react-icons/fi";
-import { useProfile, useSubmitMessage } from "../lib/hooks";
+import { useProfile, useSiteSection, useSubmitMessage } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../lib/format";
 
-const contactCards = [
-  { label: "Phone", icon: FiPhone, key: "phone" as const, helper: "Call directly", priority: true },
-  { label: "Email", icon: FiMail, key: "email" as const, helper: "Send a role or project note", priority: true },
-  { label: "GitHub", icon: FiGithub, key: "github" as const, helper: "Review source code" },
-  { label: "LinkedIn", icon: FiLinkedin, key: "linkedin" as const, helper: "Connect professionally" },
-  { label: "Instagram", icon: FiInstagram, key: "instagram" as const, helper: "View personal profile" },
-  { label: "WhatsApp", icon: FiMessageCircle, key: "whatsapp" as const, helper: "Start a quick message" },
-];
+const socialIcons = { github: FiGithub, linkedin: FiLinkedin, instagram: FiInstagram, whatsapp: FiMessageCircle };
 
 type FormState = { name: string; email: string; subject: string; message: string; website: string };
 type FormErrors = Partial<Record<keyof FormState, string>>;
@@ -48,6 +41,7 @@ function validate(form: FormState): FormErrors {
 
 export function ContactSection() {
   const { data: profile } = useProfile();
+  const { data: section } = useSiteSection("contact");
   const submit = useSubmitMessage();
   const [form, setForm] = useState<FormState>(initialForm);
   const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
@@ -55,45 +49,13 @@ export function ContactSection() {
   const [submitError, setSubmitError] = useState("");
   const [sentEmail, setSentEmail] = useState("");
 
-  const getHref = (key: string): string => {
-    const socialUrl = (label: string) =>
-      profile?.socials.find((s) => s.label.toLowerCase() === label.toLowerCase())?.url;
-    switch (key) {
-      case "phone":
-        return `tel:${(profile?.phone ?? "+96176364340").replace(/[^+0-9]/g, "")}`;
-      case "email":
-        return `mailto:${profile?.email ?? ""}`;
-      case "github":
-        return socialUrl("GitHub") ?? "https://github.com";
-      case "linkedin":
-        return socialUrl("LinkedIn") ?? "https://linkedin.com";
-      case "instagram":
-        return socialUrl("Instagram") ?? "https://instagram.com";
-      case "whatsapp":
-        return `https://wa.me/${(profile?.phone ?? "+96176364340").replace(/[^0-9]/g, "")}?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.`;
-      default:
-        return "#";
-    }
-  };
-
-  const displayValue = (key: string): string => {
-    switch (key) {
-      case "whatsapp":
-        return "Open Messenger";
-      case "email":
-        return profile?.email ?? "";
-      case "phone":
-        return profile?.phone ?? "";
-      case "github":
-        return "github.com/MahmoudAbdulGhani";
-      case "linkedin":
-        return "in/MahmoudAbdulGhani";
-      case "instagram":
-        return "@mahmoud_abdulghani2";
-      default:
-        return "";
-    }
-  };
+  const contentText = (key: string) => typeof section?.content[key] === "string" ? section.content[key] as string : "";
+  const availabilityOptions = Array.isArray(section?.content.availabilityOptions) ? section.content.availabilityOptions.filter((item): item is string => typeof item === "string") : [];
+  const cards = profile ? [
+    { id: "phone", label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/[^+0-9]/g, "")}`, icon: FiPhone, priority: true },
+    { id: "email", label: "Email", value: profile.email, href: `mailto:${profile.email}`, icon: FiMail, priority: true },
+    ...profile.socials.filter((social) => social.showInContact !== false).map((social) => ({ id: social.id ?? social.url, label: social.label, value: social.username || social.label, href: social.platform === "whatsapp" ? `https://wa.me/${(profile.whatsappNumber || profile.phone).replace(/[^0-9]/g, "")}?text=${encodeURIComponent(profile.whatsappMessage || "")}` : social.url, icon: socialIcons[social.platform as keyof typeof socialIcons] ?? FiArrowUpRight, priority: false })),
+  ] : [];
 
   const setField = (key: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -142,9 +104,9 @@ export function ContactSection() {
     <section id="contact" className="section relative overflow-hidden bg-bg-soft">
       <div className="container-x space-y-12">
         <SectionHeading
-          eyebrow="Contact Mahmoud"
-          title="Start a real conversation"
-          description="Reach out for full-stack roles, contract projects, internships, or collaboration."
+          eyebrow={section?.eyebrow ?? ""}
+          title={section?.heading ?? ""}
+          description={section?.description ?? ""}
           align="center"
         />
 
@@ -154,39 +116,31 @@ export function ContactSection() {
               <div className="rounded-xl border border-line bg-surface p-4 shadow-card">
                 <h3 className="tech-label">Why reach out</h3>
                 <ul className="mt-3 space-y-2.5 text-sm text-muted">
-                  <li className="flex items-center gap-2.5">
+                  {availabilityOptions.map((option) => <li key={option} className="flex items-center gap-2.5">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                    Open to full-time roles
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent-2" aria-hidden />
-                    Contract projects
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ok" aria-hidden />
-                    Technical collaboration
-                  </li>
+                    {option}
+                  </li>)}
                 </ul>
                 <div className="mt-4 grid grid-cols-1 gap-3 border-t border-line pt-4 font-mono text-xs text-faint">
                   <span className="flex items-center justify-between gap-2">
                     Response time
-                    <span className="font-semibold text-ink">usually within 24h</span>
+                    <span className="font-semibold text-ink">{profile?.responseTime}</span>
                   </span>
                   <span className="flex items-center justify-between gap-2">
                     Location
-                    <span className="font-semibold text-ink">Tripoli, Lebanon</span>
+                    <span className="font-semibold text-ink">{profile?.location}</span>
                   </span>
                   <span className="flex items-center justify-between gap-2">
                     Remote
-                    <span className="font-semibold text-ink">Friendly</span>
+                    <span className="font-semibold text-ink">{profile?.remoteAvailability}</span>
                   </span>
                 </div>
               </div>
 
               <div className="grid h-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-              {contactCards.map((card) => {
+              {cards.map((card) => {
                 const Icon = card.icon;
-                const href = getHref(card.key);
+                const href = card.href;
                 const external = href.startsWith("http");
                 return (
                   <a
@@ -208,10 +162,7 @@ export function ContactSection() {
                       <span className="block font-mono text-[11px] font-bold uppercase tracking-wider text-faint">
                         {card.label}
                       </span>
-                      <span className="block truncate text-sm font-semibold text-ink">
-                        {displayValue(card.key)}
-                      </span>
-                      <span className="block text-xs text-muted">{card.helper}</span>
+                      <span className="block truncate text-sm font-semibold text-ink">{card.value}</span>
                     </span>
                     <FiArrowUpRight
                       size={15}
@@ -231,12 +182,10 @@ export function ContactSection() {
                   <FiCheckCircle size={26} />
                 </span>
                 <h3 className="font-display text-lg font-bold text-ink">
-                  Message sent
+                  {contentText("successHeading")}
                 </h3>
                 <p className="max-w-sm text-sm leading-relaxed text-muted">
-                  Thanks for reaching out — I usually reply within a couple of
-                  days. I'll get back to you at{" "}
-                  <span className="font-semibold text-ink">{sentEmail || "your email"}</span>.
+                  {contentText("successMessage").replace("your email", sentEmail || "your email")}
                 </p>
                 <button
                   type="button"
@@ -250,10 +199,10 @@ export function ContactSection() {
               <form onSubmit={handleSubmit} noValidate className="card h-full p-6 sm:p-8">
                 <div className="absolute -left-[10000px]" aria-hidden="true"><label htmlFor="contact-website">Website</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setField("website", e.target.value)} /></div>
                 <h3 className="font-display text-lg font-bold text-ink">
-                  Send a message
+                  {contentText("formHeading")}
                 </h3>
                 <p className="mt-1 text-sm text-muted">
-                  I usually reply within a couple of days.
+                  {contentText("formDescription")}
                 </p>
 
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -381,7 +330,7 @@ export function ContactSection() {
                       href={`mailto:${profile?.email ?? ""}`}
                       className="link-inline"
                     >
-                      {profile?.email ?? "Mahmoud.Abdulghani@outlook.com"}
+                      {profile?.email}
                     </a>
                   </span>
                 </div>
@@ -398,16 +347,15 @@ export function ContactSection() {
               </span>
               <div>
                 <h3 className="font-display text-lg font-bold text-ink">
-                  Try the AI Job Match
+                  {contentText("jobMatchHeading")}
                 </h3>
                 <p className="mt-1 max-w-md text-sm leading-relaxed text-muted">
-                  See how my skills align with a real job description before we
-                  even talk.
+                  {contentText("jobMatchText")}
                 </p>
               </div>
             </div>
             <Link to="/job-match" className="btn-outline btn-sm group shrink-0">
-              Match a job
+              {contentText("jobMatchCta")}
               <FiArrowRight
                 size={14}
                 className="transition-transform duration-200 group-hover:translate-x-0.5"

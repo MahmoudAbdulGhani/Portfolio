@@ -32,6 +32,12 @@ export function Education() {
         { key: "field", label: "Field of study" },
         { key: "period", label: "Period", placeholder: "e.g. 2020 — 2023" },
         { key: "details", label: "Details" },
+        { key: "location", label: "Location" },
+        { key: "startDate", label: "Start date (YYYY-MM)" },
+        { key: "endDate", label: "End date (YYYY-MM)" },
+        { key: "cvDescription", label: "CV-specific description" },
+        { key: "published", label: "Published", options: [{ value: "true", label: "Published" }, { value: "false", label: "Hidden" }] },
+        { key: "showOnCv", label: "CV visibility", options: [{ value: "true", label: "Show on CV" }, { value: "false", label: "Hide from CV" }] },
         { key: "order", label: "Display order", placeholder: "0" },
       ]}
       items={data}

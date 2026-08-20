@@ -29,6 +29,12 @@ export interface Project {
   views: number;
   createdAt: string;
   updatedAt: string;
+  impactSummary?: string | null;
+  imageAlt?: string | null;
+  showOnCv?: boolean;
+  showOnPortfolio?: boolean;
+  cvDescription?: string | null;
+  cvBullets?: string[];
 }
 
 export interface Technology {
@@ -54,6 +60,12 @@ export interface Education {
   period: string | null;
   details: string | null;
   order: number;
+  location?: string | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  published?: boolean;
+  showOnCv?: boolean;
+  cvDescription?: string | null;
 }
 
 export interface Certification {
@@ -63,6 +75,14 @@ export interface Certification {
   year: string | null;
   url: string | null;
   order: number;
+  issueDate?: string | null;
+  expectedDate?: string | null;
+  duration?: string | null;
+  credentialId?: string | null;
+  description?: string | null;
+  published?: boolean;
+  showOnCv?: boolean;
+  cvDescription?: string | null;
 }
 
 export interface ExperienceItem {
@@ -79,12 +99,28 @@ export interface ExperienceItem {
   isCurrent?: boolean;
   location?: string | null;
   order?: number;
+  workArrangement?: string | null;
+  bullets?: string[];
+  technologies?: string[];
+  published?: boolean;
+  showOnCv?: boolean;
+  cvDescription?: string | null;
+  cvBullets?: string[];
 }
 
 export interface SocialLink {
   id?: string;
   label: string;
   url: string;
+  platform?: string;
+  username?: string | null;
+  icon?: string | null;
+  order?: number;
+  showInHero?: boolean;
+  showInContact?: boolean;
+  showInFooter?: boolean;
+  showOnCv?: boolean;
+  published?: boolean;
 }
 
 export interface Profile {
@@ -105,6 +141,30 @@ export interface Profile {
   languages: string | null;
   experience: ExperienceItem[];
   socials: SocialLink[];
+  professionalSummary: string | null;
+  availabilityStatus: string | null;
+  availabilityText: string | null;
+  responseTime: string | null;
+  remoteAvailability: string | null;
+  openToOpportunities: boolean;
+  heroLabel: string | null;
+  profileReference: string | null;
+  whatsappNumber: string | null;
+  whatsappMessage: string | null;
+  focusAreas: string[];
+}
+
+export interface SiteSection {
+  key: string;
+  eyebrow: string | null;
+  heading: string | null;
+  description: string | null;
+  ctaLabel: string | null;
+  ctaUrl: string | null;
+  visible: boolean;
+  order: number;
+  content: Record<string, unknown>;
+  updatedAt?: string;
 }
 
 export interface Message {

@@ -163,7 +163,7 @@ export function ProjectDetail() {
       <PageMeta
         title={project.name}
         description={project.description ?? undefined}
-        image={project.coverImage || "/myphoto.jpeg"}
+        image={project.coverImage}
         canonicalPath={`/projects/${project.slug}`}
       />
       <main id="top" className="min-h-[60vh] pb-16 pt-16 sm:pb-24 sm:pt-20">
@@ -219,6 +219,7 @@ export function ProjectDetail() {
                           visual={project.visual}
                           name={project.name}
                           image={project.coverImage}
+                          imageAlt={project.imageAlt}
                           type={project.type}
                           stack={project.stack}
                           priority

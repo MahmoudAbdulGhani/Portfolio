@@ -7,7 +7,7 @@ import { Logo } from "../../components/Logo";
 import { useLogin, useSessionStatus } from "../../lib/hooks";
 
 export function Login() {
-  const [email, setEmail] = useState("Mahmoud.Abdulghani@outlook.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const login = useLogin();

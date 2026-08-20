@@ -12,7 +12,7 @@ export function CvDownloadButton({
   url,
   className = "btn-outline",
   children = "Download CV",
-  filename = "Mahmoud-Hussein-Abdul-Ghani-CV.pdf",
+  filename = "portfolio-cv.pdf",
 }: CvDownloadButtonProps) {
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");

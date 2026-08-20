@@ -1,11 +1,12 @@
 import { useMemo, useState } from "react";
 import { FiCode, FiDatabase, FiLayers, FiTool } from "react-icons/fi";
-import { useTechnologies } from "../lib/hooks";
+import { useTechnologies, useSiteSection } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../lib/format";
 import type { IconType } from "react-icons";
 import type { TechCategory } from "../types";
+import { PublicDataState } from "../components/PublicDataState";
 
 const categories: { id: TechCategory; name: string; icon: IconType }[] = [
   { id: "languages", name: "Languages", icon: FiCode },
@@ -16,7 +17,8 @@ const categories: { id: TechCategory; name: string; icon: IconType }[] = [
 
 export function Technologies() {
   const [active, setActive] = useState<TechCategory>("languages");
-  const { data: technologies } = useTechnologies();
+  const { data: technologies, isLoading, isError, refetch } = useTechnologies();
+  const { data: section } = useSiteSection("technologies");
 
   const counts = useMemo(() => {
     const map = new Map<TechCategory, number>();
@@ -27,15 +29,16 @@ export function Technologies() {
   }, [technologies]);
 
   const filtered = (technologies ?? []).filter((t) => t.category === active);
+  if (isLoading || isError) return <PublicDataState loading={isLoading} error={isError} onRetry={() => void refetch()} label="technologies" />;
 
   return (
     <section id="technologies" className="section relative">
       <div className="container-x">
         <div className="flex flex-col justify-between gap-8 xl:flex-row xl:items-end">
           <SectionHeading
-            eyebrow="Stack in use"
-            title="Technologies & Tools"
-            description="Languages, frameworks, databases, and delivery tools used across this portfolio's projects."
+            eyebrow={section?.eyebrow ?? ""}
+            title={section?.heading ?? ""}
+            description={section?.description ?? ""}
             className="mb-0"
           />
 

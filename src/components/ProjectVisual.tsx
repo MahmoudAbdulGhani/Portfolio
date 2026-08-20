@@ -6,6 +6,7 @@ interface ProjectVisualProps {
   name: string;
   className?: string;
   image?: string | null;
+  imageAlt?: string | null;
   type?: string;
   stack?: string[];
   priority?: boolean;
@@ -17,6 +18,7 @@ export function ProjectVisual({
   name,
   className,
   image,
+  imageAlt,
   type,
   stack = [],
   priority = false,
@@ -27,7 +29,7 @@ export function ProjectVisual({
 
   return (
     <div
-      aria-hidden
+      aria-hidden={!imageAlt || undefined}
       style={{ backgroundColor: image ? "var(--surface-2)" : accent }}
       className={cn(
         "group relative overflow-hidden",
@@ -39,7 +41,7 @@ export function ProjectVisual({
       {image && (
         <img
           src={image}
-          alt=""
+          alt={imageAlt ?? ""}
           width={1600}
           height={900}
           loading={priority ? "eager" : "lazy"}
@@ -48,7 +50,7 @@ export function ProjectVisual({
           className={variant === "hero" ? "project-foreground-hero" : "project-foreground"}
         />
       )}
-      {!image && <div className="project-fallback-cover"><div className="project-fallback-orbit" aria-hidden /><div className="project-fallback-top"><span>{type || "Case study"}</span><span>Selected work</span></div><div className="project-fallback-main"><span className="project-fallback-monogram">{initials}</span><div><strong>{name}</strong><span>{stack.slice(0, 3).join(" · ") || "Project case study"}</span></div></div></div>}
+      {!image && <div className="project-fallback-cover"><div className="project-fallback-orbit" aria-hidden /><div className="project-fallback-top"><span>{type || "Case study"}</span><span>Project</span></div><div className="project-fallback-main"><span className="project-fallback-monogram">{initials}</span><div><strong>{name}</strong><span>{stack.slice(0, 3).join(" · ") || "Project case study"}</span></div></div></div>}
     </div>
   );
 }

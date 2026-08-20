@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FiGithub, FiInstagram, FiLinkedin, FiMessageCircle } from "react-icons/fi";
 import type { IconType } from "react-icons";
-import { useProfile } from "../lib/hooks";
+import { useProfile, useSiteSection } from "../lib/hooks";
 import { Logo } from "./Logo";
 
 const socialIcons: Record<string, IconType> = {
@@ -13,8 +13,11 @@ const socialIcons: Record<string, IconType> = {
 
 export function Footer() {
   const { data: profile } = useProfile();
+  const { data: section } = useSiteSection("footer");
   const year = new Date().getFullYear();
-  const socials = profile?.socials ?? [];
+  const socials = profile?.socials.filter((social) => social.showInFooter !== false) ?? [];
+  const technologyText = typeof section?.content.technologyText === "string" ? section.content.technologyText : "";
+  const copyrightSuffix = typeof section?.content.copyrightSuffix === "string" ? section.content.copyrightSuffix : "";
 
   return (
     <footer className="border-t border-line bg-bg-soft">
@@ -23,8 +26,7 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              Full-stack engineer building React, Next.js and Angular frontends
-              with Node.js and NestJS backends.
+              {section?.description}
             </p>
           </div>
 
@@ -64,9 +66,9 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 text-xs text-faint sm:flex-row">
-          <p>© {year} {profile?.name ?? "Mahmoud Hussein Abdul Ghani"}. All rights reserved.</p>
+          <p>© {year} {profile?.name}. {copyrightSuffix}</p>
           <p className="font-mono">
-            Built with React 19 · Tailwind CSS v4 · Vite · Deployed on Vercel
+            {technologyText}
           </p>
         </div>
       </div>

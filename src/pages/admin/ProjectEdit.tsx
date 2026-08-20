@@ -49,6 +49,12 @@ type FormState = {
   contributions: string[];
   ownership: string;
   teamSize: number | null;
+  impactSummary: string;
+  imageAlt: string;
+  showOnCv: boolean;
+  showOnPortfolio: boolean;
+  cvDescription: string;
+  cvBullets: string[];
   order: number;
 };
 
@@ -71,6 +77,7 @@ const emptyForm: FormState = {
   published: true,
   visual: DEFAULT_PROJECT_ACCENT,
   coverImage: "", screenshots: [], myRole: "", contributions: [], ownership: "", teamSize: null,
+  impactSummary: "", imageAlt: "", showOnCv: true, showOnPortfolio: true, cvDescription: "", cvBullets: [],
   order: 99,
 };
 
@@ -95,6 +102,8 @@ function toFormState(p: Project): FormState {
     visual: normalizeProjectAccent(p.visual),
     coverImage: p.coverImage ?? "", screenshots: p.screenshots ?? [], myRole: p.myRole ?? "",
     contributions: p.contributions ?? [], ownership: p.ownership ?? "", teamSize: p.teamSize ?? null,
+    impactSummary: p.impactSummary ?? "", imageAlt: p.imageAlt ?? "", showOnCv: p.showOnCv !== false,
+    showOnPortfolio: p.showOnPortfolio !== false, cvDescription: p.cvDescription ?? "", cvBullets: p.cvBullets ?? [],
     order: p.order,
   };
 }
@@ -504,7 +513,11 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
           <div><label htmlFor="p-screenshots" className="field-label">Screenshot URLs or public paths — one per line</label><textarea id="p-screenshots" className="textarea min-h-24 font-mono text-xs" value={form.screenshots.join("\n")} onChange={(e) => set("screenshots", splitLines(e.target.value))} placeholder={"/projects/lobby/friends.webp\n/projects/lobby/audio-room.webp\n/projects/lobby/community-chat.webp"} /><p className="mt-1 text-xs text-faint">Files inside public/projects are entered as /projects/… paths.</p></div>
           <div className="grid gap-4 sm:grid-cols-2"><div><label htmlFor="p-role" className="field-label">My role</label><input id="p-role" className="input" value={form.myRole} onChange={(e) => set("myRole", e.target.value)} placeholder="e.g. Full-Stack Developer" /></div><div><label htmlFor="p-team-size" className="field-label">Team size</label><input id="p-team-size" type="number" min="1" className="input" value={form.teamSize ?? ""} onChange={(e) => set("teamSize", e.target.value ? Number(e.target.value) : null)} /></div></div>
           <div><label htmlFor="p-ownership" className="field-label">What I personally owned</label><textarea id="p-ownership" className="textarea min-h-20" value={form.ownership} onChange={(e) => set("ownership", e.target.value)} /></div>
+          <div><label htmlFor="p-impact" className="field-label">Impact summary</label><textarea id="p-impact" className="textarea min-h-20" value={form.impactSummary} onChange={(e) => set("impactSummary", e.target.value)} /></div>
+          <div><label htmlFor="p-image-alt" className="field-label">Cover image alt text</label><input id="p-image-alt" className="input" value={form.imageAlt} onChange={(e) => set("imageAlt", e.target.value)} /></div>
           <div><label htmlFor="p-contributions" className="field-label">My contributions — one per line</label><textarea id="p-contributions" className="textarea min-h-28" value={form.contributions.join("\n")} onChange={(e) => set("contributions", splitLines(e.target.value))} /></div>
+          <div><label htmlFor="p-cv-description" className="field-label">CV-specific description</label><textarea id="p-cv-description" className="textarea min-h-20" value={form.cvDescription} onChange={(e) => set("cvDescription", e.target.value)} /></div>
+          <div><label htmlFor="p-cv-bullets" className="field-label">CV bullets — one per line</label><textarea id="p-cv-bullets" className="textarea min-h-24" value={form.cvBullets.join("\n")} onChange={(e) => set("cvBullets", splitLines(e.target.value))} /></div>
         </div>
 
         <div className="card space-y-5 p-6">
@@ -542,6 +555,8 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
           </div>
 
           <div className="flex flex-wrap gap-6 pt-1">
+            <label className="flex cursor-pointer items-center gap-3 text-sm font-semibold text-ink"><input type="checkbox" checked={form.showOnPortfolio} onChange={(e) => set("showOnPortfolio", e.target.checked)} />Show on portfolio</label>
+            <label className="flex cursor-pointer items-center gap-3 text-sm font-semibold text-ink"><input type="checkbox" checked={form.showOnCv} onChange={(e) => set("showOnCv", e.target.checked)} />Show on CV</label>
             <label className="flex cursor-pointer items-center gap-3 text-sm font-semibold text-ink">
               <input
                 type="checkbox"

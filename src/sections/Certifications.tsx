@@ -1,18 +1,21 @@
 import { FiAward, FiExternalLink } from "react-icons/fi";
-import { useCertifications } from "../lib/hooks";
+import { useCertifications, useSiteSection } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
+import { PublicDataState } from "../components/PublicDataState";
 
 export function Certifications() {
-  const { data: certifications } = useCertifications();
+  const { data: certifications, isLoading, isError, refetch } = useCertifications();
+  const { data: section } = useSiteSection("certifications");
+  if (isLoading || isError) return <PublicDataState loading={isLoading} error={isError} onRetry={() => void refetch()} label="certifications" />;
 
   return (
     <section id="certifications" className="section relative bg-bg-soft">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Credentials"
-          title="Training & Courses"
-          description="Completed learning programs shown separately from professional experience."
+          eyebrow={section?.eyebrow ?? ""}
+          title={section?.heading ?? ""}
+          description={section?.description ?? ""}
         />
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -28,10 +31,12 @@ export function Certifications() {
                       {cert.title}
                     </h3>
                     <p className="mt-0.5 text-sm text-muted">{cert.issuer}</p>
+                    {cert.description && <p className="mt-2 text-sm text-muted">{cert.description}</p>}
+                    {cert.credentialId && <p className="mt-1 font-mono text-xs text-faint">Credential ID: {cert.credentialId}</p>}
                   </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
-                  {cert.year && <span className="chip">{cert.year}</span>}
+                  {(cert.year || cert.issueDate || cert.expectedDate || cert.duration) && <span className="chip">{[cert.year || cert.issueDate || cert.expectedDate, cert.duration].filter(Boolean).join(" · ")}</span>}
                   {cert.url && (
                     <a
                       href={cert.url}

@@ -49,6 +49,14 @@ export function Certifications() {
         { key: "issuer", label: "Issuer", required: true },
         { key: "year", label: "Year / period" },
         { key: "url", label: "Credential URL", placeholder: "https://…" },
+        { key: "issueDate", label: "Issue date" },
+        { key: "expectedDate", label: "Expected date" },
+        { key: "duration", label: "Duration" },
+        { key: "credentialId", label: "Credential ID" },
+        { key: "description", label: "Description" },
+        { key: "cvDescription", label: "CV-specific description" },
+        { key: "published", label: "Published", options: [{ value: "true", label: "Published" }, { value: "false", label: "Hidden" }] },
+        { key: "showOnCv", label: "CV visibility", options: [{ value: "true", label: "Show on CV" }, { value: "false", label: "Hide from CV" }] },
         { key: "order", label: "Display order", placeholder: "0" },
       ]}
       items={data}

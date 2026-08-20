@@ -487,7 +487,7 @@ function drawApplicationCv(doc, data, origin) {
   y += write(title, left, { face: "bold", size: 11.5, align: "center", color: APPLICATION.accent });
   y += 2;
   linkedLabels([
-    { label: profile.location, url: "https://www.google.com/maps/search/?api=1&query=Tripoli%2C%20Lebanon" },
+    { label: profile.location, url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profile.location)}` },
     { label: configuration.header.overrides?.phone || profile.phone, url: `tel:${clean(configuration.header.overrides?.phone || profile.phone).replace(/[^+\d]/g, "")}` },
     { label: configuration.header.overrides?.email || profile.email, url: `mailto:${configuration.header.overrides?.email || profile.email}` },
   ]);
@@ -496,7 +496,7 @@ function drawApplicationCv(doc, data, origin) {
   ]);
 
   heading("Professional Summary");
-  const summary = configuration.professionalSummary || "Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and relational and NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks. Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI-powered application features.";
+  const summary = configuration.professionalSummary || profile.professionalSummary || profile.bio;
   y += write(summary, left, { lineGap: 0.8 });
 
   heading("Professional Experience");
@@ -504,15 +504,7 @@ function drawApplicationCv(doc, data, origin) {
     const organization = clean(item.facility);
     datedTitle(`${item.milestone} — ${organization}`, dateLike(item.meta) ? item.meta : "");
     y += 1.5;
-    const experienceBullets = item.cvBullets?.length ? item.cvBullets : index === 0 ? [
-      "Completing an intensive full-stack software engineering and AI program focused on modern architecture and production-ready applications.",
-      "Developing type-safe React and Next.js applications with Zustand and TanStack Query, while building REST APIs using Node.js, Express.js, FastAPI, and Django REST Framework.",
-      "Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest.",
-      "Applying SOLID principles and clean architecture in Agile teams; integrating LLM and Cognitive APIs and deploying documented applications with Vercel and Render.",
-    ] : [
-      "Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration interfaces.",
-      "Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.",
-    ];
+    const experienceBullets = item.cvBullets?.length ? item.cvBullets : item.bullets?.length ? item.bullets : [item.cvDescription || item.details].filter(Boolean);
     experienceBullets.slice(0, index === 0 ? 4 : 2).forEach(bulletLine);
     if (index === 0) y += 1;
   });
@@ -593,7 +585,7 @@ export async function generateCvPdfBuffer({ origin = "", mode = "application" } 
   drawHeader(doc, flow, profile, origin, configuration.header);
   const titles = resolvedMode.sectionTitles;
   const renderers = {
-    summary: () => drawSummary(doc, flow, configuration.professionalSummary || profile.bio, titles.summary),
+    summary: () => drawSummary(doc, flow, configuration.professionalSummary || profile.professionalSummary || profile.bio, titles.summary),
     experience: () => drawExperience(doc, flow, profile.experience, titles.experience), projects: () => drawProjects(doc, flow, projects, titles.projects),
     education: () => drawEducation(doc, flow, education, titles.education), skills: () => drawSkills(doc, flow, skills, titles.skills),
     certifications: () => drawCertifications(doc, flow, certifications, titles.certifications), languages: () => drawLanguages(doc, flow, languages.join(" | "), titles.languages),

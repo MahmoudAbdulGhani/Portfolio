@@ -17,22 +17,22 @@ export async function getPortfolioContext(projectSlug) {
       select: {
         name: true, shortName: true, title: true, tagline: true, bio: true,
         location: true, languages: true, resumeUrl: true,
-        experience: {
+        experience: { where: { published: true },
           orderBy: { order: "asc" },
           select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, description: true },
         },
-        socials: { select: { label: true, url: true } },
+        socials: { where: { published: true }, select: { label: true, url: true } },
       },
     }),
     prisma.project.findMany({
-      where: { published: true },
+      where: { published: true, showOnPortfolio: true },
       orderBy: [{ order: "asc" }, { createdAt: "asc" }],
       select: projectSelect,
     }),
     prisma.technology.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
     prisma.skill.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
-    prisma.education.findMany({ orderBy: { order: "asc" }, select: { school: true, degree: true, field: true, period: true, details: true } }),
-    prisma.certification.findMany({ orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true } }),
+    prisma.education.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { school: true, degree: true, field: true, period: true, details: true } }),
+    prisma.certification.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true } }),
   ]);
 
   if (!profile) throw new Error("Portfolio profile not found");

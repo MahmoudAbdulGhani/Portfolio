@@ -9,12 +9,17 @@ import {
   FiMail,
   FiPlus,
   FiUsers,
+  FiAlertTriangle,
+  FiCheckCircle,
+  FiSettings,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
-import { useAnalytics, useMessages } from "../../lib/hooks";
+import { useAdminProfile, useAdminProjects, useAdminSiteContent, useAnalytics, useMessages } from "../../lib/hooks";
 import { formatDate } from "../../lib/format";
 import type { AnalyticsSummary } from "../../types";
 import { motion } from "framer-motion";
+import { AdminPageHeader } from "../../components/admin/AdminPageHeader";
+import { StatusBadge } from "../../components/admin/AdminUI";
 
 type StatKey = Pick<
   AnalyticsSummary,
@@ -43,17 +48,24 @@ function StatSkeleton() {
 export function Dashboard() {
   const { data: analytics, isLoading: analyticsLoading } = useAnalytics();
   const { data: messages, isLoading: messagesLoading } = useMessages();
+  const { data: projects } = useAdminProjects();
+  const { data: profile } = useAdminProfile();
+  const { data: sections } = useAdminSiteContent();
 
   const recent = (messages ?? []).slice(0, 4);
+  const readiness = [
+    !profile?.portfolioUrl && { label: "Add the production portfolio URL", to: "/admin/settings" },
+    !profile?.professionalSummary && { label: "Add a concise professional summary", to: "/admin/settings" },
+    !profile?.seoDescription && { label: "Add the default SEO description", to: "/admin/settings" },
+    projects?.length && !projects.some((project) => project.featured && project.published) && { label: "Choose at least one published featured project", to: "/admin/projects" },
+    projects?.some((project) => !project.imageAlt) && { label: "Add alt text to project images", to: "/admin/projects" },
+    projects?.some((project) => project.showOnCv && !project.cvDescription) && { label: "Add concise CV copy to selected projects", to: "/admin/projects" },
+    sections?.some((section) => section.visible && !section.heading) && { label: "Complete headings for visible sections", to: "/admin/site-content" },
+  ].filter(Boolean) as { label: string; to: string }[];
 
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="admin-heading">Dashboard</h1>
-        <p className="mt-1.5 text-sm text-muted">
-          An overview of the portfolio's content and activity.
-        </p>
-      </div>
+      <AdminPageHeader title="Dashboard" description="Portfolio health, publishing status, and the next useful actions." meta={<StatusBadge tone={readiness.length ? "warning" : "success"}>{readiness.length ? `${readiness.length} items need attention` : "Content ready"}</StatusBadge>} actions={<Link to="/admin/projects/new" className="btn-primary btn-sm"><FiPlus />Add project</Link>} />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {analyticsLoading
@@ -92,6 +104,7 @@ export function Dashboard() {
             <Link to="/admin/projects/new" className="btn-primary justify-start"><FiPlus />Add project</Link>
             <Link to="/admin/experience" className="btn-outline justify-start"><FiBriefcase />Manage experience</Link>
             <Link to="/admin/cv" className="btn-outline justify-start"><FiFileText />Open CV Manager</Link>
+            <Link to="/admin/settings" className="btn-outline justify-start"><FiSettings />Edit profile</Link>
             <Link to="/" className="btn-ghost justify-start"><FiExternalLink />View portfolio</Link>
           </div>
         </div>
@@ -154,6 +167,14 @@ export function Dashboard() {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="card overflow-hidden">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-4 sm:px-6">
+          <div><h2 className="font-display text-base font-bold text-ink">Content readiness</h2><p className="mt-1 text-sm text-muted">Checks based on content currently saved in the CMS.</p></div>
+          <StatusBadge tone={readiness.length ? "warning" : "success"}>{readiness.length ? "Review needed" : "Ready to publish"}</StatusBadge>
+        </div>
+        {readiness.length ? <ul className="divide-y divide-line">{readiness.map((issue) => <li key={issue.label}><Link to={issue.to} className="group flex items-center gap-3 px-5 py-3.5 text-sm text-ink hover:bg-surface-2 sm:px-6"><FiAlertTriangle className="shrink-0 text-gold" /><span className="flex-1">{issue.label}</span><FiArrowRight className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent" /></Link></li>)}</ul> : <div className="flex items-center gap-3 px-5 py-6 text-sm text-muted sm:px-6"><FiCheckCircle className="text-ok" />No obvious content gaps were found.</div>}
       </div>
     </div>
   );

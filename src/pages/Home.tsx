@@ -6,15 +6,21 @@ import { Education } from "../sections/Education";
 import { Certifications } from "../sections/Certifications";
 import { FeaturedProjects } from "../sections/FeaturedProjects";
 import { ContactSection } from "../sections/ContactSection";
-import { useProfile } from "../lib/hooks";
+import { useProfile, useSiteContent, useSiteSection } from "../lib/hooks";
+import { PublicDataState } from "../components/PublicDataState";
 
 export function Home() {
   const { data: profile } = useProfile();
+  const { data: seo } = useSiteSection("seo");
+  const siteContent = useSiteContent();
+  const defaultTitle = typeof seo?.content.defaultTitle === "string" ? seo.content.defaultTitle : profile?.title ?? "";
+  const defaultDescription = typeof seo?.content.defaultDescription === "string" ? seo.content.defaultDescription : profile?.seoDescription ?? "";
+  if (siteContent.isLoading || siteContent.isError) return <main className="pt-16"><PublicDataState loading={siteContent.isLoading} error={siteContent.isError} onRetry={() => void siteContent.refetch()} label="site content" /></main>;
   return (
     <>
       <PageMeta
-        title={profile?.seoTitle?.replace(/\s*[|—-]\s*Mahmoud Hussein Abdul Ghani.*$/i, "") || "Full-Stack Software Engineer"}
-        description={profile?.seoDescription || "Portfolio of Mahmoud Hussein Abdul Ghani, a full-stack software developer building React, Next.js, TypeScript, Node.js, Express.js, MongoDB, and SQL applications."}
+        title={profile?.seoTitle || defaultTitle}
+        description={profile?.seoDescription || defaultDescription}
       />
       <main>
         <Hero />
