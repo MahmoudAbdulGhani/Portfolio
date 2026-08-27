@@ -18,6 +18,9 @@ import { useProject, useProjects } from "../lib/hooks";
 import { PageMeta } from "../components/PageMeta";
 import { ProjectVisual } from "../components/ProjectVisual";
 import { Reveal } from "../components/Reveal";
+import { ScrollProgress } from "../components/ScrollProgress";
+import { EngineeringCaseStudy } from "../components/EngineeringCaseStudy";
+import { ResponsiveProjectImage } from "../components/ResponsiveProjectImage";
 import { cn, formatDate } from "../lib/format";
 import type { Project } from "../types";
 
@@ -160,6 +163,7 @@ export function ProjectDetail() {
 
   return (
     <>
+      <ScrollProgress />
       <PageMeta
         title={project.name}
         description={project.description ?? undefined}
@@ -486,11 +490,10 @@ export function ProjectDetail() {
                       className="project-gallery-frame group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                     >
                       <span className="project-gallery-image-wrap">
-                        <img
+                        <ResponsiveProjectImage
                           src={src}
                           alt={`${project.name} screenshot ${index + 1}`}
-                          loading="lazy"
-                          decoding="async"
+                          sizes="(min-width: 1024px) 416px, 100vw"
                           className="project-gallery-img"
                         />
                         <span className="project-gallery-expand" aria-hidden>
@@ -528,13 +531,14 @@ export function ProjectDetail() {
                 )}
               </section>
             )}
+            <EngineeringCaseStudy architecture={project.architecture} codeDiffs={project.codeDiffs} benchmarks={project.benchmarks} views={project.views} />
           </div>
         </div>
       </main>
       {showNextBar && nextProject && (
         <NextProjectBar next={nextProject} visible={barVisible} />
       )}
-      {activeImage !== null && galleryImages[activeImage] && <div role="dialog" aria-modal="true" aria-label={`${project.name} image gallery`} className="fixed inset-0 z-[100] flex h-[100dvh] min-w-0 items-center justify-center overflow-hidden bg-black/95 px-2 pb-20 pt-16 sm:p-8" onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveImage(null); }}><button type="button" onClick={() => setActiveImage(null)} className="absolute right-3 top-3 z-20 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:right-6 sm:top-6" aria-label="Close gallery"><FiX size={22} /></button>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="absolute left-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Previous image"><FiChevronLeft size={28} /></button>}<img src={galleryImages[activeImage]} alt={`${project.name} full-size image ${activeImage + 1}`} className="block max-h-[calc(100dvh-9rem)] max-w-[96vw] object-contain sm:max-h-[85vh] sm:max-w-[88vw]" />{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="absolute right-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Next image"><FiChevronRight size={28} /></button>}<div className="absolute inset-x-3 bottom-3 z-20 flex items-center justify-center gap-3 sm:bottom-5">{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Previous image"><FiChevronLeft size={24} /></button>}<span className="rounded-full border border-white/10 bg-black/70 px-3 py-2 font-mono text-xs text-white">{activeImage + 1} / {galleryImages.length}</span>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Next image"><FiChevronRight size={24} /></button>}</div></div>}
+      {activeImage !== null && galleryImages[activeImage] && <div role="dialog" aria-modal="true" aria-label={`${project.name} image gallery`} className="fixed inset-0 z-[100] flex h-[100dvh] min-w-0 items-center justify-center overflow-hidden bg-black/95 px-2 pb-20 pt-16 sm:p-8" onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveImage(null); }}><button type="button" onClick={() => setActiveImage(null)} className="absolute right-3 top-3 z-20 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:right-6 sm:top-6" aria-label="Close gallery"><FiX size={22} /></button>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="absolute left-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Previous image"><FiChevronLeft size={28} /></button>}<ResponsiveProjectImage src={galleryImages[activeImage]} alt={`${project.name} full-size image ${activeImage + 1}`} sizes="96vw" priority className="block max-h-[calc(100dvh-9rem)] max-w-[96vw] object-contain sm:max-h-[85vh] sm:max-w-[88vw]" />{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="absolute right-5 z-10 hidden h-12 w-12 place-items-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-black/80 sm:grid" aria-label="Next image"><FiChevronRight size={28} /></button>}<div className="absolute inset-x-3 bottom-3 z-20 flex items-center justify-center gap-3 sm:bottom-5">{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage - 1 + galleryImages.length) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Previous image"><FiChevronLeft size={24} /></button>}<span className="rounded-full border border-white/10 bg-black/70 px-3 py-2 font-mono text-xs text-white">{activeImage + 1} / {galleryImages.length}</span>{galleryImages.length > 1 && <button type="button" onClick={() => setActiveImage((activeImage + 1) % galleryImages.length)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/70 text-white sm:hidden" aria-label="Next image"><FiChevronRight size={24} /></button>}</div></div>}
     </>
   );
 }

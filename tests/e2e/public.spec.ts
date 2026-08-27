@@ -41,11 +41,15 @@ test("project gallery opens and supports navigation", async ({ page }) => {
     visual: "#765D99", coverImage: "/projects/lobby/cover.webp",
     screenshots: ["/projects/lobby/guest-access.webp", "/projects/lobby/friends.webp", "/projects/lobby/audio-room.webp", "/projects/lobby/community-chat.webp", "/projects/lobby/share-room.webp"],
     myRole: "Developer", contributions: [], ownership: "", teamSize: 1, order: 1, views: 0,
+    architecture: ["Client | Angular application", "API | NestJS services", "Database | Persistent application data"],
+    codeDiffs: ["Validation | Manual checks | Centralized request schemas"],
+    benchmarks: ["Test response | 42 ms | Controlled integration test"],
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   };
   await page.route("**/api/projects/lobby", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(lobby) }));
   await page.goto("/projects/lobby");
   await expect(page.getByRole("heading", { name: "Lobby", exact: true })).toBeVisible();
+  await expect(page.locator('picture source[type="image/avif"]').first()).toHaveAttribute("srcset", /cover-480w\.avif/);
   await page.getByRole("button", { name: /view lobby cover image full screen/i }).click();
   const gallery = page.getByRole("dialog", { name: /lobby image gallery/i });
   await expect(gallery).toBeVisible();
@@ -54,6 +58,10 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
   await expect(page.getByRole("button", { name: /view lobby cover image full screen/i })).toBeFocused();
+  await page.getByRole("button", { name: /API/i, pressed: false }).click();
+  await expect(page.getByText("NestJS services", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Implementation improvements" })).toBeVisible();
+  await expect(page.getByText("42 ms", { exact: true })).toBeVisible();
 });
 
 test("contact form validates and handles a successful submission", async ({ page }) => {
@@ -86,4 +94,32 @@ test("Home navigation returns to the hero section", async ({ page, isMobile }) =
   }
   await expect(page).toHaveURL(/\/#hero$/);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(20);
+});
+
+test("Command palette opens via shortcut and supports search navigation", async ({ page }) => {
+  await page.goto("/");
+  await page.keyboard.press("Control+k");
+  const dialog = page.getByRole("dialog", { name: "Command Palette" });
+  await expect(dialog).toBeVisible();
+  const searchInput = dialog.getByPlaceholder(/search projects/i);
+  await expect(searchInput).toBeFocused();
+  await searchInput.fill("contact");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/contact$/);
+});
+
+test("Developer terminal supports commands and history", async ({ page }) => {
+  await page.goto("/terminal");
+  const terminalInput = page.getByPlaceholder(/type command/i);
+  await expect(terminalInput).toBeFocused();
+
+  await terminalInput.fill("help");
+  await terminalInput.press("Enter");
+  await expect(page.getByText("Available Commands", { exact: true })).toBeVisible();
+
+  await terminalInput.press("ArrowUp");
+  await expect(terminalInput).toHaveValue("help");
+  await terminalInput.fill("pro");
+  await terminalInput.press("Tab");
+  await expect(terminalInput).toHaveValue("projects");
 });

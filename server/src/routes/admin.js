@@ -4,14 +4,52 @@ import { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { prisma } from "../lib/prisma.js";
 import { generateCvPdfBuffer } from "../lib/cv.js";
-import { getCvCatalog, getOrCreateCvConfiguration, normalizeHeader, normalizeMode } from "../lib/cv-config.js";
+import {
+  getCvCatalog,
+  getOrCreateCvConfiguration,
+  normalizeHeader,
+  normalizeMode,
+} from "../lib/cv-config.js";
 import { consumeRateLimits } from "../lib/rate-limit.js";
-import { changePasswordSchema, cvMutationSchema, loginSchema, profileMutationSchema, projectMutationSchema, routeIdSchema, siteSectionSchema, slugSchema, validationMessage } from "../lib/validation.js";
-import { clearAuthCookie, getAuthenticatedAdminId, requireAuth, setAuthCookie, signToken } from "../middleware/auth.js";
+import {
+  changePasswordSchema,
+  cvMutationSchema,
+  loginSchema,
+  profileMutationSchema,
+  projectMutationSchema,
+  routeIdSchema,
+  siteSectionSchema,
+  slugSchema,
+  validationMessage,
+} from "../lib/validation.js";
+import {
+  clearAuthCookie,
+  getAuthenticatedAdminId,
+  requireAuth,
+  setAuthCookie,
+  signToken,
+} from "../middleware/auth.js";
 import { getClientIp } from "../lib/client-ip.js";
+import { apiCache } from "../lib/cache.js";
 
 const router = Router();
-const DUMMY_PASSWORD_HASH = "$2b$12$VyWR0jiclv4VqXmMnI/3QukirPLOLlgELqDeGEB67PLS9yv2mxiTS";
+const DUMMY_PASSWORD_HASH =
+  "$2b$12$VyWR0jiclv4VqXmMnI/3QukirPLOLlgELqDeGEB67PLS9yv2mxiTS";
+
+// Automatically invalidate public API cache on successful admin mutations
+router.use((req, res, next) => {
+  if (
+    ["POST", "PUT", "PATCH", "DELETE"].includes(req.method) &&
+    !req.path.startsWith("/auth/")
+  ) {
+    res.on("finish", () => {
+      if (res.statusCode >= 200 && res.statusCode < 400) {
+        apiCache.invalidateAll();
+      }
+    });
+  }
+  next();
+});
 
 const str = (value) =>
   value === undefined || value === null ? null : String(value);
@@ -32,22 +70,42 @@ const normalizeProjectAccent = (value) => {
 router.post("/auth/login", async (req, res, next) => {
   try {
     const parsed = loginSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: "A valid email and password are required." });
-    const email = parsed.data.email.toLowerCase(); const { password } = parsed.data;
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({ message: "A valid email and password are required." });
+    const email = parsed.data.email.toLowerCase();
+    const { password } = parsed.data;
     const ip = getClientIp(req);
-    const [ipThrottle, accountThrottle, combinedThrottle] = await consumeRateLimits([
-      { key: `login-ip:${ip}`, limit: 25, windowMs: 15 * 60 * 1000 },
-      { key: `login-account:${email}`, limit: 20, windowMs: 60 * 60 * 1000 },
-      { key: `login-combined:${ip}:${email}`, limit: 8, windowMs: 15 * 60 * 1000 },
-    ]);
-    const throttle = [ipThrottle, accountThrottle, combinedThrottle].find((item) => item.limited);
-    if (throttle) { console.warn("[security] login_rate_limited", { ip }); res.setHeader("Retry-After", String(throttle.retryAfter)); return res.status(429).json({ message: "Too many login attempts. Please try again later." }); }
+    const [ipThrottle, accountThrottle, combinedThrottle] =
+      await consumeRateLimits([
+        { key: `login-ip:${ip}`, limit: 25, windowMs: 15 * 60 * 1000 },
+        { key: `login-account:${email}`, limit: 20, windowMs: 60 * 60 * 1000 },
+        {
+          key: `login-combined:${ip}:${email}`,
+          limit: 8,
+          windowMs: 15 * 60 * 1000,
+        },
+      ]);
+    const throttle = [ipThrottle, accountThrottle, combinedThrottle].find(
+      (item) => item.limited,
+    );
+    if (throttle) {
+      console.warn("[security] login_rate_limited", { ip });
+      res.setHeader("Retry-After", String(throttle.retryAfter));
+      return res
+        .status(429)
+        .json({ message: "Too many login attempts. Please try again later." });
+    }
 
     const admin = await prisma.admin.findUnique({
       where: { email },
     });
 
-    const passwordMatches = await bcrypt.compare(password, admin?.passwordHash ?? DUMMY_PASSWORD_HASH);
+    const passwordMatches = await bcrypt.compare(
+      password,
+      admin?.passwordHash ?? DUMMY_PASSWORD_HASH,
+    );
     const ok = Boolean(admin && passwordMatches);
     if (!ok) {
       console.warn("[security] login_failed", { ip });
@@ -86,13 +144,23 @@ router.get("/auth/session", async (req, res, next) => {
 router.post("/auth/change-password", requireAuth, async (req, res, next) => {
   try {
     const parsed = changePasswordSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: "Provide the current password and a new password of 10–200 characters." });
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({
+          message:
+            "Provide the current password and a new password of 10–200 characters.",
+        });
     const { currentPassword, newPassword } = parsed.data;
 
     const admin = await prisma.admin.findUnique({ where: { id: req.adminId } });
-    const ok = admin && (await bcrypt.compare(String(currentPassword), admin.passwordHash));
+    const ok =
+      admin &&
+      (await bcrypt.compare(String(currentPassword), admin.passwordHash));
     if (!ok) {
-      return res.status(401).json({ message: "Current password is incorrect." });
+      return res
+        .status(401)
+        .json({ message: "Current password is incorrect." });
     }
 
     await prisma.admin.update({
@@ -124,28 +192,61 @@ router.get("/me", requireAuth, async (req, res, next) => {
 router.get("/cv", requireAuth, async (_req, res, next) => {
   try {
     const [configuration, catalog] = await Promise.all([
-      getOrCreateCvConfiguration(), getCvCatalog(),
+      getOrCreateCvConfiguration(),
+      getCvCatalog(),
     ]);
-    res.json({ configuration: {
-      professionalSummary: configuration.professionalSummary,
-      header: normalizeHeader(configuration.header),
-      application: normalizeMode(configuration.application),
-      master: normalizeMode(configuration.master),
-    }, catalog });
-  } catch (error) { next(error); }
+    res.json({
+      configuration: {
+        professionalSummary: configuration.professionalSummary,
+        header: normalizeHeader(configuration.header),
+        application: normalizeMode(configuration.application),
+        master: normalizeMode(configuration.master),
+      },
+      catalog,
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.put("/cv", requireAuth, async (req, res, next) => {
   try {
     const parsed = cvMutationSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid CV configuration.") });
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({
+          message: validationMessage(parsed, "Invalid CV configuration."),
+        });
     const body = parsed.data;
-    const invalidDate = (value, allowPresent = false) => value && !(allowPresent && /^present$/i.test(String(value).trim())) && !/^\d{4}-(?:[1-9]|0[1-9]|1[0-2])$/.test(String(value).trim());
+    const invalidDate = (value, allowPresent = false) =>
+      value &&
+      !(allowPresent && /^present$/i.test(String(value).trim())) &&
+      !/^\d{4}-(?:[1-9]|0[1-9]|1[0-2])$/.test(String(value).trim());
     for (const modeName of ["application", "master"]) {
-      for (const group of ["experienceOverrides", "educationOverrides", "certificationOverrides"]) {
+      for (const group of [
+        "experienceOverrides",
+        "educationOverrides",
+        "certificationOverrides",
+      ]) {
         for (const item of Object.values(body[modeName]?.[group] ?? {})) {
-          if (invalidDate(item?.startDate) || invalidDate(item?.endDate, true)) return res.status(400).json({ message: "Dates must use YYYY-MM (for example 2026-05); an end date may also be Present." });
-          if (item?.isCurrent && item?.endDate && !/^present$/i.test(String(item.endDate).trim())) return res.status(400).json({ message: "Current entries cannot also have a dated end date." });
+          if (invalidDate(item?.startDate) || invalidDate(item?.endDate, true))
+            return res
+              .status(400)
+              .json({
+                message:
+                  "Dates must use YYYY-MM (for example 2026-05); an end date may also be Present.",
+              });
+          if (
+            item?.isCurrent &&
+            item?.endDate &&
+            !/^present$/i.test(String(item.endDate).trim())
+          )
+            return res
+              .status(400)
+              .json({
+                message: "Current entries cannot also have a dated end date.",
+              });
         }
       }
     }
@@ -153,16 +254,28 @@ router.put("/cv", requireAuth, async (req, res, next) => {
       where: { id: "default" },
       create: {
         id: "default",
-        professionalSummary: typeof body.professionalSummary === "string" ? body.professionalSummary.trim().slice(0, 4000) || null : null,
-        header: normalizeHeader(body.header), application: normalizeMode(body.application), master: normalizeMode(body.master),
+        professionalSummary:
+          typeof body.professionalSummary === "string"
+            ? body.professionalSummary.trim().slice(0, 4000) || null
+            : null,
+        header: normalizeHeader(body.header),
+        application: normalizeMode(body.application),
+        master: normalizeMode(body.master),
       },
       update: {
-        professionalSummary: typeof body.professionalSummary === "string" ? body.professionalSummary.trim().slice(0, 4000) || null : null,
-        header: normalizeHeader(body.header), application: normalizeMode(body.application), master: normalizeMode(body.master),
+        professionalSummary:
+          typeof body.professionalSummary === "string"
+            ? body.professionalSummary.trim().slice(0, 4000) || null
+            : null,
+        header: normalizeHeader(body.header),
+        application: normalizeMode(body.application),
+        master: normalizeMode(body.master),
       },
     });
     res.json(configuration);
-  } catch (error) { next(error); }
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.get("/cv/:mode.pdf", requireAuth, async (req, res, next) => {
@@ -171,29 +284,40 @@ router.get("/cv/:mode.pdf", requireAuth, async (req, res, next) => {
     const origin = `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({ origin, mode });
     res.setHeader("Content-Type", "application/pdf");
-    const filename = mode === "application" ? "portfolio-cv.pdf" : "portfolio-master-cv.pdf";
-    res.setHeader("Content-Disposition", `${req.query.download === "1" ? "attachment" : "inline"}; filename="${filename}"`);
+    const filename =
+      mode === "application" ? "portfolio-cv.pdf" : "portfolio-master-cv.pdf";
+    res.setHeader(
+      "Content-Disposition",
+      `${req.query.download === "1" ? "attachment" : "inline"}; filename="${filename}"`,
+    );
     res.setHeader("Cache-Control", "private, no-store");
     res.send(buffer);
-  } catch (error) { next(error); }
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* ------------------------------ Analytics ------------------------------ */
 
 router.get("/analytics", requireAuth, async (_req, res, next) => {
   try {
-    const [totalProjects, publishedProjects, totalSkills, unreadMessages, projects] =
-      await Promise.all([
-        prisma.project.count(),
-        prisma.project.count({ where: { published: true } }),
-        prisma.skill.count(),
-        prisma.message.count({ where: { read: false } }),
-        prisma.project.findMany({
-          orderBy: { views: "desc" },
-          take: 8,
-          select: { name: true, slug: true, views: true },
-        }),
-      ]);
+    const [
+      totalProjects,
+      publishedProjects,
+      totalSkills,
+      unreadMessages,
+      projects,
+    ] = await Promise.all([
+      prisma.project.count(),
+      prisma.project.count({ where: { published: true } }),
+      prisma.skill.count(),
+      prisma.message.count({ where: { read: false } }),
+      prisma.project.findMany({
+        orderBy: { views: "desc" },
+        take: 8,
+        select: { name: true, slug: true, views: true },
+      }),
+    ]);
 
     const [totalViews, recentMessages] = await Promise.all([
       projects.reduce((sum, p) => sum + p.views, 0),
@@ -236,15 +360,31 @@ const profileScalarKeys = [
   "seoTitle",
   "seoDescription",
   "languages",
-  "professionalSummary", "availabilityStatus", "availabilityText", "responseTime", "remoteAvailability",
-  "openToOpportunities", "heroLabel", "profileReference", "whatsappNumber", "whatsappMessage", "focusAreas",
+  "professionalSummary",
+  "availabilityStatus",
+  "availabilityText",
+  "responseTime",
+  "remoteAvailability",
+  "openToOpportunities",
+  "heroLabel",
+  "profileReference",
+  "whatsappNumber",
+  "whatsappMessage",
+  "focusAreas",
 ];
 
 function profileScalars(body) {
   return Object.fromEntries(
     profileScalarKeys
       .filter((key) => body[key] !== undefined)
-      .map((key) => [key, key === "openToOpportunities" ? Boolean(body[key]) : key === "focusAreas" ? strArr(body[key]) : str(body[key])]),
+      .map((key) => [
+        key,
+        key === "openToOpportunities"
+          ? Boolean(body[key])
+          : key === "focusAreas"
+            ? strArr(body[key])
+            : str(body[key]),
+      ]),
   );
 }
 
@@ -257,19 +397,34 @@ function nestedExperience(profile, input) {
     const startDate = str(item?.startDate)?.trim() || null;
     const isCurrent = Boolean(item?.isCurrent);
     const endDate = isCurrent ? null : str(item?.endDate)?.trim() || null;
-    const displayDate = [startDate, isCurrent ? "Present" : endDate].filter(Boolean).join(" – ");
+    const displayDate = [startDate, isCurrent ? "Present" : endDate]
+      .filter(Boolean)
+      .join(" – ");
     return {
-    id: existingIds.has(item?.id) ? item.id : null,
-    data: {
-      role, company, description, startDate, endDate, isCurrent,
-      location: str(item?.location)?.trim() || null,
-      workArrangement: str(item?.workArrangement)?.trim() || null,
-      bullets: strArr(item?.bullets), technologies: strArr(item?.technologies), published: item?.published !== false,
-      showOnCv: item?.showOnCv !== false, cvDescription: str(item?.cvDescription)?.trim() || null, cvBullets: strArr(item?.cvBullets),
-      milestone: role, facility: company, meta: displayDate, details: description,
-      order: index,
-    },
-  }; });
+      id: existingIds.has(item?.id) ? item.id : null,
+      data: {
+        role,
+        company,
+        description,
+        startDate,
+        endDate,
+        isCurrent,
+        location: str(item?.location)?.trim() || null,
+        workArrangement: str(item?.workArrangement)?.trim() || null,
+        bullets: strArr(item?.bullets),
+        technologies: strArr(item?.technologies),
+        published: item?.published !== false,
+        showOnCv: item?.showOnCv !== false,
+        cvDescription: str(item?.cvDescription)?.trim() || null,
+        cvBullets: strArr(item?.cvBullets),
+        milestone: role,
+        facility: company,
+        meta: displayDate,
+        details: description,
+        order: index,
+      },
+    };
+  });
   const retainedIds = rows.flatMap((item) => (item.id ? [item.id] : []));
 
   return {
@@ -289,10 +444,15 @@ function nestedSocials(profile, input) {
       data: {
         label: str(item?.label)?.trim() ?? "",
         url: str(item?.url)?.trim() ?? "",
-        platform: str(item?.platform)?.trim() || "link", username: str(item?.username)?.trim() || null,
-        icon: str(item?.icon)?.trim() || null, order: Number(item?.order) || 0,
-        showInHero: item?.showInHero !== false, showInContact: item?.showInContact !== false,
-        showInFooter: item?.showInFooter !== false, showOnCv: item?.showOnCv !== false, published: item?.published !== false,
+        platform: str(item?.platform)?.trim() || "link",
+        username: str(item?.username)?.trim() || null,
+        icon: str(item?.icon)?.trim() || null,
+        order: Number(item?.order) || 0,
+        showInHero: item?.showInHero !== false,
+        showInContact: item?.showInContact !== false,
+        showInFooter: item?.showInFooter !== false,
+        showOnCv: item?.showOnCv !== false,
+        published: item?.published !== false,
       },
     }))
     .filter((item) => item.data.label);
@@ -310,7 +470,8 @@ function nestedSocials(profile, input) {
 router.get("/profile", requireAuth, async (_req, res, next) => {
   try {
     const profile = await prisma.profile.findFirst({ include: profileInclude });
-    if (!profile) return res.status(404).json({ message: "Profile not found." });
+    if (!profile)
+      return res.status(404).json({ message: "Profile not found." });
     res.json(profile);
   } catch (error) {
     next(error);
@@ -320,15 +481,31 @@ router.get("/profile", requireAuth, async (_req, res, next) => {
 router.patch("/profile", requireAuth, async (req, res, next) => {
   try {
     const profile = await prisma.profile.findFirst({ include: profileInclude });
-    if (!profile) return res.status(404).json({ message: "Profile not found." });
+    if (!profile)
+      return res.status(404).json({ message: "Profile not found." });
 
     const parsed = profileMutationSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid profile data.") });
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({ message: validationMessage(parsed, "Invalid profile data.") });
     const body = parsed.data;
     if (Array.isArray(body.experience)) {
-      const validDate = (value) => !value || /^\d{4}-(0[1-9]|1[0-2])$/.test(String(value));
-      const invalid = body.experience.find((item) => !validDate(item?.startDate) || !validDate(item?.endDate) || (item?.isCurrent && item?.endDate));
-      if (invalid) return res.status(400).json({ message: "Experience dates must use YYYY-MM, and current roles cannot have an end date." });
+      const validDate = (value) =>
+        !value || /^\d{4}-(0[1-9]|1[0-2])$/.test(String(value));
+      const invalid = body.experience.find(
+        (item) =>
+          !validDate(item?.startDate) ||
+          !validDate(item?.endDate) ||
+          (item?.isCurrent && item?.endDate),
+      );
+      if (invalid)
+        return res
+          .status(400)
+          .json({
+            message:
+              "Experience dates must use YYYY-MM, and current roles cannot have an end date.",
+          });
     }
     const data = profileScalars(body);
 
@@ -353,11 +530,15 @@ router.patch("/profile", requireAuth, async (req, res, next) => {
 /* ------------------------------- Projects ------------------------------ */
 
 const projectFields = (body) => ({
-  slug: body.slug !== undefined ? String(body.slug).toLowerCase().trim() : undefined,
+  slug:
+    body.slug !== undefined
+      ? String(body.slug).toLowerCase().trim()
+      : undefined,
   name: body.name !== undefined ? str(body.name) : undefined,
   type: body.type !== undefined ? str(body.type) : undefined,
   tagline: body.tagline !== undefined ? str(body.tagline) : undefined,
-  description: body.description !== undefined ? str(body.description) : undefined,
+  description:
+    body.description !== undefined ? str(body.description) : undefined,
   overview: body.overview !== undefined ? str(body.overview) : undefined,
   problem: body.problem !== undefined ? str(body.problem) : undefined,
   solution: body.solution !== undefined ? str(body.solution) : undefined,
@@ -373,31 +554,75 @@ const projectFields = (body) => ({
     body.visual !== undefined ? normalizeProjectAccent(body.visual) : undefined,
   order: body.order !== undefined ? Number(body.order) || 0 : undefined,
   coverImage: body.coverImage !== undefined ? str(body.coverImage) : undefined,
-  screenshots: body.screenshots !== undefined ? strArr(body.screenshots) : undefined,
+  screenshots:
+    body.screenshots !== undefined ? strArr(body.screenshots) : undefined,
   myRole: body.myRole !== undefined ? str(body.myRole) : undefined,
-  contributions: body.contributions !== undefined ? strArr(body.contributions) : undefined,
+  contributions:
+    body.contributions !== undefined ? strArr(body.contributions) : undefined,
   ownership: body.ownership !== undefined ? str(body.ownership) : undefined,
-  teamSize: body.teamSize === undefined ? undefined : body.teamSize === null ? null : Number(body.teamSize),
-  impactSummary: body.impactSummary !== undefined ? str(body.impactSummary) : undefined,
+  teamSize:
+    body.teamSize === undefined
+      ? undefined
+      : body.teamSize === null
+        ? null
+        : Number(body.teamSize),
+  impactSummary:
+    body.impactSummary !== undefined ? str(body.impactSummary) : undefined,
   imageAlt: body.imageAlt !== undefined ? str(body.imageAlt) : undefined,
   showOnCv: body.showOnCv !== undefined ? Boolean(body.showOnCv) : undefined,
-  showOnPortfolio: body.showOnPortfolio !== undefined ? Boolean(body.showOnPortfolio) : undefined,
-  cvDescription: body.cvDescription !== undefined ? str(body.cvDescription) : undefined,
+  showOnPortfolio:
+    body.showOnPortfolio !== undefined
+      ? Boolean(body.showOnPortfolio)
+      : undefined,
+  cvDescription:
+    body.cvDescription !== undefined ? str(body.cvDescription) : undefined,
   cvBullets: body.cvBullets !== undefined ? strArr(body.cvBullets) : undefined,
+  architecture: body.architecture !== undefined ? strArr(body.architecture) : undefined,
+  codeDiffs: body.codeDiffs !== undefined ? strArr(body.codeDiffs) : undefined,
+  benchmarks: body.benchmarks !== undefined ? strArr(body.benchmarks) : undefined,
 });
 
 router.get("/site-content", requireAuth, async (_req, res, next) => {
-  try { res.json(await prisma.siteSection.findMany({ where: { key: { not: { startsWith: "_migration:" } } }, orderBy: { order: "asc" } })); }
-  catch (error) { next(error); }
+  try {
+    res.json(
+      await prisma.siteSection.findMany({
+        where: { key: { not: { startsWith: "_migration:" } } },
+        orderBy: { order: "asc" },
+      }),
+    );
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.put("/site-content", requireAuth, async (req, res, next) => {
   try {
-    const input = z.array(siteSectionSchema).max(50).safeParse(req.body ?? []);
-    if (!input.success) return res.status(400).json({ message: validationMessage(input, "Invalid site content.") });
-    await prisma.$transaction(input.data.map((section) => prisma.siteSection.upsert({ where: { key: section.key }, update: section, create: section })));
-    res.json(await prisma.siteSection.findMany({ where: { key: { not: { startsWith: "_migration:" } } }, orderBy: { order: "asc" } }));
-  } catch (error) { next(error); }
+    const input = z
+      .array(siteSectionSchema)
+      .max(50)
+      .safeParse(req.body ?? []);
+    if (!input.success)
+      return res
+        .status(400)
+        .json({ message: validationMessage(input, "Invalid site content.") });
+    await prisma.$transaction(
+      input.data.map((section) =>
+        prisma.siteSection.upsert({
+          where: { key: section.key },
+          update: section,
+          create: section,
+        }),
+      ),
+    );
+    res.json(
+      await prisma.siteSection.findMany({
+        where: { key: { not: { startsWith: "_migration:" } } },
+        orderBy: { order: "asc" },
+      }),
+    );
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.get("/projects", requireAuth, async (_req, res, next) => {
@@ -413,7 +638,8 @@ router.get("/projects", requireAuth, async (_req, res, next) => {
 
 router.get("/projects/:slug", requireAuth, async (req, res, next) => {
   try {
-    if (!slugSchema.safeParse(req.params.slug).success) return res.status(400).json({ message: "Invalid project identifier." });
+    if (!slugSchema.safeParse(req.params.slug).success)
+      return res.status(400).json({ message: "Invalid project identifier." });
     const project = await prisma.project.findUnique({
       where: { slug: req.params.slug },
     });
@@ -429,7 +655,12 @@ router.get("/projects/:slug", requireAuth, async (req, res, next) => {
 router.post("/projects", requireAuth, async (req, res, next) => {
   try {
     const parsed = projectMutationSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid project data or URL.") });
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({
+          message: validationMessage(parsed, "Invalid project data or URL."),
+        });
     const body = parsed.data;
     if (!body.name?.trim()) {
       return res.status(400).json({ message: "Project name is required." });
@@ -457,10 +688,19 @@ router.post("/projects", requireAuth, async (req, res, next) => {
 
 router.patch("/projects/:id", requireAuth, async (req, res, next) => {
   try {
-    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+    if (!routeIdSchema.safeParse(req.params.id).success)
+      return res.status(400).json({ message: "Invalid record identifier." });
     const parsed = projectMutationSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: validationMessage(parsed, "Invalid project data or URL.") });
-    if (Object.keys(parsed.data).length === 0) return res.status(400).json({ message: "Provide at least one project field to update." });
+    if (!parsed.success)
+      return res
+        .status(400)
+        .json({
+          message: validationMessage(parsed, "Invalid project data or URL."),
+        });
+    if (Object.keys(parsed.data).length === 0)
+      return res
+        .status(400)
+        .json({ message: "Provide at least one project field to update." });
     const body = parsed.data;
     const project = await prisma.project.update({
       where: { id: req.params.id },
@@ -474,7 +714,8 @@ router.patch("/projects/:id", requireAuth, async (req, res, next) => {
 
 router.delete("/projects/:id", requireAuth, async (req, res, next) => {
   try {
-    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+    if (!routeIdSchema.safeParse(req.params.id).success)
+      return res.status(400).json({ message: "Invalid record identifier." });
     await prisma.project.delete({ where: { id: req.params.id } });
     res.status(204).end();
   } catch (error) {
@@ -484,26 +725,45 @@ router.delete("/projects/:id", requireAuth, async (req, res, next) => {
 
 /* --------------------------- Generic entities -------------------------- */
 
-function normalizeCrudData(body, { requiredFields, optionalFields, booleanFields = [] }, isPatch) {
-  const allowedFields = new Set([...requiredFields, ...optionalFields, ...booleanFields, "order"]);
-  const unknownFields = Object.keys(body).filter((key) => !allowedFields.has(key));
+function normalizeCrudData(
+  body,
+  { requiredFields, optionalFields, booleanFields = [] },
+  isPatch,
+) {
+  const allowedFields = new Set([
+    ...requiredFields,
+    ...optionalFields,
+    ...booleanFields,
+    "order",
+  ]);
+  const unknownFields = Object.keys(body).filter(
+    (key) => !allowedFields.has(key),
+  );
   if (unknownFields.length) {
     return { error: `Unsupported field: ${unknownFields[0]}.` };
   }
 
   const data = {};
   for (const field of booleanFields) {
-    if (body[field] !== undefined) data[field] = body[field] === true || body[field] === "true";
+    if (body[field] !== undefined)
+      data[field] = body[field] === true || body[field] === "true";
   }
   for (const field of [...requiredFields, ...optionalFields]) {
     if (body[field] === undefined) continue;
     const value = str(body[field])?.trim() ?? "";
     if (value.length > 4000) return { error: `${field} is too long.` };
     if (field === "url" && value) {
-      try { if (!["http:", "https:"].includes(new URL(value).protocol)) return { error: "url must use http or https." }; }
-      catch { return { error: "url must be a valid URL." }; }
+      try {
+        if (!["http:", "https:"].includes(new URL(value).protocol))
+          return { error: "url must use http or https." };
+      } catch {
+        return { error: "url must be a valid URL." };
+      }
     }
-    if (field === "status" && !["verified", "familiar", "learning"].includes(value)) {
+    if (
+      field === "status" &&
+      !["verified", "familiar", "learning"].includes(value)
+    ) {
       return { error: "status must be verified, familiar, or learning." };
     }
     if (requiredFields.includes(field)) {
@@ -549,7 +809,8 @@ function makeCrudRouter(model, config) {
     try {
       const body = req.body ?? {};
       const result = normalizeCrudData(body, config, false);
-      if ("error" in result) return res.status(400).json({ message: result.error });
+      if ("error" in result)
+        return res.status(400).json({ message: result.error });
       const row = await model.create({ data: result.data });
       res.status(201).json(row);
     } catch (error) {
@@ -559,10 +820,12 @@ function makeCrudRouter(model, config) {
 
   r.patch("/:id", requireAuth, async (req, res, next) => {
     try {
-      if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+      if (!routeIdSchema.safeParse(req.params.id).success)
+        return res.status(400).json({ message: "Invalid record identifier." });
       const body = req.body ?? {};
       const result = normalizeCrudData(body, config, true);
-      if ("error" in result) return res.status(400).json({ message: result.error });
+      if ("error" in result)
+        return res.status(400).json({ message: result.error });
       const row = await model.update({
         where: { id: req.params.id },
         data: result.data,
@@ -575,7 +838,8 @@ function makeCrudRouter(model, config) {
 
   r.delete("/:id", requireAuth, async (req, res, next) => {
     try {
-      if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+      if (!routeIdSchema.safeParse(req.params.id).success)
+        return res.status(400).json({ message: "Invalid record identifier." });
       await model.delete({ where: { id: req.params.id } });
       res.status(204).end();
     } catch (error) {
@@ -586,23 +850,49 @@ function makeCrudRouter(model, config) {
   return r;
 }
 
-const technologyCrud = { requiredFields: ["name", "category"], optionalFields: [] };
-const skillCrud = { requiredFields: ["name", "category", "status"], optionalFields: [] };
+const technologyCrud = {
+  requiredFields: ["name", "category"],
+  optionalFields: [],
+};
+const skillCrud = {
+  requiredFields: ["name", "category", "status"],
+  optionalFields: [],
+};
 const educationCrud = {
   requiredFields: ["school", "degree"],
-  optionalFields: ["field", "period", "details", "location", "startDate", "endDate", "cvDescription"],
+  optionalFields: [
+    "field",
+    "period",
+    "details",
+    "location",
+    "startDate",
+    "endDate",
+    "cvDescription",
+  ],
   booleanFields: ["published", "showOnCv"],
 };
 const certificationCrud = {
   requiredFields: ["title", "issuer"],
-  optionalFields: ["year", "url", "issueDate", "expectedDate", "duration", "credentialId", "description", "cvDescription"],
+  optionalFields: [
+    "year",
+    "url",
+    "issueDate",
+    "expectedDate",
+    "duration",
+    "credentialId",
+    "description",
+    "cvDescription",
+  ],
   booleanFields: ["published", "showOnCv"],
 };
 
 router.use("/technologies", makeCrudRouter(prisma.technology, technologyCrud));
 router.use("/skills", makeCrudRouter(prisma.skill, skillCrud));
 router.use("/education", makeCrudRouter(prisma.education, educationCrud));
-router.use("/certifications", makeCrudRouter(prisma.certification, certificationCrud));
+router.use(
+  "/certifications",
+  makeCrudRouter(prisma.certification, certificationCrud),
+);
 
 /* ------------------------------- Messages ------------------------------ */
 
@@ -619,7 +909,8 @@ router.get("/messages", requireAuth, async (_req, res, next) => {
 
 router.patch("/messages/:id/read", requireAuth, async (req, res, next) => {
   try {
-    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+    if (!routeIdSchema.safeParse(req.params.id).success)
+      return res.status(400).json({ message: "Invalid record identifier." });
     const message = await prisma.message.update({
       where: { id: req.params.id },
       data: { read: true },
@@ -632,7 +923,8 @@ router.patch("/messages/:id/read", requireAuth, async (req, res, next) => {
 
 router.delete("/messages/:id", requireAuth, async (req, res, next) => {
   try {
-    if (!routeIdSchema.safeParse(req.params.id).success) return res.status(400).json({ message: "Invalid record identifier." });
+    if (!routeIdSchema.safeParse(req.params.id).success)
+      return res.status(400).json({ message: "Invalid record identifier." });
     await prisma.message.delete({ where: { id: req.params.id } });
     res.status(204).end();
   } catch (error) {

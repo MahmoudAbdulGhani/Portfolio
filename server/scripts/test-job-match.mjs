@@ -6,6 +6,7 @@ import { rateLimitStorageKey } from "../src/lib/rate-limit.js";
 import { MAX_JOB_DESCRIPTION_LENGTH } from "../src/routes/job-match.js";
 
 process.env.GEMINI_API_KEY = "integration-test-key";
+process.env.JWT_SECRET = "job-match-integration-test-secret-at-least-32-characters";
 let providerMode = "success";
 const providerCalls = [];
 globalThis.fetch = async (_url, init) => {
@@ -35,6 +36,16 @@ function post(body) {
     const request = http.request({ host: "127.0.0.1", port, path: "/api/job-match", method: "POST", headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(payload) } }, (response) => {
       let text = ""; response.on("data", (chunk) => { text += chunk; });
       response.on("end", () => resolve({ status: response.statusCode, body: JSON.parse(text) }));
+    });
+    request.on("error", reject); request.end(payload);
+  });
+}
+function postTailoredCv(token) {
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify({ token });
+    const request = http.request({ host: "127.0.0.1", port, path: "/api/job-match/tailored-cv", method: "POST", headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(payload) } }, (response) => {
+      const chunks = []; response.on("data", (chunk) => chunks.push(chunk));
+      response.on("end", () => resolve({ status: response.statusCode, headers: response.headers, body: Buffer.concat(chunks) }));
     });
     request.on("error", reject); request.end(payload);
   });
@@ -70,6 +81,12 @@ try {
   assert.match(prompt, /JOB DESCRIPTION/);
   assert.equal(result.body.result.relevantProjects.length, 1, "Unknown project slugs must be removed");
   assert.equal(result.body.result.relevantProjects[0].portfolioUrl, `/projects/${project.slug}`);
+  assert.equal(typeof result.body.cvToken, "string");
+  assert.ok(result.body.cvToken.length > 20);
+  const tailoredCv = await postTailoredCv(result.body.cvToken);
+  assert.equal(tailoredCv.status, 200);
+  assert.match(tailoredCv.headers["content-type"], /application\/pdf/);
+  assert.equal(tailoredCv.body.subarray(0, 4).toString(), "%PDF");
 
   result = await post({ jobDescription: description });
   assert.equal(result.status, 429);

@@ -1,5 +1,6 @@
 import { cn } from "../lib/format";
 import { normalizeProjectAccent } from "../lib/project-accent";
+import { ResponsiveProjectImage } from "./ResponsiveProjectImage";
 
 interface ProjectVisualProps {
   visual: string;
@@ -39,14 +40,11 @@ export function ProjectVisual({
       )}
     >
       {image && (
-        <img
+        <ResponsiveProjectImage
           src={image}
           alt={imageAlt ?? ""}
-          width={1600}
-          height={900}
-          loading={priority ? "eager" : "lazy"}
-          fetchPriority={priority ? "high" : "auto"}
-          decoding="async"
+          sizes={variant === "hero" ? "(min-width: 1280px) 1024px, 100vw" : "(min-width: 1024px) 66vw, 100vw"}
+          priority={priority}
           className={variant === "hero" ? "project-foreground-hero" : "project-foreground"}
         />
       )}

@@ -1,0 +1,82 @@
+import { useState } from "react";
+import { FiActivity, FiArrowRight, FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
+
+type Props = {
+  architecture?: string[];
+  codeDiffs?: string[];
+  benchmarks?: string[];
+  views: number;
+};
+
+function fields(value: string, count: number) {
+  const parts = value.split("|").map((part) => part.trim());
+  return parts.length >= count && parts.slice(0, count).every(Boolean) ? parts : undefined;
+}
+
+export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchmarks = [], views }: Props) {
+  const nodes = architecture.flatMap((item) => {
+    const parsed = fields(item, 2);
+    return parsed ? [{ label: parsed[0], description: parsed.slice(1).join(" | ") }] : [];
+  });
+  const diffs = codeDiffs.flatMap((item) => {
+    const parsed = fields(item, 3);
+    return parsed ? [{ title: parsed[0], before: parsed[1], after: parsed.slice(2).join(" | ") }] : [];
+  });
+  const metrics = benchmarks.flatMap((item) => {
+    const parsed = fields(item, 3);
+    return parsed ? [{ label: parsed[0], value: parsed[1], context: parsed.slice(2).join(" | ") }] : [];
+  });
+  const [activeNode, setActiveNode] = useState(0);
+
+  return (
+    <section className="mt-14 space-y-10 sm:mt-16" aria-labelledby="engineering-evidence-title">
+      <div>
+        <span className="tech-label">Engineering case study</span>
+        <h2 id="engineering-evidence-title" className="mt-2 font-display text-2xl font-bold text-ink">Architecture, decisions, and evidence</h2>
+      </div>
+
+      {nodes.length > 0 && (
+        <div className="card p-5 sm:p-7">
+          <div className="flex items-center gap-2 text-ink"><FiCpu className="text-accent" /><h3 className="font-display font-bold">System architecture</h3></div>
+          <div className="mt-5 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center" role="list" aria-label="Architecture flow">
+            {nodes.map((node, index) => (
+              <div key={`${node.label}-${index}`} className="contents" role="listitem">
+                <button type="button" onClick={() => setActiveNode(index)} aria-pressed={activeNode === index} className={`min-h-11 flex-1 rounded-xl border px-4 py-3 text-left transition-colors ${activeNode === index ? "border-accent bg-accent/10 text-accent" : "border-line bg-surface-2 text-ink hover:border-accent/40"}`}>
+                  <span className="block font-mono text-[10px] text-faint">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="font-semibold">{node.label}</span>
+                </button>
+                {index < nodes.length - 1 && <FiArrowRight className="mx-auto shrink-0 rotate-90 text-faint sm:rotate-0" aria-hidden />}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 rounded-lg border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted" aria-live="polite">{nodes[activeNode]?.description}</p>
+        </div>
+      )}
+
+      {diffs.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 text-ink"><FiCode className="text-accent" /><h3 className="font-display font-bold">Implementation improvements</h3></div>
+          <div className="mt-4 space-y-4">
+            {diffs.map((diff, index) => (
+              <article key={`${diff.title}-${index}`} className="overflow-hidden rounded-xl border border-line bg-surface font-mono text-xs">
+                <h4 className="border-b border-line bg-surface-2 px-4 py-2.5 font-sans text-sm font-bold text-ink">{diff.title}</h4>
+                <div className="grid sm:grid-cols-2">
+                  <del className="block border-b border-danger/20 bg-danger/5 px-4 py-4 leading-relaxed text-muted no-underline sm:border-b-0 sm:border-r"><span className="mr-2 font-bold text-danger" aria-hidden>−</span>{diff.before}</del>
+                  <ins className="block bg-ok/5 px-4 py-4 leading-relaxed text-ink no-underline"><span className="mr-2 font-bold text-ok" aria-hidden>+</span>{diff.after}</ins>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div>
+        <div className="flex items-center gap-2 text-ink"><FiBarChart2 className="text-accent" /><h3 className="font-display font-bold">Benchmarks & telemetry</h3></div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {metrics.map((metric, index) => <article key={`${metric.label}-${index}`} className="card p-5"><p className="font-mono text-[10px] uppercase tracking-wider text-faint">{metric.label}</p><p className="mt-2 font-display text-2xl font-bold text-ink">{metric.value}</p><p className="mt-2 text-xs leading-relaxed text-muted">{metric.context}</p></article>)}
+          <article className="card p-5"><p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-faint"><FiActivity />Case-study views</p><p className="mt-2 font-display text-2xl font-bold text-ink">{views.toLocaleString()}</p><p className="mt-2 text-xs leading-relaxed text-muted">Aggregate page views only; no visitor identity is displayed.</p></article>
+        </div>
+      </div>
+    </section>
+  );
+}

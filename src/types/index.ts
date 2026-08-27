@@ -35,6 +35,9 @@ export interface Project {
   showOnPortfolio?: boolean;
   cvDescription?: string | null;
   cvBullets?: string[];
+  architecture?: string[];
+  codeDiffs?: string[];
+  benchmarks?: string[];
 }
 
 export interface Technology {

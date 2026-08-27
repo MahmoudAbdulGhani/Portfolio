@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -8,9 +8,29 @@ import { ProjectDetail } from "./pages/ProjectDetail";
 import { Contact } from "./pages/Contact";
 import { JobMatch } from "./pages/JobMatch";
 import { NotFound } from "./pages/NotFound";
-import { PortfolioAssistant } from "./components/PortfolioAssistant";
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
+const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
+const PortfolioAssistant = lazy(() => import("./components/PortfolioAssistant").then((m) => ({ default: m.PortfolioAssistant })));
+const CommandPalette = lazy(() => import("./components/CommandPalette").then((m) => ({ default: m.CommandPalette })));
+
+function CommandPaletteLoader() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    if (mounted) return;
+    const loadOnShortcut = (event: KeyboardEvent) => {
+      const target = event.target;
+      const isInput = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement;
+      if (((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") || (event.key === "/" && !isInput)) {
+        event.preventDefault();
+        setMounted(true);
+      }
+    };
+    window.addEventListener("keydown", loadOnShortcut);
+    return () => window.removeEventListener("keydown", loadOnShortcut);
+  }, [mounted]);
+  return mounted ? <Suspense fallback={null}><CommandPalette defaultOpen /></Suspense> : null;
+}
 
 const AdminLogin = lazy(() =>
   import("./pages/admin/Login").then((m) => ({ default: m.Login })),
@@ -61,7 +81,10 @@ function PublicLayout() {
         <Outlet />
       </div>
       <Footer />
-      <PortfolioAssistant key={assistantContext} />
+      <Suspense fallback={null}>
+        <PortfolioAssistant key={assistantContext} />
+      </Suspense>
+      <CommandPaletteLoader />
     </div>
   );
 }
@@ -101,6 +124,7 @@ export function App() {
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/job-match" element={<JobMatch />} />
+            <Route path="/terminal" element={<TerminalPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

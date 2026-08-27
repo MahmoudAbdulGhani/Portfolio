@@ -21,7 +21,8 @@ export const contactSchema = z.object({ name: text(120, 2), email: text(320, 3).
 export const loginSchema = z.object({ email: text(320, 3).email(), password: z.string().min(1).max(200) }).strict();
 export const changePasswordSchema = z.object({ currentPassword: z.string().min(1).max(200), newPassword: z.string().min(10).max(200) }).strict();
 export const assistantSchema = z.object({ question: text(600, 1), projectSlug: slugSchema.optional() }).strict();
-export const jobMatchSchema = z.object({ jobDescription: text(8000, 80) }).strict();
+export const jobMatchSchema = z.object({ jobDescription: text(8000, 80), stream: z.boolean().optional() }).strict();
+export const tailoredCvSchema = z.object({ token: z.string().trim().min(20).max(20_000) }).strict();
 
 export const projectMutationSchema = z.object({
   slug: slugSchema.optional(), name: text(160, 1).optional(), type: text(120, 1).optional(), tagline: nullableText(500),
@@ -33,6 +34,7 @@ export const projectMutationSchema = z.object({
   contributions: stringArray(30, 1000).optional(), ownership: nullableText(4000), teamSize: z.union([z.number().int().min(1).max(10000), z.null()]).optional(),
   impactSummary: nullableText(1000), imageAlt: nullableText(500), showOnCv: z.boolean().optional(), showOnPortfolio: z.boolean().optional(),
   cvDescription: nullableText(3000), cvBullets: stringArray(20, 1000).optional(),
+  architecture: stringArray(12, 500).optional(), codeDiffs: stringArray(12, 2000).optional(), benchmarks: stringArray(12, 500).optional(),
 }).strict();
 
 const experienceSchema = z.object({

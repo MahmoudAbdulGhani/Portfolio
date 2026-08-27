@@ -558,8 +558,26 @@ function drawApplicationCv(doc, data, origin) {
   if (y > APPLICATION.bottom) throw new Error(`Application CV exceeds one A4 page (${Math.ceil(y - APPLICATION.bottom)}pt overflow).`);
 }
 
-export async function generateCvPdfBuffer({ origin = "", mode = "application" } = {}) {
+export async function generateCvPdfBuffer({ origin = "", mode = "application", tailor } = {}) {
   const data = await resolveCvData(mode);
+  if (tailor && mode === "application") {
+    const projectOrder = new Map((tailor.projectSlugs ?? []).map((slug, index) => [slug, index]));
+    const selectedProjects = data.projects
+      .filter((project) => projectOrder.has(project.slug))
+      .sort((a, b) => projectOrder.get(a.slug) - projectOrder.get(b.slug));
+    if (selectedProjects.length) data.projects = selectedProjects;
+
+    const evidence = (tailor.strongMatches ?? []).join(" ").toLowerCase();
+    data.skills = [...data.skills].sort((a, b) => {
+      const aRelevant = evidence.includes(clean(a.name).toLowerCase()) ? 1 : 0;
+      const bRelevant = evidence.includes(clean(b.name).toLowerCase()) ? 1 : 0;
+      return bRelevant - aRelevant;
+    });
+    const tailoredSummary = clean(tailor.summary).slice(0, 650);
+    if (tailoredSummary) {
+      data.configuration = { ...data.configuration, professionalSummary: tailoredSummary };
+    }
+  }
   const { profile, projects, skills, education, certifications, languages, configuration, mode: resolvedMode } = data;
   const doc = new PDFDocument({
     size: "A4", margins: { top: TOP, bottom: PAGE.height - BOTTOM, left: LEFT, right: LEFT },

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowRight, FiMenu, FiX } from "react-icons/fi";
+import { FiArrowRight, FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
+import { Magnetic } from "./Magnetic";
 import { cn } from "../lib/format";
 
 const navItems = [
@@ -17,6 +18,7 @@ export function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isMac] = useState(() => typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,6 +49,10 @@ export function Navbar() {
     }
   };
 
+  const openCommandPalette = () => {
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac, ctrlKey: !isMac }));
+  };
+
   return (
     <header
       className={cn(
@@ -60,7 +66,9 @@ export function Navbar() {
         aria-label="Main"
         className="container-x relative flex h-16 items-center justify-between"
       >
-        <Logo />
+        <Magnetic strength={0.15}>
+          <Logo />
+        </Magnetic>
 
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
@@ -86,15 +94,37 @@ export function Navbar() {
             </NavLink>
           ))}
           <div className="ml-2 flex items-center gap-2">
-            <Link to="/contact" className="btn-outline btn-sm">
-              Hire Me
-              <FiArrowRight size={14} />
-            </Link>
+            <button
+              type="button"
+              onClick={openCommandPalette}
+              aria-label="Search and quick commands (Ctrl+K or Cmd+K)"
+              className="flex items-center gap-2 rounded-lg border border-line bg-surface-2/80 px-2.5 py-1.5 text-xs text-muted transition-colors hover:border-accent/40 hover:text-ink"
+            >
+              <FiSearch size={14} className="text-faint" />
+              <span className="hidden lg:inline font-medium">Search</span>
+              <kbd className="rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-faint">
+                {isMac ? "⌘K" : "Ctrl+K"}
+              </kbd>
+            </button>
+            <Magnetic strength={0.2}>
+              <Link to="/contact" className="btn-outline btn-sm">
+                Hire Me
+                <FiArrowRight size={14} />
+              </Link>
+            </Magnetic>
             <ThemeToggle />
           </div>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={openCommandPalette}
+            aria-label="Search and quick commands"
+            className="btn-icon border border-line bg-surface text-ink"
+          >
+            <FiSearch size={17} />
+          </button>
           <ThemeToggle />
           <button
             type="button"

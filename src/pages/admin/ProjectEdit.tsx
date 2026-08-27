@@ -55,6 +55,9 @@ type FormState = {
   showOnPortfolio: boolean;
   cvDescription: string;
   cvBullets: string[];
+  architecture: string[];
+  codeDiffs: string[];
+  benchmarks: string[];
   order: number;
 };
 
@@ -78,6 +81,7 @@ const emptyForm: FormState = {
   visual: DEFAULT_PROJECT_ACCENT,
   coverImage: "", screenshots: [], myRole: "", contributions: [], ownership: "", teamSize: null,
   impactSummary: "", imageAlt: "", showOnCv: true, showOnPortfolio: true, cvDescription: "", cvBullets: [],
+  architecture: [], codeDiffs: [], benchmarks: [],
   order: 99,
 };
 
@@ -104,6 +108,7 @@ function toFormState(p: Project): FormState {
     contributions: p.contributions ?? [], ownership: p.ownership ?? "", teamSize: p.teamSize ?? null,
     impactSummary: p.impactSummary ?? "", imageAlt: p.imageAlt ?? "", showOnCv: p.showOnCv !== false,
     showOnPortfolio: p.showOnPortfolio !== false, cvDescription: p.cvDescription ?? "", cvBullets: p.cvBullets ?? [],
+    architecture: p.architecture ?? [], codeDiffs: p.codeDiffs ?? [], benchmarks: p.benchmarks ?? [],
     order: p.order,
   };
 }
@@ -358,6 +363,28 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
               onChange={(e) => set("description", e.target.value)}
               placeholder="Shown on project cards"
             />
+          </div>
+        </div>
+
+        <div className="card space-y-5 p-6">
+          <div>
+            <h2 className="font-display text-base font-bold text-ink">Engineering evidence</h2>
+            <p className="mt-1 text-xs leading-relaxed text-muted">Structured case-study details. Use the documented separators exactly; empty sections stay hidden publicly.</p>
+          </div>
+          <div>
+            <label htmlFor="p-architecture" className="field-label">Architecture flow — one node per line</label>
+            <textarea id="p-architecture" className="textarea min-h-28 font-mono text-xs" value={form.architecture.join("\n")} onChange={(e) => set("architecture", splitLines(e.target.value))} placeholder={"Client | React interface and state\nAPI | Express validation and business logic\nDatabase | PostgreSQL persistence"} />
+            <p className="mt-1 text-xs text-faint">Format: Label | Description</p>
+          </div>
+          <div>
+            <label htmlFor="p-code-diffs" className="field-label">Code improvements — one comparison per line</label>
+            <textarea id="p-code-diffs" className="textarea min-h-28 font-mono text-xs" value={form.codeDiffs.join("\n")} onChange={(e) => set("codeDiffs", splitLines(e.target.value))} placeholder={"Query strategy | Repeated per-row query | Batched relation query\nValidation | Manual field checks | Centralized schema validation"} />
+            <p className="mt-1 text-xs text-faint">Format: Title | Before | After. Only enter changes supported by the project.</p>
+          </div>
+          <div>
+            <label htmlFor="p-benchmarks" className="field-label">Performance benchmarks — one metric per line</label>
+            <textarea id="p-benchmarks" className="textarea min-h-24 font-mono text-xs" value={form.benchmarks.join("\n")} onChange={(e) => set("benchmarks", splitLines(e.target.value))} placeholder={"API response | 42 ms | Median, local test dataset\nLighthouse performance | 98 | Mobile production build"} />
+            <p className="mt-1 text-xs text-faint">Format: Metric | Value | Measurement context. Never enter estimates as measured results.</p>
           </div>
         </div>
 

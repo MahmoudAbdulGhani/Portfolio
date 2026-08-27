@@ -2,7 +2,7 @@ import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUp, FiCpu, FiExternalLink, FiMessageSquare, FiRefreshCw, FiX } from "react-icons/fi";
 import { Link, matchPath, useLocation } from "react-router-dom";
-import { api } from "../lib/api";
+import { API_BASE, api } from "../lib/api";
 import { useProject, useSiteSection } from "../lib/hooks";
 import type { AssistantResponse } from "../types";
 
@@ -70,6 +70,12 @@ export function PortfolioAssistant() {
   useEffect(() => () => requestController.current?.abort(), []);
 
   useEffect(() => {
+    const handleOpen = () => setOpen(true);
+    window.addEventListener("open-portfolio-assistant", handleOpen);
+    return () => window.removeEventListener("open-portfolio-assistant", handleOpen);
+  }, []);
+
+  useEffect(() => {
     if (!open) return;
     const onKey = (event: globalThis.KeyboardEvent) => event.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
@@ -92,18 +98,105 @@ export function PortfolioAssistant() {
     requestController.current = controller;
     setQuestion("");
     setLoading(true);
-    setMessages((current) => [...current, { id: nextId.current++, role: "user", text: trimmed }]);
+
+    const userMsgId = nextId.current++;
+    const assistantMsgId = nextId.current++;
+
+    setMessages((current) => [
+      ...current,
+      { id: userMsgId, role: "user", text: trimmed },
+      { id: assistantMsgId, role: "assistant", text: "" },
+    ]);
+
     try {
-      const result = await api<AssistantResponse>("/assistant", {
+      const response = await fetch(`${API_BASE}/assistant`, {
         method: "POST",
-        body: JSON.stringify({ question: trimmed, ...(projectSlug ? { projectSlug } : {}) }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "text/event-stream",
+        },
+        body: JSON.stringify({
+          question: trimmed,
+          stream: true,
+          ...(projectSlug ? { projectSlug } : {}),
+        }),
         signal: controller.signal,
       });
-      setMessages((current) => [...current, { id: nextId.current++, role: "assistant", text: result.answer }]);
+
+      if (!response.ok) {
+        let errMessage = "The assistant is temporarily unavailable.";
+        try {
+          const errData = await response.json();
+          if (errData?.message) errMessage = errData.message;
+        } catch {
+          // ignore
+        }
+        throw new Error(errMessage);
+      }
+
+      if (!response.body) {
+        throw new Error("No response stream available.");
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let hasChunks = false;
+
+      while (true) {
+        const { done, value: chunkVal } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(chunkVal, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+
+        for (const line of lines) {
+          const trimmedLine = line.trim();
+          if (!trimmedLine.startsWith("data:")) continue;
+          const jsonStr = trimmedLine.slice(5).trim();
+          if (!jsonStr) continue;
+
+          try {
+            const data = JSON.parse(jsonStr);
+            const chunkText = typeof data.chunk === "string" ? data.chunk : "";
+            if (chunkText) {
+              hasChunks = true;
+              setMessages((current) =>
+                current.map((msg) =>
+                  msg.id === assistantMsgId ? { ...msg, text: `${msg.text}${chunkText}` } : msg
+                )
+              );
+            }
+          } catch {
+            // ignore
+          }
+        }
+      }
+
+      // If empty for some reason, fallback to normal call
+      if (!hasChunks) {
+        const result = await api<AssistantResponse>("/assistant", {
+          method: "POST",
+          body: JSON.stringify({ question: trimmed, ...(projectSlug ? { projectSlug } : {}) }),
+          signal: controller.signal,
+        });
+        setMessages((current) =>
+          current.map((msg) =>
+            msg.id === assistantMsgId ? { ...msg, text: result.answer } : msg
+          )
+        );
+      }
     } catch (error) {
       if (controller.signal.aborted) return;
       const text = error instanceof Error ? error.message : "The assistant is temporarily unavailable.";
-      setMessages((current) => [...current, { id: nextId.current++, role: "assistant", text, failedQuestion: trimmed }]);
+      setMessages((current) =>
+        current.map((msg) =>
+          msg.id === assistantMsgId
+            ? { ...msg, text: msg.text || text, failedQuestion: trimmed }
+            : msg
+        )
+      );
     } finally {
       if (requestController.current === controller) {
         requestController.current = null;
@@ -165,12 +258,42 @@ export function PortfolioAssistant() {
               )}
               <div className="space-y-3">
                 {messages.map((message) => (
-                  <motion.div key={message.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className={message.role === "user" ? "ml-10 rounded-xl rounded-br-sm bg-accent px-3.5 py-2.5 text-sm leading-relaxed text-white" : "mr-5 rounded-xl rounded-bl-sm border border-line bg-surface-2 px-3.5 py-2.5 text-sm leading-relaxed text-ink"}>
-                    <AssistantText text={message.text} />
-                    {message.failedQuestion && <button type="button" onClick={() => void ask(message.failedQuestion!)} disabled={loading} className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-accent"><FiRefreshCw /> Retry</button>}
+                  <motion.div
+                    key={message.id}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={
+                      message.role === "user"
+                        ? "ml-10 rounded-xl rounded-br-sm bg-accent px-3.5 py-2.5 text-sm leading-relaxed text-white"
+                        : "mr-5 rounded-xl rounded-bl-sm border border-line bg-surface-2 px-3.5 py-2.5 text-sm leading-relaxed text-ink"
+                    }
+                  >
+                    {message.role === "assistant" && !message.text && !message.failedQuestion ? (
+                      <div className="flex items-center gap-1.5 py-1" aria-label="Assistant is thinking">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:150ms]" />
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:300ms]" />
+                      </div>
+                    ) : (
+                      <>
+                        <AssistantText text={message.text} />
+                        {loading && message === messages[messages.length - 1] && (
+                          <span className="inline-block h-3.5 w-1.5 animate-pulse rounded-sm bg-accent align-middle ml-1" />
+                        )}
+                      </>
+                    )}
+                    {message.failedQuestion && (
+                      <button
+                        type="button"
+                        onClick={() => void ask(message.failedQuestion!)}
+                        disabled={loading}
+                        className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-accent"
+                      >
+                        <FiRefreshCw /> Retry
+                      </button>
+                    )}
                   </motion.div>
                 ))}
-                {loading && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mr-20 flex items-center gap-1.5 rounded-xl rounded-bl-sm border border-line bg-surface-2 px-3.5 py-3" aria-label="Assistant is thinking"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:150ms]" /><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent [animation-delay:300ms]" /></motion.div>}
                 <div ref={endRef} />
               </div>
             </div>
@@ -186,7 +309,7 @@ export function PortfolioAssistant() {
         )}
       </AnimatePresence>
 
-      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Portfolio AI" : "Open Portfolio AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/95 px-3.5 text-sm font-bold text-ink shadow-card-lg backdrop-blur transition-colors hover:border-accent/40 hover:text-accent sm:bottom-4 sm:right-6 sm:px-4">
+      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Portfolio AI" : contentText("buttonLabel") || "Ask Portfolio AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/95 px-3.5 text-sm font-bold text-ink shadow-card-lg backdrop-blur transition-colors hover:border-accent/40 hover:text-accent sm:bottom-4 sm:right-6 sm:px-4">
         {open ? <FiX size={17} className="text-accent" /> : <FiMessageSquare size={17} className="text-accent" />}
         <span className="max-[359px]:hidden">{open ? "Close" : contentText("buttonLabel")}</span>
       </motion.button>

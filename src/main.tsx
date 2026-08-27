@@ -19,6 +19,8 @@ const queryClient = new QueryClient({
   },
 });
 
+const isLocalPreview = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
@@ -27,8 +29,8 @@ createRoot(document.getElementById("root")!).render(
           <BrowserRouter>
             <App />
           </BrowserRouter>
-          <Analytics />
-          <SpeedInsights sampleRate={0.25} />
+          {!isLocalPreview && <Analytics />}
+          {!isLocalPreview && <SpeedInsights sampleRate={0.25} />}
         </MotionConfig>
       </ThemeProvider>
     </QueryClientProvider>

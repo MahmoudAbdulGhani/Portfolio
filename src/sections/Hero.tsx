@@ -1,15 +1,46 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { useProfile, useSiteSection } from "../lib/hooks";
 import { API_BASE } from "../lib/api";
 import { CvDownloadButton } from "../components/CvDownloadButton";
+import { Magnetic } from "../components/Magnetic";
 
 export function Hero() {
   const { data: profile, isLoading, isError, refetch } = useProfile();
   const { data: section } = useSiteSection("hero");
   const introduction = typeof section?.content.introduction === "string" ? section.content.introduction : "";
   const reduceMotion = useReducedMotion();
+
+  // 3D Card Tilt Physics
+  const cardRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7, -7]), {
+    damping: 20,
+    stiffness: 200,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), {
+    damping: 20,
+    stiffness: 200,
+  });
+
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(xPct);
+    mouseY.set(yPct);
+  };
+
+  const handleCardMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   if (isLoading) return <section id="hero" className="flex min-h-[88vh] items-center justify-center"><span className="text-sm text-muted">Loading profile…</span></section>;
   if (isError || !profile) return <section id="hero" className="flex min-h-[88vh] items-center justify-center"><button className="btn-outline" onClick={() => void refetch()}>Retry loading profile</button></section>;
   const cvHref = profile.resumeUrl || `${API_BASE}/cv.pdf`;
@@ -58,14 +89,18 @@ export function Hero() {
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <Link to="/projects" className="btn-primary btn-lg group">
-              {section?.ctaLabel}
-              <FiArrowRight
-                size={17}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-              />
-            </Link>
-            <CvDownloadButton url={cvHref} className="btn-outline btn-lg" />
+            <Magnetic strength={0.18}>
+              <Link to="/projects" className="btn-primary btn-lg group">
+                {section?.ctaLabel}
+                <FiArrowRight
+                  size={17}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5"
+                />
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.18}>
+              <CvDownloadButton url={cvHref} className="btn-outline btn-lg" />
+            </Magnetic>
           </div>
 
           {socials.length > 0 && (
@@ -97,12 +132,22 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
-          <div className="relative mx-auto max-w-sm">
+          <div className="relative mx-auto max-w-sm [perspective:1000px]">
             <div
               className="absolute -inset-3 -z-10 rounded-2xl bg-accent/8 blur-2xl"
               aria-hidden
             />
-            <div className="relative overflow-hidden rounded-xl border border-line-strong bg-surface-2 shadow-card-lg">
+            <motion.div
+              ref={cardRef}
+              style={{
+                rotateX: reduceMotion ? 0 : rotateX,
+                rotateY: reduceMotion ? 0 : rotateY,
+                transformStyle: "preserve-3d",
+              }}
+              onMouseMove={handleCardMouseMove}
+              onMouseLeave={handleCardMouseLeave}
+              className="relative overflow-hidden rounded-xl border border-line-strong bg-surface-2 shadow-card-lg transition-shadow duration-300 hover:shadow-2xl"
+            >
               {profile.photo && (
                 <img
                   src={profile.photo}
@@ -128,7 +173,7 @@ export function Hero() {
                   {profile.availabilityText}
                 </span>
               </div>
-            </div>
+            </motion.div>
             <div className="dimension-line mt-5" aria-hidden />
             <div className="mt-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
               <span>{profile.heroLabel}</span>

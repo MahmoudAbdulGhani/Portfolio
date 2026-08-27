@@ -175,6 +175,9 @@ model Project {
   showOnPortfolio Boolean @default(true)
   cvDescription String?
   cvBullets     String[] @default([])
+  architecture  String[] @default([])
+  codeDiffs     String[] @default([])
+  benchmarks    String[] @default([])
 }
 
 model SiteSection {

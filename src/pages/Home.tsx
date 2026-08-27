@@ -15,7 +15,7 @@ export function Home() {
   const siteContent = useSiteContent();
   const defaultTitle = typeof seo?.content.defaultTitle === "string" ? seo.content.defaultTitle : profile?.title ?? "";
   const defaultDescription = typeof seo?.content.defaultDescription === "string" ? seo.content.defaultDescription : profile?.seoDescription ?? "";
-  if (siteContent.isLoading || siteContent.isError) return <main className="pt-16"><PublicDataState loading={siteContent.isLoading} error={siteContent.isError} onRetry={() => void siteContent.refetch()} label="site content" /></main>;
+  if (siteContent.isLoading || siteContent.isError) return <main className="min-h-screen pt-16"><PublicDataState loading={siteContent.isLoading} error={siteContent.isError} onRetry={() => void siteContent.refetch()} label="site content" /></main>;
   return (
     <>
       <PageMeta

@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiAlertCircle, FiArrowRight, FiCheckCircle, FiRefreshCw, FiSearch, FiZap } from "react-icons/fi";
-import { api, ApiError } from "../lib/api";
+import { FiAlertCircle, FiArrowRight, FiCheck, FiCheckCircle, FiCopy, FiDownload, FiRefreshCw, FiSearch, FiZap } from "react-icons/fi";
+import { API_BASE, ApiError } from "../lib/api";
 import { PageMeta } from "../components/PageMeta";
 import { useSiteSection } from "../lib/hooks";
 
@@ -36,12 +36,32 @@ function ListSection({ title, items, tone = "default" }: { title: string; items:
   return <section className="border-t border-line pt-6"><h2 className="tech-label">{title}</h2><ul className="mt-3 space-y-2.5">{items.map((item, index) => <li key={`${item}-${index}`} className="flex gap-3 text-sm leading-relaxed text-muted"><span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${dot}`} aria-hidden />{item}</li>)}</ul></section>;
 }
 
+function formatMatchReport(result: MatchResult) {
+  const section = (title: string, items: string[]) => items.length ? `\n${title}\n${items.map((item) => `- ${item}`).join("\n")}` : "";
+  const projects = result.relevantProjects.map((project) => `- ${project.name}: ${project.evidence} (${project.portfolioUrl})`);
+
+  return [
+    "PORTFOLIO JOB MATCH REPORT",
+    `Match level: ${result.matchLevel}`,
+    `\nOverall match\n${result.overallMatch}`,
+    section("Strong matches", result.strongMatches),
+    section("Relevant experience", result.relevantExperience),
+    section("Relevant projects", projects),
+    section("Partial matches", result.partialMatches),
+    section("Gaps / not demonstrated", result.gaps),
+    `\nRecruiter summary\n${result.recruiterSummary}`,
+  ].filter(Boolean).join("\n");
+}
+
 export function JobMatch() {
   const { data: section } = useSiteSection("jobMatch");
   const [jobDescription, setJobDescription] = useState("");
   const [result, setResult] = useState<MatchResult>();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [summaryCopied, setSummaryCopied] = useState(false);
+  const [cvToken, setCvToken] = useState("");
+  const [downloadingCv, setDownloadingCv] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("Comparing portfolio evidence…");
   const submitting = useRef(false);
 
@@ -63,12 +83,48 @@ export function JobMatch() {
     if (value.length < MIN_LENGTH) return setError(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
     if (value.length > MAX_LENGTH) return setError(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
     if (submitting.current) return;
-    submitting.current = true; setLoading(true); setError(""); setResult(undefined); setLoadingMessage("Comparing portfolio evidence…");
+    submitting.current = true; setLoading(true); setError(""); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
     try {
-      const response = await api<{ result: MatchResult }>("/job-match", { method: "POST", body: JSON.stringify({ jobDescription: value }), signal: controller.signal });
-      setResult(response.result);
+      const response = await fetch(`${API_BASE}/job-match`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
+        body: JSON.stringify({ jobDescription: value, stream: true }),
+        signal: controller.signal,
+      });
+      if (!response.ok) {
+        const body = await response.json().catch(() => undefined);
+        throw new ApiError(response.status, body?.message || "The AI job matcher is temporarily unavailable.");
+      }
+      if (!response.body) throw new Error("No analysis stream was returned.");
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let streamedResult: MatchResult | undefined;
+      let streamError = "";
+      while (true) {
+        const { done, value: chunk } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(chunk, { stream: true });
+        const events = buffer.split("\n\n");
+        buffer = events.pop() || "";
+        for (const eventBlock of events) {
+          const eventName = eventBlock.split("\n").find((line) => line.startsWith("event:"))?.slice(6).trim();
+          const dataLine = eventBlock.split("\n").find((line) => line.startsWith("data:"));
+          if (!dataLine) continue;
+          const data = JSON.parse(dataLine.slice(5).trim()) as { message?: string; result?: MatchResult; cvToken?: string };
+          if (eventName === "status" && data.message) setLoadingMessage(data.message);
+          if (eventName === "result" && data.result) {
+            streamedResult = data.result;
+            setCvToken(data.cvToken || "");
+          }
+          if (eventName === "error") streamError = data.message || "The AI job matcher is temporarily unavailable.";
+        }
+      }
+      if (streamError) throw new Error(streamError);
+      if (!streamedResult) throw new Error("The match analysis returned no report. Please try again.");
+      setResult(streamedResult);
     } catch (caught) {
       if (caught instanceof Error && caught.name === "AbortError") {
         setError("The AI job matcher took too long to respond. Please try again.");
@@ -78,7 +134,61 @@ export function JobMatch() {
     } finally { clearTimeout(timeout); submitting.current = false; setLoading(false); setLoadingMessage("Comparing portfolio evidence…"); }
   };
 
-  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); };
+  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); setSummaryCopied(false); setCvToken(""); };
+
+  const copySummary = async () => {
+    if (!result) return;
+    try {
+      await navigator.clipboard.writeText(result.recruiterSummary);
+      setSummaryCopied(true);
+      window.setTimeout(() => setSummaryCopied(false), 2_000);
+    } catch {
+      setError("Could not copy the summary. Please select and copy it manually.");
+    }
+  };
+
+  const exportReport = () => {
+    if (!result) return;
+    const blob = new Blob([formatMatchReport(result)], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `portfolio-job-match-${new Date().toISOString().slice(0, 10)}.txt`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  const downloadTailoredCv = async () => {
+    if (!cvToken || downloadingCv) return;
+    setDownloadingCv(true);
+    setError("");
+    try {
+      const response = await fetch(`${API_BASE}/job-match/tailored-cv`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: cvToken }),
+      });
+      if (!response.ok) {
+        const body = await response.json().catch(() => undefined);
+        throw new Error(body?.message || "The tailored CV could not be generated.");
+      }
+      if (!response.headers.get("content-type")?.includes("application/pdf")) throw new Error("The tailored CV response was not a PDF.");
+      const url = URL.createObjectURL(await response.blob());
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = "tailored-portfolio-cv.pdf";
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "The tailored CV could not be generated.");
+    } finally {
+      setDownloadingCv(false);
+    }
+  };
 
   return <>
     <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
@@ -105,7 +215,7 @@ export function JobMatch() {
             <div aria-live="polite" aria-busy={loading}>
               {loading && <div className="card p-7"><div className="flex items-center gap-3 text-ink"><span className="font-semibold">{loadingMessage}</span></div><div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-surface-3"><div className="job-scan h-full rounded-full bg-accent" role="progressbar" aria-label="Analysis progress" /></div><p className="mt-3 text-sm leading-relaxed text-muted">Reviewing public skills, projects, experience, education, and certifications.</p></div>}
               {!loading && !result && <div className="card border-dashed p-7"><span className="grid h-11 w-11 place-items-center rounded-xl bg-surface-2 text-accent"><FiCheckCircle /></span><h2 className="mt-5 font-display text-lg font-bold text-ink">A recruiter-friendly result</h2><p className="mt-2 text-sm leading-relaxed text-muted">You’ll see supported strengths, relevant portfolio evidence, partial matches, and requirements that aren’t demonstrated.</p><div className="mt-5 flex items-center gap-2 text-xs font-semibold text-muted"><span className="h-2 w-2 rounded-full bg-ok" />Grounded in live portfolio data</div></div>}
-              {result && <article className="card overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="tech-label">Match Report</span><span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold ${matchBadge(result.matchLevel)}`}>{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p></header><div className="space-y-6 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section className="border-t border-line pt-6"><h2 className="tech-label">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{project.name}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="border-t border-line pt-6"><h2 className="tech-label">Recruiter Summary</h2><p className="mt-3 rounded-xl border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
+              {result && <article className="card overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="tech-label">Match Report</span><span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold ${matchBadge(result.matchLevel)}`}>{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p><div className="mt-5 flex flex-wrap gap-2"><button type="button" className="btn-outline btn-sm" onClick={copySummary}>{summaryCopied ? <FiCheck /> : <FiCopy />}{summaryCopied ? "Summary Copied" : "Copy Executive Summary"}</button><button type="button" className="btn-ghost btn-sm" onClick={exportReport}><FiDownload />Export Report</button>{cvToken && <button type="button" className="btn-primary btn-sm" onClick={downloadTailoredCv} disabled={downloadingCv}><FiDownload />{downloadingCv ? "Generating CV…" : "Download Tailored CV"}</button>}</div></header><div className="space-y-6 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section className="border-t border-line pt-6"><h2 className="tech-label">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{project.name}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="border-t border-line pt-6"><h2 className="tech-label">Recruiter Summary</h2><p className="mt-3 rounded-xl border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
             </div>
           </div>
         </div>
