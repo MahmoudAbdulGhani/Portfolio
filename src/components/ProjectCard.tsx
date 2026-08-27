@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="lg:col-span-4">
         <span className="tech-label">{project.type}</span>
         <h3 className="mt-3 font-display text-2xl font-bold leading-snug text-ink transition-colors duration-200 group-hover:text-accent">
-          <Link to={`/projects/${project.slug}`}>{project.name}</Link>
+          <Link to={`/projects/${project.slug}`} viewTransition>{project.name}</Link>
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {project.tagline || project.description}
@@ -34,6 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <Link
           to={`/projects/${project.slug}`}
+          viewTransition
           className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors duration-200 hover:text-accent-strong"
         >
           Read case study
@@ -51,6 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
           style={
             {
               "--card-accent": accent,
+              viewTransitionName: `project-${project.slug}`,
             } as React.CSSProperties
           }
         >
@@ -61,6 +63,7 @@ export function ProjectCard({ project }: { project: Project }) {
           />
           <Link
             to={`/projects/${project.slug}`}
+            viewTransition
             aria-label={project.name}
             className="relative block overflow-hidden"
           >

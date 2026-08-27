@@ -58,7 +58,7 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
   await expect(page.getByRole("button", { name: /view lobby cover image full screen/i })).toBeFocused();
-  await page.getByRole("button", { name: /API/i, pressed: false }).click();
+  await page.getByRole("tab", { name: /API/i, selected: false }).click();
   await expect(page.getByText("NestJS services", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Implementation improvements" })).toBeVisible();
   await expect(page.getByText("42 ms", { exact: true })).toBeVisible();

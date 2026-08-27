@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState, type KeyboardEvent } from "react";
 import { FiActivity, FiArrowRight, FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
 
 type Props = {
@@ -27,6 +27,29 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
     return parsed ? [{ label: parsed[0], value: parsed[1], context: parsed.slice(2).join(" | ") }] : [];
   });
   const [activeNode, setActiveNode] = useState(0);
+  const nodeButtons = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const selectNode = (index: number) => {
+    const next = (index + nodes.length) % nodes.length;
+    setActiveNode(next);
+    nodeButtons.current[next]?.focus();
+  };
+
+  const onArchitectureKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      event.preventDefault();
+      selectNode(index + 1);
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      event.preventDefault();
+      selectNode(index - 1);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      selectNode(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      selectNode(nodes.length - 1);
+    }
+  };
 
   return (
     <section className="mt-14 space-y-10 sm:mt-16" aria-labelledby="engineering-evidence-title">
@@ -37,11 +60,11 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
 
       {nodes.length > 0 && (
         <div className="card p-5 sm:p-7">
-          <div className="flex items-center gap-2 text-ink"><FiCpu className="text-accent" /><h3 className="font-display font-bold">System architecture</h3></div>
-          <div className="mt-5 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center" role="list" aria-label="Architecture flow">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-ink"><span className="flex items-center gap-2"><FiCpu className="text-accent" /><h3 className="font-display font-bold">System architecture</h3></span><span className="font-mono text-[10px] uppercase tracking-wider text-faint">Select a layer to inspect it</span></div>
+          <div className="mt-5 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center" role="tablist" aria-label="Architecture flow" aria-orientation="horizontal">
             {nodes.map((node, index) => (
-              <div key={`${node.label}-${index}`} className="contents" role="listitem">
-                <button type="button" onClick={() => setActiveNode(index)} aria-pressed={activeNode === index} className={`min-h-11 flex-1 rounded-xl border px-4 py-3 text-left transition-colors ${activeNode === index ? "border-accent bg-accent/10 text-accent" : "border-line bg-surface-2 text-ink hover:border-accent/40"}`}>
+              <div key={`${node.label}-${index}`} className="contents">
+                <button ref={(element) => { nodeButtons.current[index] = element; }} type="button" role="tab" id={`architecture-tab-${index}`} aria-controls="architecture-detail" aria-selected={activeNode === index} tabIndex={activeNode === index ? 0 : -1} onClick={() => setActiveNode(index)} onKeyDown={(event) => onArchitectureKeyDown(event, index)} className={`min-h-11 flex-1 rounded-xl border px-4 py-3 text-left transition-colors ${activeNode === index ? "border-accent bg-accent/10 text-accent" : "border-line bg-surface-2 text-ink hover:border-accent/40"}`}>
                   <span className="block font-mono text-[10px] text-faint">{String(index + 1).padStart(2, "0")}</span>
                   <span className="font-semibold">{node.label}</span>
                 </button>
@@ -49,7 +72,7 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
               </div>
             ))}
           </div>
-          <p className="mt-4 rounded-lg border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted" aria-live="polite">{nodes[activeNode]?.description}</p>
+          <div id="architecture-detail" role="tabpanel" aria-labelledby={`architecture-tab-${activeNode}`} tabIndex={0} className="mt-4 rounded-lg border border-line bg-surface-2 p-4"><p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-accent">{nodes[activeNode]?.label}</p><p className="mt-2 text-sm leading-relaxed text-muted">{nodes[activeNode]?.description}</p></div>
         </div>
       )}
 

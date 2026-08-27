@@ -1,5 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 interface RevealProps {
   children: ReactNode;
@@ -10,29 +9,31 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, y = 22, variant = "rise", className }: RevealProps) {
-  const reduceMotion = useReducedMotion();
-  const initial = variant === "scale"
-    ? { opacity: 0, scale: 0.97, y: 10 }
-    : variant === "clip"
-      ? { opacity: 0, y: 14, clipPath: "inset(0 0 100% 0 round 12px)" }
-      : { opacity: 0, y };
-  const visible = variant === "clip"
-    ? { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 12px)" }
-    : { opacity: 1, y: 0, scale: 1 };
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || typeof IntersectionObserver === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setVisible(true);
+      observer.disconnect();
+    }, { rootMargin: "60px 0px" });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      initial={reduceMotion ? false : initial}
-      whileInView={visible}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={reduceMotion ? { duration: 0 } : {
-        duration: variant === "clip" ? 0.56 : variant === "scale" ? 0.44 : 0.48,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className={className}
+    <div
+      ref={ref}
+      className={`reveal reveal--${variant} ${visible ? "reveal--visible" : ""} ${className ?? ""}`}
+      style={{ "--reveal-delay": `${delay}s`, "--reveal-y": `${y}px` } as React.CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

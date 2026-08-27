@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
@@ -83,11 +82,7 @@ export function Navbar() {
                 <>
                   {item.label}
                   {isActive && (
-                    <motion.span
-                      layoutId="active-public-nav"
-                      className="absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-accent"
-                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                    />
+                    <span className="absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-accent" />
                   )}
                 </>
               )}
@@ -108,7 +103,7 @@ export function Navbar() {
             </button>
             <Magnetic strength={0.2}>
               <Link to="/contact" className="btn-outline btn-sm">
-                Hire Me
+                Let’s Talk
                 <FiArrowRight size={14} />
               </Link>
             </Magnetic>
@@ -146,23 +141,17 @@ export function Navbar() {
         />
       )}
 
-      <AnimatePresence>
         {open && (
-          <motion.div
+          <div
             id="mobile-nav"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-line bg-bg/95 backdrop-blur-xl md:hidden"
+            className="mobile-nav-enter overflow-hidden border-t border-line bg-bg/95 backdrop-blur-xl md:hidden"
           >
             <div className="container-x flex flex-col gap-1 py-4">
               {navItems.map((item, index) => (
-                <motion.div
+                <div
                   key={item.to}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.04, duration: 0.2 }}
+                  className="mobile-nav-item-enter"
+                  style={{ animationDelay: `${index * 0.04}s` }}
                 >
                   <NavLink
                     to={item.to}
@@ -173,20 +162,19 @@ export function Navbar() {
                     {item.label}
                     {item.to === "/contact" ? null : <FiArrowRight size={14} className="text-faint" aria-hidden />}
                   </NavLink>
-                </motion.div>
+                </div>
               ))}
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
                 className="btn-outline mt-2"
               >
-                Hire Me
+                Let’s Talk
                 <FiArrowRight size={16} />
               </Link>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }

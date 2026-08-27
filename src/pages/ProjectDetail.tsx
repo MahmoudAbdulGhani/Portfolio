@@ -52,6 +52,7 @@ function NextProjectBar({ next, visible }: { next: Project; visible: boolean }) 
     >
       <Link
         to={`/projects/${next.slug}`}
+        viewTransition
         tabIndex={visible ? undefined : -1}
         className="group flex items-center gap-3 rounded-xl border border-line bg-surface/90 p-3 pr-4 shadow-card-lg backdrop-blur transition-colors hover:border-accent/40"
       >
@@ -186,7 +187,7 @@ export function ProjectDetail() {
             <Reveal>
               <figure className="relative mx-auto max-w-5xl">
                 <div className="project-hero-glow" aria-hidden />
-                <div className="project-hero-window aspect-[16/10]">
+                <div className="project-hero-window aspect-[16/10]" style={{ viewTransitionName: `project-${project.slug}` }}>
                   <div className="project-hero-chrome" aria-hidden>
                     <span className="project-hero-url">{heroUrl}</span>
                   </div>
@@ -261,7 +262,7 @@ export function ProjectDetail() {
 
             <Reveal>
               <div className="mx-auto max-w-4xl pt-12 text-center sm:pt-16">
-                <span className="tech-label">{project.type}</span>
+                  <span className="tech-label">Case study · {project.type}</span>
                 <h1 className="mt-4 break-words font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
                   {project.name}
                 </h1>
@@ -532,6 +533,12 @@ export function ProjectDetail() {
               </section>
             )}
             <EngineeringCaseStudy architecture={project.architecture} codeDiffs={project.codeDiffs} benchmarks={project.benchmarks} views={project.views} />
+            <section className="mt-14 rounded-2xl border border-line bg-surface-2 p-6 text-center shadow-card sm:mt-16 sm:p-10" aria-labelledby="project-contact-title">
+              <span className="tech-label">Work together</span>
+              <h2 id="project-contact-title" className="mx-auto mt-3 max-w-2xl font-display text-2xl font-bold text-ink sm:text-3xl">Need this level of engineering on your product?</h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">Discuss the role, product constraints, and the outcomes your team needs. You’ll get a direct, practical response.</p>
+              <Link to="/contact" viewTransition className="btn-primary btn-lg mt-6">Let’s Talk <FiArrowRight /></Link>
+            </section>
           </div>
         </div>
       </main>

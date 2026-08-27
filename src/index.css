@@ -159,6 +159,50 @@
   }
 }
 
+.magnetic {
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 22px));
+  transition: opacity 480ms cubic-bezier(0.22, 1, 0.36, 1), transform 480ms cubic-bezier(0.22, 1, 0.36, 1), clip-path 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal--scale { transform: translateY(10px) scale(0.97); }
+.reveal--clip { clip-path: inset(0 0 100% 0 round 12px); }
+.reveal--visible { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round 12px); }
+
+.hero-enter { animation: hero-rise 550ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-card-enter { animation: hero-scale 550ms 100ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.mobile-nav-enter { animation: mobile-nav-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.mobile-nav-item-enter { animation: mobile-nav-item-in 200ms ease-out both; }
+
+@keyframes hero-rise { from { opacity: 0; transform: translateY(18px); } }
+@keyframes hero-scale { from { opacity: 0; transform: scale(0.96); } }
+@keyframes mobile-nav-in { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes mobile-nav-item-in { from { opacity: 0; transform: translateX(-8px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic { will-change: auto; }
+  .reveal { opacity: 1; transform: none; clip-path: none; }
+  .hero-enter, .hero-card-enter, .mobile-nav-enter, .mobile-nav-item-enter { animation: none; }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 @media (max-width: 639px) {
   .input,
   .textarea,

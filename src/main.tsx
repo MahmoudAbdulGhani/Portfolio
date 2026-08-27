@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
-import { MotionConfig } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ThemeProvider } from "./lib/theme";
@@ -25,13 +24,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <MotionConfig reducedMotion="user">
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-          {!isLocalPreview && <Analytics />}
-          {!isLocalPreview && <SpeedInsights sampleRate={0.25} />}
-        </MotionConfig>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+        {!isLocalPreview && <Analytics />}
+        {!isLocalPreview && <SpeedInsights sampleRate={0.25} />}
       </ThemeProvider>
     </QueryClientProvider>
   </StrictMode>,
