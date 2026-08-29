@@ -15,6 +15,7 @@ assert.equal(source.includes("localhost"), false);
 assert.equal(source.includes("mailto:Mahmoud.Abdulghani@outlook.com"), true);
 assert.equal(source.includes("https://linkedin.com/in/MahmoudAbdulGhani"), true);
 assert.equal(source.includes("https://github.com/MahmoudAbdulGhani"), true);
+assert.equal(source.includes("https://mahmoud-portfolio-omega.vercel.app/"), true);
 const tailoredPdf = await generateCvPdfBuffer({
   origin: "https://portfolio.example",
   mode: "application",

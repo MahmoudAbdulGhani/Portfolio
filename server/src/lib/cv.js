@@ -447,12 +447,18 @@ function drawApplicationCv(doc, data, origin) {
     const h = write(value, left + bulletWidth, { width: width - bulletWidth });
     y += h + 1.2;
   };
-  const linkedLabels = (items, size = 9.4) => {
+  const linkedLabels = (items, preferredSize = 9.4, minimumSize = 8) => {
     const separator = "  |  ";
-    font(doc, "regular", size);
     const parts = items.filter((item) => clean(item.label) && clean(item.url));
     const line = parts.map((item) => clean(item.label)).join(separator);
-    const total = doc.widthOfString(line);
+    let size = preferredSize;
+    font(doc, "regular", size);
+    let total = doc.widthOfString(line);
+    if (total > width) {
+      size = Math.max(minimumSize, preferredSize * (width / total));
+      font(doc, "regular", size);
+      total = doc.widthOfString(line);
+    }
     const startX = left + (width - total) / 2;
     text(doc, line, startX, y, { size, width: total + 2, color: APPLICATION.muted });
     let x = startX;
