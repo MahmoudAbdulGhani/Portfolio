@@ -461,10 +461,15 @@ function drawApplicationCv(doc, data, origin) {
       total = doc.widthOfString(line);
     }
     const startX = left + (width - total) / 2;
-    text(doc, line, startX, y, { size, width: total + 2, color: APPLICATION.muted });
     let x = startX;
     parts.forEach((item, index) => {
       if (index) {
+        const separatorWidth = doc.widthOfString(separator);
+        text(doc, separator, x, y, {
+          size,
+          width: separatorWidth + 1,
+          color: APPLICATION.muted,
+        });
         x += doc.widthOfString(separator);
       }
       const label = clean(item.label);
@@ -474,7 +479,7 @@ function drawApplicationCv(doc, data, origin) {
         width: labelWidth + 1,
         color: APPLICATION.link,
         link: item.url,
-        underline: true,
+        underline: false,
       });
       x += labelWidth;
     });
