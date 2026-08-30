@@ -411,6 +411,7 @@ const APPLICATION = {
   ink: "#172033",
   muted: "#4b5563",
   accent: "#155e75",
+  link: "#155e75",
 };
 
 function drawApplicationCv(doc, data, origin) {
@@ -468,7 +469,13 @@ function drawApplicationCv(doc, data, origin) {
       }
       const label = clean(item.label);
       const labelWidth = doc.widthOfString(label);
-      doc.link(x, y, labelWidth, size + 2, item.url);
+      text(doc, label, x, y, {
+        size,
+        width: labelWidth + 1,
+        color: APPLICATION.link,
+        link: item.url,
+        underline: true,
+      });
       x += labelWidth;
     });
     y += size + 3;
@@ -520,6 +527,7 @@ function drawApplicationCv(doc, data, origin) {
     const links = [["GitHub", project.github], ["Live Demo", project.demo]].filter(([, url]) => clean(url));
     const suffix = links.map(([label]) => label).join(" | ");
     const projectLine = `${project.name}${suffix ? ` | ${suffix}` : ""}`;
+    const projectTitleY = y;
     datedTitle(projectLine, "");
     if (links.length) {
       font(doc, "bold", 10);
@@ -529,7 +537,15 @@ function drawApplicationCv(doc, data, origin) {
           x += doc.widthOfString(" | ");
         }
         const labelWidth = doc.widthOfString(label);
-        doc.link(x, y - 11.5, labelWidth, 12, url); x += labelWidth;
+        text(doc, label, x, projectTitleY, {
+          face: "bold",
+          size: 10,
+          width: labelWidth + 1,
+          color: APPLICATION.link,
+          link: url,
+          underline: true,
+        });
+        x += labelWidth;
       });
     }
     const stack = (project.stack ?? []).join(", ");
