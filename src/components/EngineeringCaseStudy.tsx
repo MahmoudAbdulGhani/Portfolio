@@ -1,5 +1,5 @@
 import { useRef, useState, type KeyboardEvent } from "react";
-import { FiActivity, FiArrowRight, FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
+import { FiActivity, FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
 
 type Props = {
   architecture?: string[];
@@ -61,15 +61,12 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
       {nodes.length > 0 && (
         <div className="card p-5 sm:p-7">
           <div className="flex flex-wrap items-center justify-between gap-2 text-ink"><span className="flex items-center gap-2"><FiCpu className="text-accent" /><h3 className="font-display font-bold">System architecture</h3></span><span className="font-mono text-[10px] uppercase tracking-wider text-faint">Select a layer to inspect it</span></div>
-          <div className="mt-5 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center" role="tablist" aria-label="Architecture flow" aria-orientation="horizontal">
+          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist" aria-label="Architecture layers">
             {nodes.map((node, index) => (
-              <div key={`${node.label}-${index}`} className="contents">
-                <button ref={(element) => { nodeButtons.current[index] = element; }} type="button" role="tab" id={`architecture-tab-${index}`} aria-controls="architecture-detail" aria-selected={activeNode === index} tabIndex={activeNode === index ? 0 : -1} onClick={() => setActiveNode(index)} onKeyDown={(event) => onArchitectureKeyDown(event, index)} className={`min-h-11 flex-1 rounded-xl border px-4 py-3 text-left transition-colors ${activeNode === index ? "border-accent bg-accent/10 text-accent" : "border-line bg-surface-2 text-ink hover:border-accent/40"}`}>
-                  <span className="block font-mono text-[10px] text-faint">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="font-semibold">{node.label}</span>
-                </button>
-                {index < nodes.length - 1 && <FiArrowRight className="mx-auto shrink-0 rotate-90 text-faint sm:rotate-0" aria-hidden />}
-              </div>
+              <button key={`${node.label}-${index}`} ref={(element) => { nodeButtons.current[index] = element; }} type="button" role="tab" id={`architecture-tab-${index}`} aria-controls="architecture-detail" aria-selected={activeNode === index} tabIndex={activeNode === index ? 0 : -1} onClick={() => setActiveNode(index)} onKeyDown={(event) => onArchitectureKeyDown(event, index)} className={`group min-h-20 min-w-0 rounded-xl border px-4 py-3 text-left transition-all ${activeNode === index ? "border-accent bg-accent/10 text-accent shadow-sm" : "border-line bg-surface-2 text-ink hover:border-accent/40 hover:bg-surface"}`}>
+                <span className={`block font-mono text-[10px] transition-colors ${activeNode === index ? "text-accent" : "text-faint group-hover:text-accent"}`}>{String(index + 1).padStart(2, "0")}</span>
+                <span className="mt-1 block break-words text-sm font-semibold leading-snug">{node.label}</span>
+              </button>
             ))}
           </div>
           <div id="architecture-detail" role="tabpanel" aria-labelledby={`architecture-tab-${activeNode}`} tabIndex={0} className="mt-4 rounded-lg border border-line bg-surface-2 p-4"><p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-accent">{nodes[activeNode]?.label}</p><p className="mt-2 text-sm leading-relaxed text-muted">{nodes[activeNode]?.description}</p></div>
