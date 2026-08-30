@@ -31,8 +31,14 @@ import {
 } from "../middleware/auth.js";
 import { getClientIp } from "../lib/client-ip.js";
 import { apiCache } from "../lib/cache.js";
+import multer from "multer";
+import { uploadProjectImage, validateProjectImage } from "../lib/project-images.js";
 
 const router = Router();
+const projectImageUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { files: 1, fileSize: 4 * 1024 * 1024, fields: 2 },
+});
 const DUMMY_PASSWORD_HASH =
   "$2b$12$VyWR0jiclv4VqXmMnI/3QukirPLOLlgELqDeGEB67PLS9yv2mxiTS";
 
@@ -64,6 +70,21 @@ const normalizeProjectAccent = (value) => {
   const accent = value.trim();
   return hexColor.test(accent) ? accent.toUpperCase() : null;
 };
+
+router.post("/uploads/project-image", requireAuth, projectImageUpload.single("image"), async (req, res, next) => {
+  try {
+    const error = validateProjectImage(req.file);
+    if (error) return res.status(400).json({ message: error });
+    const slug = typeof req.body?.slug === "string" ? req.body.slug : "project";
+    if (slug.length > 120 || (slug && !slugSchema.safeParse(slug).success)) {
+      return res.status(400).json({ message: "Invalid project slug." });
+    }
+    const url = await uploadProjectImage(req.file, slug);
+    res.status(201).json({ url });
+  } catch (error) {
+    next(error);
+  }
+});
 
 /* ------------------------------- Auth --------------------------------- */
 
@@ -811,7 +832,8 @@ function makeCrudRouter(model, config) {
       const result = normalizeCrudData(body, config, false);
       if ("error" in result)
         return res.status(400).json({ message: result.error });
-      const row = await model.create({ data: result.data });
+      const data = config.normalizeData ? await config.normalizeData(result.data) : result.data;
+      const row = await model.create({ data });
       res.status(201).json(row);
     } catch (error) {
       next(error);
@@ -826,9 +848,10 @@ function makeCrudRouter(model, config) {
       const result = normalizeCrudData(body, config, true);
       if ("error" in result)
         return res.status(400).json({ message: result.error });
+      const data = config.normalizeData ? await config.normalizeData(result.data) : result.data;
       const row = await model.update({
         where: { id: req.params.id },
-        data: result.data,
+        data,
       });
       res.json(row);
     } catch (error) {
@@ -857,6 +880,15 @@ const technologyCrud = {
 const skillCrud = {
   requiredFields: ["name", "category", "status"],
   optionalFields: [],
+  normalizeData: async (data) => {
+    if (!data.category) return data;
+    const category = data.category.replace(/\s+/g, " ").trim();
+    const existing = await prisma.skill.findFirst({
+      where: { category: { equals: category, mode: "insensitive" } },
+      select: { category: true },
+    });
+    return { ...data, category: existing?.category ?? category };
+  },
 };
 const educationCrud = {
   requiredFields: ["school", "degree"],

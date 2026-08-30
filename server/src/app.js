@@ -53,7 +53,8 @@ const containsUnsafeObjectKey = (value, depth = 0) => {
   return Object.keys(value).some((key) => ["__proto__", "prototype", "constructor"].includes(key) || containsUnsafeObjectKey(value[key], depth + 1));
 };
 app.use("/api", (req, res, next) => {
-  if (["POST", "PUT", "PATCH"].includes(req.method) && req.path !== "/admin/auth/logout" && !req.is("application/json")) {
+  const isImageUpload = req.method === "POST" && req.path === "/admin/uploads/project-image";
+  if (["POST", "PUT", "PATCH"].includes(req.method) && req.path !== "/admin/auth/logout" && !isImageUpload && !req.is("application/json")) {
     return res.status(415).json({ message: "Content-Type must be application/json." });
   }
   if (containsUnsafeObjectKey(req.body)) return res.status(400).json({ message: "Invalid request data." });
@@ -89,6 +90,8 @@ app.use("/api", (_req, res) => {
 
 app.use((error, _req, res, _next) => {
   if (error?.type === "entity.too.large") return res.status(413).json({ message: "Request body is too large." });
+  if (error?.code === "LIMIT_FILE_SIZE") return res.status(413).json({ message: "Image must be 4 MB or smaller." });
+  if (error?.name === "MulterError") return res.status(400).json({ message: "Invalid image upload." });
   if (error instanceof SyntaxError && "body" in error) return res.status(400).json({ message: "Malformed JSON request." });
   console.error("Server error:", { name: error instanceof Error ? error.name : "UnknownError", code: error?.code });
   res.status(500).json({ message: "Internal server error." });

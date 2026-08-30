@@ -18,6 +18,7 @@ export interface CrudField {
   placeholder?: string;
   required?: boolean;
   options?: { value: string; label: string }[];
+  suggestions?: string[];
 }
 
 export interface CrudColumn<T> {
@@ -267,8 +268,14 @@ export function CrudList<T extends { id: string }>({
                     }
                     placeholder={field.placeholder}
                     required={field.required}
+                    list={field.suggestions?.length ? `crud-${field.key}-suggestions` : undefined}
                   />
                 )}
+                {field.suggestions?.length ? (
+                  <datalist id={`crud-${field.key}-suggestions`}>
+                    {field.suggestions.map((suggestion) => <option key={suggestion} value={suggestion} />)}
+                  </datalist>
+                ) : null}
               </div>
             ))}
           </div>

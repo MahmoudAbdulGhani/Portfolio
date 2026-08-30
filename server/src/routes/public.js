@@ -23,22 +23,19 @@ const xml = (value) =>
       })[character],
   );
 
-async function sendCachedJson(req, res, cacheKey, fetcher, ttlMs = 60_000) {
-  let data = apiCache.get(cacheKey);
+async function sendCachedJson(req, res, cacheKey, fetcher, ttlMs = 0) {
+  let data = ttlMs > 0 ? apiCache.get(cacheKey) : undefined;
   if (!data) {
     data = await fetcher();
     if (data !== undefined && data !== null) {
-      apiCache.set(cacheKey, data, ttlMs);
+      if (ttlMs > 0) apiCache.set(cacheKey, data, ttlMs);
     }
   }
   if (!data) return res.status(404).json({ message: "Not found." });
 
   const etag = `W/"${createHash("md5").update(JSON.stringify(data)).digest("hex").slice(0, 16)}"`;
   res.setHeader("ETag", etag);
-  res.setHeader(
-    "Cache-Control",
-    "public, max-age=60, s-maxage=120, stale-while-revalidate=300",
-  );
+  res.setHeader("Cache-Control", "no-cache, must-revalidate");
 
   if (req.headers["if-none-match"] === etag) {
     return res.status(304).end();

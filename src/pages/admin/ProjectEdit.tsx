@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft, FiCheck, FiLoader } from "react-icons/fi";
-import { useAdminProject, useCreateProject, useUpdateProject } from "../../lib/hooks";
+import { useAdminProject, useCreateProject, useUpdateProject, useUploadProjectImage } from "../../lib/hooks";
 import type { Project } from "../../types";
 import {
   DEFAULT_PROJECT_ACCENT,
@@ -150,6 +150,7 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
   } = useAdminProject(isNew ? "" : (slug ?? ""), { enabled: !isNew && Boolean(slug) });
   const update = useUpdateProject();
   const create = useCreateProject();
+  const uploadImage = useUploadProjectImage();
   const navigate = useNavigate();
   const [form, setForm] = useState<FormState>(emptyForm);
   const [hydratedFor, setHydratedFor] = useState<string | null>(null);
@@ -201,6 +202,17 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
+
+  const handleImageUpload = async (file: File, target: "cover" | "screenshot") => {
+    setError("");
+    try {
+      const { url } = await uploadImage.mutateAsync({ file, slug: form.slug || slugify(form.name) || "project" });
+      if (target === "cover") set("coverImage", url);
+      else set("screenshots", [...form.screenshots, url]);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Image upload failed.");
+    }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -534,10 +546,11 @@ export function ProjectEdit({ mode = "edit" }: { mode?: "create" | "edit" }) {
             <label htmlFor="p-cover" className="field-label">Cover image</label>
             {form.coverImage && <img src={form.coverImage} alt="Current project cover preview" className="mb-3 aspect-video w-full max-w-sm rounded-lg border border-line bg-surface-2 object-cover" />}
             <div className="flex gap-2"><input id="p-cover" type="text" className="input min-w-0 font-mono text-xs" value={form.coverImage} onChange={(e) => set("coverImage", e.target.value.trim())} placeholder="/projects/lobby/cover.webp" />{form.coverImage && <button type="button" className="btn-ghost btn-sm text-danger" onClick={() => set("coverImage", "")}>Remove</button>}</div>
-            <p className="mt-1 text-xs text-faint">Recommended: a 16:9 project screenshot.</p>
+            <label className="btn-outline btn-sm mt-3 inline-flex cursor-pointer">{uploadImage.isPending ? <FiLoader size={14} className="animate-spin" /> : null}{uploadImage.isPending ? "Uploading..." : "Upload cover"}<input type="file" accept="image/jpeg,image/png,image/webp,image/avif" className="sr-only" disabled={uploadImage.isPending} onChange={(event) => { const file = event.target.files?.[0]; if (file) void handleImageUpload(file, "cover"); event.target.value = ""; }} /></label>
+            <p className="mt-1 text-xs text-faint">JPEG, PNG, WebP, or AVIF up to 4 MB. Recommended aspect ratio: 16:9.</p>
           </div>
           {form.screenshots.length > 0 && <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">{form.screenshots.map((screenshot, index) => <div key={`${screenshot}-${index}`} className="relative"><img src={screenshot} alt={`Screenshot ${index + 1} preview`} className="aspect-video w-full rounded-lg border border-line bg-surface-2 object-cover" /><button type="button" onClick={() => set("screenshots", form.screenshots.filter((_, itemIndex) => itemIndex !== index))} className="absolute right-1.5 top-1.5 rounded-md bg-black/75 px-2 py-1 text-[10px] font-semibold text-white">Remove</button></div>)}</div>}
-          <div><label htmlFor="p-screenshots" className="field-label">Screenshot URLs or public paths — one per line</label><textarea id="p-screenshots" className="textarea min-h-24 font-mono text-xs" value={form.screenshots.join("\n")} onChange={(e) => set("screenshots", splitLines(e.target.value))} placeholder={"/projects/lobby/friends.webp\n/projects/lobby/audio-room.webp\n/projects/lobby/community-chat.webp"} /><p className="mt-1 text-xs text-faint">Files inside public/projects are entered as /projects/… paths.</p></div>
+          <div><label htmlFor="p-screenshots" className="field-label">Screenshot URLs or public paths — one per line</label><textarea id="p-screenshots" className="textarea min-h-24 font-mono text-xs" value={form.screenshots.join("\n")} onChange={(e) => set("screenshots", splitLines(e.target.value))} placeholder={"/projects/lobby/friends.webp\n/projects/lobby/audio-room.webp\n/projects/lobby/community-chat.webp"} /><label className="btn-outline btn-sm mt-3 inline-flex cursor-pointer">{uploadImage.isPending ? <FiLoader size={14} className="animate-spin" /> : null}{uploadImage.isPending ? "Uploading..." : "Upload screenshot"}<input type="file" accept="image/jpeg,image/png,image/webp,image/avif" className="sr-only" disabled={uploadImage.isPending} onChange={(event) => { const file = event.target.files?.[0]; if (file) void handleImageUpload(file, "screenshot"); event.target.value = ""; }} /></label><p className="mt-1 text-xs text-faint">Upload to persistent storage, paste a full URL, or use an existing public path.</p></div>
           <div className="grid gap-4 sm:grid-cols-2"><div><label htmlFor="p-role" className="field-label">My role</label><input id="p-role" className="input" value={form.myRole} onChange={(e) => set("myRole", e.target.value)} placeholder="e.g. Full-Stack Developer" /></div><div><label htmlFor="p-team-size" className="field-label">Team size</label><input id="p-team-size" type="number" min="1" className="input" value={form.teamSize ?? ""} onChange={(e) => set("teamSize", e.target.value ? Number(e.target.value) : null)} /></div></div>
           <div><label htmlFor="p-ownership" className="field-label">What I personally owned</label><textarea id="p-ownership" className="textarea min-h-20" value={form.ownership} onChange={(e) => set("ownership", e.target.value)} /></div>
           <div><label htmlFor="p-impact" className="field-label">Impact summary</label><textarea id="p-impact" className="textarea min-h-20" value={form.impactSummary} onChange={(e) => set("impactSummary", e.target.value)} /></div>

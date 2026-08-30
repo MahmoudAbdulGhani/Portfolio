@@ -11,9 +11,11 @@ export function Skills() {
   const pillars = useMemo(() => {
     const grouped = new Map<string, { name: string; status: string }[]>();
     for (const skill of skills ?? []) {
-      const list = grouped.get(skill.category) ?? [];
+      const existingKey = [...grouped.keys()].find((key) => key.localeCompare(skill.category, undefined, { sensitivity: "accent" }) === 0);
+      const category = existingKey ?? skill.category.trim();
+      const list = grouped.get(category) ?? [];
       list.push({ name: skill.name, status: skill.status ?? "verified" });
-      grouped.set(skill.category, list);
+      grouped.set(category, list);
     }
     if (grouped.size === 0) return [];
     return [...grouped].map(([title, rows]) => ({

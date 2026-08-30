@@ -20,6 +20,7 @@ export function Skills() {
   const create = useCreateSkill();
   const update = useUpdateSkill();
   const remove = useDeleteSkill();
+  const categories = [...new Set((data ?? []).map((skill) => skill.category))].sort();
 
   return (
     <CrudList
@@ -28,7 +29,7 @@ export function Skills() {
       columns={columns}
       fields={[
         { key: "name", label: "Name", placeholder: "e.g. REST APIs", required: true },
-        { key: "category", label: "Category", placeholder: "e.g. Frontend, Backend, Data, Tools", required: true },
+        { key: "category", label: "Category", placeholder: "Choose an existing category or type a new one", required: true, suggestions: categories },
         { key: "status", label: "Evidence status", required: true, options: [
           { value: "verified", label: "Used in projects / professional work" },
           { value: "familiar", label: "Familiar with" },

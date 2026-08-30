@@ -1,5 +1,15 @@
 # React + Vite
 
+## CMS project images
+
+Project images uploaded in the admin CMS are stored in Supabase Storage, so they remain available without committing files under `public/`.
+
+1. Create a public Supabase Storage bucket named `portfolio-images`.
+2. Set `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and optionally `SUPABASE_STORAGE_BUCKET` in the server/Vercel environment.
+3. Redeploy, then use the cover and screenshot upload controls in the project editor.
+
+The service-role key is server-only and must never use a `VITE_` prefix.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

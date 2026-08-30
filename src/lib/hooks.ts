@@ -270,6 +270,17 @@ export function useCreateProject() {
   });
 }
 
+export function useUploadProjectImage() {
+  return useMutation({
+    mutationFn: ({ file, slug }: { file: File; slug: string }) => {
+      const body = new FormData();
+      body.append("image", file);
+      body.append("slug", slug || "project");
+      return api<{ url: string }>("/admin/uploads/project-image", { method: "POST", body });
+    },
+  });
+}
+
 export function useDeleteProject() {
   const qc = useQueryClient();
   return useMutation({
