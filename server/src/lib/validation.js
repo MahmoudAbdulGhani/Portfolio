@@ -20,7 +20,7 @@ export const slugSchema = z.string().trim().min(1).max(120).regex(/^[a-z0-9]+(?:
 export const contactSchema = z.object({ name: text(120, 2), email: text(320, 3).email(), subject: text(200).optional().default(""), message: text(5000, 10), website: z.string().max(0).optional().default("") }).strict();
 export const loginSchema = z.object({ email: text(320, 3).email(), password: z.string().min(1).max(200) }).strict();
 export const changePasswordSchema = z.object({ currentPassword: z.string().min(1).max(200), newPassword: z.string().min(10).max(200) }).strict();
-export const assistantSchema = z.object({ question: text(600, 1), projectSlug: slugSchema.optional() }).strict();
+export const assistantSchema = z.object({ question: text(600, 1), projectSlug: slugSchema.optional(), stream: z.boolean().optional() }).strict();
 export const jobMatchSchema = z.object({ jobDescription: text(8000, 80), stream: z.boolean().optional() }).strict();
 export const tailoredCvSchema = z.object({ token: z.string().trim().min(20).max(20_000) }).strict();
 

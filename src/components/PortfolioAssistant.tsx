@@ -1,6 +1,7 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUp, FiCpu, FiExternalLink, FiMessageSquare, FiRefreshCw, FiX } from "react-icons/fi";
+import ReactMarkdown from "react-markdown";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import { API_BASE, api } from "../lib/api";
 import { useProject, useSiteSection } from "../lib/hooks";
@@ -18,26 +19,39 @@ const generalSuggestions = [
 ] as const;
 
 function AssistantText({ text }: { text: string }) {
-  const parts = text.split(/(\[[^\]]+\]\((?:\/[^)]+|https?:\/\/[^)]+)\))/g);
+  const markdown = text.replace(/\\([*_#])/g, "$1");
+
   return (
-    <div className="space-y-2 whitespace-pre-wrap">
-      {parts.map((part, index) => {
-        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-        if (!match) return <span key={index}>{part}</span>;
-        const [, label, href] = match;
-        const internal = /^\/projects\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(href);
-        const safeExternal = /^https?:\/\//i.test(href) || href === "/api/cv.pdf";
-        if (!internal && !safeExternal) return <span key={index}>{label}</span>;
-        return internal ? (
-          <Link key={index} to={href} className="font-semibold text-accent hover:text-accent-strong" onClick={(event) => event.stopPropagation()}>
-            {label} <FiExternalLink className="inline" size={12} />
-          </Link>
-        ) : (
-          <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:text-accent-strong">
-            {label} <FiExternalLink className="inline" size={12} />
-          </a>
-        );
-      })}
+    <div className="space-y-2 break-words text-sm leading-6">
+      <ReactMarkdown
+        components={{
+          h1: ({ children }) => <h3 className="mt-3 text-base font-bold text-ink first:mt-0">{children}</h3>,
+          h2: ({ children }) => <h3 className="mt-3 text-base font-bold text-ink first:mt-0">{children}</h3>,
+          h3: ({ children }) => <h3 className="mt-3 text-sm font-bold text-ink first:mt-0">{children}</h3>,
+          p: ({ children }) => <p className="leading-6 text-ink">{children}</p>,
+          ul: ({ children }) => <ul className="ml-4 list-disc space-y-1 marker:text-accent">{children}</ul>,
+          ol: ({ children }) => <ol className="ml-4 list-decimal space-y-1 marker:font-semibold marker:text-accent">{children}</ol>,
+          li: ({ children }) => <li className="pl-1 leading-5 text-ink">{children}</li>,
+          strong: ({ children }) => <strong className="font-bold text-ink">{children}</strong>,
+          a: ({ href = "", children }) => {
+            const internal = /^\/projects\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(href);
+            const safeExternal = /^https?:\/\//i.test(href) || href === "/api/cv.pdf";
+            if (!internal && !safeExternal) return <span>{children}</span>;
+            const className = "inline-flex items-baseline gap-1 font-semibold text-accent underline decoration-accent/30 underline-offset-2 hover:text-accent-strong";
+            return internal ? (
+              <Link to={href} className={className} onClick={(event) => event.stopPropagation()}>
+                {children}<FiExternalLink className="inline shrink-0" size={11} />
+              </Link>
+            ) : (
+              <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+                {children}<FiExternalLink className="inline shrink-0" size={11} />
+              </a>
+            );
+          },
+        }}
+      >
+        {markdown}
+      </ReactMarkdown>
     </div>
   );
 }
