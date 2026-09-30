@@ -16,6 +16,17 @@ assert.equal(source.includes("mailto:Mahmoud.Abdulghani@outlook.com"), true);
 assert.equal(source.includes("https://linkedin.com/in/MahmoudAbdulGhani"), true);
 assert.equal(source.includes("https://github.com/MahmoudAbdulGhani"), true);
 assert.equal(source.includes("https://mahmoud-portfolio-omega.vercel.app/"), true);
+
+// The application CV is laid out on US Letter; the master CV stays on A4.
+const pageBox = source.match(/\/MediaBox \[0 0 ([\d.]+) ([\d.]+)\]/);
+assert.ok(pageBox, "expected a MediaBox");
+assert.equal(Number(pageBox[1]), 612);
+assert.equal(Number(pageBox[2]), 792);
+
+// Embedded OFL faces replace the proprietary originals.
+for (const face of ["Carlito", "Caladea"]) {
+  assert.ok(source.includes(face), `expected ${face} to be embedded`);
+}
 const tailoredPdf = await generateCvPdfBuffer({
   origin: "https://portfolio.example",
   mode: "application",

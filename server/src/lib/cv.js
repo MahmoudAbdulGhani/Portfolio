@@ -13,6 +13,18 @@ const FONTS = {
     require.resolve("@fontsource/source-sans-3/files/source-sans-3-latin-700-italic.woff"),
 };
 
+// Application CV uses metric-compatible clones of the reference's Calibri/Cambria.
+// Carlito is advance-for-advance identical to Calibri; Caladea approximates Cambria.
+const APPLICATION_FONTS = {
+  regular: require.resolve("@fontsource/carlito/files/carlito-latin-400-normal.woff"),
+  italic: require.resolve("@fontsource/carlito/files/carlito-latin-400-italic.woff"),
+  bold: require.resolve("@fontsource/carlito/files/carlito-latin-700-normal.woff"),
+  boldItalic:
+    require.resolve("@fontsource/carlito/files/carlito-latin-700-italic.woff"),
+  serif: require.resolve("@fontsource/caladea/files/caladea-latin-400-normal.woff"),
+  serifBold: require.resolve("@fontsource/caladea/files/caladea-latin-700-normal.woff"),
+};
+
 const PAGE = { width: 595.28, height: 841.89 };
 const LEFT = 45;
 const TOP = 45;
@@ -593,419 +605,398 @@ function drawLanguages(doc, flow, value, label = "Languages") {
   flow.y += maxH;
 }
 
+// Geometry mirrors the reference one-page application CV (US Letter).
 const APPLICATION = {
-  left: 36,
-  right: 36,
-  top: 26,
-  bottom: 818,
-  body: 8.8,
+  page: { width: 612, height: 792 },
+  left: 36.03,
+  bulletIndent: 18,
+  textWidth: 540.42,
+  // Bullet text starts at 54.03; the reference's wrap column is 516pt wide,
+  // which reproduces every bullet line break in the source document.
+  bulletWidth: 516,
+  // Caladea is narrower than Cambria, so the serif paragraph needs a tighter
+  // column to land on the same three line breaks.
+  serifWidth: 489,
+  ruleColor: "#1E293B",
+  ruleHeight: 0.75,
+  ruleX0: 34.525,
+  ruleX1: 577.745,
   ink: "#111111",
-  line: "#111111",
+  // Natural line height of Carlito 10pt is 12.207pt; the reference uses 12.75
+  // for wrapped body copy, 12.25 within bullets, and 13.75 between bullets.
+  bodyLeading: 12.75,
+  bulletLeading: 12.25,
+  // The reference opens the list with two roomier gaps, then settles at 12.75.
+  bulletGapWide: 13.75,
+  bulletGap: 12.75,
+  // Title baseline for each experience entry, from the reference.
+  experienceTitleY: [183.33, 307.88],
+  // Right edge of the right-aligned date for each experience entry.
+  experienceDateRight: [569.78, 567.79],
+  // First bullet text baseline for each experience entry, from the reference.
+  experienceBulletY: [201.31, 325.58],
+  serifLeading: 11.75,
 };
 
 function drawApplicationCv(doc, data, origin) {
-  const {
-    profile,
-    projects,
-    skills,
-    education,
-    certifications,
-    configuration,
-  } = data;
-  const left = APPLICATION.left;
-  const width = PAGE.width - APPLICATION.left - APPLICATION.right;
-  let y = APPLICATION.top;
+  const { profile, projects, skills, education, certifications, languages, configuration } =
+    data;
+  const { left, textWidth, ink } = APPLICATION;
 
-  const heading = (label) => {
-    y += 5;
-    font(doc, "bold", 9.8);
-    doc.fillColor(APPLICATION.ink).text(clean(label).toUpperCase(), left, y);
-    y += 12;
-    doc
-      .moveTo(left, y)
-      .lineTo(left + width, y)
-      .lineWidth(0.8)
-      .strokeColor(APPLICATION.line)
-      .stroke();
-    y += 4;
+  const setFont = (face, size) => {
+    doc.font(APPLICATION_FONTS[face]).fontSize(size);
   };
 
-  const bulletLine = (value) => {
-    const bulletWidth = 10;
-    font(doc, "regular", APPLICATION.body);
-    doc
-      .fillColor(APPLICATION.ink)
-      .text("•", left + 2, y, { width: bulletWidth });
-    const textWidth = width - bulletWidth - 2;
-    const h = doc.heightOfString(clean(value), {
-      width: textWidth,
-      lineGap: 0.8,
-    });
-    doc
-      .fillColor(APPLICATION.ink)
-      .text(clean(value), left + bulletWidth + 2, y, {
-        width: textWidth,
-        lineGap: 0.8,
+  // Draw a single visual line at an absolute top coordinate.
+  const line = (runs, y, options = {}) => {
+    const { x = left, width = textWidth, align, link } = options;
+    const widthOf = (run) => {
+      setFont(run.face ?? "regular", run.size);
+      return doc.widthOfString(run.text);
+    };
+    const total = runs.reduce((sum, run) => sum + widthOf(run), 0);
+    let cursor = x;
+    if (align === "center") cursor = x + (width - total) / 2;
+    if (align === "right") cursor = x + width - total;
+    for (const [index, run] of runs.entries()) {
+      setFont(run.face ?? "regular", run.size);
+      const href = run.link ?? link;
+      const w = widthOf(run);
+      // Each run is positioned absolutely, so wrapping is disabled; the width
+      // is required for PDFKit to place link annotations.
+      doc.fillColor(run.color ?? ink).text(run.text, cursor, y + (run.dy ?? 0), {
+        width: w + 1,
+        lineBreak: false,
+        ...(href ? { link: href } : {}),
+        underline: run.underline ?? false,
       });
-    y += h + 1.4;
+      if (index < runs.length - 1) cursor += w;
+    }
   };
 
-  const datedTitle = (leftText, rightText, options = {}) => {
-    const size = options.size ?? 9.4;
-    const face = options.face ?? "bold";
-    font(doc, face, size);
-    const rightWidth = rightText ? doc.widthOfString(clean(rightText)) + 2 : 0;
-    const leftWidth = width - rightWidth - (rightWidth ? 8 : 0);
-    const lineGap = 0.5;
-    const leftH = doc.heightOfString(clean(leftText), {
-      width: leftWidth,
-      lineGap,
-    });
-    doc.fillColor(APPLICATION.ink).text(clean(leftText), left, y, {
-      width: leftWidth,
-      lineGap,
-    });
-    if (rightText) {
-      font(doc, face, size);
-      doc
-        .fillColor(APPLICATION.ink)
-        .text(clean(rightText), left + width - rightWidth, y, {
-          width: rightWidth,
-          align: "right",
-        });
+  // A section rule plus the heading above it, matching reference offsets.
+  const sectionRule = (y) => {
+    doc
+      .rect(
+        APPLICATION.ruleX0,
+        y,
+        APPLICATION.ruleX1 - APPLICATION.ruleX0,
+        APPLICATION.ruleHeight,
+      )
+      .fillColor(APPLICATION.ruleColor)
+      .fill();
+  };
+
+  // Word-wrap helper matching PDFKit's greedy algorithm at a fixed leading.
+  const wrapLines = (value, width, face, size) => {
+    setFont(face, size);
+    const words = value.split(" ");
+    const out = [];
+    let current = "";
+    for (const word of words) {
+      const candidate = current ? `${current} ${word}` : word;
+      if (current && doc.widthOfString(candidate) > width) {
+        out.push(current);
+        current = word;
+      } else current = candidate;
     }
-    y += leftH + (options.spacing ?? 1.8);
+    if (current) out.push(current);
+    return out;
+  };
+
+  // Wrapped paragraph rendered with explicit leading. Returns the bottom of the
+  // last line, so callers can position the next element.
+  const paragraph = (value, y, options = {}) => {
+    const {
+      x = left,
+      width = textWidth,
+      face = "regular",
+      size = 10,
+      leading = APPLICATION.bodyLeading,
+    } = options;
+    const value_ = clean(value);
+    if (!value_) return y;
+    const lines = wrapLines(value_, width, face, size);
+    lines.forEach((text, index) => {
+      setFont(face, size);
+      doc.fillColor(ink).text(text, x, y + index * leading, {
+        width,
+        lineBreak: false,
+      });
+    });
+    return y + (lines.length - 1) * leading;
   };
 
   const socials = profile.socials ?? [];
+  const overrides = configuration.header?.overrides ?? {};
   const linkedin =
-    configuration.header.overrides?.linkedin ||
+    overrides.linkedin ||
     socials.find((item) => /linkedin/i.test(item.label))?.url ||
     "https://linkedin.com/in/MahmoudAbdulGhani";
   const github =
-    configuration.header.overrides?.github ||
+    overrides.github ||
     socials.find((item) => /github/i.test(item.label))?.url ||
     "https://github.com/MahmoudAbdulGhani";
   const portfolioCandidate =
-    configuration.header.overrides?.portfolio || profile.portfolioUrl || origin;
-  const portfolio =
-    /^(?!https?:\/\/(?:localhost|127\.0\.0\.1)(?::|\/|$))https?:\/\//i.test(
-      portfolioCandidate,
-    )
-      ? portfolioCandidate
-      : "https://mahmoud-portfolio-omega.vercel.app/";
+    overrides.portfolio || profile.portfolioUrl || origin;
+  const portfolio = /^https?:\/\//i.test(portfolioCandidate)
+    ? portfolioCandidate
+    : "https://mahmoud-portfolio-omega.vercel.app/";
   const email =
-    configuration.header.overrides?.email ||
-    profile.email ||
-    "Mahmoud.Abdulghani@outlook.com";
-  const phone =
-    configuration.header.overrides?.phone || profile.phone || "+961 76 364 340";
-  const location =
-    configuration.header.overrides?.location ||
-    profile.location ||
-    "Tripoli, Lebanon";
+    overrides.email || profile.email || "Mahmoud.Abdulghani@outlook.com";
+  const phone = overrides.phone || profile.phone || "+961 76 364 340";
+  const location = overrides.location || profile.location || "Tripoli, Lebanon";
   const name =
-    configuration.header.overrides?.name ||
-    profile.name ||
-    "Mahmoud Hussein Abdul Ghani";
+    overrides.name || profile.name || "Mahmoud Hussein Abdul Ghani";
   const title =
-    configuration.header.overrides?.title ||
-    profile.title ||
-    "Full-Stack Software Engineer";
+    overrides.title || profile.title || "Full-Stack Software Engineer";
 
-  // Name
-  font(doc, "bold", 18.5);
-  const nameH = doc.heightOfString(name, { width, align: "center" });
-  doc
-    .fillColor(APPLICATION.ink)
-    .text(name, left, y, { width, align: "center" });
-  y += nameH + 1;
-
-  // Title
-  font(doc, "bold", 11.2);
-  const titleH = doc.heightOfString(title, { width, align: "center" });
-  doc
-    .fillColor(APPLICATION.ink)
-    .text(title, left, y, { width, align: "center" });
-  y += titleH + 2;
-
-  // Single centered contact line
-  const contactItems = [
-    { text: location },
-    { text: phone, link: `tel:${phone.replace(/[^+\d]/g, "")}` },
-    { text: email, link: `mailto:${email}`, underline: true },
-    { text: "LinkedIn", link: linkedin, underline: true },
-    { text: "GitHub", link: github, underline: true },
-    { text: "Portfolio", link: portfolio, underline: true },
-  ].filter((item) => clean(item.text));
-
-  const separator = " • ";
-  font(doc, "regular", 9.2);
-  const sepW = doc.widthOfString(separator);
-  let totalContactW = 0;
-  contactItems.forEach((item, idx) => {
-    item.w = doc.widthOfString(item.text);
-    totalContactW += item.w + (idx > 0 ? sepW : 0);
+  // --- Header ---
+  line([{ text: name, face: "bold", size: 16 }], 36.05, {
+    width: textWidth,
+    align: "center",
   });
-  let curX = left + Math.max(0, (width - totalContactW) / 2);
-  contactItems.forEach((item, idx) => {
-    if (idx > 0) {
-      font(doc, "regular", 9.2);
-      doc.fillColor(APPLICATION.ink).text(separator, curX, y);
-      curX += sepW;
-    }
-    font(doc, "regular", 9.2);
-    doc.fillColor(APPLICATION.ink).text(item.text, curX, y, {
-      link: item.link,
-      underline: Boolean(item.underline),
-    });
-    curX += item.w;
+  line([{ text: title, face: "bold", size: 12 }], 59.61, {
+    width: textWidth,
+    align: "center",
   });
-  y += 13;
 
-  // 1. PROFESSIONAL SUMMARY
-  heading("PROFESSIONAL SUMMARY");
+  const dot = "  \u2022  ";
+  line(
+    [
+      { text: location },
+      { text: dot },
+      { text: phone, link: `tel:${phone.replace(/[^+\d]/g, "")}` },
+      { text: dot },
+      { text: email, link: `mailto:${email}`, underline: true },
+      { text: dot },
+      { text: "LinkedIn", link: linkedin, underline: true },
+      { text: dot },
+      { text: "GitHub", link: github, underline: true },
+      { text: dot },
+      { text: "Portfolio", link: portfolio, underline: true },
+    ].map((run) => ({ size: 10, ...run })),
+    79.26,
+    { width: textWidth, align: "center" },
+  );
+
+  // --- PROFESSIONAL SUMMARY ---
+  line([{ text: "PROFESSIONAL SUMMARY", face: "bold", size: 11 }], 97.56);
+  sectionRule(115.03);
   const summary =
     configuration.professionalSummary ||
     profile.professionalSummary ||
-    "Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and relational/NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks. Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI application features.";
-  font(doc, "regular", 8.8);
-  doc
-    .fillColor(APPLICATION.ink)
-    .text(summary, left, y, { width, lineGap: 1.1 });
-  y = doc.y + 3;
+    "";
+  paragraph(summary, 117.78, { leading: APPLICATION.bodyLeading });
 
-  // 2. PROFESSIONAL EXPERIENCE
-  heading("PROFESSIONAL EXPERIENCE");
-  const expItems = profile.experience.slice(0, 2);
-  expItems.forEach((item, index) => {
+  // --- PROFESSIONAL EXPERIENCE ---
+  line([{ text: "PROFESSIONAL EXPERIENCE", face: "bold", size: 11 }], 162.33);
+  sectionRule(179.55);
+
+  // Reference bullets sit on a 12.25pt rhythm: the glyph is drawn 1.53pt above
+  // the text top, and each bullet block advances by its own line count.
+  const bullet = (value, y, options = {}) => {
+    const {
+      leading = APPLICATION.bulletLeading,
+      face = "regular",
+      markerOffset = 1.53,
+    } = options;
+    setFont("regular", 11);
+    doc.fillColor(ink).text("\u2022", left, y - markerOffset, {
+      width: 8,
+      lineBreak: false,
+    });
+    return paragraph(value, y, {
+      x: left + APPLICATION.bulletIndent,
+      width:
+        face === "serif" ? APPLICATION.serifWidth : APPLICATION.bulletWidth,
+      leading,
+      face,
+    });
+  };
+
+  const experience = profile.experience.slice(0, 2);
+  let cursor = 183.33;
+  experience.forEach((item, index) => {
     const rawRole = item.role || item.milestone || "";
     const rawCompany = item.company || item.facility || "";
-    let titleLine = rawRole;
-    if (rawCompany && !rawRole.includes(rawCompany)) {
-      titleLine = `${rawRole} — ${rawCompany}`;
+    const dateText = clean(item.meta);
+    // `company` already ends with the location, which the reference renders in
+    // regular weight. The split is the last two comma-separated segments.
+    const segments = rawCompany.split(", ");
+    const tail = segments.length > 2 ? segments.slice(-2).join(", ") : "";
+    // The company name is bold; the trailing location is regular weight.
+    const company = (tail
+      ? rawCompany.slice(0, rawCompany.indexOf(tail)).trim()
+      : rawCompany
+    ).replace(/,+$/, "");
+    // The reference drops the location to 10pt on the first entry only, and
+    // keeps the separating comma with the bold name.
+    const tailSize = index === 0 ? 10 : 11;
+    const tailDy = tailSize === 11 ? 0 : 0.95;
+    const titleRuns = [
+      { text: `${rawRole} — ${company}${tailSize === 11 ? ", " : ""}`, face: "bold", size: 11 },
+      ...(tailSize === 10 ? [{ text: ", ", face: "bold", size: 10, dy: 0.95 }] : []),
+      ...(tail ? [{ text: tail, size: tailSize, dy: tailDy }] : []),
+    ];
+    const titleY = APPLICATION.experienceTitleY[index] ?? 183.33;
+    line(titleRuns, titleY);
+    if (dateText) {
+      // Right-aligned on the lower baseline, matching the reference's edge.
+      const right = APPLICATION.experienceDateRight[index] ?? 569.78;
+      line([{ text: dateText, size: 10 }], titleY + 0.95, {
+        x: left,
+        width: right - left,
+        align: "right",
+      });
     }
-    let dateText = clean(item.meta);
-    if (
-      /06\/2026|2026-06/i.test(dateText) &&
-      /09\/2026|2026-09/i.test(dateText)
-    ) {
-      dateText = "June 2026 – Sept 2026";
-    } else if (
-      /12\/2025|2025-12/i.test(dateText) &&
-      /01\/2026|2026-01/i.test(dateText)
-    ) {
-      dateText = "Dec 2025 – Jan 2026";
-    }
-    datedTitle(titleLine, dateText, { size: 9.4, spacing: 2 });
 
     const bullets = item.cvBullets?.length
       ? item.cvBullets
       : item.bullets?.length
         ? item.bullets
         : splitDetails(item.details);
-    bullets.forEach(bulletLine);
-    if (index < expItems.length - 1) y += 2;
+    let bulletCursor = APPLICATION.experienceBulletY[index] ?? 201.31;
+    bullets.forEach((value, bulletIndex) => {
+      bulletCursor = bullet(value, bulletCursor, {
+        // The reference hugs the marker to the text once the gaps tighten.
+        markerOffset: bulletIndex < 3 ? 1.53 : 0.53,
+      });
+      if (bulletIndex < bullets.length - 1) {
+        bulletCursor +=
+          bulletIndex < 2 ? APPLICATION.bulletGapWide : APPLICATION.bulletGap;
+      }
+    });
   });
 
-  // 3. PROJECT EXPERIENCE
-  heading("PROJECT EXPERIENCE");
-  const projectList = projects.slice(0, 3);
-  projectList.forEach((project, index) => {
-    font(doc, "bold", 9.4);
-    const nameStr = clean(project.name);
-    let curPx = left;
-    doc.fillColor(APPLICATION.ink).text(nameStr, curPx, y);
-    curPx += doc.widthOfString(nameStr);
+  // --- PROJECT EXPERIENCE ---
+  line([{ text: "PROJECT EXPERIENCE", face: "bold", size: 11 }], 358.4);
+  sectionRule(375.87);
 
-    const projectLinks = [
+  const projectLinks = (project) =>
+    [
       { label: "GitHub", url: project.github },
       { label: "Live Demo", url: project.demo },
     ].filter((link) => clean(link.url));
 
-    const activeLinks =
+  // Absolute title anchors from the reference; the description flows beneath
+  // each one, so only the title positions are fixed.
+  const projectTitleY = [379.4, 434.68, 475.93];
+  for (const [index, project] of projects.slice(0, 3).entries()) {
+    const nameStr = clean(project.name);
+    const links =
       project.slug === "jobpilot-ai"
-        ? projectLinks.filter((l) => l.label === "Live Demo")
-        : projectLinks;
+        ? projectLinks(project).filter((l) => l.label === "Live Demo")
+        : projectLinks(project);
+    const runs = [{ text: nameStr, face: "bold", size: 11 }];
+    for (const link of links)
+      runs.push(
+        { text: " | ", face: "italic", size: 10, dy: 0.95 },
+        { text: link.label, size: 10, dy: 0.95, link: link.url, underline: true },
+      );
+    const titleY = projectTitleY[index] ?? 379.4 + index * 55;
+    line(runs, titleY);
 
-    for (const link of activeLinks) {
-      font(doc, "regular", 9.4);
-      const pipe = " | ";
-      doc.fillColor(APPLICATION.ink).text(pipe, curPx, y);
-      curPx += doc.widthOfString(pipe);
+    const description =
+      project.cvBullets?.[0] || project.features?.[0] || project.description || "";
+    const isSerif = project.slug === "jobpilot-ai";
+    // Project descriptions hang 0.53pt below their marker, unlike the 1.53pt
+    // offset used by the experience section.
+    bullet(description, titleY + (isSerif ? 16.97 : 13.95), {
+      face: isSerif ? "serif" : "regular",
+      leading: isSerif ? APPLICATION.serifLeading : APPLICATION.bulletLeading,
+      markerOffset: 0.55,
+    });
+  }
 
-      const labelW = doc.widthOfString(link.label);
-      doc.fillColor(APPLICATION.ink).text(link.label, curPx, y, {
-        link: link.url,
-        underline: true,
-      });
-      curPx += labelW;
-    }
-    y += 12;
+  // --- TECHNICAL SKILLS ---
+  line([{ text: "TECHNICAL SKILLS", face: "bold", size: 11 }], 520.45);
+  sectionRule(537.92);
 
-    const bullet =
-      project.cvBullets?.[0] ||
-      project.features?.[0] ||
-      project.description ||
-      "";
-    bulletLine(bullet);
-    if (index < projectList.length - 1) y += 1;
-  });
-
-  // 4. TECHNICAL SKILLS
-  heading("TECHNICAL SKILLS");
-  const standardSkillCategories = [
-    {
-      label: "Languages & Web",
-      fallback: [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "PHP",
-        "HTML5",
-        "CSS3",
-        "SQL",
+  const skillGroups = groupSkills(skills);
+  let skillY = 540.65;
+  for (const group of skillGroups) {
+    if (!group.names.length) continue;
+    line(
+      [
+        { text: `${group.category}: `, face: "bold", size: 10 },
+        { text: group.names.join(", "), size: 10 },
       ],
-    },
-    {
-      label: "Frontend",
-      fallback: [
-        "React.js",
-        "Next.js",
-        "Angular",
-        "Tailwind CSS",
-        "Zustand",
-        "TanStack Query",
-        "Vite",
-        "Framer Motion",
-      ],
-    },
-    {
-      label: "Backend & APIs",
-      fallback: [
-        "Node.js",
-        "Express.js",
-        "NestJS",
-        "FastAPI",
-        "Django",
-        "Django REST Framework",
-        "RESTful APIs",
-      ],
-    },
-    {
-      label: "Databases & ORM",
-      fallback: [
-        "PostgreSQL",
-        "MySQL",
-        "MariaDB",
-        "MongoDB",
-        "Mongoose",
-        "Supabase",
-        "SQLAlchemy",
-        "Alembic",
-      ],
-    },
-    {
-      label: "Auth & DevOps",
-      fallback: [
-        "JWT",
-        "RBAC",
-        "Argon2",
-        "Git",
-        "GitHub",
-        "CI/CD",
-        "Vercel",
-        "Render",
-      ],
-    },
-    {
-      label: "AI",
-      fallback: ["LLMs", "RAG", "Prompt Engineering", "AI API Integration"],
-    },
-    {
-      label: "Architecture & Testing",
-      fallback: [
-        "Clean Architecture",
-        "SOLID",
-        "Design Patterns",
-        "Scalable Systems",
-        "Pytest",
-        "Vitest",
-        "Jest",
-      ],
-    },
-  ];
-
-  const skillsByCategory = new Map();
-  skills.forEach((s) => {
-    const cat = s.category || "Other";
-    if (!skillsByCategory.has(cat)) skillsByCategory.set(cat, []);
-    skillsByCategory.get(cat).push(s.name);
-  });
-
-  standardSkillCategories.forEach((group) => {
-    const found = skillsByCategory.get(group.label) || [];
-    const list = found.length ? found : group.fallback;
-    const prefix = `${group.label}: `;
-    const listStr = list.join(", ");
-    font(doc, "bold", 8.8);
-    doc
-      .fillColor(APPLICATION.ink)
-      .text(prefix, left, y, { continued: true, lineGap: 1 });
-    font(doc, "regular", 8.8);
-    doc
-      .fillColor(APPLICATION.ink)
-      .text(listStr, { lineGap: 1, continued: false });
-    y = doc.y + 1.8;
-  });
-
-  // 5. EDUCATION & CERTIFICATION
-  heading("EDUCATION & CERTIFICATION");
-  const edu = education[0] || {
-    degree: "Bachelor of Science in Computer Science",
-    school: "Lebanese International University (LIU)",
-    period: "Oct 2022 – June 2025",
-  };
-  const eduTitle = `${edu.degree} — ${edu.school}`;
-  datedTitle(eduTitle, edu.period || "Oct 2022 – June 2025", {
-    size: 9.4,
-    spacing: 2.5,
-  });
-
-  const cert = certifications.find((c) => /aws|re\/start/i.test(c.title)) ||
-    certifications[0] || {
-      title:
-        "AWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals — Amazon Web Services",
-      year: "Expected 2026",
-    };
-  const certTitle = cert.title.includes("Amazon Web Services")
-    ? cert.title
-    : `${cert.title} — ${cert.issuer || "Amazon Web Services"}`;
-  datedTitle(certTitle, cert.year || "Expected 2026", {
-    size: 9.4,
-    spacing: 2,
-  });
-
-  // 6. LANGUAGES
-  heading("LANGUAGES");
-  font(doc, "bold", 9);
-  doc.fillColor(APPLICATION.ink).text("Arabic: ", left, y, { continued: true });
-  font(doc, "regular", 9);
-  doc.fillColor(APPLICATION.ink).text("Native", { continued: true });
-  font(doc, "regular", 9);
-  doc.fillColor(APPLICATION.ink).text("   |   ", { continued: true });
-  font(doc, "bold", 9);
-  doc.fillColor(APPLICATION.ink).text("English: ", { continued: true });
-  font(doc, "regular", 9);
-  doc
-    .fillColor(APPLICATION.ink)
-    .text("Professional Working Proficiency", { continued: false });
-  y += 12;
-
-  if (y > APPLICATION.bottom)
-    throw new Error(
-      `Application CV exceeds one A4 page (${Math.ceil(y - APPLICATION.bottom)}pt overflow).`,
+      skillY,
     );
+    skillY += 13.75;
+  }
+
+  // --- EDUCATION & CERTIFICATION ---
+  line([{ text: "EDUCATION & CERTIFICATION", face: "bold", size: 11 }], 642.48);
+  sectionRule(659.95);
+
+  const edu = education[0] || {};
+  const school = clean(edu.school).replace(/\s*\(LIU\)\s*$/, "");
+  line(
+    [
+      { text: clean(edu.degree), face: "bold", size: 10 },
+      { text: " \u2014 ", face: "italic", size: 10 },
+      { text: `${school} `, face: "boldItalic", size: 10 },
+      { text: "(LIU)", face: "italic", size: 10 },
+    ],
+    662.7,
+  );
+  line([{ text: clean(edu.period) || "Oct 2022 \u2013 June 2025", face: "bold", size: 9 }], 663.65, {
+    x: left,
+    width: 558.78 - left,
+    align: "right",
+  });
+
+  // Certifications follow the mode selection, so admin edits are honoured. The
+  // first entry sits at the reference anchor and later ones step down the page.
+  const certStep = 19;
+  const shownCerts = certifications.filter((cert) => {
+    const title = clean(cert.title);
+    const issuer = clean(cert.issuer);
+    return Boolean(title || issuer);
+  });
+  const certsShown = Math.min(shownCerts.length, 4);
+  shownCerts.slice(0, certsShown).forEach((cert, index) => {
+    const title = clean(cert.title);
+    const issuer = clean(cert.issuer);
+    const base = 677.46 + index * certStep;
+    line(
+      [
+        { text: title, face: "bold", size: 10 },
+        ...(issuer ? [{ text: ` — ${issuer}`, face: "italic", size: 10 }] : []),
+      ],
+      base,
+    );
+    line([{ text: clean(cert.year), face: "bold", size: 9 }], base + 0.95, {
+      x: left,
+      width: 561.73 - left,
+      align: "right",
+    });
+  });
+
+  // --- LANGUAGES ---
+  // Entries are "Label: Level"; the label is bold and the level follows in
+  // regular weight, joined by the reference's four-space pipe separator.
+  const languageEntries = languages.map(clean).filter(Boolean);
+  const languageRuns = [];
+  languageEntries.forEach((entry, index) => {
+    const colon = entry.indexOf(":");
+    const label = colon === -1 ? entry : entry.slice(0, colon).trim();
+    const level = colon === -1 ? "" : entry.slice(colon + 1).trim();
+    const last = index === languageEntries.length - 1;
+    languageRuns.push({ text: `${label}:`, face: "bold", size: 10 });
+    if (level) {
+      const tail = ` ${level}`;
+      languageRuns.push({ text: last ? tail : `${tail}    |   `, size: 10 });
+    }
+  });
+  if (languageRuns.length) {
+    const languageTop = 696.25 + Math.max(0, certsShown - 1) * certStep;
+    line([{ text: "LANGUAGES", face: "bold", size: 11 }], languageTop);
+    sectionRule(languageTop + 17.475);
+    line(languageRuns, languageTop + 20.2);
+  }
 }
 
 export async function generateCvPdfBuffer({
@@ -1047,14 +1038,19 @@ export async function generateCvPdfBuffer({
     configuration,
     mode: resolvedMode,
   } = data;
+  const isApplication = mode === "application";
   const doc = new PDFDocument({
-    size: "A4",
-    margins: {
-      top: TOP,
-      bottom: PAGE.height - BOTTOM,
-      left: LEFT,
-      right: LEFT,
-    },
+    size: isApplication
+      ? [APPLICATION.page.width, APPLICATION.page.height]
+      : "A4",
+    margins: isApplication
+      ? { top: 0, bottom: 0, left: 0, right: 0 }
+      : {
+          top: TOP,
+          bottom: PAGE.height - BOTTOM,
+          left: LEFT,
+          right: LEFT,
+        },
     bufferPages: true,
     info: {
       Title: `${clean(profile.name)} - CV`,
@@ -1071,7 +1067,7 @@ export async function generateCvPdfBuffer({
     doc.on("error", reject);
   });
   const flow = createFlow();
-  if (mode === "application") {
+  if (isApplication) {
     drawApplicationCv(doc, data, origin);
     doc.end();
     return buffer;

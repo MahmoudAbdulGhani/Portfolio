@@ -148,16 +148,21 @@ export function initialModes(catalog) {
       );
     })
     .slice(0, 3);
+  // The application CV leads with the flagship certification only; the master
+  // CV lists everything.
+  const leadCertifications = catalog.certifications.filter((row) =>
+    /aws|re\/start/i.test(String(row.title ?? "")),
+  );
   const mode = (projectRows, all = false) => ({
     experience: all
       ? orderedIds(catalog.profile.experience)
       : orderedIds(catalog.profile.experience).slice(0, 2),
     projects: ids(projectRows),
-    skills: all ? orderedIds(catalog.skills) : orderedIds(catalog.skills),
+    skills: orderedIds(catalog.skills),
     education: orderedIds(catalog.education),
     certifications: all
       ? orderedIds(catalog.certifications)
-      : orderedIds(catalog.certifications).slice(0, 2),
+      : orderedIds(leadCertifications).slice(0, 1),
     languages: [...catalog.languages],
     projectOverrides: {},
     experienceOverrides: {},
