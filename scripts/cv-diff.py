@@ -11,6 +11,8 @@ Usage:
 import argparse
 import json
 import sys
+from datetime import datetime, timezone
+from pathlib import Path
 
 import pymupdf
 
@@ -178,6 +180,38 @@ def extract_rules(page):
     return rules
 
 
+def page_geometry(page):
+    """Reduce a page to the geometry a fixture needs.
+
+    Spans are dropped on purpose: the fixture is meant to be reviewable in a
+    diff, and the per-run check that consumes them is diagnostic only.
+    """
+    lines = extract_lines(page)
+    rules = extract_rules(page)
+    xs = [v for line in lines for v in (line["x0"], line["x1"])]
+    # Line dicts carry no y1; spans do.
+    ys = [v for line in lines for span in line["spans"] for v in (span["y0"], span["y1"])]
+    xs += [v for rule in rules for v in (rule["x0"], rule["x1"])]
+    ys += [v for rule in rules for v in (rule["y0"], rule["y1"])]
+    box = None
+    if xs and ys:
+        box = {
+            "left": round(min(xs), 2),
+            "top": round(min(ys), 2),
+            "right": round(max(xs), 2),
+            "bottom": round(max(ys), 2),
+        }
+    return {
+        "pageSize": [round(page.rect.width, 2), round(page.rect.height, 2)],
+        "lines": [
+            {k: line[k] for k in ("y0", "x0", "x1", "text")} for line in lines
+        ],
+        "rules": [{k: rule[k] for k in ("y0", "x0", "x1", "y1", "h")} for rule in rules],
+        "fonts": sorted({span["font"] for line in lines for span in line["spans"]}),
+        "contentBox": box,
+    }
+
+
 def norm_text(value):
     """Compare text as a letter stream, ignoring all spacing and separators.
 
@@ -189,23 +223,25 @@ def norm_text(value):
     return "".join(kept)
 
 
-def compare(ref_page, cand_page, tolerance, check_runs=False):
-    ref_lines = extract_lines(ref_page)
-    cand_lines = extract_lines(cand_page)
-    ref_rules = extract_rules(ref_page)
-    cand_rules = extract_rules(cand_page)
+def compare(ref, cand, tolerance=1.0, tolerance_x=None, tolerance_y=None, check_runs=False):
+    tolerance_x = tolerance if tolerance_x is None else tolerance_x
+    tolerance_y = tolerance if tolerance_y is None else tolerance_y
+    ref_lines = ref["lines"]
+    cand_lines = cand["lines"]
+    ref_rules = ref["rules"]
+    cand_rules = cand["rules"]
 
     report = {
-        "pageSize": {
-            "reference": [round(v, 2) for v in (ref_page.rect.width, ref_page.rect.height)],
-            "candidate": [round(v, 2) for v in (cand_page.rect.width, cand_page.rect.height)],
-        },
+        "pageSize": {"reference": ref["pageSize"], "candidate": cand["pageSize"]},
         "counts": {
             "referenceLines": len(ref_lines),
             "candidateLines": len(cand_lines),
             "referenceRules": len(ref_rules),
             "candidateRules": len(cand_rules),
         },
+        "fonts": {"reference": ref["fonts"], "candidate": cand["fonts"]},
+        "contentBox": {"reference": ref["contentBox"], "candidate": cand["contentBox"]},
+        "tolerances": {"x": tolerance_x, "y": tolerance_y, "rule": tolerance},
         "textMismatches": [],
         "geometryDrift": [],
         "ruleDrift": [],
@@ -251,15 +287,15 @@ def compare(ref_page, cand_page, tolerance, check_runs=False):
         ref_w = round(rl["x1"] - rl["x0"], 2)
         cand_w = round(cl["x1"] - cl["x0"], 2)
         dw = round(cand_w - ref_w, 2)
-        if abs(dy) > tolerance or abs(dx) > tolerance:
+        if abs(dy) > tolerance_y or abs(dx) > tolerance_x:
             entry = {"y0": rl["y0"], "dx": dx, "dy": dy, "text": rl["text"][:60]}
             # A centered run drifts on both edges when the substituted font sets
             # it slightly wider or narrower, so report the width delta too.
-            if abs(dw) > tolerance:
+            if abs(dw) > tolerance_x:
                 entry["widthDelta"] = dw
             report["geometryDrift"].append(entry)
         previous_dx = None
-        for rs, cs in zip(rl["spans"], cl["spans"]):
+        for rs, cs in zip(rl.get("spans", []), cl.get("spans", [])):
             is_bullet_span = rs["font"] in BULLET_FONTS
             if is_bullet_span and cs["font"] == "calibri":
                 # Carlito supplies the bullet glyph in place of SymbolMT.
@@ -296,7 +332,7 @@ def compare(ref_page, cand_page, tolerance, check_runs=False):
                 # the span origin without moving any glyph.
                 if rs["text"][:1].isspace():
                     sx = round(cs["x1"] - rs["x1"], 2)
-                if abs(sx) > tolerance or abs(sy) > tolerance:
+                if abs(sx) > tolerance_x or abs(sy) > tolerance_y:
                     report["geometryDrift"].append(
                         {
                             "y0": rl["y0"],
@@ -356,49 +392,122 @@ def main():
     )
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--limit", type=int, default=25)
+    parser.add_argument(
+        "--tolerance-x",
+        type=float,
+        default=None,
+        help="line horizontal tolerance; defaults to --tolerance",
+    )
+    parser.add_argument(
+        "--tolerance-y",
+        type=float,
+        default=None,
+        help="line vertical tolerance; defaults to --tolerance",
+    )
+    parser.add_argument(
+        "--emit-fixture",
+        metavar="PATH",
+        help="write the reference geometry to PATH as JSON instead of comparing",
+    )
+    parser.add_argument(
+        "--fixture",
+        metavar="PATH",
+        help="compare against a fixture emitted by --emit-fixture instead of a PDF",
+    )
     args = parser.parse_args()
 
-    ref = pymupdf.open(args.reference)
-    cand = pymupdf.open(args.candidate)
-    if len(ref) != len(cand):
+    cand_doc = pymupdf.open(args.candidate)
+
+    if args.emit_fixture:
+        ref_doc = pymupdf.open(args.reference)
+        payload = {
+            "source": Path(args.reference).name,
+            "emittedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "note": (
+                "Geometry of the target application CV, normalised the same way "
+                "the generator is. Regenerate with: python scripts/cv-diff.py "
+                "<target.pdf> <any.pdf> --emit-fixture <path>"
+            ),
+            "pages": [page_geometry(ref_doc[i]) for i in range(len(ref_doc))],
+        }
+        with open(args.emit_fixture, "w", encoding="utf-8") as handle:
+            json.dump(payload, handle, indent=2, ensure_ascii=False)
+            handle.write("\n")
         print(
-            f"PAGE COUNT MISMATCH: reference={len(ref)} candidate={len(cand)}",
+            f"wrote {args.emit_fixture}: "
+            f"{len(payload['pages'])} page(s), "
+            f"{sum(len(p['lines']) for p in payload['pages'])} lines, "
+            f"{sum(len(p['rules']) for p in payload['pages'])} rules"
+        )
+        return 0
+
+    if args.fixture:
+        with open(args.fixture, encoding="utf-8") as handle:
+            ref_pages = json.load(handle)["pages"]
+    else:
+        ref_doc = pymupdf.open(args.reference)
+        ref_pages = [page_geometry(ref_doc[i]) for i in range(len(ref_doc))]
+
+    if len(ref_pages) != len(cand_doc):
+        print(
+            f"PAGE COUNT MISMATCH: reference={len(ref_pages)} candidate={len(cand_doc)}",
             file=sys.stderr,
         )
         return 1
 
     total_issues = 0
-    for index in range(len(ref)):
-        report = compare(ref[index], cand[index], args.tolerance, args.runs)
+    page_reports = []
+    for index, ref_page in enumerate(ref_pages):
+        report = compare(
+            ref_page,
+            page_geometry(cand_doc[index]),
+            args.tolerance,
+            args.tolerance_x,
+            args.tolerance_y,
+            args.runs,
+        )
+        page_reports.append(report)
         if args.json:
-            print(json.dumps({"page": index + 1, **report}, indent=2))
-        else:
-            ps = report["pageSize"]
-            print(f"=== page {index + 1} ===")
-            print(f"page size  reference={ps['reference']}  candidate={ps['candidate']}")
-            counts = report["counts"]
-            print(
-                f"lines      reference={counts['referenceLines']}  "
-                f"candidate={counts['candidateLines']}"
-            )
-            print(
-                f"rules      reference={counts['referenceRules']}  "
-                f"candidate={counts['candidateRules']}"
-            )
-            for key, label in (
-                ("textMismatches", "TEXT"),
-                ("geometryDrift", "GEOMETRY"),
-                ("ruleDrift", "RULES"),
-            ):
-                items = report[key]
-                total_issues += len(items)
-                print(f"\n{label} issues: {len(items)}")
-                for item in items[: args.limit]:
-                    print("  " + json.dumps(item, ensure_ascii=False))
-                if len(items) > args.limit:
-                    print(f"  ... {len(items) - args.limit} more")
+            continue
+        ps = report["pageSize"]
+        print(f"=== page {index + 1} ===")
+        print(f"page size  reference={ps['reference']}  candidate={ps['candidate']}")
+        counts = report["counts"]
+        print(
+            f"lines      reference={counts['referenceLines']}  "
+            f"candidate={counts['candidateLines']}"
+        )
+        print(
+            f"rules      reference={counts['referenceRules']}  "
+            f"candidate={counts['candidateRules']}"
+        )
+        for key, label in (
+            ("textMismatches", "TEXT"),
+            ("geometryDrift", "GEOMETRY"),
+            ("ruleDrift", "RULES"),
+        ):
+            items = report[key]
+            total_issues += len(items)
+            print(f"\n{label} issues: {len(items)}")
+            for item in items[: args.limit]:
+                print("  " + json.dumps(item, ensure_ascii=False))
+            if len(items) > args.limit:
+                print(f"  ... {len(items) - args.limit} more")
 
-    print(f"\nTOTAL ISSUES: {total_issues}")
+    if args.json:
+        # Pure JSON on stdout so the conformance test can parse it; the human
+        # summary above would otherwise corrupt the document.
+        for key in ("textMismatches", "geometryDrift", "ruleDrift"):
+            total_issues += sum(len(r[key]) for r in page_reports)
+        print(
+            json.dumps(
+                {"totalIssues": total_issues, "pages": page_reports},
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
+    else:
+        print(f"\nTOTAL ISSUES: {total_issues}")
     return 0 if total_issues == 0 else 1
 
 

@@ -18,6 +18,7 @@ test-results
 # CV comparison screenshots (personal artifacts, not part of the project)
 .cv-compare/
 server/backups/
+__pycache__/
 
 # Environment / secrets
 .env

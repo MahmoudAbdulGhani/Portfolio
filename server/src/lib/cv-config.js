@@ -34,7 +34,7 @@ const orderedIds = (rows) =>
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
     .map((row) => row.id);
 
-export async function getCvCatalog() {
+async function getDatabaseCatalog() {
   try {
     const profile = await prisma.profile.findFirst({
       include: {
@@ -75,8 +75,17 @@ export async function getCvCatalog() {
       };
     }
   } catch {
-    // fallback to static portfolio data if database is unavailable or not configured
+    // database unavailable or not configured
   }
+  return null;
+}
+
+export async function getCvCatalog() {
+  // CV_STATIC_ONLY=1 pins the static catalog so the layout conformance test
+  // stays hermetic rather than depending on whatever the database holds.
+  const database =
+    process.env.CV_STATIC_ONLY === "1" ? null : await getDatabaseCatalog();
+  if (database) return database;
 
   const {
     profileData,
@@ -184,6 +193,16 @@ export function initialModes(catalog) {
 }
 
 export async function getOrCreateCvConfiguration() {
+  if (process.env.CV_STATIC_ONLY === "1") {
+    // A static-only run must neither read nor write configuration, otherwise it
+    // would filter the static catalog through whatever the database selects.
+    return {
+      id: "default",
+      professionalSummary: null,
+      header: DEFAULT_HEADER,
+      ...initialModes(await getCvCatalog()),
+    };
+  }
   try {
     const existing = await prisma.cvConfiguration.findUnique({
       where: { id: "default" },

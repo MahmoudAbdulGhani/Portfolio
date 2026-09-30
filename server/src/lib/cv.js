@@ -622,6 +622,17 @@ const APPLICATION = {
   ruleX0: 34.525,
   ruleX1: 577.745,
   ink: "#111111",
+  // Every value above was measured from the reference PDF, not chosen for
+  // aesthetics. Changing one shifts real text, so keep
+  // `npm run test:cv-reference` --prefix server passing: it diffs the generated
+  // application CV against server/test/fixtures/application-cv-reference.json
+  // and enforces x 2.0pt, y 1.0pt, and rules 1.0pt. The vertical tolerance is
+  // 1.0pt rather than tighter because Word sets a bullet glyph on a different
+  // baseline than PDFKit does (0.53pt observed); x is 2.0pt because Carlito and
+  // Caladea are not pixel-identical to Calibri and Cambria (1.10pt observed on
+  // the contact line). Rule thickness is never compared: Word draws link
+  // underlines as 0.75pt rects where PDFKit draws zero-height lines.
+  //
   // Natural line height of Carlito 10pt is 12.207pt; the reference uses 12.75
   // for wrapped body copy, 12.25 within bullets, and 13.75 between bullets.
   bodyLeading: 12.75,

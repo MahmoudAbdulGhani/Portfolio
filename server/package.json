@@ -15,6 +15,8 @@
     "content:verify-cms": "node scripts/verify-cms-content.mjs",
     "db:studio": "prisma studio",
     "test:assistant": "node scripts/test-assistant-context.mjs",
+    "test:cv": "node scripts/test-cv.mjs",
+    "test:cv-reference": "node scripts/test-cv-reference.mjs",
     "test:job-match": "node scripts/test-job-match.mjs",
     "test:security": "node scripts/test-security.mjs",
     "test:runtime-db": "node scripts/verify-runtime-db.mjs",

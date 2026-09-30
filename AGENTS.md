@@ -12,3 +12,24 @@ Full-stack Portfolio & CMS built with Node.js/Express backend and a modern React
 - Preserve existing security, rate-limiting, and validation protections.
 - Do not commit secrets or generated/dist artifacts unless intended.
 - Run typecheck, lint, and relevant tests before considering a change complete.
+
+## Application CV layout
+
+The application CV is a pixel-level match to a reference PDF. Its geometry lives
+in the `APPLICATION` constant in `server/src/lib/cv.js` and was measured from
+that document.
+
+- `npm run test:cv-reference --prefix server` (no args) runs against the static
+  fallback and needs no database or network access.
+- Add `--db` to render from live data instead, e.g.
+  `node --env-file=server/.env server/scripts/test-cv-reference.mjs --db`.
+- The committed fixture `server/test/fixtures/application-cv-reference.json` is
+  the source of truth for the test. Regenerate it only when the reference
+  document itself is intentionally replaced:
+  `python scripts/cv-diff.py <reference.pdf> <any.pdf> --emit-fixture server/test/fixtures/application-cv-reference.json`
+- The test tolerates 2.0pt horizontally, 1.0pt vertically, and 1.0pt for rule
+  positions to absorb font-substitution drift. It does not tolerate content,
+  line breaks, or section order, so do not "fix" wrapping by loosening these.
+- If you change layout, re-run `npm run test:cv --prefix server` too; the master
+  CV must stay on A4 with Source Sans while the application CV stays on Letter
+  with Carlito/Caladea.
