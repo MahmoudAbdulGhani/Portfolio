@@ -457,7 +457,7 @@ export const certificationsData = [
     id: "cert-3",
     title: "AWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals",
     issuer: "Amazon Web Services",
-    year: "Dec - 2025",
+    year: "July 2025 - Oct 2025",
     url: null,
     order: 3,
   },
