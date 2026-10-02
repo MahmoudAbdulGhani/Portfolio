@@ -24,8 +24,12 @@ that document.
 - Add `--db` to render from live data instead, e.g.
   `node --env-file=server/.env server/scripts/test-cv-reference.mjs --db`.
 - The committed fixture `server/test/fixtures/application-cv-reference.json` is
-  the source of truth for the test. Regenerate it only when the reference
-  document itself is intentionally replaced:
+  the source of truth for the test. It records the reference's geometry, and its
+  line text is the *intended* output, which may deliberately differ from the
+  reference document where content has been corrected since. The AWS re/Start
+  date reads `Dec - 2025` in the fixture but `Expected 2026` in the reference.
+- Regenerate the fixture only when the reference document itself is intentionally
+  replaced. Doing so reverts any such corrections:
   `python scripts/cv-diff.py <reference.pdf> <any.pdf> --emit-fixture server/test/fixtures/application-cv-reference.json`
 - The test tolerates 2.0pt horizontally, 1.0pt vertically, and 1.0pt for rule
   positions to absorb font-substitution drift. It does not tolerate content,
