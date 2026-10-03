@@ -101,13 +101,13 @@ export function ContactSection() {
   const messageField = field("message");
 
   return (
-    <section id="contact" className="section relative overflow-hidden bg-bg-soft">
+    <section id="contact" className="section contact-editorial relative overflow-hidden bg-bg-soft">
       <div className="container-x space-y-12">
         <SectionHeading
           eyebrow={section?.eyebrow ?? ""}
           title={section?.heading ?? ""}
           description={section?.description ?? ""}
-          align="center"
+          align="left"
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
