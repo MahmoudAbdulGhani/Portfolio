@@ -38,3 +38,6 @@ server/.env.*
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary public CMS snapshot used only for motion review
+.motion-preview/

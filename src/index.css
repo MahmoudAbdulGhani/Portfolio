@@ -20,23 +20,24 @@
 /* ------------------------------------------------------------------ */
 
 :root {
-  --bg: #f4f2ed;
-  --bg-soft: #edeae3;
+  --bg: #f3f0e9;
+  --bg-soft: #e9e5dc;
   --surface: #ffffff;
-  --surface-2: #f7f5f0;
+  --surface-2: #eeeae2;
   --surface-3: #e8e4db;
   --border: #d9d4c8;
   --border-strong: #b8b0a0;
-  --text: #1a1d23;
+  --text: #202420;
   --muted: #4b505b;
   --faint: #5a5f6b;
-  --accent: #2563eb;
-  --accent-strong: #1d4ed8;
-  --accent-2: #f59e0b;
+  --accent: #bd4225;
+  --on-accent: #ffffff;
+  --accent-strong: #99301a;
+  --accent-2: #d27936;
   --gold: #b45309;
   --ok: #15803d;
   --danger: #dc2626;
-  --ring: rgba(37, 99, 235, 0.35);
+  --ring: rgba(189, 66, 37, 0.55);
   --project-frame-canvas: #f0ede6;
   --project-frame-highlight: rgb(255 255 255 / 0.55);
   --project-frame-shadow: rgb(26 29 35 / 0.08);
@@ -48,23 +49,24 @@
 }
 
 .dark {
-  --bg: #0f1115;
-  --bg-soft: #13161c;
-  --surface: #181b22;
-  --surface-2: #1e222b;
-  --surface-3: #262b36;
-  --border: #252a36;
-  --border-strong: #333a4a;
+  --bg: #171b18;
+  --bg-soft: #1e2320;
+  --surface: #222823;
+  --surface-2: #272d28;
+  --surface-3: #323934;
+  --border: #383f39;
+  --border-strong: #596259;
   --text: #e8eaf0;
   --muted: #b6becc;
   --faint: #a2aaba;
-  --accent: #3b82f6;
-  --accent-strong: #60a5fa;
+  --accent: #f18d69;
+  --on-accent: #171b18;
+  --accent-strong: #ffa685;
   --accent-2: #fbbf24;
   --gold: #f59e0b;
   --ok: #22c55e;
   --danger: #ef4444;
-  --ring: rgba(96, 165, 250, 0.4);
+  --ring: rgba(241, 141, 105, 0.55);
   --project-frame-canvas: #13161c;
   --project-frame-highlight: rgb(255 255 255 / 0.1);
   --project-frame-shadow: rgb(0 0 0 / 0.35);
@@ -1024,4 +1026,33 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Shared landing motion controls and contact presentation. */
+.motion-toggle { position: fixed; z-index: 45; bottom: 22px; left: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid var(--border); border-radius: 99px; background: var(--surface); color: var(--muted); box-shadow: var(--shadow-card); font: 10px var(--font-mono); }
+.scroll-words { display: block; }
+.scroll-words > span { display: inline; }
+.motion-timeline { position: relative; }
+.timeline-progress { position: absolute; z-index: 1; top: 8px; bottom: 8px; left: 5px; width: 1px; background: var(--accent); transform-origin: top; pointer-events: none; }
+.motion-paused .reveal { opacity: 1; transform: none; clip-path: none; transition: none; }
+.portfolio-navbar .dimension-line { display: none; }
+.portfolio-navbar kbd { display: none; }
+.portfolio-navbar button, .portfolio-navbar .btn-outline { border-radius: 2px; box-shadow: none; }
+.portfolio-home .btn-primary, .portfolio-home .btn-outline { border-radius: 2px; box-shadow: none; }
+.portfolio-home .btn-primary { background: var(--accent); border-color: var(--accent); }
+.portfolio-home .btn-primary:hover { background: var(--accent-strong); }
+.portfolio-home .btn-outline { background: transparent; }
+.portfolio-home .heading { font-size: clamp(2.6rem, 5.5vw, 5.2rem); line-height: 1.03; letter-spacing: -0.055em; }
+.portfolio-home .eyebrow { font-size: 10px; letter-spacing: 0.13em; }
+.portfolio-home .eyebrow::before { background: var(--accent); }
+.portfolio-home .contact-editorial { background: var(--bg-soft); padding-block: 100px; }
+.portfolio-home .contact-editorial .heading { max-width: 800px; font-size: clamp(3rem, 7vw, 7rem); }
+.portfolio-home .contact-editorial .card, .portfolio-home .contact-editorial .rounded-xl { border-radius: 0; box-shadow: none; background: transparent; }
+.portfolio-home .contact-editorial form.card { border: 0; border-top: 1px solid var(--border-strong); padding: 30px 0 0; }
+.portfolio-home .contact-editorial input, .portfolio-home .contact-editorial textarea { border-radius: 0; background: var(--bg); }
+.portfolio-home .contact-editorial a.rounded-xl { border-inline: 0; border-top: 0; border-bottom: 1px solid var(--border); padding-inline: 0; }
+.portfolio-home .contact-editorial a > span:first-child { border: 0; background: transparent; }
+.btn-primary { color: var(--on-accent); }
+@media (max-width: 767px) {
+  .motion-toggle { left:12px; bottom:14px; padding:10px; font-size:9px; }
 }

@@ -1,4 +1,5 @@
 import { cn } from "../lib/format";
+import { ScrollWords } from "./LandingMotion";
 import { Reveal } from "./Reveal";
 
 interface SectionHeadingProps {
@@ -27,7 +28,7 @@ export function SectionHeading({
       <span className={cn("eyebrow", align === "center" && "justify-center")}>
         {eyebrow}
       </span>
-      <h2 className="heading mt-4">{title}</h2>
+      <h2 className="heading mt-4"><ScrollWords text={title} /></h2>
       {description && (
         <p className="mt-4 text-[15px] leading-relaxed text-muted">
           {description}

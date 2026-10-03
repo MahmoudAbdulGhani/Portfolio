@@ -55,10 +55,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "portfolio-navbar fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled || open
-          ? "border-b border-line bg-bg/85 shadow-sm shadow-black/[0.02] backdrop-blur-xl"
-          : "border-b border-transparent",
+          ? "border-b border-line bg-bg/95"
+          : "border-b border-line bg-bg/95",
       )}
     >
       <nav

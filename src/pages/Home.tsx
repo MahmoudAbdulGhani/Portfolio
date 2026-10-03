@@ -1,10 +1,6 @@
+import { LandingMotion } from "../components/LandingMotion";
 import { PageMeta } from "../components/PageMeta";
-import { Hero } from "../sections/Hero";
-import { About } from "../sections/About";
-import { Skills } from "../sections/Skills";
-import { Education } from "../sections/Education";
-import { Certifications } from "../sections/Certifications";
-import { FeaturedProjects } from "../sections/FeaturedProjects";
+import { CinematicLanding } from "../sections/CinematicLanding";
 import { ContactSection } from "../sections/ContactSection";
 import { useProfile, useSiteContent, useSiteSection } from "../lib/hooks";
 import { PublicDataState } from "../components/PublicDataState";
@@ -22,15 +18,10 @@ export function Home() {
         title={profile?.seoTitle || defaultTitle}
         description={profile?.seoDescription || defaultDescription}
       />
-      <main>
-        <Hero />
-        <FeaturedProjects />
-        <About />
-        <Skills />
-        <Education />
-        <Certifications />
+      <LandingMotion><main className="portfolio-home">
+        <CinematicLanding />
         <ContactSection />
-      </main>
+      </main></LandingMotion>
     </>
   );
 }
