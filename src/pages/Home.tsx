@@ -1,7 +1,6 @@
 import { LandingMotion } from "../components/LandingMotion";
 import { PageMeta } from "../components/PageMeta";
 import { CinematicLanding } from "../sections/CinematicLanding";
-import { ContactSection } from "../sections/ContactSection";
 import { useProfile, useSiteContent, useSiteSection } from "../lib/hooks";
 import { PublicDataState } from "../components/PublicDataState";
 
@@ -20,7 +19,6 @@ export function Home() {
       />
       <LandingMotion><main className="portfolio-home">
         <CinematicLanding />
-        <ContactSection />
       </main></LandingMotion>
     </>
   );

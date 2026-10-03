@@ -52,6 +52,15 @@ export function Navbar() {
     window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac, ctrlKey: !isMac }));
   };
 
+  if (location.pathname === "/") return <header className="portfolio-navbar fixed inset-x-0 top-0 z-50">
+    <nav aria-label="Main" className="container-x relative flex items-center justify-between">
+      <Logo />
+      <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+      <button type="button" className="cinema-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX size={22} /> : <FiMenu size={22} />}</button>
+    </nav>
+    {open && <div id="mobile-nav" className="cinema-mobile-nav"><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#projects" onClick={() => setOpen(false)}>Projects</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a><Link to="/job-match" onClick={() => setOpen(false)}>Job Match</Link></div>}
+  </header>;
+
   return (
     <header
       className={cn(

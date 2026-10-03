@@ -244,7 +244,7 @@ export function PortfolioAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-2 bottom-[4.75rem] z-[70] flex max-h-[calc(100dvh-5.25rem)] min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-2xl sm:inset-x-auto sm:bottom-20 sm:right-6 sm:max-h-[min(680px,calc(100dvh-6rem))] sm:w-[410px] sm:rounded-2xl"
+            className="portfolio-assistant-dialog fixed inset-x-2 bottom-[4.75rem] z-[70] flex max-h-[calc(100dvh-5.25rem)] min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-2xl sm:inset-x-auto sm:bottom-20 sm:right-6 sm:max-h-[min(680px,calc(100dvh-6rem))] sm:w-[410px] sm:rounded-2xl"
           >
             <header className="flex items-center justify-between border-b border-line bg-surface-2/70 px-4 py-3.5">
               <div className="flex min-w-0 items-center gap-3">
@@ -323,7 +323,7 @@ export function PortfolioAssistant() {
         )}
       </AnimatePresence>
 
-      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Portfolio AI" : contentText("buttonLabel") || "Ask Portfolio AI"} className="fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/95 px-3.5 text-sm font-bold text-ink shadow-card-lg backdrop-blur transition-colors hover:border-accent/40 hover:text-accent sm:bottom-4 sm:right-6 sm:px-4">
+      <motion.button type="button" whileTap={{ scale: 0.97 }} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Portfolio AI" : contentText("buttonLabel") || "Ask Portfolio AI"} className="portfolio-assistant-launcher fixed bottom-3 right-3 z-[70] inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/95 px-3.5 text-sm font-bold text-ink shadow-card-lg backdrop-blur transition-colors hover:border-accent/40 hover:text-accent sm:bottom-4 sm:right-6 sm:px-4">
         {open ? <FiX size={17} className="text-accent" /> : <FiMessageSquare size={17} className="text-accent" />}
         <span className="max-[359px]:hidden">{open ? "Close" : contentText("buttonLabel")}</span>
       </motion.button>

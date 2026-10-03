@@ -12,6 +12,17 @@ config.plugins.push({ name: 'readonly-motion-preview', configureServer(server) {
       res.end(`<html><head><meta charset="utf-8"><style>body{margin:0;background:#ddd;font:14px system-ui}p{text-align:center;margin:10px}iframe{display:block;margin:auto;border:0;width:${tablet ? 1024 : 390}px;height:844px}</style></head><body><p>${tablet ? 'Tablet width' : 'Mobile width'} review — live frontend in a viewport</p><iframe title="Portfolio responsive review" src="/"></iframe></body></html>`); return;
     }
     if (!req.url?.startsWith('/api/')) return next();
+    if (req.url.split('?')[0] === '/api/cv.pdf' && (req.method === 'GET' || req.method === 'HEAD')) {
+      try {
+        res.setHeader('Content-Type', 'application/pdf');
+        res.end(req.method === 'HEAD' ? undefined : readFileSync('.motion-preview/public-cv.pdf'));
+      } catch {
+        res.statusCode = 503;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ message: 'The CV is unavailable in this preview.' }));
+      }
+      return;
+    }
     res.setHeader('Content-Type', 'application/json');
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       res.statusCode = 403;
