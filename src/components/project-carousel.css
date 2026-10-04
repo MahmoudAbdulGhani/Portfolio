@@ -1,0 +1,33 @@
+.cinema-carousel { padding-block:85px 70px; scroll-margin-top:80px; }
+.cinema-carousel .cinema-section-head { margin-bottom:30px; }
+.cinema-carousel-window { padding-inline:9%; overflow:clip; }
+.cinema-carousel-window:focus-visible { outline:1px solid var(--cinema-blue); outline-offset:-1px; }
+.cinema-carousel-track { display:flex; gap:28px; touch-action:pan-y; cursor:grab; }
+.cinema-carousel-track:active { cursor:grabbing; }
+.cinema-carousel-card { flex:0 0 100%; min-width:0; transform-origin:center; }
+.cinema-carousel .cinema-project-image { height:clamp(260px,48svh,540px); aspect-ratio:auto; }
+.cinema-carousel img { user-select:none; }
+.cinema-carousel .cinema-project-caption { min-height:75px; margin-top:18px; }
+.cinema-carousel .cinema-project-caption h2 { max-width:85%; font-size:clamp(25px,3vw,42px); }
+.cinema-carousel-controls { display:flex; justify-content:flex-start; align-items:center; gap:32px; margin-top:24px; }
+.cinema-carousel-pages { display:flex; gap:10px; }
+.cinema-carousel-pages button { width:44px; height:44px; border:1px solid #ffffff25; border-radius:6px; color:#9eafc5; font:12px "Inter",sans-serif; transition:background .3s,border-color .3s,color .3s; }
+.cinema-carousel-pages button[aria-pressed=true] { background:#ffb20b12; border-color:#ffb20b80; color:var(--cinema-gold); }
+.cinema-carousel-arrows { display:flex; gap:12px; }
+.cinema-carousel-arrows button { width:48px; height:48px; display:grid; place-items:center; border:1px solid #ffffff35; border-radius:50%; }
+.cinema-carousel-arrows button:disabled { opacity:.25; cursor:default; }
+.cinema-carousel-arrows svg { width:20px; height:20px; }
+@media(max-width:639px) {
+  .cinema-carousel { padding-block:55px; scroll-margin-top:75px; }
+  .cinema-carousel-window { padding-inline:7%; }
+  .cinema-carousel-track { gap:16px; }
+  .cinema-carousel .cinema-project-image { height:clamp(230px,36svh,360px); }
+  .cinema-carousel .cinema-project-caption { min-height:100px; gap:16px; align-items:flex-start; }
+  .cinema-carousel .cinema-project-caption h2 { font-size:24px; line-height:1.2; }
+  .cinema-carousel .cinema-project-caption a { flex-shrink:0; }
+  .cinema-carousel-controls { gap:15px; flex-wrap:wrap; margin-top:16px; }
+  .cinema-carousel-pages { gap:7px; }
+  .cinema-carousel-pages button { width:44px; height:44px; }
+  .cinema-carousel-arrows { gap:8px; }
+  .cinema-carousel-arrows button { width:44px; height:44px; }
+}

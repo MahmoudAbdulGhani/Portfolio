@@ -8,7 +8,8 @@ import { ScrollWords, MotionTimeline } from "../components/LandingMotion";
 import { CvDownloadButton } from "../components/CvDownloadButton";
 import { PublicDataState } from "../components/PublicDataState";
 import { API_BASE } from "../lib/api";
-import type { ExperienceItem, Profile, Project } from "../types";
+import { ProjectCarousel } from "../components/ProjectCarousel";
+import type { ExperienceItem, Profile } from "../types";
 import "./cinematic-landing.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -16,7 +17,7 @@ function Enter({ children, className = "", delay = 0 }: { children: ReactNode; c
   const { enabled } = useLandingMotion();
   return <motion.div className={className} initial={enabled ? { opacity: 0, y: 34 } : false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.85, delay, ease }}>{children}</motion.div>;
 }
-// Freeze progress without changing scene heights when motion is paused.
+// Synchronize scene progress when reduced-motion preferences change.
 function useSceneProgress(progress: MotionValue<number>) {
   const { enabled } = useLandingMotion();
   const frozen = useMotionValue(progress.get());
@@ -36,14 +37,15 @@ function PortraitHero({ profile }: { profile: Profile }) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const p = useSceneProgress(scrollYProgress);
   // Clear the copy before the portrait grows across its column.
-  const left = useTransform(p, [0, 0.4, 0.9], ["56%", "56%", "0%"]);
-  const width = useTransform(p, [0, 0.4, 0.9], ["38%", "38%", "100%"]);
-  const top = useTransform(p, [0, 0.4, 0.9], ["9%", "9%", "0%"]);
-  const height = useTransform(p, [0, 0.4, 0.9], ["82%", "82%", "100%"]);
+  const left = useTransform(p, [0, 0.4, 0.9], ["35%", "35%", "0%"]);
+  const width = useTransform(p, [0, 0.4, 0.9], ["30%", "30%", "100%"]);
+  const top = useTransform(p, [0, 0.4, 0.9], ["10%", "10%", "0%"]);
+  const height = useTransform(p, [0, 0.4, 0.9], ["80%", "80%", "100%"]);
   const objectPosition = useTransform(p, [0, 0.9], ["50% 35%", "50% 22%"]);
   const photoScale = useTransform(p, [0, 0.9], [1.035, 1.015]);
   const opacity = useTransform(p, [0, 0.24, 0.38], [1, 1, 0]);
-  const copyY = useTransform(p, [0, 0.24, 0.38], [0, 0, -32]);
+  const copyX = useTransform(p, [0, 0.24, 0.38], [0, 0, -44]);
+  const roleX = useTransform(p, [0, 0.24, 0.38], [0, 0, 44]);
   const pointerX = useMotionValue(0), pointerY = useMotionValue(0);
   const x = useSpring(pointerX, { stiffness: 70, damping: 28 }), y = useSpring(pointerY, { stiffness: 70, damping: 28 });
   const [cleared, setCleared] = useState(false);
@@ -57,13 +59,15 @@ function PortraitHero({ profile }: { profile: Profile }) {
     pointerX.set(((event.clientX - box.left) / box.width - 0.5) * 6);
     pointerY.set(((event.clientY - box.top) / box.height - 0.5) * 6);
   }} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
-    <motion.div className="cinema-hero-copy" inert={cinematic && cleared} style={cinematic ? { opacity, y: copyY } : undefined}>
+    <motion.div className="cinema-hero-copy" inert={cinematic && cleared} style={cinematic ? { opacity, x: copyX } : undefined}>
       <p className="cinema-hero-name">{profile.shortName || profile.name}</p>
-      <h1 className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-label={title}>{parts.map((word, i) => <span className={`cinema-title-part part-${i}`} key={`${word}-${i}`} aria-hidden><motion.span initial={enabled ? { y: "110%" } : false} animate={{ y: 0 }} transition={{ duration: 0.85, delay: 0.08 + i * 0.12, ease }}>{word}</motion.span></span>)}</h1>
+      <h1 className="sr-only">{title}</h1>
+      <div className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-hidden><span className="cinema-title-part part-0"><motion.span initial={enabled ? { x: "-105%" } : false} animate={{ x: 0 }} transition={{ duration: 0.95, delay: 0.1, ease }}>{parts[0]}</motion.span></span></div>
       <div className="cinema-hero-meta"><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</div>
       <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects"><FiArrowDown aria-hidden />{section?.ctaLabel}</a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
     </motion.div>
-    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: "inset(0 0 100% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: 1.1, delay: 0.15, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: cinematic ? photoScale : 1.035, x: enabled && cinematic ? x : 0, y: enabled && cinematic ? y : 0 }} /></motion.div>}
+    {parts.length > 1 && <motion.div className="cinema-hero-role cinema-title" aria-hidden style={cinematic ? { opacity, x: roleX } : undefined}>{parts.slice(1).map((word, i) => <span className={`cinema-title-part part-${i + 1}`} key={`${word}-${i}`}><motion.span initial={enabled ? { x: "105%" } : false} animate={{ x: 0 }} transition={{ duration: 0.95, delay: 0.18 + i * 0.12, ease }}>{word}</motion.span></span>)}</motion.div>}
+    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: "inset(50% 0 50% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: 1.1, delay: 0.15, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: cinematic ? photoScale : 1.035, x: enabled && cinematic ? x : 0, y: enabled && cinematic ? y : 0 }} /></motion.div>}
   </div></section>;
 }
 function PersonalStory({ profile }: { profile: Profile }) {
@@ -94,23 +98,7 @@ function WorkSequence() {
   if (section?.visible === false) return null;
   if (query.isLoading || query.isError) return <PublicDataState loading={query.isLoading} error={query.isError} onRetry={() => void query.refetch()} label="projects" />;
   if (!featured.length) return null;
-  return <ProjectScene featured={featured} />;
-}
-function ProjectScene({ featured }: { featured: Project[] }) {
-  const { data: section } = useSiteSection("featuredProjects");
-  const ref = useRef<HTMLElement>(null);
-  const { enabled, cinematic } = useLandingMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const p = useSceneProgress(scrollYProgress);
-  const [index, setIndex] = useState(0);
-  useMotionValueEvent(p, "change", value => { if (cinematic && featured.length) setIndex(Math.min(featured.length - 1, Math.round(value * (featured.length - 1)))); });
-  const x = useTransform(p, [0, 1], ["0%", `-${featured.length ? (featured.length - 1) * 100 / featured.length : 0}%`]);
-  const jump = (i: number) => { setIndex(i); const ratio = i / Math.max(1, featured.length - 1); if (!enabled) p.set(ratio); if (ref.current && cinematic) window.scrollTo({ top: window.scrollY + ref.current.getBoundingClientRect().top + (ref.current.offsetHeight - window.innerHeight) * ratio, behavior: enabled ? "smooth" : "instant" }); };
-  return <section ref={ref} id="projects" className={`cinema-projects ${cinematic ? "has-scroll-scene" : ""}`} style={cinematic ? { height: `${110 + featured.length * 58}svh` } : undefined}><div className="cinema-project-sticky"><div className="cinema-container cinema-section-head"><p className="cinema-label">03 / {section?.eyebrow}</p><Link to={section?.ctaUrl || "/projects"} className="cinema-link">{section?.ctaLabel}<FiArrowUpRight aria-hidden /></Link></div><div className="cinema-work-window"><motion.div className={`cinema-work-track ${cinematic ? "is-horizontal" : ""}`} style={cinematic ? { width: `${featured.length * 100}%`, x } : undefined}>{featured.map((project, i) => <WorkPanel key={project.id} project={project} hidden={cinematic && index !== i} />)}</motion.div></div>{cinematic && <div className="cinema-container cinema-work-nav" aria-label="Select a project">{featured.map((project, i) => <button key={project.id} type="button" aria-pressed={index === i} onClick={() => jump(i)}><span>0{i + 1}</span>{project.name}<FiArrowUpRight aria-hidden /></button>)}</div>}{cinematic && <div className="cinema-container cinema-scene-line" aria-hidden><motion.div style={{ scaleX: p }} /></div>}</div></section>;
-}
-function WorkPanel({ project, hidden }: { project: Project; hidden: boolean }) {
-  const { enabled, cinematic } = useLandingMotion();
-  return <motion.article className="cinema-work-panel" inert={hidden} initial={enabled && !cinematic ? { opacity: 0, y: 45 } : false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.85, ease }}><div className="cinema-container"><Link to={`/projects/${project.slug}`} className="cinema-project-image" aria-label={project.name}>{project.coverImage && <motion.img src={project.coverImage} alt={project.imageAlt || project.name} loading="lazy" whileHover={enabled ? { scale: 1.025 } : undefined} transition={{ duration: 0.6, ease }} />}</Link><div className="cinema-project-caption"><h2>{project.name}</h2><Link to={`/projects/${project.slug}`} aria-label={`Open ${project.name}`}><FiArrowUpRight aria-hidden /></Link></div></div></motion.article>;
+  return <ProjectCarousel featured={featured} />;
 }
 function CareerItem({ item, index }: { item: ExperienceItem; index: number }) {
   const ref = useRef<HTMLLIElement>(null);

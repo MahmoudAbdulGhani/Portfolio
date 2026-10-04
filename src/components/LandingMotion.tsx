@@ -1,7 +1,6 @@
-import { useCallback, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
+import { useCallback, useRef, useSyncExternalStore, type ReactNode } from "react";
 import { motion, MotionConfig, useScroll, useTransform } from "framer-motion";
 import { MotionContext, useLandingMotion } from "../lib/landing-motion";
-import { FiPause, FiPlay } from "react-icons/fi";
 
 function useMedia(query: string) {
   const subscribe = useCallback((notify: () => void) => {
@@ -15,16 +14,12 @@ function useMedia(query: string) {
 
 
 export function LandingMotion({ children }: { children: ReactNode }) {
-  const [paused, setPaused] = useState(false);
   const reduced = useMedia("(prefers-reduced-motion: reduce)");
   const desktop = useMedia("(min-width: 1024px) and (min-height: 700px) and (pointer: fine)");
-  const enabled = !paused && !reduced;
+  const enabled = !reduced;
   return <MotionContext.Provider value={{ enabled, cinematic: !reduced && desktop }}>
     <MotionConfig reducedMotion={enabled ? "user" : "always"}>
       <div className={`landing-motion ${enabled ? "" : "motion-paused"}`}>{children}</div>
-      {!reduced && <button type="button" className="motion-toggle" aria-pressed={paused} onClick={() => setPaused((value) => !value)}>
-        {paused ? <FiPlay aria-hidden /> : <FiPause aria-hidden />}{paused ? "Resume motion" : "Pause motion"}
-      </button>}
     </MotionConfig>
   </MotionContext.Provider>;
 }
