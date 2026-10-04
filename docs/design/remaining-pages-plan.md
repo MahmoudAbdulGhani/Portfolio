@@ -1,5 +1,7 @@
 # Portfolio: remaining public pages
 
+Expanded specification: [public-pages-design-spec.md](public-pages-design-spec.md) covers all eight project pages, Contact, AI Job Match, object composition, motion, responsive states and acceptance. [shared-navigation-spec.md](shared-navigation-spec.md) defines the same header content and behavior across every public route.
+
 Status: design and motion plan, not implemented. Landing Scroll Chapters and Projects archive option 2 are implemented separately. [Visual overview](remaining-pages-plan.html).
 
 ## Shared direction
