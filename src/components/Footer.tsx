@@ -14,6 +14,8 @@ const socialIcons: Record<string, IconType> = {
 export function Footer() {
   const { data: profile } = useProfile();
   const { data: section } = useSiteSection("footer");
+  const { data: about } = useSiteSection("about");
+  const { data: jobMatch } = useSiteSection("jobMatch");
   const year = new Date().getFullYear();
   const socials = profile?.socials.filter((social) => social.showInFooter !== false) ?? [];
   const technologyText = typeof section?.content.technologyText === "string" ? section.content.technologyText : "";
@@ -33,7 +35,9 @@ export function Footer() {
           <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-7 gap-y-2">
             {[
               { to: "/", label: "Home" },
+              ...(about?.visible === false ? [] : [{ to: "/#about", label: "About" }]),
               { to: "/projects", label: "Projects" },
+              ...(jobMatch?.visible === false ? [] : [{ to: "/job-match", label: "AI Job Match" }]),
               { to: "/contact", label: "Contact" },
             ].map((item) => (
               <Link

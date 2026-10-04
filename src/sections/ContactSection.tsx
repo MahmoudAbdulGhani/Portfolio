@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -14,10 +14,11 @@ import {
   FiPhone,
   FiSend,
   FiZap,
+  FiMapPin,
+  FiMonitor,
 } from "react-icons/fi";
 import { useProfile, useSiteSection, useSubmitMessage } from "../lib/hooks";
 import { Reveal } from "../components/Reveal";
-import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../lib/format";
 
 const socialIcons = { github: FiGithub, linkedin: FiLinkedin, instagram: FiInstagram, whatsapp: FiMessageCircle };
@@ -42,7 +43,10 @@ function validate(form: FormState): FormErrors {
 export function ContactSection() {
   const { data: profile } = useProfile();
   const { data: section } = useSiteSection("contact");
+  const { data: jobMatchSection } = useSiteSection("jobMatch");
   const submit = useSubmitMessage();
+  const successRef = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (submit.isSuccess) successRef.current?.focus(); }, [submit.isSuccess]);
   const [form, setForm] = useState<FormState>(initialForm);
   const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
   const [errors, setErrors] = useState<FormErrors>({});
@@ -50,6 +54,9 @@ export function ContactSection() {
   const [sentEmail, setSentEmail] = useState("");
 
   const contentText = (key: string) => typeof section?.content[key] === "string" ? section.content[key] as string : "";
+  // The profile is the single response-time source when older CMS copy repeats a conflicting promise.
+  const confirmation = contentText("successMessage").replace("your email", sentEmail || "your email");
+  const successMessage = profile?.responseTime ? confirmation.replace(/\s*[—–-]\s*I usually reply[^.]*\./i, ".") : confirmation;
   const availabilityOptions = Array.isArray(section?.content.availabilityOptions) ? section.content.availabilityOptions.filter((item): item is string => typeof item === "string") : [];
   const cards = profile ? [
     { id: "phone", label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/[^+0-9]/g, "")}`, icon: FiPhone, priority: true },
@@ -67,18 +74,19 @@ export function ContactSection() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (submit.isPending) return;
     setSubmitError("");
     const nextErrors = validate(form);
     setErrors(nextErrors);
     setTouched({ name: true, email: true, subject: true, message: true });
-    if (Object.keys(nextErrors).length > 0) return;
+    if (Object.keys(nextErrors).length > 0) { requestAnimationFrame(() => document.getElementById(`contact-${Object.keys(nextErrors)[0]}`)?.focus()); return; }
 
     submit.mutate(form, {
       onSuccess: () => {
         setSentEmail(form.email.trim());
         setForm(initialForm);
         setTouched({});
-        window.setTimeout(() => submit.reset(), 8000);
+
       },
       onError: () => setSubmitError("Something went wrong. Please try again."),
     });
@@ -100,109 +108,27 @@ export function ContactSection() {
   const subjectField = field("subject");
   const messageField = field("message");
 
-  return (
-    <section id="contact" className="section contact-editorial relative overflow-hidden bg-bg-soft">
-      <div className="container-x space-y-12">
-        <SectionHeading
-          eyebrow={section?.eyebrow ?? ""}
-          title={section?.heading ?? ""}
-          description={section?.description ?? ""}
-          align="left"
-        />
-
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <Reveal className="lg:col-span-2" variant="clip">
-            <div className="flex h-full flex-col gap-3">
-              <div className="rounded-xl border border-line bg-surface p-4 shadow-card">
-                <h3 className="tech-label">Why reach out</h3>
-                <ul className="mt-3 space-y-2.5 text-sm text-muted">
-                  {availabilityOptions.map((option) => <li key={option} className="flex items-center gap-2.5">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                    {option}
-                  </li>)}
-                </ul>
-                <div className="mt-4 grid grid-cols-1 gap-3 border-t border-line pt-4 font-mono text-xs text-faint">
-                  <span className="flex items-center justify-between gap-2">
-                    Response time
-                    <span className="font-semibold text-ink">{profile?.responseTime}</span>
-                  </span>
-                  <span className="flex items-center justify-between gap-2">
-                    Location
-                    <span className="font-semibold text-ink">{profile?.location}</span>
-                  </span>
-                  <span className="flex items-center justify-between gap-2">
-                    Remote
-                    <span className="font-semibold text-ink">{profile?.remoteAvailability}</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid h-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-              {cards.map((card) => {
-                const Icon = card.icon;
-                const href = card.href;
-                const external = href.startsWith("http");
-                return (
-                  <a
-                    key={card.label}
-                    href={href}
-                    target={external ? "_blank" : undefined}
-                    rel={external ? "noopener noreferrer" : undefined}
-                    className={cn(
-                      "group flex items-center gap-4 rounded-xl border p-4 transition-all duration-200",
-                      card.priority
-                        ? "border-line bg-surface shadow-card hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card-lg"
-                        : "border-transparent bg-transparent hover:border-line hover:bg-surface/60",
-                    )}
-                  >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
-                      <Icon size={18} />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block font-mono text-[11px] font-bold uppercase tracking-wider text-faint">
-                        {card.label}
-                      </span>
-                      <span className="block truncate text-sm font-semibold text-ink">{card.value}</span>
-                    </span>
-                    <FiArrowUpRight
-                      size={15}
-                      className="shrink-0 text-faint transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                    />
-                  </a>
-                );
-              })}
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1} className="lg:col-span-3" variant="scale">
-            {submit.isSuccess ? (
-              <div className="card flex h-full flex-col items-center justify-center gap-4 p-10 text-center">
-                <span className="grid h-14 w-14 place-items-center rounded-full bg-ok/10 text-ok">
-                  <FiCheckCircle size={26} />
-                </span>
-                <h3 className="font-display text-lg font-bold text-ink">
-                  {contentText("successHeading")}
-                </h3>
-                <p className="max-w-sm text-sm leading-relaxed text-muted">
-                  {contentText("successMessage").replace("your email", sentEmail || "your email")}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => submit.reset()}
-                  className="btn-outline mt-2"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate className="card h-full p-6 sm:p-8">
+  const heading = section?.heading || "Start a real conversation";
+  const split = heading.lastIndexOf(" ");
+  return <section id="contact" className="public-container">
+    <div className="contact-layout">
+      <Reveal y={14} className="contact-intro">
+        <p className="public-eyebrow">{section?.eyebrow || "Contact"}</p>
+        <h1>{split > 0 ? <>{heading.slice(0, split)} <em>{heading.slice(split + 1)}</em></> : heading}</h1>
+        <p className="contact-description">{section?.description}</p>
+        <div className="contact-availability"><ul>{availabilityOptions.map(option => <li key={option}>{option}</li>)}</ul>{profile?.location && <p><FiMapPin aria-hidden />{profile.location}</p>}{profile?.remoteAvailability && <p><FiMonitor aria-hidden />{profile.remoteAvailability}</p>}</div>
+        <div className="contact-links">{cards.filter(card => card.priority).sort((a,b) => Number(b.id === "email") - Number(a.id === "email")).map(card => { const Icon = card.icon; const external = card.href.startsWith("http"); return <a key={card.id} href={card.href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="contact-link"><Icon aria-hidden /><span><small>{card.label}</small><strong>{card.value}</strong></span><FiArrowUpRight aria-hidden /></a>; })}</div>
+        <div className="contact-socials">{cards.filter(card => !card.priority).map(card => { const Icon = card.icon; return <a key={card.id} href={card.href} target="_blank" rel="noopener noreferrer" aria-label={`${card.label}: ${card.value}`}><Icon aria-hidden />{card.label}<FiArrowUpRight aria-hidden /></a>; })}</div>
+      </Reveal>
+      <Reveal y={14} delay={0.08}>
+        {submit.isSuccess ? <div className="contact-success" role="status" tabIndex={-1} ref={successRef}><FiCheckCircle aria-hidden /><h2>{contentText("successHeading")}</h2><p>{successMessage}</p>{profile?.responseTime && <p>{profile.responseTime}</p>}<button type="button" className="btn-outline" onClick={() => { submit.reset(); requestAnimationFrame(() => document.getElementById("contact-name")?.focus()); }}>Send another message</button></div> : (
+              <form onSubmit={handleSubmit} noValidate className="contact-form">
                 <div className="absolute -left-[10000px]" aria-hidden="true"><label htmlFor="contact-website">Website</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setField("website", e.target.value)} /></div>
-                <h3 className="font-display text-lg font-bold text-ink">
+                <h2>
                   {contentText("formHeading")}
-                </h3>
+                </h2>
                 <p className="mt-1 text-sm text-muted">
-                  {contentText("formDescription")}
+                  {profile?.responseTime || contentText("formDescription")}
                 </p>
 
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -213,6 +139,7 @@ export function ContactSection() {
                     <input
                       id="contact-name"
                       className={cn("input", nameField.hasError && "input-error")}
+                      autoComplete="name"
                       placeholder="Your name"
                       value={form.name}
                       onChange={(e) => setField("name", e.target.value)}
@@ -234,6 +161,7 @@ export function ContactSection() {
                     <input
                       id="contact-email"
                       type="email"
+                      autoComplete="email"
                       className={cn("input", emailField.hasError && "input-error")}
                       placeholder="you@example.com"
                       value={form.email}
@@ -335,35 +263,9 @@ export function ContactSection() {
                   </span>
                 </div>
               </form>
-            )}
-          </Reveal>
-        </div>
-
-        <Reveal delay={0.12}>
-          <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-surface-2 p-6 sm:flex-row sm:items-center sm:p-7">
-            <div className="flex items-start gap-4">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
-                <FiZap size={20} />
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-bold text-ink">
-                  {contentText("jobMatchHeading")}
-                </h3>
-                <p className="mt-1 max-w-md text-sm leading-relaxed text-muted">
-                  {contentText("jobMatchText")}
-                </p>
-              </div>
-            </div>
-            <Link to="/job-match" className="btn-outline btn-sm group shrink-0">
-              {contentText("jobMatchCta")}
-              <FiArrowRight
-                size={14}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-              />
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
+        )}
+      </Reveal>
+    </div>
+    {jobMatchSection?.visible !== false && <Reveal y={12}><div className="contact-promotion"><div><FiZap size={24} aria-hidden /><div><h2>{contentText("jobMatchHeading")}</h2><p>{contentText("jobMatchText")}</p></div></div><Link to="/job-match">{contentText("jobMatchCta")}<FiArrowRight aria-hidden /></Link></div></Reveal>}
+  </section>;
 }

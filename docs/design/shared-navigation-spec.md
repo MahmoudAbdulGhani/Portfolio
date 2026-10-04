@@ -1,6 +1,6 @@
 # Shared public navigation — behavior and implementation plan
 
-Status: specification only. Current Navbar.tsx is unchanged in this planning pass.
+Status: implemented in Navbar.tsx and Footer.tsx. All public routes share the five-link composition. The responsive breakpoint is 1120px. Validation is recorded in root design-qa.md. The current-evidence section below describes the original problems.
 
 ## Current evidence
 

@@ -19,13 +19,14 @@ test("public navigation, theme, metadata, and mobile menu work", async ({ page, 
   await expect(page).toHaveTitle(/Mahmoud Hussein Abdul Ghani/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/$/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
+  if (isMobile) await page.getByRole("button", { name: "Open menu" }).click();
+  const initialDark = await page.locator("html").evaluate(element => element.classList.contains("dark"));
   const theme = page.getByRole("button", { name: /switch to (dark|light) mode/i }).first();
   await theme.click();
-  await expect(page.locator("html")).toHaveAttribute("class", /dark/);
+  await expect.poll(() => page.locator("html").evaluate(element => element.classList.contains("dark"))).toBe(!initialDark);
   if (isMobile) {
-    await page.getByRole("button", { name: "Open menu" }).click();
-    await expect(page.locator("#mobile-nav")).toBeVisible();
-    await page.locator("#mobile-nav").getByRole("link", { name: "Projects" }).click();
+    await expect(page.locator("#public-mobile-nav")).toBeVisible();
+    await page.locator("#public-mobile-nav").getByRole("link", { name: "Projects" }).click();
   } else {
     await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Projects", exact: true }).click();
   }
@@ -49,15 +50,15 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await page.route("**/api/projects/lobby", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(lobby) }));
   await page.goto("/projects/lobby");
   await expect(page.getByRole("heading", { name: "Lobby", exact: true })).toBeVisible();
-  await expect(page.locator('picture source[type="image/avif"]').first()).toHaveAttribute("srcset", /cover-480w\.avif/);
-  await page.getByRole("button", { name: /view lobby cover image full screen/i }).click();
+  await expect(page.locator('.case-gallery picture source[type="image/avif"]').first()).toHaveAttribute("srcset", /guest-access-480w\.avif/);
+  await page.getByRole("button", { name: /view lobby product image full screen/i }).click();
   const gallery = page.getByRole("dialog", { name: /lobby image gallery/i });
   await expect(gallery).toBeVisible();
   await gallery.getByRole("button", { name: "Next image" }).first().click();
   await expect(gallery.getByText("2 / 6")).toBeVisible();
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
-  await expect(page.getByRole("button", { name: /view lobby cover image full screen/i })).toBeFocused();
+  await expect(page.getByRole("button", { name: /view lobby product image full screen/i })).toBeFocused();
   await page.getByRole("tab", { name: /API/i, selected: false }).click();
   await expect(page.getByText("NestJS services", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Implementation improvements" })).toBeVisible();
@@ -88,7 +89,7 @@ test("Home navigation returns to the hero section", async ({ page, isMobile }) =
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   if (isMobile) {
     await page.getByRole("button", { name: "Open menu" }).click();
-    await page.locator("#mobile-nav").getByRole("link", { name: "Home" }).click();
+    await page.locator("#public-mobile-nav").getByRole("link", { name: "Home" }).click();
   } else {
     await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Home" }).click();
   }

@@ -1,5 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { useTheme } from "./lib/theme";
+import "./public-pages.css";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -73,10 +75,11 @@ const SiteContentAdmin = lazy(() => import("./pages/admin/SiteContent").then((m)
 
 function PublicLayout() {
   const { pathname } = useLocation();
+  const { theme } = useTheme();
   const assistantContext = pathname.match(/^\/projects\/([^/]+)$/)?.[1] ?? "general";
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
+    <div className="public-portfolio flex min-h-screen flex-col" data-theme={theme}>
+      <Navbar key={pathname} />
       <div className="flex-1">
         <Outlet />
       </div>

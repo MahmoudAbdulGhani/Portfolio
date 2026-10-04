@@ -2,7 +2,7 @@
 
 Expanded specification: [public-pages-design-spec.md](public-pages-design-spec.md) covers all eight project pages, Contact, AI Job Match, object composition, motion, responsive states and acceptance. [shared-navigation-spec.md](shared-navigation-spec.md) defines the same header content and behavior across every public route.
 
-Status: design and motion plan, not implemented. Landing Scroll Chapters and Projects archive option 2 are implemented separately. [Visual overview](remaining-pages-plan.html).
+Status: all eight case-study routes, Contact, AI Job Match and shared navigation are implemented in the draft branch. Landing Scroll Chapters and Projects archive option 2 remain implemented. Browser checks and limitations are recorded in root design-qa.md. The document below retains the original specification. [Visual overview](remaining-pages-plan.html).
 
 ## Shared direction
 

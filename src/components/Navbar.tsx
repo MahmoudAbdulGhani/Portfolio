@@ -1,192 +1,66 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { FiArrowRight, FiMenu, FiSearch, FiX, FiZap } from "react-icons/fi";
-import { useSiteSection } from "../lib/hooks";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FiMenu, FiSearch, FiX } from "react-icons/fi";
+import { useProfile, useSiteSection } from "../lib/hooks";
+import { API_BASE } from "../lib/api";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
-import { Magnetic } from "./Magnetic";
-import { cn } from "../lib/format";
-
-const navItems = [
-  { to: "/#hero", label: "Home", end: true },
-  { to: "/projects", label: "Projects", end: false },
-  { to: "/job-match", label: "Job Match", end: false },
-  { to: "/contact", label: "Contact", end: false },
-];
+import { CvDownloadButton } from "./CvDownloadButton";
 
 export function Navbar() {
-  const location = useLocation();
+  const { pathname, hash } = useLocation();
+  const { data: profile } = useProfile();
   const { data: jobMatch } = useSiteSection("jobMatch");
-  const [scrolled, setScrolled] = useState(false);
+  const { data: about } = useSiteSection("about");
   const [open, setOpen] = useState(false);
-  const archive = location.pathname === "/projects";
-  const [isMac] = useState(() => typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform));
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  const trigger = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+  const links = [
+    { to: "/", label: "Home", active: pathname === "/" && hash !== "#about" },
+    ...(about?.visible === false ? [] : [{ to: "/#about", label: "About", active: pathname === "/" && hash === "#about" }]),
+    { to: "/projects", label: "Projects", active: pathname === "/projects" || pathname.startsWith("/projects/") },
+    ...(jobMatch?.visible === false ? [] : [{ to: "/job-match", label: "AI Job Match", active: pathname === "/job-match" }]),
+    { to: "/contact", label: "Contact", active: pathname === "/contact" },
+  ];
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+    const previous = document.body.style.overflow;
+    const menuTrigger = trigger.current;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); setOpen(false); }
+      if (event.key !== "Tab") return;
+      const elements = [...(menu.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled])') ?? [])];
+      const first = elements[0], last = elements.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const media = window.matchMedia("(min-width: 1120px)");
+    const resize = () => { if (media.matches) setOpen(false); };
+    window.addEventListener("keydown", onKey); media.addEventListener("change", resize);
+    requestAnimationFrame(() => menu.current?.querySelector<HTMLElement>("button")?.focus());
+    return () => { document.body.style.overflow = previous; window.removeEventListener("keydown", onKey); media.removeEventListener("change", resize); menuTrigger?.focus(); };
   }, [open]);
-
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    cn(
-      "relative rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200",
-      isActive ? "text-ink" : "text-muted hover:text-ink",
-    );
-
-  const handleNavClick = (to: string) => {
+  const search = () => {
     setOpen(false);
-    if (to === "/#hero" && location.pathname === "/") {
-      requestAnimationFrame(() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth", block: "start" }));
-    }
+    requestAnimationFrame(() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true })));
   };
-
-  const openCommandPalette = () => {
-    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac, ctrlKey: !isMac }));
-  };
-
-  if (location.pathname === "/" || archive) return <header className="portfolio-navbar fixed inset-x-0 top-0 z-50">
-    <nav aria-label="Main" className="container-x relative flex items-center justify-between">
+  const cv = profile?.resumeUrl || `${API_BASE}/cv.pdf`;
+  return <header className="public-header">
+    <nav aria-label="Main" className="public-header-inner" inert={open}>
       <Logo />
-      {archive ? <div className="cinema-nav-links gallery-navigation"><Link to="/">Home</Link><Link to="/projects" aria-current="page">Projects</Link>{jobMatch?.visible !== false && <Link to="/job-match">{jobMatch?.heading || "AI Job Match"}</Link>}<Link to="/contact">Contact</Link></div> : <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>{jobMatch?.visible !== false && <Link className="cinema-job-match-nav" to="/job-match"><FiZap aria-hidden />{jobMatch?.heading || "AI Job Match"}</Link>}</div>}
-      <button type="button" className="cinema-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX size={22} /> : <FiMenu size={22} />}</button>
+      <div className="public-nav-links">{links.map(link => <Link key={link.to} to={link.to} aria-current={link.active ? "page" : undefined}>{link.label}</Link>)}</div>
+      <div className="public-nav-utilities">
+        <button type="button" className="public-search" onClick={search} aria-label="Search and quick commands (Ctrl+K or Cmd+K)"><FiSearch aria-hidden /><span>Search…</span></button>
+        <div className="public-desktop-theme"><ThemeToggle /></div>
+        <div className="public-desktop-cv"><CvDownloadButton url={cv} className="public-cv" /></div>
+        <button ref={trigger} type="button" className="public-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="public-mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX /> : <FiMenu />}</button>
+      </div>
     </nav>
-    {open && <div id="mobile-nav" className="cinema-mobile-nav">{archive ? <><Link to="/" onClick={() => setOpen(false)}>Home</Link><Link to="/projects" onClick={() => setOpen(false)} aria-current="page">Projects</Link><Link to="/contact" onClick={() => setOpen(false)}>Contact</Link></> : <><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#projects" onClick={() => setOpen(false)}>Projects</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></>}{jobMatch?.visible !== false && <Link to="/job-match" onClick={() => setOpen(false)}>AI Job Match</Link>}</div>}
+    {open && <div ref={menu} id="public-mobile-nav" className="public-mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <button type="button" className="public-menu-close" onClick={() => setOpen(false)} aria-label="Close navigation menu"><FiX />Close menu</button>
+      <nav aria-label="Mobile main">{links.map(link => <Link key={link.to} to={link.to} aria-current={link.active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
+      <div className="public-mobile-utilities"><CvDownloadButton url={cv} className="public-cv" /><ThemeToggle /></div>
+    </div>}
   </header>;
-
-  return (
-    <header
-      className={cn(
-        "portfolio-navbar fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open
-          ? "border-b border-line bg-bg/95"
-          : "border-b border-line bg-bg/95",
-      )}
-    >
-      <nav
-        aria-label="Main"
-        className="container-x relative flex h-16 items-center justify-between"
-      >
-        <Magnetic strength={0.15}>
-          <Logo />
-        </Magnetic>
-
-        <div className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              onClick={() => handleNavClick(item.to)}
-              className={linkClass}
-            >
-              {({ isActive }) => (
-                <>
-                  {item.label}
-                  {isActive && (
-                    <span className="absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-accent" />
-                  )}
-                </>
-              )}
-            </NavLink>
-          ))}
-          <div className="ml-2 flex items-center gap-2">
-            <button
-              type="button"
-              onClick={openCommandPalette}
-              aria-label="Search and quick commands (Ctrl+K or Cmd+K)"
-              className="flex items-center gap-2 rounded-lg border border-line bg-surface-2/80 px-2.5 py-1.5 text-xs text-muted transition-colors hover:border-accent/40 hover:text-ink"
-            >
-              <FiSearch size={14} className="text-faint" />
-              <span className="hidden lg:inline font-medium">Search</span>
-              <kbd className="rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-faint">
-                {isMac ? "⌘K" : "Ctrl+K"}
-              </kbd>
-            </button>
-            <Magnetic strength={0.2}>
-              <Link to="/contact" className="btn-outline btn-sm">
-                Let’s Talk
-                <FiArrowRight size={14} />
-              </Link>
-            </Magnetic>
-            <ThemeToggle />
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 md:hidden">
-          <button
-            type="button"
-            onClick={openCommandPalette}
-            aria-label="Search and quick commands"
-            className="btn-icon border border-line bg-surface text-ink"
-          >
-            <FiSearch size={17} />
-          </button>
-          <ThemeToggle />
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            onClick={() => setOpen((v) => !v)}
-            className="btn-icon border border-line bg-surface text-ink"
-          >
-            {open ? <FiX size={18} /> : <FiMenu size={18} />}
-          </button>
-        </div>
-      </nav>
-
-      {(scrolled || open) && (
-        <div
-          className="dimension-line pointer-events-none absolute inset-x-0 bottom-0 h-px"
-          aria-hidden
-        />
-      )}
-
-        {open && (
-          <div
-            id="mobile-nav"
-            className="mobile-nav-enter overflow-hidden border-t border-line bg-bg/95 backdrop-blur-xl md:hidden"
-          >
-            <div className="container-x flex flex-col gap-1 py-4">
-              {navItems.map((item, index) => (
-                <div
-                  key={item.to}
-                  className="mobile-nav-item-enter"
-                  style={{ animationDelay: `${index * 0.04}s` }}
-                >
-                  <NavLink
-                    to={item.to}
-                    end={item.end}
-                    onClick={() => handleNavClick(item.to)}
-                    className={({ isActive }) => cn("flex items-center justify-between rounded-lg px-4 py-3 text-[15px] font-semibold transition-colors", isActive ? "bg-accent/10 text-accent" : "text-muted hover:bg-surface-2 hover:text-ink")}
-                  >
-                    {item.label}
-                    {item.to === "/contact" ? null : <FiArrowRight size={14} className="text-faint" aria-hidden />}
-                  </NavLink>
-                </div>
-              ))}
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className="btn-outline mt-2"
-              >
-                Let’s Talk
-                <FiArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        )}
-    </header>
-  );
 }

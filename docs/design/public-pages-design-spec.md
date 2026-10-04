@@ -1,6 +1,6 @@
 # Public portfolio pages — creative, UX and motion specification
 
-Date: 4 October 2026. Status: planning only. No public page or navigation implementation changed in this pass. This expands the earlier remaining-pages outline. The selected Projects studio grid remains the visual foundation.
+Date: 4 October 2026. Status: implemented in the draft frontend branch; validation and deviations are recorded in root design-qa.md. The following is the original design specification. This expands the earlier remaining-pages outline. The selected Projects studio grid remains the visual foundation.
 
 Three independent visual concepts were shown in this planning pass: Studio Case Study (JobPilot as the template example), Conversation Desk (Contact) and Evidence Workbench (AI Job Match). They share the proposed global header. Generated display copy and interface renderings are illustrative; implementation must retain verified source screenshots and put approved new editorial text in the existing CMS. The written specification governs phone layouts, errors, reports and deeper content not visible in the concept frames.
 
