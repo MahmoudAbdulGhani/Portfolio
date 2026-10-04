@@ -1,51 +1,49 @@
-# Interactive portfolio refinement — 2026-10-04
+# Cinematic portfolio sections — 2026-10-04
 
 final result: passed
 
 ## Source and comparison
 
-Source visual truth: `docs/motion/interactive-refinement/before-hero.jpg` and `before-projects.jpg`, captured from the previously selected running implementation before these edits. The latest user explicitly changes the composition: Full-Stack left of the original photo, Software Engineer right, smaller bordered colored stack items, a project carousel, and removal of the pause button. The source governs fonts, assets, palette and CMS content; those requested composition and interaction changes are intentional.
+Source visual truth: `docs/motion/cinematic-sections/before-architecture.jpg`, `before-learning.jpg`, `before-contact.jpg`, and the prior selected carousel `docs/motion/interactive-refinement/projects-desktop.jpg`. All were opened. The user explicitly changes presentation and motion while preserving the landing palette, backend and saved content.
 
-Implementation: `hero-desktop.jpg`, `projects-desktop.jpg`, and `stack-desktop.jpg` in the same evidence directory. Desktop captures are 1353 × 929 pixels at 1363 × 936 CSS viewport, ordinary motion, dark theme, route `/`, opening hero or first featured project. The browser capture omits the scrollbar and scales uniformly by approximately 0.994. No additional density normalization was applied. Both hero opening captures have scrollY 0. Project captures show the same JobPilot AI item below the fixed navbar; section header spacing intentionally changes with the carousel layout.
+Implementation evidence in `docs/motion/cinematic-sections/`: `architecture-desktop.jpg`, `projects-desktop.jpg`, `project-intro.jpg`, `learning-desktop.jpg`, `training-expanded.jpg`, `contact-desktop.jpg`. Desktop CSS viewport: 1363 × 936; source and implementation pixels: 1353 × 929, same browser density (approximately 0.994). No extra normalization. Dark landing theme, loaded fonts, normal motion, real read-only CMS snapshot. Architecture and Projects begin near y96; Education near y95; Contact near y176 at the page end.
 
-Combined full-view evidence: `comparison-hero.jpg` and `comparison-projects.jpg`, 2706 × 969 pixels including 40px labels. Both were opened and compared. Focused evidence: `comparison-detail.jpg`, identical 1230 × 345 crops of the actual source and revised hero, with 36px labels. It was opened to inspect headline families, photograph separation, metadata and CTA grouping. These are refinements of the selected design, not a clone of the old layout. Stack size is checked against the explicit new size brief; the old large rail is documented in the historical `docs/motion/refined/skills.jpg`.
+Four combined full-view comparisons were opened and inspected: `comparison-architecture.jpg`, `comparison-projects.jpg`, `comparison-learning.jpg`, `comparison-contact.jpg` (2706 × 965 each, including labels). Focused comparisons: `comparison-degree.jpg` (1100 × 248) for fonts, wrapping and masks, and `comparison-navigation.jpg` (980 × 108) for the desktop AI entry. Architecture's source shows all categories; its new default panel shows the Frontend family, with the others selectable. This density change is intentional.
 
-Responsive evidence: `hero-mobile.jpg`, `hero-tablet.jpg`, `stack-mobile.jpg`, and `projects-mobile.jpg`. Mobile is a 390 × 844 CSS iframe with 380px content width; tablet is 1024 × 844 with 1014px content width. Screenshots include the review stage, which is not part of the portfolio. Zero document horizontal overflow measured at all three tested widths.
+Responsive captures: `architecture-mobile.jpg`, `projects-mobile.jpg`, `learning-mobile.jpg`, `training-mobile.jpg`, `contact-mobile.jpg` at 390 × 844 CSS/pixel dimensions; `architecture-tablet.jpg` at 1024 × 844. Captures clip the actual unscaled iframe and exclude the review canvas. Zero horizontal document overflow measured at all three tested widths.
 
-## Findings and comparison history
+## Findings and iteration history
 
-- [P1, resolved] First split-hero implementation left the absolutely positioned photograph constrained by its grid area. It shifted right and overlapped Software Engineer. Fix: reset the absolute portrait's grid area to auto. Revised desktop bounds: left copy x81–421, portrait x474–879, right role x932–1272. Final hero, tablet and combined comparisons show separate bounds.
-- [P1, resolved] Dragging a linked project image opened its case study on release. Fix: track pointer movement and suppress the click after a drag; keyboard clicks remain available. Desktop and 390px iframe drag now select Lobby while staying on the landing route. A short 15px drag settles back to the same card at x121.77. Normal link clicks opened the JobPilot AI case study.
-- [P2, resolved] Carousel arrows initially shared the floating AI launcher's lower-right area. Fix: group arrows beside selectors at the left; phone selectors wrap above the arrows, all controls 44px or larger. Final desktop/phone captures show clear controls, including the longest project title.
-- Requested changes, accepted: smaller title size to fit the three-column hero; compact colored chips; spring carousel with visible neighboring cards; no visible motion toggle. The final full-view and focused comparisons were inspected after corrections. No actionable P0/P1/P2 issue remains in the tested states.
+- [P1, resolved] Initial Education credential stayed hidden: the translated child was observed after clipping, preventing entry. Evidence: `learning-initial.jpg` and combined `comparison-learning-initial.jpg` against the source. Fix: observe the stationary mask wrapper and animate its child. Recaptured desktop/phone Education, focused degree comparison and fresh-mount video show the credential fully revealed. Contact uses the corrected component and was checked on both devices.
+- [P2, resolved] Global scroll padding plus another scroll margin placed Projects at y176 and pushed controls down. Initial browser capture showed the preceding section. Fix: use global scroll padding once for Projects and the explorer. Final captures place them near y96; phone selectors/arrows stay clear of the AI launcher.
+- Accepted changes: six-family architecture explorer; landscape CMS interface in place of portrait JobPilot art; slightly smaller equal image frames and 105px captions; desktop AI navigation. No palette drift or invented professional content.
+- Post-fix combined full-view and focused comparisons show no actionable P0/P1/P2 issue in the tested states.
 
 ## Required fidelity surfaces
 
-Fonts/typography: retained self-hosted Inter and amber italic Instrument Serif. The saved full role is one semantic H1; split display fragments are aria-hidden. Headings do not collide with the portrait. The longest project name wraps into readable lines on phone without covering navigation. Stack labels measure 18.4px at desktop and 12px on phone, versus the previous large display rails.
+**Fonts/typography:** Original Inter and italic Instrument Serif retained. Degree wraps into two desktop / three phone lines. Long project/course names remain readable. Compact category labels use 11px phone / 13px desktop text with minimum 55px / 60px targets. Semantic content retained.
 
-Spacing/layout: three separate hero columns and six-percent desktop gutters. Mobile stacks the title, location/status, actions, then original photograph. Actions remain visible in its opening viewport. Carousel cards use 9% horizontal gutters (7% on phone), a consistent gap, and smaller dimmed neighboring cards. Phone controls wrap into two tidy rows. Image assets use contain rather than destructive cropping.
+**Spacing/layout:** Existing gutters, section rhythm and atmosphere retained. Explorer separates navigation and details; phone tabs use two columns. Equal carousel layout frames measure 327 × 204 on phone; neighboring cards intentionally scale to 0.94. Caption reserves 105px; selectors/arrows are at least 44px. Education dates/institution and Contact links remain anchored.
 
-Colors/tokens: navy #05090f, off-white, blue #62b1ff and amber #ffb20b remain the core palette. Skill outlines and subtle fills use blue, pale blue, teal, amber and pale amber accents; this intentionally answers the user's request for individually colored stacks. Selected carousel buttons use amber; focus remains blue; disabled arrows are subdued.
+**Colors/tokens:** Navy #05090f, off-white #f5f6f6, blue #62b1ff, amber #ffb20b and existing chip accents unchanged. New states use existing colors. Focus remains visible.
 
-Image quality/assets: unchanged real CMS photograph, MA mark, navy atmosphere and all five real project covers. No synthetic face or cutout. Portrait expansion enlarges the original photo, so it is naturally softer at full width. Project screenshots remain uncropped and legible at their native aspect ratio; square JobPilot art has intentional side space on desktop.
+**Image quality/assets:** Original portrait, MA mark, atmosphere, five covers and CMS screenshots retained. All seven carousel images including clones loaded, with landscape aspect ratios approximately 2.13–2.19. Contain-fit avoids stretching/crop. Thumbnail entrance uses real covers; existing Feather icon library retained.
 
-Copy/content: saved name, role, location, availability, project names/covers/links and skills remain CMS driven. Availability appears once. No new marketing sentences, AI claims or invented metrics were added. New UI labels describe navigation only. Feather icons preserve the existing visual family.
+**Copy/content:** Saved skill/category labels, names, dates, degree, issuer, descriptions and project links retained. Counts derive from data. No slogans, invented metrics or achievements.
 
-## Interaction and checks
+## Interaction verification and limits
 
-- Hero View Projects reached `/#projects` on desktop and phone.
-- Hero type entrances move from opposite sides; the portrait opens from its center and expands after copy clears. Actual browser recording inspected.
-- Both compact rail rows continue moving in opposite directions. Border and 12px phone typography verified; all categories remain in accessible details. No motion-toggle element remains.
-- Carousel Next/Previous, numbered selectors, Home/End, drag and short-drag settling tested. Native arrow clicks kept document scrollY 2565. At End, fifth item active and Next disabled. At Home, first active and Previous disabled. All five covers loaded after settling.
-- Only the active slide is interactive; keyboard arrow controls and polite slide status remain available. Normal case-study navigation tested. Browser review uses a mouse in a phone-sized iframe; physical touch hardware was not tested.
-- Fresh tablet-tab console has no application warnings/errors. Earlier development HMR import errors occurred while files were being written and are absent after the completed build; extension metadata errors have chrome-extension URLs and are excluded.
-- Typecheck, lint, production build, and whitespace checks passed after the application changes.
-- OS reduced-motion support remains: no pinned choreography or continuous animation, instant carousel controls. Preference emulation is unavailable; this branch is code reviewed, not a claimed browser preference test.
+- `motion-preview.mp4`: 525 real browser frames, 26.25s, showing thumbnail entrance, center-out carousel opening, autoplay, architecture transition, Education mask, Training dividers/disclosure and Contact reveal. Encoded at 20fps for visual review; not a performance benchmark.
+- Autoplay observed without clicking. Infinite first/last wrap, arrows, selectors, Home, End and ArrowRight verified. Hover/focus/drag yield temporarily to the user; timers clean up offscreen or when the document is hidden. No pause button.
+- Phone swipe changed Construction to UniHub without leaving the landing route. Short 15px drag settled to the same card. Active case-study link opened JobPilot AI through Enter. Offscreen clones are inert.
+- Architecture ArrowRight, Home and End selected expected panels. AI and Authentication panels showed saved content. Roving focus, associated panel and selected state retained.
+- AWS disclosure opened/collapsed through keyboard. Issuer/date/description checked on desktop and phone. Closed content is inert and aria-hidden. Mobile menu and Contact navigation worked.
+- Desktop AI Job Match link opened the existing job-description form. No AI request or message submission made in the read-only preview.
+- Reduced-motion code path reviewed: bypass intro/autoplay and use immediate manual transitions and unanimated masks/dividers. Runtime preference emulation unavailable, so not claimed.
+- Console reviewed: two historical development HMR errors at 09:04/09:05, no current application errors after fresh mounting. Extension metadata errors are outside the app.
 
-## Scope and handoff
+## Checks and scope
 
-This update changes hero, stack presentation, motion toggle and projects. Experience, Education, Training, Contact, server, admin, CMS, CV and AI integrations retain their existing implementations. The section-specific follow-up choreography is proposed in `docs/motion/interactive-refinement/motion-plan.md`; it is not claimed as built.
+Typecheck, lint, production build and whitespace check passed. Scoped live-browser checks cover these changes; older full E2E suite not rerun. Frontend and documentation only: no backend, schema, CMS data, dependency or landing palette edits. Prior QA archived in `docs/motion/interactive-refinement/design-qa-2026-10-04.md`.
 
-`motion-preview.mp4` is a 10-second H.264 preview made from 60 actual browser captures, paced at six captured frames per second and encoded at 30 fps by repeating frames. The final recording contact sheet was opened. It demonstrates motion direction and interaction, not live frame-rate performance. The read-only preview uses the public CMS snapshot; live AI responses and message submission were not exercised. Short/ultrawide physical devices and text zoom remain coverage gaps. Prior hero QA is archived in `docs/motion/hero-refinement/design-qa-2026-10-04.md`.
-
-Implementation checklist: source captured; combined and focused comparisons inspected; observed P1/P2 issues corrected and recaptured; responsive and carousel interactions checked; production build passed; ready for draft visual review.
+Checklist complete: stationary mask observation; single anchor offset; automatic wrap and manual navigation; long-content phone checks; post-fix comparisons; palette/backend preservation; existing draft PR update.

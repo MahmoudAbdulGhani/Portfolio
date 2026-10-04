@@ -1,13 +1,13 @@
-.cinema-carousel { padding-block:85px 70px; scroll-margin-top:80px; }
+.cinema-carousel { padding-block:70px 55px; scroll-margin-top:0; }
 .cinema-carousel .cinema-section-head { margin-bottom:30px; }
 .cinema-carousel-window { padding-inline:9%; overflow:clip; }
 .cinema-carousel-window:focus-visible { outline:1px solid var(--cinema-blue); outline-offset:-1px; }
 .cinema-carousel-track { display:flex; gap:28px; touch-action:pan-y; cursor:grab; }
 .cinema-carousel-track:active { cursor:grabbing; }
 .cinema-carousel-card { flex:0 0 100%; min-width:0; transform-origin:center; }
-.cinema-carousel .cinema-project-image { height:clamp(260px,48svh,540px); aspect-ratio:auto; }
+.cinema-carousel .cinema-project-image { height:clamp(280px,45svh,520px); aspect-ratio:auto; padding:12px; }
 .cinema-carousel img { user-select:none; }
-.cinema-carousel .cinema-project-caption { min-height:75px; margin-top:18px; }
+.cinema-carousel .cinema-project-caption { min-height:105px; margin-top:18px; }
 .cinema-carousel .cinema-project-caption h2 { max-width:85%; font-size:clamp(25px,3vw,42px); }
 .cinema-carousel-controls { display:flex; justify-content:flex-start; align-items:center; gap:32px; margin-top:24px; }
 .cinema-carousel-pages { display:flex; gap:10px; }
@@ -18,11 +18,11 @@
 .cinema-carousel-arrows button:disabled { opacity:.25; cursor:default; }
 .cinema-carousel-arrows svg { width:20px; height:20px; }
 @media(max-width:639px) {
-  .cinema-carousel { padding-block:55px; scroll-margin-top:75px; }
+  .cinema-carousel { padding-block:55px; }
   .cinema-carousel-window { padding-inline:7%; }
   .cinema-carousel-track { gap:16px; }
-  .cinema-carousel .cinema-project-image { height:clamp(230px,36svh,360px); }
-  .cinema-carousel .cinema-project-caption { min-height:100px; gap:16px; align-items:flex-start; }
+  .cinema-carousel .cinema-project-image { height:auto; aspect-ratio:16/10; padding:8px; }
+  .cinema-carousel .cinema-project-caption { gap:16px; align-items:flex-start; }
   .cinema-carousel .cinema-project-caption h2 { font-size:24px; line-height:1.2; }
   .cinema-carousel .cinema-project-caption a { flex-shrink:0; }
   .cinema-carousel-controls { gap:15px; flex-wrap:wrap; margin-top:16px; }
@@ -30,4 +30,17 @@
   .cinema-carousel-pages button { width:44px; height:44px; }
   .cinema-carousel-arrows { gap:8px; }
   .cinema-carousel-arrows button { width:44px; height:44px; }
+}
+
+/* The introduction and carousel occupy one stable stage. */
+.cinema-carousel-stage { position:relative; }
+.cinema-project-intro { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; gap:18px; overflow:clip; pointer-events:none; }
+.cinema-intro-thumbnail { position:relative; width:clamp(100px,12vw,170px); aspect-ratio:1.5; background:#0d1320; border:1px solid #ffffff35; overflow:hidden; box-shadow:0 20px 60px #0008; }
+.cinema-intro-thumbnail img { width:100%; height:100%; object-fit:contain; }
+.cinema-intro-thumbnail span { position:absolute; bottom:7px; left:9px; font:10px "Inter",sans-serif; color:var(--cinema-gold); background:var(--cinema-dark); padding:3px 6px; }
+.cinema-carousel-pages button { position:relative; overflow:hidden; }
+.cinema-carousel-progress { position:absolute; height:2px; background:var(--cinema-gold); left:0; right:0; bottom:0; transform-origin:left; }
+@media(max-width:639px) {
+ .cinema-project-intro { gap:0; }
+ .cinema-intro-thumbnail { width:100px; min-width:100px; margin-inline:-22px; aspect-ratio:1.35; }
 }

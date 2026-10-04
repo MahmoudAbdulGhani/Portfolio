@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FiArrowRight, FiMenu, FiSearch, FiX } from "react-icons/fi";
+import { FiArrowRight, FiMenu, FiSearch, FiX, FiZap } from "react-icons/fi";
+import { useSiteSection } from "../lib/hooks";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { Magnetic } from "./Magnetic";
@@ -15,6 +16,7 @@ const navItems = [
 
 export function Navbar() {
   const location = useLocation();
+  const { data: jobMatch } = useSiteSection("jobMatch");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [isMac] = useState(() => typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform));
@@ -55,7 +57,7 @@ export function Navbar() {
   if (location.pathname === "/") return <header className="portfolio-navbar fixed inset-x-0 top-0 z-50">
     <nav aria-label="Main" className="container-x relative flex items-center justify-between">
       <Logo />
-      <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+      <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>{jobMatch?.visible !== false && <Link className="cinema-job-match-nav" to="/job-match"><FiZap aria-hidden />{jobMatch?.heading || "AI Job Match"}</Link>}</div>
       <button type="button" className="cinema-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX size={22} /> : <FiMenu size={22} />}</button>
     </nav>
     {open && <div id="mobile-nav" className="cinema-mobile-nav"><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#projects" onClick={() => setOpen(false)}>Projects</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a><Link to="/job-match" onClick={() => setOpen(false)}>Job Match</Link></div>}

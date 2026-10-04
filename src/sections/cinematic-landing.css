@@ -228,3 +228,17 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
   body:has(.cinema) .portfolio-assistant-launcher { height:42px; }
 }
 @media(prefers-reduced-motion:reduce) { .cinema-hero-sticky::before,.cinema-rail-track { animation:none; } .cinema-rail-track { transform:none; } }
+
+/* Section-specific motion: horizontal credentials, drawing dividers, one contact reveal. */
+.cinema-text-mask { display:block; overflow:clip; }
+.cinema-text-mask > span { display:block; }
+.cinema-course-row { position:relative; border-top:0; }
+.cinema-course-divider { position:absolute; top:0; left:0; width:100%; height:1px; background:#ffffff25; transform-origin:left; }
+.cinema-course-trigger { display:flex; align-items:center; justify-content:space-between; gap:24px; width:100%; padding:0; text-align:left; font-size:clamp(20px,2.4vw,34px); line-height:1.25; letter-spacing:-.04em; cursor:pointer; }
+.cinema-course-trigger > span:last-child { flex-shrink:0; color:var(--cinema-blue); }
+.cinema-course-trigger svg { width:22px; height:22px; }
+.cinema-disclosure-content { overflow:hidden; }
+.cinema-nav-links .cinema-job-match-nav { display:flex; align-items:center; gap:9px; border:1px solid #ffb20b50; border-radius:5px; padding:11px 15px; color:#ffb20b; }
+.cinema-job-match-nav svg { width:15px; height:15px; }
+@media(max-width:1023px) { .cinema-nav-links { gap:24px; } }
+@media(max-width:639px) { .cinema-course-trigger { font-size:25px; } }
