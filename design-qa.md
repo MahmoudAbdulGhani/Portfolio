@@ -1,49 +1,58 @@
-# Cinematic portfolio sections — 2026-10-04
+# Project artwork refinement — 2026-10-04
 
 final result: passed
 
-## Source and comparison
+## Target and evidence
 
-Source visual truth: `docs/motion/cinematic-sections/before-architecture.jpg`, `before-learning.jpg`, `before-contact.jpg`, and the prior selected carousel `docs/motion/interactive-refinement/projects-desktop.jpg`. All were opened. The user explicitly changes presentation and motion while preserving the landing palette, backend and saved content.
+Source visual truth: `docs/motion/project-artwork/before-desktop.jpg`, the existing JobPilot carousel captured before this refinement. The intended differences are the user's explicit requests: larger imagery, no image borders, original project covers, and Projects | project name captions. This is a scoped revision of the existing approved palette and layout, not a literal clone of the defective source.
 
-Implementation evidence in `docs/motion/cinematic-sections/`: `architecture-desktop.jpg`, `projects-desktop.jpg`, `project-intro.jpg`, `learning-desktop.jpg`, `training-expanded.jpg`, `contact-desktop.jpg`. Desktop CSS viewport: 1363 × 936; source and implementation pixels: 1353 × 929, same browser density (approximately 0.994). No extra normalization. Dark landing theme, loaded fonts, normal motion, real read-only CMS snapshot. Architecture and Projects begin near y96; Education near y95; Contact near y176 at the page end.
+Rendered implementation: local read-only content preview `/#projects` in the cloud browser. `docs/motion/project-artwork/jobpilot-desktop.jpg` and `lobby-desktop.jpg` show portrait and landscape covers. Phone evidence: `projects-mobile.jpg` and `long-title-mobile.jpg`.
 
-Four combined full-view comparisons were opened and inspected: `comparison-architecture.jpg`, `comparison-projects.jpg`, `comparison-learning.jpg`, `comparison-contact.jpg` (2706 × 965 each, including labels). Focused comparisons: `comparison-degree.jpg` (1100 × 248) for fonts, wrapping and masks, and `comparison-navigation.jpg` (980 × 108) for the desktop AI entry. Architecture's source shows all categories; its new default panel shows the Frontend family, with the others selectable. This density change is intentional.
+Desktop CSS viewport 1363 × 936, content client width 1353, devicePixelRatio 1. Source and final screenshot pixels are both 1353 × 929, with identical browser screenshot content cropping. No rescaling was used in the saved comparison. Projects starts at approximately 96px in both captures; the new section's smaller internal spacing is intentional. Phone CSS viewport 390 × 844; captures are cropped at 1:1 from the unscaled iframe screen. Tablet CSS viewport 1024 × 844, client width 1014 because of its scrollbar.
 
-Responsive captures: `architecture-mobile.jpg`, `projects-mobile.jpg`, `learning-mobile.jpg`, `training-mobile.jpg`, `contact-mobile.jpg` at 390 × 844 CSS/pixel dimensions; `architecture-tablet.jpg` at 1024 × 844. Captures clip the actual unscaled iframe and exclude the review canvas. Zero horizontal document overflow measured at all three tested widths.
+State: selected JobPilot AI, intro complete, selector focused to keep the slide stable, same published content snapshot and dark palette. No CMS mutations.
 
-## Findings and iteration history
+Full-view comparison: `docs/motion/project-artwork/comparison-desktop.jpg` combines source and implementation in one image. Focused caption comparison: `comparison-caption.jpg` uses actual caption crops from both states at equal scale; the caption moves down because the artwork stage is taller.
 
-- [P1, resolved] Initial Education credential stayed hidden: the translated child was observed after clipping, preventing entry. Evidence: `learning-initial.jpg` and combined `comparison-learning-initial.jpg` against the source. Fix: observe the stationary mask wrapper and animate its child. Recaptured desktop/phone Education, focused degree comparison and fresh-mount video show the credential fully revealed. Contact uses the corrected component and was checked on both devices.
-- [P2, resolved] Global scroll padding plus another scroll margin placed Projects at y176 and pushed controls down. Initial browser capture showed the preceding section. Fix: use global scroll padding once for Projects and the explorer. Final captures place them near y96; phone selectors/arrows stay clear of the AI launcher.
-- Accepted changes: six-family architecture explorer; landscape CMS interface in place of portrait JobPilot art; slightly smaller equal image frames and 105px captions; desktop AI navigation. No palette drift or invented professional content.
-- Post-fix combined full-view and focused comparisons show no actionable P0/P1/P2 issue in the tested states.
+## Findings and comparison history
+
+- Resolved P1: the original slide substituted an interior resume interface for the saved JobPilot promotional cover. Source screenshot and full-view comparison show the substitution. Removed automatic portrait-to-gallery replacement; the cover now remains visible, with the saved screenshot reserved for a failed image load.
+- Resolved P1: small imagery in a padded bordered canvas weakened the project presentation. The final desktop stage is 1204 × 562 instead of approximately 1109 × 420. Mobile stage is 350 × 321 instead of approximately 327 × 204. Computed image wrapper border and padding are both 0px, background transparent. Existing contain fitting preserves the artwork's proportions.
+- Resolved P2: first enlargement to 68svh pushed the caption below the desktop viewport. Reduced the stage to 60svh and tightened section and caption spacing. Final caption and controls are visible together; controls bottom is 921px within the 936px viewport.
+- Resolved P2: adjacent-slide fragments looked like stray borders and cut-off captions. Moved the carousel inset from padding to margins, preserving the track width while clipping neighbors outside the visible window. Final full-view screenshot has no side fragments.
+- Resolved P2: source caption omitted the requested collection context. Final focused comparison shows Projects | JobPilot AI, with a quiet collection label and larger project title. Mobile longest-title evidence confirms wrapping without overlap with the case-study arrow.
+
+Final combined comparisons were opened and reviewed after these fixes. No actionable P0/P1/P2 findings remain in the scoped change.
 
 ## Required fidelity surfaces
 
-**Fonts/typography:** Original Inter and italic Instrument Serif retained. Degree wraps into two desktop / three phone lines. Long project/course names remain readable. Compact category labels use 11px phone / 13px desktop text with minimum 55px / 60px targets. Semantic content retained.
+- Fonts/typography: existing Inter retained. Desktop project title is 34px / 37px at this viewport, weight 400; collection label 11px with existing muted foreground. Mobile title 22px / 26px, collection 9px. Long Construction title wraps into three lines and clears the separate link. No truncation. Reduced title size balances the added collection context and keeps controls visible.
+- Spacing/layout: 5.5% desktop and 4% phone outer margins. Equal-height contain-fit stages preserve images; 18px caption offset and reduced minimum caption height preserve the hierarchy. All selectors and arrows remain visible in the captured mobile and desktop states. Tablet stage 902 × 506. Mobile and tablet document overflow both 0px.
+- Colors/tokens: navy #05090f, off-white #f5f6f6, amber #ffb20b and blue #62b1ff remain in the existing design. Muted caption color uses the existing #9eafc5 value. Image canvas is transparent; no new palette tokens, color changes or CMS asset recoloring.
+- Image quality/assets: original saved covers used for all projects. JobPilot's original 1254px square promo remains complete and sharp at a 562px display size. Lobby's landscape cover fills most of the 1204px stage without distortion. No generated assets, substitute drawings, fabricated interfaces or new image text. Small detail text within the supplied promotional artwork is part of that asset; it is not the page's sole source of project information.
+- Copy/content: project names remain from saved data, including JobPilot AI capitalization. Only the requested Projects collection label is added. No fabricated marketing copy, professional claims or backend content edits.
 
-**Spacing/layout:** Existing gutters, section rhythm and atmosphere retained. Explorer separates navigation and details; phone tabs use two columns. Equal carousel layout frames measure 327 × 204 on phone; neighboring cards intentionally scale to 0.94. Caption reserves 105px; selectors/arrows are at least 44px. Education dates/institution and Contact links remain anchored.
+## Interaction and build verification
 
-**Colors/tokens:** Navy #05090f, off-white #f5f6f6, blue #62b1ff, amber #ffb20b and existing chip accents unchanged. New states use existing colors. Focus remains visible.
+- All covers render; desktop and phone show the original JobPilot cover.
+- Selector click updates artwork, caption and pressed state.
+- Keyboard End selects UniHub; ArrowRight wraps from last to first.
+- After focus leaves the carousel and pointer moves outside it, automatic advance from JobPilot to Lobby is observed.
+- Phone native horizontal drag advances Construction to UniHub, preserving the route and suppressing accidental case-study navigation.
+- Case-study image and caption-arrow hrefs remain tied to each original project slug. Existing intro, spring transitions and reduced-motion behavior remain in place; no new motion dependency or pause button.
+- Application console errors checked on desktop and phone: none from terminal.local. Browser-extension metadata errors are outside the application.
+- `npm run typecheck`, `npm run lint`, `npm run build`, and `git diff --check` pass after the final CSS fix.
 
-**Image quality/assets:** Original portrait, MA mark, atmosphere, five covers and CMS screenshots retained. All seven carousel images including clones loaded, with landscape aspect ratios approximately 2.13–2.19. Contain-fit avoids stretching/crop. Thumbnail entrance uses real covers; existing Feather icon library retained.
+## Implementation checklist
 
-**Copy/content:** Saved skill/category labels, names, dates, degree, issuer, descriptions and project links retained. Counts derive from data. No slogans, invented metrics or achievements.
+- [x] Restore original cover precedence and retain failed-load fallback.
+- [x] Enlarge desktop and phone image stages; remove borders, padding, backgrounds and thumbnail boxes.
+- [x] Restore Projects | project name captions and check the longest title.
+- [x] Remove neighboring slide fragments and recapture final comparison.
+- [x] Check autoplay, keyboard wrap, swipe, responsive overflow and console.
 
-## Interaction verification and limits
+## Follow-up polish
 
-- `motion-preview.mp4`: 525 real browser frames, 26.25s, showing thumbnail entrance, center-out carousel opening, autoplay, architecture transition, Education mask, Training dividers/disclosure and Contact reveal. Encoded at 20fps for visual review; not a performance benchmark.
-- Autoplay observed without clicking. Infinite first/last wrap, arrows, selectors, Home, End and ArrowRight verified. Hover/focus/drag yield temporarily to the user; timers clean up offscreen or when the document is hidden. No pause button.
-- Phone swipe changed Construction to UniHub without leaving the landing route. Short 15px drag settled to the same card. Active case-study link opened JobPilot AI through Enter. Offscreen clones are inert.
-- Architecture ArrowRight, Home and End selected expected panels. AI and Authentication panels showed saved content. Roving focus, associated panel and selected state retained.
-- AWS disclosure opened/collapsed through keyboard. Issuer/date/description checked on desktop and phone. Closed content is inert and aria-hidden. Mobile menu and Contact navigation worked.
-- Desktop AI Job Match link opened the existing job-description form. No AI request or message submission made in the read-only preview.
-- Reduced-motion code path reviewed: bypass intro/autoplay and use immediate manual transitions and unanimated masks/dividers. Runtime preference emulation unavailable, so not claimed.
-- Console reviewed: two historical development HMR errors at 09:04/09:05, no current application errors after fresh mounting. Extension metadata errors are outside the app.
+P3: dedicated landscape covers designed consistently around each project's real interface could give the set a stronger shared identity. This scoped fix uses the user's existing covers and does not create new artwork or imply that each supplied screenshot is a designed promotional cover.
 
-## Checks and scope
-
-Typecheck, lint, production build and whitespace check passed. Scoped live-browser checks cover these changes; older full E2E suite not rerun. Frontend and documentation only: no backend, schema, CMS data, dependency or landing palette edits. Prior QA archived in `docs/motion/interactive-refinement/design-qa-2026-10-04.md`.
-
-Checklist complete: stationary mask observation; single anchor offset; automatic wrap and manual navigation; long-content phone checks; post-fix comparisons; palette/backend preservation; existing draft PR update.
+Residual test gaps: this iteration does not repeat backend, contact submission, AI inference, admin, or unrelated section tests. Prior section QA is archived at `docs/motion/cinematic-sections/design-qa-2026-10-04.md`.

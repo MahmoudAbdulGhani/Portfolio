@@ -13,12 +13,7 @@ const spring = { type: "spring" as const, stiffness: 150, damping: 26, mass: 0.9
 function ProjectArtwork({ project }: { project: Project }) {
   const [source, setSource] = useState(project.coverImage || project.screenshots?.[0]);
   const isCover = source === project.coverImage;
-  const triedScreenshot = useRef(false);
-  return source ? <img src={source} alt={isCover ? project.imageAlt || project.name : `${project.name} interface`} loading="eager" draggable={false} onLoad={event => {
-    // Prefer an existing landscape interface over a portrait promotional cover.
-    const img = event.currentTarget;
-    if (!triedScreenshot.current && isCover && img.naturalWidth / img.naturalHeight < 1.2 && project.screenshots?.[0] && project.screenshots?.[0] !== source) { triedScreenshot.current = true; setSource(project.screenshots?.[0]); }
-  }} onError={() => { if (project.coverImage && !isCover) setSource(project.coverImage); }} /> : null;
+  return source ? <img src={source} alt={isCover ? project.imageAlt || project.name : `${project.name} interface`} loading="eager" draggable={false} onError={() => { if (isCover && project.screenshots?.[0]) setSource(project.screenshots[0]); }} /> : null;
 }
 
 export function ProjectCarousel({ featured }: { featured: Project[] }) {
@@ -110,7 +105,7 @@ export function ProjectCarousel({ featured }: { featured: Project[] }) {
           }}>
             {slides.map((project, i) => <motion.article key={`${project.id}-${i}`} className="cinema-carousel-card" inert={slot !== i} aria-label={`${(i - 1 + count) % count + 1} of ${count}: ${project.name}`} aria-roledescription="slide" animate={{ scale: (i - 1 + count) % count === current ? 1 : 0.94, opacity: (i - 1 + count) % count === current ? 1 : 0.45 }} transition={transition}>
               <Link to={`/projects/${project.slug}`} className="cinema-project-image" aria-label={project.name} draggable={false}><ProjectArtwork project={project} /></Link>
-              <div className="cinema-project-caption"><h2>{project.name}</h2><Link to={`/projects/${project.slug}`} aria-label={`Open ${project.name}`} draggable={false}><FiArrowUpRight aria-hidden /></Link></div>
+              <div className="cinema-project-caption"><h2><span className="cinema-project-collection">Projects</span><span className="cinema-project-separator" aria-hidden>|</span><span>{project.name}</span></h2><Link to={`/projects/${project.slug}`} aria-label={`Open ${project.name}`} draggable={false}><FiArrowUpRight aria-hidden /></Link></div>
             </motion.article>)}
           </motion.div>
         </div>
