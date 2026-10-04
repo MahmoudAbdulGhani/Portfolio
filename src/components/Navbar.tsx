@@ -19,6 +19,7 @@ export function Navbar() {
   const { data: jobMatch } = useSiteSection("jobMatch");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const archive = location.pathname === "/projects";
   const [isMac] = useState(() => typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform));
 
   useEffect(() => {
@@ -54,13 +55,13 @@ export function Navbar() {
     window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac, ctrlKey: !isMac }));
   };
 
-  if (location.pathname === "/") return <header className="portfolio-navbar fixed inset-x-0 top-0 z-50">
+  if (location.pathname === "/" || archive) return <header className="portfolio-navbar fixed inset-x-0 top-0 z-50">
     <nav aria-label="Main" className="container-x relative flex items-center justify-between">
       <Logo />
-      <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>{jobMatch?.visible !== false && <Link className="cinema-job-match-nav" to="/job-match"><FiZap aria-hidden />{jobMatch?.heading || "AI Job Match"}</Link>}</div>
+      {archive ? <div className="cinema-nav-links gallery-navigation"><Link to="/">Home</Link><Link to="/projects" aria-current="page">Projects</Link>{jobMatch?.visible !== false && <Link to="/job-match">{jobMatch?.heading || "AI Job Match"}</Link>}<Link to="/contact">Contact</Link></div> : <div className="cinema-nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>{jobMatch?.visible !== false && <Link className="cinema-job-match-nav" to="/job-match"><FiZap aria-hidden />{jobMatch?.heading || "AI Job Match"}</Link>}</div>}
       <button type="button" className="cinema-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX size={22} /> : <FiMenu size={22} />}</button>
     </nav>
-    {open && <div id="mobile-nav" className="cinema-mobile-nav"><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#projects" onClick={() => setOpen(false)}>Projects</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a><Link to="/job-match" onClick={() => setOpen(false)}>Job Match</Link></div>}
+    {open && <div id="mobile-nav" className="cinema-mobile-nav">{archive ? <><Link to="/" onClick={() => setOpen(false)}>Home</Link><Link to="/projects" onClick={() => setOpen(false)} aria-current="page">Projects</Link><Link to="/contact" onClick={() => setOpen(false)}>Contact</Link></> : <><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#projects" onClick={() => setOpen(false)}>Projects</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></>}{jobMatch?.visible !== false && <Link to="/job-match" onClick={() => setOpen(false)}>AI Job Match</Link>}</div>}
   </header>;
 
   return (

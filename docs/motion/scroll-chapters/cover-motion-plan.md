@@ -1,6 +1,6 @@
 # Scroll Chapters — project covers and motion plan
 
-Status: planning and visual refinement complete; frontend implementation and final asset production pending.
+Status: five featured landing scenes implemented and under browser verification. The three non-featured project-index covers remain planned.
 Date: 2026-10-04.
 
 ## Chosen direction
@@ -72,4 +72,4 @@ Use the existing Framer Motion dependency for transforms, masks and scroll progr
 4. Add the distinct motion score to real artwork layers, then tune from a browser recording. Show the complete projects sequence and the transition into the next landing section.
 5. Check keyboard links, focus visibility, phone overflow, long titles, real screenshot readability, static fallback, reduced motion, loading layout stability, asset sizes and console errors. Run typecheck/lint/build for implementation, then save combined visual QA comparisons. No code checks or motion/video verification are claimed by this planning document.
 
-Deliverables completed in this planning pass: source review, eight-project cover art-direction board, revised selected desktop concept and this concrete cover/motion specification. Final individual assets, animated prototype and deployment are pending the implementation pass.
+Implemented: ProjectChapters replaces the landing carousel; five actual screenshot compositions use a generated studio backdrop and transparent shallow laptop frame. JobPilot includes the existing public CV page; other detail layers come from saved project captures. Distinct masks, differential parallax, slight desktop tilt and fixed case-study destinations run in native vertical flow. Phone scenes hide secondary planes and use a compact AI launcher. Backend, CMS data, project index, case-study imagery and palette are unchanged. The three non-featured cover assets and deployment remain pending; the current implementation scope is the landing projects replacement.

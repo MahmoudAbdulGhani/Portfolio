@@ -8,8 +8,10 @@ config.plugins.push({ name: 'readonly-motion-preview', configureServer(server) {
   server.middlewares.use((req, res, next) => {
     if (req.url?.startsWith('/__motion-review')) {
       const tablet = req.url.includes('tablet');
+      const narrow = req.url.includes('narrow');
+      const route = req.url.includes('projects') ? '/projects' : '/';
       res.setHeader('Content-Type', 'text/html');
-      res.end(`<html><head><meta charset="utf-8"><style>body{margin:0;background:#ddd;font:14px system-ui}p{text-align:center;margin:10px}iframe{display:block;margin:auto;border:0;width:${tablet ? 1024 : 390}px;height:844px}</style></head><body><p>${tablet ? 'Tablet width' : 'Mobile width'} review — live frontend in a viewport</p><iframe title="Portfolio responsive review" src="/"></iframe></body></html>`); return;
+      res.end(`<html><head><meta charset="utf-8"><style>body{margin:0;background:#ddd;font:14px system-ui}p{text-align:center;margin:10px}iframe{display:block;margin:auto;border:0;width:${tablet ? 1024 : narrow ? 320 : 390}px;height:844px}</style></head><body><p>${tablet ? 'Tablet width' : 'Mobile width'} review — live frontend in a viewport</p><iframe title="Portfolio responsive review" src="${route}"></iframe></body></html>`); return;
     }
     if (!req.url?.startsWith('/api/')) return next();
     if (req.url.split('?')[0] === '/api/cv.pdf' && (req.method === 'GET' || req.method === 'HEAD')) {
