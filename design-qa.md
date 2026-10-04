@@ -1,55 +1,53 @@
-# Refined portfolio design QA
+# Hero refinement QA — 2026-10-04
 
-Final result: passed
+final result: passed
 
-## Source and viewport
+## Source, brief, and evidence
 
-- Selected hero reference: docs/motion/refined/source-hero.jpg (1505 × 1045 pixels).
-- Selected page direction: docs/motion/refined/source-full-page.jpg (802 × 1960 pixels). This is a compact layout reference, not a scroll storyboard.
-- Implementation: docs/motion/refined/hero.jpg (1353 × 929 pixels), at 1363 × 936 CSS viewport. The cloud capture omits the scrollbar and scales the content uniformly by approximately 0.994; no anisotropic stretching is used.
-- Side-by-side comparison: docs/motion/refined/hero-comparison.jpg (2706 × 969 pixels, including 40-pixel labels). Reference is proportionally fitted into the same 1353 × 929 comparison cell. Implementation stays at captured pixel size.
-- Mobile: 390 × 844 CSS iframe viewport; tablet: 1024 × 844 CSS iframe viewport. Screenshots contain cropped review frames. No horizontal overflow was measured at any tested width.
-- Browser evidence uses the published public CMS snapshot, original portrait, and original project covers. Contact submissions and AI requests are deliberately disabled in the local review server.
+Source visual truth: `docs/motion/hero-refinement/01-live-before.jpg`, captured from the user-requested live portfolio this session. The user rejected this hero and requested a professional redesign with the same colors. This is an audit-led refinement of the previously selected portrait-led direction, not a pixel clone of the rejected layout. The source governs palette, real photograph, logo, type families, and existing CMS content; composition and motion timing intentionally change.
 
-## Visual comparison
+Implementation screenshot: `docs/motion/hero-refinement/02-desktop.jpg`. Source and implementation are both 1353 × 929 pixels, captured at the same 1363 × 936 CSS viewport, route `/`, opening state, dark theme, and ordinary motion preference. The capture omits the scrollbar and uniformly scales by about 0.994. No density scaling was added.
 
-Fonts: self-hosted Inter at 300/400/500 weights and Instrument Serif italic. The final headline weight was increased after comparison; the amber italic word and compact Engineer line reproduce the selected hierarchy. Standard page and control copy uses Inter.
+Full-view comparison: `docs/motion/hero-refinement/06-comparison.jpg` (2706 × 971 including 42-pixel labels). Both actual captures are placed together at their original size. Focused comparison: `07-detail-comparison.jpg`, equal crops covering typography, photograph boundary, metadata, and actions. Both combined views were opened and inspected after the final fixes.
 
-Spacing: the large portrait-led hero and sparse sections retain the selected direction. A 24-pixel mobile heading/photo gap replaced a touching edge. Career and learning sections intentionally have more room than the compact source image, reflecting the latest request for professional section-scale presentation.
+Responsive browser evidence: `03-mobile.jpg`, a 390 × 844 CSS iframe (380 content width); `04-tablet.jpg`, a 1024 × 844 CSS iframe (1014 content width). These contain the surrounding review stage. Motion evidence: `05-expanded.jpg`, plus an MP4 made from 56 actual browser frames at six captured frames per second, encoded at 30 fps with repeated frames. This demonstrates pacing, not a frame-rate benchmark.
 
-Palette: near-black navy #05090f, off-white #f5f6f6, amber #ffb20b, and blue #62b1ff. A subtle raster blue atmosphere replaces literal recreation of generated background texture. Borders and secondary type are subdued; amber is reserved for emphasis and progress.
+## Findings and iteration history
 
-Assets: the unchanged original photograph replaces the generated reference face. No generated portrait or synthetic person cutout is used. Five actual CMS project covers remain uncropped with object-fit: contain. The generated MA mark is served as a crisp, optimized WebP at 40 CSS pixels, with a matching navy ground.
+- [P1, resolved] The live full-width heading crosses the portrait and competes with the face. Replaced absolute title fragments with a normal-flow reading column and a separate portrait column. Post-fix evidence: final desktop and full-view comparison. The title and photo have separate bounds.
+- [P2, resolved] The live location/status and CTAs occupy disconnected lower corners. Grouped real identity, role, location, availability, and actions into one copy block. Mobile puts actions before the photo. Post-fix evidence: desktop, mobile, tablet.
+- [P1, resolved] First implementation cleared actions too early during automatic focus scrolling. Delayed the copy fade to progress 0.24–0.38; photo expansion begins at 0.40. Retested View Projects: URL became `/#projects`, and the project heading reached the viewport below the navbar. Keyboard CV activation returned to Download CV without an error alert.
+- [P2, resolved] `overflow: hidden` let focus scrolling move the sticky hero's internal scroll position by 37px, shifting the composition. Replaced it with `overflow: clip`. Post-fix keyboard activation measured sticky scrollTop 0; opening capture again aligns the photo at y=157 and copy at y=244. Recaptured desktop, combined comparison, and the entire motion video after this correction.
+- Potential short-window clipping addressed by limiting desktop title scale with svh as well as vw. Short and ultrawide physical devices were not exercised in the browser; this is a remaining coverage gap rather than a claimed test result.
 
-Copy: biography, title, availability, skills, projects, career entries, university, training, dates, and links come from saved CMS data. There are no invented performance metrics or AI slogans. Availability appears once in the hero. The Discovery / Build / Ship workflow is absent. All skill categories remain accessible in expandable details.
+No actionable P0/P1/P2 issue remains in the observed opening and scroll states at the tested widths. The new two-column composition is an intentional response to the latest brief.
 
-## Iterations and fixes
+## Required fidelity surfaces
 
-1. Implemented the selected navy/amber composition and reviewed all major desktop sections.
-2. Fixed the initial full-body portrait crop, thin headline weight, italic edge spacing, anchor offsets, and mobile title/photo spacing; recaptured the hero and comparison.
-3. Checked opposite skill movement and pause/resume. Kept pinned heights stable while paused, and synchronized progress on mount/resume.
-4. Actual recording on a fresh load exposed a project scroll listener attached before asynchronous project data. Moved the scene into a component mounted only when published featured projects are ready. Reloaded and verified scroll selection changes and all five covers loading.
-5. Added large project-panel entrance motion on compact layouts, retaining the desktop horizontal reel. Verified mobile Experience and Training layouts and expandable course details.
-6. Recaptured the final hero and reviewed the normalized side-by-side comparison. No unresolved P0/P1/P2 design issues remain. Minor differences in photographic crop, serif glyph shape, and deliberately simplified controls are P3 adaptations to real assets and the latest user feedback.
+Fonts/typography: preserved self-hosted Inter 400 and Instrument Serif italic, with one semantic H1 containing the saved role. Display words use balanced, readable mixed case rather than the source's oversized uppercase overlap. Serif amber emphasis is retained. No truncation or title/photo collision in the tested layouts.
 
-## Interaction and motion checks
+Spacing/layout: consistent six-percent desktop gutters, a clear column gap, and grouped metadata/actions. Mobile uses 6.5-percent gutters and 32px between copy and photo, with no pinned scene. Actions are visible in the first mobile viewport. Measured zero horizontal overflow at desktop, mobile, and tablet widths.
 
-- Frontend skill rail: continuous left-to-right; backend rail: right-to-left. Computed directions reverse/normal and changing transforms confirmed movement.
-- Pause: both marquee transforms stayed identical across observations. Resume restored running state.
-- Hero: staged type entrance; rectangular original photo expands to a full-width frame on scroll; gentle pointer response. Controls leave the tab order once fully cleared.
-- Projects: fresh-load scrolling advanced from JobPilot AI through Lobby, GameZone Arena, Construction, and UniHub. Selectors move to each scene; all five images loaded successfully. UniHub case-study arrow opened /projects/unihub.
-- Career: scroll progress line, progressive row opacity/translation, and expandable role descriptions.
-- Education: degree word reveal, subtle vertical drift, real university and dates.
-- Training: staged rows and rotating disclosure arrows. Angular details exposed the saved issuer/date.
-- Portfolio AI: global launcher and Contact entry opened the existing dialog; close control worked. Focus moved to the question input.
-- AI Job Match: Contact entry navigated to /job-match and displayed its existing job-description form.
-- CV: keyboard activation showed Preparing PDF, then returned to Download CV without an alert. The existing download component validates PDF MIME/signature before creating its download. This browser's download-event capture did not provide a file path; an end-to-end saved-file assertion is therefore not claimed.
-- Mobile menu opened and closed; its Projects anchor reached the landing-page section. Five vertical project panels remained accessible; zero pinned scenes on the compact viewport.
-- Reduced motion: existing OS preference branch disables pinned choreography, continuous CSS animation, and Motion effects. The browser does not expose preference emulation, so this branch was reviewed in code rather than asserted as a browser test.
-- Console: no application warnings/errors in captured tab logs. Chrome extension metadata errors were excluded by their extension source URLs.
+Colors/tokens: unchanged navy #05090f, off-white #f5f6f6, amber #ffb20b, and blue #62b1ff. Same raster navy atmosphere and subdued control borders. Name uses the existing blue accent; the amber serif word remains the main color emphasis.
 
-## Validation and recording
+Image quality/assets: unchanged real CMS photograph, original outdoor background, unchanged MA mark and atmosphere asset. The initial frame shows the original photograph without an AI face, cutout, synthetic props, or distortion. The portrait reveal and expansion use clipping and geometry; pointer drift is reduced to at most three pixels per axis. Full-width expansion naturally enlarges the original 960px image and is less sharp than the opening frame.
 
-npm run typecheck, npm run lint, npm run build, and git diff --check passed after implementation.
+Copy/content: name, role, location, availability, and project CTA use existing profile/site-section data. Availability appears once. Added identity is the saved shortName, not invented promotional text. Existing CV label and backend behavior are retained. No new biography or marketing paragraph.
 
-The video is made from 209 actual browser frames captured while using the page and opening its AI dialog. It is paced at 7 captured frames/second and encoded as a 29.87-second H.264 MP4 at 1354 × 930 pixels; repeated frames provide a 30 fps container. It is a paced demonstration, not a performance benchmark or a static-image camera pan. Live AI answers and external message submissions were not tested through the read-only preview.
+Icons/accessibility: existing Feather icons are retained and aligned with text. Name, role and original portrait alt text remain meaningful; controls have focus indicators and keyboard activation. Hidden copy becomes inert after the fade. Existing pause/resume and reduced-motion branches remain in place.
+
+## Interaction and validation
+
+- Portrait expands after the text clears; the face stays visible. Final expanded screenshot was inspected.
+- Pause held portrait width at 1353px while scrolling; resume synchronized the width to current progress. Scene height stayed stable.
+- View Projects navigated to the real featured-project section after the timing/overflow fixes.
+- Enter on Download CV completed its loading cycle without an alert. A saved-file download assertion was not captured.
+- Mobile actions appear above the photo; zero pinned scenes, no horizontal overflow. Tablet retains separate columns with no overlap or overflow.
+- Application console warnings/errors: none in inspected tab logs; Chrome extension metadata errors were identified by their extension URL and excluded.
+- Typecheck, lint, production build, and whitespace diff checks passed after the final implementation.
+
+## Scope and limits
+
+Only hero JSX/CSS changed in the application. Other landing sections, public CMS data, AI integrations, contact submission, admin, server, and security logic are unchanged. The previous whole-page QA is archived at `docs/motion/refined/design-qa-2026-10-03.md`; its checks are historical, not newly repeated here. The preview uses a read-only public CMS snapshot. Browser preference emulation is unavailable, so the reduced-motion path was inspected in code rather than asserted with an OS preference switch. No production merge or manual deployment is part of this update.
+
+Implementation checklist: source captured; desktop and focused comparisons inspected; all observed P1/P2 issues corrected and recaptured; responsive and primary control checks complete; final scoped changes ready for draft review.

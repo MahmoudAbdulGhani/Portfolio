@@ -20,25 +20,30 @@
 .cinema :is(a,button,summary):focus-visible { outline:2px solid var(--cinema-gold); outline-offset:5px; }
 .cinema-section-head { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-bottom:38px; }
 .cinema-section-head .cinema-link { border:0; color:#b4c0ce; font-size:12px; }
+/* Hero: one reading column, one portrait column. */
 .cinema-hero { padding-top:80px; }
-.cinema-hero.has-scroll-scene { height:215svh; padding-top:0; }
-.cinema-hero-sticky { position:relative; height:calc(100svh - 80px); min-height:670px; isolation:isolate; overflow:hidden; }
-.has-scroll-scene > .cinema-hero-sticky { position:sticky; top:80px; height:calc(100svh - 80px); min-height:0; }
+.cinema-hero.has-scroll-scene { height:185svh; padding-top:0; }
+.cinema-hero-sticky { position:relative; min-height:calc(100svh - 80px); display:grid; grid-template-columns:1.1fr 1fr; gap:9%; align-items:center; padding:65px 6%; isolation:isolate; overflow:clip; }
+.has-scroll-scene > .cinema-hero-sticky { position:sticky; top:80px; height:calc(100svh - 80px); min-height:0; padding-block:35px; }
 .cinema-hero-sticky::before { content:""; position:absolute; inset:-3%; z-index:-1; background:url('/brand/navy-atmosphere.webp') center/cover no-repeat; animation:cinema-atmosphere 20s ease-in-out infinite alternate; }
-.cinema-title { position:absolute; z-index:3; inset:0; margin:0; pointer-events:none; font-weight:300!important; }
-.cinema-title-part { position:absolute; display:block; overflow:hidden; line-height:1.08; padding-bottom:.1em; }
+.cinema-hero-copy { position:relative; z-index:3; min-width:0; }
+.cinema-hero-name { color:var(--cinema-blue); font-size:13px; letter-spacing:.13em; text-transform:uppercase; margin:0 0 28px; }
+.cinema-title { margin:0; pointer-events:none; font-weight:400!important; }
+.cinema-title-part { display:block; overflow:hidden; line-height:1.06; padding-bottom:.12em; }
 .cinema-title-part > span { display:block; }
-.cinema-title .part-0 { left:5%; top:8%; font-size:clamp(96px,16.3vw,260px); letter-spacing:-.07em; text-transform:uppercase; white-space:nowrap; font-weight:400; }
-.cinema-title .part-1 { left:64%; top:41%; font-size:clamp(70px,10.2vw,170px); letter-spacing:-.05em; padding-right:.12em; }
-.cinema-title .part-2 { left:62%; top:58%; font-size:clamp(48px,6.55vw,110px); letter-spacing:-.055em; text-transform:uppercase; font-weight:500; }
-.cinema-title.single-title .part-0 { white-space:normal; width:85%; font-size:clamp(65px,8vw,150px); }
-.cinema-portrait { position:absolute; left:30%; width:31%; top:20%; height:72%; overflow:hidden; z-index:1; }
-.cinema-portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 50%; transform:scale(1.035); }
-.cinema-hero-meta { position:absolute; z-index:4; left:6%; bottom:8%; display:flex; flex-direction:column; gap:18px; font-size:13px; color:#c2cfde; }
-.cinema-hero-meta > span { display:flex; gap:13px; align-items:center; }
-.cinema-hero-meta svg { width:18px; height:18px; }
-.cinema-availability > span { width:7px; height:7px; border-radius:50%; background:#5ab5ff; }
-.cinema-hero-actions { position:absolute; z-index:4; left:64%; right:5%; bottom:8%; display:flex; gap:28px; align-items:center; }
+.cinema-title .part-0 { font-size:clamp(55px,min(6.9vw,11svh),112px); letter-spacing:-.065em; white-space:nowrap; }
+.cinema-title .part-1 { font-size:clamp(72px,min(9.1vw,14.5svh),148px); letter-spacing:-.05em; padding-right:.12em; margin-top:-.04em; }
+.cinema-title .part-2 { font-size:clamp(53px,min(6.65vw,10.5svh),108px); letter-spacing:-.055em; margin-top:-.03em; }
+.cinema-title.single-title .part-0 { white-space:normal; font-size:clamp(48px,6.2vw,100px); overflow-wrap:anywhere; }
+.cinema-portrait { position:relative; height:min(74svh,780px); min-height:420px; overflow:hidden; z-index:1; }
+.has-scroll-scene .cinema-portrait { position:absolute; min-height:0; }
+.cinema-portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 35%; }
+.cinema-hero-meta { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:26px; font-size:12px; color:#c2cfde; }
+.cinema-hero-meta > span { display:flex; gap:9px; align-items:center; }
+.cinema-hero-meta svg { width:15px; height:15px; }
+.cinema-availability > span { width:6px; height:6px; border-radius:50%; background:#5ab5ff; }
+.cinema-hero-actions { display:flex; flex-wrap:wrap; gap:28px; align-items:center; margin-top:28px; }
+.cinema-hero-actions .cinema-link,.cinema-hero-actions .cinema-cv { padding-block:14px; }
 .cinema-primary { border-bottom-color:var(--cinema-gold); }
 .cinema-about { background:url('/brand/navy-atmosphere.webp') 90% 40%/cover; }
 .cinema-about-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:14%; margin-top:42px; align-items:center; }
@@ -146,12 +151,14 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
 @keyframes cinema-atmosphere { from { transform:translate3d(-1%,0,0) scale(1.025); opacity:.75; } to { transform:translate3d(1.5%,1%,0) scale(1.07); opacity:1; } }
 @media(max-width:1023px) {
   .cinema-section { padding-block:85px; }
-  .cinema-hero-sticky { min-height:710px; }
-  .cinema-title .part-0 { top:10%; font-size:16.1vw; }
-  .cinema-title .part-1 { left:61%; top:44%; font-size:11vw; }
-  .cinema-title .part-2 { left:61%; top:63%; font-size:6.8vw; }
-  .cinema-hero-actions { left:61%; flex-wrap:wrap; gap:8px 20px; }
-  .cinema-portrait { top:22%; width:31%; height:70%; }
+  .cinema-hero-sticky { min-height:650px; padding-block:55px; gap:7%; }
+  .cinema-hero-name { font-size:11px; margin-bottom:25px; }
+  .cinema-title .part-0 { font-size:6.7vw; }
+  .cinema-title .part-1 { font-size:9vw; }
+  .cinema-title .part-2 { font-size:6.5vw; }
+  .cinema-hero-meta { flex-direction:column; gap:12px; margin-top:20px; }
+  .cinema-hero-actions { gap:20px; margin-top:20px; }
+  .cinema-portrait { height:580px; min-height:0; }
   .cinema-about-grid,.cinema-contact-grid,.cinema-education-grid { gap:8%; }
   .cinema-work-panel { margin-bottom:55px; }
   .cinema-work-panel:last-child { margin-bottom:0; }
@@ -163,17 +170,15 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
   .cinema-container { width:87%; }
   .cinema-section { padding-block:65px; }
   .cinema-hero { padding-top:75px; }
-  .cinema-hero-sticky { height:auto; min-height:820px; display:flex; flex-direction:column; }
-  .cinema-title { position:relative; inset:auto; height:194px; order:0; margin-top:35px; }
-  .cinema-title-part { position:relative; inset:auto!important; overflow:visible; }
-  .cinema-title .part-0 { font-size:15.8vw; letter-spacing:-.07em; padding:0; margin-left:5%; }
-  .cinema-title .part-1 { font-size:58px; line-height:1; margin:8px 0 0 7%; padding:0; }
-  .cinema-title .part-2 { font-size:34px; margin:8px 0 0 7%; padding:0; }
-  .cinema-title.single-title { height:auto; margin-bottom:25px; }
-  .cinema-title.single-title .part-0 { font-size:12vw; }
-  .cinema-portrait { position:relative; left:auto; top:auto; width:70%; height:auto; aspect-ratio:3/4; align-self:flex-end; margin:0 6% 0 0; order:1; }
-  .cinema-hero-meta { position:relative; left:auto; bottom:auto; margin:30px 7% 0; order:2; flex-direction:row; flex-wrap:wrap; gap:15px; font-size:11px; }
-  .cinema-hero-actions { position:relative; left:auto; right:auto; bottom:auto; margin:15px 7% 40px; order:3; gap:25px; flex-wrap:wrap; }
+  .cinema-hero-sticky { height:auto; min-height:0; display:flex; flex-direction:column; align-items:stretch; padding:40px 6.5% 45px; gap:32px; }
+  .cinema-hero-name { font-size:10px; letter-spacing:.12em; margin-bottom:22px; }
+  .cinema-title .part-0 { font-size:15.6vw; }
+  .cinema-title .part-1 { font-size:21vw; }
+  .cinema-title .part-2 { font-size:15.2vw; }
+  .cinema-title.single-title .part-0 { font-size:13vw; }
+  .cinema-hero-meta { flex-direction:row; gap:12px 20px; font-size:10px; margin-top:20px; }
+  .cinema-hero-actions { margin-top:17px; gap:24px; }
+  .cinema-portrait { width:100%; height:auto; aspect-ratio:4/5; }
   .cinema-link,.cinema-cv { font-size:12px; }
   .cinema-about-grid,.cinema-contact-grid,.cinema-education-grid { grid-template-columns:1fr; gap:35px; margin-top:30px; }
   .cinema-about h2 { font-size:39px; }

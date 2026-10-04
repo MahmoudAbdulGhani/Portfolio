@@ -35,32 +35,35 @@ function PortraitHero({ profile }: { profile: Profile }) {
   const { data: section } = useSiteSection("hero");
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const p = useSceneProgress(scrollYProgress);
-  const left = useTransform(p, [0, 0.72], ["30%", "0%"]);
-  const width = useTransform(p, [0, 0.72], ["31%", "100%"]);
-  const top = useTransform(p, [0, 0.72], ["20%", "0%"]);
-  const height = useTransform(p, [0, 0.72], ["72%", "100%"]);
-  const objectPosition = useTransform(p, [0, 0.72], ["50% 50%", "50% 22%"]);
-  const photoScale = useTransform(p, [0, 0.72], [1.3, 1.035]);
-  const opacity = useTransform(p, [0, 0.24], [1, 0]);
-  const controlsOpacity = useTransform(p, [0, 0.2, 0.42], [1, 1, 0]);
-  const titleY = useTransform(p, [0, 0.3], [0, -60]);
+  // Clear the copy before the portrait grows across its column.
+  const left = useTransform(p, [0, 0.4, 0.9], ["56%", "56%", "0%"]);
+  const width = useTransform(p, [0, 0.4, 0.9], ["38%", "38%", "100%"]);
+  const top = useTransform(p, [0, 0.4, 0.9], ["9%", "9%", "0%"]);
+  const height = useTransform(p, [0, 0.4, 0.9], ["82%", "82%", "100%"]);
+  const objectPosition = useTransform(p, [0, 0.9], ["50% 35%", "50% 22%"]);
+  const photoScale = useTransform(p, [0, 0.9], [1.035, 1.015]);
+  const opacity = useTransform(p, [0, 0.24, 0.38], [1, 1, 0]);
+  const copyY = useTransform(p, [0, 0.24, 0.38], [0, 0, -32]);
   const pointerX = useMotionValue(0), pointerY = useMotionValue(0);
   const x = useSpring(pointerX, { stiffness: 70, damping: 28 }), y = useSpring(pointerY, { stiffness: 70, damping: 28 });
   const [cleared, setCleared] = useState(false);
-  useMotionValueEvent(p, "change", v => setCleared(v > 0.42));
+  useMotionValueEvent(p, "change", v => setCleared(v >= 0.38));
   const title = section?.heading || profile.title;
   const words = title.trim().split(/\s+/);
   const parts = words.length >= 3 ? [words[0], words.slice(1, -1).join(" "), words.at(-1)] : [title];
   return <section ref={ref} id="hero" className={`cinema-hero ${cinematic ? "has-scroll-scene" : ""}`}><div className="cinema-hero-sticky" onPointerMove={event => {
     if (!enabled || !cinematic) return;
     const box = event.currentTarget.getBoundingClientRect();
-    pointerX.set(((event.clientX - box.left) / box.width - 0.5) * 12);
-    pointerY.set(((event.clientY - box.top) / box.height - 0.5) * 10);
+    pointerX.set(((event.clientX - box.left) / box.width - 0.5) * 6);
+    pointerY.set(((event.clientY - box.top) / box.height - 0.5) * 6);
   }} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
-    <motion.h1 className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-label={title} style={cinematic ? { opacity, y: titleY } : undefined}>{parts.map((word, i) => <span className={`cinema-title-part part-${i}`} key={`${word}-${i}`} aria-hidden><motion.span initial={enabled ? { y: "110%" } : false} animate={{ y: 0 }} transition={{ duration: 1.15, delay: 0.12 + i * 0.18, ease }}>{word}</motion.span></span>)}</motion.h1>
-    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 50%", scale: cinematic ? photoScale : 1, x: enabled && cinematic ? x : 0, y: enabled && cinematic ? y : 0 }} /></motion.div>}
-    <motion.div className="cinema-hero-meta" inert={cinematic && cleared} style={cinematic ? { opacity: controlsOpacity } : undefined}><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</motion.div>
-    <motion.div className="cinema-hero-actions" inert={cinematic && cleared} style={cinematic ? { opacity: controlsOpacity } : undefined}><a className="cinema-link cinema-primary" href="#projects"><FiArrowDown aria-hidden />{section?.ctaLabel}</a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></motion.div>
+    <motion.div className="cinema-hero-copy" inert={cinematic && cleared} style={cinematic ? { opacity, y: copyY } : undefined}>
+      <p className="cinema-hero-name">{profile.shortName || profile.name}</p>
+      <h1 className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-label={title}>{parts.map((word, i) => <span className={`cinema-title-part part-${i}`} key={`${word}-${i}`} aria-hidden><motion.span initial={enabled ? { y: "110%" } : false} animate={{ y: 0 }} transition={{ duration: 0.85, delay: 0.08 + i * 0.12, ease }}>{word}</motion.span></span>)}</h1>
+      <div className="cinema-hero-meta"><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</div>
+      <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects"><FiArrowDown aria-hidden />{section?.ctaLabel}</a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
+    </motion.div>
+    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: "inset(0 0 100% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: 1.1, delay: 0.15, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: cinematic ? photoScale : 1.035, x: enabled && cinematic ? x : 0, y: enabled && cinematic ? y : 0 }} /></motion.div>}
   </div></section>;
 }
 function PersonalStory({ profile }: { profile: Profile }) {
