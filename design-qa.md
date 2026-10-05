@@ -77,3 +77,32 @@ Motion verification: off-screen opacity 0.25 transitions to 1 as projects enter;
 Primary actions: Explore Lobby opened /projects/lobby; View all projects opened the archive containing all eight published projects. Remaining image/title/CTA hrefs use the same actual CMS slug. Browser console checks found no application errors; extension metadata errors are external to the app. Typecheck, ESLint and production build passed. No browser CLI runner, live AI calls, inbox delivery, merge or deployment was performed.
 
 Implementation checklist: complete. Remaining P3 polish: none required for this change.
+
+
+## Laptop assemble/open/settle — 2026-10-05
+
+final result: passed
+
+Source visual truth: the approved settled landing composition at `/workspace/scratch/e6887313a9d4/qa-landing-panels/landing-projects-final.jpg`. Motion concept: user-selected separated-screen photograph, https://share.google/HrCmwsxuPWuk0p7F7, and the GSAP Vault opening demonstration. The implementation intentionally retains the existing navy studio scene and real project content rather than copying either source’s appearance or commercial code.
+
+Latest browser-rendered implementation: `/workspace/scratch/e6887313a9d4/qa-laptop-opening/landing-opening-final.jpg`. Source and implementation are both 1353×929 content pixels from the same 1363×936 CSS viewport and browser capture scale; no density mismatch. State: first project settled/open. The small scroll alignment difference is about 6px and is normalized in the focused device crop. `comparison-full.jpg` displays both complete views together at proportional 900px width; `comparison-focus.jpg` displays the corresponding actual device regions at native scale. Both combined inputs were opened and reviewed.
+
+Motion evidence: `assembly-phase-latest.jpg` and `opening-phase-final.jpg` capture the real keyframes paused by explicit dev-only review queries at 12% and 32%. `motion-storyboard.jpg` places assembly, opening and the normal settled screenshot together. These paused captures establish geometry and layering, not real-time timing. The unpaused production component was independently exercised through viewport entry, mouse replay and keyboard Enter replay. Computed CSS shows a 1.85s, single-iteration lid animation, a fixed unanimated base, and a separate screen fade. It later reaches identity transform and screen opacity 1.
+
+Comparison history / resolved findings:
+- [P2] The early phone replay control approached the top bezel at 320px. Moved the phone device bottom offset from 21% to 17%. Post-fix `phone-320-final-visible.jpg` shows the complete device with the replay control above its visible frame.
+- [P2] Initial preserve-3D layer sorting could occlude the masked base in the middle of the opening. `opening-phase-visible.jpg` records the issue. A 1px depth offset was insufficient. Changed camera compositing to flat, with local perspective and a foreground base layer. `opening-phase-final.jpg` clearly shows the base throughout the mid-opening state; the assembly and final captures also show it.
+- The final full-view/focused comparisons show no remaining actionable P0/P1/P2 drift. No product changes followed the final comparison.
+
+Required fidelity surfaces:
+- Typography: preserved Inter and Instrument Serif families, heading hierarchy, numbers, CMS titles and taglines; Replay is a quiet 11px label with an accessible project-specific name.
+- Layout/rhythm: original panel dimensions, caption spacing, stage radii and vertical chapter rhythm remain. Whole device edges fit at desktop, phone, tablet and wide/short widths. Phone repositioning is intentional clearance for the new control.
+- Colors/tokens: existing navy, ivory and amber; replay uses the established subdued border/background and amber focus state.
+- Images/assets: actual source raster masks and unchanged real product screenshots; no synthetic product UI or CSS-drawn laptop. Both lid and base are visible in the checked opening states. Screen screenshots remain contained and move with the lid. This is 2.5D motion, not a true 3D model.
+- Copy/content: all five real CMS names, taglines, order and links remain; no promotional claims were added.
+
+Browser checks: all five desktop panels enter the open state with no broken images, fit their scenes and have correctly named replay controls. Keyboard focus reveals off-screen panels; mouse and Enter replay restart the lid. The 320×844 and 390×844 phone, 1024×844 tablet and 1920×640 wide/short iframe viewports have scrollWidth equal to clientWidth (310/380/1014/1910px after scrollbar), with all five device and lid bounds inside their scenes. The wide harness presents its real iframe at 0.66 scale. `phone-320-final-visible.jpg` was visually inspected. Explore JobPilot AI opened the actual `/projects/jobpilot-ai` case study.
+
+An explicit dev-only reduced-motion fixture at 390×844 makes all five lid animations none, lid transforms none, screen and caption opacity 1, with zero Replay buttons. `reduced-motion-final.jpg` was opened. OS settings were not changed; the production CSS media rule was also reviewed. Browser logs contained extension metadata errors, with no application-origin JavaScript errors in the checked states. Typecheck, ESLint, production build and whitespace checks pass. No browser CLI runner, live AI/inbox call, merge or deployment was performed.
+
+Implementation checklist: complete. Residual verification limits: reduced-motion behavior was exercised through the explicit development fixture rather than changing OS preferences; physical-device/Safari rendering was not tested. No remaining P3 polish required.

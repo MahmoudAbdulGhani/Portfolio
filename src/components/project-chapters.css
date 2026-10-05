@@ -5,7 +5,7 @@
 .chapter-intro { max-width:260px; color:#aabbd1; font-size:14px; padding-bottom:6px; }
 .chapter-list { display:grid; gap:70px; }
 .project-chapter { min-width:0; }
-.chapter-reveal { border:1px solid #ffffff1c; border-radius:16px; overflow:hidden; transition:border-color .3s; }
+.chapter-reveal { position:relative; border:1px solid #ffffff1c; border-radius:16px; overflow:hidden; transition:border-color .3s; }
 .chapter-reveal:has(.chapter-scene:is(:hover,:focus-visible)) { border-color:#ffb20b65; }
 .chapter-scene { display:block; position:relative; height:clamp(360px,35vw,510px); overflow:hidden; perspective:1400px; container-type:size; background:var(--cinema-dark); }
 .chapter-studio { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
@@ -13,7 +13,37 @@
 /* Bound both dimensions. Leave room for the entire bezel and motion at each edge. */
 .chapter-device-depth { position:absolute; width:min(72cqw,calc((100cqh - 140px) * 2.015),920px); left:4%; bottom:12%; }
 .chapter-device { position:relative; width:100%; }
-.chapter-laptop { position:relative; width:100%; height:auto; display:block; pointer-events:none; }
+.chapter-laptop-opening { --opening-duration:1.05s; --opening-angle:48deg; --assembly-lift:-8px; position:relative; width:100%; aspect-ratio:1499 / 744; perspective:1400px; }
+.chapter-laptop-opening.is-cinematic { --opening-duration:1.85s; --opening-angle:74deg; --assembly-lift:-22px; }
+.chapter-laptop-camera { position:absolute; inset:0; perspective:1400px; transform-style:flat; transform-origin:50% 94.086%; }
+.chapter-lid { position:absolute; inset:0; transform-origin:50% 94.086%; clip-path:inset(0 0 5.914% 0); transform:translate3d(0,var(--assembly-lift),12px) rotateX(var(--opening-angle)); opacity:0; }
+.chapter-lid-art,.chapter-base-art { position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; }
+.chapter-base-art { clip-path:inset(94.086% 0 0 0); z-index:2; }
+.chapter-screen-content { width:100%; height:100%; opacity:0; }
+.chapter-laptop-opening.is-open .chapter-lid { transform:none; opacity:1; }
+.chapter-laptop-opening.is-open .chapter-screen-content { opacity:1; }
+.chapter-laptop-opening.is-open.motion-enabled .chapter-lid { animation:chapter-lid-open var(--opening-duration) both; }
+.chapter-laptop-opening.is-open.motion-enabled .chapter-screen-content { animation:chapter-screen-on var(--opening-duration) both; }
+.chapter-laptop-opening.is-open.motion-enabled.is-cinematic .chapter-laptop-camera { animation:chapter-camera-settle var(--opening-duration) both; }
+@keyframes chapter-lid-open {
+  0% { transform:translate3d(0,var(--assembly-lift),12px) rotateX(var(--opening-angle)); opacity:0; }
+  12% { transform:translate3d(0,var(--assembly-lift),12px) rotateX(var(--opening-angle)); opacity:1; }
+  25% { transform:translate3d(0,0,0) rotateX(var(--opening-angle)); opacity:1; animation-timing-function:cubic-bezier(.22,1,.36,1); }
+  86% { transform:rotateX(-1.5deg); opacity:1; animation-timing-function:ease-out; }
+  100% { transform:none; opacity:1; }
+}
+@keyframes chapter-screen-on {
+  0%,38% { opacity:0; }
+  72%,100% { opacity:1; }
+}
+@keyframes chapter-camera-settle {
+  0%,25% { transform:rotateY(-7deg); animation-timing-function:cubic-bezier(.22,1,.36,1); }
+  100% { transform:none; }
+}
+.chapter-replay { position:absolute; top:16px; right:16px; display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:0 12px; border:1px solid #ffffff25; border-radius:24px; background:#081426dd; color:#b4c3d6; font:inherit; font-size:11px; cursor:pointer; transition:color .2s,border-color .2s; }
+.chapter-replay svg { width:13px; height:13px; }
+.chapter-replay:is(:hover,:focus-visible) { color:var(--cinema-gold); border-color:var(--cinema-gold); }
+.chapter-replay:focus-visible { outline:2px solid var(--cinema-gold); outline-offset:3px; }
 .chapter-screen { position:absolute; left:var(--chapter-screen-left); top:var(--chapter-screen-top); width:var(--chapter-screen-width); height:var(--chapter-screen-height); overflow:hidden; background:#05090f; }
 .chapter-screen img { display:block; width:100%; height:100%; object-fit:contain; }
 .chapter-detail-depth { position:absolute; width:25%; height:45%; right:5%; bottom:19%; }
@@ -53,8 +83,10 @@
   .chapter-list { gap:42px; }
   .chapter-reveal { border-radius:10px; }
   .chapter-scene { height:auto; aspect-ratio:1.28; }
-  .chapter-device-depth { width:92%; left:4%; bottom:21%; }
+  .chapter-device-depth { width:92%; left:4%; bottom:17%; }
   .chapter-detail-depth { display:none; }
+  .chapter-replay { top:8px; right:8px; width:44px; padding:0; }
+  .chapter-replay span { display:none; }
   .chapter-caption { grid-template-columns:28px minmax(0,1fr) 44px; gap:12px; padding-top:20px; }
   .chapter-number { font-size:29px; }
   .cinema .chapter-copy h3 { font-size:clamp(21px,5.8vw,28px); line-height:1.23; }
@@ -71,4 +103,7 @@
   .chapter-reveal,.chapter-device-depth,.chapter-device,.chapter-detail-depth,.chapter-detail,.chapter-caption,.chapter-composition { opacity:1!important; transform:none!important; }
   .chapter-reveal,.chapter-arrow,.chapter-arrow svg,.chapter-copy h3 a { transition:none; }
   .chapter-open:is(:hover,:focus-visible) svg { transform:none; }
+  .chapter-lid,.chapter-laptop-camera,.chapter-screen-content { animation:none!important; transform:none!important; opacity:1!important; }
+  .chapter-replay { display:none; }
 }
+.chapter-laptop-opening.motion-disabled .chapter-lid,.chapter-laptop-opening.motion-disabled .chapter-laptop-camera,.chapter-laptop-opening.motion-disabled .chapter-screen-content { animation:none; transform:none; opacity:1; }

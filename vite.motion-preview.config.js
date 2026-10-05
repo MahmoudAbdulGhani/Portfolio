@@ -10,13 +10,25 @@ config.plugins.push({ name: 'readonly-motion-preview',
   transformIndexHtml: {
     order: 'pre',
     handler(html, context) {
-      if (new URL(context.originalUrl || '/', 'http://localhost').searchParams.get('review_motion') !== 'reduced') return html;
-      return { html, tags: [{ tag: 'script', injectTo: 'head-prepend', children: `
+      const params = new URL(context.originalUrl || '/', 'http://localhost').searchParams;
+      const tags = [];
+      if (params.get('review_motion') === 'reduced') tags.push({ tag: 'script', injectTo: 'head-prepend', children: `
         const nativeMatchMedia = window.matchMedia.bind(window);
         window.matchMedia = query => query === '(prefers-reduced-motion: reduce)'
           ? { matches: true, media: query, onchange: null, addEventListener() {}, removeEventListener() {}, addListener() {}, removeListener() {}, dispatchEvent() { return true; } }
           : nativeMatchMedia(query);
-      ` }] };
+      ` });
+      // Freeze real CSS keyframes for visual review, never included in production.
+      const phase = { assembly: 0.12, opening: 0.32 }[params.get('review_laptop')];
+      if (phase) tags.push({ tag: 'style', injectTo: 'head', children: `
+        .chapter-laptop-opening.is-open.motion-enabled .chapter-lid,
+        .chapter-laptop-opening.is-open.motion-enabled .chapter-screen-content,
+        .chapter-laptop-opening.is-open.motion-enabled.is-cinematic .chapter-laptop-camera {
+          animation-play-state: paused!important;
+          animation-delay: calc(var(--opening-duration) * -${phase})!important;
+        }
+      ` });
+      return tags.length ? { html, tags } : html;
     },
   },
   configureServer(server) {
