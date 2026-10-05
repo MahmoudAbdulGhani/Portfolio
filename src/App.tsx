@@ -99,8 +99,23 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView({ block: "start" }));
-      return;
+      // CMS sections mount after the route's first render. Wait for the target
+      // so a direct /#projects visit reaches the gallery after data loads.
+      let cancelled = false;
+      let frame = 0;
+      const observer = new MutationObserver(scrollToTarget);
+      function scrollToTarget() {
+        const target = document.getElementById(hash.slice(1));
+        if (!target) return;
+        observer.disconnect();
+        void document.fonts.ready.then(() => {
+          if (!cancelled) frame = requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+        });
+      }
+      observer.observe(document.getElementById("root") ?? document.body, { childList: true, subtree: true });
+      scrollToTarget();
+      const timeout = window.setTimeout(() => observer.disconnect(), 10000);
+      return () => { cancelled = true; observer.disconnect(); cancelAnimationFrame(frame); window.clearTimeout(timeout); };
     }
     window.scrollTo({ top: 0, left: 0 });
   }, [pathname, hash]);

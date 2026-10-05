@@ -8,7 +8,7 @@ import { ScrollWords, MotionTimeline } from "../components/LandingMotion";
 import { CvDownloadButton } from "../components/CvDownloadButton";
 import { PublicDataState } from "../components/PublicDataState";
 import { API_BASE } from "../lib/api";
-import { ProjectChapters } from "../components/ProjectChapters";
+import { CinematicProjects } from "../components/cinematic/CinematicProjects";
 import { SkillExplorer } from "../components/SkillExplorer";
 import { CourseDisclosure, MaskedReveal } from "../components/SectionMotion";
 import type { ExperienceItem, Profile } from "../types";
@@ -102,7 +102,16 @@ function WorkSequence() {
   if (section?.visible === false) return null;
   if (query.isLoading || query.isError) return <PublicDataState loading={query.isLoading} error={query.isError} onRetry={() => void query.refetch()} label="projects" />;
   if (!featured.length) return null;
-  return <ProjectChapters featured={featured} />;
+  const content = section?.content ?? {};
+  return <CinematicProjects
+    projects={featured}
+    eyebrow={typeof content.cinematicEyebrow === "string" ? content.cinematicEyebrow : "03 / PROJECTS"}
+    heading={typeof content.cinematicHeading === "string" && content.cinematicHeading.trim() ? content.cinematicHeading : "Selected work"}
+    description={typeof content.cinematicDescription === "string" ? content.cinematicDescription : undefined}
+    ctaLabel={section?.ctaLabel || "View all projects"}
+    allProjectsHref={section?.ctaUrl || "/projects"}
+    ambientSrc="/brand/navy-atmosphere.webp"
+  />;
 }
 function CareerItem({ item, index }: { item: ExperienceItem; index: number }) {
   const ref = useRef<HTMLLIElement>(null);

@@ -250,3 +250,26 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
   .cinema-title-part { overflow:clip; }
   .motion-profile-touch .cinema-portrait { overflow:hidden; }
 }
+
+/* Work gallery fits the production landing's type, gutters and fixed navigation. */
+.cinema .cw-gallery { --cw-gold: var(--cinema-gold); background: var(--cinema-dark); padding-block: 104px 88px; border-top: 1px solid #ffffff18; scroll-margin-top: 80px; }
+.cinema .cw-container { width: min(1320px, 88%); }
+.cinema .cw-heading h2 { font-size: clamp(64px, 7.5vw, 108px); line-height: .91; font-weight: 500; letter-spacing: -.065em; }
+.cinema .cw-heading h2 em { font-size: 1.3em; font-weight: 400; }
+.cinema .cw-caption h3 { font-size: clamp(34px, 3.2vw, 46px); line-height: 1.1; font-weight: 500; }
+.cinema .cw-scene--hero h3 { font-size: clamp(48px, 4.8vw, 70px); line-height: 1.04; }
+.cinema .cw-project-number { line-height: 1.6; }
+.cinema .cw-tagline { line-height: 1.5; }
+.cinema .cw-chapters { top: 92px; }
+.cinema .cw-ambient { object-fit: cover; opacity: .45; }
+.cinema .cw-scene { scroll-margin-top: 172px; }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .cinema .cw-scene--hero h3 { font-size: 40px; }
+}
+@media (max-width: 760px) {
+  .cinema .cw-gallery { padding-block: 64px 44px; }
+  .cinema .cw-container { width: calc(100% - 40px); }
+  .cinema .cw-heading h2 { font-size: clamp(42px, 13.5vw, 82px); }
+  .cinema .cw-caption h3 { font-size: 30px; }
+  .cinema .cw-scene--hero h3 { font-size: 38px; }
+}
