@@ -3,6 +3,7 @@ import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { useTheme } from "./lib/theme";
 import "./public-pages.css";
 import { Navbar } from "./components/Navbar";
+import { PortfolioPointer } from "./components/PortfolioPointer";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
@@ -88,6 +89,7 @@ function PublicLayout() {
         <PortfolioAssistant key={assistantContext} />
       </Suspense>
       <CommandPaletteLoader />
+      <PortfolioPointer key={`pointer-${pathname}`} />
     </div>
   );
 }

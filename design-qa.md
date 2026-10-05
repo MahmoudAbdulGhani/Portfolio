@@ -106,3 +106,31 @@ Browser checks: all five desktop panels enter the open state with no broken imag
 An explicit dev-only reduced-motion fixture at 390×844 makes all five lid animations none, lid transforms none, screen and caption opacity 1, with zero Replay buttons. `reduced-motion-final.jpg` was opened. OS settings were not changed; the production CSS media rule was also reviewed. Browser logs contained extension metadata errors, with no application-origin JavaScript errors in the checked states. Typecheck, ESLint, production build and whitespace checks pass. No browser CLI runner, live AI/inbox call, merge or deployment was performed.
 
 Implementation checklist: complete. Residual verification limits: reduced-motion behavior was exercised through the explicit development fixture rather than changing OS preferences; physical-device/Safari rendering was not tested. No remaining P3 polish required.
+
+
+## Portfolio pointer — 2026-10-05
+
+final result: passed
+
+Source visual truth: existing approved navy/amber portfolio at `/workspace/scratch/e6887313a9d4/qa-laptop-opening/landing-opening-final.jpg`, plus the standard Feather FiMousePointer geometry from the installed react-icons library. User requested a professional pointer aligned to this existing design. The native arrow uses the real library icon rather than custom-drawn geometry.
+
+Implementation: `/workspace/scratch/e6887313a9d4/qa-portfolio-pointer/pointer-projects-final.jpg`. Source and implementation are 1353×929 content pixels from the same 1363×936 CSS viewport and browser capture scale. State: first landing project settled, dark theme. `comparison-full.jpg` puts both views together at proportional 900px width. `comparison-pointer.jpg` compares equal 120×120 crops around each actual pointer location, enlarged to 300×300; the cursor locations differ intentionally, while the viewport and settled panel state match. Both combined comparisons were opened and inspected. Minor existing device tilt varies with mouse position and is intentional.
+
+The cloud screenshot includes its own black pointer marker/blue tracking glow. It visibly verifies the new amber halo, not the operating system’s native cursor bitmap. `native-arrow-preview.png` rasterizes the exact served SVG and was opened to check its amber fill, navy outline, proportions and hotspot placement. Computed root, link, Replay and Projects-filter cursor values all reference that SVG with hotspot 4/4 and appropriate native fallbacks.
+
+Comparison history / resolved findings:
+- [P2] The AI Job Match disabled button initially inherited the enhanced pointer due to selector specificity. Made disabled and busy cursor semantics explicit priority overrides. The disabled action now computes not-allowed.
+- [P2] The new pointer originally reused Navbar’s pathname React key, producing a duplicate-key console warning. Namespaced its key as pointer-{pathname}; repeated Contact → AI Job Match navigation produced no new application errors and remounted the pointer hidden.
+- Cancel pending frames when hiding, so a queued movement cannot reveal a stale halo over text fields or after keyboard input.
+- Final full/focused comparisons show no remaining actionable P0/P1/P2 findings. No product changes followed final comparison.
+
+Required fidelity surfaces:
+- Fonts/typography: existing Inter and Instrument Serif hierarchy, weights, wrapping and all page copy remain unchanged; the cursor adds no text label.
+- Spacing/layout: decoration is fixed with zero layout dimensions; all existing panel, header and caption geometry remains. 22px default / 35.2px interactive halo stays restrained.
+- Colors/tokens: native arrow matches amber #ffb20b and navy #05090f; halo reads the existing --accent token, verified as rgb(255,178,11) in dark and rgb(155,96,0) in light. `pointer-light-theme.jpg` was visually inspected.
+- Image/asset quality: exact Feather icon as a 32px SVG; real project assets remain complete and unchanged. Native-arrow preview confirms sharp outlined geometry.
+- Copy/content: all actual CMS project titles, taglines, actions and navigation stay intact. Decorative element is aria-hidden and has no focus target.
+
+Executed browser checks: pointer tracks actual mouse coordinates; interactive state expands to matrix scale 1.6; keyboard Tab hides it; pointer-events is none. Contact’s Name field computes auto and hides the halo. Projects’ three filter controls and the landing Replay control compute the custom arrow URL. AI Job Match’s disabled button computes not-allowed. Dark/light theme checks pass and the preview was restored to dark. The explicit development reduced-motion fixture shows motion-paused, static open laptops, zero replay controls and a hidden halo after mouse interaction; OS preferences were not changed. Public route changes reset the pointer. Post-fix console checks found no new application errors; extension metadata messages are external. Typecheck, lint, production build and whitespace checks pass. No production form submission, AI provider call, merge or deployment.
+
+Implementation checklist: complete. Residual limits: physical touch, forced colors, viewport exit and pressed-state animation were code-reviewed rather than separately captured. SVG native-cursor assignment was verified by computed styles and independent asset rendering because the observer overlays its own pointer marker. No remaining P3 polish required.
