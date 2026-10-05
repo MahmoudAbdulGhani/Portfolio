@@ -13,7 +13,6 @@
 .cw-heading h2 span, .cw-heading h2 em { display: block; }
 .cw-heading h2 em { font-family: 'Instrument Serif', serif; font-size: 1.34em; font-weight: 400; letter-spacing: -.045em; color: var(--cw-gold); margin: -6px 0 0 5px; line-height: .85; }
 .cw-intro { max-width: 380px; color: var(--cw-muted); font-size: 16px; line-height: 1.6; }
-.cw-gallery--expanded-heading .cw-scene--hero { margin-top: 32px; }
 .cw-heading h2, .cw-caption h3 { overflow-wrap: break-word; }
 .cw-utilities { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding-top: 0; }
 .cw-all { display: inline-flex; align-items: center; gap: 16px; font-size: 14px; color: var(--cw-ink); min-height: 44px; }
@@ -22,12 +21,11 @@
 .cw-motion { display: inline-flex; align-items: center; gap: 7px; border: 0; padding: 4px 0; color: var(--cw-muted); background: transparent; font-size: 11px !important; cursor: pointer; min-height: 44px; }
 .cw-motion:hover { color: var(--cw-ink); }
 .cw-paused * { transition: none !important; }
-.cw-scenes { display: grid; grid-template-columns: 1.18fr 1fr; column-gap: 80px; row-gap: 72px; }
 .cw-scene { min-width: 0; position: relative; }
 .cw-stage { perspective: 1400px; min-width: 0; }
 .cw-stage-body { position: relative; }
 .cw-panel { padding: 0; margin: 0; display: block; position: relative; border: 1px solid #70869c69; border-radius: 10px; overflow: hidden; background: #101c2c; box-shadow: 0 24px 64px #0008; cursor: zoom-in; width: 100%; text-align: left; transform-origin: center; }
-.cw-panel img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.cw-panel img { display: block; width: 100%; height: auto; object-fit: contain; }
 .cw-panel .cw-enlarge { position: absolute; bottom: 10px; right: 10px; display: grid; place-items: center; width: 34px; height: 34px; background: #071322e8; color: #fff; border: 1px solid #637993; border-radius: 6px; opacity: 0; transition: opacity .2s; }
 .cw-panel:hover .cw-enlarge, .cw-panel:focus-visible .cw-enlarge { opacity: 1; }
 .cw-image-error { display: grid; min-height: 240px; place-items: center; padding: 30px; font-size: 14px; color: var(--cw-muted); }
@@ -38,35 +36,6 @@
 .cw-explore { display: inline-flex; gap: 13px; align-items: center; color: var(--cw-gold); font-size: 14px; line-height: 1.5; padding: 4px 0; min-height: 44px; }
 .cw-explore svg { transition: transform .25s; }
 .cw-explore:hover svg { transform: translate(3px, -3px); }
-.cw-scene--hero { grid-column: 1/-1; min-height: 500px; display: grid; grid-template-columns: .31fr .69fr; align-items: center; margin: -10px 0 0; }
-.cw-scene--hero .cw-caption { grid-column: 1; grid-row: 1; position: relative; z-index: 4; align-self: end; padding: 0 18px 38px 0; }
-.cw-scene--hero h3 { font-size: clamp(52px, 5.2vw, 76px); letter-spacing: -.055em; line-height: .95; color: #e2e7f0; }
-.cw-scene--hero .cw-tagline { max-width: 270px; font-size: 17px; }
-.cw-scene--hero .cw-stage { grid-column: 2; grid-row: 1; align-self: center; }
-.cw-scene--hero .cw-stage-body { height: 490px; }
-.cw-scene--hero .cw-primary { position: absolute; z-index: 2; top: 86px; left: 3%; width: 93%; aspect-ratio: 1900/881; }
-.cw-scene--hero .cw-secondary { position: absolute; z-index: 1; width: 62%; top: 52px; left: 6%; aspect-ratio: 1900/881; rotate: -5deg; opacity: .78; }
-.cw-scene--hero .cw-tertiary { position: absolute; z-index: 3; top: 268px; right: -1%; width: 37%; aspect-ratio: 1.6; rotate: 5deg; }
-.cw-scene--hero .cw-tertiary img { object-position: right top; }
-.cw-scene--lobby { padding-top: 46px; }
-.cw-scene--lobby .cw-stage-body { height: 356px; }
-.cw-scene--lobby .cw-primary { aspect-ratio: 1.85; rotate: -2deg; }
-.cw-scene--lobby .cw-secondary { position: absolute; z-index: 2; bottom: 0; right: -4%; width: 53%; aspect-ratio: 2.1; rotate: 2deg; }
-.cw-scene--lobby .cw-caption { padding-top: 30px; }
-.cw-scene--gamezone .cw-stage-body { height: 405px; }
-.cw-scene--gamezone .cw-primary { position: absolute; left: 0; top: 0; width: 77%; height: 365px; rotate: 2deg; }
-.cw-scene--gamezone .cw-secondary { position: absolute; right: 0; bottom: 0; width: 39%; height: 278px; rotate: -3deg; }
-.cw-scene--gamezone :is(.cw-primary, .cw-secondary) img { object-position: center top; }
-.cw-scene--gamezone .cw-caption { padding-top: 27px; }
-.cw-scene--panorama { grid-column: 1/-1; display: grid; grid-template-columns: 2.25fr 1fr; align-items: center; gap: 62px; }
-.cw-scene--panorama .cw-primary { aspect-ratio: 1897/880; }
-.cw-scene--panorama h3 { font-size: clamp(36px, 3.6vw, 52px); }
-.cw-scene--reverse { grid-column: 1/-1; display: grid; grid-template-columns: 1fr 2fr; gap: 72px; align-items: center; padding: 20px 0 12px; }
-.cw-scene--reverse .cw-stage { grid-column: 2; grid-row: 1; }
-.cw-scene--reverse .cw-caption { grid-column: 1; grid-row: 1; }
-.cw-scene--reverse .cw-stage-body { padding-bottom: 22px; }
-.cw-scene--reverse .cw-primary { aspect-ratio: 1905/901; }
-.cw-scene--reverse .cw-secondary { position: absolute; width: 40%; right: -2%; bottom: -10px; aspect-ratio: 1.75; rotate: 3deg; }
 .cw-section-end { margin-top: 90px; padding-top: 28px; border-top: 1px solid #6b82942b; display: flex; justify-content: space-between; align-items: center; gap: 24px; color: #adb8c9; font-size: 12px; }
 .cw-section-end a { display: inline-flex; align-items: center; gap: 16px; color: var(--cw-ink); font-size: 14px; }
 .cw-section-end svg { color: var(--cw-gold); }
@@ -99,9 +68,8 @@
 .cw-explore:hover > span { background: var(--cw-gold); color: #071322; }
 .cw-gallery-link { background: none; border: 0; padding: 0; min-height: 44px; display: inline-flex; gap: 8px; align-items: center; color: #b7c6d9; font-size: 12px !important; cursor: pointer; }
 .cw-gallery-link:hover { color: #fff; }
-.cw-panel img { transition: scale .65s cubic-bezier(.2,.7,.2,1); }
-.cw-panel:hover img { scale: 1.025; }
-.cw-paused .cw-panel:hover img { scale: 1; }
+.cw-panel { transition: border-color .25s; }
+.cw-panel:hover { border-color: var(--cw-gold); }
 .cw-scene { scroll-margin-block: 100px; }
 .cw-scene:focus-visible { outline: 1px solid #ffb02e69; outline-offset: 14px; border-radius: 6px; }
 .cw-chapters { position: fixed; z-index: 18; left: 50%; top: 16px; transform: translateX(-50%); display: flex; gap: 4px; width: min(950px, calc(100% - 112px)); padding: 9px; border: 1px solid #58667e61; border-radius: 12px; background: #0b1421ed; backdrop-filter: blur(16px); box-shadow: 0 10px 32px #0007; overflow: hidden; }
@@ -124,26 +92,12 @@
 @media (min-width: 1500px) { .cw-scene--hero { min-height: 520px; } }
 @media (max-width: 1100px) and (min-width: 761px) {
   .cw-container { width: calc(100% - 64px); }
-  .cw-scenes { gap: 68px 48px; }
-  .cw-scene--hero { min-height: 450px; }
-  .cw-scene--hero .cw-stage-body { height: 420px; }
-  .cw-scene--hero .cw-primary { top: 85px; }
-  .cw-scene--hero .cw-tertiary { top: 235px; }
-  .cw-scene--hero .cw-caption { padding-bottom: 20px; }
-  .cw-scene--hero .cw-secondary { left: 14%; }
-  .cw-scene--hero h3 { font-size: 44px; }
   .cw-actions { gap: 6px 18px; }
-  .cw-scene--lobby .cw-stage-body { height: 270px; }
-  .cw-scene--gamezone .cw-stage-body { height: 335px; }
-  .cw-scene--gamezone .cw-primary { height: 300px; }
-  .cw-scene--gamezone .cw-secondary { height: 235px; }
-  .cw-scene--panorama { gap: 40px; grid-template-columns: 2fr 1fr; }
-  .cw-scene--reverse { gap: 45px; }
 }
 @media (max-width: 760px) {
   .cw-gallery { padding: 56px 0 28px; }
   .cw-container { width: calc(100% - 40px); }
-  .cw-heading { margin-bottom: 48px; }
+  .cw-heading { margin-bottom: 0; }
   .cw-heading-note { display: none; }
   .cw-actions { gap: 18px; }
   .cw-thumbnails { gap: 8px; }
@@ -155,30 +109,8 @@
   .cw-all { max-width: 94px; align-items: flex-start; font-size: 11px; gap: 7px; line-height: 1.5; }
   .cw-all svg { flex-shrink: 0; width: 15px; }
   .cw-motion { font-size: 11px !important; gap: 4px; }
-  .cw-scenes { grid-template-columns: 1fr; gap: 64px; }
-  .cw-scene--hero, .cw-scene--panorama, .cw-scene--reverse { display: flex; flex-direction: column; gap: 0; margin: 0; min-height: 0; align-items: stretch; }
-  .cw-gallery--expanded-heading .cw-scene--hero { margin-top: 0; }
-  .cw-scene--hero .cw-stage-body { height: auto; padding: 36px 0 64px; }
-  .cw-scene--hero .cw-primary { position: relative; top: auto; left: auto; width: 94%; aspect-ratio: 1.85; }
-  .cw-scene--hero .cw-secondary { top: 0; left: 12%; width: 69%; rotate: -4deg; }
-  .cw-scene--hero .cw-tertiary { top: auto; bottom: 0; right: 0; width: 44%; aspect-ratio: 1.6; rotate: 4deg; }
-  .cw-scene--hero .cw-caption { padding: 28px 0 0; align-self: auto; }
-  .cw-scene--hero h3 { font-size: 42px; max-width: none; letter-spacing: -.045em; }
   .cw-caption h3 { font-size: 30px; margin-bottom: 12px; }
-  .cw-scene--hero .cw-caption h3 { font-size: 38px; }
-  .cw-scene--hero .cw-tagline, .cw-tagline { font-size: 15px; max-width: 100%; margin-bottom: 16px; }
   .cw-project-number { font-size: 10px; margin-bottom: 12px; gap: 10px; }
-  .cw-scene--lobby { padding-top: 0; }
-  .cw-scene--lobby .cw-stage-body { height: auto; padding-bottom: 60px; }
-  .cw-scene--lobby .cw-primary { width: 96%; }
-  .cw-scene--lobby .cw-secondary { right: 0; width: 56%; bottom: 0; }
-  .cw-scene--gamezone .cw-stage-body { height: 320px; }
-  .cw-scene--gamezone .cw-primary { height: 282px; width: 80%; }
-  .cw-scene--gamezone .cw-secondary { height: 228px; width: 42%; }
-  .cw-scene--panorama .cw-caption, .cw-scene--reverse .cw-caption { padding-top: 28px; }
-  .cw-scene--reverse { padding: 0; }
-  .cw-scene--reverse .cw-stage-body { padding-bottom: 46px; }
-  .cw-scene--reverse .cw-secondary { right: 0; width: 48%; bottom: 0; }
   .cw-explore { font-size: 13px; padding: 2px 0; }
   .cw-explore > span { width: 38px; height: 38px; }
   .cw-section-end { flex-direction: column; align-items: flex-start; margin-top: 58px; padding-top: 24px; gap: 16px; line-height: 1.5; }
@@ -193,4 +125,32 @@
 @media (prefers-reduced-motion: reduce) {
   .cw-gallery .cw-panel:hover img { scale: 1; }
   .cw-gallery *, .cw-viewer * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* One large, uncropped interface per chapter; additional screens open in the viewer. */
+.cw-scenes { display: grid; grid-template-columns: 1fr; gap: 112px; margin-top: 56px; }
+.cw-scene { display: flex; flex-direction: column; gap: 28px; }
+.cw-caption { order: -1; display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 64px; align-items: end; }
+.cw-caption h3 { margin-bottom: 0; }
+.cw-caption-details .cw-tagline { margin-bottom: 14px; max-width: none; }
+.cw-scene--hero h3 { font-size: clamp(48px, 4.8vw, 70px); }
+.cw-primary { width: 100%; height: auto; aspect-ratio: auto; }
+.cw-scene--gamezone .cw-stage-body { max-width: 1000px; margin-inline: auto; }
+.cw-viewer header > div:first-child { min-width: 0; }
+.cw-viewer-tools { display: flex; gap: 8px; flex-shrink: 0; }
+.cw-zoom { width: auto; min-width: 70px; padding-inline: 12px; font-size: 12px; }
+.cw-viewer-image { overflow: auto; max-height: calc(100dvh - 356px); overscroll-behavior: contain; }
+.cw-viewer--zoomed .cw-viewer-image { display: block; }
+.cw-viewer--zoomed .cw-viewer-image img { max-width: none; max-height: none; width: auto; height: auto; }
+.cw-viewer-image:focus-visible { outline: 2px solid #ffb02e; outline-offset: 2px; }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .cw-caption { grid-template-columns: 1fr minmax(240px, 340px); gap: 32px; }
+}
+@media (max-width: 760px) {
+  .cw-scenes { gap: 72px; margin-top: 40px; }
+  .cw-scene { gap: 22px; }
+  .cw-caption { grid-template-columns: 1fr; gap: 16px; }
+  .cw-caption h3 { margin-bottom: 0; }
+  .cw-panel { border-radius: 7px; }
+  .cw-viewer-image { max-height: calc(100dvh - 382px); }
 }

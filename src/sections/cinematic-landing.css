@@ -262,7 +262,7 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
 .cinema .cw-tagline { line-height: 1.5; }
 .cinema .cw-chapters { top: 92px; }
 .cinema .cw-ambient { object-fit: cover; opacity: .45; }
-.cinema .cw-scene { scroll-margin-top: 172px; }
+.cinema .cw-scene { scroll-margin-top: 76px; }
 @media (min-width: 761px) and (max-width: 1100px) {
   .cinema .cw-scene--hero h3 { font-size: 40px; }
 }

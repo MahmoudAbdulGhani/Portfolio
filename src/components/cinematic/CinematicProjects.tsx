@@ -35,12 +35,12 @@ interface GalleryProps {
   ambientSrc?: string;
 }
 
-const directions: Record<string, { layout: string; primary: number; secondary?: number; tertiary?: number; shortName?: string }> = {
-  'jobpilot-ai': { layout: 'hero', primary: 0, secondary: 1, tertiary: 3 },
-  lobby: { layout: 'lobby', primary: 1, secondary: 2 },
-  'gamezone-arena': { layout: 'gamezone', primary: 2, secondary: 4 },
+const directions: Record<string, { layout: string; primary: number; shortName?: string }> = {
+  'jobpilot-ai': { layout: 'hero', primary: 0 },
+  lobby: { layout: 'lobby', primary: 1 },
+  'gamezone-arena': { layout: 'gamezone', primary: 0 },
   'construction-project-management-accounting-system': { layout: 'panorama', primary: 0, shortName: 'Cedar Construction' },
-  unihub: { layout: 'reverse', primary: 2, secondary: 1 },
+  unihub: { layout: 'reverse', primary: 2 },
 };
 
 const identity = (url: string) => url;
@@ -98,21 +98,13 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
         const hero = scene.classList.contains('cw-scene--hero');
         if (hero && !mobile) {
           const timeline = gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 90%', end: 'top 20%', scrub: .8 } });
-          timeline.fromTo(panels[0], { y: 54, x: 24, scale: .9, rotation: -2 }, { y: 0, x: 0, scale: 1, rotation: 0, ease: 'none', force3D: false }, 0);
-          if (panels[1]) timeline.fromTo(panels[1], { x: -32, y: -14, rotation: -3 }, { x: 0, y: 0, rotation: 0, ease: 'none', force3D: false }, 0);
-          if (panels[2]) timeline.fromTo(panels[2], { x: 74, y: 70, rotation: 6 }, { x: 0, y: 0, rotation: 0, ease: 'none', force3D: false }, .08);
+          timeline.fromTo(panels[0], { y: 30, scale: .98 }, { y: 0, scale: 1, ease: 'none', force3D: false }, 0);
         } else {
-          const panorama = scene.classList.contains('cw-scene--panorama');
-          const reverse = scene.classList.contains('cw-scene--reverse');
-          // Enter from above, keeping the screenshot footprint away from captions.
           gsap.fromTo(panels, {
-            x: mobile ? 0 : reverse ? 48 : panorama ? 0 : -28,
-            y: mobile ? -16 : -62,
-            scale: mobile ? 1 : .94,
-            rotation: mobile ? 0 : -2,
+            y: mobile ? 10 : 28,
           }, {
-            x: 0, y: 0, scale: 1, rotation: 0, duration: mobile ? .55 : 1.25,
-            stagger: mobile ? .06 : .18, ease: 'power3.out', force3D: false,
+            y: 0, duration: mobile ? .55 : 1.1,
+            ease: 'power3.out', force3D: false,
             scrollTrigger: { trigger: scene, start: 'top 88%', once: true },
           });
         }
@@ -129,8 +121,8 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
           const yTo = gsap.quickTo(body, 'y', { duration: .7, ease: 'power3.out', force3D: false });
           const move = (e: PointerEvent) => {
             const b = stage.getBoundingClientRect();
-            xTo(((e.clientX - b.left) / b.width - .5) * 20);
-            yTo(((e.clientY - b.top) / b.height - .5) * 14);
+            xTo(((e.clientX - b.left) / b.width - .5) * 8);
+            yTo(((e.clientY - b.top) / b.height - .5) * 6);
           };
           const leave = () => { xTo(0); yTo(0); };
           stage.addEventListener('pointermove', move);
@@ -170,6 +162,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
     try { return localStorage.getItem('cinematic-motion') === 'paused'; } catch { return false; }
   });
   const [viewer, setViewer] = useState<{ project: GalleryProject; index: number } | null>(null);
+  const [zoomed, setZoomed] = useState(false);
   const [viewerFailedSrc, setViewerFailedSrc] = useState<string | null>(null);
   const featured = projects.filter((p) => p.featured && p.published !== false && p.showOnPortfolio !== false)
     .sort((a, b) => a.order - b.order);
@@ -215,22 +208,22 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
           const direction = directions[project.slug] ?? { layout: index === 0 ? 'hero' : index % 2 ? 'panorama' : 'reverse', primary: 0 };
           const sources = project.screenshots?.length ? project.screenshots : project.coverImage ? [project.coverImage] : [];
           const primary = Math.min(direction.primary, Math.max(0, sources.length - 1));
-          const secondary = direction.secondary !== undefined && sources[direction.secondary] ? direction.secondary : undefined;
-          const tertiary = direction.tertiary !== undefined && sources[direction.tertiary] ? direction.tertiary : undefined;
           const name = direction.shortName ?? project.name;
-          const open = (screen: number) => setViewer({ project, index: screen });
+          const open = (screen: number) => { setZoomed(false); setViewer({ project, index: screen }); };
           return <article key={project.id} id={`cw-scene-${project.slug}`} tabIndex={-1} className={`cw-scene cw-scene--${direction.layout}`} aria-labelledby={`cw-${project.slug}`}>
             <div className="cw-stage"><div className="cw-stage-body">
               {sources[primary] ? <Screen src={resolveImage(sources[primary])} alt={`${project.name}, screenshot ${primary + 1}`} priority={index === 0} className="cw-primary" onOpen={() => open(primary)} /> : <div className="cw-no-image">Screenshots coming soon</div>}
-              {secondary !== undefined && <Screen src={resolveImage(sources[secondary])} alt={`${project.name}, screenshot ${secondary + 1}`} priority={index === 0} className="cw-secondary" onOpen={() => open(secondary)} />}
-              {tertiary !== undefined && <Screen src={resolveImage(sources[tertiary])} alt={`${project.name}, screenshot ${tertiary + 1}`} priority={index === 0} className="cw-tertiary" onOpen={() => open(tertiary)} />}
             </div></div>
             <div className="cw-caption">
+              <div className="cw-caption-heading">
               <p className="cw-project-number"><span className="cw-ordinal">{String(index + 1).padStart(2, '0')}</span><span>{project.stack.slice(0, 3).join(' · ')}</span></p>
               <h3 id={`cw-${project.slug}`}>{name}</h3>
+              </div>
+              <div className="cw-caption-details">
               <p className="cw-tagline">{project.tagline || project.description}</p>
               <div className="cw-actions"><a className="cw-explore" href={projectHref(project.slug)}>Explore project<span><PiArrowUpRight size={20} /></span></a>
                 {!!sources.length && <button className="cw-gallery-link" type="button" onClick={() => open(primary)}><PiImages size={17} />{sources.length} {sources.length === 1 ? 'screen' : 'screens'}</button>}
+              </div>
               </div>
             </div>
           </article>;
@@ -244,13 +237,13 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
       {featured.map((project, index) => <a key={project.id} href={`#cw-scene-${project.slug}`} aria-current={activeChapter === index ? 'location' : undefined} onClick={(event) => {
         event.preventDefault();
         const scene = document.getElementById(`cw-scene-${project.slug}`);
-        scene?.scrollIntoView({ block: 'center', behavior: paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        scene?.scrollIntoView({ block: 'start', behavior: paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         scene?.focus({ preventScroll: true });
       }}><span>{String(index + 1).padStart(2, '0')}</span><strong>{directions[project.slug]?.shortName ?? project.name}</strong></a>)}
     </nav>}
-    {viewer && <dialog ref={dialog} className="cw-viewer" aria-labelledby="cw-viewer-title" onCancel={close} onClick={(e) => { if (e.target === e.currentTarget) close(); }} onKeyDown={(e) => { if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } }}>
-      <div className="cw-viewer-inner"><header><div><p className="cw-eyebrow">PROJECT GALLERY</p><h3 id="cw-viewer-title">{directions[viewer.project.slug]?.shortName ?? viewer.project.name}</h3></div><button type="button" className="cw-icon-button" onClick={close} aria-label="Close screenshot gallery" autoFocus><PiX size={22} /></button></header>
-        <div className="cw-viewer-image">{viewerFailedSrc === images[viewer.index] ? <p className="cw-image-error">This screenshot is unavailable. Use the arrow controls to see another screen.</p> : <img key={images[viewer.index]} src={resolveImage(images[viewer.index])} alt={`${viewer.project.name}, full screenshot ${viewer.index + 1}`} onError={() => setViewerFailedSrc(images[viewer.index])} />}</div>
+    {viewer && <dialog ref={dialog} className={`cw-viewer ${zoomed ? 'cw-viewer--zoomed' : ''}`} aria-labelledby="cw-viewer-title" onCancel={close} onClick={(e) => { if (e.target === e.currentTarget) close(); }} onKeyDown={(e) => { if (zoomed && (e.target as HTMLElement).classList.contains('cw-viewer-image')) return; if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } }}>
+      <div className="cw-viewer-inner"><header><div><p className="cw-eyebrow">PROJECT GALLERY</p><h3 id="cw-viewer-title">{directions[viewer.project.slug]?.shortName ?? viewer.project.name}</h3></div><div className="cw-viewer-tools"><button type="button" className="cw-icon-button cw-zoom" onClick={() => setZoomed(!zoomed)} aria-pressed={zoomed}>{zoomed ? 'Fit screen' : 'Zoom in'}</button><button type="button" className="cw-icon-button" onClick={close} aria-label="Close screenshot gallery" autoFocus><PiX size={22} /></button></div></header>
+        <div className="cw-viewer-image" role={zoomed ? 'region' : undefined} tabIndex={zoomed ? 0 : undefined} aria-label={zoomed ? 'Zoomed screenshot. Scroll to inspect the interface.' : undefined}>{viewerFailedSrc === images[viewer.index] ? <p className="cw-image-error">This screenshot is unavailable. Use the arrow controls to see another screen.</p> : <img key={images[viewer.index]} src={resolveImage(images[viewer.index])} alt={`${viewer.project.name}, full screenshot ${viewer.index + 1}`} onError={() => setViewerFailedSrc(images[viewer.index])} />}</div>
         <nav className="cw-thumbnails" aria-label="Project screenshots">{images.map((src, index) => <button type="button" key={`${src}-${index}`} aria-label={`Show screenshot ${index + 1}`} aria-current={index === viewer.index ? 'true' : undefined} onClick={() => setViewer({ ...viewer, index })}>
           <img src={resolveImage(src)} alt="" loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span>
         </button>)}</nav>

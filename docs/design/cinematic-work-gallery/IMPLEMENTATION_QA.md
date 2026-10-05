@@ -1,4 +1,6 @@
-# Cinematic work gallery — production integration
+# Cinematic work gallery — first production integration
+
+Historical review of commit `47f9648`. The latest user-requested screenshot clarity changes are documented in [CLARITY_REVISION_QA.md](CLARITY_REVISION_QA.md).
 
 Reviewed 5 October 2026. Target: the Home landing page on `feat/minimal-scroll-portfolio`, based on production commit `738973bf9c5554665f65553d3d8fa7a5662b7f4a`.
 
