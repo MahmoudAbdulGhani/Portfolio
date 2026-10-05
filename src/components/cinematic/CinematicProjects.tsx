@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
-import { PiArrowUpRight, PiArrowRight, PiArrowLeft, PiArrowsOutSimple, PiX, PiPause, PiPlay, PiImages } from 'react-icons/pi';
+import { PiArrowUpRight, PiArrowRight, PiArrowLeft, PiX, PiPause, PiPlay, PiImages } from 'react-icons/pi';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './cinematic-projects.css';
+import { CinematicProjectCover } from './CinematicProjectCover';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,6 +50,7 @@ const defaultProjectHref = (slug: string) => `/projects/${encodeURIComponent(slu
 function useProjectChapters(root: RefObject<HTMLElement | null>, signature: string) {
   const [activeChapter, setActiveChapter] = useState(0);
   const [navigatorVisible, setNavigatorVisible] = useState(false);
+  const [previewChapter, setPreviewChapter] = useState<number | null>(null);
   useEffect(() => {
     const section = root.current;
     if (!section) return;
@@ -62,13 +64,22 @@ function useProjectChapters(root: RefObject<HTMLElement | null>, signature: stri
       const scenes = Array.from(section.querySelectorAll<HTMLElement>('.cw-scene'));
       let nearest = 0;
       let distance = Infinity;
+      let mostVisible = 0;
+      let preview: number | null = null;
       scenes.forEach((scene, index) => {
         const rect = scene.getBoundingClientRect();
+        const cover = scene.querySelector('.cw-product-cover')?.getBoundingClientRect();
+        if (cover) {
+          const visible = Math.max(0, Math.min(cover.bottom, viewport) - Math.max(cover.top, 160));
+          const ratio = visible / Math.min(cover.height, viewport - 160);
+          if (ratio > .3 && visible > mostVisible) { mostVisible = visible; preview = index; }
+        }
         const focused = (scene === document.activeElement || scene.contains(document.activeElement)) && rect.top < viewport * .65 && rect.bottom > viewport * .35;
         const nextDistance = Math.abs(rect.top + rect.height * .4 - viewport * .45) - (focused ? viewport * 2 : 0);
         if (nextDistance < distance) { nearest = index; distance = nextDistance; }
       });
       setActiveChapter(nearest);
+      setPreviewChapter(preview);
       const progress = Math.max(0, Math.min(1, -box.top / Math.max(1, box.height - viewport)));
       section.style.setProperty('--cw-progress', String(progress));
     };
@@ -82,7 +93,7 @@ function useProjectChapters(root: RefObject<HTMLElement | null>, signature: stri
       cancelAnimationFrame(frame);
     };
   }, [root, signature]);
-  return { activeChapter, navigatorVisible };
+  return { activeChapter, navigatorVisible, previewChapter };
 }
 
 function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, signature: string) {
@@ -94,7 +105,7 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
       if (context.conditions?.reduced) return;
       const mobile = !!context.conditions?.mobile;
       section.querySelectorAll<HTMLElement>('.cw-scene').forEach((scene) => {
-        const panels = Array.from(scene.querySelectorAll('.cw-panel'));
+        const panels = Array.from(scene.querySelectorAll('.cw-product-cover'));
         const hero = scene.classList.contains('cw-scene--hero');
         if (hero && !mobile) {
           const timeline = gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 90%', end: 'top 20%', scrub: .8 } });
@@ -132,27 +143,18 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
       }
       return () => {
         cleanups.forEach((cleanup) => cleanup());
-        const targets = section.querySelectorAll('.cw-panel, .cw-stage-body, .cw-caption');
+        const targets = section.querySelectorAll('.cw-product-cover, .cw-stage-body, .cw-caption');
         gsap.killTweensOf(targets);
         gsap.set(targets, { clearProps: 'transform,clipPath,opacity' });
       };
     }, root);
     return () => {
       media.revert();
-      const targets = section.querySelectorAll('.cw-panel, .cw-stage-body, .cw-caption');
+      const targets = section.querySelectorAll('.cw-product-cover, .cw-stage-body, .cw-caption');
       gsap.killTweensOf(targets);
       gsap.set(targets, { clearProps: 'transform,clipPath,opacity' });
     };
   }, [root, paused, signature]);
-}
-
-function Screen({ src, alt, priority, className, onOpen }: { src: string; alt: string; priority: boolean; className: string; onOpen: () => void }) {
-  const [failedSrc, setFailedSrc] = useState<string | null>(null);
-  return <button type="button" className={`cw-panel ${className}`} onClick={onOpen} aria-label={`Enlarge ${alt}`}>
-    {failedSrc === src ? <span className="cw-image-error">This screenshot is unavailable. Open the project to see more.</span> :
-      <img src={src} alt={alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" onError={() => setFailedSrc(src)} />}
-    <span className="cw-enlarge" aria-hidden="true"><PiArrowsOutSimple size={18} /></span>
-  </button>;
 }
 
 export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading = 'Selected work', description, ctaLabel = 'View all projects', allProjectsHref = '/projects', projectHref = defaultProjectHref, resolveImage = identity, ambientSrc = '/assets/cinematic-ambient.webp' }: GalleryProps) {
@@ -167,7 +169,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
   const featured = projects.filter((p) => p.featured && p.published !== false && p.showOnPortfolio !== false)
     .sort((a, b) => a.order - b.order);
   const signature = featured.map((p) => `${p.id}:${p.screenshots?.join(',')}`).join('|');
-  const { activeChapter, navigatorVisible } = useProjectChapters(root, signature);
+  const { activeChapter, navigatorVisible, previewChapter } = useProjectChapters(root, signature);
   useGalleryMotion(root, paused, signature);
 
   const viewerId = viewer?.project.id;
@@ -212,7 +214,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
           const open = (screen: number) => { setZoomed(false); setViewer({ project, index: screen }); };
           return <article key={project.id} id={`cw-scene-${project.slug}`} tabIndex={-1} className={`cw-scene cw-scene--${direction.layout}`} aria-labelledby={`cw-${project.slug}`}>
             <div className="cw-stage"><div className="cw-stage-body">
-              {sources[primary] ? <Screen src={resolveImage(sources[primary])} alt={`${project.name}, screenshot ${primary + 1}`} priority={index === 0} className="cw-primary" onOpen={() => open(primary)} /> : <div className="cw-no-image">Screenshots coming soon</div>}
+              <CinematicProjectCover project={project} active={previewChapter === index && !viewer} paused={paused} priority={index === 0} resolveImage={resolveImage} onOpen={open} />
             </div></div>
             <div className="cw-caption">
               <div className="cw-caption-heading">

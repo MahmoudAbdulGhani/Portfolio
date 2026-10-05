@@ -127,7 +127,7 @@
   .cw-gallery *, .cw-viewer * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* One large, uncropped interface per chapter; additional screens open in the viewer. */
+/* One prominent animated product cover per chapter; originals open in the viewer. */
 .cw-scenes { display: grid; grid-template-columns: 1fr; gap: 112px; margin-top: 56px; }
 .cw-scene { display: flex; flex-direction: column; gap: 28px; }
 .cw-caption { order: -1; display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 64px; align-items: end; }
