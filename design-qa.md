@@ -1,6 +1,6 @@
 # Public portfolio implementation — design QA
 
-final result: passed (visual review and controlled frontend smoke-test scope)
+final result: passed
 
 The implementation covers all eight published project routes, Contact, AI Job Match and shared public navigation. It extends the selected Projects studio gallery and existing landing palette. No deployment or merge was performed.
 
@@ -48,3 +48,32 @@ No Medicare product screenshots or verified Home Services mobile/Figma source we
 The development preview disables production proxies and serves a public CMS snapshot. Explicit success/failure fixture queries return in-memory responses only; they cannot store messages or invoke AI. No backend, schema, dependency, stored CMS content or CV geometry changed. New fixtures are imported solely by the development review config, never the production frontend.
 
 The existing E2E spec was updated for the new menu ID, default-theme behavior and gallery semantics. Its CLI runner was not executed; the relevant frontend checks above ran in the provided browser. The existing 70-second timeout and provider parsing remain code-reviewed, not forced in the browser. OS-level reduced motion was not changed; Reveal and CSS static paths were reviewed. Live inbox delivery, provider quality, actual tailored document content, production deployment and forced image-network failures remain unverified. Extension metadata errors were observed; no application-origin JavaScript errors appeared during the reviewed states.
+
+
+## Landing Selected Work — 2026-10-05
+
+final result: passed
+
+Source visual truth: Cris Ace's image-led portfolio, https://dribbble.com/shots/23657216-UX-UI-Design-Portfolio-Graphic-Design. Browser source capture: /workspace/scratch/e6887313a9d4/qa-landing-panels/source-reference.jpg (1363×936). The user approved adapting the reference into numbered, vertically arranged panels using the existing navy, ivory and amber portfolio identity. This is an adaptation, not a pixel clone of the two-column source. Pinterest's invitation overlay prevented inspecting its complete video; no unobserved animation is claimed to be reproduced.
+
+Implementation screenshot: /workspace/scratch/e6887313a9d4/qa-landing-panels/landing-projects-final.jpg (1353×929 content pixels, 1363×936 CSS viewport, density 1). Both source and implementation were opened. comparison-full.jpg puts both views together at 900px proportional width; comparison-focus.jpg compares actual first-row source images/captions and the implementation's device/caption region. Both combined inputs were opened and reviewed. No image was stretched. The wider single-panel composition, original CMS content and shared navigation are intentional adaptations.
+
+Five fidelity surfaces:
+- Typography: Inter for headings, captions and links; existing Instrument Serif italic for the amber heading accent and project numbers. Hierarchy is clear; the full construction title wraps on phone without truncation.
+- Rhythm: 88%/1320px content canvas, 70px desktop chapter gap, 16px image corners, 26px caption padding. Phone uses one column, 42px gaps, 10px corners and 44px action targets.
+- Tokens: existing navy #05090f, ivory #f5f6f6 and amber #ffb20b; restrained border and hover treatment. No new visual system or palette.
+- Images: actual product screenshots and the existing transparent laptop/studio assets. Complete bezels, undistorted main screens and contained secondary screenshots. No generated or fabricated product UI.
+- Copy: actual CMS names, taglines, featured selection/order and destinations; section eyebrow/heading and archive CTA remain CMS-driven. Selection count is derived from the actual five projects.
+
+Comparison history and resolved findings:
+- [P1] Earlier landing laptops exceeded the scene height, especially in wide/short windows. Replaced width-only sizing and negative bottom offsets with bounds based on both scene dimensions and positive motion headroom. All five device bounding boxes now remain inside their scenes at every tested width.
+- [P2] Lobby's secondary screenshot used a 4.2 aspect ratio and aggressive cover crop. Removed that crop; the entire screenshot is contained and visible.
+- The initial new desktop composition was inspected, then the same settled panels were captured. Full-view and focused comparison found no remaining actionable P0/P1/P2 differences against the approved adaptation. No visual changes followed final comparison.
+
+Executed browser checks: all five settled desktop panels loaded every image; all laptops fit their scene; root scrollWidth equals clientWidth at 320×844, 390×844, 1024×844, 1366×640 and 1920×640 iframe viewports, plus 1363×936 desktop. Phone construction title was opened and inspected. Wide harness presentation scales the real 1920×640 iframe to 0.66; compact harness uses 0.92. These are presentation scales, not changes to the tested inner viewport. Short windows retain normal vertical page scrolling.
+
+Motion verification: off-screen opacity 0.25 transitions to 1 as projects enter; scroll transforms change across the page, with main-image translation bounded to ±12px and secondary translation to ±20px. Caption/secondary delays remain subtle. Keyboard Tab into the construction project reveals its full content. An explicit dev-only reduced-motion fixture makes all five panels immediately visible with device/detail/composition transforms equal to none; OS settings were not altered. The CSS reduced-motion media path also disables hover transitions. Pointer tilt and arrow hover were code-reviewed; their motion was not separately captured. Touch and short-window layouts disable cinematic depth using the existing motion context.
+
+Primary actions: Explore Lobby opened /projects/lobby; View all projects opened the archive containing all eight published projects. Remaining image/title/CTA hrefs use the same actual CMS slug. Browser console checks found no application errors; extension metadata errors are external to the app. Typecheck, ESLint and production build passed. No browser CLI runner, live AI calls, inbox delivery, merge or deployment was performed.
+
+Implementation checklist: complete. Remaining P3 polish: none required for this change.
