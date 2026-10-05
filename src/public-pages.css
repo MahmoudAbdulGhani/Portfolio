@@ -140,6 +140,7 @@
   margin-block:40px;
 }
 .public-mobile-nav nav a {
+  display:block;
   font-size:28px;
   padding:12px 0;
   border-bottom:1px solid var(--line);

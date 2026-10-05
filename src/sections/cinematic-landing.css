@@ -242,3 +242,11 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
 .cinema-job-match-nav svg { width:15px; height:15px; }
 @media(max-width:1023px) { .cinema-nav-links { gap:24px; } }
 @media(max-width:639px) { .cinema-course-trigger { font-size:25px; } }
+
+/* Touch choreography is lighter, but retains section movement. */
+.motion-profile-touch .cinema-rail-track { animation-duration:90s; }
+.motion-profile-touch .cinema-hero-sticky::before { animation-play-state:paused; }
+@media(max-width:767px) {
+  .cinema-title-part { overflow:clip; }
+  .motion-profile-touch .cinema-portrait { overflow:hidden; }
+}

@@ -121,7 +121,7 @@ export function ContactSection() {
         <div className="contact-socials">{cards.filter(card => !card.priority).map(card => { const Icon = card.icon; return <a key={card.id} href={card.href} target="_blank" rel="noopener noreferrer" aria-label={`${card.label}: ${card.value}`}><Icon aria-hidden />{card.label}<FiArrowUpRight aria-hidden /></a>; })}</div>
       </Reveal>
       <Reveal y={14} delay={0.08}>
-        {submit.isSuccess ? <div className="contact-success" role="status" tabIndex={-1} ref={successRef}><FiCheckCircle aria-hidden /><h2>{contentText("successHeading")}</h2><p>{successMessage}</p>{profile?.responseTime && <p>{profile.responseTime}</p>}<button type="button" className="btn-outline" onClick={() => { submit.reset(); requestAnimationFrame(() => document.getElementById("contact-name")?.focus()); }}>Send another message</button></div> : (
+        {submit.isSuccess ? <div className="contact-success ai-state-enter" role="status" tabIndex={-1} ref={successRef}><FiCheckCircle aria-hidden /><h2>{contentText("successHeading")}</h2><p>{successMessage}</p>{profile?.responseTime && <p>{profile.responseTime}</p>}<button type="button" className="btn-outline" onClick={() => { submit.reset(); requestAnimationFrame(() => document.getElementById("contact-name")?.focus()); }}>Send another message</button></div> : (
               <form onSubmit={handleSubmit} noValidate className="contact-form">
                 <div className="absolute -left-[10000px]" aria-hidden="true"><label htmlFor="contact-website">Website</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setField("website", e.target.value)} /></div>
                 <h2>
@@ -149,7 +149,7 @@ export function ContactSection() {
                       required
                     />
                     {nameField.hasError && (
-                      <p id={nameField.errorId} className="mt-1.5 text-xs font-medium text-danger">
+                      <p id={nameField.errorId} className="inline-state-enter mt-1.5 text-xs font-medium text-danger">
                         {errors.name}
                       </p>
                     )}
@@ -172,7 +172,7 @@ export function ContactSection() {
                       required
                     />
                     {emailField.hasError && (
-                      <p id={emailField.errorId} className="mt-1.5 text-xs font-medium text-danger">
+                      <p id={emailField.errorId} className="inline-state-enter mt-1.5 text-xs font-medium text-danger">
                         {errors.email}
                       </p>
                     )}
@@ -194,7 +194,7 @@ export function ContactSection() {
                     aria-describedby={subjectField.describedBy}
                   />
                   {subjectField.hasError && (
-                    <p id={subjectField.errorId} className="mt-1.5 text-xs font-medium text-danger">
+                    <p id={subjectField.errorId} className="inline-state-enter mt-1.5 text-xs font-medium text-danger">
                       {errors.subject}
                     </p>
                   )}
@@ -216,7 +216,7 @@ export function ContactSection() {
                     required
                   />
                   {messageField.hasError && (
-                    <p id={messageField.errorId} className="mt-1.5 text-xs font-medium text-danger">
+                    <p id={messageField.errorId} className="inline-state-enter mt-1.5 text-xs font-medium text-danger">
                       {errors.message}
                     </p>
                   )}
@@ -225,7 +225,7 @@ export function ContactSection() {
                 {submitError && (
                   <p
                     role="alert"
-                    className="mt-4 flex items-center gap-2 rounded-lg border border-danger/30 bg-danger/10 px-4 py-3 text-sm font-semibold text-danger"
+                    className="inline-state-enter mt-4 flex items-center gap-2 rounded-lg border border-danger/30 bg-danger/10 px-4 py-3 text-sm font-semibold text-danger"
                   >
                     {submitError}
                   </p>

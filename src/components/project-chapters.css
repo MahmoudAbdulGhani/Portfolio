@@ -13,7 +13,7 @@
 /* Bound both dimensions. Leave room for the entire bezel and motion at each edge. */
 .chapter-device-depth { position:absolute; width:min(72cqw,calc((100cqh - 140px) * 2.015),920px); left:4%; bottom:12%; }
 .chapter-device { position:relative; width:100%; }
-.chapter-laptop-opening { --opening-duration:1.05s; --opening-angle:48deg; --assembly-lift:-8px; position:relative; width:100%; aspect-ratio:1499 / 744; perspective:1400px; }
+.chapter-laptop-opening { --opening-duration:.8s; --opening-angle:55deg; --assembly-lift:0px; position:relative; width:100%; aspect-ratio:1499 / 744; perspective:1400px; }
 .chapter-laptop-opening.is-cinematic { --opening-duration:1.85s; --opening-angle:74deg; --assembly-lift:-22px; }
 .chapter-laptop-camera { position:absolute; inset:0; perspective:1400px; transform-style:flat; transform-origin:50% 94.086%; }
 .chapter-lid { position:absolute; inset:0; transform-origin:50% 94.086%; clip-path:inset(0 0 5.914% 0); transform:translate3d(0,var(--assembly-lift),12px) rotateX(var(--opening-angle)); opacity:0; }
@@ -66,6 +66,8 @@
 .chapter-open:is(:hover,:focus-visible) svg { transform:translate(2px,-2px); }
 .chapter-scene:focus-visible { outline:2px solid var(--cinema-gold); outline-offset:-5px; }
 .chapter-all { display:flex; justify-content:space-between; align-items:center; gap:24px; border-top:1px solid #ffffff25; padding-top:26px; margin-top:65px; }
+.chapter-mobile-detail { display:none; }
+#featured-project-caption { scroll-margin-top:100px; }
 @media (max-width:1023px) {
   .cinema-chapters { padding-block:65px; }
   .chapter-heading { gap:30px; margin-bottom:36px; }
@@ -85,6 +87,8 @@
   .chapter-scene { height:auto; aspect-ratio:1.28; }
   .chapter-device-depth { width:92%; left:4%; bottom:17%; }
   .chapter-detail-depth { display:none; }
+  .chapter-mobile-detail { display:flex; align-items:center; justify-content:center; margin:16px 0 0; padding:18px; border:1px solid #ffffff20; border-radius:10px; background:#081322; }
+  .chapter-mobile-detail img { width:100%; height:180px; object-fit:contain; }
   .chapter-replay { top:8px; right:8px; width:44px; padding:0; }
   .chapter-replay span { display:none; }
   .chapter-caption { grid-template-columns:28px minmax(0,1fr) 44px; gap:12px; padding-top:20px; }

@@ -17,9 +17,10 @@ export function LandingMotion({ children }: { children: ReactNode }) {
   const reduced = useMedia("(prefers-reduced-motion: reduce)");
   const desktop = useMedia("(min-width: 1024px) and (min-height: 700px) and (pointer: fine)");
   const enabled = !reduced;
-  return <MotionContext.Provider value={{ enabled, cinematic: !reduced && desktop }}>
+  const profile = reduced ? "reduced" : desktop ? "desktop" : "touch";
+  return <MotionContext.Provider value={{ enabled, cinematic: !reduced && desktop, profile }}>
     <MotionConfig reducedMotion={enabled ? "user" : "always"}>
-      <div className={`landing-motion ${enabled ? "" : "motion-paused"}`}>{children}</div>
+      <div className={`landing-motion motion-profile-${profile} ${enabled ? "" : "motion-paused"}`}>{children}</div>
     </MotionConfig>
   </MotionContext.Provider>;
 }

@@ -1,0 +1,48 @@
+.laptop-scroll { position:relative; border:1px solid #ffffff20; border-radius:16px; background:#05090f; }
+.laptop-scroll-stage { position:relative; height:clamp(430px,45vw,650px); overflow:clip; border-radius:inherit; }
+.has-laptop-scroll { height:calc(250svh - 76px); }
+.has-laptop-scroll .laptop-scroll-stage { position:sticky; top:76px; height:calc(100svh - 76px); }
+.laptop-scroll-studio { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.laptop-scroll-renderers { position:absolute; inset:0; }
+.laptop-webgl,.laptop-css3d { position:absolute; inset:0; }
+.laptop-webgl { pointer-events:none; }
+.laptop-css3d { pointer-events:none; }
+.laptop-live-preview { background:#081322; color:#f5f6f6; backface-visibility:hidden; pointer-events:auto; display:flex; flex-direction:column; padding:clamp(22px,4vw,58px); box-sizing:border-box; container-type:inline-size; }
+.laptop-live-preview[inert] { pointer-events:none; }
+.laptop-screen-source { position:absolute; inset:0; pointer-events:none; }
+.mode-poster .laptop-screen-source { visibility:hidden; }
+.laptop-preview-top { display:flex; justify-content:space-between; gap:20px; font:11px/1.5 Inter,sans-serif; color:#aabbd1; border-bottom:1px solid #ffffff25; padding-bottom:20px; }
+.laptop-preview-body { display:grid; grid-template-columns:.8fr 1.2fr; gap:5%; align-items:center; flex:1; min-height:0; padding-block:22px; }
+.cinema .laptop-preview-copy h3 { font-size:clamp(26px,5vw,68px); font-weight:400; letter-spacing:-.04em; line-height:1.08; margin:20px 0; }
+.laptop-preview-copy>p:not(.cinema-label) { color:#aabbd1; font-size:14px; line-height:1.7; }
+.laptop-preview-image { width:100%; height:100%; max-height:65svh; object-fit:contain; min-height:0; }
+.laptop-preview-link { display:inline-flex; align-items:center; gap:15px; margin-top:24px; min-height:44px; color:#ffb20b; font-size:13px; }
+.laptop-preview-link:focus-visible,.laptop-scroll-skip:focus-visible { outline:2px solid #ffb20b; outline-offset:4px; }
+.laptop-scroll-cue { position:absolute; inset:auto 30px 28px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12px; color:#d3dce9; opacity:var(--laptop-cue-opacity,1); pointer-events:none; }
+.laptop-scroll-cue span:last-child { display:flex; gap:10px; align-items:center; }
+.laptop-scroll-skip { position:absolute; top:20px; right:22px; display:flex; gap:8px; align-items:center; min-height:44px; padding:0 12px; font-size:11px; color:#c5d0e0; background:#081322; border:1px solid #ffffff25; border-radius:24px; }
+.laptop-scroll-poster { position:absolute; width:80%; left:10%; top:50%; transform:translateY(-50%); aspect-ratio:1499/744; }
+.laptop-scroll-poster>img:first-child { width:100%; }
+.laptop-scroll-poster-screen { position:absolute; left:7.2048%; top:6.3172%; width:85.5237%; height:83.7366%; object-fit:contain; background:#05090f; }
+.mode-webgl .laptop-scroll-poster { display:none; }
+.mode-fallback .laptop-screen-source { position:relative; pointer-events:auto; padding:24px; }
+.mode-fallback .laptop-live-preview { min-height:400px; height:auto; }
+.mode-fallback .laptop-scroll-stage { height:auto; }
+.mode-fallback .laptop-scroll-poster,.mode-fallback .laptop-scroll-cue,.mode-fallback .laptop-scroll-renderers { display:none; }
+@media(max-width:1023px),(pointer:coarse) { .has-laptop-scroll { height:calc(180svh - 76px); } }
+@media(max-width:767px) {
+  .laptop-scroll { border-radius:10px; }
+  .laptop-live-preview { padding:24px; }
+  .laptop-preview-body { grid-template-columns:1fr; grid-template-rows:auto minmax(0,1fr); gap:20px; }
+  .cinema .laptop-preview-copy h3 { font-size:clamp(28px,8vw,44px); margin:12px 0; }
+  .laptop-preview-copy>p:not(.cinema-label) { font-size:12px; }
+  .laptop-preview-top { font-size:9px; padding-bottom:14px; }
+  .laptop-preview-top span:last-child { display:none; }
+  .laptop-preview-link { margin-top:12px; }
+  .laptop-scroll-cue { inset:auto 18px 20px; font-size:10px; }
+  .laptop-scroll-skip { top:12px; right:12px; }
+  .mode-fallback .laptop-screen-source { padding:0; }
+  .mode-fallback .laptop-live-preview { min-height:510px; }
+}
+@media(prefers-reduced-motion:reduce) { .has-laptop-scroll { height:auto; } .has-laptop-scroll .laptop-scroll-stage { position:relative; top:auto; } }
+.laptop-webgl { background:transparent!important; }

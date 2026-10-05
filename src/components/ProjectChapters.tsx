@@ -3,6 +3,7 @@ import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform }
 import { Link } from "react-router-dom";
 import { FiArrowUpRight, FiRefreshCw } from "react-icons/fi";
 import { LaptopOpening } from "./LaptopOpening";
+import { LaptopScrollScene } from "./LaptopScrollScene";
 import { useSiteSection } from "../lib/hooks";
 import { useLandingMotion } from "../lib/landing-motion";
 import type { Project } from "../types";
@@ -31,7 +32,7 @@ function ProjectChapter({ project, index, total }: { project: Project; index: nu
   const [focused, setFocused] = useState(false);
   const [replay, setReplay] = useState(0);
   const { enabled, cinematic } = useLandingMotion();
-  const seen = useInView(ref, { once: true, amount: 0.08 });
+  const seen = useInView(ref, { once: true, amount: index === 0 ? 0.08 : 0.35 });
   const show = seen || focused || !enabled;
   const art = artwork[project.slug];
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -43,7 +44,7 @@ function ProjectChapter({ project, index, total }: { project: Project; index: nu
   const rotateX = useSpring(pointerY, { stiffness: 65, damping: 24 });
   const duration = enabled ? 0.7 : 0;
   return <article ref={ref} className={`project-chapter chapter-${art?.treatment || "default"}`} aria-labelledby={`chapter-${project.id}`} onFocusCapture={() => setFocused(true)}>
-    <motion.div className="chapter-reveal" initial={false} animate={{ y: show ? 0 : 28, opacity: show ? 1 : 0.25 }} transition={{ duration, ease }}>
+    {index === 0 ? <LaptopScrollScene project={project} screen={art?.main || project.coverImage || project.screenshots?.[0] || ""} /> : <motion.div className="chapter-reveal" initial={false} animate={{ y: show ? 0 : 16, opacity: show ? 1 : 0.25 }} transition={{ duration, ease }}>
       <Link to={`/projects/${project.slug}`} className="chapter-scene" aria-label={`View ${project.name}`} onPointerMove={event => {
         if (!cinematic || event.pointerType !== "mouse") return;
         const box = event.currentTarget.getBoundingClientRect();
@@ -65,8 +66,9 @@ function ProjectChapter({ project, index, total }: { project: Project; index: nu
         </motion.div>
       </Link>
       {enabled && show && <button type="button" className="chapter-replay" onClick={() => setReplay(previous => previous + 1)} aria-label={`Replay laptop opening for ${project.name}`}><FiRefreshCw aria-hidden /><span>Replay</span></button>}
-    </motion.div>
-    <motion.div className="chapter-caption" initial={false} animate={{ y: show ? 0 : 12, opacity: show ? 1 : 0 }} transition={{ duration: enabled ? 0.6 : 0, delay: enabled ? cinematic ? 0.65 : 0.2 : 0, ease }}>
+    </motion.div>}
+    {index !== 0 && art && <motion.figure className="chapter-mobile-detail" initial={false} animate={{ y: show ? 0 : 12, opacity: show ? 1 : 0 }} transition={{ duration: enabled ? 0.5 : 0, delay: enabled ? 0.25 : 0, ease }}><ScreenImage sources={[art.detail, project.screenshots?.[1]]} alt={`${project.name} supporting interface`} detail /></motion.figure>}
+    <motion.div id={index === 0 ? "featured-project-caption" : undefined} className="chapter-caption" initial={false} animate={{ y: show ? 0 : 12, opacity: show ? 1 : 0 }} transition={{ duration: enabled ? 0.5 : 0, delay: enabled ? cinematic ? 0.35 : 0.12 : 0, ease }}>
       <span className="chapter-number" aria-label={`Project ${index + 1} of ${total}`}>{String(index + 1).padStart(2, "0")}</span>
       <div className="chapter-copy"><h3 id={`chapter-${project.id}`}><Link to={`/projects/${project.slug}`}>{project.name}</Link></h3>{project.tagline && <p>{project.tagline}</p>}</div>
       <Link to={`/projects/${project.slug}`} className="chapter-open" aria-label={`Explore ${project.name}`}><span>Explore project</span><span className="chapter-arrow"><FiArrowUpRight aria-hidden /></span></Link>

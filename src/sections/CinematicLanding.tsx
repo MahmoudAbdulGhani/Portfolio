@@ -16,8 +16,8 @@ import "./cinematic-landing.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 function Enter({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const { enabled } = useLandingMotion();
-  return <motion.div className={className} initial={enabled ? { opacity: 0, y: 34 } : false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.85, delay, ease }}>{children}</motion.div>;
+  const { enabled, profile } = useLandingMotion();
+  return <motion.div className={className} initial={enabled ? { opacity: 0, y: profile === "touch" ? 14 : 24 } : false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: profile === "touch" ? 0.5 : 0.7, delay, ease }}>{children}</motion.div>;
 }
 // Synchronize scene progress when reduced-motion preferences change.
 function useSceneProgress(progress: MotionValue<number>) {
@@ -34,7 +34,7 @@ export function CinematicLanding() {
 }
 function PortraitHero({ profile }: { profile: Profile }) {
   const ref = useRef<HTMLElement>(null);
-  const { enabled, cinematic } = useLandingMotion();
+  const { enabled, cinematic, profile: motionProfile } = useLandingMotion();
   const { data: section } = useSiteSection("hero");
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const p = useSceneProgress(scrollYProgress);
@@ -45,6 +45,8 @@ function PortraitHero({ profile }: { profile: Profile }) {
   const height = useTransform(p, [0, 0.4, 0.9], ["80%", "80%", "100%"]);
   const objectPosition = useTransform(p, [0, 0.9], ["50% 35%", "50% 22%"]);
   const photoScale = useTransform(p, [0, 0.9], [1.035, 1.015]);
+  const mobilePhotoY = useTransform(p, [0, 1], [8, -8]);
+  const mobilePhotoScale = useTransform(p, [0, 1], [1.02, 1]);
   const opacity = useTransform(p, [0, 0.24, 0.38], [1, 1, 0]);
   const copyX = useTransform(p, [0, 0.24, 0.38], [0, 0, -44]);
   const roleX = useTransform(p, [0, 0.24, 0.38], [0, 0, 44]);
@@ -64,12 +66,12 @@ function PortraitHero({ profile }: { profile: Profile }) {
     <motion.div className="cinema-hero-copy" inert={cinematic && cleared} style={cinematic ? { opacity, x: copyX } : undefined}>
       <p className="cinema-hero-name">{profile.shortName || profile.name}</p>
       <h1 className="sr-only">{title}</h1>
-      <div className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-hidden><span className="cinema-title-part part-0"><motion.span initial={enabled ? { x: "-105%" } : false} animate={{ x: 0 }} transition={{ duration: 0.95, delay: 0.1, ease }}>{parts[0]}</motion.span></span></div>
+      <div className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-hidden><span className="cinema-title-part part-0"><motion.span initial={enabled ? motionProfile === "touch" ? { y: "105%" } : { x: "-105%" } : false} animate={{ x: 0, y: 0 }} transition={{ duration: motionProfile === "touch" ? 0.65 : 0.95, delay: 0.1, ease }}>{parts[0]}</motion.span></span></div>
       <div className="cinema-hero-meta"><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</div>
       <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects"><FiArrowDown aria-hidden />{section?.ctaLabel}</a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
     </motion.div>
-    {parts.length > 1 && <motion.div className="cinema-hero-role cinema-title" aria-hidden style={cinematic ? { opacity, x: roleX } : undefined}>{parts.slice(1).map((word, i) => <span className={`cinema-title-part part-${i + 1}`} key={`${word}-${i}`}><motion.span initial={enabled ? { x: "105%" } : false} animate={{ x: 0 }} transition={{ duration: 0.95, delay: 0.18 + i * 0.12, ease }}>{word}</motion.span></span>)}</motion.div>}
-    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: "inset(50% 0 50% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: 1.1, delay: 0.15, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: cinematic ? photoScale : 1.035, x: enabled && cinematic ? x : 0, y: enabled && cinematic ? y : 0 }} /></motion.div>}
+    {parts.length > 1 && <motion.div className="cinema-hero-role cinema-title" aria-hidden style={cinematic ? { opacity, x: roleX } : undefined}>{parts.slice(1).map((word, i) => <span className={`cinema-title-part part-${i + 1}`} key={`${word}-${i}`}><motion.span initial={enabled ? motionProfile === "touch" ? { y: "105%" } : { x: "105%" } : false} animate={{ x: 0, y: 0 }} transition={{ duration: motionProfile === "touch" ? 0.65 : 0.95, delay: 0.17 + i * (motionProfile === "touch" ? 0.07 : 0.12), ease }}>{word}</motion.span></span>)}</motion.div>}
+    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: motionProfile === "touch" ? "inset(12% 0 12% 0)" : "inset(50% 0 50% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: motionProfile === "touch" ? 0.7 : 1.1, delay: 0.28, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: !enabled ? 1 : cinematic ? photoScale : mobilePhotoScale, x: enabled && cinematic ? x : 0, y: !enabled ? 0 : cinematic ? y : mobilePhotoY }} /></motion.div>}
   </div></section>;
 }
 function PersonalStory({ profile }: { profile: Profile }) {

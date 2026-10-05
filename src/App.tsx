@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { useTheme } from "./lib/theme";
 import "./public-pages.css";
+import "./responsive-motion.css";
 import { Navbar } from "./components/Navbar";
 import { PortfolioPointer } from "./components/PortfolioPointer";
 import { Footer } from "./components/Footer";

@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import type { ReactNode, RefObject } from "react";
+import { AnimatePresence, motion, useIsPresent, useReducedMotion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { useProfile, useSiteSection } from "../lib/hooks";
@@ -7,12 +9,18 @@ import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { CvDownloadButton } from "./CvDownloadButton";
 
+function MenuPanel({ children, menuRef }: { children: ReactNode; menuRef: RefObject<HTMLDivElement | null> }) {
+  const present = useIsPresent(), reduced = useReducedMotion();
+  return <motion.div ref={menuRef} id="public-mobile-nav" className="public-mobile-nav" role="dialog" aria-modal={present} aria-hidden={!present} inert={!present} aria-label="Navigation menu" initial={reduced ? false : { opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -8 }} transition={{ duration: reduced ? 0 : present ? 0.28 : 0.18, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
+}
+
 export function Navbar() {
   const { pathname, hash } = useLocation();
   const { data: profile } = useProfile();
   const { data: jobMatch } = useSiteSection("jobMatch");
   const { data: about } = useSiteSection("about");
   const [open, setOpen] = useState(false);
+  const reduced = useReducedMotion();
   const trigger = useRef<HTMLButtonElement>(null);
   const menu = useRef<HTMLDivElement>(null);
   const links = [
@@ -57,10 +65,10 @@ export function Navbar() {
         <button ref={trigger} type="button" className="public-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="public-mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX /> : <FiMenu />}</button>
       </div>
     </nav>
-    {open && <div ref={menu} id="public-mobile-nav" className="public-mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <AnimatePresence>{open && <MenuPanel key="mobile-menu" menuRef={menu}>
       <button type="button" className="public-menu-close" onClick={() => setOpen(false)} aria-label="Close navigation menu"><FiX />Close menu</button>
-      <nav aria-label="Mobile main">{links.map(link => <Link key={link.to} to={link.to} aria-current={link.active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
+      <nav aria-label="Mobile main">{links.map((link, index) => <motion.div key={link.to} initial={reduced ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : 0.25, delay: reduced ? 0 : 0.06 + index * 0.04 }}><Link to={link.to} aria-current={link.active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link></motion.div>)}</nav>
       <div className="public-mobile-utilities"><CvDownloadButton url={cv} className="public-cv" /><ThemeToggle /></div>
-    </div>}
+    </MenuPanel>}</AnimatePresence>
   </header>;
 }
