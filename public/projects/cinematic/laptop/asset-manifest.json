@@ -1,0 +1,15 @@
+{
+  "author": "Original portfolio model authored for this project",
+  "geometry": "src/lib/laptop-model.ts",
+  "renderer": "scripts/laptop-assets/render-frames.py",
+  "frameCount": 46,
+  "width": 1024,
+  "height": 640,
+  "aspect": 1.6,
+  "triangles": 28784,
+  "atlasCount": 6,
+  "framesPerAtlas": 8,
+  "frameWidth": 704,
+  "frameHeight": 440,
+  "frameSource": "46 offline rendered poses packed into six atlases; at most two cached during fallback playback"
+}

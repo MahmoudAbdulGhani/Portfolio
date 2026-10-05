@@ -1,144 +1,226 @@
 import * as THREE from "three";
-import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { CSS3DObject, CSS3DRenderer } from "three/addons/renderers/CSS3DRenderer.js";
-import { SVGRenderer } from "three/addons/renderers/SVGRenderer.js";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { LAPTOP, laptopPose } from "./laptop-motion";
-
+import { buildLaptopModel } from "./laptop-model";
+import { LAPTOP, LAPTOP_FRAMES, laptopPose, smooth } from "./laptop-motion";
 gsap.registerPlugin(ScrollTrigger);
-const clamp = THREE.MathUtils.clamp;
-
-/** Original unbranded geometry; no third-party model or paid effect source. */
-export function createLaptopScene(root: HTMLElement, host: HTMLElement, display: HTMLElement, touch: boolean, onFailure: () => void) {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("webgl2", { alpha: true, antialias: !touch, powerPreference: "low-power" });
-  const renderer = context ? new THREE.WebGLRenderer({ canvas, context }) : new SVGRenderer();
-  const gpu = renderer instanceof THREE.WebGLRenderer;
-  if (gpu) {
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, touch ? 1.25 : 1.75));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  } else {
-    renderer.setQuality("low"); renderer.setPrecision(2);
-  }
-  renderer.setClearColor(new THREE.Color(0x000000), 0);
-  const css = new CSS3DRenderer();
-  renderer.domElement.setAttribute("class", "laptop-webgl");
-  root.dataset.engine = gpu ? "webgl" : "software";
-  css.domElement.className = "laptop-css3d";
-  // Only the hardware is decorative. The HTML display keeps its real semantics.
-  host.removeAttribute("aria-hidden");
-  renderer.domElement.setAttribute("aria-hidden", "true");
-  const source = display.parentElement!;
-  const scene = new THREE.Scene(), htmlScene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-  const hardware = new THREE.Group();
-  scene.add(hardware);
-  const metal = new THREE.MeshPhongMaterial({ color: 0x28384c, specular: 0x829bb9, shininess: 85 });
-  const trim = new THREE.MeshPhongMaterial({ color: 0x111923, shininess: 55 });
-  const keys = new THREE.MeshPhongMaterial({ color: 0x070b12, shininess: 12 });
-  const materials: THREE.Material[] = [metal, trim, keys];
-  const geometries: THREE.BufferGeometry[] = [];
-  function box(parent: THREE.Group, size: [number, number, number], position: [number, number, number], material: THREE.Material, radius = 0.025) {
-    const geometry = new RoundedBoxGeometry(...size, gpu ? 3 : 1, radius);
-    geometries.push(geometry);
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(...position);
-    mesh.castShadow = true; mesh.receiveShadow = true;
-    parent.add(mesh);
-    return mesh;
-  }
-  box(hardware, [4.1, 0.13, 2.65], [0, 0, 0.45], metal, 0.05).renderOrder = 1;
-  box(hardware, [3.7, 0.015, 1.47], [0, 0.07, 0.02], trim).renderOrder = 2;
-  box(hardware, [1.34, 0.013, 0.69], [0, 0.077, 1.17], trim, 0.045).renderOrder = 4;
-  const keyGeometry = gpu ? new RoundedBoxGeometry(0.225, 0.026, 0.17, 2, 0.016) : new THREE.BoxGeometry(0.225, 0.026, 0.17);
-  geometries.push(keyGeometry);
-  const keyboard = new THREE.InstancedMesh(keyGeometry, keys, 84);
-  const matrix = new THREE.Matrix4();
-  for (let row = 0; row < 6; row++) for (let col = 0; col < 14; col++) {
-    matrix.makeTranslation((col - 6.5) * 0.255, 0.092, -0.56 + row * 0.225);
-    keyboard.setMatrixAt(row * 14 + col, matrix);
-  }
-  keyboard.castShadow = true; keyboard.receiveShadow = true;
-  if (gpu) hardware.add(keyboard);
-  else for (let i = 0; i < 84; i++) { const key = new THREE.Mesh(keyGeometry, keys); key.renderOrder = 3; keyboard.getMatrixAt(i, matrix); key.applyMatrix4(matrix); hardware.add(key); }
-  const hingeGeometry = new THREE.CylinderGeometry(0.075, 0.075, 3.8, 16); geometries.push(hingeGeometry);
-  const hingeBar = new THREE.Mesh(hingeGeometry, trim); hingeBar.rotation.z = Math.PI / 2; hingeBar.position.set(0, 0.09, -0.875); hardware.add(hingeBar);
-  const hinge = new THREE.Group(); hinge.position.set(0, LAPTOP.hingeY, LAPTOP.hingeZ); hardware.add(hinge);
-  box(hinge, [4.1, 2.55, 0.065], [0, 1.275, 0], metal, 0.04).renderOrder = 6;
-  const bezel = box(hinge, [3.84, 2.31, 0.02], [0, 1.29, 0.042], keys, 0.02); bezel.renderOrder = 7;
-  const htmlScreen = new CSS3DObject(display);
-  htmlScreen.position.set(0, LAPTOP.screenY, LAPTOP.screenZ);
-  const htmlHinge = new THREE.Group(), htmlHardware = new THREE.Group();
-  htmlHardware.add(htmlHinge); htmlHinge.add(htmlScreen); htmlScene.add(htmlHardware);
-  const floorGeometry = new THREE.PlaneGeometry(200, 200); geometries.push(floorGeometry);
-  const shadowMaterial = new THREE.ShadowMaterial({ opacity: 0.28 }); materials.push(shadowMaterial);
-  const floor = new THREE.Mesh(floorGeometry, shadowMaterial);
-  floor.rotation.x = -Math.PI / 2; floor.position.y = -0.085; floor.receiveShadow = true; if (gpu) scene.add(floor);
-  scene.add(new THREE.HemisphereLight(0xe3efff, 0x1a263a, 2.4));
-  const keyLight = new THREE.DirectionalLight(0xd5e5ff, 4.2);
-  keyLight.position.set(-3, 6, 4); keyLight.castShadow = true;
-  keyLight.shadow.mapSize.set(touch ? 512 : 1024, touch ? 512 : 1024);
-  keyLight.shadow.camera.left = -5; keyLight.shadow.camera.right = 5; keyLight.shadow.camera.top = 5; keyLight.shadow.camera.bottom = -5;
-  keyLight.shadow.bias = -0.002; scene.add(keyLight);
-  const rim = new THREE.DirectionalLight(0xffc36b, 2.0); rim.position.set(4, 3, -4); scene.add(rim);
-  host.append(renderer.domElement, css.domElement);
-  let width = 1, height = 1, frame = 0, disposed = false, contextLost = false;
-  const state = { progress: 0 };
-  const target = new THREE.Vector3();
-  function render() {
-    frame = 0;
-    if (disposed || contextLost || document.hidden) return;
-    const bounds = host.getBoundingClientRect();
-    if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
-    const p = clamp(state.progress, 0, 1);
-    const pose = laptopPose(p, camera.aspect, touch);
-    hinge.rotation.x = pose.lidAngle;
-    if (!gpu) bezel.visible = hinge.rotation.x < 1.0;
-    hardware.rotation.y = pose.rotation;
-    htmlHardware.rotation.copy(hardware.rotation); htmlHinge.position.copy(hinge.position); htmlHinge.rotation.copy(hinge.rotation);
-    htmlScreen.scale.set(pose.width / width, LAPTOP.screenHeight / height, 1);
-    camera.position.set(...pose.camera);
-    target.set(...pose.target);
-    camera.lookAt(target);
-    renderer.domElement.style.opacity = `${pose.hardwareOpacity}`;
-    display.style.opacity = `${pose.screenOpacity}`;
-    display.inert = p < 0.48;
-    display.setAttribute("aria-hidden", p < 0.48 ? "true" : "false");
-    root.style.setProperty("--laptop-cue-opacity", `${pose.cueOpacity}`);
-    root.dataset.progress = p.toFixed(3);
-    renderer.render(scene, camera); css.render(htmlScene, camera);
-  }
-  const requestRender = () => { if (!frame && !disposed) frame = requestAnimationFrame(render); };
-  const resize = () => {
-    width = host.clientWidth; height = host.clientHeight;
-    if (!width || !height) return;
-    camera.aspect = width / height; camera.updateProjectionMatrix();
-    renderer.setSize(width, height); css.setSize(width, height);
-    display.style.width = `${width}px`; display.style.height = `${height}px`;
-    requestRender();
-  };
-  const tween = gsap.to(state, { progress: 1, ease: "none", onUpdate: requestRender, scrollTrigger: {
-    trigger: root, start: "top 76px", end: "bottom bottom", scrub: touch ? 0.18 : 0.35,
-    invalidateOnRefresh: true, onToggle: requestRender, onRefresh: resize,
-  } });
-  const observer = new ResizeObserver(() => { resize(); ScrollTrigger.refresh(); }); observer.observe(host);
-  const onLost = (event: Event) => { event.preventDefault(); contextLost = true; display.inert = false; source.append(display); onFailure(); };
-  if (gpu) renderer.domElement.addEventListener("webglcontextlost", onLost);
-  document.addEventListener("visibilitychange", requestRender);
-  const refreshFrame = requestAnimationFrame(() => { resize(); ScrollTrigger.refresh(); });
-  resize();
-  return () => {
-    disposed = true; cancelAnimationFrame(frame); cancelAnimationFrame(refreshFrame);
-    observer.disconnect(); tween.scrollTrigger?.kill(); tween.kill();
-    document.removeEventListener("visibilitychange", requestRender);
-    renderer.domElement.removeEventListener("webglcontextlost", onLost);
-    source.append(display); display.removeAttribute("style"); display.removeAttribute("aria-hidden"); display.inert = false;
-    root.style.removeProperty("--laptop-cue-opacity"); delete root.dataset.progress; delete root.dataset.engine;
-    geometries.forEach(geometry => geometry.dispose()); materials.forEach(material => material.dispose());
-    keyLight.shadow.map?.dispose(); if (gpu) { renderer.dispose(); renderer.forceContextLoss(); }
-    renderer.domElement.remove(); css.domElement.remove();
-  };
+let checked = false, gpu: THREE.WebGLRenderer | null = null, users = 0, owner: HTMLElement | null = null;
+let shared: ReturnType<typeof buildLaptopModel> | null = null, scene: THREE.Scene | null = null, environment: THREE.WebGLRenderTarget | null = null;
+const images = new Map<number, HTMLImageElement>();
+function atlasImage(index: number) { let image = images.get(index); if (!image) {
+    image = new Image();
+    image.decoding = "async";
+    image.src = `/projects/cinematic/laptop/atlas-${index}.webp`;
+    images.set(index, image);
+    if (images.size > 2) {
+        const stale = [...images.keys()].find(key => key !== index && key !== index + 1);
+        if (stale !== undefined)
+            images.delete(stale);
+    }
+} return image; }
+function acquire() {
+    users++;
+    if (checked)
+        return;
+    checked = true;
+    const canvas = document.createElement("canvas"), context = canvas.getContext("webgl2", { alpha: true, antialias: true, powerPreference: "low-power" });
+    if (!context)
+        return;
+    try {
+        gpu = new THREE.WebGLRenderer({ canvas, context });
+        gpu.setClearColor(0x000000, 0);
+        gpu.outputColorSpace = THREE.SRGBColorSpace;
+        gpu.toneMapping = THREE.ACESFilmicToneMapping;
+        gpu.toneMappingExposure = 1.15;
+        shared = buildLaptopModel();
+        scene = new THREE.Scene();
+        scene.add(shared.root);
+        gpu.shadowMap.enabled = true;
+        gpu.shadowMap.type = THREE.PCFSoftShadowMap;
+        const floorGeometry = new THREE.PlaneGeometry(40, 40), floorMaterial = new THREE.ShadowMaterial({ opacity: .28 });
+        const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        floor.rotation.x = -Math.PI / 2;
+        floor.position.y = -.084;
+        floor.receiveShadow = true;
+        scene.add(floor);
+        shared.geometry.push(floorGeometry);
+        shared.materials.push(floorMaterial);
+        const env = new RoomEnvironment(), pmrem = new THREE.PMREMGenerator(gpu);
+        environment = pmrem.fromScene(env, .04);
+        scene.environment = environment.texture;
+        env.dispose();
+        pmrem.dispose();
+        scene.add(new THREE.HemisphereLight(0xc9d8ee, 0x171c25, 1.5));
+        for (const [pos, color, strength] of [[[-4, 6, 5], 0xd8e6ff, 3.0], [[5, 3, -3], 0xffc98b, 2.0], [[0, 5, -4], 0xccdfff, 1.4]] as const) {
+            const light = new THREE.DirectionalLight(color, strength);
+            light.position.set(pos[0], pos[1], pos[2]);
+            if (pos[0] === -4) {
+                light.castShadow = true;
+                light.shadow.mapSize.set(1024, 1024);
+                light.shadow.camera.left = -5;
+                light.shadow.camera.right = 5;
+                light.shadow.camera.top = 5;
+                light.shadow.camera.bottom = -5;
+                light.shadow.bias = -.001;
+            }
+            scene.add(light);
+        }
+        // One authored atlas for the real keyboard legends; no per-key textures.
+        const atlas = document.createElement("canvas");
+        atlas.width = 1024;
+        atlas.height = 512;
+        const ctx = atlas.getContext("2d")!;
+        ctx.fillStyle = "#919baa";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const vertices: number[] = [], uvs: number[] = [], indices: number[] = [];
+        shared.labels.forEach((label, i) => {
+            const col = i % 14, row = Math.floor(i / 14), cw = 1024 / 14, ch = 512 / 6;
+            ctx.font = `${label.text.length > 2 ? 20 : 30}px Inter, sans-serif`;
+            ctx.fillText(label.text, (col + .5) * cw, (row + .5) * ch);
+            const [x, y, z] = label.position, w = label.text.length > 2 ? .16 : .10, h = .085;
+            const base = vertices.length / 3;
+            vertices.push(x - w / 2, y + .001, z + h / 2, x + w / 2, y + .001, z + h / 2, x + w / 2, y + .001, z - h / 2, x - w / 2, y + .001, z - h / 2);
+            uvs.push(col / 14, 1 - (row + 1) / 6, (col + 1) / 14, 1 - (row + 1) / 6, (col + 1) / 14, 1 - row / 6, col / 14, 1 - row / 6);
+            indices.push(base, base + 1, base + 2, base, base + 2, base + 3);
+        });
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
+        geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
+        geometry.setIndex(indices);
+        geometry.computeVertexNormals();
+        const map = new THREE.CanvasTexture(atlas);
+        map.colorSpace = THREE.SRGBColorSpace;
+        const mat = new THREE.MeshBasicMaterial({ map, transparent: true, depthWrite: false });
+        shared.root.add(new THREE.Mesh(geometry, mat));
+        shared.geometry.push(geometry);
+        shared.materials.push(mat);
+    }
+    catch {
+        gpu?.dispose();
+        gpu = null;
+    }
+}
+function release() { users--; if (users > 0)
+    return; owner = null; shared?.geometry.forEach(g => g.dispose()); shared?.materials.forEach(m => { if (m instanceof THREE.MeshBasicMaterial)
+    m.map?.dispose(); m.dispose(); }); shared = null; environment?.dispose(); environment = null; scene?.traverse(object => { if (object instanceof THREE.DirectionalLight)
+    object.shadow.dispose(); }); scene = null; gpu?.dispose(); gpu?.forceContextLoss(); gpu = null; checked = false; images.clear(); }
+export function createLaptopScene(root: HTMLElement, host: HTMLElement, display: HTMLElement, touch: boolean, flagship: boolean, onFailure: () => void) {
+    acquire();
+    root.dataset.engine = gpu ? "webgl" : "rendered";
+    const source = display.parentElement!, plate = document.createElement("div");
+    plate.className = "laptop-render-plate";
+    host.append(plate);
+    const raster = document.createElement("canvas");
+    raster.className = "laptop-rendered-frame";
+    raster.width = 704;
+    raster.height = 440;
+    plate.append(raster);
+    const paint = raster.getContext("2d")!;
+    const css = new CSS3DRenderer();
+    css.domElement.className = "laptop-css3d";
+    plate.append(css.domElement);
+    const htmlScene = new THREE.Scene(), htmlRoot = new THREE.Group(), htmlHinge = new THREE.Group(), htmlScreen = new CSS3DObject(display);
+    htmlRoot.add(htmlHinge);
+    htmlHinge.position.set(0, LAPTOP.hingeY, LAPTOP.hingeZ);
+    htmlHinge.add(htmlScreen);
+    htmlScreen.position.set(0, LAPTOP.screenY, LAPTOP.screenZ);
+    htmlScreen.scale.set(LAPTOP.screenWidth / 1024, LAPTOP.screenHeight / (1024 * LAPTOP.screenHeight / LAPTOP.screenWidth), 1);
+    htmlScene.add(htmlRoot);
+    const camera = new THREE.PerspectiveCamera(40, LAPTOP.plateAspect, .1, 100), target = new THREE.Vector3();
+    display.style.width = "1024px";
+    display.style.height = `${1024 * LAPTOP.screenHeight / LAPTOP.screenWidth}px`;
+    let frame = 0, refreshFrame = 0, disposed = false, width = 1, height = 1, lastImage = -1, displayedFrame = 27, pointerX = 0, pointerY = 0;
+    const state = { progress: 0 };
+    const updateSemantic = (handoff: number) => { const panel = root.querySelector<HTMLElement>(".laptop-content-panel"); panel?.setAttribute("aria-hidden", handoff < .5 ? "true" : "false"); };
+    function render() {
+        frame = 0;
+        if (disposed || document.hidden)
+            return;
+        const rect = host.getBoundingClientRect();
+        if (rect.bottom <= 0 || rect.top >= window.innerHeight)
+            return;
+        const p = Math.max(0, Math.min(1, state.progress)), mapped = flagship ? p : .12 + Math.min(p, .8) * .575;
+        // Both rendering paths use the same fixed-aspect camera and source geometry.
+        const livePose = laptopPose(mapped, false);
+        const oldRect = owner?.getBoundingClientRect();
+        const canOwn = Boolean(gpu && (!owner || owner === host || !oldRect || oldRect.bottom <= 0 || oldRect.top >= window.innerHeight));
+        const i = LAPTOP_FRAMES.reduce((best, value, index) => Math.abs(value - mapped) < Math.abs(LAPTOP_FRAMES[best] - mapped) ? index : best, 0);
+        const atlas = atlasImage(Math.floor(i / 8));
+        const drawFrame = () => { if (!disposed && lastImage === i) {
+            displayedFrame = i;
+            root.dataset.ready = "true";
+            paint.clearRect(0, 0, 704, 440);
+            paint.drawImage(atlas, (i % 4) * 704, Math.floor((i % 8) / 4) * 440, 704, 440, 0, 0, 704, 440);
+            request();
+        } };
+        if (i !== lastImage) {
+            lastImage = i;
+            if (atlas.complete && atlas.naturalWidth)
+                drawFrame();
+            else {
+                atlas.addEventListener("load", drawFrame, { once: true });
+                atlas.addEventListener("error", onFailure, { once: true });
+            }
+            if (!gpu)
+                atlasImage(Math.min(5, Math.floor(i / 8) + 1));
+        }
+        const pose = canOwn ? livePose : laptopPose(LAPTOP_FRAMES[displayedFrame], false);
+        camera.position.set(...pose.camera);
+        target.set(...pose.target);
+        camera.lookAt(target);
+        htmlRoot.rotation.y = pose.rotation;
+        htmlHinge.rotation.x = pose.lidAngle;
+        if (canOwn && gpu && shared && scene) {
+            owner = host;
+            if (gpu.domElement.parentElement !== plate)
+                plate.prepend(gpu.domElement);
+            gpu.domElement.className = "laptop-webgl";
+            gpu.setPixelRatio(Math.min(window.devicePixelRatio, touch ? 1.25 : 1.75));
+            gpu.setSize(width, height);
+            shared.root.rotation.y = pose.rotation;
+            shared.hinge.rotation.x = pose.lidAngle;
+            gpu.render(scene, camera);
+            root.dataset.ready = "true";
+            raster.style.visibility = "hidden";
+        }
+        else
+            raster.style.visibility = "visible";
+        plate.style.transform = `translate(-50%,-50%) perspective(1200px) rotateX(${pointerY}deg) rotateY(${pointerX}deg)`;
+        plate.style.opacity = `${livePose.hardwareOpacity}`;
+        display.style.opacity = `${pose.screenOpacity}`;
+        root.style.setProperty("--laptop-handoff", `${livePose.handoff}`);
+        root.style.setProperty("--laptop-detail-opacity", `${flagship ? 1 : smooth(.35, .75, p)}`);
+        root.dataset.progress = p.toFixed(3);
+        updateSemantic(livePose.handoff);
+        css.render(htmlScene, camera);
+    }
+    const request = () => { if (!frame && !disposed)
+        frame = requestAnimationFrame(render); };
+    const resize = () => { const w = host.clientWidth, h = host.clientHeight; const fit = Math.min(w * .97, h * LAPTOP.plateAspect); width = Math.max(1, fit); height = width / LAPTOP.plateAspect; plate.style.width = `${width}px`; plate.style.height = `${height}px`; css.setSize(width, height); request(); };
+    const tween = gsap.to(state, { progress: 1, ease: "none", onUpdate: request, scrollTrigger: { trigger: flagship ? root.querySelector(".laptop-runway") : root, start: flagship ? "top 92px" : "top 88%", end: flagship ? () => `+=${window.innerHeight * (touch ? .7 : 1.4)}` : "top 28%", scrub: touch ? .14 : .3, invalidateOnRefresh: true, onRefresh: resize, onToggle: request } });
+    const observer = new ResizeObserver(resize);
+    observer.observe(host);
+    const lost = (event: Event) => { event.preventDefault(); if (owner === host) {
+        owner = null;
+        gpu?.dispose();
+        gpu = null;
+        root.dataset.engine = "rendered";
+        raster.style.visibility = "visible";
+        request();
+    } };
+    const canvas = gpu?.domElement;
+    canvas?.addEventListener("webglcontextlost", lost);
+    const pointerMove = (event: PointerEvent) => { if (touch || flagship || event.pointerType !== "mouse" || state.progress < .8)
+        return; const rect = host.getBoundingClientRect(); pointerX = ((event.clientX - rect.left) / rect.width - .5) * 4; pointerY = -((event.clientY - rect.top) / rect.height - .5) * 4; pointerX = Math.max(-2, Math.min(2, pointerX)); pointerY = Math.max(-2, Math.min(2, pointerY)); request(); };
+    const pointerLeave = () => { pointerX = 0; pointerY = 0; request(); };
+    root.addEventListener("pointermove", pointerMove);
+    root.addEventListener("pointerleave", pointerLeave);
+    document.addEventListener("visibilitychange", request);
+    resize();
+    refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => { disposed = true; cancelAnimationFrame(frame); cancelAnimationFrame(refreshFrame); observer.disconnect(); tween.scrollTrigger?.kill(); tween.kill(); document.removeEventListener("visibilitychange", request); root.removeEventListener("pointermove", pointerMove); root.removeEventListener("pointerleave", pointerLeave); canvas?.removeEventListener("webglcontextlost", lost); source.append(display); display.removeAttribute("style"); plate.remove(); if (owner === host)
+        owner = null; root.style.removeProperty("--laptop-handoff"); root.style.removeProperty("--laptop-detail-opacity"); delete root.dataset.progress; delete root.dataset.engine; delete root.dataset.ready; updateSemantic(1); release(); };
 }
