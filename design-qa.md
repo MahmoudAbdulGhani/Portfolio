@@ -1,6 +1,6 @@
 # Three-device projects and split hero — design QA
 
-final result: passed
+final result: passed (responsive-screen correction, 2026-10-06)
 
 ## Source and scope
 
@@ -37,6 +37,12 @@ Comparison: `docs/design/three-device-showcase/reference-comparison.jpg` places 
 - App console error filter returned no errors; unrelated browser extension metadata errors excluded.
 - Typecheck, ESLint, production build and git diff whitespace check passed.
 
-## Follow-up polish
+## Responsive-screen correction — 2026-10-06
 
-Native long phone/tablet screenshots would improve fidelity over cropped desktop UI in narrow devices. Current previews deliberately use the real CMS captures and offer full-resolution inspection; no mobile-specific product implementation is claimed.
+The earlier desktop-derived side-device crop was rejected by the user and is superseded. All ten phone/tablet slots now have separately rendered responsive assets. Five laptop slots retain their CMS screenshots. Width fitting and x=0 replace forced scaling/offsets for every device. Short images remain still; real vertical overflow alone drives scrolling. Device clicks append responsive captures to the original CMS gallery and open the selected capture.
+
+Sources and exact capture sizes are documented in `docs/design/responsive-devices/capture-notes.md`. Public pages were used where dashboard access was unavailable. JobPilot and Cedar used read-only public DOM snapshots with the deployed sites' original styles because those sites disallow framing; no UI was invented and no authenticated data was accessed. UniHub uses public student registration and sign-in, not a claimed dashboard capture.
+
+Fresh desktop and mobile proof: `docs/design/responsive-devices/desktop.jpg` and `mobile.jpg`. Browser checks confirmed 15/15 preview images loaded, ten responsive source slots, zero images wider than their masks, and no document overflow at 310, 380 or 1014 CSS content pixels. Phone enlargement opened `/projects/responsive/jobpilot-phone.webp`; pause stopped all running devices and resume restored the control state. Independent motion was observed with the tablet at y=-52.97px while the phone was at its own start/hold position. Typecheck, ESLint, production build and whitespace checks passed.
+
+Signed-in dashboard screenshots can replace the public-page captures through the optional phone/tablet source mapping without changing the layout or animation renderer.

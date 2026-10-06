@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { gsap } from 'gsap';
 import { PiArrowsOutSimple } from 'react-icons/pi';
 import type { GalleryProject } from './CinematicProjects';
-import { coverDirections } from './project-cover-directions';
+import { coverDirections, projectPreviewImages } from './project-cover-directions';
 import './project-covers.css';
 
 const subscribeMotion = (callback: () => void) => {
@@ -27,13 +27,14 @@ interface Props {
   onOpen: (index: number) => void;
 }
 
-function DeviceScreen({ kind, src, label, running, priority, onOpen }: {
-  kind: DeviceKind; src: string; label: string; running: boolean; priority: boolean; onOpen: () => void;
+function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
+  kind: DeviceKind; src: string; label: string; native: boolean; running: boolean; priority: boolean; onOpen: () => void;
 }) {
   const viewport = useRef<HTMLButtonElement>(null);
   const image = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState('');
   const [failed, setFailed] = useState('');
+  const [scrollable, setScrollable] = useState(false);
   useEffect(() => {
     const mask = viewport.current;
     const target = image.current;
@@ -41,16 +42,16 @@ function DeviceScreen({ kind, src, label, running, priority, onOpen }: {
     let timeline: gsap.core.Timeline | undefined;
     const measure = () => {
       timeline?.kill();
-      // The supplied screenshots are desktop captures. Side devices show a
-      // readable detail crop, never a squeezed or fabricated mobile interface.
+      // Fit the entire source width. Only genuine vertical overflow scrolls;
+      // a desktop screenshot cannot become responsive through zoom/cropping.
       const ratio = target.naturalWidth / target.naturalHeight;
-      const width = kind === 'laptop' ? Math.max(mask.clientWidth, mask.clientHeight * ratio * 1.14)
-        : Math.max(mask.clientWidth, mask.clientHeight * ratio * 1.16);
+      const width = mask.clientWidth;
       target.style.width = `${width}px`;
-      const x = kind === 'laptop' ? 0 : -Math.min((width - mask.clientWidth) * .25, width * (kind === 'tablet' ? .24 : .165));
-      const distance = Math.max(0, width / ratio - mask.clientHeight);
+      const height = width / ratio;
+      const distance = Math.max(0, height - mask.clientHeight);
+      setScrollable(distance >= 2);
       const currentY = Number(gsap.getProperty(target, 'y')) || 0;
-      gsap.set(target, { x, y: Math.max(-distance, Math.min(0, currentY)) });
+      gsap.set(target, { x: 0, y: distance < 2 ? 0 : Math.max(-distance, Math.min(0, currentY)) });
       if (!running || distance < 2) return;
       const delay = { laptop: 1.1, phone: 1.7, tablet: 2.3 }[kind];
       const duration = { laptop: 5.2, phone: 5.8, tablet: 6.4 }[kind];
@@ -64,7 +65,7 @@ function DeviceScreen({ kind, src, label, running, priority, onOpen }: {
     return () => { observer.disconnect(); timeline?.kill(); };
   }, [running, loaded, failed, src, kind]);
 
-  return <div className={`cw-device cw-device--${kind}`} data-device={kind} data-running={running && loaded === src && failed !== src}>
+  return <div className={`cw-device cw-device--${kind}`} data-device={kind} data-source={native ? 'responsive' : 'cms'} data-running={running && scrollable && loaded === src && failed !== src}>
     <img className="cw-device-frame" src={`/projects/devices/${kind}.webp`} alt="" aria-hidden loading={priority ? 'eager' : 'lazy'} draggable={false} />
     <button ref={viewport} type="button" className="cw-device-screen" aria-label={`Enlarge ${label}`} onClick={onOpen}>
       {failed === src ? <span className="cw-device-error">Preview unavailable</span> : <img ref={image} src={src} alt={label} loading={priority ? 'eager' : 'lazy'} decoding="async" onLoad={() => setLoaded(src)} onError={() => setFailed(src)} draggable={false} />}
@@ -82,8 +83,14 @@ export function CinematicProjectCover({ project, active, paused, priority, resol
   const visible = useSyncExternalStore(subscribeVisibility, visibilitySnapshot, () => false);
   const running = active && !paused && !reduced && visible;
   const kinds: DeviceKind[] = ['laptop', 'phone', 'tablet'];
+  const gallery = projectPreviewImages(project);
   return <div className="cw-product-cover cw-device-composition" aria-label={`${project.name}: three independently scrolling screens`} data-running={running}>
-    {frames.map((frame, index) => <DeviceScreen key={`${frame.index}:${sources[frame.index]}`} kind={kinds[index]} src={resolveImage(sources[frame.index])} label={`${project.name}: ${frame.label}`} running={running} priority={priority || active} onOpen={() => onOpen(frame.index)} />)}
+    {frames.map((frame, index) => {
+      const kind = kinds[index];
+      const capture = kind === 'laptop' ? undefined : direction?.responsive?.[kind];
+      const source = capture?.src ?? sources[frame.index];
+      return <DeviceScreen key={`${kind}:${source}`} kind={kind} native={Boolean(capture)} src={resolveImage(source)} label={`${project.name}: ${capture?.label ?? frame.label}`} running={running} priority={priority || active} onOpen={() => onOpen(gallery.indexOf(source))} />;
+    })}
     {!frames.length && <p className="cw-device-error">Project screenshots coming soon.</p>}
   </div>;
 }

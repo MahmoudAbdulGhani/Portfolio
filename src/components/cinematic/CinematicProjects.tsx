@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './cinematic-projects.css';
 import { CinematicProjectCover } from './CinematicProjectCover';
+import { projectPreviewImages } from './project-cover-directions';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,7 +178,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
   }, [viewer?.index, viewerId]);
 
   const close = () => { dialog.current?.close(); setViewer(null); };
-  const images = viewer?.project.screenshots?.length ? viewer.project.screenshots : viewer?.project.coverImage ? [viewer.project.coverImage] : [];
+  const images = viewer ? projectPreviewImages(viewer.project) : [];
   const step = (delta: number) => setViewer((v) => v ? { ...v, index: (v.index + delta + images.length) % images.length } : null);
   const words = heading.trim().split(/\s+/);
   const titleLead = words.slice(0, -1).join(' ');
