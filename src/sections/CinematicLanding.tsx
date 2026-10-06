@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import { motion, useInView, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
+import { useEffect, useRef, type ReactNode } from "react";
+import { motion, useInView, useMotionValue, useMotionValueEvent, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowDown, FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiMapPin, FiMessageCircle, FiMessageSquare, FiZap } from "react-icons/fi";
 import { useCertifications, useEducation, useProfile, useProjects, useSiteSection, useSkills } from "../lib/hooks";
@@ -30,54 +30,30 @@ function useSceneProgress(progress: MotionValue<number>) {
 export function CinematicLanding() {
   const query = useProfile();
   if (!query.data) return <PublicDataState loading={query.isLoading} error={query.isError} onRetry={() => void query.refetch()} label="profile" />;
-  return <div className="cinema"><PortraitHero profile={query.data} /><PersonalStory profile={query.data} /><SkillSequence /><WorkSequence /><CareerSequence profile={query.data} /><LearningSequence /><EditorialContact profile={query.data} /></div>;
+  return <div className="cinema"><PortraitHero profile={query.data} /><WorkSequence /><PersonalStory profile={query.data} /><SkillSequence /><CareerSequence profile={query.data} /><LearningSequence /><EditorialContact profile={query.data} /></div>;
 }
 function PortraitHero({ profile }: { profile: Profile }) {
-  const ref = useRef<HTMLElement>(null);
-  const { enabled, cinematic, profile: motionProfile } = useLandingMotion();
+  const { enabled } = useLandingMotion();
   const { data: section } = useSiteSection("hero");
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const p = useSceneProgress(scrollYProgress);
-  // Clear the copy before the portrait grows across its column.
-  const left = useTransform(p, [0, 0.4, 0.9], ["35%", "35%", "0%"]);
-  const width = useTransform(p, [0, 0.4, 0.9], ["30%", "30%", "100%"]);
-  const top = useTransform(p, [0, 0.4, 0.9], ["10%", "10%", "0%"]);
-  const height = useTransform(p, [0, 0.4, 0.9], ["80%", "80%", "100%"]);
-  const objectPosition = useTransform(p, [0, 0.9], ["50% 35%", "50% 22%"]);
-  const photoScale = useTransform(p, [0, 0.9], [1.035, 1.015]);
-  const mobilePhotoY = useTransform(p, [0, 1], [8, -8]);
-  const mobilePhotoScale = useTransform(p, [0, 1], [1.02, 1]);
-  const opacity = useTransform(p, [0, 0.24, 0.38], [1, 1, 0]);
-  const copyX = useTransform(p, [0, 0.24, 0.38], [0, 0, -44]);
-  const roleX = useTransform(p, [0, 0.24, 0.38], [0, 0, 44]);
-  const pointerX = useMotionValue(0), pointerY = useMotionValue(0);
-  const x = useSpring(pointerX, { stiffness: 70, damping: 28 }), y = useSpring(pointerY, { stiffness: 70, damping: 28 });
-  const [cleared, setCleared] = useState(false);
-  useMotionValueEvent(p, "change", v => setCleared(v >= 0.38));
   const title = section?.heading || profile.title;
-  const words = title.trim().split(/\s+/);
-  const parts = words.length >= 3 ? [words[0], words.slice(1, -1).join(" "), words.at(-1)] : [title];
-  return <section ref={ref} id="hero" className={`cinema-hero ${cinematic ? "has-scroll-scene" : ""}`}><div className="cinema-hero-sticky" onPointerMove={event => {
-    if (!enabled || !cinematic) return;
-    const box = event.currentTarget.getBoundingClientRect();
-    pointerX.set(((event.clientX - box.left) / box.width - 0.5) * 6);
-    pointerY.set(((event.clientY - box.top) / box.height - 0.5) * 6);
-  }} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
-    <motion.div className="cinema-hero-copy" inert={cinematic && cleared} style={cinematic ? { opacity, x: copyX } : undefined}>
+  const split = title.indexOf(" ");
+  const introduction = typeof section?.content.introduction === "string" ? section.content.introduction : "";
+  return <section id="hero" className="cinema-hero"><div className={`cinema-hero-sticky ${profile.photo ? "" : "cinema-hero-without-photo"}`}>
+    <Enter className="cinema-hero-copy">
       <p className="cinema-hero-name">{profile.shortName || profile.name}</p>
-      <h1 className="sr-only">{title}</h1>
-      <div className={`cinema-title ${parts.length === 1 ? "single-title" : ""}`} aria-hidden><span className="cinema-title-part part-0"><motion.span initial={enabled ? motionProfile === "touch" ? { y: "105%" } : { x: "-105%" } : false} animate={{ x: 0, y: 0 }} transition={{ duration: motionProfile === "touch" ? 0.65 : 0.95, delay: 0.1, ease }}>{parts[0]}</motion.span></span></div>
+      <h1 className="cinema-hero-title">{split > 0 ? <><span>{title.slice(0, split)}</span><em>{title.slice(split + 1)}</em></> : title}</h1>
+      <p className="cinema-hero-introduction">{section?.description || profile.tagline || introduction}</p>
       <div className="cinema-hero-meta"><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</div>
-      <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects"><FiArrowDown aria-hidden />{section?.ctaLabel}</a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
-    </motion.div>
-    {parts.length > 1 && <motion.div className="cinema-hero-role cinema-title" aria-hidden style={cinematic ? { opacity, x: roleX } : undefined}>{parts.slice(1).map((word, i) => <span className={`cinema-title-part part-${i + 1}`} key={`${word}-${i}`}><motion.span initial={enabled ? motionProfile === "touch" ? { y: "105%" } : { x: "105%" } : false} animate={{ x: 0, y: 0 }} transition={{ duration: motionProfile === "touch" ? 0.65 : 0.95, delay: 0.17 + i * (motionProfile === "touch" ? 0.07 : 0.12), ease }}>{word}</motion.span></span>)}</motion.div>}
-    {profile.photo && <motion.div className="cinema-portrait" style={cinematic ? { left, top, width, height } : undefined} initial={enabled ? { opacity: 0, clipPath: motionProfile === "touch" ? "inset(12% 0 12% 0)" : "inset(50% 0 50% 0)" } : false} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: motionProfile === "touch" ? 0.7 : 1.1, delay: 0.28, ease }}><motion.img src={profile.photo} alt={profile.name} fetchPriority="high" style={{ objectPosition: cinematic ? objectPosition : "50% 35%", scale: !enabled ? 1 : cinematic ? photoScale : mobilePhotoScale, x: enabled && cinematic ? x : 0, y: !enabled ? 0 : cinematic ? y : mobilePhotoY }} /></motion.div>}
+      <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects">{section?.ctaLabel || "View selected work"}<FiArrowDown aria-hidden /></a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
+      {!!profile.focusAreas.length && <ul className="cinema-hero-focus" aria-label="Focus areas">{profile.focusAreas.slice(0, 3).map(area => <li key={area}>{area}</li>)}</ul>}
+    </Enter>
+    {profile.photo && <motion.figure className="cinema-portrait" initial={enabled ? { opacity: 0, y: 18 } : false} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .15, ease }}><img src={profile.photo} alt={`Portrait of ${profile.name}`} fetchPriority="high" decoding="async" /></motion.figure>}
   </div></section>;
 }
 function PersonalStory({ profile }: { profile: Profile }) {
   const { data: section } = useSiteSection("about");
   if (section?.visible === false) return null;
-  return <section id="about" className="cinema-section cinema-about"><div className="cinema-container"><Enter><p className="cinema-label">01 / {section?.eyebrow}</p></Enter><div className="cinema-about-grid"><h2><ScrollWords text={section?.heading || ""} /></h2><Enter className="cinema-about-details"><p className="cinema-profile-name">{profile.shortName}</p>{profile.languages && <p className="cinema-muted">{profile.languages}</p>}<details className="cinema-detail"><summary>{section?.eyebrow}<FiArrowDown aria-hidden /></summary><p>{profile.bio}</p></details></Enter></div></div></section>;
+  return <section id="about" className="cinema-section cinema-about"><div className="cinema-container"><Enter><p className="cinema-label">02 / {section?.eyebrow}</p></Enter><div className="cinema-about-grid"><h2><ScrollWords text={section?.heading || ""} /></h2><Enter className="cinema-about-details"><p className="cinema-profile-name">{profile.shortName}</p>{profile.languages && <p className="cinema-muted">{profile.languages}</p>}<details className="cinema-detail"><summary>{section?.eyebrow}<FiArrowDown aria-hidden /></summary><p>{profile.bio}</p></details></Enter></div></div></section>;
 }
 function SkillRail({ names, reverse = false }: { names: string[]; reverse?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,7 +69,7 @@ function SkillSequence() {
   const { data: section } = useSiteSection("skills"), { data: technologies } = useSiteSection("technologies");
   const groups = (query.data ?? []).reduce<Record<string, string[]>>((acc, s) => { (acc[s.category] ??= []).push(s.name); return acc; }, {});
   if (section?.visible === false) return null;
-  return <section id="skills" className="cinema-section cinema-skills"><div className="cinema-container cinema-section-head"><Enter><p className="cinema-label">02 / {section?.eyebrow}</p></Enter><a href="#all-skills" className="cinema-link">{technologies?.heading}<FiArrowUpRight aria-hidden /></a></div>{query.isLoading || query.isError ? <PublicDataState loading={query.isLoading} error={query.isError} onRetry={() => void query.refetch()} label="skills" /> : <><div className="cinema-rails"><SkillRail names={groups.Frontend ?? []} /><SkillRail names={[...(groups["Backend & APIs"] ?? []), ...(groups.Backend ?? [])]} reverse /></div><div className="cinema-container"><SkillExplorer groups={groups} heading={section?.heading || ""} /></div></>}</section>;
+  return <section id="skills" className="cinema-section cinema-skills"><div className="cinema-container cinema-section-head"><Enter><p className="cinema-label">03 / {section?.eyebrow}</p></Enter><a href="#all-skills" className="cinema-link">{technologies?.heading}<FiArrowUpRight aria-hidden /></a></div>{query.isLoading || query.isError ? <PublicDataState loading={query.isLoading} error={query.isError} onRetry={() => void query.refetch()} label="skills" /> : <><div className="cinema-rails"><SkillRail names={groups.Frontend ?? []} /><SkillRail names={[...(groups["Backend & APIs"] ?? []), ...(groups.Backend ?? [])]} reverse /></div><div className="cinema-container"><SkillExplorer groups={groups} heading={section?.heading || ""} /></div></>}</section>;
 }
 function WorkSequence() {
   const query = useProjects();
@@ -105,7 +81,7 @@ function WorkSequence() {
   const content = section?.content ?? {};
   return <CinematicProjects
     projects={featured}
-    eyebrow={typeof content.cinematicEyebrow === "string" ? content.cinematicEyebrow : "03 / PROJECTS"}
+    eyebrow={`01 / ${typeof content.cinematicEyebrow === "string" ? content.cinematicEyebrow.replace(/^\d+\s*\/\s*/, "") : "PROJECTS"}`}
     heading={typeof content.cinematicHeading === "string" && content.cinematicHeading.trim() ? content.cinematicHeading : "Selected work"}
     description={typeof content.cinematicDescription === "string" ? content.cinematicDescription : undefined}
     ctaLabel={section?.ctaLabel || "View all projects"}
@@ -136,5 +112,5 @@ function EditorialContact({ profile }: { profile: Profile }) {
   const socialIcons = { github: FiGithub, linkedin: FiLinkedin, instagram: FiInstagram, whatsapp: FiMessageCircle };
   if (section?.visible === false) return null;
   const words = (section?.heading || "").split(" ");
-  return <section id="contact" className="cinema-section cinema-contact"><div className="cinema-container"><Enter><p className="cinema-label">07 / {section?.eyebrow}</p></Enter><div className="cinema-contact-grid"><h2><MaskedReveal><span>{words.slice(0, -1).join(" ")}</span><em>{words.at(-1)}</em></MaskedReveal></h2><div className="cinema-contact-links"><a className="cinema-email" href={`mailto:${profile.email}`}><FiMail aria-hidden />{profile.email}</a><div className="cinema-socials">{profile.socials.filter(s => s.published !== false && s.showInContact !== false).map(s => { const Icon = socialIcons[s.platform as keyof typeof socialIcons] || FiArrowUpRight; return <a key={s.url} href={s.url} target="_blank" rel="noreferrer"><Icon aria-hidden />{s.label}</a>; })}</div><Link to="/contact" className="cinema-link">{source("formHeading")}<FiArrowUpRight aria-hidden /></Link></div></div><div className="cinema-ai-tools">{jobMatch?.visible !== false && section?.content.jobMatchVisible !== false && <div className="cinema-ai-entry"><FiZap aria-hidden /><div><h3>{jobMatch?.heading}</h3><Link to="/job-match" className="cinema-link">{source("jobMatchCta")}<FiArrowUpRight aria-hidden /></Link></div></div>}{assistant?.visible !== false && <div className="cinema-ai-entry"><FiMessageSquare aria-hidden /><div><h3>{assistant?.heading}</h3><button type="button" className="cinema-link" onClick={() => window.dispatchEvent(new Event("open-portfolio-assistant"))}>{typeof assistant?.content.buttonLabel === "string" ? assistant.content.buttonLabel : assistant?.heading}<FiArrowUpRight aria-hidden /></button></div></div>}</div></div></section>;
+  return <section id="contact" className="cinema-section cinema-contact"><div className="cinema-container"><Enter><p className="cinema-label">07 / {section?.eyebrow}</p></Enter><div className="cinema-contact-grid"><h2><MaskedReveal><span>{words.slice(0, -1).join(" ")}</span>{" "}<em>{words.at(-1)}</em></MaskedReveal></h2><div className="cinema-contact-links"><a className="cinema-email" href={`mailto:${profile.email}`}><FiMail aria-hidden />{profile.email}</a><div className="cinema-socials">{profile.socials.filter(s => s.published !== false && s.showInContact !== false).map(s => { const Icon = socialIcons[s.platform as keyof typeof socialIcons] || FiArrowUpRight; return <a key={s.url} href={s.url} target="_blank" rel="noreferrer"><Icon aria-hidden />{s.label}</a>; })}</div><Link to="/contact" className="cinema-link cinema-primary cinema-contact-cta">{source("formHeading") || "Send a message"}<FiArrowUpRight aria-hidden /></Link></div></div><div className="cinema-ai-tools">{jobMatch?.visible !== false && section?.content.jobMatchVisible !== false && <div className="cinema-ai-entry"><FiZap aria-hidden /><div><h3>{jobMatch?.heading}</h3><Link to="/job-match" className="cinema-link">{source("jobMatchCta")}<FiArrowUpRight aria-hidden /></Link></div></div>}{assistant?.visible !== false && <div className="cinema-ai-entry"><FiMessageSquare aria-hidden /><div><h3>{assistant?.heading}</h3><button type="button" className="cinema-link" onClick={() => window.dispatchEvent(new Event("open-portfolio-assistant"))}>{typeof assistant?.content.buttonLabel === "string" ? assistant.content.buttonLabel : assistant?.heading}<FiArrowUpRight aria-hidden /></button></div></div>}</div></div></section>;
 }

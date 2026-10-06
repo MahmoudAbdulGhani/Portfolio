@@ -1,15 +1,15 @@
 /* Shared public portfolio system. CMS values and product imagery remain the source of truth. */
 .public-portfolio {
-  --bg:#05090f;
-  --bg-soft:#090f19;
-  --surface:#0b1420;
-  --surface-2:#101c2b;
-  --surface-3:#172639;
-  --text:#f5f6f6;
-  --muted:#b4c0ce;
+  --bg:#0b1118;
+  --bg-soft:#0b1118;
+  --surface:#141e2a;
+  --surface-2:#1c2937;
+  --surface-3:#263545;
+  --text:#f4f1e8;
+  --muted:#a8b3c2;
   --faint:#92a5bd;
-  --accent:#ffb20b;
-  --gold:#ffb20b;
+  --accent:#d9b56d;
+  --gold:#d9b56d;
   --ok:#7ddab5;
   --danger:#ff9b9b;
   --line:#ffffff20;
@@ -205,9 +205,9 @@
   margin-top:16px;
 }
 .public-page .btn-primary {
-  background:#ffb20b;
+  background:#d9b56d;
   color:#10151b;
-  border:1px solid #ffb20b;
+  border:1px solid #d9b56d;
   border-radius:3px;
   box-shadow:none;
 }
@@ -555,7 +555,7 @@
   position:absolute;
   right:12px;
   bottom:12px;
-  color:#ffb20b;
+  color:#d9b56d;
 }
 .case-mode-pair figcaption {
   font-size:12px;
@@ -1095,7 +1095,7 @@
   --border:var(--line);
   --border-strong:var(--line-strong);
   --on-accent:#10151b;
-  --ring:#ffb20b66;
+  --ring:#d9b56d66;
   color-scheme:dark;
 }
 .public-portfolio[data-theme=light] {

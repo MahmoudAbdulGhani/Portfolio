@@ -12,9 +12,13 @@ export interface GalleryProject {
   id: string;
   slug: string;
   name: string;
+  type?: string;
   tagline?: string | null;
   description?: string | null;
   stack: string[];
+  myRole?: string | null;
+  contributions?: string[];
+  impactSummary?: string | null;
   screenshots?: string[];
   coverImage?: string | null;
   imageAlt?: string | null;
@@ -114,7 +118,7 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
           gsap.fromTo(panels, {
             y: mobile ? 10 : 28,
           }, {
-            y: 0, duration: mobile ? .55 : 1.1,
+            y: 0, duration: mobile ? .45 : .7,
             ease: 'power3.out', force3D: false,
             scrollTrigger: { trigger: scene, start: 'top 88%', once: true },
           });
@@ -197,7 +201,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
     <img className="cw-ambient" src={ambientSrc} alt="" aria-hidden="true" />
     <div className="cw-container">
       <header className="cw-heading">
-        <div><p className="cw-eyebrow">{eyebrow}</p><h2 id="cw-title">{titleLead && <span>{titleLead}</span>}<em>{titleLast}</em></h2>{description && <p className="cw-intro">{description}</p>}</div>
+        <div><p className="cw-eyebrow">{eyebrow}</p><h2 id="cw-title">{titleLead && <span>{titleLead}</span>}{" "}<em>{titleLast}</em></h2>{description && <p className="cw-intro">{description}</p>}</div>
         <div className="cw-utilities"><p className="cw-heading-note">A closer look at the products<br />behind the pixels.</p><a className="cw-all" href={allProjectsHref}>{ctaLabel}<PiArrowRight size={20} /></a>
           <button className="cw-motion" type="button" aria-pressed={paused} onClick={() => { setPaused(!paused); try { localStorage.setItem('cinematic-motion', paused ? 'playing' : 'paused'); } catch { /* Motion still works when storage is unavailable. */ } }}>
             {paused ? <PiPlay size={14} /> : <PiPause size={14} />}<span>{paused ? 'Motion paused' : 'Pause motion'}</span>
@@ -218,11 +222,14 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
             </div></div>
             <div className="cw-caption">
               <div className="cw-caption-heading">
-              <p className="cw-project-number"><span className="cw-ordinal">{String(index + 1).padStart(2, '0')}</span><span>{project.stack.slice(0, 3).join(' · ')}</span></p>
+              <p className="cw-project-number"><span className="cw-ordinal">{String(index + 1).padStart(2, '0')}</span><span>{project.type || "Featured product"}</span></p>
               <h3 id={`cw-${project.slug}`}>{name}</h3>
+              <p className="cw-stack">{project.stack.slice(0, 3).join(' · ')}</p>
               </div>
               <div className="cw-caption-details">
               <p className="cw-tagline">{project.tagline || project.description}</p>
+              {project.myRole && <p className="cw-role"><span>My role</span>{project.myRole}</p>}
+              {!!project.contributions?.length && <p className="cw-contribution">{project.contributions[0]}</p>}
               <div className="cw-actions"><a className="cw-explore" href={projectHref(project.slug)}>Explore project<span><PiArrowUpRight size={20} /></span></a>
                 {!!sources.length && <button className="cw-gallery-link" type="button" onClick={() => open(primary)}><PiImages size={17} />{sources.length} {sources.length === 1 ? 'screen' : 'screens'}</button>}
               </div>
@@ -236,7 +243,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
     </div>
     {!!featured.length && navigatorVisible && <nav className="cw-chapters" aria-label="Featured project chapters">
       <div className="cw-chapter-progress" aria-hidden="true"><span /></div>
-      {featured.map((project, index) => <a key={project.id} href={`#cw-scene-${project.slug}`} aria-current={activeChapter === index ? 'location' : undefined} onClick={(event) => {
+      {featured.map((project, index) => <a key={project.id} href={`#cw-scene-${project.slug}`} title={directions[project.slug]?.shortName ?? project.name} aria-label={`${String(index + 1).padStart(2, '0')} · ${directions[project.slug]?.shortName ?? project.name}`} aria-current={activeChapter === index ? 'location' : undefined} onClick={(event) => {
         event.preventDefault();
         const scene = document.getElementById(`cw-scene-${project.slug}`);
         scene?.scrollIntoView({ block: 'start', behavior: paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
