@@ -35,6 +35,15 @@ function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
   const [loaded, setLoaded] = useState('');
   const [failed, setFailed] = useState('');
   const [scrollable, setScrollable] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const inspecting = hovered || focused;
+  const inspectionRef = useRef(inspecting);
+  useEffect(() => {
+    inspectionRef.current = inspecting;
+    timelineRef.current?.paused(inspecting);
+  }, [inspecting]);
   useEffect(() => {
     const mask = viewport.current;
     const target = image.current;
@@ -42,6 +51,7 @@ function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
     let timeline: gsap.core.Timeline | undefined;
     const measure = () => {
       timeline?.kill();
+      timelineRef.current = null;
       // Fit the entire source width. Only genuine vertical overflow scrolls;
       // a desktop screenshot cannot become responsive through zoom/cropping.
       const ratio = target.naturalWidth / target.naturalHeight;
@@ -53,21 +63,22 @@ function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
       const currentY = Number(gsap.getProperty(target, 'y')) || 0;
       gsap.set(target, { x: 0, y: distance < 2 ? 0 : Math.max(-distance, Math.min(0, currentY)) });
       if (!running || distance < 2) return;
-      const delay = { laptop: 1.1, phone: 1.7, tablet: 2.3 }[kind];
-      const duration = { laptop: 5.2, phone: 5.8, tablet: 6.4 }[kind];
-      timeline = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+      const delay = { laptop: 3, phone: 3.6, tablet: 4.2 }[kind];
+      const duration = { laptop: 7, phone: 8, tablet: 9 }[kind];
+      timeline = gsap.timeline({ repeat: -1, repeatDelay: 2, paused: inspectionRef.current });
+      timelineRef.current = timeline;
       timeline.to(target, { y: -distance, duration, ease: 'power1.inOut' }, delay)
-        .to(target, { y: 0, duration: 1.8, ease: 'power2.inOut' }, `+=1.5`);
+        .to(target, { y: 0, duration: 2.4, ease: 'power2.inOut' }, '+=3');
     };
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(mask);
-    return () => { observer.disconnect(); timeline?.kill(); };
+    return () => { observer.disconnect(); timeline?.kill(); timelineRef.current = null; };
   }, [running, loaded, failed, src, kind]);
 
-  return <div className={`cw-device cw-device--${kind}`} data-device={kind} data-source={native ? 'responsive' : 'cms'} data-running={running && scrollable && loaded === src && failed !== src}>
+  return <div className={`cw-device cw-device--${kind}`} data-device={kind} data-source={native ? 'responsive' : 'cms'} data-running={running && !inspecting && scrollable && loaded === src && failed !== src}>
     <img className="cw-device-frame" src={`/projects/devices/${kind}.webp`} alt="" aria-hidden loading={priority ? 'eager' : 'lazy'} draggable={false} />
-    <button ref={viewport} type="button" className="cw-device-screen" aria-label={`Enlarge ${label}`} onClick={onOpen}>
+    <button ref={viewport} type="button" className="cw-device-screen" aria-label={`Enlarge ${label}`} onClick={onOpen} onPointerEnter={(event) => { if (event.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)} onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}>
       {failed === src ? <span className="cw-device-error">Preview unavailable</span> : <img ref={image} src={src} alt={label} loading={priority ? 'eager' : 'lazy'} decoding="async" onLoad={() => setLoaded(src)} onError={() => setFailed(src)} draggable={false} />}
       <span className="cw-device-inspect" aria-hidden><PiArrowsOutSimple size={18} /></span>
     </button>
