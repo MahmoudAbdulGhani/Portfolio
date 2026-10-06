@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { gsap } from 'gsap';
-import { PiArrowsOutSimple, PiPause, PiPlay, PiLockSimple } from 'react-icons/pi';
+import { PiArrowsOutSimple } from 'react-icons/pi';
 import type { GalleryProject } from './CinematicProjects';
 import { coverDirections } from './project-cover-directions';
 import './project-covers.css';
@@ -17,6 +17,7 @@ const subscribeVisibility = (callback: () => void) => {
 };
 const visibilitySnapshot = () => document.visibilityState === 'visible';
 
+type DeviceKind = 'laptop' | 'phone' | 'tablet';
 interface Props {
   project: GalleryProject;
   active: boolean;
@@ -26,108 +27,63 @@ interface Props {
   onOpen: (index: number) => void;
 }
 
-export function CinematicProjectCover({ project, active, paused, priority, resolveImage, onOpen }: Props) {
-  const direction = coverDirections[project.slug] ?? {
-    theme: 'lobby', category: 'FEATURED PRODUCT', headline: project.name, emphasis: '', features: project.stack.slice(0, 3), screens: [{ index: 0, label: 'Product overview' }],
-  };
-  const sources = project.screenshots?.length ? project.screenshots : project.coverImage ? [project.coverImage] : [];
-  const frames = direction.screens.filter((frame) => sources[frame.index]);
-  if (!frames.length && sources.length) frames.push({ index: 0, label: 'Product overview' });
-  const frameSignature = frames.map((frame) => `${frame.index}:${sources[frame.index]}`).join('|');
-  const [selection, setSelection] = useState({ current: 0, previous: 0 });
-  const [userPaused, setUserPaused] = useState(false);
-  const [loaded, setLoaded] = useState('');
-  const [failed, setFailed] = useState<string | null>(null);
-  const image = useRef<HTMLImageElement>(null);
-  const outgoing = useRef<HTMLImageElement>(null);
+function DeviceScreen({ kind, src, label, running, priority, onOpen }: {
+  kind: DeviceKind; src: string; label: string; running: boolean; priority: boolean; onOpen: () => void;
+}) {
   const viewport = useRef<HTMLButtonElement>(null);
+  const image = useRef<HTMLImageElement>(null);
+  const [loaded, setLoaded] = useState('');
+  const [failed, setFailed] = useState('');
+  useEffect(() => {
+    const mask = viewport.current;
+    const target = image.current;
+    if (!mask || !target || loaded !== src || failed === src) return;
+    let timeline: gsap.core.Timeline | undefined;
+    const measure = () => {
+      timeline?.kill();
+      // The supplied screenshots are desktop captures. Side devices show a
+      // readable detail crop, never a squeezed or fabricated mobile interface.
+      const ratio = target.naturalWidth / target.naturalHeight;
+      const width = kind === 'laptop' ? Math.max(mask.clientWidth, mask.clientHeight * ratio * 1.14)
+        : Math.max(mask.clientWidth, mask.clientHeight * ratio * 1.16);
+      target.style.width = `${width}px`;
+      const x = kind === 'laptop' ? 0 : -Math.min((width - mask.clientWidth) * .25, width * (kind === 'tablet' ? .24 : .165));
+      const distance = Math.max(0, width / ratio - mask.clientHeight);
+      const currentY = Number(gsap.getProperty(target, 'y')) || 0;
+      gsap.set(target, { x, y: Math.max(-distance, Math.min(0, currentY)) });
+      if (!running || distance < 2) return;
+      const delay = { laptop: 1.1, phone: 1.7, tablet: 2.3 }[kind];
+      const duration = { laptop: 5.2, phone: 5.8, tablet: 6.4 }[kind];
+      timeline = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+      timeline.to(target, { y: -distance, duration, ease: 'power1.inOut' }, delay)
+        .to(target, { y: 0, duration: 1.8, ease: 'power2.inOut' }, `+=1.5`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(mask);
+    return () => { observer.disconnect(); timeline?.kill(); };
+  }, [running, loaded, failed, src, kind]);
+
+  return <div className={`cw-device cw-device--${kind}`} data-device={kind} data-running={running && loaded === src && failed !== src}>
+    <img className="cw-device-frame" src={`/projects/devices/${kind}.webp`} alt="" aria-hidden loading={priority ? 'eager' : 'lazy'} draggable={false} />
+    <button ref={viewport} type="button" className="cw-device-screen" aria-label={`Enlarge ${label}`} onClick={onOpen}>
+      {failed === src ? <span className="cw-device-error">Preview unavailable</span> : <img ref={image} src={src} alt={label} loading={priority ? 'eager' : 'lazy'} decoding="async" onLoad={() => setLoaded(src)} onError={() => setFailed(src)} draggable={false} />}
+      <span className="cw-device-inspect" aria-hidden><PiArrowsOutSimple size={18} /></span>
+    </button>
+  </div>;
+}
+
+export function CinematicProjectCover({ project, active, paused, priority, resolveImage, onOpen }: Props) {
+  const direction = coverDirections[project.slug];
+  const sources = project.screenshots?.length ? project.screenshots : project.coverImage ? [project.coverImage] : [];
+  const frames = (direction?.screens ?? sources.slice(0, 3).map((_, index) => ({ index, label: `Screen ${index + 1}` }))).filter(frame => sources[frame.index]);
+  if (!frames.length && sources.length) frames.push({ index: 0, label: 'Product overview' });
   const reduced = useSyncExternalStore(subscribeMotion, reducedSnapshot, () => true);
   const visible = useSyncExternalStore(subscribeVisibility, visibilitySnapshot, () => false);
-  const current = Math.min(selection.current, Math.max(0, frames.length - 1));
-  const frame = frames[current];
-  const src = frame ? resolveImage(sources[frame.index]) : '';
-  const previous = frames[Math.min(selection.previous, Math.max(0, frames.length - 1))];
-  const previousSrc = previous ? resolveImage(sources[previous.index]) : '';
-  const running = active && !paused && !userPaused && !reduced && visible && loaded === src && failed !== src;
-
-  useEffect(() => {
-    if (!active) return;
-    const preloads = frames.map((item) => {
-      const preload = new Image();
-      preload.src = resolveImage(sources[item.index]);
-      return preload;
-    });
-    return () => { preloads.forEach((preload) => { preload.onload = null; }); };
-    // The signature includes the actual CMS URLs and frame order.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active, frameSignature, resolveImage]);
-
-  useEffect(() => {
-    const target = image.current;
-    const old = outgoing.current;
-    const mask = viewport.current;
-    if (!target || !mask || loaded !== src) return;
-    gsap.set(target, { opacity: 1, y: 0 });
-    if (old) gsap.set(old, { opacity: 0, y: 0 });
-    if (!running) return;
-    let timeline: gsap.core.Timeline;
-    let measuredWidth = mask.clientWidth;
-    const animate = (crossfade: boolean) => {
-      timeline?.kill();
-      gsap.set(target, { opacity: 1, y: 0 });
-      if (old) gsap.set(old, { opacity: 0 });
-      timeline = gsap.timeline();
-      if (crossfade && previousSrc !== src && old) {
-        gsap.set(old, { opacity: 1 });
-        timeline.fromTo(target, { opacity: 0 }, { opacity: 1, duration: .65, ease: 'power2.inOut' }, 0)
-          .to(old, { opacity: 0, duration: .65 }, 0);
-      }
-      const overflow = Math.max(0, target.getBoundingClientRect().height - mask.clientHeight);
-      if (overflow > 8) timeline.to(target, { y: -Math.min(overflow, mask.clientHeight * .4), duration: 2.7, ease: 'power1.inOut' }, 2.1);
-      if (frames.length > 1) timeline.call(() => {
-        setSelection((value) => ({ current: (value.current + 1) % frames.length, previous: value.current }));
-      }, [], 6.2);
-    };
-    animate(true);
-    const observer = new ResizeObserver(() => {
-      if (mask.clientWidth !== measuredWidth) {
-        measuredWidth = mask.clientWidth;
-        animate(false);
-      }
-    });
-    observer.observe(mask);
-    return () => {
-      observer.disconnect(); timeline.kill();
-      gsap.set(target, { opacity: 1, y: 0 });
-      if (old) gsap.set(old, { opacity: 0, y: 0 });
-    };
-  }, [running, loaded, src, previousSrc, frames.length]);
-
-  const select = (index: number) => {
-    setUserPaused(true);
-    setSelection((value) => ({ current: index, previous: value.current }));
-  };
-
-  return <div className={`cw-product-cover cw-product-cover--${direction.theme}`} data-running={running} aria-label={`${project.name} animated product cover`}>
-    {direction.environment && <img className="cw-cover-environment" src={direction.environment} alt="" loading={priority ? 'eager' : 'lazy'} decoding="async" />}
-    <div className="cw-cover-copy"><p className="cw-cover-category">{direction.category}</p>
-      <h4>{direction.headline}{" "}<em>{direction.emphasis}</em></h4>
-    </div>
-    <div className="cw-cover-product">
-      <div className="cw-cover-chrome"><span><PiLockSimple size={12} />{direction.theme === 'cedar' ? 'Cedar Construction' : project.name}</span><span className="cw-cover-screen-label">{frame?.label ?? 'Product preview'}</span></div>
-      <button ref={viewport} className="cw-cover-viewport" type="button" disabled={!frame} onClick={() => frame && onOpen(frame.index)} aria-label={`Enlarge ${project.name}: ${frame?.label ?? 'product preview'}`}>
-        {src && failed !== src ? <>
-          {previousSrc !== src && <img ref={outgoing} className="cw-cover-screen cw-cover-screen--outgoing" style={{ opacity: loaded === src ? 0 : 1 }} src={previousSrc} alt="" aria-hidden="true" />}
-          <img ref={image} key={src} className="cw-cover-screen" src={src} alt={`${project.name}: ${frame.label}`} loading={priority || active ? 'eager' : 'lazy'} decoding="async" onLoad={() => setLoaded(src)} onError={() => setFailed(src)} />
-          <span className="cw-cover-enlarge"><PiArrowsOutSimple size={18} /><span>Inspect screen</span></span>
-        </> : <span className="cw-cover-unavailable">{src ? 'Preview unavailable. Open the gallery for more screens.' : 'Product screenshots coming soon.'}</span>}
-      </button>
-    </div>
-    <div className="cw-cover-controls">
-      <div className="cw-cover-steps" aria-label={`${project.name} preview screens`}>{frames.map((item, index) => <button type="button" key={item.index} aria-label={`${project.name}: ${item.label}`} aria-current={current === index ? 'true' : undefined} onClick={() => select(index)}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.label}</strong></button>)}</div>
-      <div className="cw-cover-transport">
-        <button type="button" className="cw-cover-play" aria-label={`${userPaused ? 'Play' : 'Pause'} ${project.name} preview`} aria-pressed={userPaused || paused || reduced} disabled={paused || reduced || frames.length < 2} onClick={() => setUserPaused(!userPaused)}>{userPaused || paused || reduced ? <PiPlay size={16} /> : <PiPause size={16} />}<span>{paused || reduced ? 'Still preview' : userPaused ? 'Play' : 'Pause'}</span></button>
-      </div>
-    </div>
+  const running = active && !paused && !reduced && visible;
+  const kinds: DeviceKind[] = ['laptop', 'phone', 'tablet'];
+  return <div className="cw-product-cover cw-device-composition" aria-label={`${project.name}: three independently scrolling screens`} data-running={running}>
+    {frames.map((frame, index) => <DeviceScreen key={`${frame.index}:${sources[frame.index]}`} kind={kinds[index]} src={resolveImage(sources[frame.index])} label={`${project.name}: ${frame.label}`} running={running} priority={priority || active} onOpen={() => onOpen(frame.index)} />)}
+    {!frames.length && <p className="cw-device-error">Project screenshots coming soon.</p>}
   </div>;
 }

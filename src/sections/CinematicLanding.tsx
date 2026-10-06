@@ -38,17 +38,24 @@ function PortraitHero({ profile }: { profile: Profile }) {
   const title = section?.heading || profile.title;
   const split = title.indexOf(" ");
   const introduction = typeof section?.content.introduction === "string" ? section.content.introduction : "";
-  return <section id="hero" className="cinema-hero"><div className={`cinema-hero-sticky ${profile.photo ? "" : "cinema-hero-without-photo"}`}>
+  const leftTitle = split > 0 ? title.slice(0, split) : title;
+  const rightTitle = split > 0 ? title.slice(split + 1) : '';
+  return <section id="hero" className="cinema-hero cinema-hero-split"><div className={`cinema-hero-sticky ${profile.photo ? "" : "cinema-hero-without-photo"}`}>
+    <h1 className="sr-only">{title}</h1>
     <Enter className="cinema-hero-copy">
       <p className="cinema-hero-name">{profile.shortName || profile.name}</p>
-      <h1 className="cinema-hero-title">{split > 0 ? <><span>{title.slice(0, split)}</span><em>{title.slice(split + 1)}</em></> : title}</h1>
+      <p className="cinema-hero-left-title" aria-hidden>{leftTitle}</p>
       <p className="cinema-hero-introduction">{section?.description || profile.tagline || introduction}</p>
       <div className="cinema-hero-meta"><span><FiMapPin aria-hidden />{profile.location}</span>{profile.openToOpportunities && profile.availabilityText && <span className="cinema-availability"><span aria-hidden />{profile.availabilityText}</span>}</div>
       <div className="cinema-hero-actions"><a className="cinema-link cinema-primary" href="#projects">{section?.ctaLabel || "View selected work"}<FiArrowDown aria-hidden /></a><CvDownloadButton url={profile.resumeUrl || `${API_BASE}/cv.pdf`} className="cinema-cv" /></div>
+    </Enter>
+    {profile.photo && <div className="cinema-portrait-perspective"><motion.figure className="cinema-portrait" initial={enabled ? { rotateY: -720, opacity: 0 } : false} animate={{ rotateY: 0, opacity: 1 }} transition={{ rotateY: { duration: 1.6, ease: [.15,.65,.25,1] }, opacity: { duration: .3 } }}><img src={profile.photo} alt={`Portrait of ${profile.name}`} fetchPriority="high" decoding="async" /></motion.figure></div>}
+    <Enter className="cinema-hero-right" delay={.2}>
+      <p className="cinema-hero-right-title" aria-hidden>{rightTitle}</p>
       {!!profile.focusAreas.length && <ul className="cinema-hero-focus" aria-label="Focus areas">{profile.focusAreas.slice(0, 3).map(area => <li key={area}>{area}</li>)}</ul>}
     </Enter>
-    {profile.photo && <motion.figure className="cinema-portrait" initial={enabled ? { opacity: 0, y: 18 } : false} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .15, ease }}><img src={profile.photo} alt={`Portrait of ${profile.name}`} fetchPriority="high" decoding="async" /></motion.figure>}
   </div></section>;
+
 }
 function PersonalStory({ profile }: { profile: Profile }) {
   const { data: section } = useSiteSection("about");

@@ -304,3 +304,50 @@ body:has(.cinema) .portfolio-assistant-dialog { font-family:"Inter",sans-serif; 
   /* The assistant remains available in Contact; its launcher must not cover previews. */
   body:has(.cinema) .portfolio-assistant-launcher { display:none; }
 }
+
+/* Split hero: role, portrait, specialism. The portrait settles after two turns. */
+.cinema-hero-split .cinema-hero-sticky { grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr); gap:4%; min-height:740px; }
+.cinema-hero-left-title { font-size:clamp(36px,4.1vw,64px); line-height:1.05; letter-spacing:-.055em; margin:0; }
+.cinema-hero-right-title { font:italic 400 clamp(44px,5.2vw,78px)/.95 'Instrument Serif',serif; letter-spacing:-.04em; color:var(--cinema-gold); margin:0; }
+.cinema-hero-right { min-width:0; }
+.cinema-hero-split .cinema-hero-introduction { max-width:32ch; font-size:14px; line-height:1.7; margin-top:26px; }
+.cinema-hero-split .cinema-hero-actions { gap:16px; }
+.cinema-portrait-perspective { perspective:1400px; min-width:0; }
+.cinema-hero-split .cinema-portrait { height:540px; min-height:0; border-radius:8px; }
+.cinema-hero-split .cinema-hero-focus { flex-direction:column; gap:16px; margin-top:30px; font-size:12px; }
+.cinema-hero-split .cinema-hero-without-photo { grid-template-columns:1fr 1fr; }
+.cinema .cw-caption { display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:24px; order:-1; padding-bottom:20px; border-bottom:1px solid #ffffff15; }
+.cinema .cw-scene { gap:38px; }
+.cinema .cw-scenes { gap:100px; margin-top:54px; }
+.cinema .cw-caption h3,.cinema .cw-scene--hero h3 { font-size:clamp(30px,3vw,44px); margin:0; }
+.cinema .cw-stage-body { max-width:none; }
+@media(max-width:1023px) and (min-width:761px) {
+ .cinema-hero-split .cinema-hero-sticky { width:92%; gap:3%; min-height:660px; }
+ .cinema-hero-split .cinema-portrait { height:430px; }
+ .cinema-hero-left-title { font-size:36px; }
+ .cinema-hero-right-title { font-size:48px; }
+ .cinema-hero-split .cinema-hero-meta { gap:12px; }
+}
+@media(max-width:760px) {
+ .cinema-hero-split .cinema-hero-sticky { grid-template-columns:1fr; gap:26px; min-height:0; }
+ .cinema-hero-left-title { font-size:clamp(44px,12vw,62px); }
+ .cinema-hero-right { grid-row:2; }
+ .cinema-hero-right-title { font-size:clamp(48px,13vw,68px); }
+ .cinema-hero-split .cinema-hero-focus { flex-direction:row; gap:10px 18px; margin-top:24px; }
+ .cinema-hero-split .cinema-portrait { height:380px; }
+ .cinema-hero-split .cinema-hero-introduction { max-width:none; }
+ .cinema .cw-caption { display:flex; align-items:flex-start; gap:14px; padding-bottom:16px; }
+ .cinema .cw-caption h3,.cinema .cw-scene--hero h3 { font-size:28px; }
+ .cinema .cw-explore { flex-shrink:0; font-size:12px; gap:6px; }
+ .cinema .cw-scene { gap:24px; }
+ .cinema .cw-scenes { margin-top:36px; gap:64px; }
+}
+
+.cinema .cinema-hero-left-title { line-height:1.05; }
+.cinema .cinema-hero-right-title { line-height:.98; }
+
+/* Keep the floating assistant clear of the device composition. */
+body:has(.cw-gallery[data-preview-active="true"]) .portfolio-assistant-launcher[aria-expanded="false"] { visibility:hidden; pointer-events:none; }
+@media(max-width:380px) {
+ .cinema .cw-caption { flex-direction:column; align-items:flex-start; gap:8px; }
+}
