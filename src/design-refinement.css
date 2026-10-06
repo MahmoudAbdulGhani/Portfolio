@@ -1,0 +1,214 @@
+/* Approved editorial desktop / readable mobile direction. Shared page rhythm. */
+.public-header-inner,.public-container,.gallery-intro,.gallery-grid,.cinema-container,.cinema .cw-container { width:min(1320px,calc(100% - 144px)); }
+.public-header .portfolio-logo-name { font-size:14px; }
+.public-nav-links a { font-size:13px; }
+.public-nav-utilities { gap:20px; }
+.public-search { width:44px; justify-content:center; }
+.public-search span { display:none; }
+.public-project-cta,.public-mobile-project { display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:44px; padding:12px 18px; border-radius:5px; background:var(--accent); color:var(--bg); font-size:13px; font-weight:500; }
+.public-project-cta:hover,.public-mobile-project:hover { filter:brightness(1.08); }
+.public-project-cta svg { transition:transform .18s; }
+.public-project-cta:hover svg { transform:translateX(4px); }
+.public-hiring-menu { position:relative; font-size:12px; }
+.public-hiring-menu summary { display:flex; align-items:center; gap:8px; min-height:44px; cursor:pointer; list-style:none; color:var(--muted); }
+.public-hiring-menu summary::-webkit-details-marker { display:none; }
+.public-hiring-menu summary svg { transform:rotate(90deg); }
+.public-hiring-menu > div { position:absolute; top:calc(100% + 10px); right:0; min-width:190px; padding:12px; background:var(--bg); border:1px solid var(--line-strong); border-radius:6px; box-shadow:0 12px 32px #0003; }
+.public-hiring-menu > div a { display:flex; align-items:center; gap:10px; min-height:44px; padding:10px; }
+.public-hiring-menu .public-cv { border:0; }
+.public-hiring-menu a:hover { color:var(--accent); }
+.public-mobile-project { margin:20px 0; }
+.public-mobile-utilities { flex-wrap:wrap; }
+.public-route-enter { animation:public-route-enter .25s ease-out both; }
+@keyframes public-route-enter { from { opacity:.8; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+.cinema-hero-split .cinema-hero-sticky { width:min(1320px,calc(100% - 144px)); min-height:650px; padding-block:42px; gap:5%; grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr); }
+.cinema-hero-split .cinema-portrait { height:510px; border-radius:4px; }
+.cinema .cinema-portrait img { transform:none; filter:none; }
+.cinema .cinema-hero-left-title { font-size:clamp(40px,5.1vw,72px); }
+.cinema .cinema-hero-right-title { font-size:clamp(48px,7.2vw,104px); }
+.cinema-hero-split .cinema-hero-introduction { font-size:16px; line-height:1.65; margin-top:24px; }
+.cinema-hero-split .cinema-hero-actions { gap:16px 24px; }
+.cinema-hero-split .cinema-hero-meta { font-size:12px; margin-top:24px; }
+.cinema-hero-mobile-title { display:none; }
+.cinema-capabilities { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; padding-block:46px; border-block:1px solid #ffffff20; }
+.cinema-capabilities > div { padding-inline:36px; border-left:1px solid #ffffff20; }
+.cinema-capabilities > div:first-child { padding-left:0; border-left:0; }
+.cinema-capabilities > div:last-child { padding-right:0; }
+.cinema-capabilities svg { width:32px; height:32px; color:var(--cinema-gold); margin-bottom:20px; }
+.cinema .cinema-capabilities h2 { font-size:21px; line-height:1.35; letter-spacing:-.025em; }
+.cinema-capabilities p { font-size:15px; color:#a8b3c2; margin-top:12px; max-width:32ch; }
+.capability-mobile-title { display:none; }
+.cinema .cw-gallery { padding-block:76px; border-top:0; }
+.cinema .cw-ambient { opacity:.06; object-fit:cover; }
+.cinema .cw-heading { margin-bottom:0; }
+.cinema .cw-scenes { margin-top:54px; gap:86px; }
+.cinema .cw-caption { align-items:center; padding-bottom:24px; }
+.cw-caption > div { min-width:0; }
+.cinema .cw-feature-summary { max-width:65ch; color:#a8b3c2; font-size:15px; line-height:1.65; margin:14px 0 0; }
+.cinema-about,.cinema-experience,.cinema-training { background-image:none; }
+.cinema .cinema-about { padding-block:76px; }
+.cinema .cinema-about-grid { gap:8%; }
+.cinema-bio { font-size:15px; color:#b4c0ce; margin-top:20px; max-width:60ch; }
+.cinema .cinema-profile-name { margin-bottom:8px; }
+.cinema .cinema-detail { margin-top:18px; }
+.cinema-skills { padding-block:44px 32px; }
+.cinema-rail { padding-block:14px; }
+.cinema-rail-copy span { font-size:15px; padding:10px 18px; }
+.cinema-stack-detail { border-top:1px solid #ffffff20; margin-top:26px; }
+.cinema-stack-detail > summary { display:flex; justify-content:space-between; align-items:center; min-height:58px; color:#b4c0ce; font-size:14px; cursor:pointer; list-style:none; }
+.cinema-stack-detail > summary::-webkit-details-marker { display:none; }
+.cinema-stack-detail[open] > summary svg { transform:rotate(180deg); }
+.cinema .cinema-experience { padding-block:70px; }
+.cinema-career { margin-top:38px; }
+.cinema-career-item { padding-block:26px; }
+.cinema .cinema-career h3 { font-size:clamp(22px,2.3vw,32px); }
+.cinema .cinema-career-number { color:var(--cinema-gold); }
+.cinema .cinema-career-summary { max-width:68ch; line-height:1.6; font-size:14px; }
+.cinema .cinema-career .cinema-detail summary { width:auto; min-height:44px; justify-content:flex-start; }
+.cinema-period { font-size:12px; }
+.cinema-credentials { background:#0d151e; }
+.cinema .cinema-education { padding-block:60px 38px; }
+.cinema .cinema-degree h3 { font-size:clamp(28px,3vw,40px); margin-block:14px; }
+.cinema .cinema-training { padding-block:32px 54px; border-top:0; }
+.cinema .cinema-training h2 { font-size:28px; letter-spacing:-.035em; margin-top:12px; }
+.cinema-courses { margin-top:28px; }
+.cinema-course-row { padding-block:22px; grid-template-columns:42px 1fr 145px; gap:24px; }
+.cinema-course-trigger { font-size:clamp(19px,1.8vw,26px); min-height:44px; }
+.cinema-course-trigger > span:last-child { color:var(--cinema-gold); }
+.cinema-course-number { font-size:30px; }
+.cinema .cinema-contact { padding-block:76px 44px; }
+.cinema .cinema-contact h2 em { font-family:'Instrument Serif',serif; font-style:italic; color:var(--cinema-gold); }
+.cinema-ai-tools { margin-top:34px; }
+.gallery-product-cover { margin:0; aspect-ratio:1.6; overflow:hidden; border:1px solid #ffffff28; border-radius:6px; background:#141e2a; }
+.gallery-product-cover picture { display:block; width:100%; height:100%; }
+.gallery-product-cover img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .45s; }
+.gallery-image-link:hover .gallery-product-cover img { transform:scale(1.015); }
+.gallery-product-identity img { object-fit:contain; }
+.gallery-product-cover > span { display:grid; place-items:center; height:100%; color:#a8b3c2; font-size:14px; }
+.gallery-grid { gap:48px 30px; }
+.gallery-intro { margin-bottom:38px; }
+.gallery-summary { font-size:14px; }
+.gallery-case-link { min-height:44px; font-size:13px; }
+.case-hero-outcome { font-size:14px; line-height:1.7; color:var(--muted); margin-top:18px; max-width:52ch; }
+.case-editorial .case-summary { align-self:center; }
+.case-inspector header,.cw-viewer header { align-items:start; }
+.case-inspector header h2,.cw-viewer header h3 { overflow-wrap:anywhere; }
+.contact-layout { grid-template-areas:'intro form' 'details form'; gap:30px 72px; }
+.contact-intro { grid-area:intro; }
+.contact-details { grid-area:details; }
+.contact-form-column { grid-area:form; min-width:0; }
+.contact-intent { display:flex; flex-wrap:wrap; gap:4px; padding-bottom:20px; }
+.contact-intent button { min-height:44px; padding:10px 14px; border:1px solid var(--line); border-radius:4px; font-size:13px; color:var(--muted); }
+.contact-intent button[aria-pressed=true] { color:var(--accent); border-color:var(--accent); }
+.contact-intent button:focus-visible,.public-hiring-menu summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.contact-description { margin-top:20px; }
+.contact-details .contact-availability { margin-top:0; }
+.public-portfolio .portfolio-pointer { display:none; }
+.public-portfolio:has(.case-shot[data-in-view=true]) .portfolio-assistant-launcher[aria-expanded=false],
+.public-portfolio:has(.contact-form:focus-within) .portfolio-assistant-launcher[aria-expanded=false] { visibility:hidden; pointer-events:none; }
+.public-portfolio { cursor:auto; }
+.public-portfolio :is(a[href],button,summary,[role=button],[role=tab],[role=link],label[for]) { cursor:pointer; }
+.public-portfolio :is(.cinema-link,.cw-explore,.gallery-case-link,.case-actions a) svg { transition:transform .18s; }
+.public-portfolio :is(.cinema-link,.cw-explore,.gallery-case-link):hover svg { transform:translateX(4px); }
+/* A light preference uses the same hierarchy and restrained gold accent. */
+html:not(.dark) .public-portfolio .cinema { --cinema-dark:var(--bg); --cinema-paper:var(--text); --cinema-gold:var(--accent); }
+html:not(.dark) .public-portfolio .cinema .cw-gallery { --cw-ink:var(--text); --cw-muted:var(--muted); }
+html:not(.dark) .public-portfolio .cinema :is(.cinema-label,.cinema-muted,.cinema-bio,.cinema-hero-introduction,.cinema-hero-meta,.cinema-hero-focus,.cinema-capabilities p,.cw-feature-summary,.cinema-career p,.cinema-degree p,.cinema-course p,.cinema-ai-entry h3,.cinema-ai-entry .cinema-link,.cinema-stack-detail > summary,.gallery-description,.gallery-summary,.gallery-count,.gallery-stack,.gallery-eyebrow) { color:var(--muted); }
+html:not(.dark) .public-portfolio .cinema :is(.cinema-section,.cinema-capabilities,.cinema-capabilities > div,.cinema-stack-detail,.cinema-career-item,.cinema-degree,.cinema-course-row,.cinema-contact-links,.cinema-ai-tools,.cw-caption,.cinema-link,.gallery-product-cover) { border-color:var(--line); }
+html:not(.dark) .public-portfolio .cinema :is(.cinema-course-divider,.cinema-scene-line) { background:var(--line); }
+html:not(.dark) .public-portfolio .cinema .cinema-credentials { background:var(--surface); }
+html:not(.dark) .public-portfolio .cinema .cinema-hero-sticky::before { background:none; }
+html:not(.dark) .public-portfolio .cinema .cinema-primary { color:var(--on-accent); }
+html:not(.dark) .public-portfolio .cinema :is(.gallery-filters button,.gallery-caption h2,.gallery-case-link) { color:var(--text); }
+html:not(.dark) .public-portfolio .cinema .gallery-filters { background:var(--surface); border-color:var(--line); }
+html:not(.dark) .public-portfolio .cinema .gallery-filters button[aria-pressed=true] { color:var(--accent); border-color:var(--accent); }
+@media(max-width:1119px) {
+ .public-project-cta,.public-hiring-menu { display:none; }
+}
+@media(min-width:761px) and (max-width:1023px) {
+ .public-header-inner,.public-container,.gallery-intro,.gallery-grid,.cinema-container,.cinema .cw-container,.cinema-hero-split .cinema-hero-sticky { width:calc(100% - 64px); }
+ .cinema-hero-split .cinema-hero-sticky { min-height:560px; gap:3%; }
+ .cinema-hero-split .cinema-portrait { height:410px; }
+ .cinema .cinema-hero-left-title { font-size:36px; }
+ .cinema .cinema-hero-right-title { font-size:48px; }
+ .cinema-capabilities > div { padding-inline:22px; }
+ .cinema .cinema-capabilities h2 { font-size:18px; }
+}
+@media(max-width:760px) {
+ .public-header-inner,.public-container,.gallery-intro,.gallery-grid,.cinema-container,.cinema .cw-container,.cinema-hero-split .cinema-hero-sticky { width:calc(100% - 40px); }
+ .public-header .portfolio-logo-name { font-size:12px; }
+ .cinema-hero-split .cinema-hero-sticky { grid-template-columns:1fr; gap:24px; min-height:0; padding-block:24px; }
+ .cinema .cinema-hero-left-title { font-size:42px; }
+ .cinema .cinema-hero-mobile-title { display:block; font:italic 400 clamp(40px,12.4vw,52px)/1.05 'Instrument Serif',serif; letter-spacing:-.04em; color:var(--cinema-gold); margin:4px 0 0; }
+ .cinema .cinema-hero-right { display:none; }
+ .cinema .cinema-hero-name { margin-bottom:14px; font-size:10px; }
+ .cinema-hero-split .cinema-hero-introduction { margin-top:12px; font-size:16px; }
+ .cinema-hero-split .cinema-hero-actions { margin-top:20px; gap:10px; flex-direction:column; align-items:flex-start; }
+ .cinema-hero-actions > a { width:220px; justify-content:center; }
+ .cinema-hero-actions .cinema-link:not(.cinema-primary) { border:1px solid var(--cinema-gold); border-radius:5px; min-height:44px; padding:12px; }
+ .cinema-hero-actions .cinema-primary { min-width:178px; }
+ .cinema-hero-split .cinema-portrait { height:235px; border-radius:4px; }
+ .cinema-portrait img { object-position:50% 34%; }
+ .cinema-hero-meta { display:none; }
+ .cinema-availability { display:none!important; }
+ .cinema-capabilities { padding-block:20px; }
+ .cinema-capabilities > div { display:flex; align-items:center; justify-content:center; gap:8px; padding-inline:8px; }
+ .cinema-capabilities > div:first-child { padding-left:0; }
+ .cinema-capabilities svg { width:22px; height:22px; flex-shrink:0; margin:0; }
+ .cinema .cinema-capabilities h2 { font-size:12px; letter-spacing:0; }
+ .capability-desktop-title,.cinema-capabilities p { display:none; }
+ .capability-mobile-title { display:inline; }
+ .cinema .cw-gallery { padding-block:46px; }
+ .cinema .cw-heading { flex-wrap:wrap; gap:20px; }
+ .cinema .cw-heading > div:first-child { max-width:100%; }
+ .cinema .cw-utilities { flex-direction:row; align-items:center; justify-content:space-between; width:100%; }
+ .cinema .cw-all { max-width:none; font-size:13px; align-items:center; }
+ .cinema .cw-scenes { margin-top:30px; gap:52px; }
+ .cinema .cw-caption { display:flex; flex-direction:column; align-items:flex-start; gap:8px; padding-bottom:0; border:0; }
+ .cinema .cw-feature-summary { font-size:14px; margin-top:10px; }
+ .cinema .cw-explore { font-size:14px; }
+ .cinema .cinema-about-grid { grid-template-columns:1fr; gap:28px; }
+ .cinema .cinema-about { padding-block:52px; }
+ .cinema-about-details { padding:0; border:0; }
+ .cinema .cinema-about h2 { font-size:36px; }
+ .cinema-bio { font-size:15px; }
+ .cinema .cinema-experience { padding-block:52px; }
+ .cinema-career-item { grid-template-columns:26px 1fr; gap:12px; padding-block:22px; }
+ .cinema .cinema-career-summary { font-size:14px; }
+ .cinema .cinema-education { padding-block:46px 20px; }
+ .cinema .cinema-education-grid { grid-template-columns:1fr; gap:22px; margin-top:0; }
+ .cinema-degree { border:0; padding-left:0; }
+ .cinema .cinema-degree h3 { font-size:29px; }
+ .cinema .cinema-training { padding-block:24px 40px; }
+ .cinema-course-row { grid-template-columns:28px 1fr; gap:10px; }
+ .cinema-course-trigger { font-size:21px; }
+ .cinema-course-row > .cinema-label { grid-column:2; text-align:left; font-size:11px; }
+ .cinema .cinema-contact { padding-block:52px 30px; }
+ .cinema .cinema-contact h2 { font-size:44px; }
+ .gallery-grid { gap:36px; }
+ .gallery-caption { margin-inline:0; }
+ .gallery-summary,.gallery-stack { margin-left:0; margin-right:0; }
+ .gallery-case-link { margin-left:0; }
+ .case-inspector header,.cw-viewer header { display:grid; grid-template-columns:1fr; gap:12px; }
+ .case-inspector-tools,.cw-viewer-tools { justify-content:flex-end; }
+ .case-inspector h2,.cw-viewer h3 { font-size:17px; line-height:1.4; }
+ .case-inspector-image { max-height:calc(100dvh - 350px); }
+ .contact-layout { grid-template-columns:1fr; grid-template-areas:'intro' 'form' 'details'; gap:26px; }
+ .contact-intro h1 { font-size:42px; }
+ .contact-intro h1 em { display:inline; font-size:1.1em; }
+ .contact-description { font-size:15px; margin-top:16px; }
+ .contact-form-column .contact-form { padding:0; border:0; }
+ .contact-promotion { margin-top:32px; }
+ .contact-intent { padding-bottom:16px; }
+}
+@media(max-width:350px) {
+ .cinema .cinema-hero-mobile-title { font-size:37px; }
+ .cinema-capabilities > div { gap:5px; padding-inline:5px; }
+ .cinema-capabilities svg { width:18px; }
+ .cinema .cinema-capabilities h2 { font-size:11px; }
+ .cw-device-tabs button { gap:5px; font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .public-route-enter { animation:none; }
+ .public-portfolio :is(a,button) svg,.gallery-product-cover img { transition:none; }
+}

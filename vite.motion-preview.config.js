@@ -14,7 +14,7 @@ config.plugins.push({ name: 'readonly-motion-preview',
       const tags = [];
       if (params.get('review_motion') === 'reduced') tags.push({ tag: 'script', injectTo: 'head-prepend', children: `
         const nativeMatchMedia = window.matchMedia.bind(window);
-        window.matchMedia = query => query === '(prefers-reduced-motion: reduce)'
+        window.matchMedia = query => ['(prefers-reduced-motion:reduce)', '(prefers-reduced-motion)'].includes(query.replaceAll(' ', ''))
           ? { matches: true, media: query, onchange: null, addEventListener() {}, removeEventListener() {}, addListener() {}, removeListener() {}, dispatchEvent() { return true; } }
           : nativeMatchMedia(query);
       ` });
@@ -40,6 +40,7 @@ config.plugins.push({ name: 'readonly-motion-preview',
       const requested = params.get('route');
       const wide = params.get('viewport') === 'wide';
       const compact = params.get('viewport') === 'compact';
+      const portrait = params.get('viewport') === 'tablet-portrait';
       const allowed = ['/', '/projects', '/contact', '/job-match', ...JSON.parse(readFileSync('.motion-preview/public-content.json', 'utf8'))['/api/projects'].map(project => `/projects/${project.slug}`)];
       const route = allowed.includes(requested) ? requested : req.url.includes('projects') ? '/projects' : '/';
       const fixture = ['success', 'failure'].includes(params.get('fixture')) ? params.get('fixture') : '';
@@ -48,7 +49,7 @@ config.plugins.push({ name: 'readonly-motion-preview',
       if (fixture) query.set('review_fixture', fixture);
       if (reduced) query.set('review_motion', 'reduced');
       const source = `${route}${query.size ? `?${query}` : ''}`;
-      const width = wide ? 1920 : compact ? 1366 : tablet ? 1024 : narrow ? 320 : 390;
+      const width = wide ? 1920 : compact ? 1366 : portrait ? 768 : tablet ? 1024 : narrow ? 320 : 390;
       const height = wide || compact ? 640 : 844;
       const scale = wide ? 0.66 : compact ? 0.92 : 1;
       res.setHeader('Content-Type', 'text/html');

@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import { PiArrowUpRight, PiArrowRight, PiArrowLeft, PiX, PiPause, PiPlay } from 'react-icons/pi';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -99,8 +100,8 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
         const panels = Array.from(scene.querySelectorAll('.cw-product-cover'));
         const hero = scene.classList.contains('cw-scene--hero');
         if (hero && !mobile) {
-          const timeline = gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 90%', end: 'top 20%', scrub: .8 } });
-          timeline.fromTo(panels[0], { y: 30, scale: .98 }, { y: 0, scale: 1, ease: 'none', force3D: false }, 0);
+          const timeline = gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 88%', once: true } });
+          timeline.fromTo(panels[0], { y: 30, scale: .98 }, { y: 0, scale: 1, duration: .6, ease: 'power3.out', force3D: false }, 0);
         } else {
           gsap.fromTo(panels, {
             y: mobile ? 10 : 28,
@@ -151,14 +152,14 @@ function useGalleryMotion(root: RefObject<HTMLElement | null>, paused: boolean, 
 export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading = 'Selected work', ctaLabel = 'View all projects', allProjectsHref = '/projects', projectHref = defaultProjectHref, resolveImage = identity, ambientSrc = '/assets/cinematic-ambient.webp' }: GalleryProps) {
   const root = useRef<HTMLElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const reduced = useReducedMotion();
   const [paused, setPaused] = useState(() => {
     try { return localStorage.getItem('cinematic-motion') === 'paused'; } catch { return false; }
   });
   const [viewer, setViewer] = useState<{ project: GalleryProject; index: number } | null>(null);
   const [zoomed, setZoomed] = useState(false);
   const [viewerFailedSrc, setViewerFailedSrc] = useState<string | null>(null);
-  const featured = projects.filter((p) => p.featured && p.published !== false && p.showOnPortfolio !== false)
-    .sort((a, b) => a.order - b.order);
+  const featured = projects.filter((p) => p.featured && p.published !== false && p.showOnPortfolio !== false);
   const signature = featured.map((p) => `${p.id}:${p.screenshots?.join(',')}`).join('|');
   const { previewChapter } = useActivePreview(root, signature);
   useGalleryMotion(root, paused, signature);
@@ -190,9 +191,9 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
       <header className="cw-heading">
         <div><p className="cw-eyebrow">{eyebrow}</p><h2 id="cw-title">{titleLead && <span>{titleLead}</span>}{" "}<em>{titleLast}</em></h2></div>
         <div className="cw-utilities"><a className="cw-all" href={allProjectsHref}>{ctaLabel}<PiArrowRight size={20} /></a>
-          <button className="cw-motion" type="button" aria-pressed={paused} onClick={() => { setPaused(!paused); try { localStorage.setItem('cinematic-motion', paused ? 'playing' : 'paused'); } catch { /* Motion still works when storage is unavailable. */ } }}>
+          {!reduced && <button className="cw-motion" type="button" aria-pressed={paused} onClick={() => { setPaused(!paused); try { localStorage.setItem('cinematic-motion', paused ? 'playing' : 'paused'); } catch { /* Motion still works when storage is unavailable. */ } }}>
             {paused ? <PiPlay size={14} /> : <PiPause size={14} />}<span>{paused ? 'Motion paused' : 'Pause motion'}</span>
-          </button>
+          </button>}
         </div>
       </header>
 
@@ -206,7 +207,7 @@ export function CinematicProjects({ projects, eyebrow = '03 / PROJECTS', heading
               <CinematicProjectCover project={project} active={previewChapter === index && !viewer} paused={paused} priority={index === 0} resolveImage={resolveImage} onOpen={open} />
             </div></div>
             <div className="cw-caption">
-              <h3 id={`cw-${project.slug}`}>{name}</h3>
+              <div><h3 id={`cw-${project.slug}`}>{name}</h3>{(project.tagline || project.description) && <p className="cw-feature-summary">{project.tagline || project.description}</p>}</div>
               <a className="cw-explore" href={projectHref(project.slug)}>Explore project<PiArrowUpRight size={20} /></a>
             </div>
           </article>;

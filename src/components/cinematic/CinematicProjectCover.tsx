@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
 import { gsap } from 'gsap';
-import { PiArrowsOutSimple } from 'react-icons/pi';
+import { PiArrowsOutSimple, PiDesktop, PiDeviceMobile, PiDeviceTablet } from 'react-icons/pi';
 import type { GalleryProject } from './CinematicProjects';
 import { coverDirections, projectPreviewImages } from './project-cover-directions';
+import { CaseScreenshot } from '../CaseScreenshot';
 import './project-covers.css';
 
 const subscribeMotion = (callback: () => void) => {
@@ -88,6 +89,9 @@ function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
 
 export function CinematicProjectCover({ project, active, paused, priority, resolveImage, onOpen }: Props) {
   const direction = coverDirections[project.slug];
+  const [focusedDevice, setFocusedDevice] = useState(1);
+  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const id = useId();
   const sources = project.screenshots?.length ? project.screenshots : project.coverImage ? [project.coverImage] : [];
   const frames = (direction?.screens ?? sources.slice(0, 3).map((_, index) => ({ index, label: `Screen ${index + 1}` }))).filter(frame => sources[frame.index]);
   if (!frames.length && sources.length) frames.push({ index: 0, label: 'Product overview' });
@@ -96,13 +100,34 @@ export function CinematicProjectCover({ project, active, paused, priority, resol
   const running = active && !paused && !reduced && visible;
   const kinds: DeviceKind[] = ['laptop', 'phone', 'tablet'];
   const gallery = projectPreviewImages(project);
-  return <div className="cw-product-cover cw-device-composition" aria-label={`${project.name}: three independently scrolling screens`} data-running={running}>
-    {frames.map((frame, index) => {
+  const deviceScreens = frames.map((frame, index) => {
+    const kind = kinds[index];
+    const capture = kind === 'laptop' ? undefined : direction?.responsive?.[kind];
+    return { kind, src: capture?.src ?? sources[frame.index], label: capture?.label ?? frame.label, viewport: kind === 'laptop' ? undefined : kind };
+  });
+  const selected = Math.min(focusedDevice, deviceScreens.length - 1);
+  const screen = deviceScreens[selected];
+  const select = (index: number, focus = false) => { setFocusedDevice(index); if (focus) buttons.current[index]?.focus(); };
+  const titles = ['Desktop', 'Phone', 'Tablet'];
+  const icons = [PiDesktop, PiDeviceMobile, PiDeviceTablet];
+  return <div className="cw-product-cover" aria-label={`${project.name}: three independently scrolling screens`} data-running={running}>
+    <div className="cw-device-composition cw-desktop-composition">{frames.map((frame, index) => {
       const kind = kinds[index];
       const capture = kind === 'laptop' ? undefined : direction?.responsive?.[kind];
       const source = capture?.src ?? sources[frame.index];
       return <DeviceScreen key={`${kind}:${source}`} kind={kind} native={Boolean(capture)} src={resolveImage(source)} label={`${project.name}: ${capture?.label ?? frame.label}`} running={running} priority={priority || active} onOpen={() => onOpen(gallery.indexOf(source))} />;
     })}
+    </div>
+    {screen && <div className="cw-mobile-showcase">
+      <div className="cw-device-tabs" role="tablist" aria-label={`${project.name} device previews`}>{deviceScreens.map((item, index) => { const Icon = icons[index]; return <button type="button" key={item.kind} role="tab" id={`${id}-tab-${index}`} aria-selected={selected === index} aria-controls={`${id}-panel`} tabIndex={selected === index ? 0 : -1} ref={el => { buttons.current[index] = el; }} onClick={() => select(index)} onKeyDown={event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault(); select(event.key === 'Home' ? 0 : event.key === 'End' ? deviceScreens.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + deviceScreens.length) % deviceScreens.length, true);
+      }}><Icon aria-hidden /><span>{titles[index]}</span></button>; })}</div>
+      <div id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${selected}`}>
+        <CaseScreenshot key={screen.src} screen={{ src: resolveImage(screen.src), label: titles[selected], viewport: screen.viewport }} projectName={project.name} priority={priority} preview pausedByParent={!running} onOpen={() => onOpen(gallery.indexOf(screen.src))} />
+      </div>
+      <div className="cw-device-companions">{deviceScreens.map((item, index) => index === selected ? null : <div key={item.kind}><button type="button" className="cw-companion-select" onClick={() => select(index)} aria-label={`Focus ${titles[index]} preview for ${project.name}`}><img src={resolveImage(item.src)} alt="" loading="lazy" /><span>{titles[index]}</span></button><button className="cw-companion-expand" type="button" onClick={() => onOpen(gallery.indexOf(item.src))} aria-label={`Enlarge ${project.name}: ${titles[index]}`}>Expand<PiArrowsOutSimple aria-hidden /></button></div>)}</div>
+    </div>}
     {!frames.length && <p className="cw-device-error">Project screenshots coming soon.</p>}
   </div>;
 }

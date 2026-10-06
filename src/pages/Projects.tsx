@@ -46,7 +46,7 @@ export function Projects() {
             </Link>
             <div className="gallery-caption">
               <h2><span aria-hidden="true">{String(index + 1).padStart(2, "0")} /</span><Link to={`/projects/${project.slug}`}>{project.name}</Link></h2>
-              <Link className="gallery-case-link" to={`/projects/${project.slug}`} aria-label={`Read ${project.name} case study`}>Read case study<FiArrowRight aria-hidden="true" /></Link>
+              <Link className="gallery-case-link" to={`/projects/${project.slug}`} aria-label={`Explore ${project.name} case study`}>Explore project<FiArrowRight aria-hidden="true" /></Link>
             </div>
             <p className="gallery-summary">{project.tagline || project.description}</p>
             <ul className="gallery-stack" aria-label={`${project.name} technologies`}>{project.stack.slice(0, 3).map(tech => <li key={tech}>{tech}</li>)}</ul>

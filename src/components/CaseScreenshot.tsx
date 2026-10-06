@@ -5,8 +5,8 @@ import { FiMaximize2, FiPause, FiPlay } from 'react-icons/fi';
 import { ResponsiveProjectImage } from './ResponsiveProjectImage';
 import type { DetailScreen } from '../lib/project-detail-screens';
 
-export function CaseScreenshot({ screen, projectName, priority = false, preview = false, onOpen }: {
-  screen: DetailScreen; projectName: string; priority?: boolean; preview?: boolean; onOpen: (src: string) => void;
+export function CaseScreenshot({ screen, projectName, priority = false, preview = false, pausedByParent = false, onOpen }: {
+  screen: DetailScreen; projectName: string; priority?: boolean; preview?: boolean; pausedByParent?: boolean; onOpen: (src: string) => void;
 }) {
   const viewport = useRef<HTMLDivElement>(null);
   const timeline = useRef<gsap.core.Timeline | null>(null);
@@ -19,7 +19,7 @@ export function CaseScreenshot({ screen, projectName, priority = false, preview 
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const reduced = useReducedMotion();
-  const running = preview && !reduced && inView && visible && !paused && !hovered && !focused;
+  const running = preview && !pausedByParent && reduced === false && inView && visible && !paused && !hovered && !focused;
   const runningRef = useRef(false);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export function CaseScreenshot({ screen, projectName, priority = false, preview 
     element.scrollTop += offset;
   };
 
-  return <figure className="case-shot" data-viewport={screen.viewport} data-preview-running={running && overflow}>
+  return <figure className="case-shot" data-viewport={screen.viewport} data-preview-running={running && overflow} data-in-view={inView}>
     <div className="case-shot-toolbar"><span>{screen.label}</span><div>
       {preview && overflow && !reduced && <button type="button" aria-pressed={paused} onClick={() => {
         if (paused) { const image = viewport.current?.querySelector('img'); if (image && viewport.current) { viewport.current.scrollTop = 0; timeline.current?.restart(); } }

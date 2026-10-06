@@ -20,6 +20,7 @@ export function detailScreens(project: Project): DetailScreen[] {
   const sources = [...new Set([...originals, project.coverImage].filter((src): src is string => Boolean(src)))];
   const screens: DetailScreen[] = sources.map((src, index) => ({ src, label: labels[src.split('/').at(-1) ?? '']
     ?? directions.find(screen => screen.index === index)?.label
+    ?? ({ 'jobpilot-ai': ['Prepare your resume', 'Discover jobs', 'Application workspace', 'Practise interviews'], 'construction-project-management-accounting-system': ['Platform overview', 'Project overview', 'Financial reports', 'Project operations'] } as Record<string, string[]>)[project.slug]?.[index]
     ?? (src === project.coverImage ? 'Project cover' : `Screen ${String(index + 1).padStart(2, '0')}`) }));
   const responsive = coverDirections[project.slug]?.responsive;
   for (const viewport of ['phone', 'tablet'] as const) {

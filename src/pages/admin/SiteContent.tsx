@@ -4,6 +4,7 @@ import { PageMeta } from "../../components/PageMeta";
 import { AdminPageHeader } from "../../components/admin/AdminPageHeader";
 import { ErrorState, SaveIndicator, StatusBadge } from "../../components/admin/AdminUI";
 import { useAdminSiteContent, useUpdateSiteContent } from "../../lib/hooks";
+import { presentationContent } from "../../lib/presentation-content";
 import { formatDate } from "../../lib/format";
 import type { SiteSection } from "../../types";
 
@@ -30,7 +31,7 @@ export function SiteContentAdmin() {
   const update = useUpdateSiteContent();
   const [sections, setSections] = useState<SiteSection[]>([]);
   const [dirty, setDirty] = useState(false);
-  if (query.data && sections.length === 0 && !dirty) setSections(query.data);
+  if (query.data && sections.length === 0 && !dirty) setSections(query.data.map(section => ({ ...section, content: presentationContent(section.key, section.content) })));
   useEffect(() => { const warn = (event: BeforeUnloadEvent) => { if (dirty) event.preventDefault(); }; window.addEventListener("beforeunload", warn); return () => window.removeEventListener("beforeunload", warn); }, [dirty]);
   const patch = (index: number, value: Partial<SiteSection>) => { setSections((rows) => rows.map((row, i) => i === index ? { ...row, ...value } : row)); setDirty(true); };
   if (query.isLoading) return <div className="space-y-4" aria-busy="true"><div className="h-9 w-48 animate-pulse rounded bg-surface-3" />{Array.from({ length: 4 }).map((_, i) => <div key={i} className="h-20 animate-pulse rounded-xl bg-surface-2" />)}</div>;

@@ -82,7 +82,7 @@ function PublicLayout() {
   return (
     <div className="public-portfolio flex min-h-screen flex-col" data-theme={theme}>
       <Navbar key={pathname} />
-      <div className="flex-1">
+      <div key={`route-${pathname}`} className="flex-1 public-route-enter">
         <Outlet />
       </div>
       <Footer />
@@ -117,7 +117,7 @@ function ScrollToTop() {
       const timeout = window.setTimeout(() => observer.disconnect(), 10000);
       return () => { cancelled = true; observer.disconnect(); cancelAnimationFrame(frame); window.clearTimeout(timeout); };
     }
-    window.scrollTo({ top: 0, left: 0 });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname, hash]);
   return null;
 }
