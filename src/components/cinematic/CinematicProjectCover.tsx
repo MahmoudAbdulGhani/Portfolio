@@ -52,10 +52,11 @@ function DeviceScreen({ kind, src, label, native, running, priority, onOpen }: {
     const measure = () => {
       timeline?.kill();
       timelineRef.current = null;
-      // Fit the entire source width. Only genuine vertical overflow scrolls;
-      // a desktop screenshot cannot become responsive through zoom/cropping.
+      // Laptop previews fill the real screen opening proportionally. Wide
+      // captures keep the navigation at the left; the viewer retains the full
+      // image. Responsive phone/tablet captures always fit their entire width.
       const ratio = target.naturalWidth / target.naturalHeight;
-      const width = mask.clientWidth;
+      const width = kind === 'laptop' ? Math.max(mask.clientWidth, mask.clientHeight * ratio) : mask.clientWidth;
       target.style.width = `${width}px`;
       const height = width / ratio;
       const distance = Math.max(0, height - mask.clientHeight);
