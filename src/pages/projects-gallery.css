@@ -28,7 +28,7 @@
 .projects-gallery .gallery-state h2 { font-size:26px; letter-spacing:-.02em; }
 .gallery-state p { margin-block:15px; }
 .gallery-state button { display:flex; align-items:center; gap:16px; color:#d9b56d; min-height:44px; }
-.gallery-skeleton > div { aspect-ratio:1.86; background:#152135; }
+.gallery-skeleton > div { aspect-ratio:16/10; background:#152135; }
 .gallery-skeleton > span { display:block; width:60%; height:24px; margin-top:20px; background:#152135; }
 body:has(.projects-gallery) .portfolio-navbar { border-bottom:1px solid #ffffff12; }
 body:has(.projects-gallery) .gallery-navigation { gap:32px; }

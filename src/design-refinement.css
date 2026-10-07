@@ -79,11 +79,10 @@
 .cinema .cinema-contact { padding-block:76px 44px; }
 .cinema .cinema-contact h2 em { font-family:'Instrument Serif',serif; font-style:italic; color:var(--cinema-gold); }
 .cinema-ai-tools { margin-top:34px; }
-.gallery-product-cover { margin:0; aspect-ratio:1.6; overflow:hidden; border:1px solid #ffffff28; border-radius:6px; background:#141e2a; }
-.gallery-product-cover picture { display:block; width:100%; height:100%; }
-.gallery-product-cover img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .45s; }
-.gallery-image-link:hover .gallery-product-cover img { transform:scale(1.015); }
-.gallery-product-identity img { object-fit:contain; }
+.gallery-product-cover { display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); margin:0; aspect-ratio:16/10; padding:clamp(8px,1vw,14px); overflow:hidden; border:1px solid var(--line); border-radius:6px; background:var(--surface); transition:border-color .2s; }
+.gallery-product-cover picture { display:block; width:100%; height:100%; min-width:0; min-height:0; }
+.gallery-product-cover img { display:block; width:100%; height:100%; min-width:0; min-height:0; object-fit:contain; object-position:center; background-image:none!important; }
+.gallery-image-link:is(:hover,:focus-visible) .gallery-product-cover { border-color:var(--accent); }
 .gallery-product-cover > span { display:grid; place-items:center; height:100%; color:#a8b3c2; font-size:14px; }
 .gallery-grid { gap:48px 30px; }
 .gallery-intro { margin-bottom:38px; }
@@ -210,5 +209,5 @@ html:not(.dark) .public-portfolio .cinema .gallery-filters button[aria-pressed=t
 }
 @media(prefers-reduced-motion:reduce) {
  .public-route-enter { animation:none; }
- .public-portfolio :is(a,button) svg,.gallery-product-cover img { transition:none; }
+ .public-portfolio :is(a,button) svg,.gallery-product-cover,.gallery-product-cover img { transition:none; }
 }
