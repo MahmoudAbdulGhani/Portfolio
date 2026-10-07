@@ -1,11 +1,10 @@
 import { useRef, useState, type KeyboardEvent } from "react";
-import { FiActivity, FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
+import { FiBarChart2, FiCode, FiCpu } from "react-icons/fi";
 
 type Props = {
   architecture?: string[];
   codeDiffs?: string[];
   benchmarks?: string[];
-  views: number;
 };
 
 function fields(value: string, count: number) {
@@ -13,7 +12,7 @@ function fields(value: string, count: number) {
   return parts.length >= count && parts.slice(0, count).every(Boolean) ? parts : undefined;
 }
 
-export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchmarks = [], views }: Props) {
+export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchmarks = [] }: Props) {
   const nodes = architecture.flatMap((item) => {
     const parsed = fields(item, 2);
     return parsed ? [{ label: parsed[0], description: parsed.slice(1).join(" | ") }] : [];
@@ -81,8 +80,8 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
               <article key={`${diff.title}-${index}`} className="overflow-hidden rounded-xl border border-line bg-surface font-mono text-xs">
                 <h4 className="border-b border-line bg-surface-2 px-4 py-2.5 font-sans text-sm font-bold text-ink">{diff.title}</h4>
                 <div className="grid sm:grid-cols-2">
-                  <del className="block border-b border-danger/20 bg-danger/5 px-4 py-4 leading-relaxed text-muted no-underline sm:border-b-0 sm:border-r"><span className="mr-2 font-bold text-danger" aria-hidden>−</span>{diff.before}</del>
-                  <ins className="block bg-ok/5 px-4 py-4 leading-relaxed text-ink no-underline"><span className="mr-2 font-bold text-ok" aria-hidden>+</span>{diff.after}</ins>
+                  <del className="block border-b border-danger/20 bg-danger/5 px-4 py-4 leading-relaxed text-muted no-underline sm:border-b-0 sm:border-r"><span className="mb-2 block font-semibold text-danger">Before</span>{diff.before}</del>
+                  <ins className="block bg-ok/5 px-4 py-4 leading-relaxed text-ink no-underline"><span className="mb-2 block font-semibold text-ok">After</span>{diff.after}</ins>
                 </div>
               </article>
             ))}
@@ -90,13 +89,13 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
         </div>
       )}
 
-      <div>
+      {metrics.length > 0 && <div>
         <div className="flex items-center gap-2 text-ink"><FiBarChart2 className="text-accent" /><h3 className="font-display font-bold">Benchmarks & telemetry</h3></div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {metrics.map((metric, index) => <article key={`${metric.label}-${index}`} className="card p-5"><p className="font-mono text-[10px] uppercase tracking-wider text-faint">{metric.label}</p><p className="mt-2 font-display text-2xl font-bold text-ink">{metric.value}</p><p className="mt-2 text-xs leading-relaxed text-muted">{metric.context}</p></article>)}
-          <article className="card p-5"><p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-faint"><FiActivity />Case-study views</p><p className="mt-2 font-display text-2xl font-bold text-ink">{views.toLocaleString()}</p><p className="mt-2 text-xs leading-relaxed text-muted">Aggregate page views only; no visitor identity is displayed.</p></article>
+
         </div>
-      </div>
+      </div>}
     </section>
   );
 }

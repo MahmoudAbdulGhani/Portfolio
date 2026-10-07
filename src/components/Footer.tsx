@@ -14,18 +14,20 @@ const socialIcons: Record<string, IconType> = {
 export function Footer() {
   const { data: profile } = useProfile();
   const { data: section } = useSiteSection("footer");
+  const { data: about } = useSiteSection("about");
+  const { data: jobMatch } = useSiteSection("jobMatch");
   const year = new Date().getFullYear();
   const socials = profile?.socials.filter((social) => social.showInFooter !== false) ?? [];
   const technologyText = typeof section?.content.technologyText === "string" ? section.content.technologyText : "";
   const copyrightSuffix = typeof section?.content.copyrightSuffix === "string" ? section.content.copyrightSuffix : "";
 
   return (
-    <footer className="border-t border-line bg-bg-soft">
+    <footer className="portfolio-footer border-t border-line bg-bg-soft">
       <div className="container-x py-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
             <Logo />
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="portfolio-footer-description mt-3 max-w-xs text-sm leading-relaxed text-muted">
               {section?.description}
             </p>
           </div>
@@ -33,7 +35,9 @@ export function Footer() {
           <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-7 gap-y-2">
             {[
               { to: "/", label: "Home" },
+              ...(about?.visible === false ? [] : [{ to: "/#about", label: "About" }]),
               { to: "/projects", label: "Projects" },
+              ...(jobMatch?.visible === false ? [] : [{ to: "/job-match", label: "AI Job Match" }]),
               { to: "/contact", label: "Contact" },
             ].map((item) => (
               <Link
@@ -67,7 +71,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 text-xs text-muted sm:flex-row">
           <p>© {year} {profile?.name}. {copyrightSuffix}</p>
-          <p className="font-mono">
+          <p className="portfolio-footer-tools font-mono">
             {technologyText}
           </p>
         </div>

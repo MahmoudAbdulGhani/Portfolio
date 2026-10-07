@@ -38,3 +38,10 @@ server/.env.*
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary public CMS snapshot used only for motion review
+.motion-preview/
+
+# Reproducible laptop asset intermediates
+scripts/laptop-assets/model-data.json
+public/projects/cinematic/laptop/frame-*.webp

@@ -1,0 +1,51 @@
+.cw-device-composition { position:relative; isolation:isolate; width:100%; aspect-ratio:1.75; padding:0; background:transparent; border:0; border-radius:0; overflow:visible; color:var(--cw-ink); }
+.cw-device { position:absolute; filter:drop-shadow(0 24px 24px #0006); }
+.cw-device-frame { position:relative; display:block; width:100%; height:100%; pointer-events:none; user-select:none; filter:grayscale(1); }
+.cw-device--laptop { width:82%; left:9%; top:0; aspect-ratio:1.5; z-index:1; }
+.cw-device--phone { width:18%; left:0; bottom:0; aspect-ratio:862/1825; z-index:3; }
+.cw-device--tablet { width:30%; right:0; bottom:0; aspect-ratio:.75; z-index:2; }
+.cw-device-screen { position:absolute; display:block; overflow:hidden; padding:0; border:0; background:#111923; cursor:zoom-in; text-align:left; }
+.cw-device--laptop .cw-device-screen { inset:10.25% 8.6% 13.9%; border-radius:3px; }
+.cw-device--phone .cw-device-screen { inset:3.85% 7.8%; border-radius:11.5% / 5%; }
+.cw-device--tablet .cw-device-screen { inset:7.5% 8.2% 7.25%; border-radius:2%; }
+.cw-device-screen > img { display:block; width:100%; max-width:none; height:auto; }
+.cw-device[data-running="true"] .cw-device-screen > img { will-change:transform; }
+.cw-device-inspect { position:absolute; bottom:10px; right:10px; display:grid; place-items:center; width:34px; height:34px; border:1px solid #ffffff50; border-radius:8px; background:#0b1118e8; color:#f4f1e8; opacity:0; transition:opacity .2s; }
+.cw-device-screen:hover .cw-device-inspect,.cw-device-screen:focus-visible .cw-device-inspect { opacity:1; }
+.cw-device-screen:focus-visible { outline:2px solid var(--cw-gold); outline-offset:5px; }
+.cw-device-error { display:grid; place-items:center; height:100%; color:#a8b3c2; font-size:12px; padding:12px; }
+@media(max-width:760px) {
+ .cw-device-composition { display:grid; grid-template-columns:38% 56%; gap:20px 6%; align-items:end; aspect-ratio:auto; }
+ .cw-device { position:relative; width:100%; inset:auto; }
+ .cw-device--laptop { grid-column:1/-1; grid-row:1; }
+ .cw-device--phone { grid-column:1; grid-row:2; }
+ .cw-device--tablet { grid-column:2; grid-row:2; }
+
+
+ .cw-device-inspect { width:28px; height:28px; bottom:7px; right:7px; opacity:1; }
+}
+@media(prefers-reduced-motion:reduce) { .cw-device-screen > img { will-change:auto; } .cw-device-inspect { transition:none; } }
+
+.cw-device--laptop .cw-device-frame { clip-path:polygon(7% 6.3%,93% 6.3%,93% 89.5%,99% 89.5%,99% 94%,1% 94%,1% 89.5%,7% 89.5%); }
+
+/* Mobile keeps all three captures, with one native interface in readable focus. */
+.cw-mobile-showcase { display:none; }
+@media(max-width:760px) {
+ .cw-desktop-composition { display:none; }
+ .cw-mobile-showcase { display:block; min-width:0; }
+ .cw-device-tabs { display:flex; border:1px solid #ffffff28; border-radius:8px; padding:4px; margin-bottom:14px; gap:4px; }
+ .cw-device-tabs button { display:flex; justify-content:center; align-items:center; gap:8px; flex:1; min-width:0; min-height:44px; border-radius:5px; color:var(--cw-muted); font-size:13px; }
+ .cw-device-tabs button[aria-selected=true] { background:var(--cw-gold); color:#0b1118; }
+ .cw-device-tabs svg { flex-shrink:0; width:19px; height:19px; }
+ .cw-mobile-showcase .case-shot-toolbar { flex-direction:column; align-items:flex-start; gap:0; border-top:0; }
+ .cw-mobile-showcase .case-shot-toolbar > div { justify-content:space-between; width:100%; gap:8px; }
+ .cw-mobile-showcase .case-shot-viewport { height:440px; max-height:60svh; border-radius:8px; }
+ .cw-mobile-showcase .case-shot[data-viewport=tablet] .case-shot-viewport { height:340px; }
+ .cw-mobile-showcase .case-shot:not([data-viewport]) .case-shot-viewport { height:auto; max-height:400px; }
+ .cw-device-companions { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+ .cw-device-companions > div { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; min-width:0; }
+ .cw-companion-select { display:block; width:100%; text-align:left; color:var(--cw-muted); font-size:13px; }
+ .cw-companion-select img { display:block; width:100%; height:104px; object-fit:cover; object-position:top; border:1px solid #ffffff28; border-radius:4px; margin-bottom:4px; }
+ .cw-companion-select span { display:flex; align-items:center; min-height:44px; }
+ .cw-companion-expand { display:flex; align-items:center; gap:6px; color:var(--cw-gold); font-size:13px!important; min-height:44px; }
+}

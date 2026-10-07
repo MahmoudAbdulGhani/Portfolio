@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { useProjects, useSiteSection } from "../lib/hooks";
 import { PageMeta } from "../components/PageMeta";
-import { ProjectCard } from "../components/ProjectCard";
-import { ProjectCardSkeleton } from "../components/ProjectCardSkeleton";
-import { SectionHeading } from "../components/SectionHeading";
-import { cn } from "../lib/format";
-import { AnimatePresence, motion } from "framer-motion";
+import { ProjectStudioCover } from "../components/ProjectStudioCover";
+import "./projects-gallery.css";
 
 type FilterId = "all" | "program" | "personal";
 type ProjectFilter = { id: FilterId; label: string };
@@ -13,89 +13,48 @@ type ProjectFilter = { id: FilterId; label: string };
 export function Projects() {
   const { data: projects, isLoading, isError, refetch } = useProjects();
   const { data: section } = useSiteSection("projectsPage");
+  const reduced = useReducedMotion();
   const filters = Array.isArray(section?.content.filters) ? section.content.filters as ProjectFilter[] : [];
-  const seoTitle = typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? "";
-  const seoDescription = typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? "";
   const [filter, setFilter] = useState<FilterId>("all");
-
   const filtered = useMemo(() => {
     const all = projects ?? [];
-    if (filter === "program") return all.filter((p) => p.program);
-    if (filter === "personal") return all.filter((p) => !p.program);
-    return all;
+    return filter === "program" ? all.filter(p => p.program) : filter === "personal" ? all.filter(p => !p.program) : all;
   }, [projects, filter]);
-
-  return (
-    <>
-      <PageMeta
-        title={seoTitle}
-        description={seoDescription}
-      />
-      <main className="min-h-[60vh] pb-20 pt-24 sm:pb-28 sm:pt-28">
-        <div className="container-x">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading
-              eyebrow={section?.eyebrow ?? ""}
-              title={section?.heading ?? ""}
-              description={section?.description ?? ""}
-              className="mb-0"
-            />
-
-            <div
-              role="group"
-              aria-label="Filter projects"
-              className="seg self-start"
-            >
-              {filters.map((f) => (
-                <button
-                  key={f.id}
-                  type="button"
-                  aria-pressed={filter === f.id}
-                  onClick={() => setFilter(f.id)}
-                  className={cn("seg-btn", filter === f.id && "active")}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint" aria-live="polite">
-            {isLoading ? "Loading projects…" : <>
-            showing {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-            {filter === "program" ? " — program work" : filter === "personal" ? " — personal work" : ""}
-            </>}
-          </p>
-
-          <motion.div layout className="mt-4 space-y-2">
-            {isLoading && Array.from({ length: 6 }, (_, index) => <ProjectCardSkeleton key={index} />)}
-            <AnimatePresence mode="popLayout" initial={false}>
-              {filtered.map((project, i) => (
-                <motion.div
-                  key={project.slug}
-                  layout
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.28, delay: Math.min(i * 0.035, 0.18), ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <ProjectCard project={project} />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-          {!isLoading && !isError && filtered.length === 0 && (
-            <div className="mt-4 rounded-xl border border-dashed border-line bg-surface-2/40 p-14 text-center">
-              <p className="text-sm font-semibold text-ink">No projects in this category yet</p>
-              <p className="mt-1 text-sm text-muted">
-                Try another filter to see more work.
-              </p>
-            </div>
-          )}
-          {!isLoading && isError && <div role="alert" className="mt-4 rounded-xl border border-danger/25 bg-danger/5 p-10 text-center"><p className="text-sm font-semibold text-ink">Projects are temporarily unavailable</p><p className="mt-1 text-sm text-muted">Please try again in a moment.</p><button type="button" onClick={() => void refetch()} className="btn-outline mt-5">Try again</button></div>}
+  const subtitle = typeof section?.content.gallerySubtitle === "string" ? section.content.gallerySubtitle : "Built end to end.";
+  return <>
+    <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? ""} />
+    <main className="cinema projects-gallery">
+      <header className="gallery-intro">
+        <div className="gallery-heading">
+          <p className="gallery-eyebrow">{section?.eyebrow ?? ""}</p>
+          <h1>{section?.heading ?? ""}<em>{subtitle}</em></h1>
+          <p className="gallery-description">{section?.description}</p>
         </div>
-      </main>
-    </>
-  );
+        <div className="gallery-tools">
+          <div className="gallery-filters" role="group" aria-label="Filter projects">
+            {filters.map(item => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)}>{item.label}</button>)}
+          </div>
+          <p className="gallery-count" aria-live="polite" aria-atomic="true">{isLoading ? "Loading projects…" : isError ? "Projects unavailable" : `${filtered.length} ${filtered.length === 1 ? "project" : "projects"}`}</p>
+        </div>
+      </header>
+      <motion.div className="gallery-grid" layout={!reduced}>
+        {isLoading && Array.from({ length: 4 }, (_, index) => <div className="gallery-skeleton" key={index} aria-hidden="true"><div /><span /></div>)}
+        <AnimatePresence initial={false} mode="popLayout">
+          {filtered.map((project, index) => <motion.article className="gallery-project" key={project.id} layout={!reduced} initial={reduced ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }} transition={{ duration: reduced ? 0 : 0.4, delay: reduced ? 0 : Math.min(index * 0.04, 0.16), ease: [0.22, 1, 0.36, 1] }}>
+            <Link to={`/projects/${project.slug}`} className="gallery-image-link" aria-label={`View ${project.name}`}>
+              <ProjectStudioCover project={project} priority={index < 2} />
+            </Link>
+            <div className="gallery-caption">
+              <h2><span aria-hidden="true">{String(index + 1).padStart(2, "0")} /</span><Link to={`/projects/${project.slug}`}>{project.name}</Link></h2>
+              <Link className="gallery-case-link" to={`/projects/${project.slug}`} aria-label={`Explore ${project.name} case study`}>Explore project<FiArrowRight aria-hidden="true" /></Link>
+            </div>
+            <p className="gallery-summary">{project.tagline || project.description}</p>
+            <ul className="gallery-stack" aria-label={`${project.name} technologies`}>{project.stack.slice(0, 3).map(tech => <li key={tech}>{tech}</li>)}</ul>
+          </motion.article>)}
+        </AnimatePresence>
+      </motion.div>
+      {!isLoading && isError && <div className="gallery-state" role="alert"><h2>Projects are temporarily unavailable</h2><p>Please try again in a moment.</p><button onClick={() => void refetch()} type="button">Try again<FiArrowRight aria-hidden="true" /></button></div>}
+      {!isLoading && !isError && filtered.length === 0 && <div className="gallery-state"><h2>No projects in this category yet</h2><p>Choose another category to explore more work.</p></div>}
+    </main>
+  </>;
 }

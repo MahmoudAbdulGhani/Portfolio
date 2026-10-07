@@ -1,6 +1,7 @@
+import { Reveal } from "../components/Reveal";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiAlertCircle, FiArrowRight, FiCheck, FiCheckCircle, FiCopy, FiDownload, FiRefreshCw, FiSearch, FiZap } from "react-icons/fi";
+import { FiAlertCircle, FiArrowRight, FiCheck, FiCopy, FiDownload, FiRefreshCw, FiSearch, FiZap, FiLoader, FiFileText, FiBarChart2, FiFolder, FiAlertTriangle } from "react-icons/fi";
 import { API_BASE, ApiError } from "../lib/api";
 import { PageMeta } from "../components/PageMeta";
 import { useSiteSection } from "../lib/hooks";
@@ -79,9 +80,10 @@ export function JobMatch() {
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     const value = jobDescription.trim();
-    if (!value) return setError("Please paste a job description.");
-    if (value.length < MIN_LENGTH) return setError(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
-    if (value.length > MAX_LENGTH) return setError(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
+    const invalid = (message: string) => { setError(message); document.getElementById("job-description")?.focus(); };
+    if (!value) return invalid("Please paste a job description.");
+    if (value.length < MIN_LENGTH) return invalid(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
+    if (value.length > MAX_LENGTH) return invalid(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
     if (submitting.current) return;
     submitting.current = true; setLoading(true); setError(""); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
     const controller = new AbortController();
@@ -190,35 +192,34 @@ export function JobMatch() {
     }
   };
 
+  const descriptionError = error || (jobDescription.length > MAX_LENGTH ? `Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.` : "");
+
   return <>
     <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
-    <main className="min-h-screen pt-16">
-      <section className="section relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-accent/8 to-transparent" />
-        <div className="container-x relative">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow justify-center">AI-Powered</span>
-            <h1 className="mt-5 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">Job <span className="text-gradient">Match</span></h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">Paste a job description. I'll analyze it against my portfolio and tell you exactly how I fit.</p>
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-5xl gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:items-start">
-            <form onSubmit={submit} className="card p-5 sm:p-7">
+    <main className="public-page ai-page">
+      <section className="public-container">
+          <Reveal y={12} className="ai-intro">
+            <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>
+            <h1>{section?.heading?.startsWith("AI") ? section.heading : `AI ${section?.heading || "Job Match"}`}</h1>
+            <p className="public-display-accent">{typeof section?.content.displaySubtitle === "string" ? section.content.displaySubtitle : "See the fit. Understand the gaps."}</p>
+            <p className="ai-description">{section?.description || "Paste a job description to compare the role with my portfolio evidence."}</p>
+          </Reveal>
+          <div className="ai-workbench">
+            <form onSubmit={submit} className="ai-form">
               <div className="flex items-start gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent"><FiSearch /></span><div><h2 className="font-display text-lg font-bold text-ink">Job description</h2><p className="mt-1 text-sm text-muted">Include responsibilities, required skills, and experience level.</p></div></div>
               <label htmlFor="job-description" className="sr-only">Job description</label>
-              <textarea id="job-description" className={`textarea bg-surface-2 border-line-strong mt-6 min-h-72 resize-y ${error ? "textarea-error" : ""}`} value={jobDescription} maxLength={MAX_LENGTH + 1} disabled={loading} onChange={(event) => { setJobDescription(event.target.value); if (error) setError(""); }} placeholder="Paste the job description here (minimum 80 characters)…" aria-describedby="job-help job-error" aria-invalid={Boolean(error)} />
+              <textarea id="job-description" className={`textarea bg-surface-2 border-line-strong mt-6 min-h-72 resize-y ${descriptionError ? "textarea-error" : ""}`} value={jobDescription} maxLength={MAX_LENGTH + 1} disabled={loading} onChange={(event) => { setJobDescription(event.target.value); if (error) setError(""); }} placeholder="Paste the job description here (minimum 80 characters)…" aria-describedby={descriptionError ? "job-help job-error" : "job-help"} aria-invalid={Boolean(descriptionError)} />
               <div id="job-help" className="mt-2 flex justify-between gap-4 text-xs text-faint"><span>Minimum {MIN_LENGTH} characters</span><span className={jobDescription.length > MAX_LENGTH ? "text-danger" : ""}>{jobDescription.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}</span></div>
-              {error && <div id="job-error" role="alert" className="mt-4 flex gap-2.5 rounded-lg border border-danger/25 bg-danger/8 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" />{error}</div>}
-              <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between"><button type="button" className="btn-ghost" onClick={clear} disabled={loading || (!jobDescription && !result)}><FiRefreshCw />Clear</button><button type="submit" className="btn-primary btn-lg" disabled={loading || jobDescription.length > MAX_LENGTH}>{loading ? <><span className="h-4 w-4 animate-spin rounded-full border-2 border-white/35 border-t-white" />Analyzing role…</> : <><FiZap />Check My Fit</>}</button></div>
+              {descriptionError && <div id="job-error" role="alert" className="inline-state-enter mt-4 flex gap-2.5 rounded-lg border border-danger/25 bg-danger/8 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" />{descriptionError}</div>}
+              <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between"><button type="button" className="btn-ghost" onClick={clear} disabled={loading || (!jobDescription && !result)}><FiRefreshCw />Clear</button><button type="submit" className="btn-primary btn-lg" disabled={loading || jobDescription.length > MAX_LENGTH}>{loading ? <><FiLoader className="animate-spin" aria-hidden />Analyzing role…</> : <><FiZap />Check My Fit</>}</button></div>
             </form>
 
-            <div aria-live="polite" aria-busy={loading}>
-              {loading && <div className="card p-7"><div className="flex items-center gap-3 text-ink"><span className="font-semibold">{loadingMessage}</span></div><div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-surface-3"><div className="job-scan h-full rounded-full bg-accent" role="progressbar" aria-label="Analysis progress" /></div><p className="mt-3 text-sm leading-relaxed text-muted">Reviewing public skills, projects, experience, education, and certifications.</p></div>}
-              {!loading && !result && <div className="card border-dashed p-7"><span className="grid h-11 w-11 place-items-center rounded-xl bg-surface-2 text-accent"><FiCheckCircle /></span><h2 className="mt-5 font-display text-lg font-bold text-ink">A recruiter-friendly result</h2><p className="mt-2 text-sm leading-relaxed text-muted">You’ll see supported strengths, relevant portfolio evidence, partial matches, and requirements that aren’t demonstrated.</p><div className="mt-5 flex items-center gap-2 text-xs font-semibold text-muted"><span className="h-2 w-2 rounded-full bg-ok" />Grounded in live portfolio data</div></div>}
-              {result && <article className="card overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="tech-label">Match Report</span><span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold ${matchBadge(result.matchLevel)}`}>{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p><div className="mt-5 flex flex-wrap gap-2"><button type="button" className="btn-outline btn-sm" onClick={copySummary}>{summaryCopied ? <FiCheck /> : <FiCopy />}{summaryCopied ? "Summary Copied" : "Copy Executive Summary"}</button><button type="button" className="btn-ghost btn-sm" onClick={exportReport}><FiDownload />Export Report</button>{cvToken && <button type="button" className="btn-primary btn-sm" onClick={downloadTailoredCv} disabled={downloadingCv}><FiDownload />{downloadingCv ? "Generating CV…" : "Download Tailored CV"}</button>}</div></header><div className="space-y-6 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section className="border-t border-line pt-6"><h2 className="tech-label">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{project.name}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="border-t border-line pt-6"><h2 className="tech-label">Recruiter Summary</h2><p className="mt-3 rounded-xl border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
+            <div className="ai-result" aria-live="polite" aria-busy={loading}>
+              {loading && <div className="ai-loading ai-state-enter" role="status"><div><FiLoader className="animate-spin" aria-hidden /><strong>{loadingMessage}</strong></div><p>Reviewing public skills, projects, experience, education, and certifications.</p></div>}
+              {!loading && !result && <div className="ai-idle ai-state-enter"><FiFileText aria-hidden /><h2>A clear, evidence-based comparison</h2><p>You’ll see supported strengths, relevant portfolio evidence, partial matches, and requirements that aren’t demonstrated.</p><ul className="ai-evidence"><li><FiBarChart2 aria-hidden /><div><strong>Supported strengths</strong><p>Understand where the role matches demonstrated skills.</p></div></li><li><FiFolder aria-hidden /><div><strong>Relevant project evidence</strong><p>Open the case studies behind the comparison.</p></div></li><li><FiAlertTriangle aria-hidden /><div><strong>Gaps made clear</strong><p>See partial matches and requirements that aren’t demonstrated.</p></div></li></ul></div>}
+              {result && <article className="card ai-report ai-state-enter overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="tech-label">Match Report</span><span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold ${matchBadge(result.matchLevel)}`}>{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p><div className="mt-5 flex flex-wrap gap-2"><button type="button" className="btn-outline btn-sm" onClick={copySummary}>{summaryCopied ? <FiCheck /> : <FiCopy />}{summaryCopied ? "Summary Copied" : "Copy Executive Summary"}</button><button type="button" className="btn-ghost btn-sm" onClick={exportReport}><FiDownload />Export Report</button>{cvToken && <button type="button" className="btn-primary btn-sm" onClick={downloadTailoredCv} disabled={downloadingCv}><FiDownload />{downloadingCv ? "Generating CV…" : "Download Tailored CV"}</button>}</div></header><div className="space-y-6 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section className="border-t border-line pt-6"><h2 className="tech-label">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{project.name}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="border-t border-line pt-6"><h2 className="tech-label">Recruiter Summary</h2><p className="mt-3 rounded-xl border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
             </div>
           </div>
-        </div>
       </section>
     </main>
   </>;

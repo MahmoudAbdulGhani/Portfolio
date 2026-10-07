@@ -1,0 +1,20 @@
+/* The native arrow stays precise; this decoration never receives input. */
+.portfolio-pointer { display:none; position:fixed; left:0; top:0; width:0; height:0; z-index:10000; pointer-events:none; }
+.portfolio-pointer span { position:absolute; left:-11px; top:-11px; width:22px; height:22px; border:1px solid var(--accent); border-radius:50%; opacity:0; transform:scale(1); transition:transform .16s ease-out,opacity .12s ease-out,background-color .16s; }
+.portfolio-pointer[data-visible=true] span { opacity:.55; }
+.portfolio-pointer[data-active=true] span { transform:scale(1.6); background:color-mix(in srgb,var(--accent) 7%,transparent); opacity:.85; }
+.portfolio-pointer[data-pressed=true] span { transform:scale(.9); }
+@media (hover:hover) and (pointer:fine) {
+  .public-portfolio { cursor:url('/cursors/portfolio-arrow.svg') 4 4,auto; }
+  .public-portfolio :is(a[href],button,summary,[role=button],[role=tab],[role=link],label[for]) { cursor:url('/cursors/portfolio-arrow.svg') 4 4,pointer; }
+  .public-portfolio :is(input,textarea,select,[contenteditable]:not([contenteditable=false]),[role=textbox],[data-native-cursor]) { cursor:auto; }
+  .public-portfolio :is(:disabled,[aria-disabled=true]) { cursor:not-allowed!important; }
+  .public-portfolio [aria-busy=true] { cursor:progress!important; }
+  .portfolio-pointer { display:block; }
+}
+@media (prefers-reduced-motion:reduce),(forced-colors:active) {
+  .portfolio-pointer { display:none; }
+}
+@media (forced-colors:active) {
+  .public-portfolio,.public-portfolio :is(a[href],button,summary,[role=button],[role=tab],[role=link],label[for]) { cursor:revert; }
+}

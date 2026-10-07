@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ThemeProvider } from "./lib/theme";
 import { App } from "./App";
 import "./index.css";
+import "./design-refinement.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,7 +19,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const isLocalPreview = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const isLocalPreview = ["localhost", "127.0.0.1", "terminal.local"].includes(window.location.hostname);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

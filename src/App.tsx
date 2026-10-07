@@ -1,6 +1,10 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { useTheme } from "./lib/theme";
+import "./public-pages.css";
+import "./responsive-motion.css";
 import { Navbar } from "./components/Navbar";
+import { PortfolioPointer } from "./components/PortfolioPointer";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
@@ -73,11 +77,12 @@ const SiteContentAdmin = lazy(() => import("./pages/admin/SiteContent").then((m)
 
 function PublicLayout() {
   const { pathname } = useLocation();
+  const { theme } = useTheme();
   const assistantContext = pathname.match(/^\/projects\/([^/]+)$/)?.[1] ?? "general";
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <div className="flex-1">
+    <div className="public-portfolio flex min-h-screen flex-col" data-theme={theme}>
+      <Navbar key={pathname} />
+      <div key={`route-${pathname}`} className="flex-1 public-route-enter">
         <Outlet />
       </div>
       <Footer />
@@ -85,6 +90,7 @@ function PublicLayout() {
         <PortfolioAssistant key={assistantContext} />
       </Suspense>
       <CommandPaletteLoader />
+      <PortfolioPointer key={`pointer-${pathname}`} />
     </div>
   );
 }
@@ -93,10 +99,25 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView({ block: "start" }));
-      return;
+      // CMS sections mount after the route's first render. Wait for the target
+      // so a direct /#projects visit reaches the gallery after data loads.
+      let cancelled = false;
+      let frame = 0;
+      const observer = new MutationObserver(scrollToTarget);
+      function scrollToTarget() {
+        const target = document.getElementById(hash.slice(1));
+        if (!target) return;
+        observer.disconnect();
+        void document.fonts.ready.then(() => {
+          if (!cancelled) frame = requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+        });
+      }
+      observer.observe(document.getElementById("root") ?? document.body, { childList: true, subtree: true });
+      scrollToTarget();
+      const timeout = window.setTimeout(() => observer.disconnect(), 10000);
+      return () => { cancelled = true; observer.disconnect(); cancelAnimationFrame(frame); window.clearTimeout(timeout); };
     }
-    window.scrollTo({ top: 0, left: 0 });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname, hash]);
   return null;
 }

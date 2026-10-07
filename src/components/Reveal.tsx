@@ -30,6 +30,7 @@ export function Reveal({ children, delay = 0, y = 22, variant = "rise", classNam
   return (
     <div
       ref={ref}
+      onFocusCapture={() => setVisible(true)}
       className={`reveal reveal--${variant} ${visible ? "reveal--visible" : ""} ${className ?? ""}`}
       style={{ "--reveal-delay": `${delay}s`, "--reveal-y": `${y}px` } as React.CSSProperties}
     >

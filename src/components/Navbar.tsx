@@ -1,180 +1,85 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { FiArrowRight, FiMenu, FiSearch, FiX } from "react-icons/fi";
+import { useEffect, useRef, useState } from "react";
+import type { ReactNode, RefObject } from "react";
+import { AnimatePresence, motion, useIsPresent, useReducedMotion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { FiMenu, FiSearch, FiX, FiArrowRight } from "react-icons/fi";
+import { useProfile, useSiteSection } from "../lib/hooks";
+import { API_BASE } from "../lib/api";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
-import { Magnetic } from "./Magnetic";
-import { cn } from "../lib/format";
+import { presentationContent, contentText } from "../lib/presentation-content";
+import { CvDownloadButton } from "./CvDownloadButton";
 
-const navItems = [
-  { to: "/#hero", label: "Home", end: true },
-  { to: "/projects", label: "Projects", end: false },
-  { to: "/job-match", label: "Job Match", end: false },
-  { to: "/contact", label: "Contact", end: false },
-];
+function MenuPanel({ children, menuRef }: { children: ReactNode; menuRef: RefObject<HTMLDivElement | null> }) {
+  const present = useIsPresent(), reduced = useReducedMotion();
+  return <motion.div ref={menuRef} id="public-mobile-nav" className="public-mobile-nav" role="dialog" aria-modal={present} aria-hidden={!present} inert={!present} aria-label="Navigation menu" initial={reduced ? false : { opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -8 }} transition={{ duration: reduced ? 0 : present ? 0.28 : 0.18, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
+}
 
 export function Navbar() {
-  const location = useLocation();
-  const [scrolled, setScrolled] = useState(false);
+  const { pathname, hash } = useLocation();
+  const { data: profile } = useProfile();
+  const { data: jobMatch } = useSiteSection("jobMatch");
+  const { data: about } = useSiteSection("about");
+  const { data: contact } = useSiteSection("contact");
+  const clientContent = presentationContent("contact", contact?.content);
   const [open, setOpen] = useState(false);
-  const [isMac] = useState(() => typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform));
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  const reduced = useReducedMotion();
+  const trigger = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+  const links = [
+    { to: "/projects", label: "Work", active: pathname === "/projects" || pathname.startsWith("/projects/") || (pathname === "/" && hash === "#projects") },
+    ...(about?.visible === false ? [] : [{ to: "/#about", label: "About", active: pathname === "/" && hash === "#about" }]),
+    { to: "/contact", label: "Contact", active: pathname === "/contact" },
+  ];
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+    const previous = document.body.style.overflow;
+    const menuTrigger = trigger.current;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); setOpen(false); }
+      if (event.key !== "Tab") return;
+      const elements = [...(menu.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled])') ?? [])];
+      const first = elements[0], last = elements.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const media = window.matchMedia("(min-width: 1120px)");
+    const resize = () => { if (media.matches) setOpen(false); };
+    window.addEventListener("keydown", onKey); media.addEventListener("change", resize);
+    requestAnimationFrame(() => menu.current?.querySelector<HTMLElement>("button")?.focus());
+    return () => { document.body.style.overflow = previous; window.removeEventListener("keydown", onKey); media.removeEventListener("change", resize); menuTrigger?.focus(); };
   }, [open]);
-
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    cn(
-      "relative rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200",
-      isActive ? "text-ink" : "text-muted hover:text-ink",
-    );
-
-  const handleNavClick = (to: string) => {
+  const search = () => {
     setOpen(false);
-    if (to === "/#hero" && location.pathname === "/") {
-      requestAnimationFrame(() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth", block: "start" }));
-    }
+    requestAnimationFrame(() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true })));
   };
-
-  const openCommandPalette = () => {
-    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac, ctrlKey: !isMac }));
-  };
-
-  return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open
-          ? "border-b border-line bg-bg/85 shadow-sm shadow-black/[0.02] backdrop-blur-xl"
-          : "border-b border-transparent",
-      )}
-    >
-      <nav
-        aria-label="Main"
-        className="container-x relative flex h-16 items-center justify-between"
-      >
-        <Magnetic strength={0.15}>
-          <Logo />
-        </Magnetic>
-
-        <div className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              onClick={() => handleNavClick(item.to)}
-              className={linkClass}
-            >
-              {({ isActive }) => (
-                <>
-                  {item.label}
-                  {isActive && (
-                    <span className="absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-accent" />
-                  )}
-                </>
-              )}
-            </NavLink>
-          ))}
-          <div className="ml-2 flex items-center gap-2">
-            <button
-              type="button"
-              onClick={openCommandPalette}
-              aria-label="Search and quick commands (Ctrl+K or Cmd+K)"
-              className="flex items-center gap-2 rounded-lg border border-line bg-surface-2/80 px-2.5 py-1.5 text-xs text-muted transition-colors hover:border-accent/40 hover:text-ink"
-            >
-              <FiSearch size={14} className="text-faint" />
-              <span className="hidden lg:inline font-medium">Search</span>
-              <kbd className="rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-faint">
-                {isMac ? "⌘K" : "Ctrl+K"}
-              </kbd>
-            </button>
-            <Magnetic strength={0.2}>
-              <Link to="/contact" className="btn-outline btn-sm">
-                Let’s Talk
-                <FiArrowRight size={14} />
-              </Link>
-            </Magnetic>
-            <ThemeToggle />
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 md:hidden">
-          <button
-            type="button"
-            onClick={openCommandPalette}
-            aria-label="Search and quick commands"
-            className="btn-icon border border-line bg-surface text-ink"
-          >
-            <FiSearch size={17} />
-          </button>
-          <ThemeToggle />
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            onClick={() => setOpen((v) => !v)}
-            className="btn-icon border border-line bg-surface text-ink"
-          >
-            {open ? <FiX size={18} /> : <FiMenu size={18} />}
-          </button>
-        </div>
-      </nav>
-
-      {(scrolled || open) && (
-        <div
-          className="dimension-line pointer-events-none absolute inset-x-0 bottom-0 h-px"
-          aria-hidden
-        />
-      )}
-
-        {open && (
-          <div
-            id="mobile-nav"
-            className="mobile-nav-enter overflow-hidden border-t border-line bg-bg/95 backdrop-blur-xl md:hidden"
-          >
-            <div className="container-x flex flex-col gap-1 py-4">
-              {navItems.map((item, index) => (
-                <div
-                  key={item.to}
-                  className="mobile-nav-item-enter"
-                  style={{ animationDelay: `${index * 0.04}s` }}
-                >
-                  <NavLink
-                    to={item.to}
-                    end={item.end}
-                    onClick={() => handleNavClick(item.to)}
-                    className={({ isActive }) => cn("flex items-center justify-between rounded-lg px-4 py-3 text-[15px] font-semibold transition-colors", isActive ? "bg-accent/10 text-accent" : "text-muted hover:bg-surface-2 hover:text-ink")}
-                  >
-                    {item.label}
-                    {item.to === "/contact" ? null : <FiArrowRight size={14} className="text-faint" aria-hidden />}
-                  </NavLink>
-                </div>
-              ))}
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className="btn-outline mt-2"
-              >
-                Let’s Talk
-                <FiArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        )}
-    </header>
-  );
+  useEffect(() => {
+    const close = (event: MouseEvent | KeyboardEvent) => {
+      const disclosure = document.querySelector<HTMLDetailsElement>('.public-hiring-menu');
+      if (!disclosure?.open) return;
+      if (event instanceof KeyboardEvent && event.key === 'Escape') { disclosure.open = false; disclosure.querySelector('summary')?.focus(); }
+      if (event instanceof MouseEvent && !disclosure.contains(event.target as Node)) disclosure.open = false;
+    };
+    document.addEventListener('click', close); document.addEventListener('keydown', close);
+    return () => { document.removeEventListener('click', close); document.removeEventListener('keydown', close); };
+  }, []);
+  const cv = profile?.resumeUrl || `${API_BASE}/cv.pdf`;
+  return <header className="public-header">
+    <nav aria-label="Main" className="public-header-inner" inert={open}>
+      <Logo />
+      <div className="public-nav-links">{links.map(link => <Link key={link.to} to={link.to} aria-current={link.active ? "page" : undefined}>{link.label}</Link>)}</div>
+      <div className="public-nav-utilities">
+        <button type="button" className="public-search" onClick={search} aria-label="Search and quick commands (Ctrl+K or Cmd+K)"><FiSearch aria-hidden /><span>Search…</span></button>
+        <div className="public-desktop-theme"><ThemeToggle /></div>
+        <Link to="/contact?intent=project" className="public-project-cta">{contentText(clientContent, "projectCtaLabel")}<FiArrowRight aria-hidden /></Link><details className="public-hiring-menu"><summary>For hiring<FiArrowRight aria-hidden /></summary><div><CvDownloadButton url={cv} className="public-cv" />{jobMatch?.visible !== false && <Link to="/job-match" aria-current={pathname === "/job-match" ? "page" : undefined}>AI Job Match</Link>}</div></details>
+        <button ref={trigger} type="button" className="public-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="public-mobile-nav" onClick={() => setOpen(value => !value)}>{open ? <FiX /> : <FiMenu />}</button>
+      </div>
+    </nav>
+    <AnimatePresence>{open && <MenuPanel key="mobile-menu" menuRef={menu}>
+      <button type="button" className="public-menu-close" onClick={() => setOpen(false)} aria-label="Close navigation menu"><FiX />Close menu</button>
+      <nav aria-label="Mobile main">{links.map((link, index) => <motion.div key={link.to} initial={reduced ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : 0.25, delay: reduced ? 0 : 0.06 + index * 0.04 }}><Link to={link.to} aria-current={link.active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link></motion.div>)}</nav>
+      <Link className="public-mobile-project" to="/contact?intent=project" onClick={() => setOpen(false)}>{contentText(clientContent, "projectCtaLabel")}<FiArrowRight aria-hidden /></Link><div className="public-mobile-utilities">{jobMatch?.visible !== false && <Link to="/job-match" onClick={() => setOpen(false)}>AI Job Match</Link>}<CvDownloadButton url={cv} className="public-cv" /><ThemeToggle /></div>
+    </MenuPanel>}</AnimatePresence>
+  </header>;
 }

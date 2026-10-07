@@ -1,0 +1,53 @@
+.gallery-cover {
+  position:relative;
+  aspect-ratio:1.86;
+  overflow:hidden;
+  background:#05090f;
+}
+.gallery-studio {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.gallery-laptop {
+  width:100%;
+  position:absolute;
+  bottom:1%;
+  left:0;
+  transform:rotate(-.6deg);
+  transition:transform .6s cubic-bezier(.22,1,.36,1);
+}
+.gallery-device-image {
+  display:block;
+  position:relative;
+  width:100%;
+  height:auto;
+  pointer-events:none;
+}
+.gallery-screen {
+  position:absolute;
+  left:7.2048%;
+  top:6.3172%;
+  width:85.5237%;
+  height:83.7366%;
+  overflow:hidden;
+  background:#05090f;
+}
+.gallery-screen-image {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+}
+.gallery-cover-logo .gallery-screen-image {
+  width:100%;
+  object-fit:contain;
+  background:#fff;
+}
+.gallery-cover-unavailable {
+  display:grid;
+  place-items:center;
+  color:#aabbd1;
+}
