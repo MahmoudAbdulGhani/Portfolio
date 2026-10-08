@@ -1,0 +1,15 @@
+{
+  "originalSHA256": "1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce",
+  "originalDimensions": [
+    1200,
+    1600
+  ],
+  "segmentationRGBNotUsed": true,
+  "verifiedSourcePhotometricInteriorPixels": 627000,
+  "sourcePhotometricMismatchPixels": 0,
+  "losslessVisiblePixels": 646533,
+  "losslessChangedVisibleRGBPixels": 0,
+  "losslessChangedAlphaPixels": 0,
+  "webpBytes": 598898,
+  "masterPngBytes": 1596112
+}

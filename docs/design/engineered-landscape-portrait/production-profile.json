@@ -1,0 +1,75 @@
+{
+  "results": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "source": "/landscape/portrait-striped-cutout.webp",
+      "currentSource": "http://127.0.0.1:5176/landscape/portrait-striped-cutout.webp",
+      "explicitDimensions": [
+        "768",
+        "1259"
+      ],
+      "distortion": 0.000005086323608960441,
+      "mask": "none",
+      "transform": "none",
+      "animation": "none",
+      "panelHeight": 479.78125,
+      "portraitTop": 117,
+      "recordTop": 117,
+      "headroom": 20,
+      "overflow": false,
+      "tabs": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "source": "/landscape/portrait-striped-cutout.webp",
+      "currentSource": "http://127.0.0.1:5176/landscape/portrait-striped-cutout.webp",
+      "explicitDimensions": [
+        "768",
+        "1259"
+      ],
+      "distortion": 0.000011431669285300039,
+      "mask": "none",
+      "transform": "none",
+      "animation": "none",
+      "panelHeight": 220,
+      "portraitTop": 150,
+      "recordTop": 513.9375,
+      "headroom": 10,
+      "overflow": false,
+      "tabs": true
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "source": "/landscape/portrait-striped-cutout.webp",
+      "currentSource": "http://127.0.0.1:5176/landscape/portrait-striped-cutout-480w.webp",
+      "explicitDimensions": [
+        "768",
+        "1259"
+      ],
+      "distortion": 0.00009088765646081409,
+      "mask": "none",
+      "transform": "none",
+      "animation": "none",
+      "panelHeight": 220,
+      "portraitTop": 150,
+      "recordTop": 513.9375,
+      "headroom": 10,
+      "overflow": false,
+      "tabs": true
+    }
+  ],
+  "cmsOverride": {
+    "src": "/projects/cinematic/home-services.webp",
+    "mask": "none"
+  },
+  "errors": []
+}

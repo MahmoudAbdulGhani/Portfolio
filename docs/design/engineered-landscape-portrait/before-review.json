@@ -1,0 +1,127 @@
+{
+  "phase": "before",
+  "browser": "154.0.8037.99",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "panel": {
+        "x": 81.7874984741211,
+        "y": 117,
+        "width": 380.5500183105469,
+        "height": 570.8250122070312
+      },
+      "image": {
+        "x": -78.0374984741211,
+        "y": -37.11249923706055,
+        "width": null,
+        "height": null,
+        "naturalWidth": 960,
+        "naturalHeight": 1280,
+        "src": "/myphoto.jpeg",
+        "fit": "fill",
+        "mask": "url(\"http://127.0.0.1:5175/landscape/portrait-silhouette.svg\")",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 557.4750366210938,
+        "y": 117
+      },
+      "documentOverflow": false,
+      "shadow": "rgba(52, 72, 61, 0.07) 9px 14px 30px 0px"
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "panel": {
+        "x": 76.80000305175781,
+        "y": 117,
+        "width": 357.1125183105469,
+        "height": 535.6625366210938
+      },
+      "image": {
+        "x": -73.17500305175781,
+        "y": -27.625,
+        "width": null,
+        "height": null,
+        "naturalWidth": 960,
+        "naturalHeight": 1280,
+        "src": "/myphoto.jpeg",
+        "fit": "fill",
+        "mask": "url(\"http://127.0.0.1:5175/landscape/portrait-silhouette.svg\")",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 523.1875,
+        "y": 117
+      },
+      "documentOverflow": false,
+      "shadow": "rgba(52, 72, 61, 0.07) 9px 14px 30px 0px"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panel": {
+        "x": 23.412500381469727,
+        "y": 150,
+        "width": 186.5749969482422,
+        "height": 279.8625183105469
+      },
+      "image": {
+        "x": -54.9375,
+        "y": 74.4375,
+        "width": null,
+        "height": null,
+        "naturalWidth": 960,
+        "naturalHeight": 1280,
+        "src": "/myphoto.jpeg",
+        "fit": "cover",
+        "mask": "url(\"http://127.0.0.1:5175/landscape/portrait-silhouette.svg\")",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 23.412500381469727,
+        "y": 519.8624877929688
+      },
+      "documentOverflow": false,
+      "shadow": "rgba(52, 72, 61, 0.07) 9px 14px 30px 0px"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "panel": {
+        "x": 21.600000381469727,
+        "y": 166.6374969482422,
+        "width": 171.5749969482422,
+        "height": 257.3625183105469
+      },
+      "image": {
+        "x": -50.45000076293945,
+        "y": 97.1500015258789,
+        "width": null,
+        "height": null,
+        "naturalWidth": 960,
+        "naturalHeight": 1280,
+        "src": "/myphoto.jpeg",
+        "fit": "cover",
+        "mask": "url(\"http://127.0.0.1:5175/landscape/portrait-silhouette.svg\")",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 21.600000381469727,
+        "y": 514
+      },
+      "documentOverflow": false,
+      "shadow": "rgba(52, 72, 61, 0.07) 9px 14px 30px 0px"
+    }
+  ],
+  "errors": []
+}

@@ -1,3 +1,56 @@
+# Engineered Landscape Profile photograph integration
+
+Date: 8 October 2026. Status: **refined photograph integrated and locally verified; follow-up commit/push authorized for online review**.
+
+## Source, preservation and method
+
+Verified and opened the actual attachment at `C:/Users/Admin/Downloads/WhatsApp Image 2026-10-08 at 15.02.08.jpeg`: **1200×1600**, light striped button-down shirt and blue-faced watch. No `/workspace/scratch/` path was used. Source SHA-256 remains `1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce`. The older `public/myphoto.jpeg` remains unchanged too.
+
+Read repository instructions and inspected the clean `fix/engineered-landscape-media` branch at `b6246b5` before creating the local `refine/engineered-landscape-profile-portrait` branch. This includes the approved equal-width gallery, `f3fa087`, selected-project composition and mobile Contact fixes. No unrelated source or dependencies were changed.
+
+The first built-in imagegen edit changed facial/watch details and was rejected. Its image is not used or copied into the portfolio. To satisfy the user's explicit requirement for accurate segmentation without regenerating the face, the final asset uses local IMG.LY medium/ISNet segmentation **only as an alpha source**, applied to the decoded original photograph's RGB pixels. This follows the [segmentation/mask implementation](https://github.com/imgly/background-removal-js/blob/main/packages/node/src/index.ts). The original pixel positions and subject geometry are retained; no generated face, fingers, watch, shirt, or invented body parts are used.
+
+Refinement removes disconnected low-alpha background flecks and decontaminates semi-transparent perimeter pixels using adjacent outdoor colour estimates. Opaque interior pixels are not spatially filtered. A smoothly feathered face exposure lift peaks at approximately **0.20 stop**; restrained white-balance gains are red **1.015**, green **1.0**, blue **0.99** in linear light. No skin smoothing, sharpening, dramatic lighting, filters or synthetic shadows were applied. Processing dependencies and model weights are outside the repository; the app receives only static images.
+
+## Assets and composition
+
+- [Full registered edited master](docs/design/engineered-landscape-portrait/portrait-refined-master.png): transparent **1200×1600**, retaining the source's hands and watch. The original photo already ends partway through the hands; missing parts were not invented.
+- [Main transparent WebP](public/landscape/portrait-striped-cutout.webp): **768×1259**, **598,898 bytes**. Only unused transparent canvas is trimmed, at source origin **376,341**.
+- [Phone WebP](public/landscape/portrait-striped-cutout-480w.webp): **480×787**, **317,718 bytes**. Both variants use lossless WebP encoding; the main asset is approximately 62% smaller than its 1,596,112-byte full PNG master. Fully transparent PNG pixels have their unused RGB cleared.
+- [Ivory/dark background review](docs/design/engineered-landscape-portrait/cutout-background-review.png): browser-composited check of hair, ears, shoulders, sleeves, hands and watch. The actual page-background captures below are the decisive presentation check.
+
+[Pixel proof](docs/design/engineered-landscape-portrait/pixel-proof.json) verifies **627,000 opaque interior pixels** against the original photograph with only the documented photometric adjustment, with **zero mismatches**. Main WebP optimization preserves **646,533 visible pixels** and every alpha value, with **zero changed visible RGB or alpha pixels**.
+
+`ProfilePortrait` owns the image and its responsive CSS. It replaces the old `/myphoto.jpeg` default with the new asset, while a future custom CMS photo still takes precedence and receives no person-specific mask. Image dimensions are explicit, with responsive source selection and eager/high-priority loading. The obsolete approximate SVG and all its mask/185%-zoom/negative-offset styles are removed.
+
+The flat warm ivory panel uses a **4:5** desktop frame, **20px** internal headroom/gutter, and the original 32% portrait column. At 1363px it measures **380.6×475.7px** and aligns with the Profile record at **y=117px**. The lower presentation crop ends above the wrists; hands/watch remain intact in the asset. The shoulders remain inside the panel, the face is closer, and proportions are unchanged.
+
+Phones retain the accepted two-column portrait/contact-detail grouping, with **220px** portrait height, **10px** internal padding, and top alignment. This reduces portrait height from approximately **280px at 390px / 257px at 360px**. Biography, heading, experience, education, capabilities, links, navigation, CV behaviour and CMS text remain intact. No border, shadow, gradient, floating/cursor motion or entrance animation was added; reduced motion has no portrait animation to disable.
+
+## Complete before/after Profile layouts
+
+| Viewport | Before complete layout | After complete layout | Unmodified after viewport |
+| --- | --- | --- | --- |
+| 1363×936 | [before](docs/design/engineered-landscape-portrait/before-1363x936-complete.jpg) | [after](docs/design/engineered-landscape-portrait/after-1363x936-complete.jpg) | [viewport](docs/design/engineered-landscape-portrait/after-1363x936-viewport.jpg) |
+| 1280×720 | [before](docs/design/engineered-landscape-portrait/before-1280x720-complete.jpg) | [after](docs/design/engineered-landscape-portrait/after-1280x720-complete.jpg) | [viewport](docs/design/engineered-landscape-portrait/after-1280x720-viewport.jpg) |
+| 390×844 | [before](docs/design/engineered-landscape-portrait/before-390x844-complete.jpg) | [after](docs/design/engineered-landscape-portrait/after-390x844-complete.jpg) | [viewport](docs/design/engineered-landscape-portrait/after-390x844-viewport.jpg) |
+| 360×800 | [before](docs/design/engineered-landscape-portrait/before-360x800-complete.jpg) | [after](docs/design/engineered-landscape-portrait/after-360x800-complete.jpg) | [viewport](docs/design/engineered-landscape-portrait/after-360x800-viewport.jpg) |
+
+Complete-layout captures temporarily expand the existing inner scroll container for screenshot purposes; unmodified viewport captures and measured panel geometry are supplied separately. This capture-only override is not application CSS. [Before measurements](docs/design/engineered-landscape-portrait/before-review.json) / [after measurements](docs/design/engineered-landscape-portrait/after-review.json). Installed Chrome 154, headed capture, DPR 1, reduced motion, read-only public content.
+
+[Compiled-build verification](docs/design/engineered-landscape-portrait/production-profile.json) additionally checks desktop, 390px and 360px with **DPR 2.75**: explicit dimensions, source selection, preserved aspect ratio, visible headroom, no masks/transforms/horizontal overflow, pointer movement, record-tab switching and an intercepted custom CMS photo override. [Compiled phone capture](docs/design/engineered-landscape-portrait/production-390-viewport.jpg). No page errors were recorded.
+
+## Checks, changed files and limits
+
+- `npm run typecheck`, `npm run lint`, `npm run build`: pass. Existing >500kB motion chunk warning remains.
+- `npm run test:landscape`: **10/10 pass**.
+- Full existing Playwright suite: **117/117 pass** across desktop, tablet and mobile Chrome. Selected views, complete gallery images, AI headers, Contact state/keyboard fixtures, navigation and focus checks remain green.
+- Changed code: `src/components/landscape/ProfilePage.tsx`, new `ProfilePortrait.tsx` and `profile-portrait.css`, and portrait-only cleanup in `src/landscape.css`. Replaced `public/landscape/portrait-silhouette.svg` with the two transparent WebP assets; added this QA evidence.
+- Original JPEG compression limits recovery of the finest hair detail; the edit preserves available detail and does not invent strands. Extremely magnified edge colour can still reflect the original outdoor light; no obvious retained background or halo was observed at tested page sizes on ivory. Physical phones and Safari/WebKit were not available.
+- Work is on `refine/engineered-landscape-profile-portrait`. After local verification, the user requested committing and pushing the portrait to view it online. This authorizes the connected Vercel branch deployment; no production promotion or merge is included. No production Contact submission or live database/CMS content write occurred. Existing PR #7 remains unchanged.
+
+---
+
 # Engineered Landscape media bounds and visual proposals
 
 Date: 8 October 2026. Status: **image bounds and approved equal-width gallery implemented; Medicare cover not adopted; faithful portrait cutout unresolved**.

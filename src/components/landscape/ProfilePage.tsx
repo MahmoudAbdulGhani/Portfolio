@@ -12,6 +12,7 @@ import {
 import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
+import { ProfilePortrait } from "./ProfilePortrait";
 import type { ExperienceItem } from "../../types";
 import { evidenceUrl } from "../../lib/assistant-response";
 
@@ -59,9 +60,7 @@ export function ProfilePage() {
         description={person.professionalSummary ?? person.bio}
       />
       <div className="profile-portrait">
-        <div className="portrait-panel">
-          <img src={person.photo || "/myphoto.jpeg"} alt={person.name} />
-        </div>
+        <ProfilePortrait name={person.name} photo={person.photo} />
         <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
           <span>

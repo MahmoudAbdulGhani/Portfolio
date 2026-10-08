@@ -1,0 +1,16 @@
+{
+  "sourcePath": "C:/Users/Admin/Downloads/WhatsApp Image 2026-10-08 at 15.02.08.jpeg",
+  "sourceSHA256": "1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce",
+  "sourceDimensions": [
+    1200,
+    1600
+  ],
+  "bbox": {
+    "left": 376,
+    "top": 341,
+    "width": 768,
+    "height": 1259
+  },
+  "refinedEdges": 12000,
+  "method": "ISNet FP16 alpha segmentation applied to original source RGB; connected-alpha cleanup; perimeter color decontamination; restrained exposure/white-balance math; lossless WebP. No generated facial, shirt, hand or watch pixels used."
+}

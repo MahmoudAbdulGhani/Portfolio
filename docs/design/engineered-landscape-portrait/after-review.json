@@ -1,0 +1,127 @@
+{
+  "phase": "after",
+  "browser": "154.0.8037.99",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "panel": {
+        "x": 81.7874984741211,
+        "y": 117,
+        "width": 380.5500183105469,
+        "height": 475.6875
+      },
+      "image": {
+        "x": 101.7874984741211,
+        "y": 137,
+        "width": "768",
+        "height": "1259",
+        "naturalWidth": 436,
+        "naturalHeight": 715,
+        "src": "/landscape/portrait-striped-cutout.webp",
+        "fit": "contain",
+        "mask": "none",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 557.4750366210938,
+        "y": 117
+      },
+      "documentOverflow": false,
+      "shadow": "none"
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "panel": {
+        "x": 76.80000305175781,
+        "y": 117,
+        "width": 357.1125183105469,
+        "height": 446.38751220703125
+      },
+      "image": {
+        "x": 96.80000305175781,
+        "y": 137,
+        "width": "768",
+        "height": "1259",
+        "naturalWidth": 409,
+        "naturalHeight": 671,
+        "src": "/landscape/portrait-striped-cutout.webp",
+        "fit": "contain",
+        "mask": "none",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 523.1875,
+        "y": 117
+      },
+      "documentOverflow": false,
+      "shadow": "none"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panel": {
+        "x": 23.412500381469727,
+        "y": 150,
+        "width": 186.5749969482422,
+        "height": 220
+      },
+      "image": {
+        "x": 33.41250228881836,
+        "y": 160,
+        "width": "768",
+        "height": "1259",
+        "naturalWidth": 175,
+        "naturalHeight": 288,
+        "src": "/landscape/portrait-striped-cutout.webp",
+        "fit": "contain",
+        "mask": "none",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 23.412500381469727,
+        "y": 514
+      },
+      "documentOverflow": false,
+      "shadow": "none"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "panel": {
+        "x": 21.600000381469727,
+        "y": 150,
+        "width": 171.5749969482422,
+        "height": 220
+      },
+      "image": {
+        "x": 31.600000381469727,
+        "y": 160,
+        "width": "768",
+        "height": "1259",
+        "naturalWidth": 162,
+        "naturalHeight": 265,
+        "src": "/landscape/portrait-striped-cutout.webp",
+        "fit": "contain",
+        "mask": "none",
+        "transform": "none"
+      },
+      "heading": {
+        "x": 21.600000381469727,
+        "y": 514
+      },
+      "documentOverflow": false,
+      "shadow": "none"
+    }
+  ],
+  "errors": []
+}
