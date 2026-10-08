@@ -1,0 +1,21 @@
+{
+  "environment": "Production preview at 320x568, reduced motion, intercepted assistant fixture",
+  "geometry": {
+    "title": "Cedar Construction",
+    "font": "32px",
+    "leftGap": 0,
+    "ctaWidth": 281.59375,
+    "frameWidth": 281.59375,
+    "ctaWhiteSpace": "nowrap",
+    "documentHeight": 668
+  },
+  "request": {
+    "headers": {
+      "contentType": "application/json",
+      "accept": "text/event-stream"
+    },
+    "projectSlug": "construction-project-management-accounting-system"
+  },
+  "answer": "PORTFOLIO AI\n\nCompiled selected-project context verified.",
+  "errors": []
+}

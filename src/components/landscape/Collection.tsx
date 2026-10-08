@@ -18,22 +18,36 @@ import { MotionRig } from "./MotionRig";
 import { warmRig } from "./rig-loader";
 import type { RigKind } from "./rig-models";
 import type { Project } from "../../types";
+import "./selected-project.css";
 
-// Art bindings are presentation only. All names, narratives and screenshots
-// come from the published CMS records, including selection deep links.
+// Labels are presentation only; full names, narratives and screenshots stay CMS-owned.
 const artwork: {
   slug: string;
   kind: RigKind;
   asset: string;
-  displayTitle?: string;
+  displayTitle: string;
+  category: string;
 }[] = [
-  { slug: "jobpilot-ai", kind: "jobpilot", asset: "jobpilot-sculpture.webp" },
-  { slug: "lobby", kind: "lobby", asset: "lobby-sculpture.webp" },
+  {
+    slug: "jobpilot-ai",
+    kind: "jobpilot",
+    asset: "jobpilot-sculpture.webp",
+    displayTitle: "JobPilot AI",
+    category: "AI career workspace",
+  },
+  {
+    slug: "lobby",
+    kind: "lobby",
+    asset: "lobby-sculpture.webp",
+    displayTitle: "Lobby",
+    category: "Real-time communication",
+  },
   {
     slug: "construction-project-management-accounting-system",
     kind: "cedar",
     asset: "archive-sculpture.webp",
-    displayTitle: "Construction OS",
+    displayTitle: "Cedar Construction",
+    category: "Project operations & accounting",
   },
 ];
 type Sculpture = (typeof artwork)[number] & { project: Project };
@@ -134,6 +148,8 @@ function CollectionScene({
   const [ready, setReady] = useState(false);
   const [rigReady, setRigReady] = useState(false);
   const [chapter, setChapter] = useState(0);
+  const [decoded, setDecoded] = useState<Set<string>>(() => new Set());
+  const [failedPreview, setFailedPreview] = useState<string | null>(null);
   const reduced = Boolean(useReducedMotion());
   const readyRig = useCallback(() => setRigReady(true), []);
   useEffect(() => {
@@ -158,12 +174,17 @@ function CollectionScene({
     });
   };
   const screens = selected ? detailScreens(selected.project) : [];
+  const previewReady = !screens[0] || decoded.has(screens[0].src);
+  const markDecoded = (src: string) => {
+    setDecoded((previous) => new Set(previous).add(src));
+  };
   const back = useCallback(() => {
     if (!selected || closing.current) return;
     closing.current = true;
     animation.current?.kill();
     const scope = root.current;
     if (!scope) return;
+    scope.dataset.selectionState = "closing";
     const mesh = scope.querySelector<HTMLElement>(".motion-rig");
     const gpu = !reduced && mesh?.dataset.renderer === "webgl";
     scope.querySelector<HTMLElement>(".selection-detail")!.inert = true;
@@ -230,6 +251,7 @@ function CollectionScene({
       !scope ||
       closing.current ||
       !ready ||
+      (selected && !previewReady) ||
       (selected && !reduced && !rigReady)
     )
       return;
@@ -273,6 +295,7 @@ function CollectionScene({
       const leaves = object.querySelectorAll(".piece");
       const detail = scope.querySelector<HTMLElement>(".selection-detail")!;
       detail.inert = true;
+      scope.dataset.selectionState = "opening";
       const mobile = innerWidth < 720;
       const shift =
         selected.kind === "jobpilot"
@@ -298,6 +321,7 @@ function CollectionScene({
       const timeline = gsap.timeline({
         onComplete: () => {
           detail.inert = false;
+          scope.dataset.selectionState = "settled";
           scope
             .querySelector<HTMLElement>(".open-case")
             ?.focus({ preventScroll: true });
@@ -352,9 +376,31 @@ function CollectionScene({
         )
         .fromTo(
           detail,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: duration(0.35) },
-          reduced ? 0 : 1.25,
+          { opacity: 0 },
+          { opacity: 1, duration: duration(0.15) },
+          reduced ? 0 : gpu ? 1.85 : 1.6,
+        )
+        .fromTo(
+          ".selection-caption",
+          { clipPath: "inset(100% 0 0 0)" },
+          {
+            clipPath: "inset(0% 0 0 0)",
+            duration: duration(0.4),
+            ease: "power2.out",
+          },
+          reduced ? 0 : gpu ? 1.85 : 1.6,
+        )
+        .fromTo(
+          ".selection-caption-inner",
+          { y: 16 },
+          { y: 0, duration: duration(0.4), ease: "power2.out" },
+          reduced ? 0 : gpu ? 1.85 : 1.6,
+        )
+        .fromTo(
+          ".selection-actions",
+          { opacity: 0, y: 8 },
+          { opacity: 1, y: 0, duration: duration(0.25) },
+          reduced ? 0 : gpu ? 2 : 1.75,
         )
         .to(
           core,
@@ -365,12 +411,13 @@ function CollectionScene({
     return () => {
       ctx.revert();
     };
-  }, [selected, ready, rigReady, reduced, returned]);
+  }, [selected, ready, previewReady, rigReady, reduced, returned]);
   return (
     <main
       id="main-content"
       tabIndex={-1}
-      className="stage"
+      className={`stage${selected ? " is-expanded" : ""}`}
+      data-selection-state={selected ? "loading" : undefined}
       ref={root}
       aria-label="Project collection"
     >
@@ -407,9 +454,11 @@ function CollectionScene({
                 key={item.kind}
                 className={`project-hit ${item.kind}-hit`}
                 data-project={item.kind}
-                aria-label={`Explore ${item.displayTitle ?? item.project.name}`}
+                aria-label={`Explore ${item.displayTitle}`}
                 aria-describedby={
-                  item.displayTitle ? `collection-${item.kind}-name` : undefined
+                  item.displayTitle !== item.project.name
+                    ? `collection-${item.kind}-name`
+                    : undefined
                 }
                 onClick={() => select(item.slug)}
                 onPointerEnter={() => hover(item.kind, true)}
@@ -423,10 +472,8 @@ function CollectionScene({
                     <span />
                   </span>
                   <span className="project-copy">
-                    <span className="project-name">
-                      {item.displayTitle ?? item.project.name}
-                    </span>
-                    {item.displayTitle && (
+                    <span className="project-name">{item.displayTitle}</span>
+                    {item.displayTitle !== item.project.name && (
                       <span
                         className="sr-only"
                         id={`collection-${item.kind}-name`}
@@ -434,9 +481,7 @@ function CollectionScene({
                         {item.project.name}
                       </span>
                     )}
-                    <span className="project-purpose">
-                      {item.project.tagline || item.project.description}
-                    </span>
+                    <span className="project-purpose">{item.category}</span>
                     {item.kind === "jobpilot" && (
                       <span className="project-action">
                         Explore project
@@ -452,64 +497,118 @@ function CollectionScene({
       )}
       {selected && (
         <>
-          <MotionRig
-            kind={selected.kind}
-            reduced={reduced}
-            onReady={readyRig}
-          />
-          {screens[chapter] && (
-            <div className="product-surface" style={{ opacity: 0 }}>
-              <ResponsiveProjectImage
-                src={screens[chapter].src}
-                alt={`${selected.project.name}: ${screens[chapter].label}`}
-                sizes="(max-width: 720px) 90vw, 64vw"
-                priority
-              />
-            </div>
+          {previewReady && (
+            <MotionRig
+              kind={selected.kind}
+              reduced={reduced}
+              onReady={readyRig}
+            />
           )}
-          <section
-            className="selection-detail"
-            aria-label="Selected project"
-            style={{ opacity: 0 }}
-            inert={!reduced && !rigReady}
-          >
-            <div>
-              <span className="eyebrow">SELECTED WORK</span>
-              <h1>{selected.project.name}</h1>
-              <p>{selected.project.tagline || selected.project.description}</p>
-            </div>
-            <div className="selection-actions">
-              {screens.length > 1 && (
+          <div className="selection-frame">
+            <div className="selection-image-frame">
+              {screens[chapter] && !decoded.has(screens[chapter].src) && (
+                <p className="selection-preview-status" role="status">
+                  Loading project preview…
+                </p>
+              )}
+              {(!screens[chapter] ||
+                failedPreview === screens[chapter].src) && (
+                <p className="selection-preview-status" role="status">
+                  Preview unavailable. Open the case study for project details.
+                </p>
+              )}
+              {screens[chapter] && (
                 <div
-                  className="chapter-switch"
-                  role="group"
-                  aria-label="Preview workflow"
+                  className="product-surface"
+                  data-image-ready={
+                    decoded.has(screens[chapter].src) &&
+                    failedPreview !== screens[chapter].src
+                  }
+                  style={{ opacity: 0 }}
                 >
-                  {screens.slice(0, 2).map((screen, index) => (
-                    <button
-                      key={screen.src}
-                      aria-pressed={chapter === index}
-                      onClick={() => setChapter(index)}
-                    >
-                      {screen.label}
-                    </button>
-                  ))}
+                  <ResponsiveProjectImage
+                    src={screens[chapter].src}
+                    alt={`${selected.project.name}: ${screens[chapter].label}`}
+                    sizes="(max-width: 1000px) 88vw, 880px"
+                    priority
+                    onLoad={(event) => {
+                      const src = screens[chapter].src;
+                      void event.currentTarget
+                        .decode()
+                        .then(() => {
+                          setFailedPreview((previous) =>
+                            previous === src ? null : previous,
+                          );
+                          markDecoded(src);
+                        })
+                        .catch(() => {
+                          setFailedPreview(src);
+                          markDecoded(src);
+                        });
+                    }}
+                    onError={() => {
+                      setFailedPreview(screens[chapter].src);
+                      markDecoded(screens[chapter].src);
+                    }}
+                  />
                 </div>
               )}
-              <Link
-                className="solid-action open-case"
-                to={`/projects/${selected.slug}`}
-                state={{ collection: `/?project=${selected.slug}` }}
-              >
-                Open case study
-                <FiArrowRight />
-              </Link>
-              <button className="back-collection" onClick={back}>
-                <FiArrowLeft />
-                Collection
-              </button>
             </div>
-          </section>
+            <section
+              className="selection-detail"
+              aria-label="Selected project"
+              aria-describedby={
+                selected.displayTitle !== selected.project.name
+                  ? "selected-project-full-name"
+                  : undefined
+              }
+              style={{ opacity: 0 }}
+              inert={!previewReady || (!reduced && !rigReady)}
+            >
+              <div className="selection-caption">
+                <div className="selection-caption-inner">
+                  <h1>{selected.displayTitle}</h1>
+                  <p>{selected.category}</p>
+                </div>
+              </div>
+              {selected.displayTitle !== selected.project.name && (
+                <span id="selected-project-full-name" className="sr-only">
+                  {selected.project.name}
+                </span>
+              )}
+              <div className="selection-actions">
+                {screens.length > 1 && (
+                  <div
+                    className="chapter-switch"
+                    role="group"
+                    aria-label="Preview workflow"
+                  >
+                    {screens.slice(0, 2).map((screen, index) => (
+                      <button
+                        key={screen.src}
+                        aria-pressed={chapter === index}
+                        onClick={() => setChapter(index)}
+                      >
+                        {screen.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                <Link
+                  className="solid-action open-case"
+                  to={`/projects/${selected.slug}`}
+                  state={{ collection: `/?project=${selected.slug}` }}
+                >
+                  Open case study
+                  <FiArrowRight />
+                </Link>
+                <button className="back-collection" onClick={back}>
+                  <FiArrowLeft />
+                  Collection
+                </button>
+              </div>
+            </section>
+          </div>
         </>
       )}
     </main>

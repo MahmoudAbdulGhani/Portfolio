@@ -1,4 +1,178 @@
-# Engineered Landscape live-review fixes
+# Engineered Landscape selected-project refinement
+
+Date: 8 October 2026. Status: **implemented and verified locally on actual WebGL hardware, with separate fallback coverage; ready for draft PR review**.
+
+## Scope and branch
+
+Read the repository AGENTS.md and RTK.md, inspected the original checkout and
+the existing integration worktree, fetched remote refs, and reviewed current
+commits/open PRs. The latest available Engineered Landscape code is
+`f3fa087f2d3fc9babe47a575d0f9756c1f6547b8`; remote promotion branches had not moved
+beyond the previously recorded integration. The dedicated
+`refine/engineered-landscape-selected-views` branch starts at `f3fa087` and targets
+`fix/engineered-landscape-live-review` (draft PR #5), retaining all its fixes.
+
+Reviewed the three supplied `selected-title-01-jobpilot.jpg`,
+`selected-title-02-construction.jpg`, and `selected-title-03-lobby.jpg` images as
+evidence of the existing defects. The user's requested composition and copy
+define the implementation, rather than any inferred instructions in the images.
+No merge, deployment, production Contact submission, or live database write was
+performed. The original main checkout and untracked handoff remain untouched.
+
+## Implemented composition
+
+The selected screenshot and caption now share an 880px maximum, 88%-width
+responsive frame. A reserved image slot uses `object-fit: contain`, with the
+complete image aligned to its left/bottom edges. It adds no cropping, border,
+or decorative browser frame. The caption starts 24px below the image slot, with
+52px desktop / 32px mobile titles and readable tight line height. Title/category
+and controls occupy separate rows, so title length cannot squeeze navigation.
+Preview choices stay on one horizontally scrollable row when space is limited.
+The CTA stays on one line, exceeds 180px wide and 44px high, and fills the mobile
+frame. Only selected views use natural document height and vertical scrolling.
+
+Collection and selected-view presentation labels now read:
+
+| Title | Category |
+| --- | --- |
+| JobPilot AI | AI career workspace |
+| Lobby | Real-time communication |
+| Cedar Construction | Project operations & accounting |
+
+Full CMS names remain available in accessible descriptions when the display name
+differs, screenshot alt text, readers, URLs, and AI context. All original CMS
+names/descriptions, real screenshot sources, case-study content, and other pages
+remain intact. The visible Cedar label supersedes the earlier `Construction OS`
+presentation label in the historical review below.
+
+## Motion and image readiness
+
+The caption uses a restrained upward mask reveal after the screenshot transition
+and WebGL fade settle. Its layout space exists throughout loading and animation.
+Reversal, Escape, keyboard selection, chapter switching, focus restoration,
+reduced motion, articulation geometry, joints, materials, palette, portrait, and
+existing motion durations are preserved.
+
+Cold CMS PNGs were observed painting partially during the handoff. The opening
+sequence now waits for the first preview's browser decode, with a restrained
+loading status in the reserved slot. Chapter changes keep their reserved image
+space and hide incomplete images until decoded. A failed image exposes a useful
+status and retains the case-study and Collection controls; Escape works during
+loading. Image readiness does not restart the selection on chapter switching.
+
+The WebGL target is measured from the reserved, untransformed image frame.
+A camera ray maps its center onto the assembly plane, and the existing movement
+interpolates from the original sculpture position to that target. Measurements
+update when the stage or shared frame resizes. The three models and articulation
+paths themselves are unchanged.
+
+## Verification results
+
+Captured all three settled views before and after at **1363 x 936, 1280 x 720,
+390 x 844, and 320 x 568**, DPR 1, using headed installed Chrome 154.0.8037.99 on
+Windows. Every settled after-view used `data-renderer="webgl"` and an actual
+WebGL 2 canvas with this device renderer:
+
+`ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)`.
+
+Visually reviewed the complete screenshots, titles, category spacing, and
+control rows across the twelve layouts. Before desktop title/image left edges
+differed by approximately 191px at 1363px width and 179px at 1280px. After the
+refinement, the measured difference is **0px** in every layout, with **24px**
+caption spacing. All three projects share the same caption position at each
+tested size. Responsive image candidates can differ in resolution as the frame
+width changes; their source captures and aspect ratios remain unchanged.
+
+| Viewport | Title | CTA | Document behavior |
+| --- | --- | --- | --- |
+| 1363 x 936 | 52px | Approximately 186 x 53px, one line | Fits the viewport |
+| 1280 x 720 | 52px | Approximately 186 x 53px, one line | Approximately 852px document; normal vertical scrolling |
+| 390 x 844 | 32px | Full frame width, approximately 344 x 53px | Fits the viewport |
+| 320 x 568 | 32px | Full frame width, approximately 282 x 53px | Approximately 668px document; normal vertical scrolling |
+
+Actual GPU opening/handoff/reversal recordings and frame samples confirm that
+each caption remains at one document position and appears only after the rig is
+settled and the image has full opacity and its final transform. Keyboard chapter
+switching changed the screenshot for all three projects without moving the
+caption. Every reversal restored the originating button's focus and left zero
+canvases. Resizing during opening to 320 x 568 retained WebGL and reachable
+controls; Escape during opening succeeded. Navigating to Profile during opening
+disposed the canvas. Deliberate context loss exposed fallback. No page exceptions
+occurred. These are functional/timing observations, not a fresh performance
+benchmark or a claim about another device's GPU.
+
+Separately forced unavailable WebGL at 320 x 568 for all three projects. Each
+photographic fallback retained the complete preview, caption, case link, reversal,
+and focus restoration, with zero canvases. Reduced-motion and slow/failed-image
+regressions passed across all three automated browser projects.
+
+| Required check | Result |
+| --- | --- |
+| `npm run typecheck` | Pass |
+| `npm run lint` | Pass |
+| `npm run build` | Pass; 715 modules |
+| `npm run test:landscape` | 10/10 pass |
+| Full Playwright suite with local base URL on port 5175 | 81/81 pass, no retries; desktop, tablet, mobile Chromium |
+| `git diff --check` | Pass |
+| Compiled production preview at 320 x 568 | Aligned Cedar composition, full-width single-line CTA, reduced motion, and intercepted AI stream pass |
+
+New regressions verify all three views at all four sizes, complete image loading,
+contain behavior, caption spacing/alignment, exact presentation copy, full
+accessible names, title sizes, CTA text line count/dimensions, scrolling reach,
+chapter switching, focus restoration, fallback reveal order and reserved space,
+and slow/failed-image recovery. Existing AI/header, CMS reader, gallery, Job Match,
+Contact, admin, and navigation regressions also pass. The production-preview
+assistant fixture verifies the original construction slug plus JSON Content-Type
+and streaming Accept. This refinement made no new production AI-service requests.
+Contact/admin writes remain intercepted fixtures only.
+
+## Screenshot and recording evidence
+
+All raw before/after captures are in
+[`docs/design/engineered-landscape-selected`](docs/design/engineered-landscape-selected).
+Short-screen captures include the full naturally scrolling document; they are
+not represented as content fitting entirely within the shorter viewport.
+
+| Project | Desktop before/after | Short mobile before/after |
+| --- | --- | --- |
+| JobPilot AI | [Comparison](docs/design/engineered-landscape-selected/comparison-jobpilot-1363x936.jpg) | [Comparison](docs/design/engineered-landscape-selected/comparison-jobpilot-320x568.jpg) |
+| Lobby | [Comparison](docs/design/engineered-landscape-selected/comparison-lobby-1363x936.jpg) | [Comparison](docs/design/engineered-landscape-selected/comparison-lobby-320x568.jpg) |
+| Cedar Construction | [Comparison](docs/design/engineered-landscape-selected/comparison-cedar-1363x936.jpg) | [Comparison](docs/design/engineered-landscape-selected/comparison-cedar-320x568.jpg) |
+
+| Project | 1280 x 720 after | 390 x 844 after | Separate fallback |
+| --- | --- | --- | --- |
+| JobPilot AI | [Capture](docs/design/engineered-landscape-selected/after-jobpilot-1280x720.jpg) | [Capture](docs/design/engineered-landscape-selected/after-jobpilot-390x844.jpg) | [Capture](docs/design/engineered-landscape-selected/fallback-jobpilot-320x568.jpg) |
+| Lobby | [Capture](docs/design/engineered-landscape-selected/after-lobby-1280x720.jpg) | [Capture](docs/design/engineered-landscape-selected/after-lobby-390x844.jpg) | [Capture](docs/design/engineered-landscape-selected/fallback-lobby-320x568.jpg) |
+| Cedar Construction | [Capture](docs/design/engineered-landscape-selected/after-cedar-1280x720.jpg) | [Capture](docs/design/engineered-landscape-selected/after-cedar-390x844.jpg) | [Capture](docs/design/engineered-landscape-selected/fallback-cedar-320x568.jpg) |
+
+Evidence reports: [before geometry](docs/design/engineered-landscape-selected/before-review.json),
+[after geometry](docs/design/engineered-landscape-selected/after-review.json),
+[actual GPU motion and separate fallback](docs/design/engineered-landscape-selected/motion-review.json),
+[compiled preview](docs/design/engineered-landscape-selected/build-review.json), and
+[opening, chapter switching, reversal, resize, and Escape recording](docs/design/engineered-landscape-selected/selection-motion.webm).
+Opening/handoff/reversal stills are included beside the reports.
+The [collection copy and loading-Escape review](docs/design/engineered-landscape-selected/collection-review.json)
+also records all four collection sizes and focus restoration while an image
+request is deliberately held, with zero remaining canvases.
+
+## Remaining gaps
+
+- Physical iOS/Android, Safari, browser-chrome viewport changes, and touch-device
+  GPU qualification remain unverified. Mobile sizes here are Chromium viewport
+  emulation on the Windows Intel GPU.
+- No deployment or post-deployment frontend verification was performed. This is
+  a draft PR stacked on the available `f3fa087` code, not a promotion or merge.
+- Remote CMS image latency can delay the opening while the image decodes; the
+  loading state and Escape remain available. Backend/CMS images were not edited.
+- The existing 500kB Vite advisory remains for the lazy motion chunk, now
+  502.76kB (126.82kB gzip) after image-position mapping. No threshold was raised.
+- Production Contact delivery and live database writes were intentionally not
+  tested. The read-only CMS snapshot/QA adapter stays outside application source;
+  no secrets, signed tokens, PDFs, or dist artifacts are committed.
+
+---
+
+# Engineered Landscape live-review fixes (historical f3fa087 baseline)
 
 Date: 8 October 2026. Status: **all four requested fixes implemented and verified locally; ready for draft PR review**.
 
