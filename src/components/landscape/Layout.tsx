@@ -36,7 +36,7 @@ export function LandscapeLayout() {
   return (
     <div className="landscape">
       <div
-        className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}`}
+        className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}`}
       >
         <a
           className="skip-link"

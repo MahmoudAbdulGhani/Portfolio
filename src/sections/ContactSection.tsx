@@ -51,7 +51,14 @@ export function ContactSection() {
   const setIntent = (value: "project" | "hiring") => setParams((previous) => { const next = new URLSearchParams(previous); next.set("intent", value); return next; }, { replace: true });
   const clientContent = presentationContent("contact", section?.content);
   const successRef = useRef<HTMLDivElement>(null);
-  useEffect(() => { if (submit.isSuccess) successRef.current?.focus(); }, [submit.isSuccess]);
+  const restartFocus = useRef(false);
+  useEffect(() => {
+    if (submit.isSuccess) successRef.current?.focus();
+    else if (restartFocus.current) {
+      restartFocus.current = false;
+      document.getElementById("contact-name")?.focus();
+    }
+  }, [submit.isSuccess]);
   const [form, setForm] = useState<FormState>(initialForm);
   const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
   const [errors, setErrors] = useState<FormErrors>({});
@@ -123,7 +130,7 @@ export function ContactSection() {
         <p className="contact-description">{intent === "project" ? presentationText(clientContent, "projectDescription") : section?.description}</p></Reveal>
 
       <Reveal y={14} delay={0.08} className="contact-form-column">
-        {submit.isSuccess ? <div className="contact-success ai-state-enter" role="status" tabIndex={-1} ref={successRef}><FiCheckCircle aria-hidden /><h2>{contentText("successHeading")}</h2><p>{successMessage}</p>{profile?.responseTime && <p>{profile.responseTime}</p>}<button type="button" className="btn-outline" onClick={() => { submit.reset(); requestAnimationFrame(() => document.getElementById("contact-name")?.focus()); }}>Send another message</button></div> : (
+        {submit.isSuccess ? <div className="contact-success ai-state-enter" role="status" tabIndex={-1} ref={successRef}><FiCheckCircle aria-hidden /><h2>{contentText("successHeading")}</h2><p>{successMessage}</p>{profile?.responseTime && <p>{profile.responseTime}</p>}<button type="button" className="btn-outline" onClick={() => { restartFocus.current = true; submit.reset(); }}>Send another message</button></div> : (
               <form onSubmit={handleSubmit} noValidate className="contact-form">
                 <div className="absolute -left-[10000px]" aria-hidden="true"><label htmlFor="contact-website">Website</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setField("website", e.target.value)} /></div>
                 <div className="contact-intent" role="group" aria-label="Enquiry type"><button type="button" aria-pressed={intent === "project"} onClick={() => setIntent("project")}>Project enquiry</button><button type="button" aria-pressed={intent === "hiring"} onClick={() => setIntent("hiring")}>Hiring / collaboration</button></div>
@@ -134,7 +141,7 @@ export function ContactSection() {
                   {profile?.responseTime || contentText("formDescription")}
                 </p>
 
-                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="contact-name-email mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="contact-name" className="field-label">
                       Name
@@ -234,7 +241,7 @@ export function ContactSection() {
                   </p>
                 )}
 
-                <div className="mt-6 flex flex-wrap items-center gap-4">
+                <div className="contact-submit-row mt-6 flex flex-wrap items-center gap-4">
                   <button
                     type="submit"
                     disabled={submit.isPending}

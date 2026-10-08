@@ -1,4 +1,148 @@
-# Engineered Landscape selected-project refinement
+# Engineered Landscape mobile Contact correction
+
+Date: 8 October 2026. Status: **implemented and locally verified; physical phone keyboards and Safari remain unverified**.
+
+## Scope and cascade findings
+
+Inspected repository instructions, the clean current branch and commits, and
+fetched remote refs. Work continues on the dedicated
+`refine/engineered-landscape-selected-views` branch, based on its existing
+`dd708c3` selected-project refinement and `f3fa087` fixes. This Contact correction
+is a follow-up in draft PR #6. The selected-project components, stylesheet,
+sculpture assets, and motion engine were not edited.
+
+Reviewed the live [Contact page](https://mahmoud-portfolio-omega.vercel.app/contact)
+in installed Chrome at the requested widths, using read-only navigation and a
+browser route guard that blocked every non-GET `/api` request. Captured the local
+`dd708c3` baseline separately with the same read-only CMS snapshot used for the
+after captures. No production Contact submission or live database write occurred.
+
+The live and local CSS cascades reproduced these problems:
+
+- The landscape page used 6% outer padding, while a legacy mobile
+  `.public-container` rule still subtracted another 40px. At 320px, Contact's
+  container measured approximately 242px wide with asymmetric remaining space.
+- `.contact-form-column .contact-form` won against the landscape form styling,
+  resetting mobile padding and borders to zero. Inputs were 40px high, and the
+  Send button stayed at its content width.
+- Desktop grid areas and explicit placements competed with responsive rules.
+  The existing viewport-height shell made Contact scroll inside `main`, while
+  its footer remained at the shell bottom rather than after the whole page.
+
+## Scoped correction
+
+Contact now owns a page stylesheet scoped to `.landscape-contact` and the
+Contact-only `.portfolio.is-contact` modifier. It applies below 768px and to
+phone landscape up to 960px wide / 500px high. Desktop Contact and other routes
+retain their existing geometry.
+
+Mobile Contact uses one **16px content gutter**, a **100%-width inner container**,
+and `min-width: 0` throughout the form column. Grid areas and explicit child
+placements reset to automatic single-column flow in DOM order: introduction,
+form, contact details. The form has **18px internal padding** and one theme-token
+border. Name/Email stack; controls fill the available width with **48px input
+height and 16px text**. Enquiry choices wrap deliberately, and Send fills its row.
+Email links, validation/error messages, and success content wrap without document
+horizontal overflow. CMS copy, field semantics, validation, submitted payload,
+honeypot, backend protections, and success/failure behavior remain intact.
+
+The mobile Contact document grows naturally instead of retaining an internal
+viewport-height scroll trap. The footer follows the content. A Contact-only hook
+checks focused fields/buttons after focus, content resize, and VisualViewport
+resize/scroll events, keeping them within the visible area. The footer/AI launcher
+is hidden while an active Contact control has a substantially reduced visual
+viewport and returns when editing ends. Other pages keep their existing footer.
+
+State regressions exposed an existing focus race on `Send another message`:
+its animation-frame callback could run before the reset form mounted. Focus now
+runs after the success state resets and the new Name input exists. This restores
+the intended focus behavior without changing validation or delivery contracts.
+
+## Verification
+
+Reviewed initial, focused, validation-error, pending, failure, and success states
+at **320 x 568, 360 x 800, 390 x 844, 430 x 932, and 844 x 390** using installed
+Chrome 154.0.8037.99 on Windows, DPR 1. All submissions were intercepted:
+validation made zero requests, pending stayed disabled behind an explicit response
+gate, failure retained entered values, and local 201 success focused the status
+panel. Returning to the form restored Name focus and empty fields.
+
+| Width | Content width after | Gutter | Form padding | Input height |
+| --- | --- | --- | --- | --- |
+| 320px | 288px | 16px | 18px | 48px |
+| 360px | 328px | 16px | 18px | 48px |
+| 390px | Approximately 358px | 16px | 18px | 48px |
+| 430px | Approximately 398px | 16px | 18px | 48px |
+| 844px phone landscape | 812px | 16px | 18px | 48px |
+
+No horizontal overflow occurred. Before/after desktop geometry at 1363 x 936
+matched exactly: the two-column grid/areas, paired Name/Email row, 28px form
+padding, 40px desktop inputs, form/content dimensions, and footer bounds remain.
+
+**Synthetic keyboard coverage is not physical keyboard coverage.** Simulated
+VisualViewport events left 300px visible with a 24px offset in portrait and
+180px visible in landscape. Name, Email, Subject, Message, and Send remained
+inside those bounds with approximately 16px clearance, the footer/AI launcher
+was hidden, and the launcher returned after blur/dismissal. This verifies the
+layout response and event logic; it does not emulate an OS keyboard's rendering
+or all Safari/Android viewport behavior.
+
+| Check | Result |
+| --- | --- |
+| `npm run typecheck` | Pass |
+| `npm run lint` | Pass |
+| `npm run build` | Pass; 717 modules |
+| `npm run test:landscape` | 10/10 pass |
+| Full Playwright suite, local port 5175 | 102/102 pass without retries across desktop, tablet, and mobile Chromium |
+| `git diff --check` | Pass |
+| Compiled 320 x 568 production preview | 16px gutter, 18px padding, 48px inputs, intercepted success, correct payload/honeypot, restart focus pass |
+
+Seven new Contact scenarios run in each browser project: five widths/state flows,
+portrait/landscape visual-viewport handling, and desktop preservation. Existing
+selected-project layout, fallback, reversal/focus, AI/header, CMS, gallery,
+Contact, Job Match, admin, and navigation regressions also pass. No new GPU or
+performance claim is made for this Contact-only change.
+
+## Screenshots and reports
+
+The [Contact evidence directory](docs/design/engineered-landscape-contact) includes
+live before captures, local before/after captures, and intercepted state captures.
+After images show the full naturally scrolling document; before images show the
+old viewport shell and its clipped inner scroll area, without stretching images
+to equal heights.
+
+| Size | Before/after comparison | Focused | Validation | Pending | Failure | Success |
+| --- | --- | --- | --- | --- | --- | --- |
+| 320 x 568 | [Compare](docs/design/engineered-landscape-contact/comparison-320x568.jpg) | [View](docs/design/engineered-landscape-contact/after-320x568-focused.jpg) | [View](docs/design/engineered-landscape-contact/after-320x568-validation.jpg) | [View](docs/design/engineered-landscape-contact/after-320x568-pending.jpg) | [View](docs/design/engineered-landscape-contact/after-320x568-failure.jpg) | [View](docs/design/engineered-landscape-contact/after-320x568-success.jpg) |
+| 360 x 800 | [Compare](docs/design/engineered-landscape-contact/comparison-360x800.jpg) | [View](docs/design/engineered-landscape-contact/after-360x800-focused.jpg) | [View](docs/design/engineered-landscape-contact/after-360x800-validation.jpg) | [View](docs/design/engineered-landscape-contact/after-360x800-pending.jpg) | [View](docs/design/engineered-landscape-contact/after-360x800-failure.jpg) | [View](docs/design/engineered-landscape-contact/after-360x800-success.jpg) |
+| 390 x 844 | [Compare](docs/design/engineered-landscape-contact/comparison-390x844.jpg) | [View](docs/design/engineered-landscape-contact/after-390x844-focused.jpg) | [View](docs/design/engineered-landscape-contact/after-390x844-validation.jpg) | [View](docs/design/engineered-landscape-contact/after-390x844-pending.jpg) | [View](docs/design/engineered-landscape-contact/after-390x844-failure.jpg) | [View](docs/design/engineered-landscape-contact/after-390x844-success.jpg) |
+| 430 x 932 | [Compare](docs/design/engineered-landscape-contact/comparison-430x932.jpg) | [View](docs/design/engineered-landscape-contact/after-430x932-focused.jpg) | [View](docs/design/engineered-landscape-contact/after-430x932-validation.jpg) | [View](docs/design/engineered-landscape-contact/after-430x932-pending.jpg) | [View](docs/design/engineered-landscape-contact/after-430x932-failure.jpg) | [View](docs/design/engineered-landscape-contact/after-430x932-success.jpg) |
+| 844 x 390 | [Compare](docs/design/engineered-landscape-contact/comparison-844x390.jpg) | [View](docs/design/engineered-landscape-contact/after-844x390-focused.jpg) | [View](docs/design/engineered-landscape-contact/after-844x390-validation.jpg) | [View](docs/design/engineered-landscape-contact/after-844x390-pending.jpg) | [View](docs/design/engineered-landscape-contact/after-844x390-failure.jpg) | [View](docs/design/engineered-landscape-contact/after-844x390-success.jpg) |
+
+Machine-readable reports: [live baseline](docs/design/engineered-landscape-contact/live-before-review.json),
+[local baseline](docs/design/engineered-landscape-contact/before-review.json),
+[after geometry](docs/design/engineered-landscape-contact/after-review.json),
+[intercepted states](docs/design/engineered-landscape-contact/states-review.json),
+[synthetic viewport checks](docs/design/engineered-landscape-contact/keyboard-review.json),
+and [compiled preview](docs/design/engineered-landscape-contact/build-review.json).
+The synthetic viewport captures are explicitly labelled and cropped to their
+simulated visible area; they are not screenshots of a physical keyboard.
+
+## Remaining limitations
+
+- Physical iOS Safari and Android keyboards, address-bar transitions, autofill,
+  pinch zoom, and device-specific viewport panning still need device review.
+- The fix is not deployed; the production page remains subject to its current
+  deployed CSS until a separately authorized deployment. No PR was merged.
+- Production mail delivery was intentionally not tested. All pending/failure/
+  success results use intercepted browser responses; no live database content
+  changed.
+- The existing lazy motion chunk advisory remains unchanged at 502.76kB
+  (126.82kB gzip). No threshold, motion engine, or selected-project asset changed.
+
+---
+
+# Engineered Landscape selected-project refinement (dd708c3 baseline)
 
 Date: 8 October 2026. Status: **implemented and verified locally on actual WebGL hardware, with separate fallback coverage; ready for draft PR review**.
 

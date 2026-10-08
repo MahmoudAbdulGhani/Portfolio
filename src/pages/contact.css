@@ -1,0 +1,132 @@
+/* Contact alone owns its phone gutters, form geometry, and document scrolling. */
+@media (max-width: 767px), (max-width: 960px) and (max-height: 500px) {
+  .landscape .portfolio.is-contact {
+    height: auto;
+    min-height: 100svh;
+    overflow: clip;
+  }
+  .landscape .portfolio.is-contact .landscape-route {
+    height: auto;
+  }
+  .landscape .portfolio.is-contact .landscape-route > .landscape-contact {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 32px 16px calc(40px + env(safe-area-inset-bottom, 0px));
+  }
+  .landscape .landscape-contact > .public-container {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .landscape .landscape-contact .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: none;
+    grid-auto-flow: row;
+    gap: 28px;
+  }
+  .landscape
+    .landscape-contact
+    .contact-layout
+    > :is(.contact-intro, .contact-form-column, .contact-details) {
+    grid-area: auto;
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    min-width: 0;
+  }
+  .landscape .landscape-contact .contact-form-column .contact-form,
+  .landscape .landscape-contact .contact-success {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--surface);
+  }
+  .landscape .landscape-contact .contact-form > div,
+  .landscape .landscape-contact .contact-name-email > div {
+    min-width: 0;
+  }
+  .landscape .landscape-contact .contact-name-email {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .landscape .landscape-contact .contact-form :is(.input, .textarea) {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    scroll-margin-block: 16px;
+  }
+  .landscape .landscape-contact .contact-form .textarea {
+    min-height: 144px;
+  }
+  .landscape .landscape-contact .contact-intent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .landscape .landscape-contact .contact-intent button {
+    flex: 1 1 150px;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+  .landscape .landscape-contact .contact-submit-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .landscape .landscape-contact .contact-submit-row > button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    font-size: 16px;
+    scroll-margin-block: 16px;
+  }
+  .landscape
+    .landscape-contact
+    :is(
+      .contact-submit-row > span,
+      .contact-link,
+      .contact-socials,
+      .contact-success,
+      .contact-success p,
+      .contact-form [role="alert"],
+      .contact-form p[id$="-error"]
+    ) {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .landscape .landscape-contact .contact-success {
+    min-height: 0;
+    padding-block: 32px;
+    scroll-margin-block: 16px;
+  }
+  .landscape .landscape-contact .contact-success button {
+    max-width: 100%;
+    min-height: 48px;
+    white-space: normal;
+  }
+  .landscape .portfolio.is-contact .stage-footer {
+    position: relative;
+    inset: auto;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .landscape
+    .portfolio.is-contact:has(.landscape-contact[data-contact-keyboard="true"])
+    .stage-footer {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
