@@ -1,11 +1,11 @@
-import { projectImages } from "../generated/project-images";
+import { projectImages, type ProjectImageAsset } from "../generated/project-images";
 import type { ReactEventHandler } from 'react';
 import './responsive-project-image.css';
 
-type Props = { src: string; alt: string; className?: string; sizes: string; priority?: boolean; fit?: 'natural' | 'frame'; onLoad?: ReactEventHandler<HTMLImageElement>; onError?: ReactEventHandler<HTMLImageElement> };
+type Props = { src: string; alt: string; className?: string; sizes: string; priority?: boolean; fit?: 'natural' | 'frame'; sources?: ProjectImageAsset; onLoad?: ReactEventHandler<HTMLImageElement>; onError?: ReactEventHandler<HTMLImageElement> };
 
-export function ResponsiveProjectImage({ src, alt, className, sizes, priority = false, fit = 'natural', onLoad, onError }: Props) {
-  const asset = projectImages[src];
+export function ResponsiveProjectImage({ src, alt, className, sizes, priority = false, fit = 'natural', sources, onLoad, onError }: Props) {
+  const asset = sources ?? projectImages[src];
   // A contained image needs a bounded picture too: intrinsic image height must
   // never determine the height of a fixed-aspect preview's flex item.
   if (fit === 'frame') return <picture className="responsive-project-image-frame">

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-08",
+  "branch": "refine/engineered-landscape-gallery-covers",
+  "lint": "passed",
+  "typecheck": "passed",
+  "build": "passed; existing motion-rig chunk-size warning",
+  "imageTests": {
+    "passed": 2
+  },
+  "assistantTests": {
+    "passed": 10
+  },
+  "chromium": {
+    "startTime": "2026-10-08T15:49:46.400Z",
+    "duration": 268735.497,
+    "expected": 123,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkit": {
+    "startTime": "2026-10-08T15:49:54.819Z",
+    "duration": 174275.558,
+    "expected": 46,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserScope": "Chrome desktop/tablet/phone: complete suite. WebKit desktop/phone: API, Gallery/Index, Contact and public interaction tests.",
+  "deviceLayout": "Chrome and WebKit: 320x568, 360x800, 390x844, 430x932, 844x390, DPR 3; all eight images loaded and bounded; no horizontal overflow or page errors.",
+  "limitations": [
+    "No physical iOS or Android device, native on-screen keyboard or mobile browser chrome tested.",
+    "Windows WebKit automation is not a claim of Safari on physical iOS.",
+    "Protected products use isolated actual frontends with published or repository fixtures; backends, live logins and data writes were not tested.",
+    "Medicare uses its verified public homepage; no approved populated appointments screenshot was available."
+  ]
+}

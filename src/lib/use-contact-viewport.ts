@@ -42,11 +42,17 @@ export function useContactViewport() {
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(keepVisible);
     };
+    // WebKit can scroll a focused textarea after focusin. Recheck only while
+    // the keyboard is open, so ordinary document scrolling stays unrestricted.
+    const onScroll = () => {
+      if (root.dataset.contactKeyboard === "true") schedule();
+    };
     const observer = new ResizeObserver(schedule);
     observer.observe(root);
     root.addEventListener("focusin", schedule);
     root.addEventListener("focusout", schedule);
     window.addEventListener("resize", schedule);
+    window.addEventListener("scroll", onScroll, { passive: true });
     viewport?.addEventListener("resize", schedule);
     viewport?.addEventListener("scroll", schedule);
     schedule();
@@ -56,6 +62,7 @@ export function useContactViewport() {
       root.removeEventListener("focusin", schedule);
       root.removeEventListener("focusout", schedule);
       window.removeEventListener("resize", schedule);
+      window.removeEventListener("scroll", onScroll);
       viewport?.removeEventListener("resize", schedule);
       viewport?.removeEventListener("scroll", schedule);
       delete root.dataset.contactKeyboard;

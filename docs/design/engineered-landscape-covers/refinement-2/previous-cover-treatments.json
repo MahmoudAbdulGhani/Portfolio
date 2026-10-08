@@ -1,0 +1,394 @@
+[
+  {
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "alt": "JobPilot AI Resume Library with a saved document, sidebar and upload action",
+    "file": "Downloaded original outside repository",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1488,
+      "height": 930
+    },
+    "source": "JobPilot repository QA screenshot, evidence/refinement-final/after-resumes-1488.png, blob 0422a8479964127a000007eea8d0e1b0649b4ad5; existing test document, not newly fabricated data",
+    "note": "Retain sidebar, populated library and main action; remove footer/excess page height. Fresh workflow requires authentication.",
+    "originalResolution": [
+      1488,
+      1121
+    ],
+    "originalRatio": 1.3273862622658341,
+    "sourceSHA256": "f1e01518fb54f3be7c1fa4a93417f40872c855150145b3c3031dfa31b68c07f5",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/jobpilot-ai.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 12290,
+        "avifBytes": 9372
+      },
+      {
+        "width": 960,
+        "webpBytes": 41262,
+        "avifBytes": 35724
+      },
+      {
+        "width": 1600,
+        "webpBytes": 94586,
+        "avifBytes": 80615
+      }
+    ]
+  },
+  {
+    "slug": "lobby",
+    "title": "Lobby",
+    "alt": "Lobby audio-room workspace with room navigation and the Start audio call action",
+    "file": "public/projects/lobby/audio-room.webp",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1430,
+      "height": 863
+    },
+    "source": "Original portfolio/CMS audio-room capture, 1919×863",
+    "note": "Select the actual room workspace; exclude the unused chat panel and avoid republishing conversations. A populated approved server capture remains unavailable.",
+    "originalResolution": [
+      1919,
+      863
+    ],
+    "originalRatio": 2.223638470451912,
+    "sourceSHA256": "7ea008caaf48cc0dbf51c5d8f97cdfd688300dbb31a722f49e0727306878867a",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 85,
+      "top": 69,
+      "width": 1430,
+      "height": 863
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/lobby.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 9182,
+        "avifBytes": 7401
+      },
+      {
+        "width": 960,
+        "webpBytes": 24674,
+        "avifBytes": 18759
+      },
+      {
+        "width": 1600,
+        "webpBytes": 48162,
+        "avifBytes": 32630
+      }
+    ]
+  },
+  {
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "alt": "GameZone dashboard with booking metrics and two confirmed upcoming sessions",
+    "file": "public/projects/gamezone-arena/user_overview.webp",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1366,
+      "height": 954
+    },
+    "source": "Original portfolio/CMS user dashboard capture, 1366×1446",
+    "note": "Keep top navigation, all four metrics and both upcoming bookings; exclude footer. Downscale to fit height rather than enlarge the smaller original.",
+    "originalResolution": [
+      1366,
+      1446
+    ],
+    "originalRatio": 0.9446749654218534,
+    "sourceSHA256": "07d197f0f5ab5e80eb2d35a8f086be2f834f89c6a378ea766997048be8ea0b7d",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 156,
+      "top": 50,
+      "width": 1289,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/gamezone-arena.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 8796,
+        "avifBytes": 6934
+      },
+      {
+        "width": 960,
+        "webpBytes": 25226,
+        "avifBytes": 19404
+      },
+      {
+        "width": 1600,
+        "webpBytes": 50954,
+        "avifBytes": 38534
+      }
+    ]
+  },
+  {
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "alt": "Cedar project overview with sidebar, financial metrics, progress and project health panels",
+    "file": "Downloaded original outside repository",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1440,
+      "height": 948
+    },
+    "source": "Public Cedar repository QA capture, .visual-comparison/local-project-detail.png, main branch; existing example project data",
+    "note": "Keep all four financial metrics and primary panels; exclude lower activity/team content. Product capture uses existing example data and branding.",
+    "originalResolution": [
+      1440,
+      1289
+    ],
+    "originalRatio": 1.117145073700543,
+    "sourceSHA256": "dc0423d87a968a728b9d5618d61e1042aee79cf1bdc73146c8f6de37c2ad83b5",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 117,
+      "top": 50,
+      "width": 1367,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/construction-project-management-accounting-system.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 14792,
+        "avifBytes": 11049
+      },
+      {
+        "width": 960,
+        "webpBytes": 40038,
+        "avifBytes": 31374
+      },
+      {
+        "width": 1600,
+        "webpBytes": 85952,
+        "avifBytes": 66706
+      }
+    ]
+  },
+  {
+    "slug": "unihub",
+    "title": "UniHub",
+    "alt": "UniHub admin dashboard with navigation, student and course metrics, enrollment chart and account status",
+    "file": "public/projects/unihub/Admin.webp",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1910,
+      "height": 918
+    },
+    "source": "Original portfolio/CMS Admin.webp, 1919×918; remove captured right scrollbar",
+    "note": "Retain the complete dashboard rather than crop through summary cards or the enrollment chart. Published live demo login returned 401, so its wider original aspect is retained.",
+    "originalResolution": [
+      1919,
+      918
+    ],
+    "originalRatio": 2.0904139433551197,
+    "sourceSHA256": "23c9e09242c04eaef230eab52c3a4e69a9dd03f79d6b1c35fbaea72a76049a53",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 154,
+      "width": 1440,
+      "height": 692
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/unihub.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 9338,
+        "avifBytes": 7041
+      },
+      {
+        "width": 960,
+        "webpBytes": 25216,
+        "avifBytes": 17928
+      },
+      {
+        "width": 1600,
+        "webpBytes": 51534,
+        "avifBytes": 36891
+      }
+    ]
+  },
+  {
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "alt": "User Management public statistics with active users, average age and city counts",
+    "file": "Downloaded original outside repository",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1440,
+      "height": 650
+    },
+    "source": "Fresh read-only public statistics capture at https://fastapi-user-management.vercel.app/, 1440×900",
+    "note": "Remove irrelevant blank page space below the complete public summary. Actual authenticated management workflow unavailable; not portrayed as an admin view.",
+    "originalResolution": [
+      1440,
+      900
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "666703724d6e8fe854ba890f72852406032b28d3a0ba96fc8c63591ea6cb236f",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 175,
+      "width": 1440,
+      "height": 650
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/full-stack-user-management-system.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 7272,
+        "avifBytes": 5748
+      },
+      {
+        "width": 960,
+        "webpBytes": 20844,
+        "avifBytes": 16139
+      },
+      {
+        "width": 1600,
+        "webpBytes": 43944,
+        "avifBytes": 31492
+      }
+    ]
+  },
+  {
+    "slug": "home-services",
+    "title": "Home Services",
+    "alt": "Home Services homepage with navigation, service headline and both worker photographs",
+    "file": "Downloaded original outside repository",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1200
+    },
+    "source": "Fresh read-only homepage capture at https://home-services-coral.vercel.app/, 1920×1200",
+    "note": "Wider live viewport required for actual responsive service photos; downscale to the shared 1440×900 slot. Hide only browser scrollbars; preserve original design and intentional lower shape.",
+    "originalResolution": [
+      1920,
+      1200
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "b37421d32a0a8dce5905fbfc0b4b6818aa89265a1be7f1c53bdaaa337b53ea16",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/home-services.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 19064,
+        "avifBytes": 13539
+      },
+      {
+        "width": 960,
+        "webpBytes": 51518,
+        "avifBytes": 34282
+      },
+      {
+        "width": 1600,
+        "webpBytes": 105270,
+        "avifBytes": 66430
+      }
+    ]
+  },
+  {
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "alt": "Medicare Hub public homepage with navigation, clinic introduction and existing reception artwork",
+    "file": "Downloaded original outside repository",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1440,
+      "height": 750
+    },
+    "source": "Fresh read-only public homepage capture at https://clinic-management-system.kesug.com/, 1440×900",
+    "note": "Use the verified public homepage as the available real-interface cover. No authenticated clinic dashboard, appointment or patient workflow found. The separate identity proposal is not integrated.",
+    "originalResolution": [
+      1440,
+      900
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "a318863d1256ba037fa07bc961386ea67df37da14949915d38ed09baee3b15f7",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 125,
+      "width": 1440,
+      "height": 750
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/medicare-hub.png",
+    "outputs": [
+      {
+        "width": 480,
+        "webpBytes": 12522,
+        "avifBytes": 8891
+      },
+      {
+        "width": 960,
+        "webpBytes": 35776,
+        "avifBytes": 21532
+      },
+      {
+        "width": 1600,
+        "webpBytes": 71664,
+        "avifBytes": 43373
+      }
+    ]
+  }
+]

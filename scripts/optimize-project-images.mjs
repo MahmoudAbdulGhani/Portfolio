@@ -13,7 +13,9 @@ async function files(directory) {
   }))).flat();
 }
 
-const originals = (await files(root)).filter((entry) => entry.toLowerCase().endsWith(".webp") && !/-\d+w\.webp$/i.test(entry));
+// Gallery covers have separate masters, quality settings and responsive metadata.
+const originals = (await files(root)).filter((entry) => !path.relative(root, entry).split(path.sep).includes("gallery-covers")
+  && entry.toLowerCase().endsWith(".webp") && !/-\d+w\.webp$/i.test(entry));
 const manifest = {};
 let before = 0;
 let after = 0;

@@ -2,6 +2,11 @@
   position: relative;
 }
 
+/* Dedicated covers contain their own matte. Do not add a second gutter. */
+.landscape .work-preview[data-cover-authored="true"] {
+  padding: 0;
+}
+
 .work-preview[data-image-state="loading"] picture {
   visibility: hidden;
 }
