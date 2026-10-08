@@ -1,0 +1,18 @@
+{
+  "environment": "Production preview 320x568; intercepted submission",
+  "geometry": {
+    "gutter": 16,
+    "containerWidth": 288,
+    "formPadding": "18px",
+    "inputHeight": 48,
+    "inputFont": "16px"
+  },
+  "payload": {
+    "name": "Compiled fixture",
+    "email": "compiled@example.com",
+    "subject": "Project enquiry",
+    "message": "Intercepted only. No production delivery.",
+    "website": ""
+  },
+  "restartFocus": "contact-name"
+}

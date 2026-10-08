@@ -1,0 +1,101 @@
+{
+  "collection": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "labels": [
+        {
+          "title": "JobPilot AI",
+          "category": "AI career workspace",
+          "categoryVisible": true
+        },
+        {
+          "title": "Lobby",
+          "category": "Real-time communication",
+          "categoryVisible": true
+        },
+        {
+          "title": "Cedar Construction",
+          "category": "Project operations & accounting",
+          "categoryVisible": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "labels": [
+        {
+          "title": "JobPilot AI",
+          "category": "AI career workspace",
+          "categoryVisible": true
+        },
+        {
+          "title": "Lobby",
+          "category": "Real-time communication",
+          "categoryVisible": true
+        },
+        {
+          "title": "Cedar Construction",
+          "category": "Project operations & accounting",
+          "categoryVisible": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "labels": [
+        {
+          "title": "JobPilot AI",
+          "category": "AI career workspace",
+          "categoryVisible": true
+        },
+        {
+          "title": "Lobby",
+          "category": "Real-time communication",
+          "categoryVisible": true
+        },
+        {
+          "title": "Cedar Construction",
+          "category": "Project operations & accounting",
+          "categoryVisible": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "labels": [
+        {
+          "title": "JobPilot AI",
+          "category": "AI career workspace",
+          "categoryVisible": true
+        },
+        {
+          "title": "Lobby",
+          "category": "Real-time communication",
+          "categoryVisible": true
+        },
+        {
+          "title": "Cedar Construction",
+          "category": "Project operations & accounting",
+          "categoryVisible": true
+        }
+      ]
+    }
+  ],
+  "loadingEscape": {
+    "fixture": "Held local screenshot request",
+    "returnFocus": true,
+    "remainingCanvases": 0
+  }
+}

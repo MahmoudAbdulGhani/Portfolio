@@ -1,0 +1,281 @@
+{
+  "environment": "Local branch, read-only public CMS snapshot, intercepted submissions only",
+  "views": [
+    {
+      "size": "320x568",
+      "states": [
+        {
+          "state": "focused",
+          "id": "contact-name",
+          "top": 307.9750061035156,
+          "bottom": 355.9750061035156,
+          "viewportHeight": 568,
+          "offsetTop": 0,
+          "footerTop": 1769.5750732421875
+        },
+        {
+          "state": "validation",
+          "id": "contact-name",
+          "top": 307.9750061035156,
+          "bottom": 355.9750061035156,
+          "viewportHeight": 568,
+          "offsetTop": 0,
+          "footerTop": 1832.5750732421875,
+          "posts": 0
+        },
+        {
+          "state": "pending",
+          "disabled": true
+        },
+        {
+          "state": "failure",
+          "message": "Something went wrong. Please try again.",
+          "emailRetained": "a.long.mobile.review.sender.address@example.com"
+        },
+        {
+          "state": "success",
+          "focused": true,
+          "content": "Message sent\n\nThanks for reaching out. I'll get back to you at a.long.mobile.review.sender.address@example.com.\n\nUsually within 24h\n\nSend another message",
+          "horizontalOverflow": false
+        }
+      ],
+      "payloads": [
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        },
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        }
+      ]
+    },
+    {
+      "size": "360x800",
+      "states": [
+        {
+          "state": "focused",
+          "id": "contact-name",
+          "top": 599.9750366210938,
+          "bottom": 647.9750366210938,
+          "viewportHeight": 800,
+          "offsetTop": 0,
+          "footerTop": 2037.5750732421875
+        },
+        {
+          "state": "validation",
+          "id": "contact-name",
+          "top": 423.9750061035156,
+          "bottom": 471.9750061035156,
+          "viewportHeight": 800,
+          "offsetTop": 0,
+          "footerTop": 1924.5750732421875,
+          "posts": 0
+        },
+        {
+          "state": "pending",
+          "disabled": true
+        },
+        {
+          "state": "failure",
+          "message": "Something went wrong. Please try again.",
+          "emailRetained": "a.long.mobile.review.sender.address@example.com"
+        },
+        {
+          "state": "success",
+          "focused": true,
+          "content": "Message sent\n\nThanks for reaching out. I'll get back to you at a.long.mobile.review.sender.address@example.com.\n\nUsually within 24h\n\nSend another message",
+          "horizontalOverflow": false
+        }
+      ],
+      "payloads": [
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        },
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "states": [
+        {
+          "state": "focused",
+          "id": "contact-name",
+          "top": 547.9750366210938,
+          "bottom": 595.9750366210938,
+          "viewportHeight": 844,
+          "offsetTop": 0,
+          "footerTop": 1985.5750732421875
+        },
+        {
+          "state": "validation",
+          "id": "contact-name",
+          "top": 446.375,
+          "bottom": 494.375,
+          "viewportHeight": 844,
+          "offsetTop": 0,
+          "footerTop": 1946.9749755859375,
+          "posts": 0
+        },
+        {
+          "state": "pending",
+          "disabled": true
+        },
+        {
+          "state": "failure",
+          "message": "Something went wrong. Please try again.",
+          "emailRetained": "a.long.mobile.review.sender.address@example.com"
+        },
+        {
+          "state": "success",
+          "focused": true,
+          "content": "Message sent\n\nThanks for reaching out. I'll get back to you at a.long.mobile.review.sender.address@example.com.\n\nUsually within 24h\n\nSend another message",
+          "horizontalOverflow": false
+        }
+      ],
+      "payloads": [
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        },
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        }
+      ]
+    },
+    {
+      "size": "430x932",
+      "states": [
+        {
+          "state": "focused",
+          "id": "contact-name",
+          "top": 547.9750366210938,
+          "bottom": 595.9750366210938,
+          "viewportHeight": 932,
+          "offsetTop": 0,
+          "footerTop": 1963.9749755859375
+        },
+        {
+          "state": "validation",
+          "id": "contact-name",
+          "top": 490.375,
+          "bottom": 538.375,
+          "viewportHeight": 932,
+          "offsetTop": 0,
+          "footerTop": 1969.375,
+          "posts": 0
+        },
+        {
+          "state": "pending",
+          "disabled": true
+        },
+        {
+          "state": "failure",
+          "message": "Something went wrong. Please try again.",
+          "emailRetained": "a.long.mobile.review.sender.address@example.com"
+        },
+        {
+          "state": "success",
+          "focused": true,
+          "content": "Message sent\n\nThanks for reaching out. I'll get back to you at a.long.mobile.review.sender.address@example.com.\n\nUsually within 24h\n\nSend another message",
+          "horizontalOverflow": false
+        }
+      ],
+      "payloads": [
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        },
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        }
+      ]
+    },
+    {
+      "size": "844x390",
+      "states": [
+        {
+          "state": "focused",
+          "id": "contact-name",
+          "top": 219.0625,
+          "bottom": 267.0625,
+          "viewportHeight": 390.3999938964844,
+          "offsetTop": 0,
+          "footerTop": 1514.862548828125
+        },
+        {
+          "state": "validation",
+          "id": "contact-name",
+          "top": 219.0625,
+          "bottom": 267.0625,
+          "viewportHeight": 390.3999938964844,
+          "offsetTop": 0,
+          "footerTop": 1577.862548828125,
+          "posts": 0
+        },
+        {
+          "state": "pending",
+          "disabled": true
+        },
+        {
+          "state": "failure",
+          "message": "Something went wrong. Please try again.",
+          "emailRetained": "a.long.mobile.review.sender.address@example.com"
+        },
+        {
+          "state": "success",
+          "focused": true,
+          "content": "Message sent\n\nThanks for reaching out. I'll get back to you at a.long.mobile.review.sender.address@example.com.\n\nUsually within 24h\n\nSend another message",
+          "horizontalOverflow": false
+        }
+      ],
+      "payloads": [
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        },
+        {
+          "name": "Intercepted Mobile Review",
+          "email": "a.long.mobile.review.sender.address@example.com",
+          "subject": "Project enquiry",
+          "message": "Local intercepted layout review. Never sent to production.",
+          "website": ""
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

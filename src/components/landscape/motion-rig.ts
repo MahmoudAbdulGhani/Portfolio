@@ -71,8 +71,21 @@ export function mountRig(
   assembly.add(ground);
   let disposed = false;
   let hidden = document.hidden;
+  const startPosition = new THREE.Vector3();
+  const imagePosition = new THREE.Vector3();
+  const alignment = { progress: 0 };
+  const imageFrame = host.parentElement?.querySelector<HTMLElement>(
+    ".selection-image-frame",
+  );
+  const imageRay = new THREE.Raycaster();
+  const imagePlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
   const render = () => {
-    if (!disposed && !hidden) renderer.render(scene, camera);
+    if (!disposed && !hidden) {
+      assembly.position
+        .copy(startPosition)
+        .lerp(imagePosition, alignment.progress);
+      renderer.render(scene, camera);
+    }
   };
   const size = () => {
     const w = host.clientWidth,
@@ -89,6 +102,21 @@ export function mountRig(
           camera.aspect),
     );
     camera.updateProjectionMatrix();
+    camera.updateMatrixWorld();
+    if (imageFrame) {
+      // Measure the reserved, untransformed frame, not the entering screenshot.
+      // Recompute on resize so the articulated mesh meets the real image center.
+      const image = imageFrame.getBoundingClientRect();
+      const stage = host.getBoundingClientRect();
+      imageRay.setFromCamera(
+        new THREE.Vector2(
+          ((image.left + image.width / 2 - stage.left) / w) * 2 - 1,
+          1 - ((image.top + image.height / 2 - stage.top) / h) * 2,
+        ),
+        camera,
+      );
+      imageRay.ray.intersectPlane(imagePlane, imagePosition);
+    }
     render();
   };
   size();
@@ -117,12 +145,13 @@ export function mountRig(
       0,
     );
   }
+  startPosition.copy(assembly.position);
   host.dataset.renderer = "webgl";
   host.dataset.model = kind;
   const timeline = gsap.timeline({ onUpdate: render });
   timeline.to(
-    assembly.position,
-    { x: 0, y: 0, duration: 0.9, ease: "power3.inOut" },
+    alignment,
+    { progress: 1, duration: 0.9, ease: "power3.inOut" },
     0,
   );
   timeline.to(
@@ -166,6 +195,7 @@ export function mountRig(
   };
   const observer = new ResizeObserver(size);
   observer.observe(host);
+  if (imageFrame?.parentElement) observer.observe(imageFrame.parentElement);
   const visibility = () => {
     hidden = document.hidden;
     if (hidden) timeline.pause();

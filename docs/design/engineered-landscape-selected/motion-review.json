@@ -1,0 +1,162 @@
+{
+  "browser": "154.0.8037.99",
+  "rigs": [
+    {
+      "kind": "jobpilot",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "firstCaption": {
+        "time": 3960.9000000003725,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0.1164,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "firstRigSettled": {
+        "time": 3884.800000000745,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "captionTopPositions": [
+        "615.28"
+      ],
+      "sampleCount": 191,
+      "prematureCaption": false,
+      "chapterChanged": true,
+      "returnFocus": true,
+      "canvasesAfterReturn": 0
+    },
+    {
+      "kind": "lobby",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "firstCaption": {
+        "time": 2177.0999999996275,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0.0133,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "firstRigSettled": {
+        "time": 1995.800000000745,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "captionTopPositions": [
+        "615.28"
+      ],
+      "sampleCount": 136,
+      "prematureCaption": false,
+      "chapterChanged": true,
+      "returnFocus": true,
+      "canvasesAfterReturn": 0
+    },
+    {
+      "kind": "cedar",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "firstCaption": {
+        "time": 5932,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0.2138,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "firstRigSettled": {
+        "time": 5881.299999998882,
+        "state": "opening",
+        "rigState": "settled",
+        "image": {
+          "x": 241.60000610351562,
+          "y": 181.97500610351562,
+          "width": 880,
+          "height": 409.3000183105469
+        },
+        "captionTop": 615.2750244140625,
+        "captionOpacity": 0,
+        "imageOpacity": 1,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "captionTopPositions": [
+        "615.28"
+      ],
+      "sampleCount": 349,
+      "prematureCaption": false,
+      "chapterChanged": true,
+      "returnFocus": true,
+      "canvasesAfterReturn": 0
+    }
+  ],
+  "errors": [],
+  "resizeDuringOpening": {
+    "renderer": "webgl",
+    "ctaVisible": true,
+    "scrollY": 0,
+    "returnFocus": true
+  },
+  "escapeDuringOpening": true,
+  "routeChangeCanvases": 0,
+  "contextLoss": "fallback",
+  "video": "selection-motion.webm",
+  "fallback": [
+    {
+      "kind": "jobpilot",
+      "renderer": "fallback",
+      "canvases": 0,
+      "title": "JobPilot AI"
+    },
+    {
+      "kind": "lobby",
+      "renderer": "fallback",
+      "canvases": 0,
+      "title": "Lobby"
+    },
+    {
+      "kind": "cedar",
+      "renderer": "fallback",
+      "canvases": 0,
+      "title": "Cedar Construction"
+    }
+  ]
+}

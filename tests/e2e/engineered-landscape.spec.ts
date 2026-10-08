@@ -140,11 +140,13 @@ test("construction display label stays compact while CMS and accessible names re
 }) => {
   await page.goto("/");
   const target = page.getByRole("button", {
-    name: "Explore Construction OS",
+    name: "Explore Cedar Construction",
     exact: true,
   });
   await expect(target).toHaveAccessibleDescription(records[3].name);
-  await expect(target.locator(".project-name")).toHaveText("Construction OS");
+  await expect(target.locator(".project-name")).toHaveText(
+    "Cedar Construction",
+  );
   const dimensions = await target.locator(".project-name").evaluate((title) => {
     const style = getComputedStyle(title);
     return {
@@ -219,6 +221,279 @@ test("case metadata keeps the team phrase together and Projects search reserves 
   ).toBe(true);
   await search.fill("JobPilot");
   await expect(page.locator(".work-entry")).toHaveCount(1);
+});
+
+for (const [width, height] of [
+  [1363, 936],
+  [1280, 720],
+  [390, 844],
+  [320, 568],
+]) {
+  test(`selected projects share a complete image, aligned caption and usable controls at ${width}x${height}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height });
+    const selections = [
+      {
+        record: records[0],
+        title: "JobPilot AI",
+        category: "AI career workspace",
+      },
+      {
+        record: records[1],
+        title: "Lobby",
+        category: "Real-time communication",
+      },
+      {
+        record: records[3],
+        title: "Cedar Construction",
+        category: "Project operations & accounting",
+      },
+    ];
+    const captionTops: number[] = [];
+    for (const { record, title, category } of selections) {
+      await page.goto(`/?project=${record.slug}`);
+      await expect(page.locator(".is-expanded")).toHaveAttribute(
+        "data-selection-state",
+        "settled",
+      );
+      await expect(page.locator(".selection-detail h1")).toHaveText(title);
+      await expect(page.locator(".selection-detail p")).toHaveText(category);
+      if (record.name !== title)
+        await expect(
+          page.getByRole("region", { name: "Selected project" }),
+        ).toHaveAccessibleDescription(record.name);
+      const image = page.locator(".product-surface img");
+      await expect(image).toHaveAttribute(
+        "alt",
+        new RegExp(record.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+      );
+      await image.evaluate((node) => (node as HTMLImageElement).decode());
+      const geometry = await page
+        .locator(".selection-frame")
+        .evaluate((frame) => {
+          const image = frame.querySelector<HTMLImageElement>("img")!;
+          const imageFrame = frame
+            .querySelector(".selection-image-frame")!
+            .getBoundingClientRect();
+          const title = frame.querySelector("h1")!;
+          const caption = frame
+            .querySelector(".selection-caption")!
+            .getBoundingClientRect();
+          const controls = frame
+            .querySelector(".selection-actions")!
+            .getBoundingClientRect();
+          const cta = frame.querySelector<HTMLAnchorElement>(".open-case")!;
+          const text = document.createRange();
+          text.selectNode(cta.firstChild!);
+          const ctaBox = cta.getBoundingClientRect();
+          return {
+            leftGap: Math.abs(
+              title.getBoundingClientRect().left - imageFrame.left,
+            ),
+            captionGap: caption.top - imageFrame.bottom,
+            captionTop: caption.top + scrollY,
+            fontSize: parseFloat(getComputedStyle(title).fontSize),
+            objectFit: getComputedStyle(image).objectFit,
+            imageLoaded: image.complete && image.naturalWidth > 0,
+            controlsBelow: controls.top >= caption.bottom,
+            cta: {
+              width: ctaBox.width,
+              height: ctaBox.height,
+              frameWidth: frame.getBoundingClientRect().width,
+              textLines: new Set(
+                [...text.getClientRects()].map((r) => Math.round(r.top)),
+              ).size,
+            },
+            horizontalOverflow:
+              document.documentElement.scrollWidth > innerWidth,
+            normalScroll:
+              document.documentElement.scrollHeight >=
+              controls.bottom + scrollY,
+          };
+        });
+      expect(geometry.leftGap).toBeLessThan(1);
+      expect(geometry.captionGap).toBeCloseTo(24, 0);
+      expect(geometry.fontSize).toBe(width < 720 ? 32 : 52);
+      expect(geometry.objectFit).toBe("contain");
+      expect(geometry.imageLoaded).toBe(true);
+      expect(geometry.controlsBelow).toBe(true);
+      expect(geometry.cta.width).toBeGreaterThanOrEqual(180);
+      expect(geometry.cta.height).toBeGreaterThanOrEqual(44);
+      expect(geometry.cta.textLines).toBe(1);
+      if (width < 720)
+        expect(geometry.cta.width).toBeCloseTo(geometry.cta.frameWidth, 0);
+      expect(geometry.horizontalOverflow).toBe(false);
+      expect(geometry.normalScroll).toBe(true);
+      captionTops.push(geometry.captionTop);
+      const choices = page
+        .getByRole("group", { name: "Preview workflow" })
+        .getByRole("button");
+      await expect(choices).toHaveCount(2);
+      await choices.nth(1).focus();
+      await page.keyboard.press("Enter");
+      await expect(choices.nth(1)).toHaveAttribute("aria-pressed", "true");
+      await expect(image).toHaveAttribute(
+        "alt",
+        new RegExp(
+          (await choices.nth(1).innerText()).replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&",
+          ),
+        ),
+      );
+      expect(
+        await page
+          .locator(".selection-caption")
+          .evaluate((el) => el.getBoundingClientRect().top + scrollY),
+      ).toBeCloseTo(geometry.captionTop, 0);
+      const cta = page.getByRole("link", {
+        name: "Open case study",
+        exact: true,
+      });
+      await cta.evaluate((el) => el.scrollIntoView({ block: "center" }));
+      await expect(cta).toBeInViewport({ ratio: 1 });
+      await page.keyboard.press("Escape");
+      await expect(
+        page.getByRole("button", { name: `Explore ${title}`, exact: true }),
+      ).toBeFocused();
+      await expect(page.locator("canvas")).toHaveCount(0);
+    }
+    expect(Math.max(...captionTops) - Math.min(...captionTops)).toBeLessThan(1);
+  });
+}
+
+test("photographic fallback reserves the caption and reveals it after the image settles", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.addInitScript(() => {
+    const original = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (
+      type: string,
+      ...args: unknown[]
+    ) {
+      return type === "webgl2" ? null : original.call(this, type, ...args);
+    } as typeof original;
+  });
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  await page
+    .getByRole("button", { name: "Explore Cedar Construction", exact: true })
+    .click();
+  await expect(page.locator(".motion-rig")).toHaveAttribute(
+    "data-renderer",
+    "fallback",
+  );
+  const observations = await page.evaluate(
+    () =>
+      new Promise<{ captionTops: number[]; prematureCaption: boolean }>(
+        (resolve) => {
+          const captionTops: number[] = [];
+          let prematureCaption = false;
+          const inspect = () => {
+            const surface =
+              document.querySelector<HTMLElement>(".product-surface")!;
+            const caption =
+              document.querySelector<HTMLElement>(".selection-caption")!;
+            const detail =
+              document.querySelector<HTMLElement>(".selection-detail")!;
+            captionTops.push(caption.getBoundingClientRect().top + scrollY);
+            if (
+              parseFloat(getComputedStyle(detail).opacity) > 0.01 &&
+              parseFloat(getComputedStyle(surface).opacity) < 0.999
+            )
+              prematureCaption = true;
+            if (
+              document
+                .querySelector(".is-expanded")
+                ?.getAttribute("data-selection-state") === "settled"
+            )
+              resolve({ captionTops, prematureCaption });
+            else requestAnimationFrame(inspect);
+          };
+          inspect();
+        },
+      ),
+  );
+  expect(observations.prematureCaption).toBe(false);
+  expect(
+    Math.max(...observations.captionTops) -
+      Math.min(...observations.captionTops),
+  ).toBeLessThan(1);
+  await expect(page.locator("canvas")).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: "Open case study", exact: true }),
+  ).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(
+    page.getByRole("button", {
+      name: "Explore Cedar Construction",
+      exact: true,
+    }),
+  ).toBeFocused();
+});
+
+test("a slow or failed screenshot cannot reveal a partial image or strand selection controls", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  let releaseImage!: () => void;
+  const pending = new Promise<void>((resolve) => {
+    releaseImage = resolve;
+  });
+  await page.route("**/api/projects", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify(
+        records.map((record) =>
+          record.slug === "jobpilot-ai"
+            ? { ...record, screenshots: ["/slow-selected-preview.png"] }
+            : record,
+        ),
+      ),
+    }),
+  );
+  await page.route("**/slow-selected-preview.png", async (route) => {
+    await pending;
+    await route.fulfill({ status: 404, body: "Fixture missing image" });
+  });
+  await page.goto("/?project=jobpilot-ai", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("status")).toContainText(
+    "Loading project preview",
+  );
+  await expect(page.locator(".motion-rig")).toHaveCount(0);
+  expect(
+    await page
+      .locator(".selection-detail")
+      .evaluate((el) => (el as HTMLElement).inert),
+  ).toBe(true);
+  expect(
+    await page
+      .locator(".product-surface img")
+      .evaluate((el) => getComputedStyle(el).visibility),
+  ).toBe("hidden");
+  const captionTop = await page
+    .locator(".selection-caption")
+    .evaluate((el) => el.getBoundingClientRect().top + scrollY);
+  releaseImage();
+  await expect(page.locator(".is-expanded")).toHaveAttribute(
+    "data-selection-state",
+    "settled",
+  );
+  await expect(page.getByRole("status")).toContainText("Preview unavailable");
+  expect(
+    await page
+      .locator(".selection-caption")
+      .evaluate((el) => el.getBoundingClientRect().top + scrollY),
+  ).toBeCloseTo(captionTop, 0);
+  await expect(
+    page.getByRole("link", { name: "Open case study", exact: true }),
+  ).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(
+    page.getByRole("button", { name: "Explore JobPilot AI", exact: true }),
+  ).toBeFocused();
 });
 
 test("Escape interrupts selection and restores the originating sculpture", async ({

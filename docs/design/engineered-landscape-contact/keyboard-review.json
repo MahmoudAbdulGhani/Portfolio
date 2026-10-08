@@ -1,0 +1,87 @@
+{
+  "kind": "Synthetic VisualViewport resize/offset events; no physical OS keyboard",
+  "views": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleHeight": 300,
+      "offsetTop": 24,
+      "fields": [
+        {
+          "name": "name",
+          "top": 260.359375,
+          "bottom": 308.359375,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "email",
+          "top": 260.359375,
+          "bottom": 308.359375,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "subject",
+          "top": 260.359375,
+          "bottom": 308.359375,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "message",
+          "top": 164.359375,
+          "bottom": 308.359375,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "submit",
+          "top": 260.359375,
+          "bottom": 308.359375,
+          "footerVisibility": "hidden"
+        }
+      ],
+      "launcherRestored": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "visibleHeight": 180,
+      "offsetTop": 0,
+      "fields": [
+        {
+          "name": "name",
+          "top": 116.453125,
+          "bottom": 164.453125,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "email",
+          "top": 116.453125,
+          "bottom": 164.453125,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "subject",
+          "top": 116.453125,
+          "bottom": 164.453125,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "message",
+          "top": 20.453125,
+          "bottom": 164.453125,
+          "footerVisibility": "hidden"
+        },
+        {
+          "name": "submit",
+          "top": 116.453125,
+          "bottom": 164.453125,
+          "footerVisibility": "hidden"
+        }
+      ],
+      "launcherRestored": true
+    }
+  ]
+}

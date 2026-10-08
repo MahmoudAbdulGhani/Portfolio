@@ -1,0 +1,703 @@
+{
+  "phase": "after",
+  "browser": "154.0.8037.99",
+  "views": [
+    {
+      "kind": "jobpilot",
+      "slug": "jobpilot-ai",
+      "viewport": [
+        1363,
+        936
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 241.60000610351562,
+        "y": 181.97500610351562,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1121.6000061035156,
+        "bottom": 591.2750244140625
+      },
+      "natural": [
+        1900,
+        881
+      ],
+      "title": {
+        "x": 241.60000610351562,
+        "y": 615.2750244140625,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1121.6000061035156,
+        "bottom": 671.4250259399414
+      },
+      "titleText": "JobPilot AI",
+      "titleFont": 52,
+      "category": "AI career workspace",
+      "cta": {
+        "x": 830.8125,
+        "y": 725.0250244140625,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 1017.0875091552734,
+        "bottom": 778.0250244140625
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 241.60000610351562,
+        "y": 725.0250244140625,
+        "width": 880,
+        "height": 53,
+        "right": 1121.6000061035156,
+        "bottom": 778.0250244140625
+      },
+      "document": {
+        "width": 1363,
+        "height": 936
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "lobby",
+      "slug": "lobby",
+      "viewport": [
+        1363,
+        936
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 241.60000610351562,
+        "y": 181.97500610351562,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1121.6000061035156,
+        "bottom": 591.2750244140625
+      },
+      "natural": [
+        879,
+        401
+      ],
+      "title": {
+        "x": 241.60000610351562,
+        "y": 615.2750244140625,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1121.6000061035156,
+        "bottom": 671.4250259399414
+      },
+      "titleText": "Lobby",
+      "titleFont": 52,
+      "category": "Real-time communication",
+      "cta": {
+        "x": 830.8125,
+        "y": 725.0250244140625,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 1017.0875091552734,
+        "bottom": 778.0250244140625
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 241.60000610351562,
+        "y": 725.0250244140625,
+        "width": 880,
+        "height": 53,
+        "right": 1121.6000061035156,
+        "bottom": 778.0250244140625
+      },
+      "document": {
+        "width": 1363,
+        "height": 936
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "cedar",
+      "slug": "construction-project-management-accounting-system",
+      "viewport": [
+        1363,
+        936
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 241.60000610351562,
+        "y": 181.97500610351562,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1121.6000061035156,
+        "bottom": 591.2750244140625
+      },
+      "natural": [
+        1904,
+        879
+      ],
+      "title": {
+        "x": 241.60000610351562,
+        "y": 615.2750244140625,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1121.6000061035156,
+        "bottom": 671.4250259399414
+      },
+      "titleText": "Cedar Construction",
+      "titleFont": 52,
+      "category": "Project operations & accounting",
+      "cta": {
+        "x": 830.8125,
+        "y": 725.0250244140625,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 1017.0875091552734,
+        "bottom": 778.0250244140625
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 241.60000610351562,
+        "y": 725.0250244140625,
+        "width": 880,
+        "height": 53,
+        "right": 1121.6000061035156,
+        "bottom": 778.0250244140625
+      },
+      "document": {
+        "width": 1363,
+        "height": 936
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "jobpilot",
+      "slug": "jobpilot-ai",
+      "viewport": [
+        1280,
+        720
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 195.1999969482422,
+        "y": 140,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1075.1999969482422,
+        "bottom": 549.3000183105469
+      },
+      "natural": [
+        1900,
+        881
+      ],
+      "title": {
+        "x": 195.1999969482422,
+        "y": 573.2999877929688,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1075.1999969482422,
+        "bottom": 629.4499893188477
+      },
+      "titleText": "JobPilot AI",
+      "titleFont": 52,
+      "category": "AI career workspace",
+      "cta": {
+        "x": 784.4125366210938,
+        "y": 683.0499877929688,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 970.6875457763672,
+        "bottom": 736.0499877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 195.1999969482422,
+        "y": 683.0499877929688,
+        "width": 880,
+        "height": 53,
+        "right": 1075.1999969482422,
+        "bottom": 736.0499877929688
+      },
+      "document": {
+        "width": 1270,
+        "height": 852
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "lobby",
+      "slug": "lobby",
+      "viewport": [
+        1280,
+        720
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 195.1999969482422,
+        "y": 140,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1075.1999969482422,
+        "bottom": 549.3000183105469
+      },
+      "natural": [
+        879,
+        401
+      ],
+      "title": {
+        "x": 195.1999969482422,
+        "y": 573.2999877929688,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1075.1999969482422,
+        "bottom": 629.4499893188477
+      },
+      "titleText": "Lobby",
+      "titleFont": 52,
+      "category": "Real-time communication",
+      "cta": {
+        "x": 784.4125366210938,
+        "y": 683.0499877929688,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 970.6875457763672,
+        "bottom": 736.0499877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 195.1999969482422,
+        "y": 683.0499877929688,
+        "width": 880,
+        "height": 53,
+        "right": 1075.1999969482422,
+        "bottom": 736.0499877929688
+      },
+      "document": {
+        "width": 1270,
+        "height": 852
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "cedar",
+      "slug": "construction-project-management-accounting-system",
+      "viewport": [
+        1280,
+        720
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 195.1999969482422,
+        "y": 140,
+        "width": 880,
+        "height": 409.3000183105469,
+        "right": 1075.1999969482422,
+        "bottom": 549.3000183105469
+      },
+      "natural": [
+        1904,
+        879
+      ],
+      "title": {
+        "x": 195.1999969482422,
+        "y": 573.2999877929688,
+        "width": 880,
+        "height": 56.150001525878906,
+        "right": 1075.1999969482422,
+        "bottom": 629.4499893188477
+      },
+      "titleText": "Cedar Construction",
+      "titleFont": 52,
+      "category": "Project operations & accounting",
+      "cta": {
+        "x": 784.4125366210938,
+        "y": 683.0499877929688,
+        "width": 186.27500915527344,
+        "height": 53,
+        "right": 970.6875457763672,
+        "bottom": 736.0499877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 195.1999969482422,
+        "y": 683.0499877929688,
+        "width": 880,
+        "height": 53,
+        "right": 1075.1999969482422,
+        "bottom": 736.0499877929688
+      },
+      "document": {
+        "width": 1270,
+        "height": 852
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "jobpilot",
+      "slug": "jobpilot-ai",
+      "viewport": [
+        390,
+        844
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 23.42500114440918,
+        "y": 238.625,
+        "width": 343.5500183105469,
+        "height": 159.78750610351562,
+        "right": 366.97501945495605,
+        "bottom": 398.4125061035156
+      },
+      "natural": [
+        1900,
+        881
+      ],
+      "title": {
+        "x": 23.42500114440918,
+        "y": 422.4125061035156,
+        "width": 343.5500183105469,
+        "height": 34.54999923706055,
+        "right": 366.97501945495605,
+        "bottom": 456.9625053405762
+      },
+      "titleText": "JobPilot AI",
+      "titleFont": 32,
+      "category": "AI career workspace",
+      "cta": {
+        "x": 23.42500114440918,
+        "y": 563.3624877929688,
+        "width": 343.5500183105469,
+        "height": 53,
+        "right": 366.97501945495605,
+        "bottom": 616.3624877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 23.42500114440918,
+        "y": 507.3625183105469,
+        "width": 343.5500183105469,
+        "height": 165,
+        "right": 366.97501945495605,
+        "bottom": 672.3625183105469
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "lobby",
+      "slug": "lobby",
+      "viewport": [
+        390,
+        844
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 23.42500114440918,
+        "y": 238.625,
+        "width": 343.5500183105469,
+        "height": 159.78750610351562,
+        "right": 366.97501945495605,
+        "bottom": 398.4125061035156
+      },
+      "natural": [
+        343,
+        156
+      ],
+      "title": {
+        "x": 23.42500114440918,
+        "y": 422.4125061035156,
+        "width": 343.5500183105469,
+        "height": 34.54999923706055,
+        "right": 366.97501945495605,
+        "bottom": 456.9625053405762
+      },
+      "titleText": "Lobby",
+      "titleFont": 32,
+      "category": "Real-time communication",
+      "cta": {
+        "x": 23.42500114440918,
+        "y": 563.3624877929688,
+        "width": 343.5500183105469,
+        "height": 53,
+        "right": 366.97501945495605,
+        "bottom": 616.3624877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 23.42500114440918,
+        "y": 507.3625183105469,
+        "width": 343.5500183105469,
+        "height": 165,
+        "right": 366.97501945495605,
+        "bottom": 672.3625183105469
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "cedar",
+      "slug": "construction-project-management-accounting-system",
+      "viewport": [
+        390,
+        844
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 23.42500114440918,
+        "y": 238.625,
+        "width": 343.5500183105469,
+        "height": 159.78750610351562,
+        "right": 366.97501945495605,
+        "bottom": 398.4125061035156
+      },
+      "natural": [
+        1904,
+        879
+      ],
+      "title": {
+        "x": 23.42500114440918,
+        "y": 422.4125061035156,
+        "width": 343.5500183105469,
+        "height": 34.54999923706055,
+        "right": 366.97501945495605,
+        "bottom": 456.9625053405762
+      },
+      "titleText": "Cedar Construction",
+      "titleFont": 32,
+      "category": "Project operations & accounting",
+      "cta": {
+        "x": 23.42500114440918,
+        "y": 563.3624877929688,
+        "width": 343.5500183105469,
+        "height": 53,
+        "right": 366.97501945495605,
+        "bottom": 616.3624877929688
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 23.42500114440918,
+        "y": 507.3625183105469,
+        "width": 343.5500183105469,
+        "height": 165,
+        "right": 366.97501945495605,
+        "bottom": 672.3625183105469
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "jobpilot",
+      "slug": "jobpilot-ai",
+      "viewport": [
+        320,
+        568
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 19.200000762939453,
+        "y": 165,
+        "width": 281.6000061035156,
+        "height": 130.97500610351562,
+        "right": 300.8000068664551,
+        "bottom": 295.9750061035156
+      },
+      "natural": [
+        1900,
+        881
+      ],
+      "title": {
+        "x": 19.200000762939453,
+        "y": 319.9750061035156,
+        "width": 281.6000061035156,
+        "height": 34.54999923706055,
+        "right": 300.8000068664551,
+        "bottom": 354.5250053405762
+      },
+      "titleText": "JobPilot AI",
+      "titleFont": 32,
+      "category": "AI career workspace",
+      "cta": {
+        "x": 19.200000762939453,
+        "y": 460.9250183105469,
+        "width": 281.6000061035156,
+        "height": 53,
+        "right": 300.8000068664551,
+        "bottom": 513.9250183105469
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 19.200000762939453,
+        "y": 404.9250183105469,
+        "width": 281.6000061035156,
+        "height": 165,
+        "right": 300.8000068664551,
+        "bottom": 569.9250183105469
+      },
+      "document": {
+        "width": 320,
+        "height": 668
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "lobby",
+      "slug": "lobby",
+      "viewport": [
+        320,
+        568
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 19.200000762939453,
+        "y": 165,
+        "width": 281.6000061035156,
+        "height": 130.97500610351562,
+        "right": 300.8000068664551,
+        "bottom": 295.9750061035156
+      },
+      "natural": [
+        281,
+        128
+      ],
+      "title": {
+        "x": 19.200000762939453,
+        "y": 319.9750061035156,
+        "width": 281.6000061035156,
+        "height": 34.54999923706055,
+        "right": 300.8000068664551,
+        "bottom": 354.5250053405762
+      },
+      "titleText": "Lobby",
+      "titleFont": 32,
+      "category": "Real-time communication",
+      "cta": {
+        "x": 19.200000762939453,
+        "y": 460.9250183105469,
+        "width": 281.6000061035156,
+        "height": 53,
+        "right": 300.8000068664551,
+        "bottom": 513.9250183105469
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 19.200000762939453,
+        "y": 404.9250183105469,
+        "width": 281.6000061035156,
+        "height": 165,
+        "right": 300.8000068664551,
+        "bottom": 569.9250183105469
+      },
+      "document": {
+        "width": 320,
+        "height": 668
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    },
+    {
+      "kind": "cedar",
+      "slug": "construction-project-management-accounting-system",
+      "viewport": [
+        320,
+        568
+      ],
+      "renderer": "webgl",
+      "rigState": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "x": 19.200000762939453,
+        "y": 165,
+        "width": 281.6000061035156,
+        "height": 130.97500610351562,
+        "right": 300.8000068664551,
+        "bottom": 295.9750061035156
+      },
+      "natural": [
+        1904,
+        879
+      ],
+      "title": {
+        "x": 19.200000762939453,
+        "y": 319.9750061035156,
+        "width": 281.6000061035156,
+        "height": 34.54999923706055,
+        "right": 300.8000068664551,
+        "bottom": 354.5250053405762
+      },
+      "titleText": "Cedar Construction",
+      "titleFont": 32,
+      "category": "Project operations & accounting",
+      "cta": {
+        "x": 19.200000762939453,
+        "y": 460.9250183105469,
+        "width": 281.6000061035156,
+        "height": 53,
+        "right": 300.8000068664551,
+        "bottom": 513.9250183105469
+      },
+      "ctaWhiteSpace": "nowrap",
+      "controls": {
+        "x": 19.200000762939453,
+        "y": 404.9250183105469,
+        "width": 281.6000061035156,
+        "height": 165,
+        "right": 300.8000068664551,
+        "bottom": 569.9250183105469
+      },
+      "document": {
+        "width": 320,
+        "height": 668
+      },
+      "focused": true,
+      "returnFocus": true,
+      "canvasAfterReturn": 0
+    }
+  ],
+  "errors": []
+}
