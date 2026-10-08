@@ -1,4 +1,140 @@
-# Engineered Landscape integration QA
+# Engineered Landscape live-review fixes
+
+Date: 8 October 2026. Status: **all four requested fixes implemented and verified locally; ready for draft PR review**.
+
+## Review source and branch
+
+Read the complete supplied `Engineered_Landscape_Live_Review_2026-10-08.html`
+from Downloads and visually inspected all ten embedded screenshots. Its findings
+were used as evidence for the user's requested fixes; the user's instructions
+define the scope and prohibit merge, deployment, production Contact submissions,
+and live database changes.
+
+Inspected the branch, commits, remote refs, and open PRs before implementation.
+The dedicated `fix/engineered-landscape-live-review` branch starts at integration
+commit `31dc81bc3fbef6a36820ac8d808be8769065f4c0`, including the streaming whitespace
+fix `3a09264`. It targets `feat/engineered-landscape`, the head of existing draft
+PR #4. The original checkout and previous integration evidence remain intact.
+
+## Fixes in requested order
+
+1. **Assistant request headers.** `apiResponse` now builds a native `Headers`
+   object and applies it after spreading the caller's options. Streaming POSTs
+   preserve both `Content-Type: application/json` and `Accept: text/event-stream`.
+   All three `HeadersInit` forms, case-insensitive explicit content types,
+   caller credentials, FormData boundaries, and admin unauthorized events are
+   covered. The JSON-header regression failed against the previous code.
+2. **Screenshot gallery.** `CaseGallery` imports its own stylesheet. Removed its
+   orphaned rules from the former project page and competing global overrides.
+   A bounded dialog grid keeps the header, scrollable image region, 84 x 56px
+   thumbnail buttons, and footer inside the viewport. Close/navigation targets
+   remain at least 44px. Fit width, actual-size scrolling, thumbnail selection,
+   arrow keys, Escape, and focus restoration remain functional.
+3. **Construction collection label.** The sculpture uses the display title
+   `Construction OS` at the accepted label size. Its accessible description,
+   project reader, route, selection content, and CMS name still use the full
+   `Construction Project Management & Accounting System` name. No CMS record
+   was edited.
+4. **Metadata and search spacing.** Team size is a nonbreaking phrase in a
+   wrapping role row. The Projects input explicitly reserves 40px on the left
+   for its positioned 16px icon, including narrow widths.
+
+The accepted palette, sculptures, motion engine/timelines, portrait, CMS hooks,
+backend validation/security, and existing features are preserved. No production
+adapter or fixture content was added to application source.
+
+## Checks and browser results
+
+| Check | Result |
+| --- | --- |
+| `npm run typecheck` | Pass |
+| `npm run lint` | Pass |
+| `npm run build` | Pass; 714 modules |
+| `npm run test:landscape` | 10/10 pass |
+| Playwright full suite, local base URL on port 5175 | 63/63 pass across desktop, tablet, and mobile Chromium |
+| `git diff --check` | Pass |
+| Built production preview on port 5176 | Mobile gallery CSS loaded, controls visible, JSON + streaming headers preserved, fixture stream completed |
+
+New browser regressions check actual outgoing browser headers, multipart uploads,
+gallery image loading and geometry, compact/full construction names, team phrase
+line bounds, search icon separation, and real filtering. The assistant fixture
+now rejects missing request headers instead of masking the defect. A rerun
+exposed an existing Contact fixture's 150ms timing race; its response is now
+released explicitly after verifying the disabled pending button. The final full
+suite passed without retries. All Contact/admin writes in tests are intercepted.
+
+Headed installed Chrome 154.0.8037.99 on Windows captured the public CMS snapshot
+at 1363 x 936 (desktop) and 390 x 844 (mobile), DPR 1. Automated tests also cover
+1024 x 1366, Pixel 7 emulation, and a 320 x 568 gallery/metadata resize.
+
+| Layout evidence | Desktop | Mobile |
+| --- | --- | --- |
+| Gallery frame | 1260 x 900; fully inside viewport | Approximately 370 x 824; fully inside viewport |
+| Close and footer navigation | Visible inside dialog | Visible inside dialog |
+| Thumbnails | Small, decoded images | Small, decoded visible images; horizontal scrolling |
+| Escape focus restoration | Pass | Pass |
+| Search text-to-icon gap | 12px | 12px |
+| Projects document horizontal overflow | None | None |
+
+Screenshots were captured after decoding the visible gallery images. Public
+remote PNG thumbnails took about 12 seconds to finish in one cold local run;
+their underlying CMS image URLs and assets remain unchanged.
+
+## Real assistant verification and QA correction
+
+The earlier integration QA adapter forced `Content-Type: application/json` when
+forwarding requests, which masked the client header defect. That limitation
+invalidates the earlier report's inference that the deployed client transport
+was correct. For this review, the external, local-only adapter forwards the
+browser's actual Content-Type and Accept values. It serves read-only public CMS
+snapshots and blocks Contact and all other writes.
+
+The fixed client received genuine HTTP 200 completed streams for both general
+and JobPilot-specific questions, with JSON + streaming headers, correct project
+context, and usable case-study links. A deliberately malformed text/plain
+request received the genuine upstream HTTP 415 `Content-Type must be
+application/json.` response, proving that forwarding no longer bypasses header
+validation. On mobile, a locally intercepted first-response 503 exposed
+`Try again`; the subsequent real upstream retry returned 200, preserved both
+headers and `jobpilot-ai` context, and produced a completed answer with its case
+link. No page exceptions occurred. These results verify the fixed local client
+against the existing published backend; they do not claim a deployment.
+
+Machine-readable evidence:
+[layout and real assistant results](docs/design/engineered-landscape-live-review/browser-review.json),
+[real retry](docs/design/engineered-landscape-live-review/assistant-retry.json),
+[compiled build smoke](docs/design/engineered-landscape-live-review/build-smoke.json).
+
+## Screenshots
+
+| View | Desktop / comparison | Mobile |
+| --- | --- | --- |
+| Collection label | [Before/after](docs/design/engineered-landscape-live-review/collection-comparison.jpg) | [Collection](docs/design/engineered-landscape-live-review/mobile-collection.jpg) |
+| Screenshot gallery | [Before/after](docs/design/engineered-landscape-live-review/gallery-comparison.jpg) | [Fit width](docs/design/engineered-landscape-live-review/mobile-gallery.jpg), [actual size](docs/design/engineered-landscape-live-review/mobile-gallery-actual.jpg) |
+| Full Construction name | [Reader](docs/design/engineered-landscape-live-review/desktop-construction-reader.jpg), [gallery](docs/design/engineered-landscape-live-review/desktop-construction-gallery.jpg) | [Reader](docs/design/engineered-landscape-live-review/mobile-construction-reader.jpg), [gallery](docs/design/engineered-landscape-live-review/mobile-construction-gallery.jpg) |
+| Case metadata | [Before/after](docs/design/engineered-landscape-live-review/case-metadata-comparison.jpg) | [Metadata](docs/design/engineered-landscape-live-review/mobile-case-metadata.jpg) |
+| Projects search | [Before/after](docs/design/engineered-landscape-live-review/projects-search-comparison.jpg) | [Search](docs/design/engineered-landscape-live-review/mobile-projects-search.jpg) |
+| Real assistant | [General](docs/design/engineered-landscape-live-review/live-assistant-general.jpg), [JobPilot](docs/design/engineered-landscape-live-review/live-assistant-jobpilot.jpg) | [Retry error fixture](docs/design/engineered-landscape-live-review/mobile-assistant-retry-error.jpg), [real retry success](docs/design/engineered-landscape-live-review/mobile-assistant-retry-success.jpg) |
+
+## Remaining limitations
+
+- Physical iOS Safari and Android device layouts, touch/keyboard behavior,
+  browser UI viewport changes, and GPU/motion qualification remain unverified.
+  Chromium emulation is not physical mobile-device evidence.
+- No fresh motion performance benchmark was taken for this scoped fix; the
+  unchanged engine retains the integration measurements below. Award/readiness
+  claims still require the earlier outstanding device review.
+- These fixes have not been deployed. Production frontend verification remains
+  pending a separately authorized deployment. No PR was merged.
+- Production Contact delivery and live database writes were intentionally not
+  exercised. No secrets, signed tokens, PDFs, dist output, or QA adapters are
+  included in this change.
+- The existing lazy Three.js chunk is 501.11 kB (126.26 kB gzip), producing the
+  existing Vite 500 kB advisory. The threshold and engine were not changed.
+
+---
+
+# Engineered Landscape integration QA (historical baseline)
 
 Date: 8 October 2026. Status: **integrated and locally reviewed on actual WebGL hardware; real mobile-device qualification remains open**.
 

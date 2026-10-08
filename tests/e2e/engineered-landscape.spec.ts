@@ -135,6 +135,92 @@ test("all eight records survive gallery/index search and narrow deep-link reload
       .toBe(true);
   }
 });
+test("construction display label stays compact while CMS and accessible names remain complete", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const target = page.getByRole("button", {
+    name: "Explore Construction OS",
+    exact: true,
+  });
+  await expect(target).toHaveAccessibleDescription(records[3].name);
+  await expect(target.locator(".project-name")).toHaveText("Construction OS");
+  const dimensions = await target.locator(".project-name").evaluate((title) => {
+    const style = getComputedStyle(title);
+    return {
+      fontSize: parseFloat(style.fontSize),
+      lines:
+        title.getBoundingClientRect().height / parseFloat(style.lineHeight),
+    };
+  });
+  expect(dimensions.fontSize).toBeGreaterThanOrEqual(19);
+  expect(dimensions.lines).toBeLessThanOrEqual(3);
+  await page.goto(`/projects/${records[3].slug}`);
+  await expect(
+    page.getByRole("heading", { name: records[3].name, exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("Complete CMS overview")).toBeAttached();
+});
+
+test("case metadata keeps the team phrase together and Projects search reserves icon space", async ({
+  page,
+}) => {
+  await page.route("**/api/projects/jobpilot-ai", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        ...records[0],
+        myRole: "Full-Stack Developer & Project Owner",
+        teamSize: 1,
+      }),
+    }),
+  );
+  await page.goto("/projects/jobpilot-ai");
+  const team = page.locator(".case-team-size");
+  await expect(team).toHaveText("1-person team");
+  expect(
+    await team.evaluate((span) => {
+      const range = document.createRange();
+      range.selectNodeContents(span);
+      return new Set(
+        [...range.getClientRects()].map((rect) => Math.round(rect.top)),
+      ).size;
+    }),
+  ).toBe(1);
+  await page.setViewportSize({ width: 320, height: 568 });
+  expect(
+    await team.evaluate((span) => {
+      const range = document.createRange();
+      range.selectNodeContents(span);
+      return new Set(
+        [...range.getClientRects()].map((rect) => Math.round(rect.top)),
+      ).size;
+    }),
+  ).toBe(1);
+  await page.goto(`/projects/${records[3].slug}`);
+  await expect(
+    page.getByRole("heading", { name: records[3].name, exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => document.body.scrollWidth <= innerWidth),
+  ).toBe(true);
+  await page.goto("/projects");
+  const search = page.getByLabel("Search projects or technologies");
+  await expect(search).toBeVisible();
+  expect(
+    await page.locator(".search-field").evaluate((field) => {
+      const icon = field.querySelector("svg")!.getBoundingClientRect();
+      const input = field.querySelector("input")!;
+      const rect = input.getBoundingClientRect();
+      const textStart =
+        rect.left + parseFloat(getComputedStyle(input).paddingLeft);
+      return textStart >= icon.right + 8 && rect.right <= innerWidth;
+    }),
+  ).toBe(true);
+  await search.fill("JobPilot");
+  await expect(page.locator(".work-entry")).toHaveCount(1);
+});
+
 test("Escape interrupts selection and restores the originating sculpture", async ({
   page,
 }) => {
@@ -154,6 +240,19 @@ test("assistant preserves stream whitespace, native modal focus and project requ
 }) => {
   let payload: Record<string, unknown> = {};
   await page.route("**/api/assistant", (route) => {
+    const headers = route.request().headers();
+    if (
+      !headers["content-type"]?.startsWith("application/json") ||
+      headers.accept !== "text/event-stream"
+    ) {
+      return route.fulfill({
+        status: 415,
+        contentType: "application/json",
+        body: JSON.stringify({
+          message: "JSON Content-Type and streaming Accept are required.",
+        }),
+      });
+    }
     payload = route.request().postDataJSON();
     return route.fulfill({
       contentType: "text/event-stream",
@@ -231,9 +330,13 @@ test("Contact sends only the established payload to an intercepted fixture and r
 }) => {
   let payload: Record<string, unknown> = {};
   let success = false;
+  let releaseErrorResponse!: () => void;
+  const pendingError = new Promise<void>((resolve) => {
+    releaseErrorResponse = resolve;
+  });
   await page.route("**/api/messages", async (route) => {
     payload = route.request().postDataJSON();
-    await new Promise((resolve) => setTimeout(resolve, 150));
+    if (!success) await pendingError;
     return route.fulfill({
       status: success ? 201 : 503,
       contentType: "application/json",
@@ -252,6 +355,7 @@ test("Contact sends only the established payload to an intercepted fixture and r
     .fill("Local intercepted verification only.");
   await page.getByRole("button", { name: /send message/i }).click();
   await expect(page.getByRole("button", { name: /sending/i })).toBeDisabled();
+  releaseErrorResponse();
   await expect(page.getByRole("alert")).toContainText("Something went wrong");
   await expect(page.getByLabel("Name", { exact: true })).toHaveValue(
     "QA Reviewer",

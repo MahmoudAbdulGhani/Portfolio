@@ -1,0 +1,194 @@
+/* The gallery owns its frame independently of any project page stylesheet. */
+.case-inspector {
+  width: min(1260px, calc(100vw - 32px));
+  height: min(900px, calc(100dvh - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line, #c8c6bc);
+  border-radius: 4px;
+  background: var(--surface, #f7f5ef);
+  color: var(--ink, var(--text, #202629));
+}
+.case-inspector::backdrop {
+  background: #20262980;
+  backdrop-filter: blur(8px);
+}
+.case-inspector .case-inspector-inner {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 16px;
+  padding: 24px;
+}
+.case-inspector .case-inspector-inner > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+  min-width: 0;
+}
+.case-inspector header > div:first-child {
+  min-width: 0;
+}
+.case-inspector .public-eyebrow {
+  margin: 0 0 8px;
+  font: 10px/1.6 var(--mono, monospace);
+  letter-spacing: 0.12em;
+  overflow-wrap: anywhere;
+}
+.case-inspector .public-eyebrow::before {
+  display: none;
+}
+.case-inspector header h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.case-inspector .case-inspector-tools {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.case-inspector button {
+  min-width: 44px;
+  min-height: 44px;
+  color: inherit;
+  cursor: pointer;
+}
+.case-inspector .case-inspector-tools button,
+.case-inspector footer button {
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  border: 1px solid var(--line, #c8c6bc);
+  background: var(--surface, #f7f5ef);
+  color: var(--ink, var(--text, #202629));
+  font-size: 12px;
+}
+.case-inspector button:focus-visible,
+.case-inspector .case-inspector-image:focus-visible {
+  outline: 2px solid var(--accent, #a44424);
+  outline-offset: -2px;
+}
+.case-inspector .case-inspector-image {
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line, #c8c6bc);
+  scrollbar-width: thin;
+}
+.case-inspector-image picture {
+  display: block;
+}
+.case-inspector .case-inspector-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.case-inspector .case-inspector-image.is-actual img {
+  width: auto;
+  max-width: none;
+}
+.case-inspector .case-inspector-image[data-viewport="phone"]:not(.is-actual) {
+  width: min(100%, 480px);
+  margin-inline: auto;
+}
+.case-inspector .case-shot-error {
+  padding: 32px 24px;
+  color: var(--muted, #61695e);
+  font-size: 14px;
+}
+.case-inspector .case-inspector-thumbs {
+  display: flex;
+  min-width: 0;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: thin;
+}
+.case-inspector .case-inspector-thumbs button {
+  position: relative;
+  flex: 0 0 84px;
+  width: 84px;
+  height: 56px;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line, #c8c6bc);
+}
+.case-inspector .case-inspector-thumbs button[aria-current="true"] {
+  border: 2px solid var(--accent, #a44424);
+}
+.case-inspector-thumbs picture {
+  display: block;
+}
+.case-inspector .case-inspector-thumbs img {
+  display: block;
+  width: 100%;
+  height: 54px;
+  object-fit: cover;
+  object-position: top;
+}
+.case-inspector .case-inspector-thumbs span {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  padding: 1px 4px;
+  background: #202629e6;
+  color: #f7f5ef;
+  font: 10px/1.4 var(--mono, monospace);
+}
+.case-inspector .case-inspector-inner > footer {
+  grid-row: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.case-inspector footer p {
+  margin: 0;
+  color: var(--muted, #61695e);
+  font: 12px/1.5 var(--mono, monospace);
+}
+.case-inspector footer > div {
+  display: flex;
+  gap: 8px;
+}
+.case-inspector button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+@media (max-width: 600px) {
+  .case-inspector {
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+  .case-inspector .case-inspector-inner {
+    padding: 14px;
+    gap: 12px;
+  }
+  .case-inspector .case-inspector-inner > header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .case-inspector header h2 {
+    font-size: 17px;
+  }
+  .case-inspector .case-inspector-tools {
+    justify-content: flex-end;
+  }
+  .case-inspector .case-inspector-thumbs {
+    gap: 8px;
+  }
+}

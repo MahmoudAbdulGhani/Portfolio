@@ -1,0 +1,15 @@
+{
+  "environment": "Vite production preview, installed Chrome, 390x844",
+  "gallery": {
+    "width": 370,
+    "height": 824,
+    "layout": "grid",
+    "closeVisible": true
+  },
+  "requestHeaders": {
+    "contentType": "application/json",
+    "accept": "text/event-stream"
+  },
+  "answer": "PORTFOLIO AI\n\nCompiled transport verified.",
+  "errors": []
+}

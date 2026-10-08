@@ -68,8 +68,12 @@ export function ProjectReader() {
             <span className="eyebrow">CASE STUDY / {project.type}</span>
             <h1 className="view-heading">{project.name}</h1>
             <p className="case-role">
-              {project.myRole}
-              {project.teamSize ? ` · ${project.teamSize}-person team` : ""}
+              <span>{project.myRole}</span>
+              {Boolean(project.teamSize) && (
+                <span className="case-team-size">
+                  {project.teamSize}-person team
+                </span>
+              )}
             </p>
             {project.program && <p>{project.program}</p>}
           </div>

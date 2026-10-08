@@ -1,0 +1,22 @@
+{
+  "firstResponse": "Intercepted local 503 fixture; no upstream request",
+  "retryStatus": 200,
+  "requests": [
+    {
+      "contentType": "application/json",
+      "accept": "text/event-stream",
+      "projectSlug": "jobpilot-ai"
+    },
+    {
+      "contentType": "application/json",
+      "accept": "text/event-stream",
+      "projectSlug": "jobpilot-ai"
+    }
+  ],
+  "failed": false,
+  "answer": "PORTFOLIO AI\n\nAs the Full-Stack Developer & Project Owner of JobPilot AI, Mahmoud Abdul Ghani was the sole developer (team size of 1) and owned the project's entire delivery.\n\nKey Contributions:\nProduct & Journey Design: Defined the product scope and connected the complete candidate journey from CV text extraction to job discovery, fit analysis, document tailoring, and voice-assisted interview practice.\nDevelopment & AI Workflows: Built the Next.js and FastAPI application using an AI-assisted development workflow. Integrated AI capabilities with structured validation, consent checks, and explicit user reviews.\nProblem Solving & Persistence: Resolved profile integration, save reconciliation, and persistence issues using API responses and regression evidence.\nDeployment & Testing: Configured deployments on Vercel, Render, and Supabase, and used automated tests (pytest, Vitest, Playwright) to validate authentication, document exports, and core flows.",
+  "links": [
+    "/projects/jobpilot-ai"
+  ],
+  "errors": []
+}
