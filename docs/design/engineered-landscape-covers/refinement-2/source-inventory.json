@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "source": "Fresh local frontend capture at /resumes; existing pdfResume and docxResume fixtures from frontend/tests/resumes.test.tsx",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/jobpilot-ai-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "7de08b8a45a00993bca29d2f709fd3576e70b7f0c79e45de1abffb8067abbff9",
+    "selectedScreen": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+    "treatment": "Actual isolated frontend, 1536×960 CSS viewport at DPR 2. Existing test CV documents; no new uploads, AI generation or live records.",
+    "master": "docs/design/engineered-landscape-covers/masters/jobpilot-ai.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "lobby",
+    "title": "Lobby",
+    "source": "Fresh isolated Angular frontend; exact text and reply/reaction reused from the already-published public/projects/lobby/community-chat.webp",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/lobby-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "de50bb16f935bbfe3678d04497d41ec27cf77e2c23c28c81c0cdd8c91ab180f5",
+    "selectedScreen": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+    "treatment": "1536×960 CSS viewport at DPR 2. No newly fabricated messages, private conversation reads or real-time connection. Five known published participant names, six existing messages; synthetic local IDs only.",
+    "master": "docs/design/engineered-landscape-covers/masters/lobby.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "source": "Fresh isolated Next frontend /dashboard; two booking entries reconstructed from the published original user_overview.webp, using repository room images",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/gamezone-arena-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "6348bab044d0351735d75f4647ba2e16af123222b75576dfec344fb066f9803b",
+    "selectedScreen": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+    "treatment": "1536×960 CSS viewport at DPR 2. Existing published rooms, dates, durations, prices and loyalty value. Only two visible source bookings reused; no unknown third booking invented. Placeholder account email; no database.",
+    "master": "docs/design/engineered-landscape-covers/masters/gamezone-arena.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "source": "Fresh rendering of the repository’s .visual-comparison/local-project-detail.html with its actual static styles and scripts",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/construction-project-management-accounting-system-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "bdbef99c0a5c77b49c67ed6871775c69060279865e81768900eb5bb0b699d983",
+    "selectedScreen": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+    "treatment": "1536×960 CSS viewport at DPR 2. Existing example-project data, sanitized inactive CSRF field, read-only local asset server. Complete primary panels retained.",
+    "master": "docs/design/engineered-landscape-covers/masters/construction-project-management-accounting-system.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "unihub",
+    "title": "UniHub",
+    "source": "Fresh isolated React frontend; dashboard responses reuse the approved Admin.webp figures and six course/chart entries",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/unihub-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "71bd2891e2e8cd05c334fc6c8e94aeb841b8c34fbf1530c686da9f8aa7cf7c82",
+    "selectedScreen": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+    "treatment": "1536×960 CSS viewport at DPR 2. Actual frontend components, source figures 3 students, 2 professors, 6 courses, 20 credits, 11 enrollments and 7 active accounts. No student records or live login required.",
+    "master": "docs/design/engineered-landscape-covers/masters/unihub.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "source": "Fresh isolated current React frontend /admin; first six nondeleted records from the repository’s original demo dataset at f7fab69:src/services/api.js",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/full-stack-user-management-system-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "94f13924ee7f478fdeb2b039a86367530423d19ca9b50a94b95643e1db6d86ae",
+    "selectedScreen": "User Management administrative table with six demo users and search, city, age and role filters",
+    "treatment": "1536×960 CSS viewport at DPR 2. Reused Alice/Bob/Charlie/Diana/Eve/Frank example.com demo records; password fields discarded. Waited for every row and parent entrance to settle before capture. No live accounts accessed.",
+    "master": "docs/design/engineered-landscape-covers/masters/full-stack-user-management-system.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "home-services",
+    "title": "Home Services",
+    "source": "Fresh read-only homepage at https://home-services-coral.vercel.app/",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/home-services-fresh.png",
+    "captureResolution": [
+      3072,
+      1920
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "781be731c5ae5afc70d47109e811b28a70e2258453b7f34f1ec7a822d94a2a84",
+    "selectedScreen": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+    "treatment": "1536×960 CSS viewport at DPR 2 preserves both visible worker photos and all core hero content. Only captured scrollbars suppressed; intentional original lower geometric shape preserved.",
+    "master": "docs/design/engineered-landscape-covers/masters/home-services.png",
+    "originalCaseStudyMediaPreserved": true
+  },
+  {
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "source": "Fresh read-only public homepage at https://clinic-management-system.kesug.com/",
+    "capture": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/medicare-hub-fresh.png",
+    "captureResolution": [
+      2560,
+      1600
+    ],
+    "captureAspectRatio": 1.6,
+    "freshCapturePossible": true,
+    "sourceSHA256": "417deb54ae79429407614fb3de050d8da860d7b672fc958ceb847f45b43b2d0d",
+    "selectedScreen": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+    "treatment": "1280×800 CSS viewport at DPR 2 frames the complete introduction and image before the next section. Actual admin and appointment sources inspected; decorative admin background rejected, no populated approved appointment capture available. No patient data accessed.",
+    "master": "docs/design/engineered-landscape-covers/masters/medicare-hub.png",
+    "originalCaseStudyMediaPreserved": true
+  }
+]

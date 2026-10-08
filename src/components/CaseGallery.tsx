@@ -9,11 +9,13 @@ export function CaseGallery({
   projectName,
   initialIndex,
   onClose,
+  returnFocusTo,
 }: {
   screens: DetailScreen[];
   projectName: string;
   initialIndex: number;
   onClose: () => void;
+  returnFocusTo?: HTMLElement | null;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState(initialIndex);
@@ -24,9 +26,10 @@ export function CaseGallery({
   useEffect(() => {
     const modal = dialog.current;
     const trigger =
-      document.activeElement instanceof HTMLElement
+      returnFocusTo ??
+      (document.activeElement instanceof HTMLElement
         ? document.activeElement
-        : null;
+        : null);
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     modal?.showModal();
@@ -34,9 +37,9 @@ export function CaseGallery({
     return () => {
       modal?.close();
       document.body.style.overflow = overflow;
-      trigger?.focus();
+      trigger?.focus({ preventScroll: true });
     };
-  }, []);
+  }, [returnFocusTo]);
   useEffect(() => {
     dialog.current
       ?.querySelector<HTMLElement>('[aria-current="true"]')

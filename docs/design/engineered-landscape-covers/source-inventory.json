@@ -1,0 +1,478 @@
+{
+  "retrieved": "2026-10-08",
+  "method": "Read-only public CMS and repository-original files; no derivatives selected",
+  "projects": [
+    {
+      "id": "cmummvvhh0000jm04wmnez2f5",
+      "name": "JobPilot AI",
+      "slug": "jobpilot-ai",
+      "github": "https://github.com/MahmoudAbdulGhani/jobpilot-ai",
+      "demo": "https://jobpilot-ai-omega.vercel.app/",
+      "coverImage": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "screenshots": [
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png"
+      ],
+      "type": "AI-powered job-search and application platform",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "Supabase",
+        "OpenAI API",
+        "Docker",
+        "pytest",
+        "Vitest",
+        "Playwright",
+        "Vercel",
+        "Render",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "cmsngwf2o001xt2is7siogf4w",
+      "name": "Lobby",
+      "slug": "lobby",
+      "github": "https://github.com/Ahmad-khalaf517/lobby",
+      "demo": "https://lobby-hub.vercel.app/",
+      "coverImage": "/projects/lobby/cover.webp",
+      "screenshots": [
+        "/projects/lobby/friends.webp",
+        "/projects/lobby/audio-room.webp",
+        "/projects/lobby/community-chat.webp",
+        "/projects/lobby/share-room.webp",
+        "/projects/lobby/guest-access.webp"
+      ],
+      "type": "Real-time communication platform",
+      "stack": [
+        "Angular 22",
+        "NestJS 11",
+        "TypeScript",
+        "Supabase",
+        "LiveKit",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": "cmsngwdup001wt2isfe1t4h80",
+      "name": "GameZone Arena",
+      "slug": "gamezone-arena",
+      "github": "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System",
+      "demo": "https://gaming-arena-reservation-system.vercel.app/",
+      "coverImage": "/projects/gamezone-arena/cover.webp",
+      "screenshots": [
+        "/projects/gamezone-arena/user_overview.webp",
+        "/projects/gamezone-arena/choose_Room.webp",
+        "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "/projects/gamezone-arena/select_device.webp",
+        "/projects/gamezone-arena/confirm_and_pay.webp",
+        "/projects/gamezone-arena/admin_overview.webp",
+        "/projects/gamezone-arena/admin_Rooms.webp",
+        "/projects/gamezone-arena/admin_Users.webp"
+      ],
+      "type": "Gaming arena reservation",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "MongoDB",
+        "Tailwind CSS",
+        "JWT",
+        "OTP",
+        "Stripe"
+      ]
+    },
+    {
+      "id": "cmttwswd30000la04jujz2mkk",
+      "name": "Construction Project Management & Accounting System",
+      "slug": "construction-project-management-accounting-system",
+      "github": "https://github.com/MahmoudAbdulGhani/Construction-Project-Management-Accounting-System",
+      "demo": "https://construction-project-management-sa22.onrender.com/",
+      "coverImage": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "screenshots": [
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png"
+      ],
+      "type": "Full-Stack Web Application",
+      "stack": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Supabase",
+        "Groq",
+        "Docker",
+        "Gunicorn",
+        "WhiteNoise",
+        "JWT",
+        "ReportLab",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "GitHub",
+        "Render"
+      ]
+    },
+    {
+      "id": "cmsngwg5z001yt2iscofzptr7",
+      "name": "UniHub",
+      "slug": "unihub",
+      "github": "https://github.com/MahmoudAbdulGhani/university-management-system",
+      "demo": "https://university-management-system-three-fawn.vercel.app/login",
+      "coverImage": "/projects/unihub/transcipt.webp",
+      "screenshots": [
+        "/projects/unihub/Admin.webp",
+        "/projects/unihub/user.webp",
+        "/projects/unihub/usercourses.webp"
+      ],
+      "type": "University management system",
+      "stack": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST APIs",
+        "JWT",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": "cmtfrciuy0000l704yenpig3t",
+      "name": "Full-Stack User Management System",
+      "slug": "full-stack-user-management-system",
+      "github": "https://github.com/MahmoudAbdulGhani/fastapi-user-management",
+      "demo": "https://fastapi-user-management.vercel.app/",
+      "coverImage": "/projects/user-management/dashboard.webp",
+      "screenshots": [
+        "/projects/user-management/dashboard.webp"
+      ],
+      "type": "Full-Stack Web Application",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "React",
+        "Vite",
+        "React Router",
+        "Tailwind CSS",
+        "Axios",
+        "Framer Motion",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "JWT",
+        "Argon2",
+        "Pytest",
+        "Postman",
+        "Newman",
+        "Vercel"
+      ]
+    },
+    {
+      "id": "cmsngwh55001zt2isu7zew2o3",
+      "name": "Medicare Hub",
+      "slug": "medicare-hub",
+      "github": "https://github.com/MahmoudAbdulGhani/Clinic-management-system",
+      "demo": "https://clinic-management-system.kesug.com/",
+      "coverImage": "",
+      "screenshots": [],
+      "type": "Clinic management system",
+      "stack": [
+        "PHP",
+        "MySQL",
+        "Bootstrap",
+        "JavaScript",
+        "PHPMailer"
+      ]
+    },
+    {
+      "id": "cmsngwi530020t2iszk6kbw7q",
+      "name": "Home Services",
+      "slug": "home-services",
+      "github": "https://github.com/MahmoudAbdulGhani/home-services",
+      "demo": "https://home-services-coral.vercel.app/",
+      "coverImage": "",
+      "screenshots": [],
+      "type": "Responsive web application",
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "JavaScript",
+        "Responsive Design"
+      ]
+    }
+  ],
+  "local": [
+    {
+      "file": "public/projects/cinematic/cedar-detail.webp",
+      "width": 1400,
+      "height": 1701,
+      "ratio": 0.823045267489712
+    },
+    {
+      "file": "public/projects/cinematic/cedar-screen.webp",
+      "width": 1600,
+      "height": 739,
+      "ratio": 2.165087956698241
+    },
+    {
+      "file": "public/projects/cinematic/home-services.webp",
+      "width": 1348,
+      "height": 926,
+      "ratio": 1.4557235421166306
+    },
+    {
+      "file": "public/projects/cinematic/jobpilot-resume.webp",
+      "width": 850,
+      "height": 1100,
+      "ratio": 0.7727272727272727
+    },
+    {
+      "file": "public/projects/cinematic/jobpilot-screen.webp",
+      "width": 1600,
+      "height": 742,
+      "ratio": 2.1563342318059298
+    },
+    {
+      "file": "public/projects/cinematic/medicare-logo.webp",
+      "width": 1000,
+      "height": 1000,
+      "ratio": 1
+    },
+    {
+      "file": "public/projects/gamezone-arena/admin_overview.webp",
+      "width": 1920,
+      "height": 2076,
+      "ratio": 0.9248554913294798
+    },
+    {
+      "file": "public/projects/gamezone-arena/admin_Rooms.webp",
+      "width": 1920,
+      "height": 1918,
+      "ratio": 1.0010427528675705
+    },
+    {
+      "file": "public/projects/gamezone-arena/admin_Users.webp",
+      "width": 1920,
+      "height": 916,
+      "ratio": 2.096069868995633
+    },
+    {
+      "file": "public/projects/gamezone-arena/Booking_date_and_time.webp",
+      "width": 1920,
+      "height": 2287,
+      "ratio": 0.8395277656318321
+    },
+    {
+      "file": "public/projects/gamezone-arena/choose_Room.webp",
+      "width": 1920,
+      "height": 3135,
+      "ratio": 0.6124401913875598
+    },
+    {
+      "file": "public/projects/gamezone-arena/confirm_and_pay.webp",
+      "width": 1920,
+      "height": 2059,
+      "ratio": 0.932491500728509
+    },
+    {
+      "file": "public/projects/gamezone-arena/cover.webp",
+      "width": 1600,
+      "height": 741,
+      "ratio": 2.1592442645074224
+    },
+    {
+      "file": "public/projects/gamezone-arena/select_device.webp",
+      "width": 1920,
+      "height": 1963,
+      "ratio": 0.97809475292919
+    },
+    {
+      "file": "public/projects/gamezone-arena/user_overview.webp",
+      "width": 1366,
+      "height": 1446,
+      "ratio": 0.9446749654218534
+    },
+    {
+      "file": "public/projects/lobby/audio-room.webp",
+      "width": 1919,
+      "height": 863,
+      "ratio": 2.223638470451912
+    },
+    {
+      "file": "public/projects/lobby/community-chat.webp",
+      "width": 1920,
+      "height": 870,
+      "ratio": 2.206896551724138
+    },
+    {
+      "file": "public/projects/lobby/cover.webp",
+      "width": 1600,
+      "height": 729,
+      "ratio": 2.1947873799725652
+    },
+    {
+      "file": "public/projects/lobby/friends.webp",
+      "width": 1920,
+      "height": 877,
+      "ratio": 2.1892816419612315
+    },
+    {
+      "file": "public/projects/lobby/guest-access.webp",
+      "width": 1920,
+      "height": 873,
+      "ratio": 2.1993127147766325
+    },
+    {
+      "file": "public/projects/lobby/share-room.webp",
+      "width": 1920,
+      "height": 867,
+      "ratio": 2.2145328719723185
+    },
+    {
+      "file": "public/projects/unihub/Admin.webp",
+      "width": 1919,
+      "height": 918,
+      "ratio": 2.0904139433551197
+    },
+    {
+      "file": "public/projects/unihub/transcipt.webp",
+      "width": 1914,
+      "height": 896,
+      "ratio": 2.1361607142857144
+    },
+    {
+      "file": "public/projects/unihub/user.webp",
+      "width": 1911,
+      "height": 906,
+      "ratio": 2.109271523178808
+    },
+    {
+      "file": "public/projects/unihub/usercourses.webp",
+      "width": 1905,
+      "height": 901,
+      "ratio": 2.114317425083241
+    },
+    {
+      "file": "public/projects/user-management/dashboard.webp",
+      "width": 1920,
+      "height": 877,
+      "ratio": 2.1892816419612315
+    }
+  ],
+  "remote": [
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "index": 1,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/jobpilot-ai-1.png",
+      "width": 1899,
+      "height": 877,
+      "ratio": 2.1653363740022806,
+      "sha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "index": 2,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/jobpilot-ai-2.png",
+      "width": 1898,
+      "height": 876,
+      "ratio": 2.1666666666666665,
+      "sha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "index": 0,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/jobpilot-ai-0.png",
+      "width": 1900,
+      "height": 881,
+      "ratio": 2.1566401816118046,
+      "sha256": "36da17bcf68e953168271fbe2ca3e1895a9abc3b45cf79310c07dafb4630248e"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "index": 3,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/jobpilot-ai-3.png",
+      "width": 1900,
+      "height": 870,
+      "ratio": 2.1839080459770117,
+      "sha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+      "index": 0,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/construction-project-management-accounting-system-0.png",
+      "width": 1904,
+      "height": 879,
+      "ratio": 2.1660978384527874,
+      "sha256": "e1e1a4ab4f39a7d8b1c3eeb13a4cf23f85f2401c78542202dbeb3f33c22367bc"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "index": 4,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/jobpilot-ai-4.png",
+      "width": 1254,
+      "height": 1254,
+      "ratio": 1,
+      "sha256": "3c4a36f01fa625e544ea43155db05f96120ae2c52a2e8f4785d40562180242d7"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "index": 3,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/construction-project-management-accounting-system-3.png",
+      "width": 572,
+      "height": 768,
+      "ratio": 0.7447916666666666,
+      "sha256": "84c50db70272caa60b3b4a9e63a40604a97faef8f031c519d30ab0bb3042cb30"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "index": 4,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/construction-project-management-accounting-system-4.png",
+      "width": 1897,
+      "height": 880,
+      "ratio": 2.1556818181818183,
+      "sha256": "a6f93800dc641b29b1475dc64a0910313df53167f1a4ab9b19e50a081a189711"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "index": 2,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/construction-project-management-accounting-system-2.png",
+      "width": 1920,
+      "height": 1760,
+      "ratio": 1.0909090909090908,
+      "sha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "index": 1,
+      "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-sources/construction-project-management-accounting-system-1.png",
+      "width": 1920,
+      "height": 2333,
+      "ratio": 0.8229747106729532,
+      "sha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-08",
+  "branch": "refine/engineered-landscape-gallery-covers",
+  "presentation": "approved borderless",
+  "lint": "passed",
+  "typecheck": "passed",
+  "build": "passed; existing approximately 503KB motion-rig chunk warning",
+  "imageTests": {
+    "passed": 2,
+    "decodedDeliveryAssets": 56,
+    "bytes": 2302864
+  },
+  "chromium": {
+    "startTime": "2026-10-08T16:19:10.171Z",
+    "duration": 276347.485,
+    "expected": 123,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkit": {
+    "startTime": "2026-10-08T16:25:05.580Z",
+    "duration": 104436.72,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "commandShortcutChromeFollowup": {
+    "startTime": "2026-10-08T16:25:32.040Z",
+    "duration": 9682.685,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserScope": "Complete Chrome desktop/tablet/mobile suite. WebKit desktop/phone gallery, image failure/loading, original case-study media and public interaction suite.",
+  "deviceScope": "Chrome and Windows WebKit, DPR 3, 320x568 / 360x800 / 390x844 / 430x932 / 844x390; eight images fill their frames, no transforms, no horizontal overflow or page errors.",
+  "limitations": [
+    "No physical phones, native keyboards or mobile browser chrome tested.",
+    "Windows WebKit automation is not physical iOS Safari verification.",
+    "Medicare retains its verified public homepage; no approved populated clinical screenshot available.",
+    "Protected project content is unchanged and uses the previously disclosed published/repository fixtures."
+  ],
+  "testObservation": "The first WebKit run missed the Command Palette shortcut before its lazy module was requested. The shortcut test now waits for rendered navigation before pressing Ctrl+K. The final suite and targeted Chrome followup pass without timeout changes or automatic retries."
+}

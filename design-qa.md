@@ -1,3 +1,139 @@
+# Approved borderless gallery refinement
+
+8 October 2026. The user accepted the borderless comparison and authorized implementation, testing, commit and branch push. Work continues on `refine/engineered-landscape-gallery-covers` from `6c0451e`, updating draft PR #8. This section supersedes the matte presentation described below.
+
+[Before/after comparison](docs/design/engineered-landscape-covers/gallery-comparison.html) · [Current checks](docs/design/engineered-landscape-covers/refinement-3/checks.json) · [Sources and treatments](docs/design/engineered-landscape-covers/cover-treatments.json) · [High-density phone measurements](docs/design/engineered-landscape-covers/refinement-3/device-layout-review.json).
+
+## Change and preservation
+
+The wide 80px/50px gray surround is removed from all eight covers. Rebuilt 1600 × 1000 lossless masters directly from the same hash-verified high-resolution captures; full screenshots now fill their frames. All source captures already match 16:10, so there is no screenshot cropping, stretch or upscaling. This increases visible product width by about 11% within the accepted frame geometry. Exported WebP/AVIF assets were regenerated with the existing quality settings.
+
+Authored covers have zero CSS padding and a transparent frame background. Square edges, image containment, loading/error space, and the existing oxide keyboard outline remain intact. Renamed the preview flag from `embeddedMargins` to `authoredCover` to reflect the new treatment. Original source photographs and product captures, case-study media, selected views, sculptures/WebGL motion, full CMS names and routes, descriptions, search, Gallery/Index modes, Contact and AI functionality remain unchanged. Future CMS screenshots still use their contained inset presentation.
+
+## Visual verification
+
+Fresh before/after full galleries and original viewports were captured at 1363 × 936, 1280 × 720, 390 × 844 and 360 × 800. Desktop and mobile complete galleries were visually inspected against the accepted borderless comparison: all eight retain complete images, consistent frame bounds, aligned caption spacing, flat edges and readable product content. Captures are in [refinement-3](docs/design/engineered-landscape-covers/refinement-3/). Complete-gallery expansion is capture-only.
+
+Chrome and Windows WebKit phone/touch review used DPR 3 at 320 × 568, 360 × 800, 390 × 844, 430 × 932 and 844 × 390. All ten layouts loaded eight images, filled the frames without transforms or borders, and had no horizontal overflow or page errors. Physical phones, on-screen keyboards and browser-chrome behavior remain unverified.
+
+## Checks
+
+- Lint, typecheck and production build passed. Existing motion-rig chunk warning remains, approximately 503KB minified.
+- Image regression: **2/2** passed. Tests check actual painted pixel bounds at all four master edges, complete-source crop metadata, and every responsive format/fallback. **56** delivery files decode; total asset bytes: **2,302,864**.
+- Complete Chrome desktop/tablet/mobile suite: **123/123**, no skipped or unexpected results, no automatic retries. Covers, selection/reversal, assistant, Contact, search/routes and original case-study media remain functional.
+- Relevant WebKit gallery/public interaction suite: **28/28**, no skipped or unexpected results, no automatic retries. Includes all eight previews, Gallery/Index modes, loading/failure states, full CMS search names and routes, case-gallery keyboard/focus, and public navigation.
+- The initial WebKit run missed Ctrl+K before requesting the lazy Command Palette module. The test now waits for rendered navigation before sending the shortcut; its 5s dialog assertion is unchanged. Final WebKit results and a **3/3** targeted Chrome desktop/tablet/phone followup pass. No palette application code or global timeout changed.
+
+## Remaining limits and delivery
+
+No physical iOS/Android device, actual phone keyboard or browser-chrome testing was possible. Windows WebKit automation is not physical Safari verification. Medicare still uses its verified public homepage because no approved populated clinical screenshot was available. Protected project captures retain the previously disclosed published/repository fixtures; this styling refinement makes no claim of live backend/authentication testing.
+
+Commit and push are authorized for this branch and draft PR #8. No merge, manual deployment, production Contact submission, live CMS/database write, dependency change or unrelated source-repository edit.
+
+Changed files: `src/components/ProjectPreview.tsx`, `src/components/project-preview.css`, `src/pages/Projects.tsx`, `tests/gallery-covers.test.mjs`, `tests/e2e/project-preview.spec.ts`, `tests/e2e/public.spec.ts`, gallery masters/delivery assets and QA metadata/screenshots.
+
+---
+
+# Gallery refinement 2: fresh matching captures
+
+8 October 2026. Local branch: `refine/engineered-landscape-gallery-covers`, based on `f1fdade`. This review supersedes the first-pass cover selections and its timeout result below. All eight covers are now integrated with exactly matching painted bounds; protected workflow and physical-device qualifications remain explicit.
+
+[Complete before/after comparison](docs/design/engineered-landscape-covers/gallery-comparison.html) · [Sources, resolutions, hashes and treatments](docs/design/engineered-landscape-covers/cover-treatments.json) · [Checks](docs/design/engineered-landscape-covers/refinement-2/checks.json) · [Device measurements](docs/design/engineered-landscape-covers/refinement-2/device-layout-review.json). Local preview: http://127.0.0.1:5175/projects.
+
+## Findings and implementation
+
+1. The rejected pass had equal outer frames but unequal painted screenshot bounds. Fresh captures now fill identical 1440 × 900 product areas inside 1600 × 1000 masters, at 80px horizontal and 50px vertical offsets. Original capture ratios are 16:10; no cropping, stretching, generated UI, decorative frames or extra CSS padding. Source product colors and original case-study images remain intact.
+2. Real product code supplied stronger populated views. JobPilot uses existing Resume Library unit fixtures. Lobby reuses exactly the six messages, reply and reaction already published in its community-chat screenshot; no private conversation was accessed or invented. GameZone reuses the two known published bookings and real room assets; its footer is excluded. Cedar uses its repository's saved project overview and actual styles. UniHub reuses its published dashboard figures and course bars. User Management uses the current administrative table with six original repository demo records, discarding password fields before capture. Home Services was recaptured to retain both worker photographs and the complete hero.
+3. Medicare's real public homepage was recaptured at 1280 × 800, DPR 2; the other seven captures use 1536 × 960, DPR 2. Its admin and appointment templates were inspected, but no approved populated clinical screenshot was available. The existing admin backdrop was a weaker presentation and rejected. No patient records were invented, and the unapproved identity proposal remains unintegrated.
+4. Desktop captions, responsive frames, concise labels, full CMS search names, accessible link names, routes, Gallery/Index switching and image loading/failure behavior passed regression checks. The portfolio's accepted design, sculptures, WebGL motion, portrait, CMS content, selected views and other pages are preserved.
+5. WebKit exposed focus restoration after mouse opening the case-study gallery. The opener is now recorded explicitly rather than inferred from document.activeElement, because WebKit does not focus mouse-clicked buttons. Contact now rechecks visibility after a keyboard-time document scroll, correcting WebKit's delayed textarea focus scroll without restricting ordinary page scrolling. Gutter assertions measure the page's padding without counting a native scrollbar.
+6. The previous selected-image test timeout combined lazy WebGL/resource startup with animation. The test now waits separately for opening (15s resource allowance), then retains the original 5s settled-animation assertion. No global timeout, retries, animation speed or application motion was relaxed.
+
+## Screenshots and visual review
+
+Before and after complete galleries plus original viewports are linked in the comparison at 1363 × 936, 1280 × 720, 390 × 844 and 360 × 800. Desktop complete-gallery and mobile renders were visually inspected. High-density Chrome and Windows WebKit screenshots are in [refinement-2](docs/design/engineered-landscape-covers/refinement-2/), at 320 × 568, 360 × 800, 390 × 844, 430 × 932 and 844 × 390. All ten layouts loaded eight bounded images, retained 16:10 frames, and had no horizontal overflow or page errors. Complete-gallery capture expansion is capture-only; viewport screenshots show actual layout.
+
+## Checks and limitations
+
+- Lint, typecheck and production build passed. Existing motion-rig chunk warning remains (approximately 503KB minified).
+- Image regression: **2/2** passed, checking actual non-matte pixel bounds for all eight masters and decoding all 56 responsive delivery files. Total delivery assets: **2,011,747 bytes**.
+- Existing assistant/stream checks: **10/10** passed.
+- Complete Chrome desktop/tablet/mobile suite: **123/123**, zero skipped, unexpected or flaky results.
+- WebKit desktop/phone API, Contact, Gallery/Index and public interactions: **46/46**, zero skipped, unexpected or flaky results. Contact initial, focus, validation, pending, failure and success states use intercepted submissions.
+- Phone layout review uses DPR 3 and touch contexts. **No physical iOS/Android phone, actual on-screen keyboard or browser-chrome behavior was tested.** Windows WebKit automation is not a claim of physical Safari verification.
+- Protected project captures use isolated actual frontends and disclosed existing published/repository fixtures; backend/authentication/live-data functionality was not exercised. Medicare's authenticated clinical workflow remains unavailable as a populated approved screenshot.
+- Local source repositories and existing unrelated edits were preserved. Capture-only servers were stopped; the read-only portfolio preview remains available. No new dependencies, live database/CMS changes, production Contact submissions, merge or manual deployment. On 8 October 2026, the user authorized committing and pushing this verified refinement branch. Branch delivery is separate from the local QA results and does not change production.
+
+## Changed implementation files
+
+Gallery assets and provenance: `docs/design/engineered-landscape-covers/`, `public/projects/gallery-covers/`, `src/generated/gallery-covers.ts`, `scripts/optimize-gallery-covers.mjs`, `scripts/optimize-project-images.mjs`. Presentation: `src/pages/Projects.tsx`, `src/lib/gallery-presentation.ts`, `src/components/ProjectPreview.tsx`, `src/components/ResponsiveProjectImage.tsx`, `src/components/project-preview.css`, `src/landscape.css`. Cross-browser corrections: `src/components/CaseGallery.tsx`, `src/components/landscape/ProjectReader.tsx`, `src/lib/use-contact-viewport.ts`. Coverage: `tests/gallery-covers.test.mjs`, `tests/e2e/project-preview.spec.ts`, `tests/e2e/engineered-landscape.spec.ts`, `tests/e2e/contact-responsive.spec.ts`, `package.json`.
+
+---
+
+# Engineered Landscape: eight dedicated gallery covers
+
+Date: 8 October 2026. Status: **all eight available real-material covers integrated and locally verified; protected workflow capture limitations documented below**. The Medicare identity alternative is a proposal only.
+
+## Scope and source inspection
+
+Read the complete attached gallery-cover brief. It replaces the earlier two-project comparison task. Inspected repository instructions, working tree, branch and commits before creating `refine/engineered-landscape-gallery-covers` from the clean portrait branch at `f1fdade`. This preserves `f3fa087`, selected-project, mobile Contact, approved equal-width gallery and portrait improvements. The original Desktop/portfolio checkout and its untracked handoff remain untouched.
+
+Read the eight published projects from the public CMS, retrieved original remote screenshots, inspected local originals and each product repository, and visited the actual product URLs. [Source inventory](docs/design/engineered-landscape-covers/source-inventory.json) records the original resolution/aspect ratio and product/repository URLs. [Cover treatments](docs/design/engineered-landscape-covers/cover-treatments.json) records the exact selected file, source hash, individual crop and final product rectangle. Downloaded originals and inspection helpers are outside the app; no live project or CMS records were edited.
+
+| Gallery title | Selected original / aspect ratio | Selected content and treatment | Fresh capture availability and limitations |
+| --- | --- | --- | --- |
+| JobPilot AI | Repository QA PNG, 1488×1121 / 1.327 | Existing populated Resume Library, saved document, sidebar and upload action. Select top 1488×930; render 1440×900 at 80,50. | The repository's `evidence/refinement-final/after-resumes-1488.png` is an actual application capture with existing QA test data. Public live site available; private workflow requires authentication, with no shared demo account. No new documents/data were fabricated. |
+| Lobby | Original `audio-room.webp`, 1919×863 / 2.224 | Select real room interface at 1430×863, excluding unused chat pane; keep brand, room navigation and Start audio call. Render at 85,69 without enlargement. | Public landing page accessible; no approved populated server/conversation capture or shared demo account found. No private conversations were accessed or republished. This room view remains less populated than an authenticated conversation. |
+| GameZone Arena | Original `user_overview.webp`, 1366×1446 / 0.945 | Deliberate top 1366×954: navigation, all four metrics and both confirmed upcoming sessions. Footer excluded. Render 1289×900 at 156,50. | Authenticated dashboard not publicly accessible. Original source is smaller than the preferred capture width; it is downscaled rather than enlarged. |
+| Cedar Construction | Public repository QA `local-project-detail.png`, 1440×1289 / 1.117 | Sidebar, four financial metrics, complete progress and project-health panels. Select top 1440×948; render 1367×900 at 117,50, comparable to GameZone. | Real repository capture with existing example-project data and Cedar Control branding. Public site warms up after a cold backend response; private workflow requires authentication. CMS case-study screenshots remain unchanged. |
+| UniHub | Original `Admin.webp`, 1919×918 / 2.090 | Keep navigation, all summary cards, enrollment chart and account status. Remove only the captured right scrollbar; render 1440×692 at 80,154. | Repository-published demo login was tested after backend warm-up and returned 401. No further credential attempts. Highest available original retained; its compression and wide aspect limit sharper recapture and increase vertical matte. |
+| User Management | Fresh public capture, 1440×900 / 1.600 | Loaded real statistics, navigation, all three cards and complete Platform Overview. Remove irrelevant lower blank area; render 1440×650 at 80,175. | Fresh public overview possible. An actual authenticated management workflow was unavailable; this cover is explicitly a public statistics view, not an admin screen. |
+| Medicare Hub | Fresh public capture, 1440×900 / 1.600 | Verified public homepage, navigation, introduction and existing reception artwork. Select top 1440×750; render at 80,125. | Real public interface available. No dashboard/appointment screenshot found in CMS/repository; protected clinic/patient workflow unavailable. The separate identity proposal below is not integrated. |
+| Home Services | Fresh public capture, 1920×1200 / 1.600 | Complete navigation, headline, both original worker photos and service facts. Downscale whole view to 1440×900 at 80,50. | Fresh capture possible. At 1440px the live responsive design hides the side photos; 1920px was deliberately used to retain both. Capture-only scrollbar suppression removes browser chrome; the intentional lower white shape belongs to the original design and is preserved. |
+
+All selections were reviewed individually. No generated interfaces, fabricated messages, perspective, decorative device frames, gradients, new motion or interface recolouring were introduced. Existing illustration material remains unchanged. Restricted workflow sources remain a limitation; every project nevertheless has a dedicated, verified-material gallery cover in this local pass.
+
+## Cover assets and integration
+
+Eight lossless **1600×1000 PNG masters** live in [masters](docs/design/engineered-landscape-covers/masters). The common matte is the existing preview colour **#deded3**. The 1440×900 product view at 80/50px is the starting point; wider/narrower originals retain their proportions and complete selected panels, so their exact matte differs as documented. GameZone and Cedar now have similar product height and apparent scale. UniHub and User Management retain more vertical matte to preserve their content without distortion.
+
+[Delivery assets](public/projects/gallery-covers) contain WebP and AVIF at **480, 960 and 1600px**, plus a primary WebP fallback: **56 files / 2,123,730 bytes** across all variants, not a single page download. Largest full-size WebP is 105,270 bytes. WebP quality 92 and AVIF quality 72 with 4:4:4 preserve interface colour/text. [Asset validation](docs/design/engineered-landscape-covers/asset-validation.json) confirms every asset decodes, every master is 1600×1000, matte pixels match, and resize ratio rounding remains below 0.00036. No source original was enlarged.
+
+`npm run images:gallery` rebuilds optimized delivery sets and `src/generated/gallery-covers.ts` from the reviewed masters. The existing case-study optimizer excludes this directory so it cannot recompress the separately authored covers. No image-generation dependency was added.
+
+`Projects` selects the dedicated cover by slug and supplies explicit **1600×1000** dimensions and responsive sources through the shared image component. Authored covers receive **zero additional CSS padding**, avoiding doubled margins. Unknown/future CMS projects retain the bounded original-image path and ordinary frame padding. Loading/decode/error states reserve the same 16:10 frame.
+
+Gallery and Index use concise presentation titles, including **Cedar Construction** and **User Management**. Search matches both the short title and original CMS name/technology. Link accessible names, identifiers, routes and case-study headings retain full CMS names. Case-study and selected-collection media remain original screenshots; no cover map is applied there. Portrait source/assets/code are unchanged in this branch.
+
+## Complete eight-project before/after evidence
+
+Open [gallery-comparison.html](docs/design/engineered-landscape-covers/gallery-comparison.html) for side-by-side complete galleries, original viewport captures, treatment table, masters and the separate Medicare proposal. Local live gallery: `http://127.0.0.1:5175/projects`.
+
+| Viewport | Before complete eight-project gallery | After complete eight-project gallery | Unmodified after viewport |
+| --- | --- | --- | --- |
+| 1363×936 | [before](docs/design/engineered-landscape-covers/before-1363x936-complete.jpg) | [after](docs/design/engineered-landscape-covers/after-1363x936-complete.jpg) | [viewport](docs/design/engineered-landscape-covers/after-1363x936-viewport.jpg) |
+| 1280×720 | [before](docs/design/engineered-landscape-covers/before-1280x720-complete.jpg) | [after](docs/design/engineered-landscape-covers/after-1280x720-complete.jpg) | [viewport](docs/design/engineered-landscape-covers/after-1280x720-viewport.jpg) |
+| 390×844 | [before](docs/design/engineered-landscape-covers/before-390x844-complete.jpg) | [after](docs/design/engineered-landscape-covers/after-390x844-complete.jpg) | [viewport](docs/design/engineered-landscape-covers/after-390x844-viewport.jpg) |
+| 360×800 | [before](docs/design/engineered-landscape-covers/before-360x800-complete.jpg) | [after](docs/design/engineered-landscape-covers/after-360x800-complete.jpg) | [viewport](docs/design/engineered-landscape-covers/after-360x800-viewport.jpg) |
+
+Complete-gallery captures temporarily expand the existing inner scroll container for capture only. Original viewport captures and measured geometry accompany them; the expansion is not application CSS. Installed Chrome, DPR 1, reduced motion, read-only public-content snapshot. [Before measurements](docs/design/engineered-landscape-covers/before-review.json) / [after measurements](docs/design/engineered-landscape-covers/after-review.json): all eight loaded, eight Index links, no Index images, no horizontal overflow or page errors at every viewport. Desktop row captions and short titles align; 360/390px titles remain readable on one line.
+
+[Loading screenshot](docs/design/engineered-landscape-covers/loading-390x844.jpg) and [failure screenshot](docs/design/engineered-landscape-covers/failure-390x844.jpg) use intercepted image responses. The frame remains **343.22×214.5px** through loading/failure, with a readable fallback and usable case-study link.
+
+[Compiled-build delivery/state verification](docs/design/engineered-landscape-covers/production-loading-and-delivery.json) checks all eight decoded covers at 1363px DPR 1 and **390/360px DPR 2.75**. Chrome selects native AVIF; removing AVIF sources in the capture DOM separately verifies decoded WebP selection. This is a fallback simulation, not a physical unsupported-codec browser test. No page errors. [Medicare identity alternative](docs/design/engineered-landscape-covers/proposals/medicare-identity-1600x1000.png) uses only the existing illustration, project name and verified stack; it is shown for review and not adopted.
+
+## Checks, changed files and limitations
+
+- `npm run images:gallery`, `npm run typecheck`, `npm run lint`, `npm run build`, `git diff --check`: pass. Existing >500kB WebGL motion chunk warning remains.
+- `npm run test:landscape`: **10/10 pass**.
+- Full Playwright suite: **122/123 passed** across desktop/tablet/mobile Chrome. All **21/21 gallery-cover regressions passed**. One existing mobile selected-screenshot test exceeded its five-second `settled` assertion while the stage was still `opening`; its isolated repeat passed **2/2** without changing application code or loosening the deadline. This transient timing failure is retained here rather than reporting a wholly green full run. [Check summary](docs/design/engineered-landscape-covers/checks.json). Cover tests verify all-eight bounds, undoubled margins, dimensions, Gallery/Index switching, image failure without layout shift, keyboard navigation, short/full-title search, full case-study names/original media, and future tall CMS-source containment. Other existing Contact, AI, navigation and focus regressions passed.
+- Changed code: `src/pages/Projects.tsx`, `src/lib/gallery-presentation.ts`, `src/generated/gallery-covers.ts`, `ProjectPreview.tsx`, `ResponsiveProjectImage.tsx`, `project-preview.css`, caption-height rule in `src/landscape.css`, `scripts/optimize-gallery-covers.mjs`, exclusion in `scripts/optimize-project-images.mjs`, `package.json` script, and `tests/e2e/project-preview.spec.ts`. Added dedicated cover assets and this QA evidence. No dependencies, server routes, CMS records, case-study sources, portrait, Contact or sculpture code changed.
+- Source gaps: no approved populated Lobby conversation, no authenticated User Management workflow, no Medicare clinic dashboard/appointment capture, and unavailable UniHub demo authentication. The integrated covers use the verified sources documented above; these unavailable workflows are not represented as verified. Source compression limits GameZone/UniHub detail; no artificial sharpening or invented detail was used.
+- Physical phones, Safari/WebKit and real device codec fallback were not available. Visual checks are Chrome desktop/mobile emulation; no hardware-device assurance is claimed.
+- Local work remains uncommitted on `refine/engineered-landscape-gallery-covers`. No push, PR update, merge, deployment, production Contact submission or live database write occurred for this pass.
+
+---
+
 # Engineered Landscape Profile photograph integration
 
 Date: 8 October 2026. Status: **refined photograph integrated and locally verified; follow-up commit/push authorized for online review**.

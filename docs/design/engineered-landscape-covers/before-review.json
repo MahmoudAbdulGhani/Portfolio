@@ -1,0 +1,634 @@
+{
+  "phase": "before",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "natural": [
+            1900,
+            881
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 81.7874984741211,
+            "y": 449.6000061035156,
+            "padding": "12px"
+          },
+          "captionTop": 827.7250366210938,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/lobby/friends.webp",
+          "natural": [
+            572,
+            261
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 696.4000244140625,
+            "y": 449.6000061035156,
+            "padding": "12px"
+          },
+          "captionTop": 827.7250366210938,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "natural": [
+            572,
+            605
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 81.7874984741211,
+            "y": 997.2750244140625,
+            "padding": "12px"
+          },
+          "captionTop": 1375.4000244140625,
+          "state": "ready"
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "natural": [
+            1904,
+            879
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 696.4000244140625,
+            "y": 997.2750244140625,
+            "padding": "12px"
+          },
+          "captionTop": 1375.4000244140625,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/unihub/Admin.webp",
+          "natural": [
+            572,
+            273
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 81.7874984741211,
+            "y": 1544.9500732421875,
+            "padding": "12px"
+          },
+          "captionTop": 1923.0750732421875,
+          "state": "ready"
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/user-management/dashboard.webp",
+          "natural": [
+            1920,
+            877
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 696.4000244140625,
+            "y": 1544.9500732421875,
+            "padding": "12px"
+          },
+          "captionTop": 1923.0750732421875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "natural": [
+            1000,
+            1000
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 81.7874984741211,
+            "y": 2092.625,
+            "padding": "12px"
+          },
+          "captionTop": 2470.75,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/cinematic/home-services.webp",
+          "natural": [
+            1348,
+            926
+          ],
+          "frame": {
+            "width": 574.6124877929688,
+            "height": 359.125,
+            "x": 696.4000244140625,
+            "y": 2092.625,
+            "padding": "12px"
+          },
+          "captionTop": 2470.75,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "natural": [
+            1900,
+            881
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 76.80000305175781,
+            "y": 449.6000061035156,
+            "padding": "12px"
+          },
+          "captionTop": 804.8500366210938,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/lobby/friends.webp",
+          "natural": [
+            537,
+            245
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 654.7999877929688,
+            "y": 449.6000061035156,
+            "padding": "12px"
+          },
+          "captionTop": 804.8500366210938,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "natural": [
+            537,
+            568
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 76.80000305175781,
+            "y": 974.4000244140625,
+            "padding": "12px"
+          },
+          "captionTop": 1329.6500244140625,
+          "state": "ready"
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "natural": [
+            1904,
+            879
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 654.7999877929688,
+            "y": 974.4000244140625,
+            "padding": "12px"
+          },
+          "captionTop": 1329.6500244140625,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/unihub/Admin.webp",
+          "natural": [
+            537,
+            257
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 76.80000305175781,
+            "y": 1499.2000732421875,
+            "padding": "12px"
+          },
+          "captionTop": 1854.4500732421875,
+          "state": "ready"
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/user-management/dashboard.webp",
+          "natural": [
+            1920,
+            877
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 654.7999877929688,
+            "y": 1499.2000732421875,
+            "padding": "12px"
+          },
+          "captionTop": 1854.4500732421875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "natural": [
+            1000,
+            1000
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 76.80000305175781,
+            "y": 2024,
+            "padding": "12px"
+          },
+          "captionTop": 2379.25,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/cinematic/home-services.webp",
+          "natural": [
+            1348,
+            926
+          ],
+          "frame": {
+            "width": 538,
+            "height": 336.25,
+            "x": 654.7999877929688,
+            "y": 2024,
+            "padding": "12px"
+          },
+          "captionTop": 2379.25,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "natural": [
+            1900,
+            881
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 543.7999877929688,
+            "padding": "8px"
+          },
+          "captionTop": 767.0250244140625,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/lobby/friends.webp",
+          "natural": [
+            351,
+            160
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 886.2250366210938,
+            "padding": "8px"
+          },
+          "captionTop": 1109.4500732421875,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "natural": [
+            351,
+            371
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 1228.6500244140625,
+            "padding": "8px"
+          },
+          "captionTop": 1451.875,
+          "state": "ready"
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "natural": [
+            1904,
+            879
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 1571.0750732421875,
+            "padding": "8px"
+          },
+          "captionTop": 1794.300048828125,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/unihub/Admin.webp",
+          "natural": [
+            351,
+            168
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 1975.9000244140625,
+            "padding": "8px"
+          },
+          "captionTop": 2199.125,
+          "state": "ready"
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/user-management/dashboard.webp",
+          "natural": [
+            1920,
+            877
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 2318.324951171875,
+            "padding": "8px"
+          },
+          "captionTop": 2541.550048828125,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "natural": [
+            1000,
+            1000
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 2691.949951171875,
+            "padding": "8px"
+          },
+          "captionTop": 2915.175048828125,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/cinematic/home-services.webp",
+          "natural": [
+            1348,
+            926
+          ],
+          "frame": {
+            "width": 333.1750183105469,
+            "height": 208.22500610351562,
+            "x": 23.412500381469727,
+            "y": 3034.375,
+            "padding": "8px"
+          },
+          "captionTop": 3257.60009765625,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "natural": [
+            1900,
+            881
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 543.7999877929688,
+            "padding": "8px"
+          },
+          "captionTop": 750.2999877929688,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/lobby/friends.webp",
+          "natural": [
+            324,
+            147
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 890.5,
+            "padding": "8px"
+          },
+          "captionTop": 1097,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "natural": [
+            324,
+            342
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 1216.2000732421875,
+            "padding": "8px"
+          },
+          "captionTop": 1422.7000732421875,
+          "state": "ready"
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "natural": [
+            1904,
+            879
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 1541.9000244140625,
+            "padding": "8px"
+          },
+          "captionTop": 1748.4000244140625,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/unihub/Admin.webp",
+          "natural": [
+            324,
+            155
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 1930,
+            "padding": "8px"
+          },
+          "captionTop": 2136.5,
+          "state": "ready"
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/user-management/dashboard.webp",
+          "natural": [
+            1920,
+            877
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 2255.699951171875,
+            "padding": "8px"
+          },
+          "captionTop": 2462.199951171875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "natural": [
+            1000,
+            1000
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 2612.60009765625,
+            "padding": "8px"
+          },
+          "captionTop": 2819.10009765625,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/cinematic/home-services.webp",
+          "natural": [
+            1348,
+            926
+          ],
+          "frame": {
+            "width": 306.3999938964844,
+            "height": 191.5,
+            "x": 21.600000381469727,
+            "y": 2938.300048828125,
+            "padding": "8px"
+          },
+          "captionTop": 3144.800048828125,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

@@ -111,9 +111,11 @@ for (const [width, height] of [
           .querySelector('[type="submit"]')!
           .getBoundingClientRect();
         const style = getComputedStyle(form);
+        const pageBox = main.getBoundingClientRect();
         return {
-          left: container.left,
-          right: innerWidth - container.right,
+          // Measure the page's gutters without counting a native scrollbar.
+          left: container.left - pageBox.left,
+          right: pageBox.right - container.right,
           formWidth: box.width,
           containerWidth: container.width,
           padding: parseFloat(style.paddingLeft),

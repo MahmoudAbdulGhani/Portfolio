@@ -1,0 +1,532 @@
+{
+  "loadingFrame": {
+    "x": 23.390625,
+    "y": 544.359375,
+    "width": 343.21875,
+    "height": 214.5
+  },
+  "failureFrame": {
+    "x": 23.390625,
+    "y": 544.359375,
+    "width": 343.21875,
+    "height": 214.5
+  },
+  "status": "Preview unavailable. Open the case study.",
+  "preservedFrame": true,
+  "errors": [],
+  "delivery": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "dpr": 1,
+      "images": [
+        {
+          "alt": "JobPilot AI Resume Library with a saved document, sidebar and upload action",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/jobpilot-ai-960w.avif"
+        },
+        {
+          "alt": "Lobby audio-room workspace with room navigation and the Start audio call action",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/lobby-960w.avif"
+        },
+        {
+          "alt": "GameZone dashboard with booking metrics and two confirmed upcoming sessions",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/gamezone-arena-960w.avif"
+        },
+        {
+          "alt": "Cedar project overview with sidebar, financial metrics, progress and project health panels",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/construction-project-management-accounting-system-960w.avif"
+        },
+        {
+          "alt": "UniHub admin dashboard with navigation, student and course metrics, enrollment chart and account status",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/unihub-960w.avif"
+        },
+        {
+          "alt": "User Management public statistics with active users, average age and city counts",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/full-stack-user-management-system-960w.avif"
+        },
+        {
+          "alt": "Medicare Hub public homepage with navigation, clinic introduction and existing reception artwork",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/medicare-hub-960w.avif"
+        },
+        {
+          "alt": "Home Services homepage with navigation, service headline and both worker photographs",
+          "dimensions": [
+            580,
+            362
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            572,
+            357
+          ],
+          "currentSource": "/projects/gallery-covers/home-services-960w.avif"
+        }
+      ],
+      "webpFallbackSimulation": [
+        {
+          "source": "/projects/gallery-covers/jobpilot-ai-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/lobby-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/gamezone-arena-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/construction-project-management-accounting-system-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/unihub-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/full-stack-user-management-system-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/medicare-hub-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/home-services-960w.webp",
+          "decoded": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2.75,
+      "images": [
+        {
+          "alt": "JobPilot AI Resume Library with a saved document, sidebar and upload action",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/jobpilot-ai-1600w.avif"
+        },
+        {
+          "alt": "Lobby audio-room workspace with room navigation and the Start audio call action",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/lobby-1600w.avif"
+        },
+        {
+          "alt": "GameZone dashboard with booking metrics and two confirmed upcoming sessions",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/gamezone-arena-1600w.avif"
+        },
+        {
+          "alt": "Cedar project overview with sidebar, financial metrics, progress and project health panels",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/construction-project-management-accounting-system-1600w.avif"
+        },
+        {
+          "alt": "UniHub admin dashboard with navigation, student and course metrics, enrollment chart and account status",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/unihub-1600w.avif"
+        },
+        {
+          "alt": "User Management public statistics with active users, average age and city counts",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/full-stack-user-management-system-1600w.avif"
+        },
+        {
+          "alt": "Medicare Hub public homepage with navigation, clinic introduction and existing reception artwork",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/medicare-hub-1600w.avif"
+        },
+        {
+          "alt": "Home Services homepage with navigation, service headline and both worker photographs",
+          "dimensions": [
+            343,
+            215
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            351,
+            219
+          ],
+          "currentSource": "/projects/gallery-covers/home-services-1600w.avif"
+        }
+      ],
+      "webpFallbackSimulation": [
+        {
+          "source": "/projects/gallery-covers/jobpilot-ai-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/lobby-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/gamezone-arena-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/construction-project-management-accounting-system-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/unihub-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/full-stack-user-management-system-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/medicare-hub-1600w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/home-services-1600w.webp",
+          "decoded": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "dpr": 2.75,
+      "images": [
+        {
+          "alt": "JobPilot AI Resume Library with a saved document, sidebar and upload action",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/jobpilot-ai-960w.avif"
+        },
+        {
+          "alt": "Lobby audio-room workspace with room navigation and the Start audio call action",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/lobby-960w.avif"
+        },
+        {
+          "alt": "GameZone dashboard with booking metrics and two confirmed upcoming sessions",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/gamezone-arena-960w.avif"
+        },
+        {
+          "alt": "Cedar project overview with sidebar, financial metrics, progress and project health panels",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/construction-project-management-accounting-system-960w.avif"
+        },
+        {
+          "alt": "UniHub admin dashboard with navigation, student and course metrics, enrollment chart and account status",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/unihub-960w.avif"
+        },
+        {
+          "alt": "User Management public statistics with active users, average age and city counts",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/full-stack-user-management-system-960w.avif"
+        },
+        {
+          "alt": "Medicare Hub public homepage with navigation, clinic introduction and existing reception artwork",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/medicare-hub-960w.avif"
+        },
+        {
+          "alt": "Home Services homepage with navigation, service headline and both worker photographs",
+          "dimensions": [
+            317,
+            198
+          ],
+          "explicit": [
+            "1600",
+            "1000"
+          ],
+          "natural": [
+            324,
+            202
+          ],
+          "currentSource": "/projects/gallery-covers/home-services-960w.avif"
+        }
+      ],
+      "webpFallbackSimulation": [
+        {
+          "source": "/projects/gallery-covers/jobpilot-ai-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/lobby-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/gamezone-arena-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/construction-project-management-accounting-system-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/unihub-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/full-stack-user-management-system-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/medicare-hub-960w.webp",
+          "decoded": true
+        },
+        {
+          "source": "/projects/gallery-covers/home-services-960w.webp",
+          "decoded": true
+        }
+      ]
+    }
+  ]
+}

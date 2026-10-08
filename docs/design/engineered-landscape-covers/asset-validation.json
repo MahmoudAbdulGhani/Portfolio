@@ -1,0 +1,448 @@
+{
+  "inspected": "2026-10-08",
+  "covers": 8,
+  "decodedAssets": 56,
+  "bytes": 2302864,
+  "results": [
+    {
+      "slug": "jobpilot-ai",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 10596
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 7852
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 34552
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 26688
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 74782
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 59277
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 74782
+        }
+      ]
+    },
+    {
+      "slug": "lobby",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 5514
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 4191
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 16316
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 12205
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 36732
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 27045
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 36732
+        }
+      ]
+    },
+    {
+      "slug": "gamezone-arena",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 8996
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 6923
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 26106
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 19691
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 54080
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 37392
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 54080
+        }
+      ]
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 17652
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 12559
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 45572
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 33260
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 94528
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 66531
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 94528
+        }
+      ]
+    },
+    {
+      "slug": "unihub",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 11124
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 8118
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 30642
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 21930
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 61942
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 43430
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 61942
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 8770
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 6569
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 25366
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 20292
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 55102
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 42211
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 55102
+        }
+      ]
+    },
+    {
+      "slug": "home-services",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 23442
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 15865
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 63452
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 40737
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 124140
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 77615
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 124140
+        }
+      ]
+    },
+    {
+      "slug": "medicare-hub",
+      "master": [
+        1600,
+        1000
+      ],
+      "presentation": "borderless",
+      "productRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1600,
+        "height": 1000
+      },
+      "originalRatio": 1.6,
+      "selectedRatio": 1.6,
+      "renderedRatio": 1.6,
+      "aspectRatioError": 0,
+      "outputs": [
+        {
+          "width": 480,
+          "format": "webp",
+          "bytes": 17196
+        },
+        {
+          "width": 480,
+          "format": "avif",
+          "bytes": 11028
+        },
+        {
+          "width": 960,
+          "format": "webp",
+          "bytes": 48954
+        },
+        {
+          "width": 960,
+          "format": "avif",
+          "bytes": 29118
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 106348
+        },
+        {
+          "width": 1600,
+          "format": "avif",
+          "bytes": 62779
+        },
+        {
+          "width": 1600,
+          "format": "webp",
+          "bytes": 106348
+        }
+      ]
+    }
+  ]
+}

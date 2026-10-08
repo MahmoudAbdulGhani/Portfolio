@@ -1,0 +1,634 @@
+{
+  "phase": "after",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 81.765625,
+            "y": 450.1875,
+            "padding": "0px"
+          },
+          "captionTop": 828.390625,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 696.5,
+            "y": 450.1875,
+            "padding": "0px"
+          },
+          "captionTop": 828.390625,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 81.765625,
+            "y": 965.640625,
+            "padding": "0px"
+          },
+          "captionTop": 1343.84375,
+          "state": "ready"
+        },
+        {
+          "title": "Cedar Construction",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 696.5,
+            "y": 965.640625,
+            "padding": "0px"
+          },
+          "captionTop": 1343.84375,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 81.765625,
+            "y": 1481.09375,
+            "padding": "0px"
+          },
+          "captionTop": 1859.296875,
+          "state": "ready"
+        },
+        {
+          "title": "User Management",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 696.5,
+            "y": 1481.09375,
+            "padding": "0px"
+          },
+          "captionTop": 1859.296875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 81.765625,
+            "y": 1996.546875,
+            "padding": "0px"
+          },
+          "captionTop": 2374.75,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            572,
+            357
+          ],
+          "frame": {
+            "width": 574.734375,
+            "height": 359.203125,
+            "x": 696.5,
+            "y": 1996.546875,
+            "padding": "0px"
+          },
+          "captionTop": 2374.75,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 76.796875,
+            "y": 450.1875,
+            "padding": "0px"
+          },
+          "captionTop": 805.5625,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 655,
+            "y": 450.1875,
+            "padding": "0px"
+          },
+          "captionTop": 805.5625,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 76.796875,
+            "y": 942.8125,
+            "padding": "0px"
+          },
+          "captionTop": 1298.1875,
+          "state": "ready"
+        },
+        {
+          "title": "Cedar Construction",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 655,
+            "y": 942.8125,
+            "padding": "0px"
+          },
+          "captionTop": 1298.1875,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 76.796875,
+            "y": 1435.4375,
+            "padding": "0px"
+          },
+          "captionTop": 1790.8125,
+          "state": "ready"
+        },
+        {
+          "title": "User Management",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 655,
+            "y": 1435.4375,
+            "padding": "0px"
+          },
+          "captionTop": 1790.8125,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 76.796875,
+            "y": 1928.0625,
+            "padding": "0px"
+          },
+          "captionTop": 2283.4375,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            537,
+            335
+          ],
+          "frame": {
+            "width": 538.203125,
+            "height": 336.375,
+            "x": 655,
+            "y": 1928.0625,
+            "padding": "0px"
+          },
+          "captionTop": 2283.4375,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 544.359375,
+            "padding": "0px"
+          },
+          "captionTop": 767.609375,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 885.796875,
+            "padding": "0px"
+          },
+          "captionTop": 1109.046875,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 1227.234375,
+            "padding": "0px"
+          },
+          "captionTop": 1450.484375,
+          "state": "ready"
+        },
+        {
+          "title": "Cedar Construction",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 1568.671875,
+            "padding": "0px"
+          },
+          "captionTop": 1791.921875,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 1910.109375,
+            "padding": "0px"
+          },
+          "captionTop": 2133.359375,
+          "state": "ready"
+        },
+        {
+          "title": "User Management",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 2251.546875,
+            "padding": "0px"
+          },
+          "captionTop": 2474.796875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 2592.984375,
+            "padding": "0px"
+          },
+          "captionTop": 2816.234375,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": {
+            "width": 333.21875,
+            "height": 208.25,
+            "x": 23.390625,
+            "y": 2934.421875,
+            "padding": "0px"
+          },
+          "captionTop": 3157.671875,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 544.359375,
+            "padding": "0px"
+          },
+          "captionTop": 751.109375,
+          "state": "ready"
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 890.296875,
+            "padding": "0px"
+          },
+          "captionTop": 1097.046875,
+          "state": "ready"
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 1215.234375,
+            "padding": "0px"
+          },
+          "captionTop": 1421.984375,
+          "state": "ready"
+        },
+        {
+          "title": "Cedar Construction",
+          "href": "/projects/construction-project-management-accounting-system",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 1540.171875,
+            "padding": "0px"
+          },
+          "captionTop": 1746.921875,
+          "state": "ready"
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 1865.109375,
+            "padding": "0px"
+          },
+          "captionTop": 2071.859375,
+          "state": "ready"
+        },
+        {
+          "title": "User Management",
+          "href": "/projects/full-stack-user-management-system",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 2190.046875,
+            "padding": "0px"
+          },
+          "captionTop": 2396.796875,
+          "state": "ready"
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 2514.984375,
+            "padding": "0px"
+          },
+          "captionTop": 2721.734375,
+          "state": "ready"
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            324,
+            202
+          ],
+          "frame": {
+            "width": 306.8125,
+            "height": 191.75,
+            "x": 21.59375,
+            "y": 2839.921875,
+            "padding": "0px"
+          },
+          "captionTop": 3046.671875,
+          "state": "ready"
+        }
+      ],
+      "index": {
+        "count": 8,
+        "images": 0
+      },
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

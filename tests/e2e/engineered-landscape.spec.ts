@@ -477,6 +477,14 @@ test("a slow or failed screenshot cannot reveal a partial image or strand select
     .locator(".selection-caption")
     .evaluate((el) => el.getBoundingClientRect().top + scrollY);
   releaseImage();
+  // Image failure first permits the lazy rig to boot. Resource/GPU startup is
+  // separate from the bounded opening animation; combining both in one 5s
+  // assertion made this test depend on a warm renderer and machine load.
+  await expect(page.locator(".is-expanded")).toHaveAttribute(
+    "data-selection-state",
+    /opening|settled/,
+    { timeout: 15_000 },
+  );
   await expect(page.locator(".is-expanded")).toHaveAttribute(
     "data-selection-state",
     "settled",

@@ -6,6 +6,8 @@ import { detailScreens } from "../lib/project-detail-screens";
 import { PageMeta } from "../components/PageMeta";
 import { PublicDataState } from "../components/PublicDataState";
 import { ProjectPreview } from "../components/ProjectPreview";
+import { galleryCovers } from "../generated/gallery-covers";
+import { galleryTitle } from "../lib/gallery-presentation";
 
 export function Projects() {
   const projects = useProjects();
@@ -17,7 +19,7 @@ export function Projects() {
       (project) =>
         project.published &&
         project.showOnPortfolio !== false &&
-        `${project.name} ${project.stack.join(" ")}`
+        `${project.name} ${galleryTitle(project)} ${project.stack.join(" ")}`
           .toLowerCase()
           .includes(query.toLowerCase()),
     ) ?? [];
@@ -76,6 +78,8 @@ export function Projects() {
       <div className={mode === "Index" ? "project-index" : "project-gallery"}>
         {visible.map((project, index) => {
           const screen = detailScreens(project)[0];
+          const cover = galleryCovers[project.slug];
+          const preview = cover?.src ?? screen?.src;
           return (
             <Link
               key={project.id}
@@ -83,19 +87,21 @@ export function Projects() {
               to={`/projects/${project.slug}`}
               aria-label={`Open ${project.name} case study`}
             >
-              {mode === "Gallery" && screen && (
-                  <ProjectPreview
-                    key={screen.src}
-                    src={screen.src}
-                    alt={`${project.name}: ${screen.label}`}
-                  />
+              {mode === "Gallery" && preview && (
+                <ProjectPreview
+                  key={preview}
+                  src={preview}
+                  alt={cover?.alt ?? `${project.name}: ${screen?.label}`}
+                  sources={cover?.sources}
+                  authoredCover={Boolean(cover)}
+                />
               )}
               <div className="work-caption">
                 <span className="eyebrow">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h2>{project.name}</h2>
+                  <h2>{galleryTitle(project)}</h2>
                   <p>{project.type}</p>
                 </div>
                 <FiArrowUpRight />

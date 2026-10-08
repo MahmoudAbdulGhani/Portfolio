@@ -16,6 +16,11 @@ export function ProjectReader() {
     projects = useProjects();
   const [chapter, setChapter] = useState(0),
     [zoom, setZoom] = useState<number | null>(null);
+  const [galleryTrigger, setGalleryTrigger] = useState<HTMLButtonElement | null>(null);
+  const openGallery = (index: number, trigger: HTMLButtonElement) => {
+    setGalleryTrigger(trigger);
+    setZoom(index);
+  };
   const project = record.data;
   if (record.isLoading || record.isError || !project)
     return (
@@ -126,7 +131,10 @@ export function ProjectReader() {
                   </button>
                 ))}
               </div>
-              <button className="text-link" onClick={() => setZoom(chapter)}>
+              <button
+                className="text-link"
+                onClick={(event) => openGallery(chapter, event.currentTarget)}
+              >
                 Enlarge
                 <FiArrowUpRight />
               </button>
@@ -134,7 +142,7 @@ export function ProjectReader() {
             <button
               className="case-image"
               aria-label={`Enlarge ${project.name} screenshot`}
-              onClick={() => setZoom(chapter)}
+              onClick={(event) => openGallery(chapter, event.currentTarget)}
             >
               <ResponsiveProjectImage
                 src={current.src}
@@ -228,7 +236,7 @@ export function ProjectReader() {
               {screens.map((screen, index) => (
                 <button
                   key={screen.src}
-                  onClick={() => setZoom(index)}
+                  onClick={(event) => openGallery(index, event.currentTarget)}
                   aria-label={`Enlarge ${screen.label}`}
                 >
                   <ResponsiveProjectImage
@@ -267,6 +275,7 @@ export function ProjectReader() {
           screens={screens}
           projectName={project.name}
           initialIndex={zoom}
+          returnFocusTo={galleryTrigger}
           onClose={() => setZoom(null)}
         />
       )}
