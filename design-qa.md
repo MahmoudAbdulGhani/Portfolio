@@ -1,3 +1,39 @@
+# Approved borderless gallery refinement
+
+8 October 2026. The user accepted the borderless comparison and authorized implementation, testing, commit and branch push. Work continues on `refine/engineered-landscape-gallery-covers` from `6c0451e`, updating draft PR #8. This section supersedes the matte presentation described below.
+
+[Before/after comparison](docs/design/engineered-landscape-covers/gallery-comparison.html) · [Current checks](docs/design/engineered-landscape-covers/refinement-3/checks.json) · [Sources and treatments](docs/design/engineered-landscape-covers/cover-treatments.json) · [High-density phone measurements](docs/design/engineered-landscape-covers/refinement-3/device-layout-review.json).
+
+## Change and preservation
+
+The wide 80px/50px gray surround is removed from all eight covers. Rebuilt 1600 × 1000 lossless masters directly from the same hash-verified high-resolution captures; full screenshots now fill their frames. All source captures already match 16:10, so there is no screenshot cropping, stretch or upscaling. This increases visible product width by about 11% within the accepted frame geometry. Exported WebP/AVIF assets were regenerated with the existing quality settings.
+
+Authored covers have zero CSS padding and a transparent frame background. Square edges, image containment, loading/error space, and the existing oxide keyboard outline remain intact. Renamed the preview flag from `embeddedMargins` to `authoredCover` to reflect the new treatment. Original source photographs and product captures, case-study media, selected views, sculptures/WebGL motion, full CMS names and routes, descriptions, search, Gallery/Index modes, Contact and AI functionality remain unchanged. Future CMS screenshots still use their contained inset presentation.
+
+## Visual verification
+
+Fresh before/after full galleries and original viewports were captured at 1363 × 936, 1280 × 720, 390 × 844 and 360 × 800. Desktop and mobile complete galleries were visually inspected against the accepted borderless comparison: all eight retain complete images, consistent frame bounds, aligned caption spacing, flat edges and readable product content. Captures are in [refinement-3](docs/design/engineered-landscape-covers/refinement-3/). Complete-gallery expansion is capture-only.
+
+Chrome and Windows WebKit phone/touch review used DPR 3 at 320 × 568, 360 × 800, 390 × 844, 430 × 932 and 844 × 390. All ten layouts loaded eight images, filled the frames without transforms or borders, and had no horizontal overflow or page errors. Physical phones, on-screen keyboards and browser-chrome behavior remain unverified.
+
+## Checks
+
+- Lint, typecheck and production build passed. Existing motion-rig chunk warning remains, approximately 503KB minified.
+- Image regression: **2/2** passed. Tests check actual painted pixel bounds at all four master edges, complete-source crop metadata, and every responsive format/fallback. **56** delivery files decode; total asset bytes: **2,302,864**.
+- Complete Chrome desktop/tablet/mobile suite: **123/123**, no skipped or unexpected results, no automatic retries. Covers, selection/reversal, assistant, Contact, search/routes and original case-study media remain functional.
+- Relevant WebKit gallery/public interaction suite: **28/28**, no skipped or unexpected results, no automatic retries. Includes all eight previews, Gallery/Index modes, loading/failure states, full CMS search names and routes, case-gallery keyboard/focus, and public navigation.
+- The initial WebKit run missed Ctrl+K before requesting the lazy Command Palette module. The test now waits for rendered navigation before sending the shortcut; its 5s dialog assertion is unchanged. Final WebKit results and a **3/3** targeted Chrome desktop/tablet/phone followup pass. No palette application code or global timeout changed.
+
+## Remaining limits and delivery
+
+No physical iOS/Android device, actual phone keyboard or browser-chrome testing was possible. Windows WebKit automation is not physical Safari verification. Medicare still uses its verified public homepage because no approved populated clinical screenshot was available. Protected project captures retain the previously disclosed published/repository fixtures; this styling refinement makes no claim of live backend/authentication testing.
+
+Commit and push are authorized for this branch and draft PR #8. No merge, manual deployment, production Contact submission, live CMS/database write, dependency change or unrelated source-repository edit.
+
+Changed files: `src/components/ProjectPreview.tsx`, `src/components/project-preview.css`, `src/pages/Projects.tsx`, `tests/gallery-covers.test.mjs`, `tests/e2e/project-preview.spec.ts`, `tests/e2e/public.spec.ts`, gallery masters/delivery assets and QA metadata/screenshots.
+
+---
+
 # Gallery refinement 2: fresh matching captures
 
 8 October 2026. Local branch: `refine/engineered-landscape-gallery-covers`, based on `f1fdade`. This review supersedes the first-pass cover selections and its timeout result below. All eight covers are now integrated with exactly matching painted bounds; protected workflow and physical-device qualifications remain explicit.

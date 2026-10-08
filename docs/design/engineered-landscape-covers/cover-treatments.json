@@ -11,7 +11,7 @@
       "height": 1920
     },
     "source": "Fresh local frontend capture at /resumes; existing pdfResume and docxResume fixtures from frontend/tests/resumes.test.tsx",
-    "note": "Actual isolated frontend, 1536×960 CSS viewport at DPR 2. Existing test CV documents; no new uploads, AI generation or live records.",
+    "note": "Actual isolated frontend, 1536×960 CSS viewport at DPR 2. Existing test CV documents; no new uploads, AI generation or live records. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -22,53 +22,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/jobpilot-ai.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 8740
+        "bytes": 10596
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 7158
+        "bytes": 7852
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 29446
+        "bytes": 34552
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 21734
+        "bytes": 26688
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 64444
+        "bytes": 74782
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 50923
+        "bytes": 59277
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 64444
+        "bytes": 74782
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "lobby",
@@ -82,7 +83,7 @@
       "height": 1920
     },
     "source": "Fresh isolated Angular frontend; exact text and reply/reaction reused from the already-published public/projects/lobby/community-chat.webp",
-    "note": "1536×960 CSS viewport at DPR 2. No newly fabricated messages, private conversation reads or real-time connection. Five known published participant names, six existing messages; synthetic local IDs only.",
+    "note": "1536×960 CSS viewport at DPR 2. No newly fabricated messages, private conversation reads or real-time connection. Five known published participant names, six existing messages; synthetic local IDs only. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -93,53 +94,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/lobby.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 5090
+        "bytes": 5514
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 4098
+        "bytes": 4191
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 14144
+        "bytes": 16316
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 10932
+        "bytes": 12205
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 32894
+        "bytes": 36732
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 24140
+        "bytes": 27045
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 32894
+        "bytes": 36732
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "gamezone-arena",
@@ -153,7 +155,7 @@
       "height": 1920
     },
     "source": "Fresh isolated Next frontend /dashboard; two booking entries reconstructed from the published original user_overview.webp, using repository room images",
-    "note": "1536×960 CSS viewport at DPR 2. Existing published rooms, dates, durations, prices and loyalty value. Only two visible source bookings reused; no unknown third booking invented. Placeholder account email; no database.",
+    "note": "1536×960 CSS viewport at DPR 2. Existing published rooms, dates, durations, prices and loyalty value. Only two visible source bookings reused; no unknown third booking invented. Placeholder account email; no database. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -164,53 +166,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/gamezone-arena.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 8098
+        "bytes": 8996
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 6462
+        "bytes": 6923
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 22858
+        "bytes": 26106
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 17374
+        "bytes": 19691
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 47276
+        "bytes": 54080
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 33830
+        "bytes": 37392
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 47276
+        "bytes": 54080
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "construction-project-management-accounting-system",
@@ -224,7 +227,7 @@
       "height": 1920
     },
     "source": "Fresh rendering of the repository’s .visual-comparison/local-project-detail.html with its actual static styles and scripts",
-    "note": "1536×960 CSS viewport at DPR 2. Existing example-project data, sanitized inactive CSRF field, read-only local asset server. Complete primary panels retained.",
+    "note": "1536×960 CSS viewport at DPR 2. Existing example-project data, sanitized inactive CSRF field, read-only local asset server. Complete primary panels retained. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -235,53 +238,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/construction-project-management-accounting-system.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 14970
+        "bytes": 17652
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 11179
+        "bytes": 12559
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 39646
+        "bytes": 45572
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 28217
+        "bytes": 33260
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 81428
+        "bytes": 94528
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 58606
+        "bytes": 66531
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 81428
+        "bytes": 94528
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "unihub",
@@ -295,7 +299,7 @@
       "height": 1920
     },
     "source": "Fresh isolated React frontend; dashboard responses reuse the approved Admin.webp figures and six course/chart entries",
-    "note": "1536×960 CSS viewport at DPR 2. Actual frontend components, source figures 3 students, 2 professors, 6 courses, 20 credits, 11 enrollments and 7 active accounts. No student records or live login required.",
+    "note": "1536×960 CSS viewport at DPR 2. Actual frontend components, source figures 3 students, 2 professors, 6 courses, 20 credits, 11 enrollments and 7 active accounts. No student records or live login required. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -306,53 +310,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/unihub.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 9794
+        "bytes": 11124
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 7519
+        "bytes": 8118
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 26240
+        "bytes": 30642
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 18876
+        "bytes": 21930
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 54792
+        "bytes": 61942
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 38117
+        "bytes": 43430
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 54792
+        "bytes": 61942
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "full-stack-user-management-system",
@@ -366,7 +371,7 @@
       "height": 1920
     },
     "source": "Fresh isolated current React frontend /admin; first six nondeleted records from the repository’s original demo dataset at f7fab69:src/services/api.js",
-    "note": "1536×960 CSS viewport at DPR 2. Reused Alice/Bob/Charlie/Diana/Eve/Frank example.com demo records; password fields discarded. Waited for every row and parent entrance to settle before capture. No live accounts accessed.",
+    "note": "1536×960 CSS viewport at DPR 2. Reused Alice/Bob/Charlie/Diana/Eve/Frank example.com demo records; password fields discarded. Waited for every row and parent entrance to settle before capture. No live accounts accessed. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -377,53 +382,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/full-stack-user-management-system.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 8058
+        "bytes": 8770
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 6015
+        "bytes": 6569
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 21232
+        "bytes": 25366
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 17334
+        "bytes": 20292
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 48122
+        "bytes": 55102
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 36722
+        "bytes": 42211
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 48122
+        "bytes": 55102
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "home-services",
@@ -437,7 +443,7 @@
       "height": 1920
     },
     "source": "Fresh read-only homepage at https://home-services-coral.vercel.app/",
-    "note": "1536×960 CSS viewport at DPR 2 preserves both visible worker photos and all core hero content. Only captured scrollbars suppressed; intentional original lower geometric shape preserved.",
+    "note": "1536×960 CSS viewport at DPR 2 preserves both visible worker photos and all core hero content. Only captured scrollbars suppressed; intentional original lower geometric shape preserved. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       3072,
       1920
@@ -448,53 +454,54 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/home-services.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 20380
+        "bytes": 23442
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 14726
+        "bytes": 15865
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 55342
+        "bytes": 63452
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 36413
+        "bytes": 40737
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 110820
+        "bytes": 124140
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 68487
+        "bytes": 77615
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 110820
+        "bytes": 124140
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   },
   {
     "slug": "medicare-hub",
@@ -508,7 +515,7 @@
       "height": 1600
     },
     "source": "Fresh read-only public homepage at https://clinic-management-system.kesug.com/",
-    "note": "1280×800 CSS viewport at DPR 2 frames the complete introduction and image before the next section. Actual admin and appointment sources inspected; decorative admin background rejected, no populated approved appointment capture available. No patient data accessed.",
+    "note": "1280×800 CSS viewport at DPR 2 frames the complete introduction and image before the next section. Actual admin and appointment sources inspected; decorative admin background rejected, no populated approved appointment capture available. No patient data accessed. Approved borderless treatment: complete source resized directly to 1600 × 1000; no inserted matte, screenshot crop, shadow or outline.",
     "originalResolution": [
       2560,
       1600
@@ -519,52 +526,53 @@
       1600,
       1000
     ],
-    "background": "#deded3",
+    "background": null,
     "productRect": {
-      "left": 80,
-      "top": 50,
-      "width": 1440,
-      "height": 900
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 1000
     },
     "master": "docs/design/engineered-landscape-covers/masters/medicare-hub.png",
     "outputs": [
       {
         "width": 480,
         "format": "webp",
-        "bytes": 15106
+        "bytes": 17196
       },
       {
         "width": 480,
         "format": "avif",
-        "bytes": 10271
+        "bytes": 11028
       },
       {
         "width": 960,
         "format": "webp",
-        "bytes": 42518
+        "bytes": 48954
       },
       {
         "width": 960,
         "format": "avif",
-        "bytes": 25806
+        "bytes": 29118
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 90582
+        "bytes": 106348
       },
       {
         "width": 1600,
         "format": "avif",
-        "bytes": 54430
+        "bytes": 62779
       },
       {
         "width": 1600,
         "format": "webp",
-        "bytes": 90582
+        "bytes": 106348
       }
     ],
-    "refinement": 2,
-    "noCaptureCropping": true
+    "refinement": 3,
+    "noCaptureCropping": true,
+    "presentation": "borderless"
   }
 ]

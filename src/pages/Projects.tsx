@@ -93,7 +93,7 @@ export function Projects() {
                   src={preview}
                   alt={cover?.alt ?? `${project.name}: ${screen?.label}`}
                   sources={cover?.sources}
-                  embeddedMargins={Boolean(cover)}
+                  authoredCover={Boolean(cover)}
                 />
               )}
               <div className="work-caption">

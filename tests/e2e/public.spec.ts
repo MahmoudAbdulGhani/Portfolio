@@ -122,6 +122,10 @@ test("Collection navigation returns to the accepted collection route", async ({ 
 
 test("Command palette opens via shortcut and supports search navigation", async ({ page }) => {
   await page.goto("/");
+  // Navigation load can finish before React's shortcut effect is installed.
+  // Wait for the rendered shell and resolved empty-collection fixture first.
+  await expect(page.getByRole("navigation", { name: "Main navigation" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Collection", exact: true })).toBeVisible();
   await page.keyboard.press("Control+k");
   const dialog = page.getByRole("dialog", { name: "Command Palette" });
   await expect(dialog).toBeVisible();

@@ -5,7 +5,7 @@ import sharp from 'sharp';
 
 const covers = JSON.parse(await readFile('docs/design/engineered-landscape-covers/cover-treatments.json', 'utf8'));
 
-test('all eight covers have the same painted screenshot bounds, not only equal outer frames', async () => {
+test('all eight borderless covers fill their masters without an exported matte or screenshot cropping', async () => {
   assert.equal(covers.length, 8);
   for (const cover of covers) {
     const { data, info } = await sharp(cover.master).removeAlpha().raw().toBuffer({ resolveWithObject: true });
@@ -21,11 +21,12 @@ test('all eight covers have the same painted screenshot bounds, not only equal o
       }
     }
     assert.deepEqual({ left, top, width: right - left + 1, height: bottom - top + 1 },
-      { left: 80, top: 50, width: 1440, height: 900 }, cover.slug);
+      { left: 0, top: 0, width: 1600, height: 1000 }, cover.slug);
     // Source captures already match the slot; fitting them must not introduce
     // letterboxing, stretch a wide dashboard, or clip a tall original.
     assert.equal(cover.originalResolution[0] / cover.originalResolution[1], 1.6, cover.slug);
     assert.equal(cover.noCaptureCropping, true, cover.slug);
+    assert.deepEqual(cover.crop, { left: 0, top: 0, width: cover.originalResolution[0], height: cover.originalResolution[1] }, cover.slug);
   }
 });
 

@@ -2,9 +2,10 @@
   position: relative;
 }
 
-/* Dedicated covers contain their own matte. Do not add a second gutter. */
+/* Reviewed gallery covers fill their frames; raw CMS media keeps its inset. */
 .landscape .work-preview[data-cover-authored="true"] {
   padding: 0;
+  background: transparent;
 }
 
 .work-preview[data-image-state="loading"] picture {

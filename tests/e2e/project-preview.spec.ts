@@ -76,12 +76,16 @@ for (const [width, height] of [[1363, 936], [1280, 720], [390, 844], [320, 568]]
         return {
           pictureInside: picture.left >= frame.left - 1 && picture.top >= frame.top - 1 && picture.right <= frame.right + 1 && picture.bottom <= frame.bottom + 1,
           imageInside: rect.left >= frame.left - 1 && rect.top >= frame.top - 1 && rect.right <= frame.right + 1 && rect.bottom <= frame.bottom + 1,
+          fillsFrame: Math.abs(rect.left - frame.left) < 1 && Math.abs(rect.top - frame.top) < 1 && Math.abs(rect.right - frame.right) < 1 && Math.abs(rect.bottom - frame.bottom) < 1,
           paintedInside: image.naturalWidth * scale <= rect.width + 1 && image.naturalHeight * scale <= rect.height + 1,
           loaded: image.complete && image.naturalWidth > 0,
           fit: style.objectFit, transform: style.transform,
+          frameBorder: getComputedStyle(el.querySelector('.work-preview')!).borderWidth,
+          frameRadius: getComputedStyle(el.querySelector('.work-preview')!).borderRadius,
+          frameShadow: getComputedStyle(el.querySelector('.work-preview')!).boxShadow,
         };
       });
-      expect(bounds).toEqual({ pictureInside: true, imageInside: true, paintedInside: true, loaded: true, fit: 'contain', transform: 'none' });
+      expect(bounds).toEqual({ pictureInside: true, imageInside: true, fillsFrame: true, paintedInside: true, loaded: true, fit: 'contain', transform: 'none', frameBorder: '0px', frameRadius: '0px', frameShadow: 'none' });
       await expect(card).toHaveAttribute('href', `/projects/${examples[index][0]}`);
     }
     expect(await page.evaluate(() => document.body.scrollWidth <= innerWidth)).toBe(true);
@@ -114,8 +118,11 @@ test('slow and failed previews reserve their frame and keep the case study keybo
   const after = await frame.boundingBox();
   expect(after?.width).toBe(before?.width);
   expect(after?.height).toBe(before?.height);
+  await page.keyboard.press('Tab');
   await card.focus();
   await expect(card).toBeFocused();
+  await expect(card).toHaveCSS('outline-style', 'solid');
+  await expect(card).toHaveCSS('outline-width', '2px');
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/projects\/jobpilot-ai$/);
 });

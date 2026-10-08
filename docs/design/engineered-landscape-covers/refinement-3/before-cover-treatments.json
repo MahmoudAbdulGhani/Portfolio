@@ -1,0 +1,570 @@
+[
+  {
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "alt": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/jobpilot-ai-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh local frontend capture at /resumes; existing pdfResume and docxResume fixtures from frontend/tests/resumes.test.tsx",
+    "note": "Actual isolated frontend, 1536×960 CSS viewport at DPR 2. Existing test CV documents; no new uploads, AI generation or live records.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "7de08b8a45a00993bca29d2f709fd3576e70b7f0c79e45de1abffb8067abbff9",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/jobpilot-ai.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 8740
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 7158
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 29446
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 21734
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 64444
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 50923
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 64444
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "lobby",
+    "title": "Lobby",
+    "alt": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/lobby-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh isolated Angular frontend; exact text and reply/reaction reused from the already-published public/projects/lobby/community-chat.webp",
+    "note": "1536×960 CSS viewport at DPR 2. No newly fabricated messages, private conversation reads or real-time connection. Five known published participant names, six existing messages; synthetic local IDs only.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "de50bb16f935bbfe3678d04497d41ec27cf77e2c23c28c81c0cdd8c91ab180f5",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/lobby.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 5090
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 4098
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 14144
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 10932
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 32894
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 24140
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 32894
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "alt": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/gamezone-arena-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh isolated Next frontend /dashboard; two booking entries reconstructed from the published original user_overview.webp, using repository room images",
+    "note": "1536×960 CSS viewport at DPR 2. Existing published rooms, dates, durations, prices and loyalty value. Only two visible source bookings reused; no unknown third booking invented. Placeholder account email; no database.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "6348bab044d0351735d75f4647ba2e16af123222b75576dfec344fb066f9803b",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/gamezone-arena.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 8098
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 6462
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 22858
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 17374
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 47276
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 33830
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 47276
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "alt": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/construction-project-management-accounting-system-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh rendering of the repository’s .visual-comparison/local-project-detail.html with its actual static styles and scripts",
+    "note": "1536×960 CSS viewport at DPR 2. Existing example-project data, sanitized inactive CSRF field, read-only local asset server. Complete primary panels retained.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "bdbef99c0a5c77b49c67ed6871775c69060279865e81768900eb5bb0b699d983",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/construction-project-management-accounting-system.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 14970
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 11179
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 39646
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 28217
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 81428
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 58606
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 81428
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "unihub",
+    "title": "UniHub",
+    "alt": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/unihub-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh isolated React frontend; dashboard responses reuse the approved Admin.webp figures and six course/chart entries",
+    "note": "1536×960 CSS viewport at DPR 2. Actual frontend components, source figures 3 students, 2 professors, 6 courses, 20 credits, 11 enrollments and 7 active accounts. No student records or live login required.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "71bd2891e2e8cd05c334fc6c8e94aeb841b8c34fbf1530c686da9f8aa7cf7c82",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/unihub.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 9794
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 7519
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 26240
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 18876
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 54792
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 38117
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 54792
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "alt": "User Management administrative table with six demo users and search, city, age and role filters",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/full-stack-user-management-system-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh isolated current React frontend /admin; first six nondeleted records from the repository’s original demo dataset at f7fab69:src/services/api.js",
+    "note": "1536×960 CSS viewport at DPR 2. Reused Alice/Bob/Charlie/Diana/Eve/Frank example.com demo records; password fields discarded. Waited for every row and parent entrance to settle before capture. No live accounts accessed.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "94f13924ee7f478fdeb2b039a86367530423d19ca9b50a94b95643e1db6d86ae",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/full-stack-user-management-system.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 8058
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 6015
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 21232
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 17334
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 48122
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 36722
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 48122
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "home-services",
+    "title": "Home Services",
+    "alt": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/home-services-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 3072,
+      "height": 1920
+    },
+    "source": "Fresh read-only homepage at https://home-services-coral.vercel.app/",
+    "note": "1536×960 CSS viewport at DPR 2 preserves both visible worker photos and all core hero content. Only captured scrollbars suppressed; intentional original lower geometric shape preserved.",
+    "originalResolution": [
+      3072,
+      1920
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "781be731c5ae5afc70d47109e811b28a70e2258453b7f34f1ec7a822d94a2a84",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/home-services.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 20380
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 14726
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 55342
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 36413
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 110820
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 68487
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 110820
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  },
+  {
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "alt": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+    "file": "C:/Users/Admin/AppData/Local/Temp/gallery-cover-round2/medicare-hub-fresh.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 2560,
+      "height": 1600
+    },
+    "source": "Fresh read-only public homepage at https://clinic-management-system.kesug.com/",
+    "note": "1280×800 CSS viewport at DPR 2 frames the complete introduction and image before the next section. Actual admin and appointment sources inspected; decorative admin background rejected, no populated approved appointment capture available. No patient data accessed.",
+    "originalResolution": [
+      2560,
+      1600
+    ],
+    "originalRatio": 1.6,
+    "sourceSHA256": "417deb54ae79429407614fb3de050d8da860d7b672fc958ceb847f45b43b2d0d",
+    "masterResolution": [
+      1600,
+      1000
+    ],
+    "background": "#deded3",
+    "productRect": {
+      "left": 80,
+      "top": 50,
+      "width": 1440,
+      "height": 900
+    },
+    "master": "docs/design/engineered-landscape-covers/masters/medicare-hub.png",
+    "outputs": [
+      {
+        "width": 480,
+        "format": "webp",
+        "bytes": 15106
+      },
+      {
+        "width": 480,
+        "format": "avif",
+        "bytes": 10271
+      },
+      {
+        "width": 960,
+        "format": "webp",
+        "bytes": 42518
+      },
+      {
+        "width": 960,
+        "format": "avif",
+        "bytes": 25806
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 90582
+      },
+      {
+        "width": 1600,
+        "format": "avif",
+        "bytes": 54430
+      },
+      {
+        "width": 1600,
+        "format": "webp",
+        "bytes": 90582
+      }
+    ],
+    "refinement": 2,
+    "noCaptureCropping": true
+  }
+]
