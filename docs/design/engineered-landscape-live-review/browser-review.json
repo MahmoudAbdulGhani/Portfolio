@@ -1,0 +1,693 @@
+{
+  "browser": "154.0.8037.99",
+  "device": "Windows x64 / Intel UHD Graphics",
+  "layouts": [
+    {
+      "name": "desktop",
+      "size": {
+        "width": 1363,
+        "height": 936
+      },
+      "gallery": {
+        "viewport": [
+          1363,
+          936
+        ],
+        "dialog": {
+          "x": 51.60000228881836,
+          "y": 18,
+          "width": 1260,
+          "height": 900,
+          "right": 1311.6000022888184,
+          "bottom": 918
+        },
+        "header": {
+          "x": 76.4000015258789,
+          "y": 42.79999923706055,
+          "width": 1210.4000244140625,
+          "height": 52.60000228881836,
+          "right": 1286.8000259399414,
+          "bottom": 95.4000015258789
+        },
+        "image": {
+          "x": 76.4000015258789,
+          "y": 111.4000015258789,
+          "width": 1210.4000244140625,
+          "height": 645.7999877929688,
+          "right": 1286.8000259399414,
+          "bottom": 757.1999893188477
+        },
+        "footer": {
+          "x": 76.4000015258789,
+          "y": 849.2000122070312,
+          "width": 1210.4000244140625,
+          "height": 44,
+          "right": 1286.8000259399414,
+          "bottom": 893.2000122070312
+        },
+        "thumbnails": [
+          {
+            "x": 80,
+            "y": 776.7999877929688,
+            "width": 80.80000305175781,
+            "height": 54,
+            "right": 160.8000030517578,
+            "bottom": 830.7999877929688
+          },
+          {
+            "x": 173.1999969482422,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 255.5999984741211,
+            "bottom": 830.2000122070312
+          },
+          {
+            "x": 267.20001220703125,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 349.60001373291016,
+            "bottom": 830.2000122070312
+          },
+          {
+            "x": 361.20001220703125,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 443.60001373291016,
+            "bottom": 830.2000122070312
+          },
+          {
+            "x": 455.20001220703125,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 537.6000137329102,
+            "bottom": 830.2000122070312
+          },
+          {
+            "x": 549.2000122070312,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 631.6000137329102,
+            "bottom": 830.2000122070312
+          },
+          {
+            "x": 643.2000122070312,
+            "y": 776.2000122070312,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 725.6000137329102,
+            "bottom": 830.2000122070312
+          }
+        ],
+        "close": {
+          "x": 1239.2000732421875,
+          "y": 42.79999923706055,
+          "width": 47.60000228881836,
+          "height": 44,
+          "right": 1286.8000755310059,
+          "bottom": 86.79999923706055
+        },
+        "actual": {
+          "viewport": [
+            1363,
+            936
+          ],
+          "dialog": {
+            "x": 51.60000228881836,
+            "y": 18,
+            "width": 1260,
+            "height": 900,
+            "right": 1311.6000022888184,
+            "bottom": 918
+          },
+          "header": {
+            "x": 76.4000015258789,
+            "y": 42.79999923706055,
+            "width": 1210.4000244140625,
+            "height": 52.60000228881836,
+            "right": 1286.8000259399414,
+            "bottom": 95.4000015258789
+          },
+          "image": {
+            "x": 76.4000015258789,
+            "y": 111.4000015258789,
+            "width": 1210.4000244140625,
+            "height": 645.7999877929688,
+            "right": 1286.8000259399414,
+            "bottom": 757.1999893188477
+          },
+          "footer": {
+            "x": 76.4000015258789,
+            "y": 849.2000122070312,
+            "width": 1210.4000244140625,
+            "height": 44,
+            "right": 1286.8000259399414,
+            "bottom": 893.2000122070312
+          },
+          "thumbnails": [
+            {
+              "x": 80,
+              "y": 776.7999877929688,
+              "width": 80.80000305175781,
+              "height": 54,
+              "right": 160.8000030517578,
+              "bottom": 830.7999877929688
+            },
+            {
+              "x": 173.1999969482422,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 255.5999984741211,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 267.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 349.60001373291016,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 361.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 443.60001373291016,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 455.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 537.6000137329102,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 549.2000122070312,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 631.6000137329102,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 643.2000122070312,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 725.6000137329102,
+              "bottom": 830.2000122070312
+            }
+          ],
+          "close": {
+            "x": 1239.2000732421875,
+            "y": 42.79999923706055,
+            "width": 47.60000228881836,
+            "height": 44,
+            "right": 1286.8000755310059,
+            "bottom": 86.79999923706055
+          }
+        },
+        "returnFocus": true,
+        "construction": {
+          "viewport": [
+            1363,
+            936
+          ],
+          "dialog": {
+            "x": 51.60000228881836,
+            "y": 18,
+            "width": 1260,
+            "height": 900,
+            "right": 1311.6000022888184,
+            "bottom": 918
+          },
+          "header": {
+            "x": 76.4000015258789,
+            "y": 42.79999923706055,
+            "width": 1210.4000244140625,
+            "height": 52.60000228881836,
+            "right": 1286.8000259399414,
+            "bottom": 95.4000015258789
+          },
+          "image": {
+            "x": 76.4000015258789,
+            "y": 111.4000015258789,
+            "width": 1210.4000244140625,
+            "height": 645.7999877929688,
+            "right": 1286.8000259399414,
+            "bottom": 757.1999893188477
+          },
+          "footer": {
+            "x": 76.4000015258789,
+            "y": 849.2000122070312,
+            "width": 1210.4000244140625,
+            "height": 44,
+            "right": 1286.8000259399414,
+            "bottom": 893.2000122070312
+          },
+          "thumbnails": [
+            {
+              "x": 80,
+              "y": 776.7999877929688,
+              "width": 80.80000305175781,
+              "height": 54,
+              "right": 160.8000030517578,
+              "bottom": 830.7999877929688
+            },
+            {
+              "x": 173.1999969482422,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 255.5999984741211,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 267.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 349.60001373291016,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 361.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 443.60001373291016,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 455.20001220703125,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 537.6000137329102,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 549.2000122070312,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 631.6000137329102,
+              "bottom": 830.2000122070312
+            },
+            {
+              "x": 643.2000122070312,
+              "y": 776.2000122070312,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 725.6000137329102,
+              "bottom": 830.2000122070312
+            }
+          ],
+          "close": {
+            "x": 1239.2000732421875,
+            "y": 42.79999923706055,
+            "width": 47.60000228881836,
+            "height": 44,
+            "right": 1286.8000755310059,
+            "bottom": 86.79999923706055
+          }
+        }
+      },
+      "search": {
+        "iconRight": 109.7874984741211,
+        "textLeft": 121.7874984741211
+      },
+      "bodyOverflow": false
+    },
+    {
+      "name": "mobile",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "gallery": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dialog": {
+          "x": 10,
+          "y": 10,
+          "width": 370.3999938964844,
+          "height": 824,
+          "right": 380.3999938964844,
+          "bottom": 834
+        },
+        "header": {
+          "x": 24.80000114440918,
+          "y": 24.80000114440918,
+          "width": 340.8000183105469,
+          "height": 100.0999984741211,
+          "right": 365.60001945495605,
+          "bottom": 124.89999961853027
+        },
+        "image": {
+          "x": 24.80000114440918,
+          "y": 136.90000915527344,
+          "width": 340.8000183105469,
+          "height": 543.9000244140625,
+          "right": 365.60001945495605,
+          "bottom": 680.8000335693359
+        },
+        "footer": {
+          "x": 24.80000114440918,
+          "y": 775.2000122070312,
+          "width": 340.8000183105469,
+          "height": 44,
+          "right": 365.60001945495605,
+          "bottom": 819.2000122070312
+        },
+        "thumbnails": [
+          {
+            "x": 28.399999618530273,
+            "y": 696.4000244140625,
+            "width": 80.80000305175781,
+            "height": 54,
+            "right": 109.20000267028809,
+            "bottom": 750.4000244140625
+          },
+          {
+            "x": 119.5999984741211,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 202,
+            "bottom": 749.7999877929688
+          },
+          {
+            "x": 211.60000610351562,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 294.00000762939453,
+            "bottom": 749.7999877929688
+          },
+          {
+            "x": 303.6000061035156,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 386.00000762939453,
+            "bottom": 749.7999877929688
+          },
+          {
+            "x": 395.6000061035156,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 478.00000762939453,
+            "bottom": 749.7999877929688
+          },
+          {
+            "x": 487.6000061035156,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 570.0000076293945,
+            "bottom": 749.7999877929688
+          },
+          {
+            "x": 579.6000366210938,
+            "y": 695.7999877929688,
+            "width": 82.4000015258789,
+            "height": 54,
+            "right": 662.0000381469727,
+            "bottom": 749.7999877929688
+          }
+        ],
+        "close": {
+          "x": 318,
+          "y": 80.9000015258789,
+          "width": 47.60000228881836,
+          "height": 44,
+          "right": 365.60000228881836,
+          "bottom": 124.9000015258789
+        },
+        "actual": {
+          "viewport": [
+            390,
+            844
+          ],
+          "dialog": {
+            "x": 10,
+            "y": 10,
+            "width": 370.3999938964844,
+            "height": 824,
+            "right": 380.3999938964844,
+            "bottom": 834
+          },
+          "header": {
+            "x": 24.80000114440918,
+            "y": 24.80000114440918,
+            "width": 340.8000183105469,
+            "height": 100.0999984741211,
+            "right": 365.60001945495605,
+            "bottom": 124.89999961853027
+          },
+          "image": {
+            "x": 24.80000114440918,
+            "y": 136.90000915527344,
+            "width": 340.8000183105469,
+            "height": 543.9000244140625,
+            "right": 365.60001945495605,
+            "bottom": 680.8000335693359
+          },
+          "footer": {
+            "x": 24.80000114440918,
+            "y": 775.2000122070312,
+            "width": 340.8000183105469,
+            "height": 44,
+            "right": 365.60001945495605,
+            "bottom": 819.2000122070312
+          },
+          "thumbnails": [
+            {
+              "x": 28.399999618530273,
+              "y": 696.4000244140625,
+              "width": 80.80000305175781,
+              "height": 54,
+              "right": 109.20000267028809,
+              "bottom": 750.4000244140625
+            },
+            {
+              "x": 119.5999984741211,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 202,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 211.60000610351562,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 294.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 303.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 386.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 395.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 478.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 487.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 570.0000076293945,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 579.6000366210938,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 662.0000381469727,
+              "bottom": 749.7999877929688
+            }
+          ],
+          "close": {
+            "x": 318,
+            "y": 80.9000015258789,
+            "width": 47.60000228881836,
+            "height": 44,
+            "right": 365.60000228881836,
+            "bottom": 124.9000015258789
+          }
+        },
+        "returnFocus": true,
+        "construction": {
+          "viewport": [
+            390,
+            844
+          ],
+          "dialog": {
+            "x": 10,
+            "y": 10,
+            "width": 370.3999938964844,
+            "height": 824,
+            "right": 380.3999938964844,
+            "bottom": 834
+          },
+          "header": {
+            "x": 24.80000114440918,
+            "y": 24.80000114440918,
+            "width": 340.8000183105469,
+            "height": 116.0999984741211,
+            "right": 365.60001945495605,
+            "bottom": 140.89999961853027
+          },
+          "image": {
+            "x": 24.80000114440918,
+            "y": 152.90000915527344,
+            "width": 340.8000183105469,
+            "height": 527.9000244140625,
+            "right": 365.60001945495605,
+            "bottom": 680.8000335693359
+          },
+          "footer": {
+            "x": 24.80000114440918,
+            "y": 775.2000122070312,
+            "width": 340.8000183105469,
+            "height": 44,
+            "right": 365.60001945495605,
+            "bottom": 819.2000122070312
+          },
+          "thumbnails": [
+            {
+              "x": 28.399999618530273,
+              "y": 696.4000244140625,
+              "width": 80.80000305175781,
+              "height": 54,
+              "right": 109.20000267028809,
+              "bottom": 750.4000244140625
+            },
+            {
+              "x": 119.5999984741211,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 202,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 211.60000610351562,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 294.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 303.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 386.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 395.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 478.00000762939453,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 487.6000061035156,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 570.0000076293945,
+              "bottom": 749.7999877929688
+            },
+            {
+              "x": 579.6000366210938,
+              "y": 695.7999877929688,
+              "width": 82.4000015258789,
+              "height": 54,
+              "right": 662.0000381469727,
+              "bottom": 749.7999877929688
+            }
+          ],
+          "close": {
+            "x": 318,
+            "y": 96.9000015258789,
+            "width": 47.60000228881836,
+            "height": 44,
+            "right": 365.60000228881836,
+            "bottom": 140.9000015258789
+          }
+        }
+      },
+      "search": {
+        "iconRight": 51.41250228881836,
+        "textLeft": 63.41250038146973
+      },
+      "bodyOverflow": false
+    }
+  ],
+  "assistant": [
+    {
+      "route": "/",
+      "status": 200,
+      "requestHeaders": {
+        "contentType": "application/json",
+        "accept": "text/event-stream"
+      },
+      "projectSlug": null,
+      "failed": false,
+      "answer": "PORTFOLIO AI\n\nBased on the portfolio, the strongest featured projects include:\n\nJobPilot AI\n\nMahmoud's primary final project at The Digital Hub by UNRWA. It is an AI-assisted career workspace that connects job discovery with verified resume uploads, profile generation, job-fit analysis, and interview preparation.\n\nStack: Next.js, FastAPI, PostgreSQL, Supabase, and OpenAI API.\nLobby\n\nA real-time communication platform supporting persistent communities and temporary guest rooms with live voice and screen sharing.\n\nStack: Angular, NestJS, Supabase, and LiveKit Cloud.\nConstruction Project Management & Accounting System\n\nA modular business platform unifying construction operations, procurement, inventory, and financial workflows.\n\nStack: Python, Django, PostgreSQL, and Docker.",
+      "links": [
+        "/projects/jobpilot-ai",
+        "/projects/lobby",
+        "/projects/construction-project-management-accounting-system"
+      ]
+    },
+    {
+      "route": "/projects/jobpilot-ai",
+      "status": 200,
+      "requestHeaders": {
+        "contentType": "application/json",
+        "accept": "text/event-stream"
+      },
+      "projectSlug": "jobpilot-ai",
+      "failed": false,
+      "answer": "PORTFOLIO AI\n\nAs the Full-Stack Developer & Project Owner of JobPilot AI, Mahmoud Abdul Ghani was the sole developer (team size of 1) and owned the project's entire lifecycle.\n\nCore Contributions\nProduct Scope & Journey: Connected the complete candidate journey, covering resume text extraction, AI profile suggestions, job discovery, fit analysis, tailored document drafting, and interview practice.\nFull-Stack Development: Built the frontend and backend using Next.js and FastAPI within an AI-assisted development workflow.\nIntegration & Validation: Developed structured data validation, consent checks, and user-review processes. Resolved profile integration, save reconciliation, and API persistence issues.\nDeployment & DevOps: Configured and managed deployments on Vercel, Render, and Supabase while resolving database migration, proxy, and storage issues.\nUI & Testing: Directed the responsive layout redesign and used automated tools (pytest, Vitest, Playwright) and manual walkthroughs to validate user authentication, document exports, and interview flows.",
+      "links": [
+        "/projects/jobpilot-ai"
+      ]
+    }
+  ],
+  "errors": [],
+  "malformedContentType": {
+    "status": 415,
+    "message": "{\"message\":\"Content-Type must be application/json.\"}"
+  }
+}

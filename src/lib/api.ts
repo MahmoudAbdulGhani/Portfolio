@@ -10,19 +10,26 @@ export class ApiError extends Error {
   }
 }
 
-export async function apiResponse(path: string, init?: RequestInit): Promise<Response> {
-  const headers: Record<string, string> = {
-    ...(init?.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
-    ...(init?.headers as Record<string, string> | undefined),
-  };
+export async function apiResponse(
+  path: string,
+  init?: RequestInit,
+): Promise<Response> {
+  const headers = new Headers(init?.headers);
+  if (!(init?.body instanceof FormData) && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
 
   const res = await fetch(`${API_BASE}${path}`, {
     credentials: "include",
-    headers,
     ...init,
+    headers,
   });
 
-  if (res.status === 401 && path.startsWith("/admin") && path !== "/admin/auth/login") {
+  if (
+    res.status === 401 &&
+    path.startsWith("/admin") &&
+    path !== "/admin/auth/login"
+  ) {
     window.dispatchEvent(new Event("admin:unauthorized"));
   }
 

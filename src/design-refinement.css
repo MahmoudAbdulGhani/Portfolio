@@ -90,8 +90,8 @@
 .gallery-case-link { min-height:44px; font-size:13px; }
 .case-hero-outcome { font-size:14px; line-height:1.7; color:var(--muted); margin-top:18px; max-width:52ch; }
 .case-editorial .case-summary { align-self:center; }
-.case-inspector header,.cw-viewer header { align-items:start; }
-.case-inspector header h2,.cw-viewer header h3 { overflow-wrap:anywhere; }
+.cw-viewer header { align-items:start; }
+.cw-viewer header h3 { overflow-wrap:anywhere; }
 .contact-layout { grid-template-areas:'intro form' 'details form'; gap:30px 72px; }
 .contact-intro { grid-area:intro; }
 .contact-details { grid-area:details; }
@@ -188,10 +188,9 @@ html:not(.dark) .public-portfolio .cinema .gallery-filters button[aria-pressed=t
  .gallery-caption { margin-inline:0; }
  .gallery-summary,.gallery-stack { margin-left:0; margin-right:0; }
  .gallery-case-link { margin-left:0; }
- .case-inspector header,.cw-viewer header { display:grid; grid-template-columns:1fr; gap:12px; }
- .case-inspector-tools,.cw-viewer-tools { justify-content:flex-end; }
- .case-inspector h2,.cw-viewer h3 { font-size:17px; line-height:1.4; }
- .case-inspector-image { max-height:calc(100dvh - 350px); }
+ .cw-viewer header { display:grid; grid-template-columns:1fr; gap:12px; }
+ .cw-viewer-tools { justify-content:flex-end; }
+ .cw-viewer h3 { font-size:17px; line-height:1.4; }
  .contact-layout { grid-template-columns:1fr; grid-template-areas:'intro' 'form' 'details'; gap:26px; }
  .contact-intro h1 { font-size:42px; }
  .contact-intro h1 em { display:inline; font-size:1.1em; }

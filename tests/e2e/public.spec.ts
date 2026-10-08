@@ -45,8 +45,46 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await page.getByRole("button", { name: /enlarge lobby screenshot/i }).click();
   const gallery = page.getByRole("dialog", { name: /lobby image gallery/i });
   await expect(gallery).toBeVisible();
+  await expect.poll(() => gallery.locator('.case-inspector-thumbs img').evaluateAll(images => images.every(image => {
+    const img = image as HTMLImageElement;
+    return img.complete && img.naturalWidth > 0;
+  }))).toBe(true);
+  const checkBounds = async () => {
+    expect(await gallery.evaluate(dialog => {
+      const frame = dialog.getBoundingClientRect();
+      const controls = [...dialog.querySelectorAll('.case-inspector-inner > header, .case-inspector-inner > footer, .case-inspector-thumbs')];
+      return frame.x >= 0 && frame.y >= 0 && frame.right <= innerWidth && frame.bottom <= innerHeight && controls.every(control => {
+        const box = control.getBoundingClientRect();
+        return box.top >= frame.top && box.bottom <= frame.bottom && box.left >= frame.left && box.right <= frame.right;
+      });
+    })).toBe(true);
+    expect(await gallery.locator('.case-inspector-thumbs img').evaluateAll(images => images.every(image => {
+      const box = image.getBoundingClientRect();
+      return box.width > 0 && box.width <= 84 && box.height > 0 && box.height <= 56;
+    }))).toBe(true);
+    await expect(gallery.getByRole('button', { name: 'Close gallery' })).toBeInViewport({ ratio: 1 });
+    await expect(gallery.getByRole('button', { name: 'Next screenshot' })).toBeInViewport({ ratio: 1 });
+  };
+  await checkBounds();
+  await page.keyboard.press('ArrowRight');
+  await expect(gallery.getByText(/^2 \/ /)).toBeVisible();
+  await page.keyboard.press('ArrowLeft');
+  await expect(gallery.getByText(/^1 \/ /)).toBeVisible();
   await gallery.getByRole("button", { name: "Next screenshot" }).click();
   await expect(gallery.getByText(/^2 \/ /)).toBeVisible();
+  await gallery.getByRole('button', { name: 'Actual size' }).click();
+  await gallery.locator('.case-inspector-image').evaluate(image => { image.scrollTop = 1000; image.scrollLeft = 1000; });
+  await checkBounds();
+  await gallery.getByRole('button', { name: 'Fit width' }).click();
+  const lastThumb = gallery.locator('.case-inspector-thumbs button').last();
+  await lastThumb.click();
+  await expect(lastThumb).toHaveAttribute('aria-current', 'true');
+  await page.setViewportSize({ width: 320, height: 568 });
+  await checkBounds();
+  await page.keyboard.press('Escape');
+  await expect(gallery).toBeHidden();
+  await expect(page.getByRole('button', { name: /enlarge lobby screenshot/i })).toBeFocused();
+  await page.getByRole('button', { name: /enlarge lobby screenshot/i }).click();
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
   await expect(page.getByRole("button", { name: /enlarge lobby screenshot/i })).toBeFocused();

@@ -21,13 +21,19 @@ import type { Project } from "../../types";
 
 // Art bindings are presentation only. All names, narratives and screenshots
 // come from the published CMS records, including selection deep links.
-const artwork: { slug: string; kind: RigKind; asset: string }[] = [
+const artwork: {
+  slug: string;
+  kind: RigKind;
+  asset: string;
+  displayTitle?: string;
+}[] = [
   { slug: "jobpilot-ai", kind: "jobpilot", asset: "jobpilot-sculpture.webp" },
   { slug: "lobby", kind: "lobby", asset: "lobby-sculpture.webp" },
   {
     slug: "construction-project-management-accounting-system",
     kind: "cedar",
     asset: "archive-sculpture.webp",
+    displayTitle: "Construction OS",
   },
 ];
 type Sculpture = (typeof artwork)[number] & { project: Project };
@@ -401,7 +407,10 @@ function CollectionScene({
                 key={item.kind}
                 className={`project-hit ${item.kind}-hit`}
                 data-project={item.kind}
-                aria-label={`Explore ${item.project.name}`}
+                aria-label={`Explore ${item.displayTitle ?? item.project.name}`}
+                aria-describedby={
+                  item.displayTitle ? `collection-${item.kind}-name` : undefined
+                }
                 onClick={() => select(item.slug)}
                 onPointerEnter={() => hover(item.kind, true)}
                 onPointerLeave={() => hover(item.kind, false)}
@@ -414,7 +423,17 @@ function CollectionScene({
                     <span />
                   </span>
                   <span className="project-copy">
-                    <span className="project-name">{item.project.name}</span>
+                    <span className="project-name">
+                      {item.displayTitle ?? item.project.name}
+                    </span>
+                    {item.displayTitle && (
+                      <span
+                        className="sr-only"
+                        id={`collection-${item.kind}-name`}
+                      >
+                        {item.project.name}
+                      </span>
+                    )}
                     <span className="project-purpose">
                       {item.project.tagline || item.project.description}
                     </span>
