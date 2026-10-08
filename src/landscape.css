@@ -617,14 +617,10 @@
 
 .landscape .project-gallery {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  column-gap: 7%;
-  row-gap: 58px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 48px;
   align-items: start;
-}
-
-.landscape .project-gallery .work-entry:nth-child(even) {
-  margin-top: 65px;
 }
 
 .landscape .work-entry {
@@ -636,11 +632,11 @@
 
 .landscape .work-preview {
   background: #deded3;
-  aspect-ratio: 2.05;
+  aspect-ratio: 16 / 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 12px;
   overflow: hidden;
 }
 
@@ -649,10 +645,6 @@
   height: 100%;
   object-fit: contain;
   transition: transform 0.45s;
-}
-
-.landscape .work-entry:hover .work-preview img {
-  transform: scale(1.025);
 }
 
 .landscape .work-preview.identity-preview {
@@ -681,6 +673,15 @@
 .landscape .work-caption h2 {
   font-size: 25px;
   letter-spacing: -0.8px;
+}
+
+.landscape .project-gallery .work-caption h2 {
+  line-height: 1.3;
+  min-height: 2.6em;
+}
+
+.landscape .project-gallery .work-caption p {
+  margin-top: 8px;
 }
 
 .landscape .work-caption p {
@@ -1810,8 +1811,12 @@
     gap: 34px;
   }
 
-.landscape .project-gallery .work-entry:nth-child(even) {
-    margin-top: 0;
+.landscape .work-preview {
+    padding: 8px;
+  }
+
+.landscape .project-gallery .work-caption h2 {
+    min-height: 0;
   }
 
 .landscape .work-caption {

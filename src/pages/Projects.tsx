@@ -5,7 +5,7 @@ import { useProjects, useSiteSection } from "../lib/hooks";
 import { detailScreens } from "../lib/project-detail-screens";
 import { PageMeta } from "../components/PageMeta";
 import { PublicDataState } from "../components/PublicDataState";
-import { ResponsiveProjectImage } from "../components/ResponsiveProjectImage";
+import { ProjectPreview } from "../components/ProjectPreview";
 
 export function Projects() {
   const projects = useProjects();
@@ -84,13 +84,11 @@ export function Projects() {
               aria-label={`Open ${project.name} case study`}
             >
               {mode === "Gallery" && screen && (
-                <div className="work-preview">
-                  <ResponsiveProjectImage
+                  <ProjectPreview
+                    key={screen.src}
                     src={screen.src}
-                    alt={project.imageAlt || `${project.name}: ${screen.label}`}
-                    sizes="(max-width: 720px) 90vw, 42vw"
+                    alt={`${project.name}: ${screen.label}`}
                   />
-                </div>
               )}
               <div className="work-caption">
                 <span className="eyebrow">

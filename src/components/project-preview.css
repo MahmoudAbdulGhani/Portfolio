@@ -1,0 +1,18 @@
+.work-preview {
+  position: relative;
+}
+
+.work-preview[data-image-state="loading"] picture {
+  visibility: hidden;
+}
+
+.project-preview-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}

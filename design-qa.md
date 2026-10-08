@@ -1,3 +1,77 @@
+# Engineered Landscape media bounds and visual proposals
+
+Date: 8 October 2026. Status: **image bounds and approved equal-width gallery implemented; Medicare cover not adopted; faithful portrait cutout unresolved**.
+
+## Scope and source evidence
+
+Read `Portfolio_Portrait_Project_Images_Plan_2026-10-08.html`, its implementation brief, and all three embedded screenshots. The attachment supplies review evidence; the user's direct request defines the work and preview-before-adoption boundary.
+
+Inspected repository instructions, branch history and remote refs before creating `fix/engineered-landscape-media` from `866c836`. This preserves `f3fa087`, selected-project refinement `dd708c3`, and mobile Contact correction `866c836`. No later promoted code was found in the fetched refs.
+
+Read-only public CMS inspection and repository asset inventory are recorded in [asset-audit.json](docs/design/engineered-landscape-media/asset-audit.json). All eight current published projects were inspected. Medicare's CMS cover/screenshots are empty; the repository contains its 1000×1000 identity illustration, with no genuine clinic interface capture found. Home Services' existing 1348×926 capture stays complete. GameZone's current 1366×1446 overview stays the preview source; a separate genuine 1600×741 landscape cover already exists, but this change does not substitute it.
+
+## Implemented bounds and state handling
+
+`ResponsiveProjectImage` now owns an opt-in `fit="frame"` mode: both `picture` and `img` fill the available frame, have zero minimum size, and stay bounded in both dimensions. Generated AVIF/WebP sources and remote/unoptimized images use the same containment path. Natural-height reader, inspector and selected-project consumers retain their previous behavior.
+
+The Gallery uses this mode through `ProjectPreview`. Its loading placeholder reserves the same frame, the image appears after decoding, and failed previews show a readable status while retaining the enclosing case-study link and keyboard access. Alt text now describes the chosen screenshot rather than a potentially unrelated CMS promotional cover. Hover zoom was removed because it could crop image edges after successful containment.
+
+After seeing the comparison, the user explicitly chose **"Adopt equal-width gallery only"**. Gallery now uses equal desktop columns, 16:10 frames, 12px desktop / 8px phone padding, aligned caption starts and reserved desktop title rows. Index styling stays separate. Medicare retains its existing illustration treatment, and Home Services retains its complete image. Palette, typography, CMS content, routes, portrait and motion engine are preserved.
+
+## Before/after verification
+
+Installed Chrome 154.0.8037.99, headed desktop capture, DPR 1 and reduced motion; current public CMS records intercepted locally. All public writes were blocked. Complete image boxes and intrinsic dimensions were measured, not just computed `object-fit`.
+
+| Viewport | GameZone before | GameZone after | All eight / modes |
+| --- | --- | --- | --- |
+| 1363×936 | 605.9px image / 288.6px frame | 335.1px image / 359.1px frame | 8 loaded; no overflowing images; Index 8 links, 0 images; no horizontal overflow |
+| 1280×720 | 568.9px image / 270.8px frame | 312.2px image / 336.2px frame | 8 loaded; no overflowing images; Index 8 links, 0 images; no horizontal overflow |
+| 390×844 | 352.6px image / 162.5px frame | 192.2px image / 208.2px frame | 8 loaded; no overflowing images; Index 8 links, 0 images; no horizontal overflow |
+| 320×568 | 287.0px image / 132.3px frame | 153.5px image / 169.5px frame | 8 loaded; no overflowing images; Index 8 links, 0 images; no horizontal overflow |
+
+[Before measurements](docs/design/engineered-landscape-media/before-review.json), [after measurements](docs/design/engineered-landscape-media/after-review.json). Per-project card screenshots for all four sizes are in the same directory (`1` JobPilot, `2` Lobby, `3` GameZone, `4` Construction, `5` UniHub, `6` User Management, `7` Medicare, `8` Home Services).
+
+| Evidence | Before | After |
+| --- | --- | --- |
+| GameZone desktop | [1363×936](docs/design/engineered-landscape-media/before-1363x936-3.jpg) | [1363×936](docs/design/engineered-landscape-media/after-1363x936-3.jpg) |
+| GameZone short desktop | [1280×720](docs/design/engineered-landscape-media/before-1280x720-3.jpg) | [1280×720](docs/design/engineered-landscape-media/after-1280x720-3.jpg) |
+| GameZone phone | [390×844](docs/design/engineered-landscape-media/before-390x844-3.jpg) | [390×844](docs/design/engineered-landscape-media/after-390x844-3.jpg) |
+| GameZone narrow phone | [320×568](docs/design/engineered-landscape-media/before-320x568-3.jpg) | [320×568](docs/design/engineered-landscape-media/after-320x568-3.jpg) |
+| Home Services proportions | [desktop](docs/design/engineered-landscape-media/before-1363x936-8.jpg) | [desktop](docs/design/engineered-landscape-media/after-1363x936-8.jpg) |
+| Index mode | [320px](docs/design/engineered-landscape-media/before-320x568-index.jpg) | [320px](docs/design/engineered-landscape-media/after-320x568-index.jpg) |
+
+Compiled production preview additionally verified [loading](docs/design/engineered-landscape-media/loading-320.jpg) and [intercepted failure](docs/design/engineered-landscape-media/error-320.jpg) at 320px. Both retain an identical 271.2×169.5px frame and a focusable case-study link; [production-review.json](docs/design/engineered-landscape-media/production-review.json) records no page errors.
+
+The compiled build also used **actual WebGL** on Intel UHD / ANGLE Direct3D11 for Lobby selection, settled view, Escape reversal and focus restoration. [Screenshot](docs/design/engineered-landscape-media/production-webgl-lobby.jpg), [hardware/result](docs/design/engineered-landscape-media/production-motion.json). The full existing regression suite separately exercises reduced motion, photographic fallback, chapter switching, interrupted selection, selected layouts and Contact states with intercepted submissions.
+
+## Reviewed visuals and adoption decision
+
+Shown to the user before adoption, as requested:
+
+- [Interactive comparison sheet](docs/design/engineered-landscape-media/gallery-comparison.html) / [image](docs/design/engineered-landscape-media/gallery-comparison.jpg): accepted composition with clipping fixed beside equal-width columns, matching **16:10** frames, **12px** desktop padding and aligned captions. Each card is an actual browser capture; the sheet arranges those captures for comparison.
+- [Medicare landscape identity cover](docs/design/engineered-landscape-media/proposed-medicare-identity.jpg): original illustration contained beside its existing name/category/stack, explicitly labelled **Project identity**. No product interface is invented.
+- [Mobile GameZone frame proposal](docs/design/engineered-landscape-media/proposed-mobile-card-3.jpg) and [complete Home Services proposal](docs/design/engineered-landscape-media/proposed-mobile-card-8.jpg): **8px** mobile padding, single column. Desktop proposal screenshots `proposed-card-1` through `8` and phone proposal screenshots `proposed-mobile-card-1` through `8` are included.
+
+The user approved the **equal-width gallery only** after viewing these artifacts. The comparison's right-hand sheet includes a Medicare cover proposal that is **not adopted**; the actual implementation is shown in the `after-*` screenshots. Original comparison captures remain available for the review history. No portrait integration was approved or performed.
+
+## Portrait limitation
+
+Inspected the original `public/myphoto.jpeg` and approximate `portrait-silhouette.svg`. The available image editor produced a transparent candidate, shown as a proposal, but it retained colored edge fringes and changed clothing texture; its canvas also changed from 960×1280 to 1086×1448. It is unsuitable for the requested faithful photographic extraction and was rejected rather than integrated. The generated candidate stays outside the repository. No replacement person, new rough SVG, shadow or color correction was adopted.
+
+The original photograph remains byte-for-byte unchanged, SHA-256 `e6af23208df8739c79c2b379c418a182a0d65e20c184bc6e1626b85ba99c2b05`. Its dark trousers and green reflections are present in the original. The old approximate mask remains an unresolved visual defect until an accurate matte can be made with a suitable photo extraction tool. [Original profile baseline](docs/design/engineered-landscape-media/before-profile-320x568.jpg) / [unchanged after](docs/design/engineered-landscape-media/after-profile-320x568.jpg).
+
+## Checks and remaining limits
+
+- `npm run typecheck`, `npm run lint`, `npm run build`: pass. The build retains the existing >500kB motion chunk warning.
+- `npm run test:landscape`: **10/10 pass**.
+- Final full browser run: **116/117 pass**, including all 15 new preview cases across desktop, tablet and mobile Chrome. One Chromium header case was interrupted by a Vite development reload while screenshot artifacts were written; its targeted rerun passes. All 117 current cases therefore have a passing result. The initial new tests also exposed an incomplete profile fixture, corrected before this final run. No application defect was hidden by retrying a failing assertion.
+- New coverage checks all eight representative real aspect ratios at each requested viewport, optimized and unoptimized image paths, actual picture/image/painted bounds, hover containment, Gallery/Index transitions, routes, reserved slow/failure frames and keyboard access.
+- Physical phones, Safari/WebKit and real device keyboards were not available. Chrome touch/DPR emulation is not physical-device verification. Remote image host availability can vary; local fixtures cover transport failure independently.
+- The approved gallery is implemented; the Medicare identity cover is not adopted. A faithful portrait cutout remains unavailable. No clinic interface was found in the inspected CMS/repository assets; no authenticated clinic workflows were accessed.
+- No merge, deployment, production Contact submission, or live database content change occurred. Generated build outputs, credentials, temporary helpers and rejected portrait candidate are excluded from the commit.
+
+---
+
 # Engineered Landscape mobile Contact correction
 
 Date: 8 October 2026. Status: **implemented and locally verified; physical phone keyboards and Safari remain unverified**.
