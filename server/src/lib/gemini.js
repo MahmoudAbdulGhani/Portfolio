@@ -1,11 +1,13 @@
 const TIMEOUT_MS = 40_000;
 
-function extractText(payload) {
-  return payload?.candidates
+function extractText(payload, preserveWhitespace = false) {
+  const text = payload?.candidates
     ?.flatMap((candidate) => candidate?.content?.parts ?? [])
     .map((part) => part?.text ?? "")
-    .join("\n")
-    .trim();
+    .join(preserveWhitespace ? "" : "\n");
+  // Stream boundaries can split words, spaces and Markdown delimiters.
+  // Trim only complete answers; every streamed character must be retained.
+  return preserveWhitespace ? text : text?.trim();
 }
 
 export class GeminiError extends Error {
@@ -179,7 +181,7 @@ export async function generateStreamWithGemini({
 
         try {
           const parsed = JSON.parse(jsonStr);
-          const chunkText = extractText(parsed);
+          const chunkText = extractText(parsed, true);
           if (chunkText) {
             fullText += chunkText;
             if (onChunk) {
