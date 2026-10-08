@@ -1,11 +1,9 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { Outlet, Route, Routes, useLocation } from "react-router-dom";
-import { useTheme } from "./lib/theme";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./public-pages.css";
 import "./responsive-motion.css";
-import { Navbar } from "./components/Navbar";
-import { PortfolioPointer } from "./components/PortfolioPointer";
-import { Footer } from "./components/Footer";
+import { LandscapeLayout } from "./components/landscape/Layout";
+import { ProfilePage } from "./components/landscape/ProfilePage";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
@@ -15,7 +13,6 @@ import { NotFound } from "./pages/NotFound";
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
 const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
-const PortfolioAssistant = lazy(() => import("./components/PortfolioAssistant").then((m) => ({ default: m.PortfolioAssistant })));
 const CommandPalette = lazy(() => import("./components/CommandPalette").then((m) => ({ default: m.CommandPalette })));
 
 function CommandPaletteLoader() {
@@ -76,22 +73,11 @@ const ExperienceAdmin = lazy(() => import("./pages/admin/Experience").then((m) =
 const SiteContentAdmin = lazy(() => import("./pages/admin/SiteContent").then((m) => ({ default: m.SiteContentAdmin })));
 
 function PublicLayout() {
-  const { pathname } = useLocation();
-  const { theme } = useTheme();
-  const assistantContext = pathname.match(/^\/projects\/([^/]+)$/)?.[1] ?? "general";
   return (
-    <div className="public-portfolio flex min-h-screen flex-col" data-theme={theme}>
-      <Navbar key={pathname} />
-      <div key={`route-${pathname}`} className="flex-1 public-route-enter">
-        <Outlet />
-      </div>
-      <Footer />
-      <Suspense fallback={null}>
-        <PortfolioAssistant key={assistantContext} />
-      </Suspense>
+    <>
+      <LandscapeLayout />
       <CommandPaletteLoader />
-      <PortfolioPointer key={`pointer-${pathname}`} />
-    </div>
+    </>
   );
 }
 
@@ -142,6 +128,7 @@ export function App() {
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/job-match" element={<JobMatch />} />

@@ -1,0 +1,95 @@
+{
+  "browser": "154.0.8037.99",
+  "viewport": [
+    1363,
+    936
+  ],
+  "dpr": 1,
+  "evidence": [
+    {
+      "key": "jobpilot",
+      "renderer": "webgl",
+      "canvas": true,
+      "state": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawingBuffer": [
+        1363,
+        776
+      ],
+      "activeFocus": "solid-action open-case",
+      "overflow": false,
+      "pacing": {
+        "renders": 79,
+        "p50ms": 16.800000000279397,
+        "p95ms": 33.799999999813735,
+        "over33ms": 4
+      }
+    },
+    {
+      "key": "jobpilot",
+      "returnFocus": "jobpilot",
+      "remainingCanvases": 0
+    },
+    {
+      "key": "lobby",
+      "renderer": "webgl",
+      "canvas": true,
+      "state": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawingBuffer": [
+        1363,
+        776
+      ],
+      "activeFocus": "solid-action open-case",
+      "overflow": false,
+      "pacing": {
+        "renders": 74,
+        "p50ms": 16.600000000093132,
+        "p95ms": 23.100000000093132,
+        "over33ms": 3
+      }
+    },
+    {
+      "key": "lobby",
+      "returnFocus": "lobby",
+      "remainingCanvases": 0
+    },
+    {
+      "key": "cedar",
+      "renderer": "webgl",
+      "canvas": true,
+      "state": "settled",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawingBuffer": [
+        1363,
+        776
+      ],
+      "activeFocus": "solid-action open-case",
+      "overflow": false,
+      "pacing": {
+        "renders": 74,
+        "p50ms": 16.700000000186265,
+        "p95ms": 26.899999999906868,
+        "over33ms": 3
+      }
+    },
+    {
+      "key": "cedar",
+      "returnFocus": "cedar",
+      "remainingCanvases": 0
+    }
+  ],
+  "errors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:5174/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "pacingMethod": "timestamps of default-framebuffer WebGL clear calls during actual rig opening; includes screenshot overhead; indicative local pacing only"
+}

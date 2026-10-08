@@ -11,7 +11,7 @@ export function Contact() {
         title={pages.contact?.title ?? "Contact"}
         description={pages.contact?.description}
       />
-      <main className="public-page contact-page">
+      <main id="main-content" tabIndex={-1} className="public-page landscape-contact">
         <ContactSection />
       </main>
     </>

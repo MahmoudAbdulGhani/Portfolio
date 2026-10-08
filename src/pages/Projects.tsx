@@ -1,60 +1,122 @@
-import { useMemo, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FiArrowUpRight, FiSearch } from "react-icons/fi";
 import { useProjects, useSiteSection } from "../lib/hooks";
+import { detailScreens } from "../lib/project-detail-screens";
 import { PageMeta } from "../components/PageMeta";
-import { ProjectStudioCover } from "../components/ProjectStudioCover";
-import "./projects-gallery.css";
-
-type FilterId = "all" | "program" | "personal";
-type ProjectFilter = { id: FilterId; label: string };
+import { PublicDataState } from "../components/PublicDataState";
+import { ResponsiveProjectImage } from "../components/ResponsiveProjectImage";
 
 export function Projects() {
-  const { data: projects, isLoading, isError, refetch } = useProjects();
+  const projects = useProjects();
   const { data: section } = useSiteSection("projectsPage");
-  const reduced = useReducedMotion();
-  const filters = Array.isArray(section?.content.filters) ? section.content.filters as ProjectFilter[] : [];
-  const [filter, setFilter] = useState<FilterId>("all");
-  const filtered = useMemo(() => {
-    const all = projects ?? [];
-    return filter === "program" ? all.filter(p => p.program) : filter === "personal" ? all.filter(p => !p.program) : all;
-  }, [projects, filter]);
-  const subtitle = typeof section?.content.gallerySubtitle === "string" ? section.content.gallerySubtitle : "Built end to end.";
-  return <>
-    <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? ""} />
-    <main className="cinema projects-gallery">
-      <header className="gallery-intro">
-        <div className="gallery-heading">
-          <p className="gallery-eyebrow">{section?.eyebrow ?? ""}</p>
-          <h1>{section?.heading ?? ""}<em>{subtitle}</em></h1>
-          <p className="gallery-description">{section?.description}</p>
+  const [query, setQuery] = useState(""),
+    [mode, setMode] = useState("Gallery");
+  const visible =
+    projects.data?.filter(
+      (project) =>
+        project.published &&
+        project.showOnPortfolio !== false &&
+        `${project.name} ${project.stack.join(" ")}`
+          .toLowerCase()
+          .includes(query.toLowerCase()),
+    ) ?? [];
+  return (
+    <main id="main-content" tabIndex={-1} className="page-surface index-page">
+      <PageMeta
+        title={section?.heading || "Projects"}
+        description={section?.description ?? undefined}
+      />
+      <header className="page-heading">
+        <div>
+          <span className="eyebrow">PROJECTS / COLLECTION INDEX</span>
+          <h1 className="view-heading">
+            {section?.heading || "The work, collected."}
+          </h1>
         </div>
-        <div className="gallery-tools">
-          <div className="gallery-filters" role="group" aria-label="Filter projects">
-            {filters.map(item => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)}>{item.label}</button>)}
-          </div>
-          <p className="gallery-count" aria-live="polite" aria-atomic="true">{isLoading ? "Loading projects…" : isError ? "Projects unavailable" : `${filtered.length} ${filtered.length === 1 ? "project" : "projects"}`}</p>
-        </div>
+        <p>{section?.description}</p>
       </header>
-      <motion.div className="gallery-grid" layout={!reduced}>
-        {isLoading && Array.from({ length: 4 }, (_, index) => <div className="gallery-skeleton" key={index} aria-hidden="true"><div /><span /></div>)}
-        <AnimatePresence initial={false} mode="popLayout">
-          {filtered.map((project, index) => <motion.article className="gallery-project" key={project.id} layout={!reduced} initial={reduced ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }} transition={{ duration: reduced ? 0 : 0.4, delay: reduced ? 0 : Math.min(index * 0.04, 0.16), ease: [0.22, 1, 0.36, 1] }}>
-            <Link to={`/projects/${project.slug}`} className="gallery-image-link" aria-label={`View ${project.name}`}>
-              <ProjectStudioCover project={project} priority={index < 2} />
+      <div className="index-tools">
+        <label className="search-field">
+          <FiSearch />
+          <span className="sr-only">Search projects or technologies</span>
+          <input
+            type="search"
+            aria-label="Search projects or technologies"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search projects or technologies"
+          />
+        </label>
+        <div
+          className="chapter-switch"
+          role="group"
+          aria-label="Project display"
+        >
+          {["Gallery", "Index"].map((value) => (
+            <button
+              key={value}
+              aria-pressed={mode === value}
+              onClick={() => setMode(value)}
+            >
+              {value}
+            </button>
+          ))}
+        </div>
+      </div>
+      <PublicDataState
+        loading={projects.isLoading}
+        error={projects.isError}
+        onRetry={() => void projects.refetch()}
+        label="projects"
+      />
+      <p className="eyebrow project-count" aria-live="polite">
+        {visible.length} projects
+      </p>
+      <div className={mode === "Index" ? "project-index" : "project-gallery"}>
+        {visible.map((project, index) => {
+          const screen = detailScreens(project)[0];
+          return (
+            <Link
+              key={project.id}
+              className="work-entry"
+              to={`/projects/${project.slug}`}
+              aria-label={`Open ${project.name} case study`}
+            >
+              {mode === "Gallery" && screen && (
+                <div className="work-preview">
+                  <ResponsiveProjectImage
+                    src={screen.src}
+                    alt={project.imageAlt || `${project.name}: ${screen.label}`}
+                    sizes="(max-width: 720px) 90vw, 42vw"
+                  />
+                </div>
+              )}
+              <div className="work-caption">
+                <span className="eyebrow">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h2>{project.name}</h2>
+                  <p>{project.type}</p>
+                </div>
+                <FiArrowUpRight />
+              </div>
+              <p className="work-stack">
+                {project.stack.slice(0, 3).join(" · ")}
+              </p>
             </Link>
-            <div className="gallery-caption">
-              <h2><span aria-hidden="true">{String(index + 1).padStart(2, "0")} /</span><Link to={`/projects/${project.slug}`}>{project.name}</Link></h2>
-              <Link className="gallery-case-link" to={`/projects/${project.slug}`} aria-label={`Explore ${project.name} case study`}>Explore project<FiArrowRight aria-hidden="true" /></Link>
-            </div>
-            <p className="gallery-summary">{project.tagline || project.description}</p>
-            <ul className="gallery-stack" aria-label={`${project.name} technologies`}>{project.stack.slice(0, 3).map(tech => <li key={tech}>{tech}</li>)}</ul>
-          </motion.article>)}
-        </AnimatePresence>
-      </motion.div>
-      {!isLoading && isError && <div className="gallery-state" role="alert"><h2>Projects are temporarily unavailable</h2><p>Please try again in a moment.</p><button onClick={() => void refetch()} type="button">Try again<FiArrowRight aria-hidden="true" /></button></div>}
-      {!isLoading && !isError && filtered.length === 0 && <div className="gallery-state"><h2>No projects in this category yet</h2><p>Choose another category to explore more work.</p></div>}
+          );
+        })}
+      </div>
+      {!projects.isLoading && !projects.isError && !visible.length && (
+        <div className="empty-work">
+          <h2>No matching projects.</h2>
+          <button className="text-link" onClick={() => setQuery("")}>
+            Clear search
+          </button>
+        </div>
+      )}
     </main>
-  </>;
+  );
 }

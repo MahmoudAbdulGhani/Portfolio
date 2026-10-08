@@ -21,6 +21,9 @@ type MatchResult = {
   recruiterSummary: string;
 };
 
+// Route continuity stays in memory; never persist the signed CV token to disk.
+let matchMemory: { description: string; result?: MatchResult; token: string } = { description: '', token: '' };
+
 function matchBadge(level: MatchResult["matchLevel"]) {
   const tones: Record<MatchResult["matchLevel"], string> = {
     "Strong Match": "border-ok/30 bg-ok/10 text-ok",
@@ -56,15 +59,18 @@ function formatMatchReport(result: MatchResult) {
 
 export function JobMatch() {
   const { data: section } = useSiteSection("jobMatch");
-  const [jobDescription, setJobDescription] = useState("");
-  const [result, setResult] = useState<MatchResult>();
+  const [jobDescription, setJobDescription] = useState(matchMemory.description);
+  const [result, setResult] = useState<MatchResult | undefined>(matchMemory.result);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [summaryCopied, setSummaryCopied] = useState(false);
-  const [cvToken, setCvToken] = useState("");
+  const [cvToken, setCvToken] = useState(matchMemory.token);
   const [downloadingCv, setDownloadingCv] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("Comparing portfolio evidence…");
   const submitting = useRef(false);
+  const activeRequest = useRef<AbortController | null>(null);
+  useEffect(() => { matchMemory = { description: jobDescription, result, token: cvToken }; }, [jobDescription, result, cvToken]);
+  useEffect(() => () => activeRequest.current?.abort(), []);
 
   useEffect(() => {
     if (!loading) return;
@@ -87,6 +93,7 @@ export function JobMatch() {
     if (submitting.current) return;
     submitting.current = true; setLoading(true); setError(""); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
     const controller = new AbortController();
+    activeRequest.current = controller;
     const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
     try {
       const response = await fetch(`${API_BASE}/job-match`, {
@@ -196,7 +203,7 @@ export function JobMatch() {
 
   return <>
     <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
-    <main className="public-page ai-page">
+    <main id="main-content" tabIndex={-1} className="public-page ai-page">
       <section className="public-container">
           <Reveal y={12} className="ai-intro">
             <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>

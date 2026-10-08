@@ -1,0 +1,43 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "done": true,
+    "completionEvidence": "UI parser requires done:true; Chrome did not expose the streamed response body",
+    "failed": false,
+    "message": "PORTFOLIO AI\n\nYou can download Mahmoud Abdul Ghani's CV directly at the following link:\n\nDownload CV: /api/cv.pdf\n\nTo review an example of his full-stack work, you can explore his featured project:\n\nProject Evidence: JobPilot AI",
+    "links": [
+      {
+        "text": "/api/cv.pdf",
+        "href": "http://127.0.0.1:5175/api/cv.pdf"
+      },
+      {
+        "text": "JobPilot AI",
+        "href": "/projects/jobpilot-ai"
+      }
+    ]
+  },
+  {
+    "route": "/projects/jobpilot-ai",
+    "status": 200,
+    "done": true,
+    "completionEvidence": "raw SSE done event",
+    "failed": false,
+    "message": "PORTFOLIO AI\n\nAs the Full-Stack Developer & Project Owner of JobPilot AI, you owned the project concept, workflow decisions, and deployment configurations. Your key contributions include:\n\nCore Architecture: Defined the product scope and connected the entire candidate journey—from CV review to job discovery, application preparation, and interview practice.\nDevelopment: Built and refined the Next.js and FastAPI application using an AI-assisted workflow. You integrated AI workflows with structured validation, consent checks, and explicit user reviews.\nIntegration & Bug Resolution: Worked through AI/manual profile integration, save reconciliation, and profile persistence issues using API responses and regression evidence.\nDevOps: Configured deployment services on Vercel, Render, and Supabase while investigating migration, proxy, and storage issues.\nTesting & UI: Directed the editorial UI redesign for responsive layouts and accessibility. You assessed authentication, document exports, and interview flows using automated test reports and manual walkthroughs.\n\nExplore the complete JobPilot AI Portfolio Case Study for deeper insights.",
+    "links": [
+      {
+        "text": "JobPilot AI",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "text": "JobPilot AI Portfolio Case Study",
+        "href": "/projects/jobpilot-ai"
+      }
+    ]
+  },
+  {
+    "cvStatus": 200,
+    "cvSignature": "%PDF-",
+    "source": "genuine public CV cached by read-only snapshot; CMS resumeUrl is null"
+  }
+]

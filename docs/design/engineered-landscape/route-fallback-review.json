@@ -1,0 +1,10 @@
+{
+  "cvPreview": "/api/cv.pdf?preview=1#toolbar=0",
+  "standaloneCvRoute": true,
+  "downloadVisible": true,
+  "engineImportFailure": {
+    "renderer": "fallback",
+    "canvases": 0,
+    "caseVisible": true
+  }
+}

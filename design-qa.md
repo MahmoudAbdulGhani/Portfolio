@@ -1,3 +1,173 @@
+# Engineered Landscape integration QA
+
+Date: 8 October 2026. Status: **integrated and locally reviewed on actual WebGL hardware; real mobile-device qualification remains open**.
+
+## Scope and source
+
+The user supplied the correct articulated prototype at
+`C:/Users/Admin/Downloads/Engineered_Landscape_Articulated_WebGL_2026-10-08/engineered-landscape`.
+Read its AGENTS.md, README.md and design-qa.md, the repository instructions, RTK.md
+and handoff before implementation. Earlier Complete Preview artifacts contained
+only a 2.5D implementation; that mismatch is resolved by the corrected path.
+
+The integration uses a separate worktree at
+`C:/Users/Admin/Desktop/portfolio-engineered-landscape` on `feat/engineered-landscape`,
+based on `origin/feat/minimal-scroll-portfolio` commit
+`4ef93dc127e47e76aedab9f121f089e3f2655cbc`. PR #3 commit
+`22039218821ea0e6966fcba5a457940fdda51fd5` was incorporated as `3a09264`.
+The original main checkout and its untracked handoff remain untouched.
+No existing PR was merged, no deployment or production settings change was made,
+no live database content changed, and no production Contact message was submitted.
+
+## Actual GPU review and fixes
+
+Prototype npm ci, production build and all 11 prototype tests passed.
+Used headed installed Chrome 154.0.8037.99 through Playwright without graphics
+override flags or security changes, Windows x64, Intel Core i7-11850H,
+1363 × 936 CSS pixels at DPR 1. Each actual mounted `.motion-rig` reported
+`data-renderer="webgl"` and contained a WebGL 2 canvas. Its renderer was:
+
+`ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)`.
+
+Observed opening, settled screenshot reveal and reverse for JobPilot, Lobby and
+Cedar in the GPU browser and recordings. This evidence is actual application
+rendering, distinct from the packaged historical CPU/SVG geometry diagnostics.
+Only the WebGL engine and photographic fallback were ported to the application.
+
+Resolved defects:
+
+1. JobPilot sheets intersected and detached while translating. Reduced angular
+   sector widths, extended sheet roots to their hinges and rotated around fixed
+   base pivots. Lobby band paths now occupy separate depths. Mesh thickness,
+   pins, metal response and floor shadows were inspected in actual GPU frames.
+2. Materials were too bright and mesh arrival jumped from photographic artwork.
+   Corrected oxide/forest colors, light intensity and exposure; register the
+   initial assembly against the artwork's DOM bounds before moving to center.
+   Start the fade at 1.35 seconds and align reverse with the return transition.
+3. Narrow framing and resized DPR needed correction. Camera distance adapts
+   to aspect; DPR is recomputed and capped at 1.25 narrow / 1.5 desktop.
+4. A settled timeline could resume when the document became visible. Settled
+   rigs now remain idle. Context loss stops motion and exposes photographic
+   fallback; disposal releases geometry, materials, shadows and environment.
+5. Existing public styles collided with Contact and the project index. Scoped
+   the accepted styles, supplied compatible theme tokens and preserved the
+   existing functional form/report components inside the new visual shell.
+6. Collection navigation from a case lost the originating sculpture's focus.
+   Header/footer/identity navigation now carries the return slug; opening and
+   closing timelines also withstand Escape during selection initialization.
+
+## Integrated GPU measurements and stress
+
+`docs/design/engineered-landscape/integrated-gpu.json` records six selection/return
+cycles, two for each rig. Opening default-framebuffer clear timestamps were
+measured without screenshots or video in that measurement run. Intervals at or
+below 2 ms are setup/multiple-clear calls and excluded; larger intervals are
+retained. Across the final six cycles, median render spacing was 16.6–16.7 ms and p95 was
+17.2–17.3 ms. A concurrent build/browser-test stress run had p95 of 24.9–28.3 ms
+in its first three cycles (`integrated-stress.json`), then 17.1–17.3 ms after that
+load subsided. These are CPU-side render-call intervals, not GPU timer queries or
+a promise of performance on another machine. Cold engine download/shader setup
+is outside this animation interval statistic.
+
+Each settled rig emitted **zero renders during a 700 ms idle window**. Every
+return restored the originating button's focus and left zero canvases. Eight
+contexts were created and eight received context-loss events after cleanup or
+the one deliberate loss test. Resizing during opening retained actual WebGL;
+navigation during opening left zero canvases. No page exceptions occurred.
+The engine was absent from network resources in a separate cold Chrome page
+without pointer interaction; all GPU evidence above came from the headed browser.
+Hover/focus prewarms its dynamic import. Earlier headed probes inadvertently
+hovered an artwork and correctly triggered that prewarm.
+
+Forced no-WebGL at 390 × 844 produced zero canvases and a usable photographic
+selection with a case link. Reduced-motion keyboard tests produced zero canvases.
+An intentionally failed engine import also reached the labelled photographic
+fallback with zero canvases and a working case link (`route-fallback-review.json`).
+Prototype repeated selection, mid-opening resize and navigation during loading
+also passed (`prototype-stress-report.json`). Prototype pacing with screen/video
+capture overhead is recorded separately and is slower than the dedicated run.
+A prototype favicon 404 was observed; no application GPU failure accompanied it.
+
+## CMS and real services
+
+Production components consume the existing hooks/API client. No prototype
+content.js records or network bridge were copied into application source.
+All eight published CMS records and slugs remain available in gallery/index,
+search and complete case readers: JobPilot AI, Lobby, GameZone Arena,
+Construction Project Management & Accounting System, UniHub, Full-Stack User
+Management System, Medicare Hub and Home Services. Existing screenshot galleries,
+engineering evidence, project links, `/cv`, admin/auth and backend schema remain.
+Profile uses CMS identity, experience, education, certifications, technologies
+and skills. Its supplied mask/crop uses the unchanged original photograph:
+SHA-256 `e6af23208df8739c79c2b379c418a182a0d65e20c184bc6e1626b85ba99c2b05`.
+Manrope, IBM Plex Mono and the accepted seven palette colors are retained.
+Longer CMS titles/descriptions intentionally replace the shorter design fixture.
+
+For browser-only local QA, an adapter outside this repository served a read-only
+snapshot of the published public CMS, cached the genuine public CV, and forwarded
+only assistant/job-match/tailored-CV requests to the existing published service.
+It rejects Contact and all other writes and is not a production dependency.
+The application itself uses the same-origin `/api` routes and normal API client.
+
+Real general and JobPilot-specific assistant requests returned HTTP 200 and
+completed answers. Verified project evidence links and the genuine `/api/cv.pdf`
+PDF signature; CMS resumeUrl is currently null. Added placeholder/unsafe-link
+guards and kept the real fallback endpoint. `live-assistant.json` and its two
+captures record the results. The deployed upstream predates PR #3: its whitespace
+behavior is not being claimed as deployed fixed. Backend and browser decoder
+regressions prove whitespace preservation in this branch. The drawer retains
+streaming, project/general history, native modal focus management, stop/route
+cancellation, 55-second timeout, visible errors and retry. No offline AI replies.
+
+The actual Job Match service returned HTTP 200 and a 2,089-character rendered
+report with real Lobby, UniHub and GameZone evidence links. Its signed-token
+tailored CV downloaded as a valid 30,825-byte `%PDF-` document. The signed token
+and PDF were not committed or recorded. Copy/export and route continuity were
+also tested with intercepted contracts. See `live-job-match.json` and capture.
+Contact's existing name/email/subject/message/website payload, honeypot,
+validation, loading, retained-error values and success focus passed with local
+intercepted fixtures only. Existing security, validation and rate limits remain.
+
+## Visual artifacts and validation
+
+All review artifacts are under `docs/design/engineered-landscape/`:
+
+- `collection-comparison.jpg`, `profile-comparison.jpg`: source and runtime
+  together at equal 1363 × 936, DPR 1, with a 48px label strip. CMS content
+  differences are intentional; portrait, composition, palette and hierarchy
+  are compared at matching viewports. Source captures wait for settled artwork.
+- `integrated-motion.webm`, `prototype-motion.webm`: actual headed-browser motion
+  recordings. These are visual review evidence, not timing benchmark runs.
+- Opening/spread/reverse frames, settled selection, all main public surfaces,
+  assistant and live services; responsive collection/profile/contact/job-match/
+  Lobby and forced photographic fallback at 390 × 844.
+
+Passed: typecheck, lint, production build, all 51 Playwright tests across desktop,
+tablet and phone viewports, and all 10 landscape/backend streaming/CV-link unit
+tests. The static Application CV reference geometry/content check also passed;
+its fixture and CV layout were unchanged. Browser coverage includes all eight deep links at 320px, gallery zoom,
+admin structured updates, keyboard selection/return, interrupted selection,
+assistant context/whitespace/retry/stop, intercepted Contact, Job Match export and
+token-gated CV. No horizontal body overflow was observed in the captured narrow
+surfaces. Build emits a size advisory for the lazy Three engine (501.11 kB
+minified / 126.26 kB gzip); no warning threshold was raised.
+Final collection and CV/terminal changes passed their relevant six-test browser
+subsets again. The standalone `/cv` route retained its real PDF preview and
+visible download control at desktop and narrow widths.
+
+## Remaining qualification
+
+No physical phone/tablet, mobile GPU, Safari/iOS/Android, touch latency, battery
+or thermal measurements were available. Responsive desktop-browser viewports
+are not real-device evidence. Cold-load startup and GPU execution time are not
+benchmarked. Live upstream behavior can change independently of this branch.
+No award-level polish or deployment acceptance is claimed. Review the recordings
+and qualify actual target devices before release.
+
+---
+
+# Historical refinement QA (preserved from the base branch)
+
 # Three-device projects and split hero — design QA
 
 final result: passed (readability and motion refinement, 2026-10-06)

@@ -1,8 +1,5 @@
 import { prisma } from "./prisma.js";
-
-function clean(value) {
-  return typeof value === "string" && value.trim() ? value.trim() : undefined;
-}
+import { resumeLink } from './portfolio-links.js';
 
 const projectSelect = {
   slug: true, name: true, type: true, tagline: true, description: true,
@@ -42,7 +39,7 @@ export async function getPortfolioContext(projectSlug) {
 
   return {
     ...(currentProject && { currentProject: linkedProjects.find((project) => project.slug === projectSlug) }),
-    profile: { ...profile, resumeUrl: clean(profile.resumeUrl) ?? "/api/cv.pdf" },
+    profile: { ...profile, resumeUrl: resumeLink(profile.resumeUrl) },
     projects: linkedProjects,
     technologies,
     skills,
