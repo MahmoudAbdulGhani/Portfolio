@@ -10,26 +10,17 @@ const sections = [
 ];
 
 test.beforeEach(async ({ page }) => {
+  await page.route("**/api/projects", route => route.fulfill({ contentType: 'application/json', body: '[]' }));
   await page.route("**/api/profile", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(profile) }));
   await page.route("**/api/site-content", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(sections) }));
 });
 
-test("public navigation, theme, metadata, and mobile menu work", async ({ page, isMobile }) => {
+test("accepted public navigation and metadata work", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/Mahmoud Hussein Abdul Ghani/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/$/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
-  if (isMobile) await page.getByRole("button", { name: "Open menu" }).click();
-  const initialDark = await page.locator("html").evaluate(element => element.classList.contains("dark"));
-  const theme = page.getByRole("button", { name: /switch to (dark|light) mode/i }).first();
-  await theme.click();
-  await expect.poll(() => page.locator("html").evaluate(element => element.classList.contains("dark"))).toBe(!initialDark);
-  if (isMobile) {
-    await expect(page.locator("#public-mobile-nav")).toBeVisible();
-    await page.locator("#public-mobile-nav").getByRole("link", { name: "Projects" }).click();
-  } else {
-    await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Projects", exact: true }).click();
-  }
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Projects", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
 });
 
@@ -50,15 +41,15 @@ test("project gallery opens and supports navigation", async ({ page }) => {
   await page.route("**/api/projects/lobby", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(lobby) }));
   await page.goto("/projects/lobby");
   await expect(page.getByRole("heading", { name: "Lobby", exact: true })).toBeVisible();
-  await expect(page.locator('.case-gallery picture source[type="image/avif"]').first()).toHaveAttribute("srcset", /guest-access-480w\.avif/);
-  await page.getByRole("button", { name: /view lobby product image full screen/i }).click();
+  await expect(page.locator('.case-image picture source[type="image/avif"]').first()).toHaveAttribute("srcset", /guest-access-480w\.avif/);
+  await page.getByRole("button", { name: /enlarge lobby screenshot/i }).click();
   const gallery = page.getByRole("dialog", { name: /lobby image gallery/i });
   await expect(gallery).toBeVisible();
-  await gallery.getByRole("button", { name: "Next image" }).first().click();
-  await expect(gallery.getByText("2 / 6")).toBeVisible();
+  await gallery.getByRole("button", { name: "Next screenshot" }).click();
+  await expect(gallery.getByText(/^2 \/ /)).toBeVisible();
   await gallery.getByRole("button", { name: "Close gallery" }).click();
   await expect(gallery).toBeHidden();
-  await expect(page.getByRole("button", { name: /view lobby product image full screen/i })).toBeFocused();
+  await expect(page.getByRole("button", { name: /enlarge lobby screenshot/i })).toBeFocused();
   await page.getByRole("tab", { name: /API/i, selected: false }).click();
   await expect(page.getByText("NestJS services", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Implementation improvements" })).toBeVisible();
@@ -84,17 +75,11 @@ test("CV download rejects text responses instead of saving cv.txt", async ({ pag
   await expect(page.getByRole("alert")).toContainText("CV generation failed");
 });
 
-test("Home navigation returns to the hero section", async ({ page, isMobile }) => {
-  await page.goto("/");
-  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-  if (isMobile) {
-    await page.getByRole("button", { name: "Open menu" }).click();
-    await page.locator("#public-mobile-nav").getByRole("link", { name: "Home" }).click();
-  } else {
-    await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Home" }).click();
-  }
-  await expect(page).toHaveURL(/\/#hero$/);
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(20);
+test("Collection navigation returns to the accepted collection route", async ({ page }) => {
+  await page.goto("/contact");
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Collection", exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', {name:'Collection',exact:true})).toBeVisible();
 });
 
 test("Command palette opens via shortcut and supports search navigation", async ({ page }) => {

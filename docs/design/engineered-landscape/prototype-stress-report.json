@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "six select/Escape/return cycles, focus restored, no remaining canvas; resize during opening",
+    "navigate away while lazy engine loads: no mounted rig or page exception",
+    "emulated reduced motion bypasses renderer; keyboard Enter/return restores focus",
+    "forced unavailable WebGL uses photographic fallback at 390px (CSS emulation, not real device)"
+  ],
+  "errors": [],
+  "realMobileDevice": false
+}

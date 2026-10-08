@@ -10,7 +10,7 @@ export class ApiError extends Error {
   }
 }
 
-export async function api<T>(path: string, init?: RequestInit): Promise<T> {
+export async function apiResponse(path: string, init?: RequestInit): Promise<Response> {
   const headers: Record<string, string> = {
     ...(init?.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
     ...(init?.headers as Record<string, string> | undefined),
@@ -37,6 +37,11 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
     throw new ApiError(res.status, detail);
   }
 
+  return res;
+}
+
+export async function api<T>(path: string, init?: RequestInit): Promise<T> {
+  const res = await apiResponse(path, init);
   if (res.status === 204) return undefined as T;
   return (await res.json()) as T;
 }

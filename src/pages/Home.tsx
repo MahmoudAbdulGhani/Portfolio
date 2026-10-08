@@ -1,25 +1,16 @@
-import { LandingMotion } from "../components/LandingMotion";
+import { Collection } from "../components/landscape/Collection";
 import { PageMeta } from "../components/PageMeta";
-import { CinematicLanding } from "../sections/CinematicLanding";
-import { useProfile, useSiteContent, useSiteSection } from "../lib/hooks";
-import { PublicDataState } from "../components/PublicDataState";
+import { useProfile } from "../lib/hooks";
 
 export function Home() {
   const { data: profile } = useProfile();
-  const { data: seo } = useSiteSection("seo");
-  const siteContent = useSiteContent();
-  const defaultTitle = typeof seo?.content.defaultTitle === "string" ? seo.content.defaultTitle : profile?.title ?? "";
-  const defaultDescription = typeof seo?.content.defaultDescription === "string" ? seo.content.defaultDescription : profile?.seoDescription ?? "";
-  if (siteContent.isLoading || siteContent.isError) return <main className="min-h-screen pt-16"><PublicDataState loading={siteContent.isLoading} error={siteContent.isError} onRetry={() => void siteContent.refetch()} label="site content" /></main>;
   return (
     <>
       <PageMeta
-        title={profile?.seoTitle || defaultTitle}
-        description={profile?.seoDescription || defaultDescription}
+        title={profile?.seoTitle ?? profile?.title ?? "Portfolio"}
+        description={profile?.seoDescription ?? undefined}
       />
-      <LandingMotion><main className="portfolio-home">
-        <CinematicLanding />
-      </main></LandingMotion>
+      <Collection />
     </>
   );
 }

@@ -1,0 +1,420 @@
+.landscape {
+  --text: #202629;
+  --muted: #61695e;
+  --faint: #61695e;
+  --border: #c8c6bc;
+  --border-strong: #a7b7a4;
+  --surface-2: #ecebe3;
+  --surface-3: #e1e5da;
+  --on-accent: #f7f5ef;
+  --ok: #34483d;
+  --gold: #a44424;
+  --danger: #9c342b;
+  --color-ink: #202629;
+  --color-muted: #61695e;
+  --color-faint: #61695e;
+  --color-surface: #f7f5ef;
+  --color-surface-2: #ecebe3;
+  --color-surface-3: #e1e5da;
+  --color-accent: #a44424;
+  --color-accent-strong: #86331c;
+  --color-line: #c8c6bc;
+  --color-ok: #34483d;
+  --color-gold: #a44424;
+  --color-danger: #9c342b;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+}
+.landscape .landscape-route {
+  height: calc(100% - 160px);
+  position: relative;
+  min-height: 0;
+}
+.landscape .landscape-route > .stage {
+  height: 100%;
+}
+.landscape .landscape-route > main:not(.stage, .page-surface, .public-page) {
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+}
+.landscape .landscape-route > .public-page {
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: 32px 6% 60px;
+  background: var(--paper);
+}
+.landscape .eyebrow::before {
+  display: none;
+}
+.landscape .public-eyebrow {
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+  color: var(--muted);
+  letter-spacing: 1.7px;
+}
+.landscape .public-eyebrow::before {
+  display: none;
+}
+.landscape .public-page::before,
+.landscape .public-page::after {
+  display: none;
+}
+.landscape .ai-evidence svg,
+.landscape .ai-idle > svg {
+  color: var(--forest);
+}
+.landscape .search-field input {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.landscape .public-container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.landscape .page-surface {
+  animation: none;
+}
+.landscape .work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+.landscape .work-grid.index-mode {
+  display: block;
+}
+.landscape .index-mode .work-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+}
+.landscape .index-mode .work-image {
+  height: 140px;
+}
+.landscape .index-tools {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.landscape .search-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.landscape .search-field input {
+  background: transparent;
+  padding: 12px 0;
+  border: 0;
+  min-width: 240px;
+}
+.landscape .project-count {
+  margin: 22px 0;
+}
+.landscape .project-purpose {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 410px;
+}
+.landscape .selection-detail p {
+  max-width: 460px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.landscape .selection-actions {
+  gap: 20px;
+}
+.landscape .chapter-switch {
+  flex-wrap: wrap;
+}
+.landscape .chapter-switch button {
+  max-width: 180px;
+  text-align: left;
+}
+.landscape .profile-record .view-heading {
+  max-width: 640px;
+}
+.landscape .record-detail li,
+.landscape .case-notes li {
+  margin: 8px 0;
+  line-height: 1.75;
+}
+.landscape .capability-record h2 {
+  text-transform: capitalize;
+}
+.landscape .education-record section {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.landscape .btn-primary,
+.landscape .btn-outline,
+.landscape .btn-ghost {
+  font-family: inherit;
+  border-radius: 0;
+  box-shadow: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.landscape .btn-primary {
+  background: var(--forest);
+  color: #f7f5ef;
+  border: 1px solid var(--forest);
+}
+.landscape .btn-outline {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: transparent;
+}
+.landscape .input,
+.landscape .textarea {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 16px;
+}
+.landscape .font-display,
+.landscape .public-display-accent,
+.landscape .contact-intro h1,
+.landscape .ai-intro h1,
+.landscape .contact-intro h1 em {
+  font-family: Manrope, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+.landscape .contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px 60px;
+}
+.landscape .contact-intro {
+  grid-column: 1;
+  grid-row: 1;
+}
+.landscape .contact-intro h1 {
+  font-size: clamp(38px, 4vw, 64px);
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+.landscape .contact-form-column {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+.landscape .contact-details {
+  grid-column: 1;
+  grid-row: 2;
+}
+.landscape .contact-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+.landscape .contact-promotion {
+  margin-top: 50px;
+}
+.landscape .ai-intro h1 {
+  font-size: clamp(40px, 4.5vw, 70px);
+  letter-spacing: -0.055em;
+}
+.landscape .ai-workbench {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  margin-top: 35px;
+}
+.landscape .ai-form,
+.landscape .ai-idle,
+.landscape .ai-report {
+  background: var(--surface);
+  padding: 28px;
+  border-radius: 0;
+  border: 1px solid var(--line);
+}
+.landscape .ai-form {
+  align-self: start;
+}
+.landscape .ai-description {
+  max-width: 650px;
+}
+.landscape .public-display-accent {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.landscape .case-heading {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 45px;
+  margin: 30px 0;
+}
+.landscape .case-heading h1 {
+  font-size: clamp(40px, 5.8vw, 80px);
+  line-height: 1.08;
+}
+.landscape .case-role {
+  margin: 20px 0 8px;
+  font-size: 13px;
+}
+.landscape .case-screen-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin: 24px 0;
+}
+.landscape .case-image img {
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  object-position: top;
+}
+.landscape .reader-features {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  margin-top: 40px;
+}
+.landscape .reader-features h2 {
+  font-size: 30px;
+  margin: 14px 0;
+}
+.landscape .reader-features ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 40px;
+  padding-left: 20px;
+  list-style: disc;
+}
+.landscape .reader-features li {
+  line-height: 1.75;
+}
+.landscape .reader-gallery {
+  margin: 55px 0;
+}
+.landscape .reader-gallery > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+.landscape .reader-gallery button {
+  background: var(--surface);
+  text-align: left;
+  padding: 16px;
+}
+.landscape .reader-gallery img {
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+.landscape .reader-gallery button span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.landscape .case-inspector {
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.landscape .assistant-modal {
+  position: fixed;
+  width: min(420px, calc(100vw - 40px));
+  height: calc(100dvh - 40px);
+  max-height: none;
+  padding: 0;
+  border: 0;
+  margin: 20px 20px 20px auto;
+  color: var(--ink);
+  background: var(--surface);
+  overflow: hidden;
+}
+.landscape .assistant-modal::backdrop {
+  background: #20262938;
+  backdrop-filter: blur(3px);
+}
+.landscape .assistant-modal .assistant-drawer {
+  position: static;
+  height: 100%;
+  width: 100%;
+  box-shadow: none;
+}
+.landscape .assistant-launcher {
+  min-width: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+@media (max-width: 720px) {
+  .landscape .landscape-route {
+    height: calc(100% - 183px);
+  }
+  .landscape .cedar-hit .project-label {
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+  }
+  .landscape .cedar-hit .project-name {
+    font-size: 13px;
+    line-height: 1.28;
+  }
+  .landscape .cedar-hit .project-number {
+    margin-bottom: 3px;
+  }
+  .landscape .contact-layout,
+  .landscape .ai-workbench,
+  .landscape .case-heading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .landscape .contact-intro,
+  .landscape .contact-form-column,
+  .landscape .contact-details {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .landscape .contact-form,
+  .landscape .ai-form,
+  .landscape .ai-idle {
+    padding: 20px;
+  }
+  .landscape .reader-features ul,
+  .landscape .reader-gallery > div {
+    grid-template-columns: 1fr;
+  }
+  .landscape .case-screen-tools {
+    flex-wrap: wrap;
+  }
+  .landscape .chapter-switch button {
+    max-width: 140px;
+  }
+  .landscape .index-mode .work-card {
+    grid-template-columns: 100px 1fr;
+    gap: 18px;
+  }
+  .landscape .index-mode .work-caption h2 {
+    font-size: 23px;
+  }
+  .landscape .search-field input {
+    min-width: 0;
+    width: 230px;
+  }
+  .landscape .assistant-modal {
+    margin: 8px;
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+  }
+}
