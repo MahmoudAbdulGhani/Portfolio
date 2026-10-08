@@ -1,0 +1,919 @@
+{
+  "phase": "before",
+  "browser": "154.0.8037.99",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "frame": {
+            "x": 81.7874984741211,
+            "y": 449.6000061035156,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "image": {
+            "x": 81.7874984741211,
+            "y": 449.6000061035156,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "picture": null,
+          "natural": [
+            1900,
+            881
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "frame": {
+            "x": 756.5875244140625,
+            "y": 507.3999938964844,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "image": {
+            "x": 756.5875244140625,
+            "y": 515.5125122070312,
+            "width": 514.4125366210938,
+            "height": 234.6999969482422
+          },
+          "picture": {
+            "x": 756.5875244140625,
+            "y": 515.5125122070312,
+            "width": 514.4125366210938,
+            "height": 234.6999969482422
+          },
+          "natural": [
+            572,
+            261
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "frame": {
+            "x": 81.7874984741211,
+            "y": 280.7749938964844,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "image": {
+            "x": 91.30000305175781,
+            "y": 122.0999984741211,
+            "width": 572.5375366210938,
+            "height": 605.9249877929688
+          },
+          "picture": {
+            "x": 91.30000305175781,
+            "y": 122.0999984741211,
+            "width": 572.5375366210938,
+            "height": 605.9249877929688
+          },
+          "natural": [
+            572,
+            605
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": true
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "frame": {
+            "x": 756.5875244140625,
+            "y": 345.7749938964844,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "image": {
+            "x": 756.5875244140625,
+            "y": 345.7749938964844,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "picture": null,
+          "natural": [
+            1904,
+            879
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "frame": {
+            "x": 81.7874984741211,
+            "y": 469.45001220703125,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "image": {
+            "x": 91.30000305175781,
+            "y": 476.8625183105469,
+            "width": 572.5375366210938,
+            "height": 273.7375183105469
+          },
+          "picture": {
+            "x": 91.30000305175781,
+            "y": 476.8625183105469,
+            "width": 572.5375366210938,
+            "height": 273.7375183105469
+          },
+          "natural": [
+            572,
+            273
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "frame": {
+            "x": 756.5875244140625,
+            "y": 507.25,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "image": {
+            "x": 756.5875244140625,
+            "y": 507.25,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "picture": null,
+          "natural": [
+            1920,
+            877
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "frame": {
+            "x": 81.7874984741211,
+            "y": 376.625,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "image": {
+            "x": 81.7874984741211,
+            "y": 376.625,
+            "width": 591.5625,
+            "height": 288.5625
+          },
+          "picture": null,
+          "natural": [
+            1000,
+            1000
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "frame": {
+            "x": 756.5875244140625,
+            "y": 441.625,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "image": {
+            "x": 756.5875244140625,
+            "y": 441.625,
+            "width": 514.4125366210938,
+            "height": 250.9250030517578
+          },
+          "picture": null,
+          "natural": [
+            1348,
+            926
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        }
+      ],
+      "index": {
+        "cards": 8,
+        "images": 0,
+        "overflow": false
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "frame": {
+            "x": 76.80000305175781,
+            "y": 271.20001220703125,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "image": {
+            "x": 76.80000305175781,
+            "y": 271.20001220703125,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "picture": null,
+          "natural": [
+            1900,
+            881
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "frame": {
+            "x": 710.0499877929688,
+            "y": 306.6000061035156,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "image": {
+            "x": 710.0499877929688,
+            "y": 314.2124938964844,
+            "width": 482.7375183105469,
+            "height": 220.2375030517578
+          },
+          "picture": {
+            "x": 710.0499877929688,
+            "y": 314.2124938964844,
+            "width": 482.7375183105469,
+            "height": 220.2375030517578
+          },
+          "natural": [
+            537,
+            245
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "frame": {
+            "x": 76.80000305175781,
+            "y": 181.3249969482422,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "image": {
+            "x": 85.57500457763672,
+            "y": 32.25,
+            "width": 537.5875244140625,
+            "height": 568.9375
+          },
+          "picture": {
+            "x": 85.57500457763672,
+            "y": 32.25,
+            "width": 537.5875244140625,
+            "height": 568.9375
+          },
+          "natural": [
+            537,
+            568
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": true
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "frame": {
+            "x": 710.0499877929688,
+            "y": 246.3249969482422,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "image": {
+            "x": 710.0499877929688,
+            "y": 246.3249969482422,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "picture": null,
+          "natural": [
+            1904,
+            879
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "frame": {
+            "x": 76.80000305175781,
+            "y": 181.75,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "image": {
+            "x": 85.57500457763672,
+            "y": 188.625,
+            "width": 537.5875244140625,
+            "height": 257.0249938964844
+          },
+          "picture": {
+            "x": 85.57500457763672,
+            "y": 188.625,
+            "width": 537.5875244140625,
+            "height": 257.0249938964844
+          },
+          "natural": [
+            537,
+            257
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "frame": {
+            "x": 710.0499877929688,
+            "y": 246.75,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "image": {
+            "x": 710.0499877929688,
+            "y": 246.75,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "picture": null,
+          "natural": [
+            1920,
+            877
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "frame": {
+            "x": 76.80000305175781,
+            "y": 181.375,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "image": {
+            "x": 76.80000305175781,
+            "y": 181.375,
+            "width": 555.1375122070312,
+            "height": 270.7875061035156
+          },
+          "picture": null,
+          "natural": [
+            1000,
+            1000
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "frame": {
+            "x": 710.0499877929688,
+            "y": 246.375,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "image": {
+            "x": 710.0499877929688,
+            "y": 246.375,
+            "width": 482.7375183105469,
+            "height": 235.47500610351562
+          },
+          "picture": null,
+          "natural": [
+            1348,
+            926
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        }
+      ],
+      "index": {
+        "cards": 8,
+        "images": 0,
+        "overflow": false
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 521.4000244140625,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 521.4000244140625,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "picture": null,
+          "natural": [
+            1900,
+            881
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 323.1125183105469,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 328.3625183105469,
+            "width": 333.1750183105469,
+            "height": 152
+          },
+          "picture": {
+            "x": 23.412500381469727,
+            "y": 328.3625183105469,
+            "width": 333.1750183105469,
+            "height": 152
+          },
+          "natural": [
+            351,
+            160
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 521.625,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 426.5874938964844,
+            "width": 333.1750183105469,
+            "height": 352.6000061035156
+          },
+          "picture": {
+            "x": 23.412500381469727,
+            "y": 426.5874938964844,
+            "width": 333.1750183105469,
+            "height": 352.6000061035156
+          },
+          "natural": [
+            351,
+            371
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": true
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 287.3374938964844,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 287.3374938964844,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "picture": null,
+          "natural": [
+            1904,
+            879
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 521.8500366210938,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 523.2875366210938,
+            "width": 333.1750183105469,
+            "height": 159.6374969482422
+          },
+          "picture": {
+            "x": 23.412500381469727,
+            "y": 523.2875366210938,
+            "width": 333.1750183105469,
+            "height": 159.6374969482422
+          },
+          "natural": [
+            351,
+            168
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 305.1625061035156,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 305.1625061035156,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "picture": null,
+          "natural": [
+            1920,
+            877
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 521.2750244140625,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 521.2750244140625,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "picture": null,
+          "natural": [
+            1000,
+            1000
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "frame": {
+            "x": 23.412500381469727,
+            "y": 476.5874938964844,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "image": {
+            "x": 23.412500381469727,
+            "y": 476.5874938964844,
+            "width": 333.1750183105469,
+            "height": 162.5124969482422
+          },
+          "picture": null,
+          "natural": [
+            1348,
+            926
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        }
+      ],
+      "index": {
+        "cards": 8,
+        "images": 0,
+        "overflow": false
+      }
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "cards": [
+        {
+          "title": "JobPilot AI",
+          "href": "/projects/jobpilot-ai",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 312.6000061035156,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 312.6000061035156,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "picture": null,
+          "natural": [
+            1900,
+            881
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Lobby",
+          "href": "/projects/lobby",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 161.8874969482422,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 166.16250610351562,
+            "width": 271.20001220703125,
+            "height": 123.7249984741211
+          },
+          "picture": {
+            "x": 19.200000762939453,
+            "y": 166.16250610351562,
+            "width": 271.20001220703125,
+            "height": 123.7249984741211
+          },
+          "natural": [
+            288,
+            131
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "GameZone Arena",
+          "href": "/projects/gamezone-arena",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 333.375,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 256.01251220703125,
+            "width": 271.20001220703125,
+            "height": 287.01251220703125
+          },
+          "picture": {
+            "x": 19.200000762939453,
+            "y": 256.01251220703125,
+            "width": 271.20001220703125,
+            "height": 287.01251220703125
+          },
+          "natural": [
+            288,
+            304
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": true
+        },
+        {
+          "title": "Construction Project Management & Accounting System",
+          "href": "/projects/construction-project-management-accounting-system",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 96.0625,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 96.0625,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "picture": null,
+          "natural": [
+            1904,
+            879
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "UniHub",
+          "href": "/projects/unihub",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 333.95001220703125,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 335.1125183105469,
+            "width": 271.20001220703125,
+            "height": 129.9499969482422
+          },
+          "picture": {
+            "x": 19.200000762939453,
+            "y": 335.1125183105469,
+            "width": 271.20001220703125,
+            "height": 129.9499969482422
+          },
+          "natural": [
+            288,
+            138
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Full-Stack User Management System",
+          "href": "/projects/full-stack-user-management-system",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 127.0374984741211,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 127.0374984741211,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "picture": null,
+          "natural": [
+            1920,
+            877
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Medicare Hub",
+          "href": "/projects/medicare-hub",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 333.7250061035156,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 333.7250061035156,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "picture": null,
+          "natural": [
+            1000,
+            1000
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        },
+        {
+          "title": "Home Services",
+          "href": "/projects/home-services",
+          "frame": {
+            "x": 19.200000762939453,
+            "y": 289.2124938964844,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "image": {
+            "x": 19.200000762939453,
+            "y": 289.2124938964844,
+            "width": 271.20001220703125,
+            "height": 132.28750610351562
+          },
+          "picture": null,
+          "natural": [
+            1348,
+            926
+          ],
+          "objectFit": "contain",
+          "transform": "none",
+          "loaded": true,
+          "overflows": false
+        }
+      ],
+      "index": {
+        "cards": 8,
+        "images": 0,
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

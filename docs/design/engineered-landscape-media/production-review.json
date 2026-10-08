@@ -1,0 +1,19 @@
+{
+  "browser": "154.0.8037.99",
+  "preview": "Compiled production preview",
+  "loadingFrame": {
+    "x": 19.200000762939453,
+    "y": 277.3999938964844,
+    "width": 271.1999931335449,
+    "height": 169.5
+  },
+  "failureFrame": {
+    "x": 19.200000762939453,
+    "y": 277.3999938964844,
+    "width": 271.1999931335449,
+    "height": 169.5
+  },
+  "reserved": true,
+  "keyboardAccessible": true,
+  "errors": []
+}

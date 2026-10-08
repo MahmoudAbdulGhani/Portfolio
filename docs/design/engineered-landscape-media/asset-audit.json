@@ -1,0 +1,253 @@
+{
+  "source": "Published public GET /api/projects; no CMS writes",
+  "projects": [
+    {
+      "name": "JobPilot AI",
+      "slug": "jobpilot-ai",
+      "coverImage": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "screenshots": [
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png"
+      ],
+      "imageAlt": "JobPilot AI promotional graphic featuring laptop, tablet and phone mockups, highlighting job discovery, AI fit analysis, tailored applications and voice interview practice.",
+      "demo": "https://jobpilot-ai-omega.vercel.app/",
+      "type": "AI-powered job-search and application platform",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "Supabase",
+        "OpenAI API",
+        "Docker",
+        "pytest",
+        "Vitest",
+        "Playwright",
+        "Vercel",
+        "Render",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Lobby",
+      "slug": "lobby",
+      "coverImage": "/projects/lobby/cover.webp",
+      "screenshots": [
+        "/projects/lobby/friends.webp",
+        "/projects/lobby/audio-room.webp",
+        "/projects/lobby/community-chat.webp",
+        "/projects/lobby/share-room.webp",
+        "/projects/lobby/guest-access.webp"
+      ],
+      "imageAlt": "",
+      "demo": "https://lobby-hub.vercel.app/",
+      "type": "Real-time communication platform",
+      "stack": [
+        "Angular 22",
+        "NestJS 11",
+        "TypeScript",
+        "Supabase",
+        "LiveKit",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "name": "GameZone Arena",
+      "slug": "gamezone-arena",
+      "coverImage": "/projects/gamezone-arena/cover.webp",
+      "screenshots": [
+        "/projects/gamezone-arena/user_overview.webp",
+        "/projects/gamezone-arena/choose_Room.webp",
+        "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "/projects/gamezone-arena/select_device.webp",
+        "/projects/gamezone-arena/confirm_and_pay.webp",
+        "/projects/gamezone-arena/admin_overview.webp",
+        "/projects/gamezone-arena/admin_Rooms.webp",
+        "/projects/gamezone-arena/admin_Users.webp"
+      ],
+      "imageAlt": "gamezone-arena",
+      "demo": "https://gaming-arena-reservation-system.vercel.app/",
+      "type": "Gaming arena reservation",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "MongoDB",
+        "Tailwind CSS",
+        "JWT",
+        "OTP",
+        "Stripe"
+      ]
+    },
+    {
+      "name": "Construction Project Management & Accounting System",
+      "slug": "construction-project-management-accounting-system",
+      "coverImage": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "screenshots": [
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png"
+      ],
+      "imageAlt": "Construction Project Management and Accounting System dashboard",
+      "demo": "https://construction-project-management-sa22.onrender.com/",
+      "type": "Full-Stack Web Application",
+      "stack": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Supabase",
+        "Groq",
+        "Docker",
+        "Gunicorn",
+        "WhiteNoise",
+        "JWT",
+        "ReportLab",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "GitHub",
+        "Render"
+      ]
+    },
+    {
+      "name": "UniHub",
+      "slug": "unihub",
+      "coverImage": "/projects/unihub/transcipt.webp",
+      "screenshots": [
+        "/projects/unihub/Admin.webp",
+        "/projects/unihub/user.webp",
+        "/projects/unihub/usercourses.webp"
+      ],
+      "imageAlt": null,
+      "demo": "https://university-management-system-three-fawn.vercel.app/login",
+      "type": "University management system",
+      "stack": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST APIs",
+        "JWT",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "name": "Full-Stack User Management System",
+      "slug": "full-stack-user-management-system",
+      "coverImage": "/projects/user-management/dashboard.webp",
+      "screenshots": [
+        "/projects/user-management/dashboard.webp"
+      ],
+      "imageAlt": "User Management System dashboard built with React and FastAPI",
+      "demo": "https://fastapi-user-management.vercel.app/",
+      "type": "Full-Stack Web Application",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "React",
+        "Vite",
+        "React Router",
+        "Tailwind CSS",
+        "Axios",
+        "Framer Motion",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "JWT",
+        "Argon2",
+        "Pytest",
+        "Postman",
+        "Newman",
+        "Vercel"
+      ]
+    },
+    {
+      "name": "Medicare Hub",
+      "slug": "medicare-hub",
+      "coverImage": "",
+      "screenshots": [],
+      "imageAlt": null,
+      "demo": "https://clinic-management-system.kesug.com/",
+      "type": "Clinic management system",
+      "stack": [
+        "PHP",
+        "MySQL",
+        "Bootstrap",
+        "JavaScript",
+        "PHPMailer"
+      ]
+    },
+    {
+      "name": "Home Services",
+      "slug": "home-services",
+      "coverImage": "",
+      "screenshots": [],
+      "imageAlt": "",
+      "demo": "https://home-services-coral.vercel.app/",
+      "type": "Responsive web application",
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "JavaScript",
+        "Responsive Design"
+      ]
+    }
+  ],
+  "repositoryAssets": [
+    {
+      "file": "public/myphoto.jpeg",
+      "width": 960,
+      "height": 1280,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "public/projects/cinematic/medicare-logo.webp",
+      "width": 1000,
+      "height": 1000,
+      "format": "webp",
+      "alpha": false
+    },
+    {
+      "file": "public/projects/cinematic/home-services.webp",
+      "width": 1348,
+      "height": 926,
+      "format": "webp",
+      "alpha": false
+    },
+    {
+      "file": "public/projects/gamezone-arena/user_overview.webp",
+      "width": 1366,
+      "height": 1446,
+      "format": "webp",
+      "alpha": false
+    },
+    {
+      "file": "public/projects/gamezone-arena/admin_overview.webp",
+      "width": 1920,
+      "height": 2076,
+      "format": "webp",
+      "alpha": false
+    },
+    {
+      "file": "public/projects/gamezone-arena/choose_Room.webp",
+      "width": 1920,
+      "height": 3135,
+      "format": "webp",
+      "alpha": false
+    }
+  ]
+}
