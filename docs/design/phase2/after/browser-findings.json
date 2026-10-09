@@ -1,0 +1,2110 @@
+[
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+      "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+      "Approve the version that is exportedAn editable draft is not an approved application document.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "A lasting community, or a room for right now.",
+      "Enter by invitation, then keep the room together.",
+      "Join a temporary room",
+      "Share one invitation",
+      "Keep chat beside the call",
+      "My part in the work.",
+      "Team",
+      "Share contracts; separate the communication paths.",
+      "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+      "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access. The entry view separates an invitation code from room creation and shows the room’s capacity and lifetime controls.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code. The link and QR code lead to the same guest-room entry. The pictured invitation is an existing capture, not a verified current room.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat. Room chat stays alongside audio and screen-sharing controls. This view shows call setup, not evidence of call quality or participant load.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "Make the reservation choices explicit.",
+      "One booking, three remaining decisions.",
+      "Choose the session",
+      "Choose the devices",
+      "Review before confirmation",
+      "My part in the work.",
+      "Team",
+      "Check the slot and keep payment state explicit.",
+      "Check overlap on the serverAvailability shown in the browser can change before submission.",
+      "Keep cash approval separateA cash selection does not mean money has been received.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time. The date and time step makes the session explicit before device selection.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection. Device choices belong to the selected room and session, rather than a separate unconnected request.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment. The final step summarizes the booking and offers payment choices. A payment screen is not proof that a Stripe transaction settled.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "Follow the project through to its financial record.",
+      "From project context to financial explanation.",
+      "Read the project together",
+      "Inspect the posted results",
+      "Explain a calculated estimate",
+      "My part in the work.",
+      "Team",
+      "Put financial rules at the shared boundary.",
+      "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+      "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+      "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "Give the student a connected academic view.",
+      "Read the academic record from the student side.",
+      "Bring courses and grades together",
+      "My part in the work.",
+      "Team",
+      "Connect the portal to student-specific records.",
+      "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+      "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "Self-service without administrative privileges.",
+      "Start with a client account.",
+      "Registration is a client operation",
+      "My part in the work.",
+      "Team",
+      "Keep account rules in the server.",
+      "Assign the public role server-sidePublic registration must not choose administrative access.",
+      "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration. The existing mobile capture shows the registration form. Client role assignment is enforced in the server service, not selected by the public form.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "An appointment needs a recorded confirmation.",
+      "Follow the appointment code path.",
+      "Appointment selection → confirmation → history",
+      "Separate the form from the recorded action.",
+      "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "Translate a supplied design into a responsive page.",
+      "The same navigation, at phone width.",
+      "A mobile navigation sidebar",
+      "Adapt the composition through page components.",
+      "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page. A new capture of the public page at 390px. Keyboard Enter opened the existing menu and its close button dismissed it; all network writes were blocked.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+      "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+      "Approve the version that is exportedAn editable draft is not an approved application document.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "A lasting community, or a room for right now.",
+      "Enter by invitation, then keep the room together.",
+      "Join a temporary room",
+      "Share one invitation",
+      "Keep chat beside the call",
+      "My part in the work.",
+      "Team",
+      "Share contracts; separate the communication paths.",
+      "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+      "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access. The entry view separates an invitation code from room creation and shows the room’s capacity and lifetime controls.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code. The link and QR code lead to the same guest-room entry. The pictured invitation is an existing capture, not a verified current room.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat. Room chat stays alongside audio and screen-sharing controls. This view shows call setup, not evidence of call quality or participant load.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "Make the reservation choices explicit.",
+      "One booking, three remaining decisions.",
+      "Choose the session",
+      "Choose the devices",
+      "Review before confirmation",
+      "My part in the work.",
+      "Team",
+      "Check the slot and keep payment state explicit.",
+      "Check overlap on the serverAvailability shown in the browser can change before submission.",
+      "Keep cash approval separateA cash selection does not mean money has been received.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time. The date and time step makes the session explicit before device selection.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection. Device choices belong to the selected room and session, rather than a separate unconnected request.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment. The final step summarizes the booking and offers payment choices. A payment screen is not proof that a Stripe transaction settled.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "Follow the project through to its financial record.",
+      "From project context to financial explanation.",
+      "Read the project together",
+      "Inspect the posted results",
+      "Explain a calculated estimate",
+      "My part in the work.",
+      "Team",
+      "Put financial rules at the shared boundary.",
+      "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+      "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+      "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "Give the student a connected academic view.",
+      "Read the academic record from the student side.",
+      "Bring courses and grades together",
+      "My part in the work.",
+      "Team",
+      "Connect the portal to student-specific records.",
+      "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+      "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "Self-service without administrative privileges.",
+      "Start with a client account.",
+      "Registration is a client operation",
+      "My part in the work.",
+      "Team",
+      "Keep account rules in the server.",
+      "Assign the public role server-sidePublic registration must not choose administrative access.",
+      "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration. The existing mobile capture shows the registration form. Client role assignment is enforced in the server service, not selected by the public form.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "An appointment needs a recorded confirmation.",
+      "Follow the appointment code path.",
+      "Appointment selection → confirmation → history",
+      "Separate the form from the recorded action.",
+      "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "Translate a supplied design into a responsive page.",
+      "The same navigation, at phone width.",
+      "A mobile navigation sidebar",
+      "Adapt the composition through page components.",
+      "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page. A new capture of the public page at 390px. Keyboard Enter opened the existing menu and its close button dismissed it; all network writes were blocked.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+      "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+      "Approve the version that is exportedAn editable draft is not an approved application document.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "A lasting community, or a room for right now.",
+      "Enter by invitation, then keep the room together.",
+      "Join a temporary room",
+      "Share one invitation",
+      "Keep chat beside the call",
+      "My part in the work.",
+      "Team",
+      "Share contracts; separate the communication paths.",
+      "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+      "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access. The entry view separates an invitation code from room creation and shows the room’s capacity and lifetime controls.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code. The link and QR code lead to the same guest-room entry. The pictured invitation is an existing capture, not a verified current room.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat. Room chat stays alongside audio and screen-sharing controls. This view shows call setup, not evidence of call quality or participant load.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "Make the reservation choices explicit.",
+      "One booking, three remaining decisions.",
+      "Choose the session",
+      "Choose the devices",
+      "Review before confirmation",
+      "My part in the work.",
+      "Team",
+      "Check the slot and keep payment state explicit.",
+      "Check overlap on the serverAvailability shown in the browser can change before submission.",
+      "Keep cash approval separateA cash selection does not mean money has been received.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time. The date and time step makes the session explicit before device selection.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection. Device choices belong to the selected room and session, rather than a separate unconnected request.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment. The final step summarizes the booking and offers payment choices. A payment screen is not proof that a Stripe transaction settled.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "Follow the project through to its financial record.",
+      "From project context to financial explanation.",
+      "Read the project together",
+      "Inspect the posted results",
+      "Explain a calculated estimate",
+      "My part in the work.",
+      "Team",
+      "Put financial rules at the shared boundary.",
+      "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+      "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+      "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "Give the student a connected academic view.",
+      "Read the academic record from the student side.",
+      "Bring courses and grades together",
+      "My part in the work.",
+      "Team",
+      "Connect the portal to student-specific records.",
+      "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+      "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "Self-service without administrative privileges.",
+      "Start with a client account.",
+      "Registration is a client operation",
+      "My part in the work.",
+      "Team",
+      "Keep account rules in the server.",
+      "Assign the public role server-sidePublic registration must not choose administrative access.",
+      "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration. The existing mobile capture shows the registration form. Client role assignment is enforced in the server service, not selected by the public form.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "An appointment needs a recorded confirmation.",
+      "Follow the appointment code path.",
+      "Appointment selection → confirmation → history",
+      "Separate the form from the recorded action.",
+      "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "Translate a supplied design into a responsive page.",
+      "The same navigation, at phone width.",
+      "A mobile navigation sidebar",
+      "Adapt the composition through page components.",
+      "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page. A new capture of the public page at 390px. Keyboard Enter opened the existing menu and its close button dismissed it; all network writes were blocked.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+      "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+      "Approve the version that is exportedAn editable draft is not an approved application document.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "A lasting community, or a room for right now.",
+      "Enter by invitation, then keep the room together.",
+      "Join a temporary room",
+      "Share one invitation",
+      "Keep chat beside the call",
+      "My part in the work.",
+      "Team",
+      "Share contracts; separate the communication paths.",
+      "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+      "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access. The entry view separates an invitation code from room creation and shows the room’s capacity and lifetime controls.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code. The link and QR code lead to the same guest-room entry. The pictured invitation is an existing capture, not a verified current room.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat. Room chat stays alongside audio and screen-sharing controls. This view shows call setup, not evidence of call quality or participant load.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": false
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "Make the reservation choices explicit.",
+      "One booking, three remaining decisions.",
+      "Choose the session",
+      "Choose the devices",
+      "Review before confirmation",
+      "My part in the work.",
+      "Team",
+      "Check the slot and keep payment state explicit.",
+      "Check overlap on the serverAvailability shown in the browser can change before submission.",
+      "Keep cash approval separateA cash selection does not mean money has been received.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time. The date and time step makes the session explicit before device selection.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection. Device choices belong to the selected room and session, rather than a separate unconnected request.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment. The final step summarizes the booking and offers payment choices. A payment screen is not proof that a Stripe transaction settled.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": false
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "Follow the project through to its financial record.",
+      "From project context to financial explanation.",
+      "Read the project together",
+      "Inspect the posted results",
+      "Explain a calculated estimate",
+      "My part in the work.",
+      "Team",
+      "Put financial rules at the shared boundary.",
+      "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+      "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+      "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "Give the student a connected academic view.",
+      "Read the academic record from the student side.",
+      "Bring courses and grades together",
+      "My part in the work.",
+      "Team",
+      "Connect the portal to student-specific records.",
+      "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+      "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": false
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "Self-service without administrative privileges.",
+      "Start with a client account.",
+      "Registration is a client operation",
+      "My part in the work.",
+      "Team",
+      "Keep account rules in the server.",
+      "Assign the public role server-sidePublic registration must not choose administrative access.",
+      "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration. The existing mobile capture shows the registration form. Client role assignment is enforced in the server service, not selected by the public form.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "An appointment needs a recorded confirmation.",
+      "Follow the appointment code path.",
+      "Appointment selection → confirmation → history",
+      "Separate the form from the recorded action.",
+      "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "Translate a supplied design into a responsive page.",
+      "The same navigation, at phone width.",
+      "A mobile navigation sidebar",
+      "Adapt the composition through page components.",
+      "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page. A new capture of the public page at 390px. Keyboard Enter opened the existing menu and its close button dismissed it; all network writes were blocked.",
+        "loaded": true
+      },
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/phase2/home-services-mobile-menu.webp",
+        "alt": "Home Services: Mobile navigation on the public demonstration page",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  }
+]

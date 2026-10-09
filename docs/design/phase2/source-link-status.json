@@ -1,0 +1,143 @@
+{
+  "checkedAt": "2026-10-09T15:23:30.548Z",
+  "results": [
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://github.com/MahmoudAbdulGhani/jobpilot-ai/blob/344b0d77d3d3525e8617df0a48e303055fbb024f/backend/app/services/profile_suggestion_service.py",
+      "status": null,
+      "verification": "Private source inspected through connected GitHub; anonymous access is not expected"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://github.com/MahmoudAbdulGhani/jobpilot-ai/blob/344b0d77d3d3525e8617df0a48e303055fbb024f/backend/app/api/routes/profile_suggestions.py",
+      "status": null,
+      "verification": "Private source inspected through connected GitHub; anonymous access is not expected"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://github.com/MahmoudAbdulGhani/jobpilot-ai/blob/344b0d77d3d3525e8617df0a48e303055fbb024f/backend/app/services/application_pack_service.py",
+      "status": null,
+      "verification": "Private source inspected through connected GitHub; anonymous access is not expected"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://github.com/MahmoudAbdulGhani/Construction-Project-Management-Accounting-System/blob/0a47f1fe1d16d587116d5debcc63fd76538a0e24/apps/accounting/services/core.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://github.com/MahmoudAbdulGhani/Construction-Project-Management-Accounting-System/blob/0a47f1fe1d16d587116d5debcc63fd76538a0e24/apps/accounting/reports.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://github.com/MahmoudAbdulGhani/Construction-Project-Management-Accounting-System/blob/0a47f1fe1d16d587116d5debcc63fd76538a0e24/apps/payments/services.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://github.com/MahmoudAbdulGhani/Construction-Project-Management-Accounting-System/blob/0a47f1fe1d16d587116d5debcc63fd76538a0e24/apps/projects/advisor.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "lobby",
+      "url": "https://github.com/Ahmad-khalaf517/lobby/blob/2c8b1d3948b799acfe76d2559723aace143a1f52/packages/shared/src/schemas/guest-channel.schema.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "lobby",
+      "url": "https://github.com/Ahmad-khalaf517/lobby/blob/2c8b1d3948b799acfe76d2559723aace143a1f52/apps/api/src/modules/guest-channels/guest-channels.controller.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "lobby",
+      "url": "https://github.com/Ahmad-khalaf517/lobby/blob/2c8b1d3948b799acfe76d2559723aace143a1f52/apps/web/src/app/features/guest-room/services/guest-channel.store.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "lobby",
+      "url": "https://github.com/Ahmad-khalaf517/lobby/blob/2c8b1d3948b799acfe76d2559723aace143a1f52/apps/api/src/modules/calls/calls.service.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "gamezone-arena",
+      "url": "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System/blob/2b25a97621c5956c3ea24a2b3a5206fbef6506d9/app/api/bookings/route.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "gamezone-arena",
+      "url": "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System/blob/2b25a97621c5956c3ea24a2b3a5206fbef6506d9/app/api/admin/bookings/[id]/approve-cash/route.ts",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "unihub",
+      "url": "https://github.com/MahmoudAbdulGhani/university-management-system/blob/bf341703475285a7fa667fec28ada2b9c3df44d4/backend/src/modules/student/student.routes.js",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "unihub",
+      "url": "https://github.com/MahmoudAbdulGhani/university-management-system/blob/bf341703475285a7fa667fec28ada2b9c3df44d4/backend/src/modules/student/student.service.js",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "unihub",
+      "url": "https://github.com/MahmoudAbdulGhani/university-management-system/blob/bf341703475285a7fa667fec28ada2b9c3df44d4/src/pages/student/Transcript.jsx",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "url": "https://github.com/MahmoudAbdulGhani/fastapi-user-management/blob/a71660b197e3aaf2aa7223318b12d7f430474205/backend/app/services/user_service.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "url": "https://github.com/MahmoudAbdulGhani/fastapi-user-management/blob/a71660b197e3aaf2aa7223318b12d7f430474205/backend/app/api/dependencies.py",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "medicare-hub",
+      "url": "https://github.com/MahmoudAbdulGhani/Clinic-management-system/blob/a237a4b55059ddacded49eea7d65b63914271e01/APPointment.php",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "medicare-hub",
+      "url": "https://github.com/MahmoudAbdulGhani/Clinic-management-system/blob/a237a4b55059ddacded49eea7d65b63914271e01/confirm-appointment.php",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "home-services",
+      "url": "https://github.com/MahmoudAbdulGhani/home-services/blob/583b8d640141fdcd52077b828d56d309418a9d84/src/App.jsx",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "home-services",
+      "url": "https://github.com/MahmoudAbdulGhani/home-services/blob/583b8d640141fdcd52077b828d56d309418a9d84/src/components/Navbar.jsx",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    },
+    {
+      "slug": "home-services",
+      "url": "https://github.com/MahmoudAbdulGhani/home-services/blob/583b8d640141fdcd52077b828d56d309418a9d84/README.md",
+      "status": 200,
+      "verification": "Anonymous HEAD resolves the immutable source file; not a runtime test"
+    }
+  ]
+}

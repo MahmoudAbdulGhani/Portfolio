@@ -1,5 +1,6 @@
 import { prisma } from "./prisma.js";
 import { resumeLink } from './portfolio-links.js';
+import { caseStudyFor } from '../../../shared/case-study-runtime.js';
 import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, normalizeEducation, recordKind } from '../../../shared/content-integrity-runtime.js';
 
 const projectSelect = {
@@ -36,7 +37,16 @@ export async function getPortfolioContext(projectSlug) {
   if (!profile) throw new Error("Portfolio profile not found");
   const currentProject = projectSlug ? projects.find((project) => project.slug === projectSlug) : undefined;
   if (projectSlug && !currentProject) return null;
-  const linkedProjects = projects.map((project) => ({ ...project, functionalName: project.name, name: projectDisplayName(project), portfolioUrl: `/projects/${project.slug}` }));
+  const linkedProjects = projects.map(project => {
+    const caseStudy = caseStudyFor(project);
+    return {
+      ...project,
+      ...(caseStudy && { description: caseStudy.summary, overview: caseStudy.problem,
+        problem: caseStudy.problem, solution: caseStudy.delivered.join(' '),
+        features: caseStudy.delivered, caseStudy }),
+      functionalName: project.name, name: projectDisplayName(project), portfolioUrl: `/projects/${project.slug}`,
+    };
+  });
 
   return {
     ...(currentProject && { currentProject: linkedProjects.find((project) => project.slug === projectSlug) }),

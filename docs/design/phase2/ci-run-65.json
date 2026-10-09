@@ -1,0 +1,153 @@
+{
+  "run": {
+    "id": 37950973770,
+    "number": 65,
+    "status": "completed",
+    "conclusion": "failure",
+    "head": "cb047a8544db6f341ab33e39682bc3ef23f77611",
+    "started": "2026-10-09T15:20:18Z",
+    "updated": "2026-10-09T15:29:09Z",
+    "url": "https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/37950973770"
+  },
+  "jobs": [
+    {
+      "id": 113889339328,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "completed": "2026-10-09T15:29:08Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:22Z",
+          "completed": "2026-10-09T15:20:24Z"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:24Z",
+          "completed": "2026-10-09T15:20:30Z"
+        },
+        {
+          "name": "Set up Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:30Z",
+          "completed": "2026-10-09T15:20:31Z"
+        },
+        {
+          "name": "Install frontend dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:31Z",
+          "completed": "2026-10-09T15:20:46Z"
+        },
+        {
+          "name": "Install server dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:46Z",
+          "completed": "2026-10-09T15:20:52Z"
+        },
+        {
+          "name": "Generate server Prisma client",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:52Z",
+          "completed": "2026-10-09T15:20:53Z"
+        },
+        {
+          "name": "Typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:53Z",
+          "completed": "2026-10-09T15:20:59Z"
+        },
+        {
+          "name": "Lint",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:20:59Z",
+          "completed": "2026-10-09T15:21:10Z"
+        },
+        {
+          "name": "Build",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:21:10Z",
+          "completed": "2026-10-09T15:21:12Z"
+        },
+        {
+          "name": "Test JavaScript-only API package startup",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:21:12Z",
+          "completed": "2026-10-09T15:21:12Z"
+        },
+        {
+          "name": "Test learning evidence and Capabilities integrity",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:21:12Z",
+          "completed": "2026-10-09T15:21:13Z"
+        },
+        {
+          "name": "Install Playwright Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:21:13Z",
+          "completed": "2026-10-09T15:21:33Z"
+        },
+        {
+          "name": "Run Playwright smoke tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "started": "2026-10-09T15:21:33Z",
+          "completed": "2026-10-09T15:29:05Z"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started": "2026-10-09T15:29:05Z",
+          "completed": "2026-10-09T15:29:05Z"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:29:05Z",
+          "completed": "2026-10-09T15:29:05Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T15:29:05Z",
+          "completed": "2026-10-09T15:29:05Z"
+        }
+      ]
+    }
+  ],
+  "browser": {
+    "passed": 185,
+    "failed": 1,
+    "skipped": 0,
+    "failedTest": "tablet-chromium: a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+    "failedAssertion": "Explore JobPilot AI button returns focus after Escape",
+    "attempts": 3,
+    "newCaseStudyTestsPassed": 27
+  },
+  "localFollowup": {
+    "unchangedFreshCIStyleServerRepetitionsPassed": 3,
+    "unchangedPreviewServerRepetitionsPassed": 3,
+    "softwareRendererCPUThrottleFactorsPassed": [
+      1,
+      4,
+      8
+    ]
+  }
+}

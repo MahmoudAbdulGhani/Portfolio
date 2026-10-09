@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-09T14:52:27.660Z",
+  "source": "Real configured Gemini provider, corrected local assistant route, public GET snapshot and in-memory Prisma. Not deployed production responses or project backend/provider tests.",
+  "model": "gemini-3.5-flash",
+  "findings": [
+    {
+      "projectSlug": "jobpilot-ai",
+      "question": "How does JobPilot handle stale reviewed profile changes and approved document versions? Separate inspected implementation from anything actually tested in this case-study review.",
+      "status": 200,
+      "answer": "### JobPilot AI: Profile Changes & Document Approval\n\n#### Inspected Implementation Decisions\nThe project's code repository defines specific rules to manage state conflicts and document versioning:\n\n*   **Profile Review and Save Boundary:** To prevent manual edits and AI suggestions from overlapping or becoming stale, the service merges the proposed changes for review. It checks the profile revision number and source freshness under SQL row locks before committing both the accepted profile and its provenance together.\n*   **Version-Specific Document Approval:** To ensure editable drafts are not confused with approved applications, the database tracks distinct versions for application packs. The download service checks the approval state on the exact version requested; creating a new draft does not inherit the approval of an earlier version.\n\n---\n\n#### Case-Study Verification Limits\n*   **Not Retested:** Authenticated profile saving, document export, and live provider integrations were not retested or executed in this review.\n*   **Source Inspection Only:** The mechanisms above were identified through static code inspection of the private repository at revision `344b0d77d3`. Displayed interface states are shown in published captures only."
+    },
+    {
+      "projectSlug": "construction-project-management-accounting-system",
+      "question": "Does Groq calculate Cedar’s financial forecast and decide risk levels? Explain the source-backed boundary and what this review can verify about the deployed application.",
+      "status": 200,
+      "answer": "### Forecast Calculations & Risk Decisions\n\nNo, Groq does not calculate Cedar's financial forecasts or decide risk levels. \n\nIn the inspected Django implementation, calculations and risk thresholds are strictly deterministic:\n* **Django computes first:** The application calculates the trend estimate and threshold-based risk level programmatically using Python rules.\n* **Groq narrates second:** Groq is used optionally only to explain or narrate these calculated figures.\n* **Deterministic fallback:** If Groq credentials are missing or the provider fails, the system retains explicit, rule-based deterministic explanatory text.\n\nThis boundary is documented in the codebase at `apps/projects/advisor.py`.\n\n### Verification Limits\n\nThe following limits apply to the deployed application in this review:\n* **No Runtime Validation:** The Render demo did not respond during public GET checks. Authenticated workflows, accounting/concurrency tests, and live Groq behavior were not retested.\n* **Demonstration Data Only:** All screenshots display demonstration values. The inventory valuation tile is marked \"Coming soon\" and is not delivered.\n* **Source Code Observation Only:** Code inspections verify the structural logic within the repository, but they do not constitute active runtime execution or security validation."
+    },
+    {
+      "projectSlug": "lobby",
+      "question": "Did Mahmoud alone build Lobby’s full audio and screen-sharing infrastructure? Distinguish the platform’s team delivery from his documented personal work.",
+      "status": 200,
+      "answer": "No. Mahmoud did not alone build the audio and screen-sharing infrastructure. The [Lobby](/projects/lobby) platform is a collaborative team project delivered by a six-member team. \n\nThe audio, screen-sharing, and media paths using LiveKit represent collective team deliveries. Mahmoud’s documented personal contributions are specifically limited to the following workflows:\n\n*   Collaborating on persistent community and temporary guest-room workflows in a TypeScript monorepo.\n*   Contributing to authenticated and guest access, invitation links, validation, and Supabase-backed services.\n\nThe implementation of the room-specific LiveKit media grants and data segregation is documented as team delivery, with individual authorship of these specific engineering mechanisms not established by source-code inspection."
+    },
+    {
+      "question": "What evidence supports the Medicare Hub and Home Services case studies? Is individual ownership documented, and who supplied the Home Services visual design?",
+      "status": 200,
+      "answer": "### [Medicare Hub](/projects/medicare-hub)\n* **Evidence & Testing:** Implementation details were inspected at the source-code level, confirming patient session validation and a split appointment-confirmation flow. However, no authenticated clinical workflows or database behaviors were retested. The deployment link returned a host challenge shell, and there are no screenshots in the portfolio.\n* **Individual Ownership:** **Undocumented.** There are no personal contribution statements or claims of ownership for this project in the portfolio.\n\n---\n\n### [Home Services](/projects/home-services)\n* **Evidence & Testing:** Source code inspection verified the React page composition, a state-controlled mobile sidebar, and responsive layouts. Interactive checking verified mobile navigation behavior at phone width (390px) while blocking all network writes. No booking or payment backends are demonstrated. \n* **Individual Ownership:** **Undocumented.** Individual ownership or personal contribution statements for the frontend code are not recorded in the portfolio.\n* **Visual Design Credit:** The visual design was a **supplied Figma UI kit** (created by the Figma Community). It was not designed by Mahmoud."
+    }
+  ]
+}

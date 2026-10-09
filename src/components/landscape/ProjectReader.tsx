@@ -9,14 +9,18 @@ import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { CaseGallery } from "../CaseGallery";
 import { EngineeringCaseStudy } from "../EngineeringCaseStudy";
 import { nonempty, projectDisplayName } from "../../../shared/content-integrity";
+import { caseStudyFor, screenMatches } from "../../../shared/case-study-runtime";
+import { CaseNarrative } from "./CaseNarrative";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
   const location = useLocation();
   const record = useProject(slug),
     projects = useProjects();
-  const [chapter, setChapter] = useState(0),
+  const [chapterRecord, setChapterRecord] = useState({ slug, index: 0 }),
     [zoom, setZoom] = useState<number | null>(null);
+  const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
+  const setChapter = (index: number) => setChapterRecord({ slug, index });
   const [galleryTrigger, setGalleryTrigger] = useState<HTMLButtonElement | null>(null);
   const openGallery = (index: number, trigger: HTMLButtonElement) => {
     setGalleryTrigger(trigger);
@@ -34,7 +38,10 @@ export function ProjectReader() {
         />
       </main>
     );
-  const screens = detailScreens(project);
+  const study = caseStudyFor(project);
+  const originals = detailScreens(project);
+  const leadIndex = study ? originals.findIndex(screen => screenMatches(screen.src, study.lead)) : -1;
+  const screens = leadIndex > 0 ? [originals[leadIndex], ...originals.filter((_, index) => index !== leadIndex)] : originals;
   const displayName = projectDisplayName(project);
   const role = project.myRole?.trim();
   const ownership = project.ownership?.trim();
@@ -44,7 +51,7 @@ export function ProjectReader() {
   const teamSize = project.teamSize || (team.length > 1 ? team.length : null);
   const features = nonempty(project.features);
   const stack = nonempty(project.stack);
-  const purpose = project.tagline?.trim() || project.description?.trim();
+  const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
   const overview = project.overview?.trim() || project.description?.trim();
   const current = screens[chapter] ?? screens[0];
   const all =
@@ -64,11 +71,11 @@ export function ProjectReader() {
     >
       <PageMeta
         title={displayName}
-        description={project.description ?? undefined}
+        description={study?.summary || project.description || undefined}
         image={project.coverImage}
         canonicalPath={`/projects/${slug}`}
       />
-      <article className="case-page">
+      <article className={`case-page${study ? ` reviewed-case reviewed-case-${study.kind}` : ''}`}>
         <Link
           className="case-back text-link"
           to={
@@ -99,7 +106,7 @@ export function ProjectReader() {
             {purpose && <p className="case-purpose">
               {purpose}
             </p>}
-            {project.impactSummary?.trim() && <p>{project.impactSummary}</p>}
+            {!study && project.impactSummary?.trim() && <p>{project.impactSummary}</p>}
             {(project.demo || project.github) && <div className="case-actions">
               {project.demo && (
                 <a
@@ -119,7 +126,7 @@ export function ProjectReader() {
                   rel="noopener noreferrer"
                   className="text-link"
                 >
-                  Source code
+                  Source code{study?.sourceAccess === 'private' && ' (access required)'}
                   <FiArrowUpRight />
                 </a>
               )}
@@ -164,9 +171,10 @@ export function ProjectReader() {
                 priority
               />
             </button>
-            <p className="image-caption">{current.label}</p>
+            <p className="image-caption">{study && screenMatches(current.src, study.lead) ? study.leadCaption : current.label}</p>
           </>
         )}
+        {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>
@@ -245,7 +253,16 @@ export function ProjectReader() {
             benchmarks={project.benchmarks}
           />
         )}
-        {screens.length > 1 && (
+        </>}
+        {screens.length > 1 && (study ? <details className="case-gallery-disclosure"><summary>All project images ({screens.length})</summary>
+          <section className="reader-gallery" id="gallery">
+            <span className="eyebrow">PRODUCT GALLERY / {screens.length} IMAGES</span>
+            <div>{screens.map((screen, index) => <button key={screen.src} onClick={event => openGallery(index, event.currentTarget)} aria-label={`Enlarge ${screen.label}`}>
+              <ResponsiveProjectImage src={screen.src} alt={`${displayName}: ${screen.label}`} sizes="(max-width:720px) 90vw, 40vw" />
+              <span>{screen.label}<FiArrowUpRight /></span>
+            </button>)}</div>
+          </section>
+        </details> : (
           <section className="reader-gallery" id="gallery">
             <span className="eyebrow">
               PRODUCT GALLERY / {screens.length} IMAGES
@@ -270,7 +287,7 @@ export function ProjectReader() {
               ))}
             </div>
           </section>
-        )}
+        ))}
         <div className="case-end">
           <Link className="text-link" to="/projects">
             <FiArrowLeft />

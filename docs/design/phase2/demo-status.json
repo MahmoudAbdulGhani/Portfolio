@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-09",
+  "method": "Public GET only; no account, authenticated action or write",
+  "results": [
+    {
+      "slug": "jobpilot-ai",
+      "url": "https://jobpilot-ai-omega.vercel.app/",
+      "status": 200,
+      "finalUrl": "https://jobpilot-ai-omega.vercel.app/",
+      "title": "JobPilot AI",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    },
+    {
+      "slug": "lobby",
+      "url": "https://lobby-hub.vercel.app/",
+      "status": 200,
+      "finalUrl": "https://lobby-hub.vercel.app/",
+      "title": "Lobby",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    },
+    {
+      "slug": "gamezone-arena",
+      "url": "https://gaming-arena-reservation-system.vercel.app/",
+      "status": 200,
+      "finalUrl": "https://gaming-arena-reservation-system.vercel.app/",
+      "title": "GameZone Arena",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "url": "https://construction-project-management-sa22.onrender.com/",
+      "status": null,
+      "error": "TimeoutError",
+      "verification": "Public GET failed; deployment behavior unverified"
+    },
+    {
+      "slug": "unihub",
+      "url": "https://university-management-system-three-fawn.vercel.app/login",
+      "status": 200,
+      "finalUrl": "https://university-management-system-three-fawn.vercel.app/login",
+      "title": "UniHub — University Management System",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "url": "https://fastapi-user-management.vercel.app/",
+      "status": 200,
+      "finalUrl": "https://fastapi-user-management.vercel.app/",
+      "title": "User Management System",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    },
+    {
+      "slug": "medicare-hub",
+      "url": "https://clinic-management-system.kesug.com/",
+      "status": 200,
+      "finalUrl": "https://clinic-management-system.kesug.com/",
+      "title": null,
+      "verification": "HTTP 200 host challenge shell; no clinical workflow verified"
+    },
+    {
+      "slug": "home-services",
+      "url": "https://home-services-coral.vercel.app/",
+      "status": 200,
+      "finalUrl": "https://home-services-coral.vercel.app/",
+      "title": "home-services",
+      "verification": "Public GET only; no authenticated workflow or write performed"
+    }
+  ]
+}

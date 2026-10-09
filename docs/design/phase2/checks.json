@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-09",
+  "base": "6aac725",
+  "branch": "refine/phase-2-case-study-evidence",
+  "scope": "Local Phase 2 working tree; pushed-head GitHub result is recorded separately in the draft PR validation entry",
+  "commands": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "test:integrity": {
+      "passed": 14,
+      "includes": "Five new case/context tests plus existing learning, Capabilities and route payload regressions"
+    },
+    "test:api-runtime": "passed; JavaScript-only API startup with shared runtime modules",
+    "test:landscape": {
+      "passed": 10
+    },
+    "test:gallery": {
+      "passed": 2
+    },
+    "test:portrait": {
+      "passed": 2
+    },
+    "server test:cv": "passed; static-only, standard/tailored Letter and master A4",
+    "server test:cv-reference": "passed; static fallback, original fixture/tolerances",
+    "test:e2e": {
+      "startTime": "2026-10-09T15:03:39.783Z",
+      "duration": 439632.762,
+      "expected": 186,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "workers": 1,
+      "projects": [
+        "chromium",
+        "tablet-chromium",
+        "mobile-chromium"
+      ],
+      "fixtureResponses": true,
+      "productionContactSubmissions": 0
+    },
+    "test:e2e affected final spacing": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "git diff --check": "passed"
+  },
+  "presentation": {
+    "actualPublicSnapshot": true,
+    "routeViewportCombinations": 32,
+    "widths": [
+      1363,
+      1024,
+      390,
+      320
+    ],
+    "overflow": 0,
+    "pageExceptions": 0,
+    "writesBlocked": true,
+    "reducedMotion": true
+  },
+  "modelEvaluation": {
+    "realProvider": "Gemini",
+    "finalPrompts": 4,
+    "successfulHTTPResponses": 4,
+    "correctedLocalRoutes": true,
+    "database": "fail-closed in-memory read snapshot",
+    "deployedPortfolioAnswers": false,
+    "projectBackendTestsExecuted": false,
+    "earlierIncorrectSamplesRetained": true
+  }
+}
