@@ -1,3 +1,39 @@
+# Profile portrait: final lighting and image delivery
+
+8 October 2026. Implemented locally on `refine/engineered-landscape-portrait-finish`, based on the accepted borderless-gallery commit `3a8d208`. The accepted portrait crop, frame, size, placement, ivory background and surrounding Profile design are preserved. No unrelated work was changed.
+
+[Actual Profile before/after comparison](docs/design/engineered-landscape-portrait/finish/comparison.html) · [Preservation and delivery measurements](docs/design/engineered-landscape-portrait/finish/preservation-and-delivery.json) · [Checks](docs/design/engineered-landscape-portrait/finish/checks.json). Working local page: http://127.0.0.1:5175/profile.
+
+## Photographic finishing
+
+Verified the original attachment at `C:/Users/Admin/Downloads/WhatsApp Image 2026-10-08 at 15.02.08.jpeg`: 1200 × 1600; SHA-256 remains `1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce`. Used the existing full-resolution registered cutout, retaining the exact alpha and crop rectangle (376, 341, 768, 1259). The original JPEG, previous PNG master and previous WebP assets remain unchanged.
+
+Applied deterministic per-pixel linear-light correction to the existing head pixels: a restrained red gain (up to 2.5%), blue reduction (7.5–13% in linear light depending on shade), smoothly feathered to preserve surrounding clothing, and up to 0.10 stop additional face shadow lift. Corrected observed blue spill on fractional perimeter pixels using adjacent existing subject colors; bright-halo correction is limited to hair. Alpha and coordinates are unchanged. Hands/watch are excluded; near-opaque clothing below the head remains pixel-identical. No generation, face replacement, skin smoothing or sharpening.
+
+The separate [finished master](docs/design/engineered-landscape-portrait/finish/portrait-finished-master.png) is transparent 1200 × 1600. Tests compare all 1,920,000 alpha values to the prior master, verify unchanged clothing interior and hands, and verify exact visible RGB/alpha round trips for every lossless WebP variant.
+
+## Image delivery
+
+The live page was checked in Chrome at 1363px and DPR 1/2 with all writes blocked. Its reported 436px natural width was density-adjusted: actual fetched WebP files were 480px at 1× and 768px at 2×. It already met 2× detail for the approximately 344px rendered desktop image. The old sizes attribute advertised 32vw instead of the actual inset image slot.
+
+The corrected sizes calculations mirror the accepted column widths and padding. Native-source variants are 320, 384, 480, 640 and 768px wide, generated from the registered PNG rather than a small WebP. All use lossless WebP and preserve transparency; explicit 768 × 1259 dimensions remain. The main file is `public/landscape/portrait-striped-finished.webp`; responsive siblings are `portrait-striped-finished-{width}w.webp`. [Exact paths, dimensions and bytes](docs/design/engineered-landscape-portrait/finish/delivery.json).
+
+At DPR 2: 1363px desktop receives 768px (2.23×); 1280px receives 768px (2.40×); 390px phone receives 384px (2.23×); 360px receives 320px (2.03×). Phone downloads drop about 31% and 49% respectively. The native 768px file is 603,372 bytes, about 0.7% larger after the pixel-preserving color finish. An intermediate 704px export was larger than the native file and removed from srcset and delivery. Lossless AVIF was also larger; lower-quality AVIF changed alpha, so it was not adopted.
+
+## Layout and checks
+
+Before/after Profile viewports, complete layouts and portrait-panel captures cover 1363 × 936, 1280 × 720, 390 × 844, 360 × 800 and 1920 × 1080 at DPR 2. Chrome before/after comparisons and WebKit after renders were inspected against the actual ivory page background. Panel geometry, image width/position and heading alignment have zero measured change. Mobile image-height rounding from responsive integer dimensions is less than 0.2 CSS pixels; the fixed crop frame is unchanged. No portrait or surrounding CSS was modified, and reduced-motion behavior remains static. Future custom CMS photos retain their own source without a person-specific cutout treatment.
+
+Lint, typecheck, production build and **2/2 image regression tests** pass. Full Chrome desktop/tablet/phone suite: **144/144**; WebKit portrait/public suite: **28/28**. After removing the redundant source candidate, regenerated assets and reran lint/typecheck/build/image checks plus the affected portrait suites: **21/21 Chrome** and **14/14 WebKit**. All final results have zero unexpected, skipped or flaky tests. Browser tests verify decoded file dimensions at 2×, native-width caps, accepted frames, explicit sizing, delayed-load stability and future CMS-photo precedence. Existing motion-rig chunk-size warning remains, approximately 503KB minified.
+
+## Limitations and changed files
+
+The native trimmed source is only 768px wide. At the unchanged 1920px desktop layout, the image renders around 501px, so true 2× would need around 1002 native pixels; current delivery is capped at 1.53×. A higher-resolution original would be needed for that width. Physical phones, on-screen keyboards and calibrated display/color-reference testing remain unavailable; Windows WebKit is engine coverage, not physical Safari verification.
+
+Changed: `src/components/landscape/ProfilePortrait.tsx`, `src/generated/profile-portrait.ts`, `scripts/optimize-profile-portrait.mjs`, `package.json`, `tests/profile-portrait.test.mjs`, `tests/e2e/profile-portrait.spec.ts`, six new WebP assets under `public/landscape/`, this QA section and `docs/design/engineered-landscape-portrait/finish/`. Original/current assets and the accepted CSS remain unchanged. On 9 October 2026, the user authorized committing and pushing this finished pass on its dedicated branch for draft review. No merge, manual deployment, production Contact submission or live database modification is authorized or performed.
+
+---
+
 # Approved borderless gallery refinement
 
 8 October 2026. The user accepted the borderless comparison and authorized implementation, testing, commit and branch push. Work continues on `refine/engineered-landscape-gallery-covers` from `6c0451e`, updating draft PR #8. This section supersedes the matte presentation described below.

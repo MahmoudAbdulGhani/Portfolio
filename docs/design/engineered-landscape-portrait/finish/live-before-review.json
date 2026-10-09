@@ -1,0 +1,92 @@
+{
+  "phase": "before",
+  "live": true,
+  "engine": "chrome",
+  "browser": "154.0.8037.99",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "dpr": 1,
+      "panel": {
+        "x": 81.765625,
+        "y": 117,
+        "width": 383.828125,
+        "height": 479.78125
+      },
+      "image": {
+        "x": 101.765625,
+        "y": 137,
+        "width": 343.828125,
+        "height": 563.734375,
+        "naturalWidth": 436,
+        "naturalHeight": 715,
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/landscape/portrait-striped-cutout-480w.webp",
+        "srcset": "/landscape/portrait-striped-cutout-480w.webp 480w, /landscape/portrait-striped-cutout.webp 768w",
+        "sizes": "(max-width: 719px) 45vw, (max-width: 1050px) 30vw, 32vw",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 561.546875,
+        "y": 117
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 480,
+        "height": 787,
+        "alpha": true,
+        "bytes": 317718,
+        "effectiveDensity": 1.3960463531015679
+      },
+      "errors": []
+    },
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 81.765625,
+        "y": 117,
+        "width": 383.828125,
+        "height": 479.78125
+      },
+      "image": {
+        "x": 101.765625,
+        "y": 137,
+        "width": 343.828125,
+        "height": 563.640625,
+        "naturalWidth": 436,
+        "naturalHeight": 715,
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/landscape/portrait-striped-cutout.webp",
+        "srcset": "/landscape/portrait-striped-cutout-480w.webp 480w, /landscape/portrait-striped-cutout.webp 768w",
+        "sizes": "(max-width: 719px) 45vw, (max-width: 1050px) 30vw, 32vw",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 561.546875,
+        "y": 117
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 768,
+        "height": 1259,
+        "alpha": true,
+        "bytes": 598898,
+        "effectiveDensity": 2.2336741649625087
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-08",
+  "branch": "refine/engineered-landscape-portrait-finish",
+  "lint": "passed",
+  "typecheck": "passed",
+  "build": "passed; existing approximately 503KB motion-rig chunk warning",
+  "imageTests": {
+    "passed": 2,
+    "scope": "Registered alpha/body/hand preservation and lossless visible RGB/alpha for every responsive variant"
+  },
+  "fullChrome": {
+    "startTime": "2026-10-08T16:56:31.804Z",
+    "duration": 286241.12899999996,
+    "expected": 144,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkitPublic": {
+    "startTime": "2026-10-08T16:56:02.331Z",
+    "duration": 68373.653,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalChromePortrait": {
+    "startTime": "2026-10-08T17:03:03.334Z",
+    "duration": 34006.524,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalWebkitPortrait": {
+    "startTime": "2026-10-08T17:02:55.768Z",
+    "duration": 30892.032000000003,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "notes": "After the full suite passed, a 704px candidate larger than the native 768px file was removed. The final five-width srcset was rebuilt and rechecked with lint, typecheck, image tests, build, 21 Chrome and 14 WebKit portrait tests.",
+  "limitations": [
+    "Native cutout width is 768px. True 2x is supported at tested 1363px/1280px desktop and 390px/360px phone widths; 1920px desktop requires roughly 1002px, so native delivery is capped at 1.53x.",
+    "No physical phones or calibrated display/color-reference verification. Windows WebKit is not physical iOS Safari testing."
+  ],
+  "delivery": "Commit and dedicated branch push authorized on 2026-10-09, for draft review. No merge, manual deployment, production Contact submission or live database modification."
+}

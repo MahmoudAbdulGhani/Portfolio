@@ -1,0 +1,155 @@
+{
+  "sourceOriginalSHA256": "1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce",
+  "existingMasterSHA256": "f3b8cda94a6df75b99ea7d334e94ce544a84a683151ac3312a681ee5c0793039",
+  "registeredDimensions": [
+    1200,
+    1600
+  ],
+  "unchangedCrop": {
+    "left": 376,
+    "top": 341,
+    "width": 768,
+    "height": 1259
+  },
+  "changedAlphaPixels": 0,
+  "changedNearOpaqueClothingPixels": 0,
+  "refinedPerimeterRGBPixels": 3082,
+  "geometry": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "panelDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "imageDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "headingDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "fileWidthBefore": 768,
+      "fileWidthAfter": 768,
+      "bytesBefore": 598898,
+      "bytesAfter": 603372,
+      "density": 2.2336741649625087
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "panelDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "imageDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "headingDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "fileWidthBefore": 768,
+      "fileWidthAfter": 768,
+      "bytesBefore": 598898,
+      "bytesAfter": 603372,
+      "density": 2.3967232299590404
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panelDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "imageDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0.171875
+      },
+      "headingDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "fileWidthBefore": 480,
+      "fileWidthAfter": 384,
+      "bytesBefore": 317718,
+      "bytesAfter": 218020,
+      "density": 2.230127041742287
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "panelDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "imageDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0.15625
+      },
+      "headingDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "fileWidthBefore": 480,
+      "fileWidthAfter": 320,
+      "bytesBefore": 317718,
+      "bytesAfter": 162196,
+      "density": 2.0329561246773875
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "panelDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "imageDelta": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "headingDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "fileWidthBefore": 768,
+      "fileWidthAfter": 768,
+      "bytesBefore": 598898,
+      "bytesAfter": 603372,
+      "density": 1.5339387697781106
+    }
+  ],
+  "method": "Deterministic per-pixel linear-light head white balance and max 0.10-stop feathered face shadow lift. Fractional perimeter RGB with observed blue spill is decontaminated from adjacent opaque subject pixels; bright-halo correction is restricted to hair. Original alpha, geometry and clothing texture are preserved; hands/watch are excluded. No generation, spatial skin filtering or sharpening."
+}

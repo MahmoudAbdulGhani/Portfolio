@@ -1,0 +1,31 @@
+{
+  "originalSHA256": "1065223bac21b80db1758710b469b55e0277e18fad5c352eeb7dbfbc174481ce",
+  "existingMasterSHA256": "f3b8cda94a6df75b99ea7d334e94ce544a84a683151ac3312a681ee5c0793039",
+  "dimensions": [
+    1200,
+    1600
+  ],
+  "crop": {
+    "left": 376,
+    "top": 341,
+    "width": 768,
+    "height": 1259
+  },
+  "headPixels": 88273,
+  "edgePixels": 3082,
+  "alphaChanges": 0,
+  "opaqueBodyChanges": 0,
+  "method": "Deterministic per-pixel linear-light head white balance and max 0.10-stop feathered face shadow lift. Fractional perimeter RGB with observed blue spill is decontaminated from adjacent opaque subject pixels; bright-halo correction is restricted to hair. Original alpha, geometry and clothing texture are preserved; hands/watch are excluded. No generation, spatial skin filtering or sharpening.",
+  "avif": {
+    "alphaMaxDifference": 0,
+    "opaqueRGBMaxDifference": 0,
+    "opaqueRGBMeanDifference": 0,
+    "bytes": 897595,
+    "selected": false,
+    "reason": "Lossless AVIF is larger than lossless WebP; lower-quality AVIF changed alpha. WebP selected to preserve every visible RGB and alpha value."
+  },
+  "webp": {
+    "lossless": true,
+    "bytes": 603372
+  }
+}
