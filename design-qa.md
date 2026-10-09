@@ -1,3 +1,17 @@
+# Vercel API startup repair — 9 October 2026
+
+The user deployed Phase 1 and supplied production runtime logs showing `ERR_MODULE_NOT_FOUND` for `/var/task/shared/content-integrity.ts`, imported by `server/src/lib/cv-config.js`. This is a regression introduced by Phase 1: the new JavaScript backend imports referenced a TypeScript source path that was absent from the deployed function package. Because `api/index.js` loads all routers, the missing dependency stopped the entire backend before requests reached Prisma; Collection, Projects, Profile and other API consumers therefore failed together. A direct read of the live `/api/health` confirmed HTTP 500 with `X-Vercel-Error: FUNCTION_INVOCATION_FAILED` before this repair was deployed.
+
+Repair branch: `fix/vercel-content-integrity-runtime`, based on `a08200d`. Content rules now have one canonical JavaScript implementation in `shared/content-integrity-runtime.js`; its matching declaration file preserves TypeScript signatures. The existing `shared/content-integrity.ts` remains a typed frontend re-export. Backend CV/context modules import the actual `.js` runtime, and `vercel.json` explicitly includes that file in `api/index.js`'s package. There are no content, layout, PDF geometry, database, environment-value or security-rule changes.
+
+Added `npm run test:api-runtime` and a CI step that copies the real API/backend plus JavaScript shared files into an isolated temporary package, leaves out all TypeScript source files, disables Node's TypeScript loader, imports the actual `api/index.js`, and checks health/projects/profile HTTP 200 responses with explicitly mocked data reads. This reproduced the **exact missing-module error before the fix** and passes afterward. It uses no database, external provider, environment-file content or production write. The temporary package path is checked before cleanup.
+
+Validation: `npm run typecheck`, `npm run lint`, `npm run build`, `npm run test:api-runtime`, six content/context tests, ten existing stream/link tests, static CV generation/reference tests and all **33** desktop/tablet/mobile content/Profile/portrait checks passed. The final browser run has zero skipped, unexpected or flaky results. The application reference geometry and tolerances are unchanged. The frontend's emitted main bundle hash remains `index-CrFsOXR3.js`, matching the preceding Phase 1 build; only the shared backend runtime packaging is repaired. The existing 502.76KB motion chunk warning remains.
+
+The first direct network attempts failed due to temporary DNS/connectivity failures; later origin fetch, GitHub reads and the live health check succeeded. Vercel's published configuration schema confirms `includeFiles` accepts the explicit string used here. No Vercel settings, live database or Contact messages were changed. The new commit must be deployed before production recovery can be verified; local/mock success is not a claim that the currently deployed API is repaired. Full Vercel function artifact generation and post-deployment real-data responses remain unverified in this session.
+
+---
+
 # Phase 1: content integrity and presentation consistency
 
 9 October 2026. Branch: `refine/phase-1-content-integrity`, based on approved `refine/engineered-landscape-portrait-finish` at `f84c580` (draft PR #9). Refreshed origin before choosing this base. The original checkout's untracked `Codex_Engineered_Landscape_Handoff.md` is preserved and excluded from this change. The review PDF was read as observations to verify, with work limited to the user's Phase 1 request.

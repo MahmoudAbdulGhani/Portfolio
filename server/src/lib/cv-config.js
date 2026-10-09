@@ -1,5 +1,5 @@
 import { prisma } from "./prisma.js";
-import { dateRange, datePeriod, normalizeExperience, sortExperience, normalizeTraining, normalizeProjectCv, uniqueCapabilities, projectDisplayName } from '../../../shared/content-integrity.ts';
+import { dateRange, datePeriod, normalizeExperience, sortExperience, normalizeTraining, normalizeProjectCv, uniqueCapabilities, projectDisplayName } from '../../../shared/content-integrity-runtime.js';
 
 export const DEFAULT_HEADER = {
   title: true,

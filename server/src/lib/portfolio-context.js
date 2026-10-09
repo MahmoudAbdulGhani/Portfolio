@@ -1,6 +1,6 @@
 import { prisma } from "./prisma.js";
 import { resumeLink } from './portfolio-links.js';
-import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, datePeriod } from '../../../shared/content-integrity.ts';
+import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, datePeriod } from '../../../shared/content-integrity-runtime.js';
 
 const projectSelect = {
   slug: true, name: true, type: true, tagline: true, description: true,
