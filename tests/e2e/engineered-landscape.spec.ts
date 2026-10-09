@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { projectDisplayName } from '../../shared/content-integrity';
 
 const slugs = [
   "jobpilot-ai",
@@ -127,7 +128,7 @@ test("all eight records survive gallery/index search and narrow deep-link reload
   for (const record of records) {
     await page.goto(`/projects/${record.slug}`);
     await expect(
-      page.getByRole("heading", { name: record.name, exact: true }),
+      page.getByRole("heading", { name: projectDisplayName(record), exact: true }),
     ).toBeVisible();
     await expect(page.getByText("CMS contribution")).toBeAttached();
     await expect
@@ -159,7 +160,7 @@ test("construction display label stays compact while CMS and accessible names re
   expect(dimensions.lines).toBeLessThanOrEqual(3);
   await page.goto(`/projects/${records[3].slug}`);
   await expect(
-    page.getByRole("heading", { name: records[3].name, exact: true }),
+    page.getByRole("heading", { name: 'Cedar Construction', exact: true }),
   ).toBeVisible();
   await expect(page.getByText("Complete CMS overview")).toBeAttached();
 });
@@ -179,7 +180,7 @@ test("case metadata keeps the team phrase together and Projects search reserves 
   );
   await page.goto("/projects/jobpilot-ai");
   const team = page.locator(".case-team-size");
-  await expect(team).toHaveText("1-person team");
+  await expect(team).toHaveText("Independent project.");
   expect(
     await team.evaluate((span) => {
       const range = document.createRange();
@@ -201,7 +202,7 @@ test("case metadata keeps the team phrase together and Projects search reserves 
   ).toBe(1);
   await page.goto(`/projects/${records[3].slug}`);
   await expect(
-    page.getByRole("heading", { name: records[3].name, exact: true }),
+    page.getByRole("heading", { name: 'Cedar Construction', exact: true }),
   ).toBeVisible();
   expect(
     await page.evaluate(() => document.body.scrollWidth <= innerWidth),

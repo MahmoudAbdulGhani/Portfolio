@@ -13,25 +13,8 @@ import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
 import { ProfilePortrait } from "./ProfilePortrait";
-import type { ExperienceItem } from "../../types";
 import { evidenceUrl } from "../../lib/assistant-response";
-
-function period(item: ExperienceItem) {
-  const date = (value?: string | null) =>
-    value
-      ? new Date(value).toLocaleDateString("en", {
-          month: "short",
-          year: "numeric",
-          timeZone: "UTC",
-        })
-      : "";
-  return (
-    item.meta ||
-    [date(item.startDate), item.isCurrent ? "Present" : date(item.endDate)]
-      .filter(Boolean)
-      .join(" — ")
-  );
-}
+import { monthDate, projectDisplayName, recordKind, skillKey } from "../../../shared/content-integrity";
 
 export function ProfilePage() {
   const profile = useProfile(),
@@ -127,11 +110,11 @@ export function ProfilePage() {
                       <strong>{item.company || item.facility}</strong>
                       <span>{item.role || item.milestone}</span>
                     </span>
-                    <span className="record-date">{period(item)}</span>
+                    {item.meta && <span className="record-date">{item.meta}</span>}
                     <FiPlus />
                   </summary>
                   <div className="record-detail">
-                    <p>{item.description || item.details}</p>
+                    {(item.description || item.details) && <p>{item.description || item.details}</p>}
                     {Boolean(item.bullets?.length) && (
                       <ul>
                         {item.bullets?.map((bullet) => (
@@ -139,7 +122,7 @@ export function ProfilePage() {
                         ))}
                       </ul>
                     )}
-                    <span className="eyebrow">{item.location}</span>
+                    {item.location && <span className="eyebrow">{item.location}</span>}
                   </div>
                 </details>
               ))}
@@ -163,7 +146,7 @@ export function ProfilePage() {
                   <span className="eyebrow">{item.period}</span>
                   <h2>{item.degree}</h2>
                   <p>{item.school}</p>
-                  <p>{item.details}</p>
+                  {item.details && <p>{item.details}</p>}
                 </section>
               ))}
             <div className="training-record">
@@ -171,10 +154,10 @@ export function ProfilePage() {
                 ?.filter((item) => item.published !== false)
                 .map((item) => (
                   <div key={item.id}>
+                    <span className="eyebrow">{recordKind(item)}</span>
                     <h3>{item.title}</h3>
                     <p>
-                      {item.issuer} ·{" "}
-                      {item.year || item.issueDate || item.expectedDate}
+                      {[item.issuer, item.year || monthDate(item.issueDate) || (item.expectedDate ? `Expected ${monthDate(item.expectedDate)}` : '')].filter(Boolean).join(' · ')}
                     </p>
                     {item.description && <p>{item.description}</p>}
                     {item.url && (
@@ -184,7 +167,7 @@ export function ProfilePage() {
                         rel="noopener noreferrer"
                         className="text-link"
                       >
-                        Credential
+                        {recordKind(item) === 'Certification' ? 'Credential' : 'Program information'}
                         <FiArrowUpRight />
                       </a>
                     )}
@@ -204,7 +187,7 @@ export function ProfilePage() {
               }}
               label="capabilities"
             />
-            {["languages", "frameworks", "databases", "ops"].map((category) => (
+            {["languages", "frameworks", "databases", "ops"].filter(category => technologies.data?.some(item => item.category === category)).map((category) => (
               <div key={category}>
                 <h2>{category === "ops" ? "Operations" : category}</h2>
                 <p>
@@ -213,37 +196,20 @@ export function ProfilePage() {
                     .map((item) => item.name)
                     .join(" · ")}
                 </p>
-                {projects.data
-                  ?.filter((project) =>
-                    project.stack.some((tech) =>
-                      technologies.data?.some(
-                        (item) =>
-                          item.category === category &&
-                          item.name.toLowerCase() === tech.toLowerCase(),
-                      ),
-                    ),
-                  )
-                  .slice(0, 2)
-                  .map((project) => (
-                    <Link
-                      key={project.id}
-                      className="text-link"
-                      to={`/projects/${project.slug}`}
-                    >
-                      See {project.name}
-                      <FiArrowUpRight />
-                    </Link>
-                  ))}
               </div>
             ))}
             <div>
               <h2>Skills</h2>
               <ul>
-                {skills.data?.map((skill) => (
-                  <li key={skill.id}>
-                    {skill.name} <span className="eyebrow">{skill.status}</span>
-                  </li>
-                ))}
+                {skills.data?.filter(skill => !technologies.data?.some(tech => skillKey(tech.name) === skillKey(skill.name))).map((skill) => {
+                  const evidence = projects.data?.find(project => project.published
+                    && Boolean(project.myRole?.trim() || project.ownership?.trim() || project.contributions?.some(item => item.trim()))
+                    && project.stack.some(tech => skillKey(tech) === skillKey(skill.name)));
+                  return <li key={skill.id}>
+                    {skill.name}
+                    {evidence && <Link className="text-link" to={`/projects/${evidence.slug}`}>Demonstrated in {projectDisplayName(evidence)}<FiArrowUpRight /></Link>}
+                  </li>;
+                })}
               </ul>
             </div>
           </div>

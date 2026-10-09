@@ -18,6 +18,7 @@ import { MotionRig } from "./MotionRig";
 import { warmRig } from "./rig-loader";
 import type { RigKind } from "./rig-models";
 import type { Project } from "../../types";
+import { projectDisplayName } from "../../../shared/content-integrity";
 import "./selected-project.css";
 
 // Labels are presentation only; full names, narratives and screenshots stay CMS-owned.
@@ -25,32 +26,28 @@ const artwork: {
   slug: string;
   kind: RigKind;
   asset: string;
-  displayTitle: string;
   category: string;
 }[] = [
   {
     slug: "jobpilot-ai",
     kind: "jobpilot",
     asset: "jobpilot-sculpture.webp",
-    displayTitle: "JobPilot AI",
     category: "AI career workspace",
   },
   {
     slug: "lobby",
     kind: "lobby",
     asset: "lobby-sculpture.webp",
-    displayTitle: "Lobby",
     category: "Real-time communication",
   },
   {
     slug: "construction-project-management-accounting-system",
     kind: "cedar",
     asset: "archive-sculpture.webp",
-    displayTitle: "Cedar Construction",
     category: "Project operations & accounting",
   },
 ];
-type Sculpture = (typeof artwork)[number] & { project: Project };
+type Sculpture = (typeof artwork)[number] & { project: Project; displayTitle: string };
 const masks: Record<RigKind, string[]> = {
   jobpilot: [
     "polygon(0% 0%,38% 0%,55% 68%,0% 42%)",
@@ -82,7 +79,7 @@ export function Collection() {
             project.published &&
             project.showOnPortfolio !== false,
         );
-        return project ? [{ ...art, project }] : [];
+        return project ? [{ ...art, project, displayTitle: projectDisplayName(project) }] : [];
       }),
     [projects.data],
   );

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-09",
+  "base": "f84c580",
+  "typecheck": "passed",
+  "lint": "passed after removing temporary baseline config from checkout",
+  "build": "passed; existing 502.76KB motion-rig warning",
+  "diffCheck": "passed",
+  "contentIntegrity": {
+    "passed": 6,
+    "failed": 0
+  },
+  "landscape": {
+    "passed": 10,
+    "failed": 0
+  },
+  "gallery": {
+    "passed": 2,
+    "failed": 0
+  },
+  "portrait": {
+    "passed": 2,
+    "failed": 0
+  },
+  "cvGeneration": "passed with CV_STATIC_ONLY=1",
+  "cvReference": "passed; original geometry and tolerances retained",
+  "pdfInspection": "passed for saved standard/master/tailored exports",
+  "publicBrowser": {
+    "startTime": "2026-10-09T11:35:57.937Z",
+    "duration": 157607.443,
+    "expected": 144,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalProfileFollowup": {
+    "startTime": "2026-10-09T11:53:42.861Z",
+    "duration": 30515.514,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cvDownload": "passed; regenerated buffer saved byte-for-byte using intercepted response",
+  "liveDatabaseWrites": false,
+  "productionContactSubmitted": false
+}

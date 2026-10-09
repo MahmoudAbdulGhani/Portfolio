@@ -127,7 +127,7 @@ test('slow and failed previews reserve their frame and keep the case study keybo
   await expect(page).toHaveURL(/\/projects\/jobpilot-ai$/);
 });
 
-test('short gallery names remain searchable by either title and preserve full case-study names and media', async ({ page }) => {
+test('shared display names remain searchable by either title and preserve functional descriptions and media', async ({ page }) => {
   await page.goto('/projects');
   const search = page.getByRole('searchbox', { name: 'Search projects or technologies' });
   for (const query of ['Cedar Construction', examples[3][1]]) {
@@ -143,7 +143,8 @@ test('short gallery names remain searchable by either title and preserve full ca
   await expect(page.locator('.project-index h2')).toHaveText('User Management');
   await expect(page.locator('.project-index .work-entry')).toHaveAttribute('aria-label', `Open ${examples[5][1]} case study`);
   await page.locator('.work-entry').click();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(examples[5][1]);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('User Management');
+  await expect(page.locator('.case-functional-name')).toHaveText(examples[5][1]);
   await expect(page.locator('img[src="/projects/user-management/dashboard.webp"]').first()).toBeVisible();
   await expect(page.locator('img[src*="/projects/gallery-covers/"]')).toHaveCount(0);
 });

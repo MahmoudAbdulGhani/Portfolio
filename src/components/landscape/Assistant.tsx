@@ -11,6 +11,7 @@ import {
 } from "react-icons/fi";
 import { useProfile, useProject, useSiteSection } from "../../lib/hooks";
 import { apiResponse } from "../../lib/api";
+import { projectDisplayName } from "../../../shared/content-integrity";
 import {
   evidenceUrl,
   readAssistantResponse,
@@ -228,14 +229,14 @@ export function LandscapeAssistant() {
           </header>
           <div className="assistant-context">
             <FiMessageSquare />
-            <span>{project?.name || "Projects, skills & experience"}</span>
+            <span>{project ? projectDisplayName(project) : "Projects, skills & experience"}</span>
           </div>
           <div ref={log} className="assistant-log" aria-busy={running}>
             {!messages.length && (
               <div className="assistant-welcome">
                 <p>
                   {project
-                    ? `Explore the engineering and contribution behind ${project.name}.`
+                    ? `Explore the engineering and contribution behind ${projectDisplayName(project)}.`
                     : typeof section?.content.greeting === "string"
                       ? section.content.greeting
                       : "Find the work and experience relevant to what you are looking for."}
@@ -345,7 +346,7 @@ export function LandscapeAssistant() {
                 onChange={(event) => setQuestion(event.target.value)}
                 placeholder={
                   project
-                    ? `Ask about ${project.name}…`
+                    ? `Ask about ${projectDisplayName(project)}…`
                     : "Ask about this portfolio…"
                 }
                 rows={2}
