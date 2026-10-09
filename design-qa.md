@@ -1,3 +1,15 @@
+# Phase 1 CI closeout — 9 October 2026
+
+The clean GitHub runner exposed a setup gap that the already-generated development clients did not: after `npm ci --prefix server`, that server dependency tree's `@prisma/client` was not generated. [CI #61](https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/37935070974) failed at the JavaScript-only API startup test with `@prisma/client did not initialize yet`, and subsequent integrity/browser steps were skipped.
+
+Commit `6909ea3` adds **Generate server Prisma client** immediately after the server dependency install in `.github/workflows/ci.yml`, using exactly `npm run db:generate --prefix server`. It generates client code from the existing schema; no migration, database update, schema change or application behavior change is involved.
+
+[Complete GitHub CI #62](https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/37936287529) passed on `6909ea3cac0ab6875483d7c4c698b95759c3bd2b`, with a clean Ubuntu runner and Node 22.23.3. Both dependency installs, explicit server Prisma generation (6.19.3), typecheck, lint, build, JavaScript-only API startup, all **9** integrity tests, browser dependency installation and the full **159-test** desktop/tablet/mobile Playwright suite passed. No tests were skipped, failed or reported flaky. The workflow completed at `2026-10-09T13:25:26Z`; browser execution took 2.7 minutes. [Machine-readable run and step evidence](docs/design/phase1-followup/ci-run.json) records the tested SHA and GitHub run/job IDs. Local generation, typecheck, lint, build, API startup, integrity tests and diff check also passed before pushing. The existing large motion-chunk and Prisma package-configuration deprecation warnings remain.
+
+Phase 1's CI closeout gate is satisfied. Case-study storytelling and engineering evidence are the next Phase 2 scope; no Phase 2 implementation is included here. PR #12 remains draft, and the existing no-merge/no-manual-deployment boundary is retained. The user's untracked handoff file is untouched.
+
+---
+
 # Phase 1 follow-up: learning evidence and Capabilities — 9 October 2026
 
 Branch `refine/phase-1-evidence-capabilities` starts from `1d5a04e`, the latest Phase 1 runtime repair. Checked the branch, tree, ancestry and refreshed remote refs first: there were no newer tracked changes or commits. The user's untracked `Codex_Engineered_Landscape_Handoff.md` remains untouched. This draft follows PR #11 as its base; no merge or manual deployment is part of this follow-up.
