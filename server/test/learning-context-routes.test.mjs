@@ -5,7 +5,7 @@ import { snapshotPrisma, serve } from './helpers/snapshot-api.mjs';
 test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, ownership and fresh context', async () => {
   const content = {
     '/api/profile': { name: 'Test Owner', experience: [{ company: 'The Digital Hub', startDate: '2026-06', endDate: '2026-09', description: 'Completed a full-stack software engineering and AI program.' }], socials: [] },
-    '/api/projects': [{ slug: 'lobby', name: 'Lobby', team: ['Named colleague'], teamSize: 2, ownership: 'Team project', myRole: 'Developer', contributions: ['Invitation flows'], features: ['Team voice feature'], stack: ['Angular'] }],
+    '/api/projects': [{ slug: 'lobby', name: 'Lobby', github: 'https://github.com/Ahmad-khalaf517/lobby', team: ['Named colleague'], teamSize: 2, ownership: 'Team project', myRole: 'Developer', contributions: ['Invitation flows'], features: ['Team voice feature'], stack: ['Angular'] }],
     '/api/education': [{ degree: 'BSc', period: '2022 – 2025', details: 'Graduated in 2025.' }],
     '/api/certifications': [{ title: 'AWS re/Start Bootcamp', year: 'July 2025 - Oct 2025' }, { title: 'Another course', year: '2024' }],
   };
@@ -48,6 +48,8 @@ test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, owners
       assert.match(instruction, /Past dates.*never imply completion, graduation/);
       assert.match(instruction, /explicitly say it is not verified/);
       assert.match(instruction, /personal work only to documented myRole, ownership and contributions/);
+      assert.match(instruction, /Source inspection is not a passed test, deployed feature/);
+      assert.match(instruction, /use exclusively caseStudy.authorship.documentedPersonalWork/);
       const prompt = request.contents[0].parts[0].text;
       const context = JSON.parse(prompt.split('\n')[1]);
       for (const record of [...context.certifications, ...context.education, context.profile.experience[0]]) {
@@ -57,6 +59,9 @@ test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, owners
       assert.equal(context.certifications[0].learningEvidence.dates, 'Jul 2025 – Oct 2025');
       assert.deepEqual(context.projects[0].team, ['Named colleague']);
       assert.deepEqual(context.projects[0].contributions, ['Invitation flows']);
+      assert.match(context.projects[0].caseStudy.evidenceStatus.projectRuntime, /not rerun/);
+      assert.deepEqual(context.projects[0].caseStudy.authorship.documentedPersonalWork, ['Invitation flows']);
+      assert.ok(context.projects[0].caseStudy.decisions.every(decision => decision.personalAuthorship === 'not established by code inspection'));
       assert.deepEqual(context.education[0].learningEvidence.completion.recordedClaims, ['Graduated in 2025.']);
     }
     assert.equal(JSON.parse(requests[3].contents[0].parts[0].text.split('\n')[1]).certifications[0].year, 'Jul 2025 – Oct 2025');

@@ -1,6 +1,7 @@
 import type { Project } from '../types';
 import { coverDirections } from '../components/cinematic/project-cover-directions';
 import { projectScreens } from './project-presentation';
+import { caseStudyFor } from '../../shared/case-study-runtime';
 
 export interface DetailScreen { src: string; label: string; viewport?: 'phone' | 'tablet' }
 
@@ -59,6 +60,9 @@ export function detailScreens(project: Project): DetailScreen[] {
   }
   if (project.slug === 'full-stack-user-management-system') screens.push({
     src: '/projects/responsive/user-management-phone.webp', label: 'Mobile registration', viewport: 'phone',
+  });
+  if (project.slug === 'home-services' && caseStudyFor(project)) screens.push({
+    src: '/projects/phase2/home-services-mobile-menu.webp', label: 'Mobile navigation on the public demonstration page', viewport: 'phone',
   });
   return screens;
 }

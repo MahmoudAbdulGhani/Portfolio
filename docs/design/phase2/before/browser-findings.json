@@ -1,0 +1,1638 @@
+[
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture"
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture"
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture"
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "lobby",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Lobby",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/friends.webp",
+        "alt": "Lobby: Friends directory",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/audio-room.webp",
+        "alt": "Lobby: Audio room and chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/community-chat.webp",
+        "alt": "Lobby: Community chat",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/share-room.webp",
+        "alt": "Lobby: Room invitation and QR code",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/guest-access.webp",
+        "alt": "Lobby: Guest room access",
+        "loaded": true
+      },
+      {
+        "src": "/projects/lobby/cover.webp",
+        "alt": "Lobby: Screen sharing in an audio room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-phone.webp",
+        "alt": "Lobby: Mobile welcome and workspace preview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/lobby-tablet.webp",
+        "alt": "Lobby: Tablet welcome and workspace preview",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "gamezone-arena",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "GameZone Arena",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/user_overview.webp",
+        "alt": "GameZone Arena: Customer bookings dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/choose_Room.webp",
+        "alt": "GameZone Arena: Choose a gaming room",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+        "alt": "GameZone Arena: Booking date and time",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/select_device.webp",
+        "alt": "GameZone Arena: Device selection",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+        "alt": "GameZone Arena: Booking confirmation and payment",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_overview.webp",
+        "alt": "GameZone Arena: Arena administration overview",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Rooms.webp",
+        "alt": "GameZone Arena: Room management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/admin_Users.webp",
+        "alt": "GameZone Arena: User management",
+        "loaded": true
+      },
+      {
+        "src": "/projects/gamezone-arena/cover.webp",
+        "alt": "GameZone Arena: Arena landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-phone.webp",
+        "alt": "GameZone Arena: Mobile gaming rooms",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/gamezone-tablet.webp",
+        "alt": "GameZone Arena: Tablet gaming rooms",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "construction-project-management-accounting-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "Cedar Construction",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture",
+      "Implementation improvements"
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "alt": "Cedar Construction: Construction portfolio overview",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+        "alt": "Cedar Construction: Project details and operations",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+        "alt": "Cedar Construction: Financial reports",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+        "alt": "Cedar Construction: AI project risk and forecast advisor",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+        "alt": "Cedar Construction: Cedar public landing page",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-phone.webp",
+        "alt": "Cedar Construction: Mobile project operations overview",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/cedar-tablet.webp",
+        "alt": "Cedar Construction: Tablet project operations overview",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "unihub",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "UniHub",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/Admin.webp",
+        "alt": "UniHub: Administration dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/user.webp",
+        "alt": "UniHub: Student dashboard",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/usercourses.webp",
+        "alt": "UniHub: Professor course catalog",
+        "loaded": true
+      },
+      {
+        "src": "/projects/unihub/transcipt.webp",
+        "alt": "UniHub: Student academic transcript",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-phone.webp",
+        "alt": "UniHub: Mobile student registration",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/unihub-tablet.webp",
+        "alt": "UniHub: Tablet sign in",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "full-stack-user-management-system",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "User Management",
+      "The project.",
+      "My part in the work.",
+      "Team",
+      "What needed to change.",
+      "The approach.",
+      "What it does.",
+      "Architecture, decisions, and evidence",
+      "System architecture"
+    ],
+    "images": [
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/user-management/dashboard.webp",
+        "alt": "User Management: Public platform statistics",
+        "loaded": true
+      },
+      {
+        "src": "/projects/responsive/user-management-phone.webp",
+        "alt": "User Management: Mobile registration",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "medicare-hub",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Medicare Hub",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/medicare-logo.webp",
+        "alt": "Medicare Hub: Medicare project identity",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "home-services",
+    "overflow": false,
+    "contribution": false,
+    "headings": [
+      "Home Services",
+      "The project.",
+      "What needed to change.",
+      "The approach.",
+      "What it does."
+    ],
+    "images": [
+      {
+        "src": "/projects/cinematic/home-services.webp",
+        "alt": "Home Services: Home services landing page",
+        "loaded": true
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  }
+]

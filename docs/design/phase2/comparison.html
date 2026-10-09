@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phase 2 — actual reader comparisons</title>
+<style>
+  body { margin: 0; padding: 24px; font: 16px/1.5 system-ui,sans-serif; background: #eeede5; color: #252a29; }
+  main { max-width: 1500px; margin: auto; }
+  h1 { font-size: 28px; }
+  label { display: inline-block; margin: 0 20px 20px 0; }
+  select { display: block; padding: 8px; font: inherit; max-width: 100%; }
+  .comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+  figure { margin: 0; min-width: 0; }
+  figcaption { margin-bottom: 12px; font-weight: 600; }
+  img { display: block; max-width: 100%; height: auto; margin: auto; }
+  a { color: #314f43; }
+  @media (max-width: 800px) { .comparison { grid-template-columns: 1fr; } }
+</style>
+<main>
+  <h1>Phase 2 reader evidence</h1>
+  <p>Actual local Chrome captures using public GET records and original product media, with Manrope loaded, reduced motion and API writes blocked. Before: <code>6aac725</code>. After: Phase 2 working tree. These images verify portfolio presentation; they do not test the pictured products' backends.</p>
+  <p><a href="evidence-inventory.md">Source inventory and gaps</a> · <a href="after/browser-findings.json">All 32 route/viewport findings</a> · <a href="provider-answers.json">Real local-provider responses</a></p>
+  <label>Project<select id="project"></select></label>
+  <label>Viewport<select id="width"><option value="1363">Desktop · 1363 × 936</option><option value="1024">Tablet · 1024 × 1366</option><option value="390">Phone · 390 × 844</option><option value="320">Narrow phone · 320 × 844</option></select></label>
+  <label>Reading position<select id="position"><option value="">Opening</option><option value="-workflow">Workflow / former overview</option></select></label>
+  <div class="comparison">
+    <figure><figcaption>Before · accepted Phase 1</figcaption><a id="before-link"><img id="before" alt=""></a></figure>
+    <figure><figcaption>After · sourced Phase 2 story</figcaption><a id="after-link"><img id="after" alt=""></a></figure>
+  </div>
+  <p id="detail"></p>
+</main>
+<script>
+  const projects = [
+    ['jobpilot-ai','JobPilot AI'],
+    ['construction-project-management-accounting-system','Cedar Construction'],
+    ['lobby','Lobby'],
+    ['gamezone-arena','GameZone Arena'],
+    ['unihub','UniHub'],
+    ['full-stack-user-management-system','User Management'],
+    ['medicare-hub','Medicare Hub'],
+    ['home-services','Home Services'],
+  ];
+  const project = document.querySelector('#project');
+  for (const [slug,name] of projects) project.add(new Option(name,slug));
+  function render() {
+    const width = document.querySelector('#width').value;
+    const position = document.querySelector('#position').value;
+    const name = project.selectedOptions[0].text;
+    for (const phase of ['before','after']) {
+      const path = `${phase}/${project.value}${position}-${width}.jpg`;
+      const img = document.querySelector(`#${phase}`);
+      img.src = path; img.alt = `${name}, ${phase}, ${width}px, ${position ? 'workflow' : 'opening'}`;
+      document.querySelector(`#${phase}-link`).href = path;
+    }
+    const details = document.querySelector('#detail'); details.replaceChildren();
+    const a = document.createElement('a');
+    a.href = `after/${project.value}-engineering-${width}.jpg`; a.textContent = 'Engineering overview'; details.append(a);
+    if (['1363','390'].includes(width)) {
+      details.append(' · ');
+      const expanded = document.createElement('a'); expanded.href = `details/${project.value}-decision-${width}.jpg`;
+      expanded.textContent = 'Expanded first decision and source'; details.append(expanded);
+    }
+  }
+  for (const select of document.querySelectorAll('select')) select.addEventListener('change',render);
+  render();
+</script>
+</html>

@@ -1,0 +1,334 @@
+[
+  {
+    "width": 1363,
+    "height": 936,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile write",
+      "Persist long-running generation",
+      "Approve the version that is exported",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 1024,
+    "height": 1366,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile write",
+      "Persist long-running generation",
+      "Approve the version that is exported",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile write",
+      "Persist long-running generation",
+      "Approve the version that is exported",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "slug": "jobpilot-ai",
+    "overflow": false,
+    "contribution": true,
+    "headings": [
+      "JobPilot AI",
+      "One application, one consistent source of truth.",
+      "From a saved opportunity to the next conversation.",
+      "Find an opportunity",
+      "Keep the application together",
+      "Prepare the conversation",
+      "My part in the work.",
+      "Team",
+      "Keep AI proposals separate from accepted facts.",
+      "The profile save boundary",
+      "Review before a profile write",
+      "Persist long-running generation",
+      "Approve the version that is exported",
+      "What is supported.",
+      "What this review establishes."
+    ],
+    "images": [
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+        "loaded": true
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "alt": "JobPilot AI: Resume library and upload",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+        "alt": "JobPilot AI: Discover jobs",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+        "alt": "JobPilot AI: Saved job and application workspace",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+        "alt": "JobPilot AI: Live voice interview practice",
+        "loaded": false
+      },
+      {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+        "alt": "JobPilot AI: JobPilot product overview artwork",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-phone.webp",
+        "alt": "JobPilot AI: Mobile welcome and application workflow",
+        "loaded": false
+      },
+      {
+        "src": "/projects/responsive/jobpilot-tablet.webp",
+        "alt": "JobPilot AI: Tablet application workflow",
+        "loaded": false
+      }
+    ],
+    "emptyBlocks": 0,
+    "pageErrors": []
+  }
+]

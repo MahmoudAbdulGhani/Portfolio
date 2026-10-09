@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09T15:11:41.937Z",
+  "source": "https://home-services-coral.vercel.app/",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "data": "Public template marketing content; no account or private records",
+  "requests": "GET/HEAD only; all writes blocked",
+  "checks": [
+    "Keyboard Enter opens existing menu",
+    "Close button dismisses menu"
+  ],
+  "originalArtifact": "docs/design/phase2/media/home-services-mobile-menu-original.png",
+  "artifact": "public/projects/phase2/home-services-mobile-menu.webp",
+  "modifications": "Lossless format conversion only; no crop, annotation or fabricated UI"
+}
