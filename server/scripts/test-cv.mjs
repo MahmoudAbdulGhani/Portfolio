@@ -24,9 +24,13 @@ assert.equal(Number(pageBox[1]), 612);
 assert.equal(Number(pageBox[2]), 792);
 
 // Embedded OFL faces replace the proprietary originals.
-for (const face of ["Carlito", "Caladea"]) {
+for (const face of ["Carlito"]) {
   assert.ok(source.includes(face), `expected ${face} to be embedded`);
 }
+assert.equal(source.includes('Caladea'), false, 'Application body copy must use Carlito consistently');
+const master = await generateCvPdfBuffer({ mode: 'master' });
+assert.match(master.toString('latin1'), /\/MediaBox \[0 0 595\.28 841\.89\]/);
+assert.match(master.toString('latin1'), /SourceSans3/);
 const tailoredPdf = await generateCvPdfBuffer({
   origin: "https://portfolio.example",
   mode: "application",

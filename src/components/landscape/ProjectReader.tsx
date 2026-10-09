@@ -8,6 +8,7 @@ import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { CaseGallery } from "../CaseGallery";
 import { EngineeringCaseStudy } from "../EngineeringCaseStudy";
+import { nonempty, projectDisplayName } from "../../../shared/content-integrity";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
@@ -34,6 +35,17 @@ export function ProjectReader() {
       </main>
     );
   const screens = detailScreens(project);
+  const displayName = projectDisplayName(project);
+  const role = project.myRole?.trim();
+  const ownership = project.ownership?.trim();
+  const contributions = nonempty(project.contributions);
+  const team = nonempty(project.team);
+  const hasContribution = Boolean(role || ownership || contributions.length);
+  const teamSize = project.teamSize || (team.length > 1 ? team.length : null);
+  const features = nonempty(project.features);
+  const stack = nonempty(project.stack);
+  const purpose = project.tagline?.trim() || project.description?.trim();
+  const overview = project.overview?.trim() || project.description?.trim();
   const current = screens[chapter] ?? screens[0];
   const all =
     projects.data?.filter(
@@ -51,7 +63,7 @@ export function ProjectReader() {
       className="page-surface project-reader"
     >
       <PageMeta
-        title={project.name}
+        title={displayName}
         description={project.description ?? undefined}
         image={project.coverImage}
         canonicalPath={`/projects/${slug}`}
@@ -71,23 +83,24 @@ export function ProjectReader() {
         <header className="case-heading">
           <div>
             <span className="eyebrow">CASE STUDY / {project.type}</span>
-            <h1 className="view-heading">{project.name}</h1>
-            <p className="case-role">
-              <span>{project.myRole}</span>
-              {Boolean(project.teamSize) && (
+            <h1 className="view-heading">{displayName}</h1>
+            {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
+            {(role || teamSize) && <p className="case-role">
+              {role && <span>{role}</span>}
+              {Boolean(teamSize) && (
                 <span className="case-team-size">
-                  {project.teamSize}-person team
+                  {teamSize === 1 ? "Independent project." : `${teamSize}-person team`}
                 </span>
               )}
-            </p>
-            {project.program && <p>{project.program}</p>}
+            </p>}
+            {project.program?.trim() && <p>{project.program}</p>}
           </div>
           <div>
-            <p className="case-purpose">
-              {project.tagline || project.description}
-            </p>
-            {project.impactSummary && <p>{project.impactSummary}</p>}
-            <div className="case-actions">
+            {purpose && <p className="case-purpose">
+              {purpose}
+            </p>}
+            {project.impactSummary?.trim() && <p>{project.impactSummary}</p>}
+            {(project.demo || project.github) && <div className="case-actions">
               {project.demo && (
                 <a
                   href={project.demo}
@@ -110,7 +123,7 @@ export function ProjectReader() {
                   <FiArrowUpRight />
                 </a>
               )}
-            </div>
+            </div>}
           </div>
         </header>
         {current && (
@@ -141,12 +154,12 @@ export function ProjectReader() {
             </div>
             <button
               className="case-image"
-              aria-label={`Enlarge ${project.name} screenshot`}
+              aria-label={`Enlarge ${displayName} screenshot`}
               onClick={(event) => openGallery(chapter, event.currentTarget)}
             >
               <ResponsiveProjectImage
                 src={current.src}
-                alt={`${project.name}: ${current.label}`}
+                alt={`${displayName}: ${current.label}`}
                 sizes="90vw"
                 priority
               />
@@ -154,49 +167,54 @@ export function ProjectReader() {
             <p className="image-caption">{current.label}</p>
           </>
         )}
-        <div className="case-notes">
+        <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>
             <h2>The project.</h2>
-            <p>{project.overview || project.description}</p>
-            <div className="stack-tags">
-              {project.stack.map((tech) => (
+            {overview && <p>{overview}</p>}
+            {stack.length > 0 && <div className="stack-tags">
+              {stack.map((tech) => (
                 <span key={tech}>{tech}</span>
               ))}
-            </div>
+            </div>}
           </section>
-          <section id="contribution">
+          {hasContribution && <section id="contribution">
             <span className="eyebrow">02 / CONTRIBUTION</span>
             <h2>My part in the work.</h2>
-            <p>{project.myRole}</p>
-            {project.ownership && <p>{project.ownership}</p>}
-            <ul>
-              {project.contributions?.map((item, index) => (
+            {role && <p>{role}</p>}
+            {ownership && <p>{ownership}</p>}
+            {contributions.length > 0 && <ul>
+              {contributions.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
-            </ul>
-            {Boolean(project.team?.length) && (
+            </ul>}
+            {team.length > 0 && (
               <>
                 <h3>Team</h3>
                 <ul>
-                  {project.team?.map((item) => (
+                  {team.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </>
             )}
-          </section>
+          </section>}
+          {!hasContribution && team.length > 0 && <section id="team">
+            <span className="eyebrow">TEAM DELIVERY</span>
+            <h2>The team.</h2>
+            <ul>{team.map(member => <li key={member}>{member}</li>)}</ul>
+          </section>}
         </div>
-        {(project.problem || project.solution) && (
+        {(project.problem?.trim() || project.solution?.trim()) && (
           <div className="case-notes">
-            {project.problem && (
+            {project.problem?.trim() && (
               <section>
                 <span className="eyebrow">THE PROBLEM</span>
                 <h2>What needed to change.</h2>
                 <p>{project.problem}</p>
               </section>
             )}
-            {project.solution && (
+            {project.solution?.trim() && (
               <section>
                 <span className="eyebrow">THE SOLUTION</span>
                 <h2>The approach.</h2>
@@ -205,12 +223,12 @@ export function ProjectReader() {
             )}
           </div>
         )}
-        {project.features.length > 0 && (
+        {features.length > 0 && (
           <section className="reader-features" id="workflow">
             <span className="eyebrow">03 / PRODUCT WORKFLOW</span>
             <h2>What it does.</h2>
             <ul>
-              {project.features.map((item, index) => (
+              {features.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -241,7 +259,7 @@ export function ProjectReader() {
                 >
                   <ResponsiveProjectImage
                     src={screen.src}
-                    alt={`${project.name}: ${screen.label}`}
+                    alt={`${displayName}: ${screen.label}`}
                     sizes="(max-width:720px) 90vw, 40vw"
                   />
                   <span>
@@ -262,7 +280,7 @@ export function ProjectReader() {
             <Link className="next-project" to={`/projects/${next.slug}`}>
               <span className="eyebrow">NEXT PROJECT</span>
               <span>
-                {next.name}
+                {projectDisplayName(next)}
                 <FiArrowRight />
               </span>
             </Link>
@@ -273,7 +291,7 @@ export function ProjectReader() {
         <CaseGallery
           key={project.id}
           screens={screens}
-          projectName={project.name}
+          projectName={displayName}
           initialIndex={zoom}
           returnFocusTo={galleryTrigger}
           onClose={() => setZoom(null)}

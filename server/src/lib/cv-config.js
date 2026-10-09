@@ -1,4 +1,5 @@
 import { prisma } from "./prisma.js";
+import { dateRange, datePeriod, normalizeExperience, sortExperience, normalizeTraining, normalizeProjectCv, uniqueCapabilities, projectDisplayName } from '../../../shared/content-integrity.ts';
 
 export const DEFAULT_HEADER = {
   title: true,
@@ -22,9 +23,9 @@ export const DEFAULT_SECTION_TITLES = {
   summary: "PROFESSIONAL SUMMARY",
   experience: "PROFESSIONAL EXPERIENCE",
   projects: "PROJECT EXPERIENCE",
-  education: "EDUCATION & CERTIFICATION",
+  education: "EDUCATION",
   skills: "TECHNICAL SKILLS",
-  certifications: "CERTIFICATIONS",
+  certifications: "TRAINING & CERTIFICATIONS",
   languages: "LANGUAGES",
 };
 
@@ -393,15 +394,7 @@ export function normalizeHeader(value) {
   };
 }
 
-function formattedDate(start, end, current) {
-  const display = (value) =>
-    /^\d{4}-\d{2}$/.test(value ?? "")
-      ? `${value.slice(5)}/${value.slice(0, 4)}`
-      : (value ?? "");
-  const from = display(start);
-  const to = current ? "Present" : display(end);
-  return [from, to].filter(Boolean).join(" – ");
-}
+const formattedDate = dateRange;
 
 export async function resolveCvData(modeName = "application") {
   const [catalog, configuration] = await Promise.all([
@@ -417,9 +410,9 @@ export async function resolveCvData(modeName = "application") {
   };
   const projects = select(catalog.projects, mode.projects).map((row) => {
     const override = mode.projectOverrides[row.id];
-    return {
+    const resolved = {
       ...row,
-      name: override?.name || row.name,
+      name: override?.name || projectDisplayName(row),
       tagline: override?.subtitle || row.tagline,
       stack: override?.techStack
         ? override.techStack
@@ -438,6 +431,7 @@ export async function resolveCvData(modeName = "application") {
             ? row.features.slice(0, 2)
             : row.features,
     };
+    return normalizeProjectCv(resolved);
   });
   const experience = select(catalog.profile.experience, mode.experience).map(
     (row) => {
@@ -453,8 +447,11 @@ export async function resolveCvData(modeName = "application") {
             override?.endDate,
             override?.isCurrent,
           ) ||
-          row.meta ||
-          formattedDate(row.startDate, row.endDate, row.isCurrent),
+          formattedDate(row.startDate, row.endDate, row.isCurrent) ||
+          datePeriod(row.meta),
+        startDate: override?.startDate || row.startDate,
+        endDate: override?.endDate || row.endDate,
+        isCurrent: override?.isCurrent ?? row.isCurrent,
         cvLocation: override?.location || row.location || "",
         cvTechnologies: override?.technologies || "",
         cvDescription: override?.description || row.cvDescription || "",
@@ -476,8 +473,8 @@ export async function resolveCvData(modeName = "application") {
       period:
         o?.displayDate ||
         formattedDate(o?.startDate, o?.endDate, false) ||
-        row.period ||
-        formattedDate(row.startDate, row.endDate, false),
+        formattedDate(row.startDate, row.endDate, false) ||
+        datePeriod(row.period),
       field:
         [o?.location, o?.gpa && `GPA: ${o.gpa}`].filter(Boolean).join(" | ") ||
         row.field,
@@ -489,7 +486,7 @@ export async function resolveCvData(modeName = "application") {
     mode.certifications,
   ).map((row) => {
     const o = mode.certificationOverrides[row.id];
-    return {
+    return normalizeTraining({
       ...row,
       title: o?.name || row.title,
       issuer: [o?.provider || row.issuer, o?.duration, o?.location]
@@ -499,9 +496,9 @@ export async function resolveCvData(modeName = "application") {
         o?.displayDate ||
         o?.date ||
         formattedDate(o?.startDate, o?.endDate, o?.isCurrent) ||
-        row.year,
+        datePeriod(row.year),
       cvDescription: o?.description || row.cvDescription || "",
-    };
+    });
   });
   const skills = select(catalog.skills, mode.skills)
     .filter((row) => (row.status ?? "verified") === "verified")
@@ -513,9 +510,13 @@ export async function resolveCvData(modeName = "application") {
     configuration,
     modeName,
     mode,
-    profile: { ...catalog.profile, experience },
+    profile: { ...catalog.profile, experience: sortExperience(experience.map(item => {
+      const normalized = normalizeExperience(item);
+      const displayDate = mode.experienceOverrides[item.id]?.displayDate;
+      return displayDate ? { ...normalized, meta: datePeriod(displayDate) } : normalized;
+    })) },
     projects,
-    skills: [...skills, ...mode.cvOnlySkills],
+    skills: uniqueCapabilities([...skills, ...mode.cvOnlySkills]),
     education,
     certifications,
     languages: mode.languages,

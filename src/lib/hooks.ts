@@ -12,13 +12,17 @@ import type {
   SiteSection,
 } from "../types";
 import { api } from "./api";
+import { normalizeExperience, normalizeTraining, sortExperience, uniqueCapabilities, datePeriod, dateRange } from '../../shared/content-integrity';
 
-const getProfile = () => api<Profile>("/profile");
+const getProfile = async () => {
+  const profile = await api<Profile>("/profile");
+  return { ...profile, experience: sortExperience(profile.experience.map(normalizeExperience)) };
+};
 const getProjects = () => api<Project[]>("/projects");
-const getTechnologies = () => api<Technology[]>("/technologies");
-const getSkills = () => api<Skill[]>("/skills");
-const getEducation = () => api<Education[]>("/education");
-const getCertifications = () => api<Certification[]>("/certifications");
+const getTechnologies = async () => uniqueCapabilities(await api<Technology[]>("/technologies"));
+const getSkills = async () => uniqueCapabilities(await api<Skill[]>("/skills"));
+const getEducation = async () => (await api<Education[]>("/education")).map(item => ({ ...item, period: dateRange(item.startDate, item.endDate) || datePeriod(item.period) }));
+const getCertifications = async () => (await api<Certification[]>("/certifications")).map(normalizeTraining);
 
 /* ------------------------------------------------------------------ */
 /*  Public queries (database/API authoritative; no silent fixtures)    */

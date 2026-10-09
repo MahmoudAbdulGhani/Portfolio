@@ -1,0 +1,164 @@
+[
+  {
+    "file": "application.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "size": [
+          0.0,
+          0.0,
+          612.0,
+          792.0
+        ],
+        "fonts": [
+          "Carlito-Bold",
+          "Carlito-BoldItalic",
+          "Carlito-Italic",
+          "Carlito-Regular"
+        ],
+        "links": [
+          "tel:+96176364340",
+          "mailto:Mahmoud.Abdulghani@outlook.com",
+          "https://linkedin.com/in/MahmoudAbdulGhani",
+          "https://github.com/MahmoudAbdulGhani",
+          "https://mahmoud-portfolio-omega.vercel.app/",
+          "https://jobpilot-ai-omega.vercel.app/",
+          "https://github.com/Ahmad-khalaf517/lobby",
+          "https://lobby-hub.vercel.app/",
+          "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System",
+          "https://gaming-arena-reservation-system.vercel.app/"
+        ],
+        "textLength": 3472,
+        "contentBottom": 728.6570434570312
+      }
+    ]
+  },
+  {
+    "file": "tailored.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "size": [
+          0.0,
+          0.0,
+          612.0,
+          792.0
+        ],
+        "fonts": [
+          "Carlito-Bold",
+          "Carlito-BoldItalic",
+          "Carlito-Italic",
+          "Carlito-Regular"
+        ],
+        "links": [
+          "tel:+96176364340",
+          "mailto:Mahmoud.Abdulghani@outlook.com",
+          "https://linkedin.com/in/MahmoudAbdulGhani",
+          "https://github.com/MahmoudAbdulGhani",
+          "https://mahmoud-portfolio-omega.vercel.app/",
+          "https://github.com/Ahmad-khalaf517/lobby",
+          "https://lobby-hub.vercel.app/",
+          "https://jobpilot-ai-omega.vercel.app/",
+          "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System",
+          "https://gaming-arena-reservation-system.vercel.app/"
+        ],
+        "textLength": 3245,
+        "contentBottom": 742.5570068359375
+      }
+    ]
+  },
+  {
+    "file": "master.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "size": [
+          0.0,
+          0.0,
+          595.280029296875,
+          841.8900146484375
+        ],
+        "fonts": [
+          "SourceSans3-Bold",
+          "SourceSans3-Italic",
+          "SourceSans3-Regular"
+        ],
+        "links": [
+          "mailto:Mahmoud.Abdulghani@outlook.com",
+          "tel:+96176364340",
+          "https://linkedin.com/in/MahmoudAbdulGhani",
+          "https://github.com/MahmoudAbdulGhani"
+        ],
+        "textLength": 1898,
+        "contentBottom": 752.0480346679688
+      },
+      {
+        "page": 2,
+        "size": [
+          0.0,
+          0.0,
+          595.280029296875,
+          841.8900146484375
+        ],
+        "fonts": [
+          "SourceSans3-Bold",
+          "SourceSans3-BoldItalic",
+          "SourceSans3-Italic",
+          "SourceSans3-Regular"
+        ],
+        "links": [
+          "https://jobpilot-ai-omega.vercel.app/",
+          "https://github.com/MahmoudAbdulGhani/jobpilot-ai",
+          "https://lobby-hub.vercel.app/",
+          "https://github.com/Ahmad-khalaf517/lobby",
+          "https://gaming-arena-reservation-system.vercel.app/",
+          "https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System",
+          "https://university-management-system-three-fawn.vercel.app/login",
+          "https://github.com/MahmoudAbdulGhani/university-management-system"
+        ],
+        "textLength": 2450,
+        "contentBottom": 724.6640625
+      },
+      {
+        "page": 3,
+        "size": [
+          0.0,
+          0.0,
+          595.280029296875,
+          841.8900146484375
+        ],
+        "fonts": [
+          "SourceSans3-Bold",
+          "SourceSans3-BoldItalic",
+          "SourceSans3-Italic",
+          "SourceSans3-Regular"
+        ],
+        "links": [
+          "https://clinic-management-system.kesug.com/",
+          "https://github.com/MahmoudAbdulGhani/Clinic-management-system",
+          "https://home-services-coral.vercel.app/",
+          "https://github.com/MahmoudAbdulGhani/home-services"
+        ],
+        "textLength": 1038,
+        "contentBottom": 437.79998779296875
+      },
+      {
+        "page": 4,
+        "size": [
+          0.0,
+          0.0,
+          595.280029296875,
+          841.8900146484375
+        ],
+        "fonts": [
+          "SourceSans3-Bold",
+          "SourceSans3-Italic",
+          "SourceSans3-Regular"
+        ],
+        "links": [],
+        "textLength": 947,
+        "contentBottom": 707.4320068359375
+      }
+    ]
+  }
+]

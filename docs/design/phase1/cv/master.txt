@@ -1,0 +1,165 @@
+Mahmoud Hussein Abdul Ghani
+Full-Stack Software Engineer
+Mahmoud.Abdulghani@outlook.com +961 76 364 340
+Tripoli, Lebanon
+linkedin.com/in/MahmoudAbdulGhani github.com/MahmoudAbdulGhani
+PROFESSIONAL SUMMARY
+Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and
+relational/NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks.
+Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI application
+features.
+PROFESSIONAL EXPERIENCE
+Full-Stack Developer Intern
+Jun 2026 – Sep 2026
+The Digital Hub, UNRWA, Beirut, Hybrid
+Beirut, Hybrid
+• Participated in a full-stack software engineering and AI program focused on modern architecture and
+production-ready applications.
+• Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django
+REST.
+• Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit
+testing with Vitest.
+• Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and
+Render.
+• Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs.
+• Gained hands-on experience using AI coding agents effectively to accelerate development, debugging,
+refactoring, testing, and code review while maintaining code quality and understanding of the generated
+code.
+QA Intern
+May 2026 – Aug 2026
+Oigetit
+• Tested application flows, documented bugs, and used logs to help identify and reproduce failures.
+Backend Developer
+Dec 2025 – Jan 2026
+Ishtari Group, Tripoli, Onsite
+Tripoli, Lebanon
+• Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration
+interfaces.
+• Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.
+
+Web Development Trainer
+Apr 2025 – Jun 2025
+KfW & EU Graduate Support Program | FALA Association
+• Mentored developers on procedural engineering logic, component workflows, and industry-standard
+deployment structures.
+PROJECT EXPERIENCE
+JobPilot AI — Discover opportunities. Prepare your application. Practise your interview.
+Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, SQLAlchemy, Alembic, Supabase, OpenAI API, Docker,
+Vercel, Render, Pytest, Vitest
+• Built a privacy-conscious AI job-search platform with CV extraction, profile suggestions, saved jobs, job
+discovery, application tracking, consent controls, and review-before-apply workflows. (Tech: Next.js,
+React, TypeScript, FastAPI, Python, PostgreSQL, SQLAlchemy, Alembic, Supabase, OpenAI API, Docker,
+Vercel, Render, Pytest, Vitest)
+Live Demo: https://jobpilot-ai-omega.vercel.app/
+Repository: https://github.com/MahmoudAbdulGhani/jobpilot-ai
+Lobby — Persistent communities, temporary guest rooms and live voice.
+Angular 22, NestJS 11, TypeScript, Supabase, LiveKit, Tailwind CSS
+• Co-developed a real-time communication platform for persistent communities and temporary guest
+rooms. Contributed to authenticated and guest access, invitation links, validation, and Supabase-backed
+services.
+Live Demo: https://lobby-hub.vercel.app/
+Repository: https://github.com/Ahmad-khalaf517/lobby
+GameZone Arena — Live availability, online bookings and payments for a gaming arena.
+Next.js 16, React 19, TypeScript, MongoDB, Tailwind CSS, JWT, OTP, Stripe
+• Co-developed a gaming-arena reservation platform with live availability and conflict prevention.
+Contributed to frontend and backend integration across bookings, payments, rooms, devices, and users.
+Live Demo: https://gaming-arena-reservation-system.vercel.app/
+Repository: https://github.com/MahmoudAbdulGhani/Gaming-Arena-Reservation-System
+UniHub — Dedicated portals for students, professors and administrators.
+React, Node.js, Express.js, MongoDB, REST APIs, JWT, Tailwind CSS
+• Developed role-based portals with JWT authentication and protected routes
+• Professor portal: course management, assignments, exams, grading and announcements
+• Admin portal: user management, approvals and platform administration
+• JWT-protected REST API with role-based access control
+Live Demo: https://university-management-system-three-fawn.vercel.app/login
+Repository: https://github.com/MahmoudAbdulGhani/university-management-system
+
+Medicare Hub — Patient records, schedules and role-based clinic workflows.
+PHP, MySQL, Bootstrap, JavaScript, PHPMailer
+• Appointment booking and confirmation across medical specialties
+• Role-based dashboards covering patients, doctors, receptionists and pharmacy
+• Password recovery with emailed OTP codes and PHPMailer notifications
+Live Demo: https://clinic-management-system.kesug.com/
+Repository: https://github.com/MahmoudAbdulGhani/Clinic-management-system
+Home Services — A pixel-faithful landing page built from a Figma design.
+React, Vite, Tailwind CSS, JavaScript, Responsive Design
+• Pixel-perfect implementation of a professional Figma UI kit
+• Responsive across desktop, tablet and mobile with mobile sidebar navigation
+• Component-based React architecture styled with Tailwind CSS
+Live Demo: https://home-services-coral.vercel.app/
+Repository: https://github.com/MahmoudAbdulGhani/home-services
+EDUCATION
+Bachelor of Science in Computer Science
+Oct 2022 – Jun 2025
+Lebanese International University (LIU)
+TECHNICAL SKILLS
+
+Languages & Web
+• TypeScript
+• JavaScript
+• Python
+• PHP
+• HTML5
+• CSS3
+• SQL
+Databases & ORM
+• PostgreSQL
+• MySQL
+• MariaDB
+• MongoDB
+• Mongoose
+• Supabase
+• SQLAlchemy
+• Alembic
+Frontend
+• React.js
+• Next.js
+• Angular
+• Tailwind CSS
+• Zustand
+• TanStack Query
+• Vite
+• Framer Motion
+AI
+• LLMs
+• RAG
+• Prompt Engineering
+• AI API Integration
+Architecture & Testing
+• Clean Architecture
+• SOLID
+• Design Patterns
+• Scalable Systems
+• Pytest
+• Vitest
+• Jest
+Backend & APIs
+• Node.js
+• Express.js
+• NestJS
+• FastAPI
+• Django
+• Django REST Framework
+• RESTful APIs
+Auth & DevOps
+• JWT
+• RBAC
+• Argon2
+• Git
+• GitHub
+• CI/CD
+• Vercel
+• Render
+TRAINING & CERTIFICATIONS
+Angular Self-Learning Course
+Sep 2025
+Self-Learning Program
+AWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals
+Jul 2025 – Oct 2025
+Amazon Web Services
+Full-Stack Web Development
+4-month program
+youbee.ai
+LANGUAGES
+Arabic: Native
+English: Professional Working Proficiency

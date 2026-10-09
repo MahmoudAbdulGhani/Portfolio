@@ -1,8 +1,8 @@
 import type { Project } from '../types';
-import { galleryCovers } from '../generated/gallery-covers';
+import { projectDisplayName } from '../../shared/content-integrity';
 
-// Presentation copy only. Full CMS names still identify case-study links,
-// search results and detail pages; no project record is rewritten.
+// All visible project titles share the same presentation rule. Search retains
+// the full CMS name, and identifiers and destinations remain unchanged.
 export function galleryTitle(project: Pick<Project, 'slug' | 'name'>) {
-  return galleryCovers[project.slug]?.title ?? project.name;
+  return projectDisplayName(project);
 }

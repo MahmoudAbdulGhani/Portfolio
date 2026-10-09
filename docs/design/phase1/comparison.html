@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phase 1 — before and after</title>
+<style>body{margin:24px;background:#ecebe3;color:#202629;font:14px system-ui}label{display:inline-block;margin:0 16px 16px 0}select{padding:8px}main{display:flex;gap:20px;align-items:flex-start;overflow:auto}figure{margin:0;flex:0 0 48%}img{display:block;width:100%;height:auto;border:1px solid #c8c6bc}figcaption{padding:12px 0;font-weight:600}.phone figure{flex:0 0 390px}</style>
+<h1>Phase 1: content integrity</h1>
+<p>Actual local Chrome viewports with the same public CMS snapshot. Before: approved f84c580. After: Phase 1. Reader captures scroll inside the existing page; no screenshot crops or layout expansion.</p>
+<label>Page <select id="page"></select></label>
+<label>Width <select id="width"><option>1363</option><option>390</option></select></label>
+<label>Position <select id="position"><option value="">First viewport</option><option value="notes">Contribution / records</option></select></label>
+<main><figure><figcaption>Before</figcaption><img id="before" alt="Approved base before Phase 1"></figure><figure><figcaption>After</figcaption><img id="after" alt="Phase 1 implementation"></figure></main>
+<script>
+const pages={'jobpilot-ai':'JobPilot AI',lobby:'Lobby','gamezone-arena':'GameZone Arena','construction-project-management-accounting-system':'Cedar Construction',unihub:'UniHub','full-stack-user-management-system':'User Management','medicare-hub':'Medicare Hub','home-services':'Home Services','profile-experience':'Profile: experience','profile-education':'Profile: education and training','profile-capabilities':'Profile: capabilities'};
+const chooser=document.querySelector('#page');
+for(const [value,label] of Object.entries(pages))chooser.add(new Option(label,value));
+chooser.value='medicare-hub';
+function update(){const slug=chooser.value,width=document.querySelector('#width').value,position=document.querySelector('#position').value; const suffix=position?slug.startsWith('profile-')?'-records':'-notes':''; document.querySelector('main').classList.toggle('phone',width==='390'); for(const phase of ['before','after'])document.querySelector('#'+phase).src=`${phase}/${slug}${suffix}-${width}.jpg`;}
+document.querySelectorAll('select').forEach(el=>el.addEventListener('change',update)); update();
+</script></html>

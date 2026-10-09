@@ -1,5 +1,6 @@
 import { prisma } from "./prisma.js";
 import { resumeLink } from './portfolio-links.js';
+import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, datePeriod } from '../../../shared/content-integrity.ts';
 
 const projectSelect = {
   slug: true, name: true, type: true, tagline: true, description: true,
@@ -16,7 +17,7 @@ export async function getPortfolioContext(projectSlug) {
         location: true, languages: true, resumeUrl: true,
         experience: { where: { published: true },
           orderBy: { order: "asc" },
-          select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, description: true },
+          select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, description: true, details: true, bullets: true, cvBullets: true, meta: true },
         },
         socials: { where: { published: true }, select: { label: true, url: true } },
       },
@@ -29,22 +30,22 @@ export async function getPortfolioContext(projectSlug) {
     prisma.technology.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
     prisma.skill.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
     prisma.education.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { school: true, degree: true, field: true, period: true, details: true } }),
-    prisma.certification.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true } }),
+    prisma.certification.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true, description: true, expectedDate: true, credentialId: true } }),
   ]);
 
   if (!profile) throw new Error("Portfolio profile not found");
   const currentProject = projectSlug ? projects.find((project) => project.slug === projectSlug) : undefined;
   if (projectSlug && !currentProject) return null;
-  const linkedProjects = projects.map((project) => ({ ...project, portfolioUrl: `/projects/${project.slug}` }));
+  const linkedProjects = projects.map((project) => ({ ...project, functionalName: project.name, name: projectDisplayName(project), portfolioUrl: `/projects/${project.slug}` }));
 
   return {
     ...(currentProject && { currentProject: linkedProjects.find((project) => project.slug === projectSlug) }),
-    profile: { ...profile, resumeUrl: resumeLink(profile.resumeUrl) },
+    profile: { ...profile, experience: sortExperience(profile.experience.map(normalizeExperience)), resumeUrl: resumeLink(profile.resumeUrl) },
     projects: linkedProjects,
-    technologies,
-    skills,
-    education,
-    certifications,
+    technologies: uniqueCapabilities(technologies),
+    skills: uniqueCapabilities(skills),
+    education: education.map(item => ({ ...item, period: datePeriod(item.period) })),
+    certifications: certifications.map(item => ({ ...normalizeTraining(item), recordKind: recordKind(item) })),
   };
 }
 

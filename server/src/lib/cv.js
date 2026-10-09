@@ -614,9 +614,6 @@ const APPLICATION = {
   // Bullet text starts at 54.03; the reference's wrap column is 516pt wide,
   // which reproduces every bullet line break in the source document.
   bulletWidth: 516,
-  // Caladea is narrower than Cambria, so the serif paragraph needs a tighter
-  // column to land on the same three line breaks.
-  serifWidth: 489,
   ruleColor: "#1E293B",
   ruleHeight: 0.75,
   ruleX0: 34.525,
@@ -646,7 +643,6 @@ const APPLICATION = {
   experienceDateRight: [569.78, 567.79],
   // First bullet text baseline for each experience entry, from the reference.
   experienceBulletY: [201.31, 325.58],
-  serifLeading: 11.75,
 };
 
 function drawApplicationCv(doc, data, origin) {
@@ -820,7 +816,7 @@ function drawApplicationCv(doc, data, origin) {
     return paragraph(value, y, {
       x: left + APPLICATION.bulletIndent,
       width:
-        face === "serif" ? APPLICATION.serifWidth : APPLICATION.bulletWidth,
+        APPLICATION.bulletWidth,
       leading,
       face,
     });
@@ -893,6 +889,7 @@ function drawApplicationCv(doc, data, origin) {
   // Absolute title anchors from the reference; the description flows beneath
   // each one, so only the title positions are fixed.
   const projectTitleY = [379.4, 434.68, 475.93];
+  let projectBottom = 0;
   for (const [index, project] of projects.slice(0, 3).entries()) {
     const nameStr = clean(project.name);
     const links =
@@ -905,27 +902,29 @@ function drawApplicationCv(doc, data, origin) {
         { text: " | ", face: "italic", size: 10, dy: 0.95 },
         { text: link.label, size: 10, dy: 0.95, link: link.url, underline: true },
       );
-    const titleY = projectTitleY[index] ?? 379.4 + index * 55;
+    // Retain the standard reference anchors; reordered tailored projects must
+    // leave room for the preceding paragraph's real line count.
+    const titleY = Math.max(projectTitleY[index] ?? 379.4 + index * 55, projectBottom + 14);
     line(runs, titleY);
 
     const description =
       project.cvBullets?.[0] || project.features?.[0] || project.description || "";
-    const isSerif = project.slug === "jobpilot-ai";
     // Project descriptions hang 0.53pt below their marker, unlike the 1.53pt
     // offset used by the experience section.
-    bullet(description, titleY + (isSerif ? 16.97 : 13.95), {
-      face: isSerif ? "serif" : "regular",
-      leading: isSerif ? APPLICATION.serifLeading : APPLICATION.bulletLeading,
+    projectBottom = bullet(description, titleY + (project.slug === "jobpilot-ai" ? 16.97 : 13.95), {
+      face: "regular",
+      leading: APPLICATION.bulletLeading,
       markerOffset: 0.55,
     });
   }
 
   // --- TECHNICAL SKILLS ---
-  line([{ text: "TECHNICAL SKILLS", face: "bold", size: 11 }], 520.45);
-  sectionRule(537.92);
+  const projectShift = Math.max(0, projectBottom + 18 - 520.45);
+  line([{ text: "TECHNICAL SKILLS", face: "bold", size: 11 }], 520.45 + projectShift);
+  sectionRule(537.92 + projectShift);
 
   const skillGroups = groupSkills(skills);
-  let skillY = 540.65;
+  let skillY = 540.65 + projectShift;
   for (const group of skillGroups) {
     if (!group.names.length) continue;
     line(
@@ -939,8 +938,8 @@ function drawApplicationCv(doc, data, origin) {
   }
 
   // --- EDUCATION & CERTIFICATION ---
-  line([{ text: "EDUCATION & CERTIFICATION", face: "bold", size: 11 }], 642.48);
-  sectionRule(659.95);
+  line([{ text: "EDUCATION & TRAINING", face: "bold", size: 11 }], 642.48 + projectShift);
+  sectionRule(659.95 + projectShift);
 
   const edu = education[0] || {};
   const school = clean(edu.school).replace(/\s*\(LIU\)\s*$/, "");
@@ -951,9 +950,9 @@ function drawApplicationCv(doc, data, origin) {
       { text: `${school} `, face: "boldItalic", size: 10 },
       { text: "(LIU)", face: "italic", size: 10 },
     ],
-    662.7,
+    662.7 + projectShift,
   );
-  line([{ text: clean(edu.period) || "Oct 2022 \u2013 June 2025", face: "bold", size: 9 }], 663.65, {
+  line([{ text: clean(edu.period), face: "bold", size: 9 }], 663.65 + projectShift, {
     x: left,
     width: 558.78 - left,
     align: "right",
@@ -971,7 +970,7 @@ function drawApplicationCv(doc, data, origin) {
   shownCerts.slice(0, certsShown).forEach((cert, index) => {
     const title = clean(cert.title);
     const issuer = clean(cert.issuer);
-    const base = 677.46 + index * certStep;
+    const base = 677.46 + index * certStep + projectShift;
     line(
       [
         { text: title, face: "bold", size: 10 },
@@ -1003,7 +1002,7 @@ function drawApplicationCv(doc, data, origin) {
     }
   });
   if (languageRuns.length) {
-    const languageTop = 696.25 + Math.max(0, certsShown - 1) * certStep;
+    const languageTop = 696.25 + Math.max(0, certsShown - 1) * certStep + projectShift;
     line([{ text: "LANGUAGES", face: "bold", size: 11 }], languageTop);
     sectionRule(languageTop + 17.475);
     line(languageRuns, languageTop + 20.2);

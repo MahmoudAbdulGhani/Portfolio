@@ -1,0 +1,127 @@
+{
+  "status": "PROPOSED ONLY — NOT APPLIED",
+  "captured": "2026-10-09",
+  "instructions": "Compare every precondition before applying through the authenticated CMS. This is a review artifact, not an executable migration. No record deletion, role-title change, completion assertion or live write is included.",
+  "proposals": [
+    {
+      "resource": "experience",
+      "id": "cmsom90xw0013t24sm6fjeu9z",
+      "preconditions": {
+        "meta": "June 2026 – Sept 2026",
+        "description": "Completing an intensive full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.",
+        "details": "Completed a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developed type-safe React and Next.js apps; Built REST APIs using Node.js, Express.js, FastAPI, and Django REST. Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest. Applied SOLID principles and clean architecture in Agile teams; Deployed applications with Vercel and Render. Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs. Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code.",
+        "cvBullets": [
+          "Completed a full-stack software engineering and AI program focused on modern architecture and production-ready applications.",
+          "Developed type-safe React and Next.js apps; Built REST APIs using Node.js, Express.js, FastAPI, and Django REST.",
+          "Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest.",
+          "Applied SOLID principles and clean architecture in Agile teams; Deployed applications with Vercel and Render.",
+          "Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs.",
+          "Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code."
+        ]
+      },
+      "patch": {
+        "meta": "Jun 2026 – Sep 2026",
+        "description": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.",
+        "details": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django REST. Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest. Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and Render. Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs. Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code.",
+        "cvBullets": [
+          "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications.",
+          "Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django REST.",
+          "Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest.",
+          "Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and Render.",
+          "Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs.",
+          "Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code."
+        ]
+      },
+      "evidence": "Existing structured dates, public profile and CV bullets. Neutral participation wording does not assert completion; role titles are preserved."
+    },
+    {
+      "resource": "experience",
+      "id": "cmsom90xw0015t24sa73xbecz",
+      "preconditions": {
+        "meta": "2026-05 – 2026-08"
+      },
+      "patch": {
+        "meta": "May 2026 – Aug 2026"
+      },
+      "evidence": "Existing structured dates, public profile and CV bullets. Neutral participation wording does not assert completion; role titles are preserved."
+    },
+    {
+      "resource": "experience",
+      "id": "cmsom90xw0016t24ssp5irony",
+      "preconditions": {
+        "meta": "2025-04 – 2025-06"
+      },
+      "patch": {
+        "meta": "Apr 2025 – Jun 2025"
+      },
+      "evidence": "Existing structured dates, public profile and CV bullets. Neutral participation wording does not assert completion; role titles are preserved."
+    },
+    {
+      "resource": "certifications",
+      "id": "cert-2",
+      "preconditions": {
+        "year": "09/2025"
+      },
+      "patch": {
+        "year": "Sep 2025"
+      },
+      "evidence": "AWS date correction in commit afbde5a and current public year field. No completion certificate or vendor exam credential was established."
+    },
+    {
+      "resource": "certifications",
+      "id": "cert-3",
+      "preconditions": {
+        "year": "July 2025 - Oct 2025",
+        "description": "Cloud computing and DevOps fundamentals training; completion expected in 2026.",
+        "expectedDate": "2026"
+      },
+      "patch": {
+        "year": "Jul 2025 – Oct 2025",
+        "description": "Cloud computing and DevOps fundamentals training.",
+        "expectedDate": null
+      },
+      "evidence": "AWS date correction in commit afbde5a and current public year field. No completion certificate or vendor exam credential was established."
+    },
+    {
+      "resource": "education",
+      "id": "education-1",
+      "preconditions": {
+        "period": "Oct 2022 – June 2025"
+      },
+      "patch": {
+        "period": "Oct 2022 – Jun 2025"
+      },
+      "evidence": "Existing structured start/end dates."
+    },
+    {
+      "resource": "projects",
+      "id": "cmsngwf2o001xt2is7siogf4w",
+      "preconditions": {
+        "cvBullets": [
+          "Built a real-time communication platform supporting persistent communities, servers, channels, guest rooms, and live voice communication. (Tech: Angular 22, NestJS 11, TypeScript, Supabase, LiveKit, Tailwind CSS)"
+        ]
+      },
+      "patch": {
+        "cvBullets": [
+          "Co-developed a real-time communication platform for persistent communities and temporary guest rooms. Contributed to authenticated and guest access, invitation links, validation, and Supabase-backed services."
+        ]
+      },
+      "evidence": "Personal contributions and team attribution already present in this same public project record and shared/portfolio-data.ts."
+    },
+    {
+      "resource": "projects",
+      "id": "cmsngwdup001wt2isfe1t4h80",
+      "preconditions": {
+        "cvBullets": [
+          "Built a gaming-arena reservation platform with live availability and conflict detection to prevent overlapping room/device bookings. (Tech: Next.js 16, React 19, TypeScript, MongoDB, Tailwind CSS, JWT, OTP, Stripe)"
+        ]
+      },
+      "patch": {
+        "cvBullets": [
+          "Co-developed a gaming-arena reservation platform with live availability and conflict prevention. Contributed to frontend and backend integration across bookings, payments, rooms, devices, and users."
+        ]
+      },
+      "evidence": "Personal contributions and team attribution already present in this same public project record and shared/portfolio-data.ts."
+    }
+  ]
+}

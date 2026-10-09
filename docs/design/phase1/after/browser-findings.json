@@ -1,0 +1,452 @@
+[
+  {
+    "width": 1363,
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Resume library and upload",
+      "Discover jobs",
+      "Saved job and application workspace",
+      "Live voice interview practice",
+      "JobPilot product overview artwork",
+      "Mobile welcome and application workflow",
+      "Tablet application workflow"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "lobby",
+    "title": "Lobby",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Friends directory",
+      "Audio room and chat",
+      "Community chat",
+      "Room invitation and QR code",
+      "Guest room access",
+      "Screen sharing in an audio room",
+      "Mobile welcome and workspace preview",
+      "Tablet welcome and workspace preview"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Customer bookings dashboard",
+      "Choose a gaming room",
+      "Booking date and time",
+      "Device selection",
+      "Booking confirmation and payment",
+      "Arena administration overview",
+      "Room management",
+      "User management",
+      "Arena landing page",
+      "Mobile gaming rooms",
+      "Tablet gaming rooms"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Construction portfolio overview",
+      "Project details and operations",
+      "Financial reports",
+      "AI project risk and forecast advisor",
+      "Cedar public landing page",
+      "Mobile project operations overview",
+      "Tablet project operations overview"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "unihub",
+    "title": "UniHub",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Administration dashboard",
+      "Student dashboard",
+      "Professor course catalog",
+      "Student academic transcript",
+      "Mobile student registration",
+      "Tablet sign in"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Public platform statistics",
+      "Mobile registration"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Medicare project identity"
+    ]
+  },
+  {
+    "width": 1363,
+    "slug": "home-services",
+    "title": "Home Services",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Home services landing page"
+    ]
+  },
+  {
+    "width": 1363,
+    "tab": "Experience",
+    "overflow": false
+  },
+  {
+    "width": 1363,
+    "tab": "Education & training",
+    "overflow": false
+  },
+  {
+    "width": 1363,
+    "tab": "Capabilities",
+    "overflow": false
+  },
+  {
+    "width": 1363,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Resume library and upload",
+      "Discover jobs",
+      "Saved job and application workspace",
+      "Live voice interview practice",
+      "JobPilot product overview artwork",
+      "Mobile welcome and application workflow",
+      "Tablet application workflow"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "lobby",
+    "title": "Lobby",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Friends directory",
+      "Audio room and chat",
+      "Community chat",
+      "Room invitation and QR code",
+      "Guest room access",
+      "Screen sharing in an audio room",
+      "Mobile welcome and workspace preview",
+      "Tablet welcome and workspace preview"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Customer bookings dashboard",
+      "Choose a gaming room",
+      "Booking date and time",
+      "Device selection",
+      "Booking confirmation and payment",
+      "Arena administration overview",
+      "Room management",
+      "User management",
+      "Arena landing page",
+      "Mobile gaming rooms",
+      "Tablet gaming rooms"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Construction portfolio overview",
+      "Project details and operations",
+      "Financial reports",
+      "AI project risk and forecast advisor",
+      "Cedar public landing page",
+      "Mobile project operations overview",
+      "Tablet project operations overview"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "unihub",
+    "title": "UniHub",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Administration dashboard",
+      "Student dashboard",
+      "Professor course catalog",
+      "Student academic transcript",
+      "Mobile student registration",
+      "Tablet sign in"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Public platform statistics",
+      "Mobile registration"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Medicare project identity"
+    ]
+  },
+  {
+    "width": 390,
+    "slug": "home-services",
+    "title": "Home Services",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Home services landing page"
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "Experience",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "tab": "Education & training",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "tab": "Capabilities",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "slug": "jobpilot-ai",
+    "title": "JobPilot AI",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Resume library and upload",
+      "Discover jobs",
+      "Saved job and application workspace",
+      "Live voice interview practice",
+      "JobPilot product overview artwork",
+      "Mobile welcome and application workflow",
+      "Tablet application workflow"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "lobby",
+    "title": "Lobby",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Friends directory",
+      "Audio room and chat",
+      "Community chat",
+      "Room invitation and QR code",
+      "Guest room access",
+      "Screen sharing in an audio room",
+      "Mobile welcome and workspace preview",
+      "Tablet welcome and workspace preview"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "gamezone-arena",
+    "title": "GameZone Arena",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Customer bookings dashboard",
+      "Choose a gaming room",
+      "Booking date and time",
+      "Device selection",
+      "Booking confirmation and payment",
+      "Arena administration overview",
+      "Room management",
+      "User management",
+      "Arena landing page",
+      "Mobile gaming rooms",
+      "Tablet gaming rooms"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "construction-project-management-accounting-system",
+    "title": "Cedar Construction",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Construction portfolio overview",
+      "Project details and operations",
+      "Financial reports",
+      "AI project risk and forecast advisor",
+      "Cedar public landing page",
+      "Mobile project operations overview",
+      "Tablet project operations overview"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "unihub",
+    "title": "UniHub",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Administration dashboard",
+      "Student dashboard",
+      "Professor course catalog",
+      "Student academic transcript",
+      "Mobile student registration",
+      "Tablet sign in"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "full-stack-user-management-system",
+    "title": "User Management",
+    "contribution": true,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Public platform statistics",
+      "Mobile registration"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "medicare-hub",
+    "title": "Medicare Hub",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Medicare project identity"
+    ]
+  },
+  {
+    "width": 320,
+    "slug": "home-services",
+    "title": "Home Services",
+    "contribution": false,
+    "emptyBlocks": 0,
+    "overflow": false,
+    "imageLoaded": true,
+    "labels": [
+      "Home services landing page"
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "Experience",
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "tab": "Education & training",
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "tab": "Capabilities",
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "pageErrors": []
+  }
+]

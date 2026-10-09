@@ -1,3 +1,72 @@
+# Phase 1: content integrity and presentation consistency
+
+9 October 2026. Branch: `refine/phase-1-content-integrity`, based on approved `refine/engineered-landscape-portrait-finish` at `f84c580` (draft PR #9). Refreshed origin before choosing this base. The original checkout's untracked `Codex_Engineered_Landscape_Handoff.md` is preserved and excluded from this change. The review PDF was read as observations to verify, with work limited to the user's Phase 1 request.
+
+[Matched before/after browser comparison](docs/design/phase1/comparison.html) · [Browser findings](docs/design/phase1/after/browser-findings.json) · [Checks](docs/design/phase1/checks.json) · [Exact proposed CMS patch](docs/design/phase1/proposed-cms-patch.json) · [PDF inspection](docs/design/phase1/cv/inspection.json).
+
+## Findings fixed and source boundaries
+
+- The reader always mounted a personal-contribution heading, paragraph and list. It now trims optional values, removes empty paragraphs/lists/metadata, and collapses the unused column when no personal record exists. Team-only records retain named collaborators in a separate team section. No responsibilities, collaborators, results or metrics were invented.
+- A shared display-name mapping supplies **Cedar Construction** and **User Management** to reader H1s, gallery/index captions, collection selection/reveals, next-project navigation, assistant context and Job Match evidence/export labels. Full functional names remain secondary reader descriptions and search terms. Slugs, IDs, routes and CMS names are unchanged. Independent work reads **Independent project.**; team phrases and their separators stay together.
+- Profile, resolved CV data and the AI snapshot share month/year formatting and experience sorting. Profile now orders Digital Hub, Oigetit, Ishtari and FALA by most recent end date. The targeted standard CV retains its existing two selected roles; sorting does not add omitted roles. Role titles are preserved.
+- Digital Hub's public `description` said “Completing,” while `details` and `cvBullets` said “Completed.” Neither a completion certificate nor a separate authoritative status record was established. All those fields use neutral participation wording. The existing internship title is retained; its program description is explicitly training, not an earned credential.
+- AWS's current year field and the repository's explicit date correction (`afbde5a`) support **Jul 2025 – Oct 2025**. Removed the conflicting expected-2026 description/date from returned training records without claiming completion. Training/course records have an explicit label and use “Program information” for links; credential labels require a documented credential ID. The application CV heading reads **Education & training**.
+- Public skills, technologies, CV selection and AI context collapse case duplicates and the known SOLID/JavaScript aliases. Distinct Django/DRF, SQL/SQLAlchemy, hashing and provider-specific capabilities remain. Profile avoids repeating the same skill in its technology groups and skills list. Unsupported public “verified” badges are removed. A demonstrated-in link requires an exact normalized project-stack match and documented personal role/ownership/contribution; a broad category no longer points to the same two projects.
+- Labels were assigned only after viewing local originals and retrieving/inspecting the actual public CMS images. Corrected Lobby friends/audio/invitation views, GameZone administration/room/user views, Home Services landing page, the UniHub professor course catalog and student transcript, User Management public statistics, JobPilot resume/interview/artwork views, and Cedar's risk/forecast capture. Labels, captions, gallery selectors and alt text use the same screen record. Known image identities replace positional guesses; unfamiliar future assets use a neutral “Project image” label. No image, gallery frame, portrait, color, sculpture or motion was replaced.
+
+| Case study | Personal-contribution finding |
+| --- | --- |
+| JobPilot AI | Existing role, ownership and seven public contribution statements retained; independent metadata corrected. |
+| Lobby | Existing two contribution statements and six named team members retained. CV now says co-developed, followed by the documented access/invitation/validation/service contribution. |
+| GameZone Arena | Existing two statements and three-person team retained. CV now says co-developed, followed by the documented frontend/backend integration contribution. |
+| Cedar Construction | Existing role, ownership, four-person metadata and contribution statements retained; display title unified. |
+| UniHub | Existing student-portal contribution and collaborative attribution retained. The inspected professor screenshot is accurately labelled; it is not relabelled as student evidence. |
+| User Management | Existing role, ownership and fourteen statements retained; display title and independent metadata corrected. |
+| Medicare Hub | Personal role/ownership/contribution fields are absent. Entire empty section and unused column omitted. Existing CV bullets are not promoted into a new personal ownership claim. |
+| Home Services | Personal role/ownership/contribution fields are absent. Entire empty section omitted; supplied-Figma-kit attribution retained. |
+
+Home Services' [repository README](https://github.com/MahmoudAbdulGhani/home-services/blob/main/README.md) confirms responsive implementation from a supplied Figma design and identifies the original kit link. No kit creator was inferred. Medicare's current [README](https://github.com/MahmoudAbdulGhani/Clinic-management-system/blob/main/README.md) contains PHPMailer library documentation; that is not evidence of personal clinic-workflow ownership. Both records remain eligible for later documented CMS contributions.
+
+Already correct: equal-width borderless covers and responsive delivery, accepted portrait geometry, explicit team attribution on collaborative cases, Home Services' design-source distinction, structured experience dates, the corrected AWS 2025 year field, stream whitespace preservation, JSON streaming headers, and valid CV-link fallback. These were retained.
+
+## Visual and CV evidence
+
+Chrome captures use the same read-only public CMS snapshot at **1363×936** and **390×844**, with additional **320×844** route/tab geometry checks. The before frontend is the actual archived approved commit, with its original assets and successfully loaded Manrope; the after frontend uses this change. Files with `-notes-` or `-records-` capture actual scrolling inside the existing reader. No crop, stretched comparison, document expansion or browser preference override was used. Reduced motion was requested through the browser's test context. All eight routes and three Profile tabs have zero reported horizontal overflow or page exceptions; case paragraphs/lists have no empty blocks. Both missing contribution sections are absent; six documented sections remain.
+
+Inspected the desktop and phone reader headings, metadata wrapping, Medicare/Home Services section removal, Profile ordering/training and the skill/evidence-link spacing. [Medicare before](docs/design/phase1/before/medicare-hub-notes-1363.jpg) / [after](docs/design/phase1/after/medicare-hub-notes-1363.jpg), [Home Services phone after](docs/design/phase1/after/home-services-notes-390.jpg), [Cedar phone after](docs/design/phase1/after/construction-project-management-accounting-system-390.jpg), and [training after](docs/design/phase1/after/profile-education-records-1363.jpg) provide direct evidence.
+
+The application generator explicitly selected Caladea for JobPilot. That source branch is removed; all application body copy uses Carlito at the existing 10pt size. Standard and reordered tailored exports are each **one Letter page**, with selectable text and **10 link annotations** including email, phone, LinkedIn, GitHub and portfolio. The existing A4/Source Sans master remains four pages in the static catalog. [Standard PDF](docs/design/phase1/cv/application.pdf), [tailored QA PDF](docs/design/phase1/cv/tailored.pdf), [master PDF](docs/design/phase1/cv/master.pdf), [before render](docs/design/phase1/cv/before.png), [standard render](docs/design/phase1/cv/application.png), [tailored render](docs/design/phase1/cv/tailored.png) and extracted `.txt` files are retained. The tailored sample is a declared generator fixture, not a live AI recommendation.
+
+Reordering Lobby before JobPilot exposed an existing paragraph collision. Subsequent project positions and later sections now accommodate actual text height while retaining the standard reference anchors. PDF inspection checks embedded fonts, page size/count, extracted wording, contact annotations, text bounds and paragraph separation. Profile's Download CV action saved the regenerated PDF byte-for-byte through an intercepted local response. External link destinations were not all visited.
+
+The reference fixture was **not regenerated**. Fourteen intended text expectations and the obsolete Cambria font expectation were hand-edited for these requested content/font corrections. All recorded line coordinates, rules, page geometry and 2pt/1pt/1pt tolerances are unchanged; the conformance test passes. JobPilot's Carlito wrapping is now explicitly locked by the intended text fixture. Broad résumé rewriting and new outcome claims remain deferred.
+
+## Commands and actual results
+
+Shell commands use `rtk proxy` because this machine's filtered RTK commands require an unavailable Claude config directory. The final checks are recorded in `checks.json`.
+
+- `npm.cmd ci`: completed; no manifest/lock change. npm reported 38 dependency advisories. Dependency remediation was outside this content pass.
+- `npm run typecheck`, `npm run lint`, `npm run build`, `git diff --check`: passed. Existing lazy motion-rig warning remains at approximately 502.76KB minified.
+- `node --test tests/content-integrity.test.mjs`: **6/6** passed, including a fully mocked Prisma AI-context read with no database/provider access.
+- `npm run test:landscape`: **10/10** existing stream/link tests passed.
+- `npm run test:gallery`, `npm run test:portrait`: **2/2 each** passed; original gallery and portrait assets are unchanged.
+- `CV_STATIC_ONLY=1 npm.cmd run test:cv --prefix server` and `npm.cmd run test:cv-reference --prefix server`: passed. The former also checks A4/Source Sans master generation; both avoid database access.
+- `node scripts/review-phase1-cv.mjs` and `python scripts/verify-phase1-cv.py`: passed for regenerated standard, master and reordered tailored artifacts.
+- Playwright public/API/reader/gallery/portrait/Contact suites, two workers against the explicit local preview: **144/144**, zero skipped/unexpected/flaky and no retries. After the final skill spacing and team-only preservation changes, Profile/content/portrait followup: **33/33** across desktop/tablet/mobile, zero skipped/unexpected/flaky. These cover navigation, real request contracts, assistant whitespace/focus/retry/cancel, Job Match report/export/token request and intercepted Contact states. They do not establish live provider reliability.
+- `node scripts/review-phase1.mjs before http://127.0.0.1:5181` / `after`: **36 checks each**, matched captures and findings saved. A local CV-download smoke check passed byte-for-byte against the regenerated export.
+
+Intermediate failures were resolved: the first CV tests correctly rejected the old font/content expectations before the narrow fixture update; an early concurrent browser run had a hover failure and its owned development-server shutdown stalled, then a reused server caused connection-refused failures when that earlier process was stopped. The explicit independent preview run passed all 144. A capture was interrupted by development HMR and rerun. The first archived-base captures could not load fonts from the parent dependency directory; they were replaced after narrowly allowing that local dependency directory and asserting font readiness. The temporary archive caused ESLint to discover a second config root; it was moved out of the checkout after capture and the final unmodified lint command passed. No application deadlines, retries, tolerance or security settings were loosened to obtain these results.
+
+## Unresolved facts and CMS dependencies
+
+The eight exact proposed patches cover three experience records, Angular/AWS date/status text, university dates, and the two collaborative CV summaries (only fields that actually differ are included). Each patch includes current-value preconditions and a record ID. **Nothing was applied.** Public presentation, PDF resolution and AI context already correct these records at read time; the patch would reconcile stored raw CMS copy for other consumers. There is no destructive skill deletion or configuration-selection rewrite.
+
+Digital Hub/AWS completion and an earned vendor credential remain unestablished; neutral wording is intentional. Medicare/Home Services detailed personal attribution remains a CMS factual dependency; omission is the implemented fallback. Their media is unchanged, including Medicare's identity image and the scrollbar embedded in the Home Services capture. New workflow media, media replacement, flagship rewriting and motion refinement belong to later phases.
+
+Physical iOS/Android devices, Safari, real keyboards and a new GPU/performance audit were not performed. No live AI-provider completion, authenticated production CV override/configuration read, database-backed CV test, every external URL, production Contact delivery, merge or manual deployment was verified or performed. AI and Contact UI checks used clearly identified local fixtures. No production content/database write was made, and no Contact enquiry was submitted. Stop after Phase 1.
+
+---
+
 # Profile portrait: final lighting and image delivery
 
 8 October 2026. Implemented locally on `refine/engineered-landscape-portrait-finish`, based on the accepted borderless-gallery commit `3a8d208`. The accepted portrait crop, frame, size, placement, ivory background and surrounding Profile design are preserved. No unrelated work was changed.
