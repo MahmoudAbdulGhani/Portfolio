@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-09T22:41:01.647Z",
+  "code": 1,
+  "baseline": "32b75f87a8547393d6b655566543485f0a9c293d",
+  "test": "Unchanged slow/failed image case",
+  "project": "tablet-chromium",
+  "repetitions": 3,
+  "workers": 1,
+  "assertions": "Unchanged, including the 5s settled-state and Escape/focus assertions",
+  "summary": [
+    "    Error: expect(locator).toHaveAttribute(expected) failed",
+    "    Expected: \"settled\"",
+    "    Received: \"opening\"",
+    "    Error: expect(locator).toHaveAttribute(expected) failed",
+    "    Expected: \"settled\"",
+    "    Received: \"opening\"",
+    "  2 failed",
+    "  1 passed (1.0m)"
+  ],
+  "excluded": "Setup attempt: ancestor dependency fonts were outside the Vite file-serving allowlist. Not used as a matched baseline comparison."
+}

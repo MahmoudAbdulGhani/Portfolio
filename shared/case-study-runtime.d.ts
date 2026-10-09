@@ -14,6 +14,8 @@ export interface CaseStudy {
     problem: string;
     lead: string[];
     leadCaption: string;
+    mediaNotes?: string[];
+    mediaQualification?: string;
     workflowHeading: string;
     workflow: { title: string; matches: string[]; notice: string; ratio?: string; mobileCrop?: { zoom: number; x: number; y: number } }[];
     contributionIndexes: number[];
@@ -34,3 +36,4 @@ export declare const caseStudies: Record<string, Omit<CaseStudy, 'reviewedAt' | 
 export declare function caseStudyFor(project: CaseProject): CaseStudy | undefined;
 export declare function selectedContributions(project: Pick<CaseProject, 'contributions'>, study: CaseStudy): string[];
 export declare function screenMatches(src: string, matches: string[]): boolean;
+export declare function caseStudyImageCaption(study: CaseStudy | typeof caseStudies[string], src: string, label: string): string;

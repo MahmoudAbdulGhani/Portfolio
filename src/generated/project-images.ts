@@ -133,5 +133,47 @@ export const projectImages: Record<string, ProjectImageAsset> = {
     "placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAwCdASogAA8APzmEuVOvKKWisAgB4CcJZwAAUVtB4wAA/sxT/mcAye11FjGh8G/gWV9WWT9bB9DVH7xJhpD8bTmAqEAA",
     "webp": "/projects/unihub/usercourses-480w.webp 480w, /projects/unihub/usercourses-960w.webp 960w, /projects/unihub/usercourses-1600w.webp 1600w, /projects/unihub/usercourses-1905w.webp 1905w",
     "avif": "/projects/unihub/usercourses-480w.avif 480w, /projects/unihub/usercourses-960w.avif 960w, /projects/unihub/usercourses-1600w.avif 1600w, /projects/unihub/usercourses-1905w.avif 1905w"
+  },
+  "/projects/phase3/gamezone-devices.webp": {
+    "width": 1920,
+    "height": 1966,
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASogACEAPzmKulUvKSWjMBVaqeAnCWcA0YAP+W0i76ZT0FugAP7t4+Itgyx4VJsijnkuStKO1NfDxokCykYBWekMvvJcxriCRFwb66AAAAA=",
+    "webp": "/projects/phase3/gamezone-devices-480w.webp 480w, /projects/phase3/gamezone-devices-960w.webp 960w, /projects/phase3/gamezone-devices-1600w.webp 1600w, /projects/phase3/gamezone-devices-1920w.webp 1920w",
+    "avif": "/projects/phase3/gamezone-devices-480w.avif 480w, /projects/phase3/gamezone-devices-960w.avif 960w, /projects/phase3/gamezone-devices-1600w.avif 1600w, /projects/phase3/gamezone-devices-1920w.avif 1920w"
+  },
+  "/projects/phase3/gamezone-review.webp": {
+    "width": 1920,
+    "height": 1966,
+    "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASogACEAPzmOtlUvKiSjMBVaqeAnCWcAzygP+Wzizl/ohNQAAP7t48Dt8Y0VF6w7lSnkuT23zFc4fpZONhlmDSZ5lWVEgFhBuFU6e3saIJkLgK29R80AAA==",
+    "webp": "/projects/phase3/gamezone-review-480w.webp 480w, /projects/phase3/gamezone-review-960w.webp 960w, /projects/phase3/gamezone-review-1600w.webp 1600w, /projects/phase3/gamezone-review-1920w.webp 1920w",
+    "avif": "/projects/phase3/gamezone-review-480w.avif 480w, /projects/phase3/gamezone-review-960w.avif 960w, /projects/phase3/gamezone-review-1600w.avif 1600w, /projects/phase3/gamezone-review-1920w.avif 1920w"
+  },
+  "/projects/phase3/gamezone-rooms.webp": {
+    "width": 1920,
+    "height": 1966,
+    "placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBACdASogACEAPzmIvFavKCWjqrgMAeAnCWUAy+APp1rsyo5U9ZakUAD+7adcSRwI4hTs83hWvn7SxmuRqfgQZOm6yWAD+R8SFOOkJNPDIrTBQatwXBe7ZAu5pfIA",
+    "webp": "/projects/phase3/gamezone-rooms-480w.webp 480w, /projects/phase3/gamezone-rooms-960w.webp 960w, /projects/phase3/gamezone-rooms-1600w.webp 1600w, /projects/phase3/gamezone-rooms-1920w.webp 1920w",
+    "avif": "/projects/phase3/gamezone-rooms-480w.avif 480w, /projects/phase3/gamezone-rooms-960w.avif 960w, /projects/phase3/gamezone-rooms-1600w.avif 1600w, /projects/phase3/gamezone-rooms-1920w.avif 1920w"
+  },
+  "/projects/phase3/gamezone-session.webp": {
+    "width": 1920,
+    "height": 2117,
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASogACMAPy2EtVOuqSUitVv4AdAliWcAzygvc3WT4Y0IYHqAAP7uVhljylidqslhJVHV+75nBUCg2PFa5m7kxA+Wslyg2oiRajYmBFUnADCSNYAA",
+    "webp": "/projects/phase3/gamezone-session-480w.webp 480w, /projects/phase3/gamezone-session-960w.webp 960w, /projects/phase3/gamezone-session-1600w.webp 1600w, /projects/phase3/gamezone-session-1920w.webp 1920w",
+    "avif": "/projects/phase3/gamezone-session-480w.avif 480w, /projects/phase3/gamezone-session-960w.avif 960w, /projects/phase3/gamezone-session-1600w.avif 1600w, /projects/phase3/gamezone-session-1920w.avif 1920w"
+  },
+  "/projects/phase3/medicare-homepage.webp": {
+    "width": 1920,
+    "height": 1319,
+    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBQCdASogABYAPzmAvFOvJ6YisBgMAeAnCWMAxNssAq/+373biIKiBt2vy77jsjEkAAD+7eUhqV4yEEMMRpgiPd+4v2GQX7mg86SdcIWb/fUmCBieJ7GJH4TOQJhnUCciXEtPoCV6wXw8mfM0MAeGAAA=",
+    "webp": "/projects/phase3/medicare-homepage-480w.webp 480w, /projects/phase3/medicare-homepage-960w.webp 960w, /projects/phase3/medicare-homepage-1600w.webp 1600w, /projects/phase3/medicare-homepage-1920w.webp 1920w",
+    "avif": "/projects/phase3/medicare-homepage-480w.avif 480w, /projects/phase3/medicare-homepage-960w.avif 960w, /projects/phase3/medicare-homepage-1600w.avif 1600w, /projects/phase3/medicare-homepage-1920w.avif 1920w"
+  },
+  "/projects/phase3/user-management-registration.webp": {
+    "width": 1040,
+    "height": 1688,
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQBACdASogADQAPzmQvVavKiYjrBqpmeAnCWUAAHiWv/PXe4j9M4TA/oAyz/9kqAD+0+ubMhMAICaDgZGl1CtRXjjxlaUqSf5WkS0zitS7WgcaNLo7CHFaRvTwb9DYO8VSAZr3h64MQGdc3igIQfDGCKrJ9x2TnCZG0LV9U8grXcwIAAA=",
+    "webp": "/projects/phase3/user-management-registration-480w.webp 480w, /projects/phase3/user-management-registration-960w.webp 960w, /projects/phase3/user-management-registration-1040w.webp 1040w",
+    "avif": "/projects/phase3/user-management-registration-480w.avif 480w, /projects/phase3/user-management-registration-960w.avif 960w, /projects/phase3/user-management-registration-1040w.avif 1040w"
   }
 };

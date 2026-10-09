@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { caseStudyFor, caseStudies, selectedContributions, screenMatches } from '../shared/case-study-runtime.js';
+import { caseStudyFor, caseStudies, selectedContributions, screenMatches, caseStudyImageCaption } from '../shared/case-study-runtime.js';
 import { caseStudyProjects } from './fixtures/case-study-projects.ts';
 
 test('reviewed stories require the linked repository, not merely a familiar slug', () => {
@@ -54,6 +54,29 @@ test('reviewed limitations distinguish code, pictured UI and runtime evidence', 
   assert.equal(caseStudies['jobpilot-ai'].sourceAccess, 'private');
   assert.ok(caseStudies['jobpilot-ai'].sources.every(source => source.access === 'private'));
   assert.match(caseStudies['jobpilot-ai'].decisions.find(row => row.title === 'Approve the version that is exported').consequence, /does not inherit/);
+});
+
+test('public editorial copy separates product scope from capture mechanics without losing qualifications', () => {
+  for (const study of Object.values(caseStudies)) {
+    const publicCopy = [study.summary, study.problem, study.leadCaption, ...study.workflow.map(step => step.notice), ...study.delivered, ...study.limits].join(' ');
+    assert.doesNotMatch(publicCopy, /Keyboard Enter|network writes|public GET check|during this review|was retested|were not retested|host challenge shell/);
+  }
+  assert.match(caseStudies['jobpilot-ai'].limits.join(' '), /completed profile saves.*remain.*unverified/);
+  assert.match(caseStudies.lobby.limits.join(' '), /team delivery.*individual ownership/);
+  assert.match(caseStudies['gamezone-arena'].leadCaption, /synthetic demonstration/);
+  assert.match(caseStudies['gamezone-arena'].mediaNotes.join(' '), /intercepted synthetic.*No booking or payment.*not verified/);
+  assert.match(caseStudies['medicare-hub'].limits.join(' '), /authenticated workflow media.*remain unavailable/);
+  assert.match(caseStudies['home-services'].limits.join(' '), /placeholder anchors.*backend.*not demonstrated/);
+  assert.equal(caseStudies['home-services'].workflow[0].notice, 'Mobile navigation sidebar on the public demonstration page.');
+});
+
+test('captions follow the selected image without promoting old media or demonstration figures to evidence', () => {
+  const medicare = caseStudies['medicare-hub'];
+  assert.equal(caseStudyImageCaption(medicare, '/projects/cinematic/medicare-logo.webp', 'Medicare project identity'), 'Medicare project identity. Authenticated clinical workflows remain unverified.');
+  assert.match(caseStudyImageCaption(medicare, '/projects/phase3/medicare-homepage.webp', 'Public homepage'), /public Medicare Hub homepage.*not a screenshot of appointment/);
+  assert.doesNotMatch(caseStudyImageCaption(caseStudies['gamezone-arena'], '/projects/gamezone-arena/choose_Room.webp', 'Earlier room selection'), /deployed interface|synthetic/);
+  assert.match(caseStudyImageCaption(caseStudies['construction-project-management-accounting-system'], '/projects/responsive/cedar-phone.webp', 'Mobile public landing page'), /demonstration data, not business results/);
+  assert.match(caseStudyImageCaption(caseStudies.unihub, '/projects/unihub/transcipt.webp', 'Student academic transcript'), /not a verified credential/);
 });
 
 test('AI context shares the reviewed visible summary and limits while preserving team and learning evidence', async () => {

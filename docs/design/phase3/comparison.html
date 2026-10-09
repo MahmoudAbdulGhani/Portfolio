@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phase 3 · actual before and after captures</title>
+<style>
+body{margin:0;padding:24px;background:#ebeae2;color:#18211b;font:15px/1.6 system-ui,sans-serif}h1{font-size:24px;margin:0 0 8px}p{max-width:90ch}label{display:inline-flex;gap:8px;align-items:center;margin:0 16px 12px 0}select{padding:10px;font:inherit;border:1px solid #61695e;background:transparent}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}figure{margin:0}figcaption{font-weight:600;padding:12px 0}img{display:block;max-width:100%;height:auto;margin:auto;border:1px solid #bbc0b4}a{color:#a34e2f}select:focus-visible,a:focus-visible{outline:2px solid #a34e2f;outline-offset:3px}@media(max-width:800px){main{grid-template-columns:1fr}}
+</style>
+<h1>Phase 3 composition review</h1>
+<p>Actual Chrome captures: deployed Phase 2 interface on the left, local Phase 3 production build on the right. Both use the same public GET snapshot; API writes are blocked. Complete compositions use unmodified original public image bytes with recorded hashes. GameZone’s new images contain synthetic demonstration data in the genuine deployed frontend. This comparison does not verify project backends or provider behavior.</p>
+<label>Page <select id="page"></select></label><label>Width <select id="width"><option>1363</option><option>1024</option><option>390</option><option>320</option></select></label><label>View <select id="view"></select></label>
+<main><figure><figcaption>Before · deployed Phase 2</figcaption><a id="before-link"><img id="before" alt="Before composition"></a></figure><figure><figcaption>After · local Phase 3</figcaption><a id="after-link"><img id="after" alt="After composition"></a></figure></main>
+<script>
+const pages=[['jobpilot-ai','JobPilot AI'],['construction-project-management-accounting-system','Cedar Construction'],['lobby','Lobby'],['gamezone-arena','GameZone Arena'],['unihub','UniHub'],['full-stack-user-management-system','User Management'],['medicare-hub','Medicare Hub'],['home-services','Home Services'],['collection','Collection'],['projects','Projects gallery'],['profile','Profile'],['contact','Contact'],['job-match','AI Job Match']];
+const page=document.querySelector('#page'),width=document.querySelector('#width'),view=document.querySelector('#view');
+for(const [value,label] of pages)page.add(new Option(label,value));
+function views(){const saved=view.value;view.replaceChildren();const isReader=pages.findIndex(([slug])=>slug===page.value)<8;const options=[['','Opening'],...(isReader?[['media','Main image'],['workflow','Workflow'],['collapsed','Collapsed engineering'],['expanded','Expanded engineering']]:page.value==='profile'?[['capabilities','Capabilities']]:page.value==='contact'?[['form','Form']]:[]),...(['1363','390'].includes(width.value)?[['complete','Complete composition (tall viewport)']]:[])];for(const [value,label]of options)view.add(new Option(label,value));if(options.some(([value])=>value===saved))view.value=saved;render();}
+function render(){const file=`${page.value}${view.value?'-'+view.value:''}-${width.value}.jpg`;for(const phase of ['before','after']){document.querySelector('#'+phase).src=`${phase}/${file}`;document.querySelector('#'+phase+'-link').href=`${phase}/${file}`;}}
+page.addEventListener('change',views);width.addEventListener('change',views);view.addEventListener('change',render);views();
+</script>
+</html>

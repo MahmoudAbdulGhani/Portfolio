@@ -10,12 +10,14 @@ export function CaseGallery({
   initialIndex,
   onClose,
   returnFocusTo,
+  notice,
 }: {
   screens: DetailScreen[];
   projectName: string;
   initialIndex: number;
   onClose: () => void;
   returnFocusTo?: HTMLElement | null;
+  notice?: string;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState(initialIndex);
@@ -78,6 +80,7 @@ export function CaseGallery({
           <div>
             <p className="public-eyebrow">{projectName}</p>
             <h2>{screen.label}</h2>
+            {notice && <p className="case-inspector-notice">{notice}</p>}
           </div>
           <div className="case-inspector-tools">
             <button

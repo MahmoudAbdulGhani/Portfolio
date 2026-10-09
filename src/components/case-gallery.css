@@ -50,6 +50,7 @@
   font-weight: 500;
   overflow-wrap: anywhere;
 }
+.case-inspector .case-inspector-notice { margin: 8px 0 0; max-width: 70ch; font-size: 13px; line-height: 1.6; color: var(--muted, #61695e); }
 .case-inspector .case-inspector-tools {
   display: flex;
   gap: 8px;

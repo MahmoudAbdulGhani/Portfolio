@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-09T22:38:23.567Z",
+  "test": "engineered-landscape.spec.ts:438",
+  "project": "tablet-chromium",
+  "assertion": "data-selection-state must become settled within the unchanged 5000ms assertion",
+  "actual": "opening",
+  "traceObservation": "The 404 image fixture was released; opening was observed after renderer startup, then remained opening for the full assertion. Escape was not reached. No Vite update/reload appeared in the retained trace.",
+  "source": "Accepted Collection/rig code is unchanged by Phase 3",
+  "cause": "not established",
+  "rawTrace": "Retained locally in ignored .motion-preview/phase3-motion-failure/trace.zip",
+  "completeRun": {
+    "passed": 197,
+    "failed": 1,
+    "minutes": 21.7
+  },
+  "newPhase3Cases": {
+    "passed": 12,
+    "failed": 0
+  }
+}

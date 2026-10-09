@@ -13,9 +13,10 @@
 .landscape .workflow-frames figcaption { display: flex; gap: 14px; min-width: 0; }
 .landscape .workflow-frames figcaption > div { max-width: 740px; }
 .landscape .workflow-crop-label { display: none; }
+.landscape .workflow-crop-label.is-desktop-crop { display: block; font: 12px/1.6 var(--mono); color: var(--muted); margin-top: 8px; }
 .landscape .case-narrative-compact .workflow-frames figure { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
+.landscape .workflow-frames figure.portrait-workflow { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
 .landscape .case-narrative-compact .engineering-decisions { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
-.landscape .reviewed-case-compact .case-image img { max-height: 440px; }
 .landscape .workflow-frames figcaption p { margin: 12px 0; color: var(--muted); font-size: 14px; }
 .landscape .workflow-number { font: 11px 'IBM Plex Mono', monospace; color: var(--accent); padding-top: 5px; }
 .landscape .story-contribution { border-top: 1px solid var(--line); padding-top: 32px; }
@@ -24,6 +25,7 @@
 .landscape .story-disclosure { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin-top: 24px; }
 .landscape .story-disclosure summary { cursor: pointer; font-size: 14px; font-weight: 600; }
 .landscape .story-disclosure[open] > :not(summary) { margin-top: 18px; }
+.landscape .story-disclosure.case-disclosure { padding-block: 6px; }
 .landscape .story-disclosure ul { padding-left: 20px; }
 .landscape .story-evidence-note { color: var(--muted); max-width: 780px; }
 .landscape .case-narrative .story-evidence-note { font-size: 13px; }
@@ -42,6 +44,7 @@
 .landscape .story-scope ul { padding-left: 18px; margin: 18px 0; }
 .landscape .story-scope li { margin: 10px 0; }
 .landscape .story-scope h3 { margin: 14px 0 20px; font-size: 24px; }
+.landscape .story-scope > div:nth-child(2) h2 { font-size: 24px; }
 .landscape .story-support { margin: 40px 0; }
 .landscape .story-support a { display: inline-flex; gap: 6px; align-items: baseline; }
 .landscape .case-gallery-disclosure { margin-top: 48px; padding: 20px 0; border-block: 1px solid var(--line); }
@@ -53,9 +56,12 @@
   .landscape .case-narrative section { margin-top: 38px; }
   .landscape .workflow-frames figure, .landscape .story-scope { grid-template-columns: minmax(0, 1fr); }
   .landscape .case-narrative-compact .workflow-frames figure { grid-template-columns: minmax(0, 1fr); }
+  .landscape .workflow-frames figure.portrait-workflow { grid-template-columns: minmax(0, 1fr); }
+  .landscape .portrait-workflow .screenshot-frame { max-width: 360px; margin-inline: auto; }
   .landscape .workflow-frames { gap: 32px; }
   .landscape .workflow-image.has-mobile-crop { aspect-ratio: 3 / 2 !important; }
   .landscape .workflow-image.has-mobile-crop img { transform: scale(var(--crop-zoom)); transform-origin: var(--crop-x) var(--crop-y); }
+  .landscape .case-page .workflow-image.has-mobile-crop .screenshot-button img { object-fit: cover; object-position: var(--crop-x) var(--crop-y); }
   .landscape .workflow-crop-label { display: block; font: 12px/1.6 var(--mono); color: var(--muted); margin-top: 8px; }
   .landscape .story-scope { gap: 24px; }
   .landscape .decision-path ol { display: grid; grid-template-columns: minmax(0, 1fr); }

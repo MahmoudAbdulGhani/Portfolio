@@ -1,0 +1,1037 @@
+{
+  "date": "2026-10-09T21:45:33.912Z",
+  "interface": "Local Phase 3 production build",
+  "data": "Current public GET snapshot; detail counter/PDF routes intercepted, all network writes blocked",
+  "media": "Unmodified public PNG bytes from the recorded GET/hash cache; local authentic media served normally",
+  "reducedMotion": true,
+  "findings": [
+    {
+      "name": "jobpilot-ai",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 1199.46875,
+          "displayHeight": 556.171875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.9375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.59375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 1199.46875,
+          "displayHeight": 549.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.734375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 360,
+          "displayHeight": 483.34375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 901.125,
+          "displayHeight": 417.828125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 901.125,
+          "displayHeight": 416.15625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 901.125,
+          "displayHeight": 415.890625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 901.125,
+          "displayHeight": 412.609375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 901.125,
+          "displayHeight": 416
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 360,
+          "displayHeight": 483.34375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 343.21875,
+          "displayHeight": 159.140625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 549.1500244140625,
+          "displayHeight": 366.10009765625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 686.4375,
+          "displayHeight": 457.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 686.4375,
+          "displayHeight": 457.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 343.21875,
+          "displayHeight": 158.4375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 514.828125,
+          "displayHeight": 343.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 514.828125,
+          "displayHeight": 343.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 343.21875,
+          "displayHeight": 460.8125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 281.625,
+          "displayHeight": 130.578125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 450.6000061035156,
+          "displayHeight": 300.39990234375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 563.25,
+          "displayHeight": 375.5
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 563.25,
+          "displayHeight": 375.5
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 281.625,
+          "displayHeight": 130
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 422.4375,
+          "displayHeight": 281.6248779296875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 422.4375,
+          "displayHeight": 281.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 281.625,
+          "displayHeight": 378.125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet project operations overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    }
+  ]
+}

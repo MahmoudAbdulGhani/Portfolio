@@ -1,0 +1,152 @@
+{
+  "run": {
+    "id": 38001502559,
+    "number": 67,
+    "status": "completed",
+    "conclusion": "success",
+    "head": "3b09cd5a575d000d2d9facbe2045c2d67e51bfb4",
+    "started": "2026-10-09T22:52:09Z",
+    "updated": "2026-10-09T23:01:01Z",
+    "url": "https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/38001502559"
+  },
+  "jobs": [
+    {
+      "id": 114060395585,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "completed": "2026-10-09T23:01:00Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:13Z",
+          "completed": "2026-10-09T22:52:14Z"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:14Z",
+          "completed": "2026-10-09T22:52:25Z"
+        },
+        {
+          "name": "Set up Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:25Z",
+          "completed": "2026-10-09T22:52:26Z"
+        },
+        {
+          "name": "Install frontend dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:26Z",
+          "completed": "2026-10-09T22:52:44Z"
+        },
+        {
+          "name": "Install server dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:44Z",
+          "completed": "2026-10-09T22:52:50Z"
+        },
+        {
+          "name": "Generate server Prisma client",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:50Z",
+          "completed": "2026-10-09T22:52:51Z"
+        },
+        {
+          "name": "Typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:51Z",
+          "completed": "2026-10-09T22:52:58Z"
+        },
+        {
+          "name": "Lint",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:52:58Z",
+          "completed": "2026-10-09T22:53:10Z"
+        },
+        {
+          "name": "Build",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:53:10Z",
+          "completed": "2026-10-09T22:53:11Z"
+        },
+        {
+          "name": "Test JavaScript-only API package startup",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:53:11Z",
+          "completed": "2026-10-09T22:53:12Z"
+        },
+        {
+          "name": "Test learning evidence and Capabilities integrity",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:53:12Z",
+          "completed": "2026-10-09T22:53:13Z"
+        },
+        {
+          "name": "Install Playwright Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:53:13Z",
+          "completed": "2026-10-09T22:53:35Z"
+        },
+        {
+          "name": "Run Playwright smoke tests",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T22:53:35Z",
+          "completed": "2026-10-09T23:00:54Z"
+        },
+        {
+          "name": "Retain browser failure evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started": "2026-10-09T23:00:54Z",
+          "completed": "2026-10-09T23:00:54Z"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T23:00:54Z",
+          "completed": "2026-10-09T23:00:58Z"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T23:00:58Z",
+          "completed": "2026-10-09T23:00:58Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started": "2026-10-09T23:00:58Z",
+          "completed": "2026-10-09T23:00:58Z"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "integrityPassed": 16,
+    "browserPassed": 198,
+    "browserFailed": 0,
+    "browserSkipped": 0,
+    "browserFlaky": 0,
+    "retries": 0,
+    "browserMinutes": 7.3,
+    "source": "Completed job log, distinct from local Windows result"
+  }
+}

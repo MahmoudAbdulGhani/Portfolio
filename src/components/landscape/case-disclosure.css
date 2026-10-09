@@ -1,0 +1,14 @@
+.landscape .case-disclosure > summary { list-style: none; cursor: pointer; min-height: 44px; padding-block: 12px; }
+.landscape .case-disclosure > summary::-webkit-details-marker { display: none; }
+.landscape .case-disclosure .disclosure-label { display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 20px; margin: 0; width: 100%; }
+.landscape .case-disclosure .disclosure-label > span { min-width: 0; }
+.landscape .case-disclosure .disclosure-indicator { width: 20px; height: 20px; margin-top: 3px; color: var(--accent); transition: transform 140ms ease; }
+.landscape .case-disclosure[open] .disclosure-indicator { transform: rotate(45deg); }
+.landscape .case-disclosure[open] > summary { color: var(--forest); }
+.landscape .case-disclosure > summary:hover .disclosure-label > span { color: var(--forest); }
+.landscape .case-disclosure > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.landscape .engineering-decisions .case-disclosure { padding-top: 4px; }
+.landscape .engineering-decisions .case-disclosure summary h3 { display: grid; }
+.landscape .engineering-decisions .case-disclosure .decision-constraint { margin-bottom: 0; }
+.landscape .engineering-decisions .case-disclosure > div { overflow-anchor: none; padding-bottom: 12px; }
+@media (prefers-reduced-motion: reduce) { .landscape .case-disclosure .disclosure-indicator { transition: none; } }
