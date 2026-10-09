@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-09T21:19:49.208Z",
+  "writes": "All non-GET/HEAD network requests blocked; no submitted booking, payment, account, clinical operation or Contact form",
+  "gamezoneBlockedRequestCount": 7,
+  "captures": [
+    {
+      "name": "gamezone-rooms",
+      "original": "docs/design/phase3/media-masters/gamezone-rooms.png",
+      "asset": "public/projects/phase3/gamezone-rooms.webp",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "data": "Synthetic demonstration rooms, devices, prices and availability; no private records",
+      "verification": "Real deployed frontend interaction only. Every API response is intercepted; backend booking/availability/payment behavior is unverified.",
+      "sourceRevision": "2b25a97621c5956c3ea24a2b3a5206fbef6506d9",
+      "deployedRevision": "not independently verified",
+      "viewport": {
+        "width": 1363,
+        "height": 936,
+        "dpr": 2
+      },
+      "modifications": "Lossless format conversion, then the existing responsive image pipeline; no painted-over indicator, UI fabrication, DOM styling or screenshot crop"
+    },
+    {
+      "name": "gamezone-session",
+      "original": "docs/design/phase3/media-masters/gamezone-session.png",
+      "asset": "public/projects/phase3/gamezone-session.webp",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "data": "Synthetic demonstration rooms, devices, prices and availability; no private records",
+      "verification": "Real deployed frontend interaction only. Every API response is intercepted; backend booking/availability/payment behavior is unverified.",
+      "sourceRevision": "2b25a97621c5956c3ea24a2b3a5206fbef6506d9",
+      "deployedRevision": "not independently verified",
+      "viewport": {
+        "width": 1363,
+        "height": 936,
+        "dpr": 2
+      },
+      "modifications": "Lossless format conversion, then the existing responsive image pipeline; no painted-over indicator, UI fabrication, DOM styling or screenshot crop"
+    },
+    {
+      "name": "gamezone-devices",
+      "original": "docs/design/phase3/media-masters/gamezone-devices.png",
+      "asset": "public/projects/phase3/gamezone-devices.webp",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "data": "Synthetic demonstration rooms, devices, prices and availability; no private records",
+      "verification": "Real deployed frontend interaction only. Every API response is intercepted; backend booking/availability/payment behavior is unverified.",
+      "sourceRevision": "2b25a97621c5956c3ea24a2b3a5206fbef6506d9",
+      "deployedRevision": "not independently verified",
+      "viewport": {
+        "width": 1363,
+        "height": 936,
+        "dpr": 2
+      },
+      "modifications": "Lossless format conversion, then the existing responsive image pipeline; no painted-over indicator, UI fabrication, DOM styling or screenshot crop"
+    },
+    {
+      "name": "gamezone-review",
+      "original": "docs/design/phase3/media-masters/gamezone-review.png",
+      "asset": "public/projects/phase3/gamezone-review.webp",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "data": "Synthetic demonstration rooms, devices, prices and availability; no private records",
+      "verification": "Real deployed frontend interaction only. Every API response is intercepted; backend booking/availability/payment behavior is unverified.",
+      "sourceRevision": "2b25a97621c5956c3ea24a2b3a5206fbef6506d9",
+      "deployedRevision": "not independently verified",
+      "viewport": {
+        "width": 1363,
+        "height": 936,
+        "dpr": 2
+      },
+      "modifications": "Lossless format conversion, then the existing responsive image pipeline; no painted-over indicator, UI fabrication, DOM styling or screenshot crop"
+    },
+    {
+      "name": "user-management-registration",
+      "original": "docs/design/phase3/media-masters/user-management-registration.png",
+      "asset": "public/projects/phase3/user-management-registration.webp",
+      "source": "https://fastapi-user-management.vercel.app/register",
+      "data": "Original empty form and template placeholders; no account or private records",
+      "viewport": {
+        "width": 520,
+        "height": 844,
+        "dpr": 2
+      },
+      "verification": "Public form rendering only; no registration submitted. The earlier 390px probe exposed a 491px navigation width and overlapping password icon in the source app; this portrait capture does not certify phone usability.",
+      "modifications": "Lossless format conversion, then responsive optimization; full document retained"
+    },
+    {
+      "name": "medicare-homepage",
+      "original": "docs/design/phase3/media-masters/medicare-homepage.png",
+      "asset": "public/projects/phase3/medicare-homepage.webp",
+      "source": "https://clinic-management-system.kesug.com/",
+      "viewport": {
+        "width": 1363,
+        "height": 936,
+        "dpr": 2
+      },
+      "data": "Public landing page only; no clinical records",
+      "verification": "Public homepage and login reachable through GET; authenticated clinical workflow remains unavailable",
+      "login": {
+        "url": "https://clinic-management-system.kesug.com/login.html",
+        "headings": [
+          "Welcome Back"
+        ],
+        "forms": 1
+      },
+      "modifications": "Unmodified browser viewport and lossless format conversion, then responsive optimization"
+    }
+  ]
+}

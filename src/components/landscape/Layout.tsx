@@ -9,6 +9,7 @@ import "@fontsource/manrope/700.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "../../landscape.css";
 import "../../landscape-integration.css";
+import './composition.css';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({

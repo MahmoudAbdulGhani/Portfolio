@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-09T22:29:47.246Z",
+  "branch": "refine/phase-3-composition-media",
+  "base": "32b75f87a8547393d6b655566543485f0a9c293d",
+  "commands": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "apiRuntime": "passed",
+    "integrity": {
+      "passed": 16,
+      "failed": 0
+    },
+    "landscape": {
+      "passed": 10,
+      "failed": 0
+    },
+    "gallery": {
+      "passed": 2,
+      "failed": 0
+    },
+    "portrait": {
+      "passed": 2,
+      "failed": 0
+    },
+    "cvStatic": "passed",
+    "cvReferenceStatic": "passed",
+    "diffCheck": "passed",
+    "completeBrowser": {
+      "status": "failed",
+      "passed": 197,
+      "failed": 1,
+      "newPhase3Passed": 12,
+      "newPhase3Failed": 0,
+      "remaining": "Unchanged tablet opening-state deadline, also reproduced against approved Phase 2"
+    },
+    "initialCompleteBrowser": {
+      "passed": 197,
+      "failed": 1,
+      "durationMinutes": 21.7,
+      "failedCase": "Unchanged tablet failed-image opening-state deadline; diagnosis retained"
+    },
+    "matchedBaselineDiagnostic": {
+      "passed": 1,
+      "failed": 2
+    },
+    "currentDiagnostic": {
+      "passed": 0,
+      "failed": 3
+    }
+  },
+  "review": {
+    "publicSnapshotLayouts": 52,
+    "layoutErrors": 0,
+    "mediaSelections": 100,
+    "mediaErrors": 0,
+    "newAuthenticFrontendCaptures": 6,
+    "gamezone": "Synthetic demonstration API data in real deployed frontend; no booking/payment submitted",
+    "medicare": "Public homepage/login only; no authenticated clinical workflow"
+  },
+  "providers": "No new real-provider evaluation in Phase 3",
+  "boundaries": "No merge, manual deployment, live CMS/database changes, production Contact submission or Phase 4 work"
+}

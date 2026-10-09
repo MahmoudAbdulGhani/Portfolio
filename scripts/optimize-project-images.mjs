@@ -5,6 +5,10 @@ import sharp from "sharp";
 const root = path.resolve("public/projects");
 const manifestFile = path.resolve("src/generated/project-images.ts");
 const widths = [480, 960, 1600];
+const requested = process.argv.slice(2).map(file => path.resolve(file));
+for (const file of requested) {
+  if (!file.startsWith(`${root}${path.sep}`) || !file.endsWith('.webp') || file.includes(`${path.sep}gallery-covers${path.sep}`)) throw new Error('Selective optimization requires original WebP files within public/projects, excluding gallery covers.');
+}
 
 async function files(directory) {
   return (await Promise.all((await readdir(directory, { withFileTypes: true })).map((entry) => {
@@ -15,8 +19,9 @@ async function files(directory) {
 
 // Gallery covers have separate masters, quality settings and responsive metadata.
 const originals = (await files(root)).filter((entry) => !path.relative(root, entry).split(path.sep).includes("gallery-covers")
-  && entry.toLowerCase().endsWith(".webp") && !/-\d+w\.webp$/i.test(entry));
-const manifest = {};
+  && entry.toLowerCase().endsWith(".webp") && !/-\d+w\.webp$/i.test(entry) && (!requested.length || requested.includes(entry)));
+if (requested.some(file => !originals.includes(file))) throw new Error('A requested source image was not found.');
+const manifest = requested.length ? JSON.parse((await readFile(manifestFile, 'utf8')).split('export const projectImages: Record<string, ProjectImageAsset> = ')[1].trim().replace(/;$/, '')) : {};
 let before = 0;
 let after = 0;
 for (const file of originals) {

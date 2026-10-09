@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-09T21:43:34.685Z",
+  "method": "Read-only original public image GET via curl; SHA-256 and decoded image metadata. Unmodified bytes cached locally for repeatable visual review only.",
+  "records": [
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "identity": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "file": ".motion-preview/phase3-public-media/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "bytes": 157739,
+      "sha256": "36da17bcf68e953168271fbe2ca3e1895a9abc3b45cf79310c07dafb4630248e",
+      "width": 1900,
+      "height": 881
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "identity": "79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "file": ".motion-preview/phase3-public-media/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "bytes": 160728,
+      "sha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "width": 1899,
+      "height": 877
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "identity": "aba248de-e871-483a-b413-e0db8d4df718.png",
+      "file": ".motion-preview/phase3-public-media/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "bytes": 175620,
+      "sha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "width": 1898,
+      "height": 876
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "identity": "8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "file": ".motion-preview/phase3-public-media/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "bytes": 150829,
+      "sha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "width": 1900,
+      "height": 870
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "identity": "c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "file": ".motion-preview/phase3-public-media/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "bytes": 1746481,
+      "sha256": "3c4a36f01fa625e544ea43155db05f96120ae2c52a2e8f4785d40562180242d7",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+      "identity": "425768da-66d4-4088-b725-3199711f8784.png",
+      "file": ".motion-preview/phase3-public-media/425768da-66d4-4088-b725-3199711f8784.png",
+      "bytes": 702048,
+      "sha256": "e1e1a4ab4f39a7d8b1c3eeb13a4cf23f85f2401c78542202dbeb3f33c22367bc",
+      "width": 1904,
+      "height": 879
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "identity": "b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "file": ".motion-preview/phase3-public-media/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "bytes": 2225875,
+      "sha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "width": 1920,
+      "height": 2333
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "identity": "c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "file": ".motion-preview/phase3-public-media/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "bytes": 1410654,
+      "sha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "width": 1920,
+      "height": 1760
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "identity": "88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "file": ".motion-preview/phase3-public-media/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "bytes": 163344,
+      "sha256": "84c50db70272caa60b3b4a9e63a40604a97faef8f031c519d30ab0bb3042cb30",
+      "width": 572,
+      "height": 768
+    },
+    {
+      "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "identity": "3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "file": ".motion-preview/phase3-public-media/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "bytes": 658554,
+      "sha256": "a6f93800dc641b29b1475dc64a0910313df53167f1a4ab9b19e50a081a189711",
+      "width": 1897,
+      "height": 880
+    }
+  ]
+}

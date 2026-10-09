@@ -30,8 +30,8 @@ export const coverDirections: Record<string, CoverDirection> = {
   'construction-project-management-accounting-system': {
     screens: [{ index: 0, label: 'Platform overview' }, { index: 1, label: 'Project overview' }, { index: 2, label: 'Financial reports' }],
     responsive: {
-      phone: { src: '/projects/responsive/cedar-phone.webp', label: 'Mobile project operations overview' },
-      tablet: { src: '/projects/responsive/cedar-tablet.webp', label: 'Tablet project operations overview' },
+      phone: { src: '/projects/responsive/cedar-phone.webp', label: 'Mobile public landing page' },
+      tablet: { src: '/projects/responsive/cedar-tablet.webp', label: 'Tablet public landing page' },
     },
   },
   unihub: {

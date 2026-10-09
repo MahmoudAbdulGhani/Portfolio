@@ -43,7 +43,10 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
       await expect(page.getByRole('dialog', { name: `${projectDisplayName(project)} image gallery` })).toBeVisible();
       await page.keyboard.press('Escape'); await expect(trigger).toBeFocused();
       const chapters = page.locator('.case-screen-tools .chapter-switch button');
-      if (await chapters.count() > 1) await chapters.nth(1).click();
+      if (await chapters.count() > 1) {
+        await page.locator('.case-media-chooser summary').click();
+        await chapters.nth(1).click();
+      }
       const next = page.locator('.next-project');
       await next.click();
       await expect(page.locator('.case-screen-tools .chapter-switch button').first()).toHaveAttribute('aria-pressed', 'true');

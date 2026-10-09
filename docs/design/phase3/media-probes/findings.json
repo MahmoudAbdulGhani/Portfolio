@@ -1,0 +1,284 @@
+{
+  "date": "2026-10-09T20:17:35.088Z",
+  "writes": "All non-GET/HEAD network requests blocked",
+  "results": [
+    {
+      "name": "gamezone",
+      "url": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "finalUrl": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "status": 200,
+      "headings": [],
+      "controls": [
+        {
+          "tag": "A",
+          "text": "GameZone",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Rooms",
+          "href": "/rooms"
+        },
+        {
+          "tag": "A",
+          "text": "Book Now",
+          "href": "/booking"
+        },
+        {
+          "tag": "A",
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "tag": "A",
+          "text": "Contact",
+          "href": "/contact"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "/auth/login"
+        },
+        {
+          "tag": "A",
+          "text": "GameZone",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "#"
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "#"
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "#"
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Rooms",
+          "href": "/rooms"
+        },
+        {
+          "tag": "A",
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "tag": "A",
+          "text": "Book a Session",
+          "href": "/booking"
+        },
+        {
+          "tag": "A",
+          "text": "Gaming PCs",
+          "href": "/rooms?type=PC"
+        },
+        {
+          "tag": "A",
+          "text": "Console Zone",
+          "href": "/rooms?type=Console"
+        },
+        {
+          "tag": "A",
+          "text": "VR Experience",
+          "href": "/rooms?type=VR"
+        },
+        {
+          "tag": "A",
+          "text": "Private Suites",
+          "href": "/rooms?type=Private Room"
+        },
+        {
+          "tag": "A",
+          "text": "+961 03 30 60 90",
+          "href": "tel:+15551234567"
+        },
+        {
+          "tag": "A",
+          "text": "support@gamezone.com",
+          "href": "mailto:hello@gamezone.gg"
+        },
+        {
+          "tag": "A",
+          "text": "Privacy Policy",
+          "href": "#"
+        },
+        {
+          "tag": "A",
+          "text": "Terms of Service",
+          "href": "#"
+        }
+      ],
+      "requests": [
+        {
+          "path": "/api/rooms",
+          "method": "GET"
+        },
+        {
+          "path": "/api/rooms",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "url": "https://fastapi-user-management.vercel.app/",
+      "finalUrl": "https://fastapi-user-management.vercel.app/",
+      "status": 200,
+      "headings": [],
+      "controls": [
+        {
+          "tag": "A",
+          "text": "UserManager",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Stats",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Login",
+          "href": "/login"
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "/register"
+        }
+      ],
+      "requests": [
+        {
+          "path": "/api/v1/stats/count",
+          "method": "GET"
+        },
+        {
+          "path": "/api/v1/stats/average-age",
+          "method": "GET"
+        },
+        {
+          "path": "/api/v1/stats/top-cities",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "name": "users-register",
+      "url": "https://fastapi-user-management.vercel.app/register",
+      "finalUrl": "https://fastapi-user-management.vercel.app/register",
+      "status": 200,
+      "headings": [
+        "Create Account"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "text": "UserManager",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Stats",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "Login",
+          "href": "/login"
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "/register"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Create Account",
+          "href": null
+        },
+        {
+          "tag": "A",
+          "text": "Sign in",
+          "href": "/login"
+        }
+      ],
+      "requests": []
+    },
+    {
+      "name": "medicare",
+      "url": "https://clinic-management-system.kesug.com/",
+      "finalUrl": "https://clinic-management-system.kesug.com/?i=1",
+      "status": 200,
+      "headings": [
+        "Welcome to Medicare Hub",
+        "About Us",
+        "Contact Us"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "text": "MedicareHub",
+          "href": "#welcome"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "href": "#welcome"
+        },
+        {
+          "tag": "A",
+          "text": "About Us",
+          "href": "#about"
+        },
+        {
+          "tag": "A",
+          "text": "Contact Us",
+          "href": "#contact"
+        },
+        {
+          "tag": "A",
+          "text": "Login",
+          "href": "login.html"
+        },
+        {
+          "tag": "A",
+          "text": "Learn More",
+          "href": "#about"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Send",
+          "href": null
+        }
+      ],
+      "requests": []
+    }
+  ]
+}

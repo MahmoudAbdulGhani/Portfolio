@@ -23,16 +23,16 @@ const homeRevision = '583b8d640141fdcd52077b828d56d309418a9d84';
 export const caseStudies = {
     'jobpilot-ai': {
         repository: jobpilotRepo, revision: jobpilotRevision, sourceAccess: 'private', kind: 'flagship',
-        summary: 'A career workspace that connects reviewed CV evidence, saved jobs, application drafts and interview practice. AI proposes changes; the user decides what becomes part of their profile and documents.',
+        summary: 'A career workspace for saved jobs, application drafts and interview practice, grounded in reviewed candidate information. AI suggestions require user acceptance.',
         problemHeading: 'One application, one consistent source of truth.',
         problem: 'A job search spans listings, CV versions, application drafts and interview notes. JobPilot keeps each saved opportunity connected to reviewed candidate information, so generated suggestions can be checked against their source.',
         lead: ['710055a0-a275-4e6a-991d-4aaa23c6e549.png', '/projects/cinematic/jobpilot-screen.webp'],
-        leadCaption: 'Start with a confirmed resume. The library separates uploading a document, confirming extracted text and requesting profile suggestions.',
+        leadCaption: 'The resume library separates document upload, text confirmation and profile suggestions.',
         workflowHeading: 'From a saved opportunity to the next conversation.',
         workflow: [
-            { title: 'Find an opportunity', matches: ['79bf6e53-1fb5-4453-a438-fb5ead4a4961.png'], ratio: '1899 / 877', mobileCrop: { zoom: 3, x: 30, y: 70 }, notice: 'Source and workplace filters narrow discovery. The original listing remains the reference for the role.' },
-            { title: 'Keep the application together', matches: ['aba248de-e871-483a-b413-e0db8d4df718.png'], ratio: '1898 / 876', mobileCrop: { zoom: 3, x: 27, y: 38 }, notice: 'A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.' },
-            { title: 'Prepare the conversation', matches: ['8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png'], ratio: '1900 / 870', mobileCrop: { zoom: 3, x: 39, y: 65 }, notice: 'Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.' },
+            { title: 'Find an opportunity', matches: ['79bf6e53-1fb5-4453-a438-fb5ead4a4961.png'], ratio: '1899 / 877', mobileCrop: { zoom: 1.6, x: 30, y: 70 }, notice: 'Source and workplace filters narrow discovery. The original listing remains the reference for the role.' },
+            { title: 'Keep the application together', matches: ['aba248de-e871-483a-b413-e0db8d4df718.png'], ratio: '1898 / 876', mobileCrop: { zoom: 2, x: 27, y: 38 }, notice: 'A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.' },
+            { title: 'Prepare the conversation', matches: ['8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png'], ratio: '1900 / 870', mobileCrop: { zoom: 2, x: 39, y: 65 }, notice: 'Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.' },
         ],
         contributionIndexes: [0, 2, 3],
         engineeringHeading: 'Keep AI proposals separate from accepted facts.',
@@ -41,9 +41,9 @@ export const caseStudies = {
             { title: 'Persist long-running generation', constraint: 'A provider request can outlast the browser or fail after it returns.', choice: 'The configured OpenAI path queues generation. Stored states let the client retrieve progress, while failure and stale-work recovery persist terminal outcomes.', consequence: 'The interface can distinguish processing from failure without starting a second generation just to retrieve its state.', sources: ['generation'] },
             { title: 'Approve the version that is exported', constraint: 'An editable draft is not an approved application document.', choice: 'Application packs retain versions. The download service checks approval on the exact requested version.', consequence: 'A new draft does not inherit the approval of an earlier version.', sources: ['export'] },
         ],
-        flow: { title: 'The profile save boundary', steps: ['Confirmed CV', 'Proposed changes', 'User review', 'Revision check', 'Saved profile'], description: 'A code-reviewed path through the profile service. This diagram does not represent a new live save test.' },
-        delivered: ['Connected resume, saved-job, application-pack and interview workflows.', 'Reviewed profile changes, background generation states and version-specific document approval in the inspected implementation.'],
-        limits: ['Published screens demonstrate interface states. Authenticated saving, document export and live voice/provider behavior were not retested for this case study.', 'The source repository requires access; no audience, hiring-outcome or production-scale result is claimed.'],
+        flow: { title: 'The profile save boundary', steps: ['Confirmed CV', 'Proposed changes', 'User review', 'Revision check', 'Saved profile'], description: 'Profile changes move from review to save through a revision check. This diagram describes the source implementation.' },
+        delivered: ['Connected resume, saved-job, application-pack and interview workflows.', 'Profile review, persistent generation states and version-specific document approval.'],
+        limits: ['The screenshots show interface states, not completed profile saves, approved exports or live voice sessions. Current end-to-end behavior remains unverified.', 'The source repository is private. Hiring outcomes, audience size and production scale are not established by the available records.'],
         sources: [
             repoSource(jobpilotRepo, jobpilotRevision, 'review', 'Profile review and apply service', 'backend/app/services/profile_suggestion_service.py', 'private'),
             repoSource(jobpilotRepo, jobpilotRevision, 'generation', 'Generation route and stored states', 'backend/app/api/routes/profile_suggestions.py', 'private'),
@@ -52,16 +52,17 @@ export const caseStudies = {
     },
     'construction-project-management-accounting-system': {
         repository: cedarRepo, revision: cedarRevision, sourceAccess: 'public', kind: 'flagship',
-        summary: 'A construction operations workspace connecting project budgets, invoices, payments and financial reports. Its advisor explains cost trends while Django keeps the calculations and risk rules explicit.',
+        summary: 'A team-built workspace connecting construction budgets, invoices, payments and reports. Django calculates the financial figures; an optional AI advisor explains cost trends.',
         problemHeading: 'Follow the project through to its financial record.',
         problem: 'A project budget is only useful when it stays connected to expenses, invoices and payments. Cedar brings those operational documents into one Django application, with a shared accounting path and reports over posted entries.',
         lead: ['425768da-66d4-4088-b725-3199711f8784.png', '/projects/cinematic/cedar-screen.webp'],
         leadCaption: 'The construction portfolio overview connects project status and financial summaries. Pictured monetary values are demonstration data, not business results.',
+        mediaQualification: 'Pictured financial values are demonstration data, not business results.',
         workflowHeading: 'From project context to financial explanation.',
         workflow: [
-            { title: 'Read the project together', matches: ['b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png', '/projects/cinematic/cedar-detail.webp'], ratio: '1920 / 2333', mobileCrop: { zoom: 4, x: 40, y: 12 }, notice: 'Budget, actual cost and phase progress share the project view, rather than living in disconnected records.' },
-            { title: 'Inspect the posted results', matches: ['c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png'], ratio: '1920 / 1760', mobileCrop: { zoom: 4, x: 36, y: 28 }, notice: 'Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.' },
-            { title: 'Explain a calculated estimate', matches: ['88b64d21-f5ad-49ff-8392-5176a9358461.png'], ratio: '572 / 768', mobileCrop: { zoom: 2, x: 50, y: 35 }, notice: 'The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.' },
+            { title: 'Read the project together', matches: ['b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png', '/projects/cinematic/cedar-detail.webp'], ratio: '1920 / 2333', mobileCrop: { zoom: 1.5, x: 30, y: 12 }, notice: 'Budget, actual cost and phase progress share the project view, rather than living in disconnected records.' },
+            { title: 'Inspect the posted results', matches: ['c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png'], ratio: '1920 / 1760', mobileCrop: { zoom: 1.5, x: 30, y: 28 }, notice: 'Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.' },
+            { title: 'Explain a calculated estimate', matches: ['88b64d21-f5ad-49ff-8392-5176a9358461.png'], ratio: '572 / 768', notice: 'The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.' },
         ],
         contributionIndexes: [0, 1, 8],
         engineeringHeading: 'Put financial rules at the shared boundary.',
@@ -70,8 +71,8 @@ export const caseStudies = {
             { title: 'Derive balances from allocations', constraint: 'An editable balance can drift away from recorded payments.', choice: 'The payment service calculates an invoice’s outstanding balance from its amount and payment allocations, and centralizes allocation-driven status changes.', consequence: 'The balance has a traceable source in the allocation records instead of a separate manually maintained value.', sources: ['payments'] },
             { title: 'Calculate first, narrate second', constraint: 'An LLM explanation must not decide financial numbers.', choice: 'Django computes the trend estimate and threshold-based risk level. Optional Groq narration receives those facts; missing credentials or provider failure retain deterministic explanatory text.', consequence: 'The estimate remains rule-based and is explicitly not a prediction, regardless of whether narration is available.', sources: ['advisor'] },
         ],
-        delivered: ['Project and financial workflows, balanced posting, payment allocations and posted-entry reporting in the inspected Django implementation.', 'A deterministic project advisor with optional Groq explanation and a Docker/Gunicorn deployment configuration.'],
-        limits: ['The Render demo did not respond within the review’s public GET check. Authenticated workflows, accounting/concurrency tests and Groq behavior were not retested.', 'Screens show demonstration values. Inventory valuation is labelled Coming soon; no forecast-accuracy or financial-impact result is claimed.'],
+        delivered: ['Connected project documents, balanced ledger posting, payment allocations and posted-entry reporting.', 'A deterministic project advisor with optional Groq explanation and Docker/Gunicorn deployment configuration.'],
+        limits: ['Current authenticated accounting, concurrent posting and Groq behavior remain unverified. The source references describe the implementation, not a production accounting audit.', 'Screens show demonstration values. Inventory valuation is labelled Coming soon; no forecast-accuracy or financial-impact result is claimed.'],
         sources: [
             repoSource(cedarRepo, cedarRevision, 'posting', 'Ledger posting rules', 'apps/accounting/services/core.py'),
             repoSource(cedarRepo, cedarRevision, 'reports', 'Posted-entry reports', 'apps/accounting/reports.py'),
@@ -81,16 +82,16 @@ export const caseStudies = {
     },
     lobby: {
         repository: lobbyRepo, revision: lobbyRevision, sourceAccess: 'public', kind: 'flagship',
-        summary: 'A team-built communication platform for persistent communities and temporary guest rooms. Invitation links connect people to chat, audio and screen sharing without making every participant follow the same account journey.',
+        summary: 'A team-built communication platform for communities and temporary guest rooms. Mahmoud’s documented contribution spans guest access, invitations, validation and Supabase-backed workflows.',
         problemHeading: 'A lasting community, or a room for right now.',
         problem: 'Persistent communities need identity and structure. A quick conversation needs a simpler invitation path. Lobby supports both, with temporary guest rooms alongside the registered community experience.',
         lead: ['/projects/lobby/cover.webp'],
-        leadCaption: 'Screen sharing inside an audio room. This published capture shows a team-delivered interface state, not a new live-call test.',
+        leadCaption: 'Screen sharing and chat inside a team-delivered audio-room interface.',
         workflowHeading: 'Enter by invitation, then keep the room together.',
         workflow: [
-            { title: 'Join a temporary room', matches: ['/projects/lobby/guest-access.webp'], mobileCrop: { zoom: 3, x: 72, y: 70 }, notice: 'The entry view separates an invitation code from room creation and shows the room’s capacity and lifetime controls.' },
-            { title: 'Share one invitation', matches: ['/projects/lobby/share-room.webp'], mobileCrop: { zoom: 2.4, x: 50, y: 50 }, notice: 'The link and QR code lead to the same guest-room entry. The pictured invitation is an existing capture, not a verified current room.' },
-            { title: 'Keep chat beside the call', matches: ['/projects/lobby/audio-room.webp'], mobileCrop: { zoom: 3, x: 15, y: 50 }, notice: 'Room chat stays alongside audio and screen-sharing controls. This view shows call setup, not evidence of call quality or participant load.' },
+            { title: 'Join a temporary room', matches: ['/projects/lobby/guest-access.webp'], mobileCrop: { zoom: 2.5, x: 65, y: 75 }, notice: 'Enter an invitation code to join a temporary room. The complete entry page also separates room creation, capacity and lifetime controls.' },
+            { title: 'Share one invitation', matches: ['/projects/lobby/share-room.webp'], mobileCrop: { zoom: 2.4, x: 50, y: 50 }, notice: 'A link or QR code opens the guest-room entry. The pictured invitation is not a verified current room.' },
+            { title: 'Keep chat beside the call', matches: ['/projects/lobby/audio-room.webp'], mobileCrop: { zoom: 2.3, x: 95, y: 45 }, notice: 'Chat sits beside audio and screen-sharing controls. The interface alone does not establish call quality or participant capacity.' },
         ],
         contributionIndexes: [0, 1],
         engineeringHeading: 'Share contracts; separate the communication paths.',
@@ -99,7 +100,7 @@ export const caseStudies = {
             { title: 'Separate room data from live media', constraint: 'Chat state and audio transport have different responsibilities.', choice: 'The guest store uses Supabase-scoped room data and realtime subscriptions. The API mints room-specific LiveKit grants for the media connection.', consequence: 'Room membership/data and audio/screen-sharing transport have distinct implementation boundaries.', sources: ['guest', 'media'] },
         ],
         delivered: ['Registered communities and temporary invitation-based rooms with chat and LiveKit-backed media paths in the team implementation.', 'Documented personal contributions to guest/authenticated access, invitations, validation and Supabase-backed workflows.'],
-        limits: ['Published room screens demonstrate the UI only. No room was created or joined, and no messages, microphone audio or load tests were submitted during this review.', 'The platform’s full feature set is team delivery; individual ownership is limited to the documented contribution record.'],
+        limits: ['Room screens illustrate the interface. Current room creation, messaging and media connections remain unverified; no call-quality or load result is claimed.', 'The platform’s full feature set is team delivery; individual ownership is limited to the documented contribution record.'],
         sources: [
             repoSource(lobbyRepo, lobbyRevision, 'contracts', 'Shared guest-room schema', 'packages/shared/src/schemas/guest-channel.schema.ts'),
             repoSource(lobbyRepo, lobbyRevision, 'controller', 'NestJS room validation', 'apps/api/src/modules/guest-channels/guest-channels.controller.ts'),
@@ -109,16 +110,18 @@ export const caseStudies = {
     },
     'gamezone-arena': {
         repository: gamezoneRepo, revision: gamezoneRevision, sourceAccess: 'public', kind: 'team',
-        summary: 'A team-built gaming-arena reservation flow: choose a room, time and devices, then review the booking and payment option. Separate staff screens manage bookings and arena resources.',
+        summary: 'A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources.',
         problemHeading: 'Make the reservation choices explicit.',
         problem: 'A booking needs to identify the room, session time, devices and payment state. GameZone turns those decisions into a guided customer flow with a separate administration path.',
-        lead: ['/projects/gamezone-arena/choose_Room.webp'],
-        leadCaption: 'Room selection is the first booking decision. The pictured rooms and availability are demonstration interface data.',
+        lead: ['/projects/phase3/gamezone-rooms.webp'],
+        leadCaption: 'Room selection in the deployed interface, using synthetic demonstration rooms, prices and availability.',
+        mediaQualification: 'Pictured availability and prices are demonstration data; booking and payment outcomes remain unverified.',
+        mediaNotes: ['The four clean booking captures use the genuine deployed frontend with intercepted synthetic room, device, price and availability data. No booking or payment was submitted; backend behavior and the deployed source revision are not verified. Earlier complete screenshots remain available in the image chooser.'],
         workflowHeading: 'One booking, three remaining decisions.',
         workflow: [
-            { title: 'Choose the session', matches: ['/projects/gamezone-arena/Booking_date_and_time.webp'], mobileCrop: { zoom: 4, x: 40, y: 34 }, notice: 'The date and time step makes the session explicit before device selection.' },
-            { title: 'Choose the devices', matches: ['/projects/gamezone-arena/select_device.webp'], mobileCrop: { zoom: 3, x: 40, y: 35 }, notice: 'Device choices belong to the selected room and session, rather than a separate unconnected request.' },
-            { title: 'Review before confirmation', matches: ['/projects/gamezone-arena/confirm_and_pay.webp'], mobileCrop: { zoom: 3, x: 40, y: 26 }, notice: 'The final step summarizes the booking and offers payment choices. A payment screen is not proof that a Stripe transaction settled.' },
+            { title: 'Choose the session', matches: ['/projects/phase3/gamezone-session.webp', '/projects/gamezone-arena/Booking_date_and_time.webp'], mobileCrop: { zoom: 2.5, x: 60, y: 30 }, notice: 'Choose a date and session before selecting devices. This interface uses synthetic demonstration availability.' },
+            { title: 'Choose the devices', matches: ['/projects/phase3/gamezone-devices.webp', '/projects/gamezone-arena/select_device.webp'], mobileCrop: { zoom: 3, x: 35, y: 30 }, notice: 'Device choices belong to the selected room and session. The pictured stations are synthetic demonstration data.' },
+            { title: 'Review before confirmation', matches: ['/projects/phase3/gamezone-review.webp', '/projects/gamezone-arena/confirm_and_pay.webp'], mobileCrop: { zoom: 2.5, x: 70, y: 32 }, notice: 'Review the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.' },
         ],
         contributionIndexes: [0, 1],
         engineeringHeading: 'Check the slot and keep payment state explicit.',
@@ -127,7 +130,7 @@ export const caseStudies = {
             { title: 'Keep cash approval separate', constraint: 'A cash selection does not mean money has been received.', choice: 'Cash bookings start pending/unpaid. An admin-checked endpoint records payment and confirms the booking.', consequence: 'Selecting cash and staff recording its receipt are distinct operations.', sources: ['cash'] },
         ],
         delivered: ['A guided reservation interface and customer/staff booking workflows in the three-person implementation.', 'Server-side overlap checks and distinct cash-approval state handling in the reviewed source.'],
-        limits: ['No booking, OTP, payment or concurrent-reservation operation was performed. The review does not establish payment settlement or race-free booking guarantees.', 'Screenshots demonstrate the sequence; neither their availability labels nor displayed prices are live operational results.'],
+        limits: ['Interface and source evidence does not establish payment settlement or race-free booking guarantees. Booking, OTP and payment behavior remain unverified.', 'Clean captures use synthetic demonstration data. Availability labels and prices are not live operational results.'],
         sources: [
             repoSource(gamezoneRepo, gamezoneRevision, 'booking', 'Booking creation and overlap check', 'app/api/bookings/route.ts'),
             repoSource(gamezoneRepo, gamezoneRevision, 'cash', 'Administrative cash approval', 'app/api/admin/bookings/[id]/approve-cash/route.ts'),
@@ -140,6 +143,7 @@ export const caseStudies = {
         problem: 'Enrollment, coursework and grades are easier to follow when they share a record. UniHub’s student portal sits alongside the professor and administration portals delivered by the team.',
         lead: ['/projects/unihub/user.webp'],
         leadCaption: 'The student dashboard brings enrolled courses, deadlines and announcements into one view. Its sample GPA and course counts are demonstration data.',
+        mediaQualification: 'Academic figures are demonstration data, not a verified credential.',
         workflowHeading: 'Read the academic record from the student side.',
         workflow: [
             { title: 'Bring courses and grades together', matches: ['/projects/unihub/transcipt.webp'], mobileCrop: { zoom: 2.6, x: 46, y: 43 }, notice: 'The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.' },
@@ -151,7 +155,7 @@ export const caseStudies = {
             { title: 'Print the existing transcript view', constraint: 'The downloadable record must stay connected to the on-screen data.', choice: 'The React transcript combines student courses and grades, with the download action invoking browser printing.', consequence: 'This is a client-side print workflow, not a separately issued or verified university credential.', sources: ['transcript'] },
         ],
         delivered: ['Student enrollment, coursework and grade views within a larger student/professor/admin product.', 'The documented personal contribution is the student portal and its protected frontend/API integration.'],
-        limits: ['No authenticated enrollment, submission, grade update or print/export operation was retested.', 'Professor course-catalog and administration images remain supporting team evidence; they are not relabelled as Mahmoud’s student-portal work.'],
+        limits: ['Current enrollment, submissions, grade updates and print/export behavior remain unverified. Sample academic records are demonstration data.', 'Professor course-catalog and administration images remain supporting team evidence; they are not relabelled as Mahmoud’s student-portal work.'],
         sources: [
             repoSource(unihubRepo, unihubRevision, 'routes', 'Student JWT and role boundary', 'backend/src/modules/student/student.routes.js'),
             repoSource(unihubRepo, unihubRevision, 'service', 'Enrollment and submission service', 'backend/src/modules/student/student.service.js'),
@@ -160,14 +164,14 @@ export const caseStudies = {
     },
     'full-stack-user-management-system': {
         repository: usersRepo, revision: usersRevision, sourceAccess: 'public', kind: 'compact',
-        summary: 'An independently implemented React/FastAPI application for registration, profile self-service and administrative account management, backed by PostgreSQL.',
+        summary: 'An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks.',
         problemHeading: 'Self-service without administrative privileges.',
         problem: 'Registering an account and managing other users need different permissions. This application separates Client and Admin operations and keeps deleted accounts out of normal active-user queries.',
         lead: ['/projects/user-management/dashboard.webp'],
         leadCaption: 'Public aggregate statistics, not an admin dashboard. The pictured counts describe the captured data and are not evidence of adoption.',
         workflowHeading: 'Start with a client account.',
         workflow: [
-            { title: 'Registration is a client operation', matches: ['/projects/responsive/user-management-phone.webp'], ratio: '343 / 654', notice: 'The existing mobile capture shows the registration form. Client role assignment is enforced in the server service, not selected by the public form.' },
+            { title: 'Registration is a client operation', matches: ['/projects/phase3/user-management-registration.webp', '/projects/responsive/user-management-phone.webp'], notice: 'The public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.' },
         ],
         contributionIndexes: [3, 4, 5, 9],
         engineeringHeading: 'Keep account rules in the server.',
@@ -176,7 +180,8 @@ export const caseStudies = {
             { title: 'Reload users after token validation', constraint: 'A still-valid token may refer to a deleted or changed account.', choice: 'The authentication dependency reloads the user and rejects deleted rows. Soft deletion retains records while active-user queries filter them.', consequence: 'Token validation and current account state are separate checks; deletion does not require physically removing the row.', sources: ['auth', 'users'] },
         ],
         delivered: ['Registration/profile self-service, admin account operations and aggregate statistics in the inspected implementation.'],
-        limits: ['No new account, admin change or deletion was submitted. Source inspection does not establish a production security audit; displayed totals are sample data.'],
+        limits: ['Account creation, administrative changes and deletion remain unverified. Source inspection does not establish a production security audit; displayed totals are sample data.'],
+        mediaNotes: ['The new portrait capture shows the empty public registration form at 520px, with original template placeholders. The source app’s 390px navigation overflow and overlapping password icon remain source-app limitations; this image does not certify phone usability. The existing complete statistics capture is retained.'],
         sources: [
             repoSource(usersRepo, usersRevision, 'users', 'Registration and soft-deletion rules', 'backend/app/services/user_service.py'),
             repoSource(usersRepo, usersRevision, 'auth', 'Current-user and Admin dependencies', 'backend/app/api/dependencies.py'),
@@ -184,20 +189,22 @@ export const caseStudies = {
     },
     'medicare-hub': {
         repository: medicareRepo, revision: medicareRevision, sourceAccess: 'public', kind: 'compact',
-        summary: 'A PHP clinic-management project with appointment and role-specific pages. Available source supports a booking-confirmation path; personal ownership and a product-screen walkthrough are not documented in the portfolio.',
+        summary: 'A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.',
         problemHeading: 'An appointment needs a recorded confirmation.',
-        problem: 'The project brings clinic scheduling and role-specific pages into one application. The evidence available here is a PHP appointment path, rather than a new authenticated demonstration of clinical operations.',
-        lead: ['/projects/cinematic/medicare-logo.webp'],
-        leadCaption: 'Existing project identity artwork. It is not a screenshot of appointment booking or clinical records.',
+        problem: 'An appointment selection needs to become a recorded confirmation. Medicare’s PHP pages connect that action to the patient session and appointment history.',
+        lead: ['/projects/phase3/medicare-homepage.webp'],
+        leadCaption: 'The public Medicare Hub homepage. This is not a screenshot of appointment booking or clinical records.',
+        mediaQualification: 'Authenticated clinical workflows remain unverified.',
+        mediaNotes: ['The public homepage and login page were reachable in a read-only browser capture. Authenticated scheduling and clinical records were not accessed. The code-path diagram remains the workflow illustration; the original project identity is also inspectable.'],
         workflowHeading: 'Follow the appointment code path.', workflow: [], contributionIndexes: [],
         flowPlacement: 'workflow',
-        flow: { title: 'Appointment selection → confirmation → history', steps: ['Select an appointment', 'Submit confirmation', 'Open appointment history'], description: 'A diagram of the inspected PHP path, not a simulated product screen. No appointment or patient record was created.' },
+        flow: { title: 'Appointment selection → confirmation → history', steps: ['Select an appointment', 'Submit confirmation', 'Open appointment history'], description: 'A diagram of the PHP appointment path, not a simulated product screen. Authenticated scheduling remains unverified.' },
         engineeringHeading: 'Separate the form from the recorded action.',
         decisions: [
-            { title: 'Confirm against the patient session', constraint: 'An appointment selection still needs a recorded scheduling action.', choice: 'The appointment page checks the patient session/role. Its confirmation handler uses the current patient ID to update the selected appointment and directs the user to history.', consequence: 'Selection and confirmation are distinct source-code steps. This review did not validate the flow against a running clinic database.', sources: ['appointment', 'confirmation'] },
+            { title: 'Confirm against the patient session', constraint: 'An appointment selection still needs a recorded scheduling action.', choice: 'The appointment page checks the patient session/role. Its confirmation handler uses the current patient ID to update the selected appointment and directs the user to history.', consequence: 'Selection and confirmation are distinct source-code steps; current database-backed scheduling remains unverified.', sources: ['appointment', 'confirmation'] },
         ],
         delivered: ['Appointment and role-specific PHP pages are present in the inspected repository.'],
-        limits: ['No product-workflow screenshots or documented personal contributions were available. The demo returned a host challenge shell, not verified clinic behavior.', 'No clinical records, email recovery, production security or compliance behavior was accessed or tested.'],
+        limits: ['The public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.', 'Clinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors.'],
         sources: [
             repoSource(medicareRepo, medicareRevision, 'appointment', 'Patient appointment page', 'APPointment.php'),
             repoSource(medicareRepo, medicareRevision, 'confirmation', 'Appointment confirmation handler', 'confirm-appointment.php'),
@@ -213,14 +220,14 @@ export const caseStudies = {
         leadCaption: 'The supplied-design landing-page hero. Marketing promises shown in the template are not verified business outcomes.',
         workflowHeading: 'The same navigation, at phone width.',
         workflow: [
-            { title: 'A mobile navigation sidebar', matches: ['/projects/phase2/home-services-mobile-menu.webp'], ratio: '390 / 844', notice: 'A new capture of the public page at 390px. Keyboard Enter opened the existing menu and its close button dismissed it; all network writes were blocked.' },
+            { title: 'A mobile navigation sidebar', matches: ['/projects/phase2/home-services-mobile-menu.webp'], ratio: '390 / 844', notice: 'Mobile navigation sidebar on the public demonstration page.' },
         ],
         contributionIndexes: [], engineeringHeading: 'Adapt the composition through page components.',
         decisions: [
             { title: 'Sections and breakpoint-specific navigation', constraint: 'The supplied desktop design still needs a usable narrow layout.', choice: 'The page composes named React sections. The navigation switches from desktop links to a state-controlled mobile sidebar, while the hero uses breakpoint-specific structure.', consequence: 'Responsive implementation is distinct from authorship of the supplied visual design.', sources: ['composition', 'navigation'] },
         ],
         delivered: ['A component-based landing page and mobile navigation, with supplied-design credit retained.'],
-        limits: ['Public menu open/close was checked; the navigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.', 'Personal attribution remains undocumented in the CMS; no conversion, customer or performance results are claimed.'],
+        limits: ['Navigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.', 'Personal attribution remains undocumented; no conversion, customer or performance results are claimed.'],
         sources: [
             repoSource(homeRepo, homeRevision, 'composition', 'Page section composition', 'src/App.jsx'),
             repoSource(homeRepo, homeRevision, 'navigation', 'Responsive navigation implementation', 'src/components/Navbar.jsx'),
@@ -253,7 +260,7 @@ export function caseStudyFor(project) {
             boundary: 'Use only the listed personal statements for individual work. Preserve contributed/collaborated scope; do not add specific mechanisms from decisions or screenshots. An empty record does not support attributing the implementation to the portfolio owner.',
         }, evidenceStatus: {
         implementation: 'Inspected at the linked source revision.',
-        media: 'Images demonstrate their pictured interface state only; workflow captions identify any new review capture.',
+        media: `Images demonstrate their pictured interface state only. ${study.mediaQualification ?? ''} ${(study.mediaNotes ?? []).join(' ')}`.trim(),
         projectRuntime: 'Authenticated workflows and project backend/provider tests were not rerun in this review.',
         sourceInspection: 'performed; this is observation, not an executed behavior test',
         projectBackendTests: 'not executed in this review',
@@ -268,4 +275,9 @@ export function selectedContributions(project, study) {
 export function screenMatches(src, matches) {
     const path = src.split(/[?#]/)[0];
     return matches.some(match => match.startsWith('/') ? path === match : path.split('/').at(-1) === match);
+}
+
+export function caseStudyImageCaption(study, src, label) {
+    if (screenMatches(src, study.lead)) return study.leadCaption;
+    return study.mediaQualification ? `${label.replace(/\.$/, '')}. ${study.mediaQualification}` : label;
 }

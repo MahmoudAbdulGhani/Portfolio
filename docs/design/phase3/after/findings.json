@@ -1,0 +1,4905 @@
+{
+  "date": "2026-10-09T22:13:48.827Z",
+  "interface": "Local Phase 3 production build",
+  "data": "Current public GET snapshot; detail counter/PDF routes intercepted, all network writes blocked",
+  "media": "Unmodified public PNG bytes from the recorded GET/hash cache; local authentic media served normally",
+  "reducedMotion": true,
+  "findings": [
+    {
+      "name": "jobpilot-ai",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 1199.46875,
+          "displayHeight": 556.171875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.9375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.59375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 1199.46875,
+          "displayHeight": 549.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "lobby",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Lobby",
+        "A lasting community, or a room for right now.",
+        "Enter by invitation, then keep the room together.",
+        "Join a temporary room",
+        "Share one invitation",
+        "Keep chat beside the call",
+        "My part in the work.",
+        "Team",
+        "Share contracts; separate the communication paths.",
+        "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+        "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-1600w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 1226,
+          "naturalHeight": 558,
+          "displayWidth": 1199.46875,
+          "displayHeight": 546.5
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/guest-access-1600w.avif",
+          "alt": "Lobby: Guest room access. Enter an invitation code to join a temporary room. The complete entry page also separates room creation, capacity and lifetime controls.",
+          "naturalWidth": 1226,
+          "naturalHeight": 558,
+          "displayWidth": 1199.46875,
+          "displayHeight": 545.375
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/share-room-1600w.avif",
+          "alt": "Lobby: Room invitation and QR code. A link or QR code opens the guest-room entry. The pictured invitation is not a verified current room.",
+          "naturalWidth": 1226,
+          "naturalHeight": 553,
+          "displayWidth": 1199.46875,
+          "displayHeight": 541.625
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/audio-room-1600w.avif",
+          "alt": "Lobby: Audio room and chat. Chat sits beside audio and screen-sharing controls. The interface alone does not establish call quality or participant capacity.",
+          "naturalWidth": 1226,
+          "naturalHeight": 552,
+          "displayWidth": 1199.46875,
+          "displayHeight": 539.40625
+        },
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/friends.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Friends directory",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Audio room and chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/community-chat.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Community chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Room invitation and QR code",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Guest room access",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-phone.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Mobile welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-tablet.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Tablet welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "gamezone-arena",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "GameZone Arena",
+        "Make the reservation choices explicit.",
+        "One booking, three remaining decisions.",
+        "Choose the session",
+        "Choose the devices",
+        "Review before confirmation",
+        "My part in the work.",
+        "Team",
+        "Check the slot and keep payment state explicit.",
+        "Check overlap on the serverAvailability shown in the browser can change before submission.",
+        "Keep cash approval separateA cash selection does not mean money has been received.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-1600w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 1226,
+          "naturalHeight": 1255,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-1600w.avif",
+          "alt": "GameZone Arena: Session date and time · demonstration data. Choose a date and session before selecting devices. This interface uses synthetic demonstration availability.",
+          "naturalWidth": 1226,
+          "naturalHeight": 1352,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-1600w.avif",
+          "alt": "GameZone Arena: Device selection · demonstration data. Device choices belong to the selected room and session. The pictured stations are synthetic demonstration data.",
+          "naturalWidth": 1226,
+          "naturalHeight": 1255,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-1600w.avif",
+          "alt": "GameZone Arena: Booking review · demonstration data. Review the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.",
+          "naturalWidth": 1226,
+          "naturalHeight": 1255,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Session date and time · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking review · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Customer bookings dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/choose_Room.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Choose a gaming room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking date and time",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/select_device.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking confirmation and payment",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena administration overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Users.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: User management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/cover.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-phone.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Mobile gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-tablet.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Tablet gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 1199.46875,
+          "displayHeight": 553.734375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 1199.46875,
+          "displayHeight": 749.65625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 360,
+          "displayHeight": 483.34375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "unihub",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "UniHub",
+        "Give the student a connected academic view.",
+        "Read the academic record from the student side.",
+        "Bring courses and grades together",
+        "My part in the work.",
+        "Team",
+        "Connect the portal to student-specific records.",
+        "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+        "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-1600w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 1226,
+          "naturalHeight": 581,
+          "displayWidth": 1199.46875,
+          "displayHeight": 568.65625
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/transcipt-1600w.avif",
+          "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+          "naturalWidth": 1226,
+          "naturalHeight": 574,
+          "displayWidth": 1199.46875,
+          "displayHeight": 561.5
+        },
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/Admin.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Administration dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/usercourses.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Professor course catalog",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student academic transcript",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-phone.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Mobile student registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-tablet.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Tablet sign in",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "full-stack-user-management-system",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "User Management",
+        "Self-service without administrative privileges.",
+        "Start with a client account.",
+        "Registration is a client operation",
+        "My part in the work.",
+        "Team",
+        "Keep account rules in the server.",
+        "Assign the public role server-sidePublic registration must not choose administrative access.",
+        "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 1040,
+          "displayHeight": 650
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-1040w.avif",
+          "alt": "User Management: Public registration form · portrait capture. The public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.",
+          "naturalWidth": 1226,
+          "naturalHeight": 1991,
+          "displayWidth": 360,
+          "displayHeight": 584.296875
+        },
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "",
+          "alt": "User Management: Public registration form · portrait capture",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/user-management-phone.webp",
+          "currentSrc": "",
+          "alt": "User Management: Mobile registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "medicare-hub",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Medicare Hub",
+        "An appointment needs a recorded confirmation.",
+        "Follow the appointment code path.",
+        "Appointment selection → confirmation → history",
+        "Separate the form from the recorded action.",
+        "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-1600w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 1226,
+          "naturalHeight": 842,
+          "displayWidth": 946.15625,
+          "displayHeight": 649.984375
+        },
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Medicare project identity",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "home-services",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Home Services",
+        "Translate a supplied design into a responsive page.",
+        "The same navigation, at phone width.",
+        "A mobile navigation sidebar",
+        "Adapt the composition through page components.",
+        "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 1040,
+          "displayHeight": 650
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page. Mobile navigation sidebar on the public demonstration page.",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 360,
+          "displayHeight": 779.0625
+        },
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 555.734375,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "collection",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-collection",
+        "BODY"
+      ],
+      "headings": [
+        "Selected project collection"
+      ],
+      "images": [
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.551513671875,
+          "displayHeight": 751.16259765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 929.5515747070312,
+          "displayHeight": 751.1625366210938
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 436.15625,
+          "displayHeight": 388
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 436.15625,
+          "displayHeight": 388
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 436.15625,
+          "displayHeight": 388
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.109375,
+          "displayHeight": 318.15625
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.109375,
+          "displayHeight": 318.15625
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.109375,
+          "displayHeight": 318.15625
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.109375,
+          "displayHeight": 318.15625
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "projects",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Projects",
+        "JobPilot AI",
+        "Lobby",
+        "GameZone Arena",
+        "Cedar Construction",
+        "UniHub",
+        "User Management",
+        "Medicare Hub",
+        "Home Services"
+      ],
+      "images": [
+        {
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/jobpilot-ai-960w.avif",
+          "alt": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/lobby.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/lobby-960w.avif",
+          "alt": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/gamezone-arena-960w.avif",
+          "alt": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/construction-project-management-accounting-system-960w.avif",
+          "alt": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/unihub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/unihub-960w.avif",
+          "alt": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/full-stack-user-management-system-960w.avif",
+          "alt": "User Management administrative table with six demo users and search, city, age and role filters",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/medicare-hub-960w.avif",
+          "alt": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        },
+        {
+          "src": "/projects/gallery-covers/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/home-services-960w.avif",
+          "alt": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+          "naturalWidth": 572,
+          "naturalHeight": 357,
+          "displayWidth": 579.734375,
+          "displayHeight": 362.328125
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "profile",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Full-Stack Software Engineer",
+        "languages",
+        "frameworks",
+        "databases",
+        "Operations",
+        "Skills"
+      ],
+      "images": [
+        {
+          "src": "/landscape/portrait-striped-finished.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/portrait-striped-finished-384w.webp",
+          "alt": "Mahmoud Hussein Abdul Ghani",
+          "naturalWidth": 343,
+          "naturalHeight": 564,
+          "displayWidth": 343.828125,
+          "displayHeight": 564.078125
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "contact",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading is-contact",
+        "BODY"
+      ],
+      "headings": [
+        "Have a project in mind?",
+        "Send a message",
+        "Try the AI Job Match"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "job-match",
+      "width": 1363,
+      "height": 936,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "AI Job Match",
+        "Job description",
+        "A clear, evidence-based comparison"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 901.125,
+          "displayHeight": 417.828125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 901.125,
+          "displayHeight": 416.15625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 901.125,
+          "displayHeight": 415.890625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 901.125,
+          "displayHeight": 412.609375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "lobby",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Lobby",
+        "A lasting community, or a room for right now.",
+        "Enter by invitation, then keep the room together.",
+        "Join a temporary room",
+        "Share one invitation",
+        "Keep chat beside the call",
+        "My part in the work.",
+        "Team",
+        "Share contracts; separate the communication paths.",
+        "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+        "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-960w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 921,
+          "naturalHeight": 419,
+          "displayWidth": 901.125,
+          "displayHeight": 410.5625
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/guest-access-960w.avif",
+          "alt": "Lobby: Guest room access. Enter an invitation code to join a temporary room. The complete entry page also separates room creation, capacity and lifetime controls.",
+          "naturalWidth": 921,
+          "naturalHeight": 418,
+          "displayWidth": 901.125,
+          "displayHeight": 409.71875
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/share-room-960w.avif",
+          "alt": "Lobby: Room invitation and QR code. A link or QR code opens the guest-room entry. The pictured invitation is not a verified current room.",
+          "naturalWidth": 921,
+          "naturalHeight": 416,
+          "displayWidth": 901.125,
+          "displayHeight": 406.90625
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/audio-room-960w.avif",
+          "alt": "Lobby: Audio room and chat. Chat sits beside audio and screen-sharing controls. The interface alone does not establish call quality or participant capacity.",
+          "naturalWidth": 921,
+          "naturalHeight": 414,
+          "displayWidth": 901.125,
+          "displayHeight": 405.234375
+        },
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/friends.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Friends directory",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Audio room and chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/community-chat.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Community chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Room invitation and QR code",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Guest room access",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-phone.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Mobile welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-tablet.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Tablet welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "gamezone-arena",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "GameZone Arena",
+        "Make the reservation choices explicit.",
+        "One booking, three remaining decisions.",
+        "Choose the session",
+        "Choose the devices",
+        "Review before confirmation",
+        "My part in the work.",
+        "Team",
+        "Check the slot and keep payment state explicit.",
+        "Check overlap on the serverAvailability shown in the browser can change before submission.",
+        "Keep cash approval separateA cash selection does not mean money has been received.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-960w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 921,
+          "naturalHeight": 943,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-960w.avif",
+          "alt": "GameZone Arena: Session date and time · demonstration data. Choose a date and session before selecting devices. This interface uses synthetic demonstration availability.",
+          "naturalWidth": 921,
+          "naturalHeight": 1015,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-960w.avif",
+          "alt": "GameZone Arena: Device selection · demonstration data. Device choices belong to the selected room and session. The pictured stations are synthetic demonstration data.",
+          "naturalWidth": 921,
+          "naturalHeight": 943,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-960w.avif",
+          "alt": "GameZone Arena: Booking review · demonstration data. Review the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.",
+          "naturalWidth": 921,
+          "naturalHeight": 943,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Session date and time · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking review · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Customer bookings dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/choose_Room.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Choose a gaming room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking date and time",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/select_device.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking confirmation and payment",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena administration overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Users.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: User management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/cover.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-phone.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Mobile gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-tablet.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Tablet gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 901.125,
+          "displayHeight": 416
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 360,
+          "displayHeight": 483.34375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "unihub",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "UniHub",
+        "Give the student a connected academic view.",
+        "Read the academic record from the student side.",
+        "Bring courses and grades together",
+        "My part in the work.",
+        "Team",
+        "Connect the portal to student-specific records.",
+        "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+        "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-960w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 921,
+          "naturalHeight": 436,
+          "displayWidth": 901.125,
+          "displayHeight": 427.21875
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/transcipt-960w.avif",
+          "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+          "naturalWidth": 921,
+          "naturalHeight": 431,
+          "displayWidth": 901.125,
+          "displayHeight": 421.828125
+        },
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/Admin.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Administration dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/usercourses.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Professor course catalog",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student academic transcript",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-phone.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Mobile student registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-tablet.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Tablet sign in",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "full-stack-user-management-system",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "User Management",
+        "Self-service without administrative privileges.",
+        "Start with a client account.",
+        "Registration is a client operation",
+        "My part in the work.",
+        "Team",
+        "Keep account rules in the server.",
+        "Assign the public role server-sidePublic registration must not choose administrative access.",
+        "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-960w.avif",
+          "alt": "User Management: Public registration form · portrait capture. The public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.",
+          "naturalWidth": 921,
+          "naturalHeight": 1495,
+          "displayWidth": 360,
+          "displayHeight": 584.296875
+        },
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "",
+          "alt": "User Management: Public registration form · portrait capture",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/user-management-phone.webp",
+          "currentSrc": "",
+          "alt": "User Management: Mobile registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "medicare-hub",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Medicare Hub",
+        "An appointment needs a recorded confirmation.",
+        "Follow the appointment code path.",
+        "Appointment selection → confirmation → history",
+        "Separate the form from the recorded action.",
+        "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-960w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 921,
+          "naturalHeight": 633,
+          "displayWidth": 901.125,
+          "displayHeight": 619.046875
+        },
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Medicare project identity",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "home-services",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Home Services",
+        "Translate a supplied design into a responsive page.",
+        "The same navigation, at phone width.",
+        "A mobile navigation sidebar",
+        "Adapt the composition through page components.",
+        "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 901.125,
+          "displayHeight": 563.203125
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page. Mobile navigation sidebar on the public demonstration page.",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 360,
+          "displayHeight": 779.0625
+        },
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 406.5625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "collection",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-collection",
+        "BODY"
+      ],
+      "headings": [
+        "Selected project collection"
+      ],
+      "images": [
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.39208984375
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 698.362548828125,
+          "displayHeight": 1167.3922119140625
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.671875,
+          "displayHeight": 603
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.671875,
+          "displayHeight": 603
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 327.671875,
+          "displayHeight": 603
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 245.75,
+          "displayHeight": 494.453125
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 245.75,
+          "displayHeight": 494.453125
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 245.75,
+          "displayHeight": 494.453125
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 245.75,
+          "displayHeight": 494.453125
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "projects",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Projects",
+        "JobPilot AI",
+        "Lobby",
+        "GameZone Arena",
+        "Cedar Construction",
+        "UniHub",
+        "User Management",
+        "Medicare Hub",
+        "Home Services"
+      ],
+      "images": [
+        {
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/jobpilot-ai-480w.avif",
+          "alt": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/lobby.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/lobby-480w.avif",
+          "alt": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/gamezone-arena-480w.avif",
+          "alt": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/construction-project-management-accounting-system-480w.avif",
+          "alt": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/unihub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/unihub-480w.avif",
+          "alt": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/full-stack-user-management-system-480w.avif",
+          "alt": "User Management administrative table with six demo users and search, city, age and role filters",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/medicare-hub-480w.avif",
+          "alt": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        },
+        {
+          "src": "/projects/gallery-covers/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/home-services-480w.avif",
+          "alt": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+          "naturalWidth": 430,
+          "naturalHeight": 268,
+          "displayWidth": 430.5625,
+          "displayHeight": 269.09375
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "profile",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Full-Stack Software Engineer",
+        "languages",
+        "frameworks",
+        "databases",
+        "Operations",
+        "Skills"
+      ],
+      "images": [
+        {
+          "src": "/landscape/portrait-striped-finished.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/portrait-striped-finished-320w.webp",
+          "alt": "Mahmoud Hussein Abdul Ghani",
+          "naturalWidth": 266,
+          "naturalHeight": 437,
+          "displayWidth": 266.375,
+          "displayHeight": 437.015625
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "contact",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading is-contact",
+        "BODY"
+      ],
+      "headings": [
+        "Have a project in mind?",
+        "Send a message",
+        "Try the AI Job Match"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "job-match",
+      "width": 1024,
+      "height": 1366,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "AI Job Match",
+        "Job description",
+        "A clear, evidence-based comparison"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 343.21875,
+          "displayHeight": 159.140625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 549.1500244140625,
+          "displayHeight": 366.10009765625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 686.4375,
+          "displayHeight": 457.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 686.4375,
+          "displayHeight": 457.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "lobby",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Lobby",
+        "A lasting community, or a room for right now.",
+        "Enter by invitation, then keep the room together.",
+        "Join a temporary room",
+        "Share one invitation",
+        "Keep chat beside the call",
+        "My part in the work.",
+        "Team",
+        "Share contracts; separate the communication paths.",
+        "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+        "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-480w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 351,
+          "naturalHeight": 160,
+          "displayWidth": 343.21875,
+          "displayHeight": 156.375
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/guest-access-960w.avif",
+          "alt": "Lobby: Guest room access. Enter an invitation code to join a temporary room. The complete entry page also separates room creation, capacity and lifetime controls.",
+          "naturalWidth": 877,
+          "naturalHeight": 398,
+          "displayWidth": 858.046875,
+          "displayHeight": 572.03125
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/share-room-960w.avif",
+          "alt": "Lobby: Room invitation and QR code. A link or QR code opens the guest-room entry. The pictured invitation is not a verified current room.",
+          "naturalWidth": 842,
+          "naturalHeight": 380,
+          "displayWidth": 823.72509765625,
+          "displayHeight": 549.14990234375
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/audio-room-960w.avif",
+          "alt": "Lobby: Audio room and chat. Chat sits beside audio and screen-sharing controls. The interface alone does not establish call quality or participant capacity.",
+          "naturalWidth": 807,
+          "naturalHeight": 363,
+          "displayWidth": 789.4031372070312,
+          "displayHeight": 526.268798828125
+        },
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-480w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 351,
+          "naturalHeight": 160,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/friends.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Friends directory",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Audio room and chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/community-chat.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Community chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Room invitation and QR code",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Guest room access",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-phone.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Mobile welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-tablet.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Tablet welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "gamezone-arena",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "GameZone Arena",
+        "Make the reservation choices explicit.",
+        "One booking, three remaining decisions.",
+        "Choose the session",
+        "Choose the devices",
+        "Review before confirmation",
+        "My part in the work.",
+        "Team",
+        "Check the slot and keep payment state explicit.",
+        "Check overlap on the serverAvailability shown in the browser can change before submission.",
+        "Keep cash approval separateA cash selection does not mean money has been received.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-480w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 351,
+          "naturalHeight": 359,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-960w.avif",
+          "alt": "GameZone Arena: Session date and time · demonstration data. Choose a date and session before selecting devices. This interface uses synthetic demonstration availability.",
+          "naturalWidth": 877,
+          "naturalHeight": 967,
+          "displayWidth": 858.046875,
+          "displayHeight": 572.03125
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-1600w.avif",
+          "alt": "GameZone Arena: Device selection · demonstration data. Device choices belong to the selected room and session. The pictured stations are synthetic demonstration data.",
+          "naturalWidth": 1053,
+          "naturalHeight": 1078,
+          "displayWidth": 1029.65625,
+          "displayHeight": 686.4375
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-960w.avif",
+          "alt": "GameZone Arena: Booking review · demonstration data. Review the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.",
+          "naturalWidth": 877,
+          "naturalHeight": 898,
+          "displayWidth": 858.046875,
+          "displayHeight": 572.0311889648438
+        },
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-480w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 351,
+          "naturalHeight": 359,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Session date and time · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking review · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Customer bookings dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/choose_Room.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Choose a gaming room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking date and time",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/select_device.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking confirmation and payment",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena administration overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Users.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: User management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/cover.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-phone.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Mobile gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-tablet.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Tablet gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 343.21875,
+          "displayHeight": 158.4375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 514.828125,
+          "displayHeight": 343.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 514.828125,
+          "displayHeight": 343.21875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 343.21875,
+          "displayHeight": 460.8125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "unihub",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "UniHub",
+        "Give the student a connected academic view.",
+        "Read the academic record from the student side.",
+        "Bring courses and grades together",
+        "My part in the work.",
+        "Team",
+        "Connect the portal to student-specific records.",
+        "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+        "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-480w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 351,
+          "naturalHeight": 166,
+          "displayWidth": 343.21875,
+          "displayHeight": 162.71875
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/transcipt-960w.avif",
+          "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+          "naturalWidth": 912,
+          "naturalHeight": 426,
+          "displayWidth": 892.3687133789062,
+          "displayHeight": 594.9124755859375
+        },
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-480w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 351,
+          "naturalHeight": 166,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/Admin.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Administration dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/usercourses.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Professor course catalog",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student academic transcript",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-phone.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Mobile student registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-tablet.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Tablet sign in",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "full-stack-user-management-system",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "User Management",
+        "Self-service without administrative privileges.",
+        "Start with a client account.",
+        "Registration is a client operation",
+        "My part in the work.",
+        "Team",
+        "Keep account rules in the server.",
+        "Assign the public role server-sidePublic registration must not choose administrative access.",
+        "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-480w.avif",
+          "alt": "User Management: Public registration form · portrait capture. The public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.",
+          "naturalWidth": 351,
+          "naturalHeight": 569,
+          "displayWidth": 343.21875,
+          "displayHeight": 557.0625
+        },
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-480w.avif",
+          "alt": "User Management: Public registration form · portrait capture",
+          "naturalWidth": 351,
+          "naturalHeight": 569,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/user-management-phone.webp",
+          "currentSrc": "",
+          "alt": "User Management: Mobile registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "medicare-hub",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Medicare Hub",
+        "An appointment needs a recorded confirmation.",
+        "Follow the appointment code path.",
+        "Appointment selection → confirmation → history",
+        "Separate the form from the recorded action.",
+        "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-480w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 351,
+          "naturalHeight": 241,
+          "displayWidth": 343.21875,
+          "displayHeight": 235.78125
+        },
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-480w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 351,
+          "naturalHeight": 241,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Medicare project identity",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "home-services",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Home Services",
+        "Translate a supplied design into a responsive page.",
+        "The same navigation, at phone width.",
+        "A mobile navigation sidebar",
+        "Adapt the composition through page components.",
+        "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page. Mobile navigation sidebar on the public demonstration page.",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 343.21875,
+          "displayHeight": 742.75
+        },
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 311.21875,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "collection",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": true,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-collection",
+        "BODY"
+      ],
+      "headings": [
+        "Selected project collection"
+      ],
+      "images": [
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 409.5,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 206.6875,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 206.6875,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 206.6875,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 163.796875,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 163.796875,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 163.796875,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 163.796875,
+          "displayHeight": 165.25
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Projects",
+        "JobPilot AI",
+        "Lobby",
+        "GameZone Arena",
+        "Cedar Construction",
+        "UniHub",
+        "User Management",
+        "Medicare Hub",
+        "Home Services"
+      ],
+      "images": [
+        {
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/jobpilot-ai-480w.avif",
+          "alt": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+          "naturalWidth": 351,
+          "naturalHeight": 219,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/lobby.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/lobby-480w.avif",
+          "alt": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+          "naturalWidth": 351,
+          "naturalHeight": 219,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/gamezone-arena-480w.avif",
+          "alt": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+          "naturalWidth": 351,
+          "naturalHeight": 219,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/construction-project-management-accounting-system-480w.avif",
+          "alt": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+          "naturalWidth": 351,
+          "naturalHeight": 219,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/unihub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/unihub-480w.avif",
+          "alt": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+          "naturalWidth": 351,
+          "naturalHeight": 219,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "currentSrc": "",
+          "alt": "User Management administrative table with six demo users and search, city, age and role filters",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        },
+        {
+          "src": "/projects/gallery-covers/home-services.webp",
+          "currentSrc": "",
+          "alt": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 343.21875,
+          "displayHeight": 214.5
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Full-Stack Software Engineer",
+        "languages",
+        "frameworks",
+        "databases",
+        "Operations",
+        "Skills"
+      ],
+      "images": [
+        {
+          "src": "/landscape/portrait-striped-finished.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/portrait-striped-finished-320w.webp",
+          "alt": "Mahmoud Hussein Abdul Ghani",
+          "naturalWidth": 172,
+          "naturalHeight": 282,
+          "displayWidth": 172.1875,
+          "displayHeight": 282.484375
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-reading is-contact",
+        "BODY"
+      ],
+      "headings": [
+        "Have a project in mind?",
+        "Send a message",
+        "Try the AI Job Match"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "job-match",
+      "width": 390,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "AI Job Match",
+        "Job description",
+        "A clear, evidence-based comparison"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "jobpilot-ai",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "JobPilot AI",
+        "One application, one consistent source of truth.",
+        "From a saved opportunity to the next conversation.",
+        "Find an opportunity",
+        "Keep the application together",
+        "Prepare the conversation",
+        "My part in the work.",
+        "Team",
+        "Keep AI proposals separate from accepted facts.",
+        "The profile save boundary",
+        "Review before a profile writeManual edits and AI suggestions can overlap, or become stale.",
+        "Persist long-running generationA provider request can outlast the browser or fail after it returns.",
+        "Approve the version that is exportedAn editable draft is not an approved application document.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 281.625,
+          "displayHeight": 130.578125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs. Source and workplace filters narrow discovery. The original listing remains the reference for the role.",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 450.6000061035156,
+          "displayHeight": 300.39990234375
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace. A saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 563.25,
+          "displayHeight": 375.5
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice. Voice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 563.25,
+          "displayHeight": 375.5
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "alt": "JobPilot AI: Resume library and upload",
+          "naturalWidth": 1900,
+          "naturalHeight": 881,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+          "alt": "JobPilot AI: Discover jobs",
+          "naturalWidth": 1899,
+          "naturalHeight": 877,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+          "alt": "JobPilot AI: Saved job and application workspace",
+          "naturalWidth": 1898,
+          "naturalHeight": 876,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+          "alt": "JobPilot AI: Live voice interview practice",
+          "naturalWidth": 1900,
+          "naturalHeight": 870,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+          "currentSrc": "",
+          "alt": "JobPilot AI: JobPilot product overview artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-phone.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Mobile welcome and application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/jobpilot-tablet.webp",
+          "currentSrc": "",
+          "alt": "JobPilot AI: Tablet application workflow",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "lobby",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Lobby",
+        "A lasting community, or a room for right now.",
+        "Enter by invitation, then keep the room together.",
+        "Join a temporary room",
+        "Share one invitation",
+        "Keep chat beside the call",
+        "My part in the work.",
+        "Team",
+        "Share contracts; separate the communication paths.",
+        "Validate the same room contractFrontend and backend can otherwise disagree about room settings.",
+        "Separate room data from live mediaChat state and audio transport have different responsibilities.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-480w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 288,
+          "naturalHeight": 131,
+          "displayWidth": 281.625,
+          "displayHeight": 128.3125
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/guest-access-960w.avif",
+          "alt": "Lobby: Guest room access. Enter an invitation code to join a temporary room. The complete entry page also separates room creation, capacity and lifetime controls.",
+          "naturalWidth": 720,
+          "naturalHeight": 327,
+          "displayWidth": 704.0625,
+          "displayHeight": 469.375
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/share-room-960w.avif",
+          "alt": "Lobby: Room invitation and QR code. A link or QR code opens the guest-room entry. The pictured invitation is not a verified current room.",
+          "naturalWidth": 691,
+          "naturalHeight": 312,
+          "displayWidth": 675.9000244140625,
+          "displayHeight": 450.60009765625
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/audio-room-960w.avif",
+          "alt": "Lobby: Audio room and chat. Chat sits beside audio and screen-sharing controls. The interface alone does not establish call quality or participant capacity.",
+          "naturalWidth": 662,
+          "naturalHeight": 298,
+          "displayWidth": 647.7374877929688,
+          "displayHeight": 431.824951171875
+        },
+        {
+          "src": "/projects/lobby/cover.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/lobby/cover-480w.avif",
+          "alt": "Lobby: Screen sharing in an audio room",
+          "naturalWidth": 288,
+          "naturalHeight": 131,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/friends.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Friends directory",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/audio-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Audio room and chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/community-chat.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Community chat",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/share-room.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Room invitation and QR code",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/lobby/guest-access.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Guest room access",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-phone.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Mobile welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/lobby-tablet.webp",
+          "currentSrc": "",
+          "alt": "Lobby: Tablet welcome and workspace preview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "gamezone-arena",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "GameZone Arena",
+        "Make the reservation choices explicit.",
+        "One booking, three remaining decisions.",
+        "Choose the session",
+        "Choose the devices",
+        "Review before confirmation",
+        "My part in the work.",
+        "Team",
+        "Check the slot and keep payment state explicit.",
+        "Check overlap on the serverAvailability shown in the browser can change before submission.",
+        "Keep cash approval separateA cash selection does not mean money has been received.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-480w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 288,
+          "naturalHeight": 295,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-960w.avif",
+          "alt": "GameZone Arena: Session date and time · demonstration data. Choose a date and session before selecting devices. This interface uses synthetic demonstration availability.",
+          "naturalWidth": 720,
+          "naturalHeight": 793,
+          "displayWidth": 704.0625,
+          "displayHeight": 469.375
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-960w.avif",
+          "alt": "GameZone Arena: Device selection · demonstration data. Device choices belong to the selected room and session. The pictured stations are synthetic demonstration data.",
+          "naturalWidth": 864,
+          "naturalHeight": 884,
+          "displayWidth": 844.875,
+          "displayHeight": 563.25
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-960w.avif",
+          "alt": "GameZone Arena: Booking review · demonstration data. Review the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.",
+          "naturalWidth": 720,
+          "naturalHeight": 737,
+          "displayWidth": 704.0625,
+          "displayHeight": 469.375
+        },
+        {
+          "src": "/projects/phase3/gamezone-rooms.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-rooms-480w.avif",
+          "alt": "GameZone Arena: Room selection · demonstration data",
+          "naturalWidth": 288,
+          "naturalHeight": 295,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-session.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Session date and time · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-devices.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/gamezone-review.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking review · demonstration data",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/user_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Customer bookings dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/choose_Room.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Choose a gaming room",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking date and time",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/select_device.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Device selection",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Booking confirmation and payment",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_overview.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena administration overview",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Rooms.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Room management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/admin_Users.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: User management",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/gamezone-arena/cover.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Arena landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-phone.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Mobile gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/gamezone-tablet.webp",
+          "currentSrc": "",
+          "alt": "GameZone Arena: Tablet gaming rooms",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "construction-project-management-accounting-system",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Cedar Construction",
+        "Follow the project through to its financial record.",
+        "From project context to financial explanation.",
+        "Read the project together",
+        "Inspect the posted results",
+        "Explain a calculated estimate",
+        "My part in the work.",
+        "Team",
+        "Put financial rules at the shared boundary.",
+        "One gate for ledger postingOperational modules must not bypass the accounting rules.",
+        "Derive balances from allocationsAn editable balance can drift away from recorded payments.",
+        "Calculate first, narrate secondAn LLM explanation must not decide financial numbers.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 281.625,
+          "displayHeight": 130
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations. Budget, actual cost and phase progress share the project view, rather than living in disconnected records.",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 422.4375,
+          "displayHeight": 281.6248779296875
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports. Reports separate revenue, expenses and receivables. The inventory valuation tile is marked Coming soon; it is not presented as delivered.",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 422.4375,
+          "displayHeight": 281.625
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor. The advisor labels its output as a trend-based estimate. Groq can explain the numbers; it does not choose the forecast or risk thresholds.",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 281.625,
+          "displayHeight": 378.125
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "alt": "Cedar Construction: Construction portfolio overview",
+          "naturalWidth": 1904,
+          "naturalHeight": 879,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+          "alt": "Cedar Construction: Project details and operations",
+          "naturalWidth": 1920,
+          "naturalHeight": 2333,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+          "alt": "Cedar Construction: Financial reports",
+          "naturalWidth": 1920,
+          "naturalHeight": 1760,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+          "alt": "Cedar Construction: AI project risk and forecast advisor",
+          "naturalWidth": 572,
+          "naturalHeight": 768,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Cedar public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-phone.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Mobile public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/cedar-tablet.webp",
+          "currentSrc": "",
+          "alt": "Cedar Construction: Tablet public landing page",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "unihub",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "UniHub",
+        "Give the student a connected academic view.",
+        "Read the academic record from the student side.",
+        "Bring courses and grades together",
+        "My part in the work.",
+        "Team",
+        "Connect the portal to student-specific records.",
+        "Role checks, then enrollment checksA student screen needs a server-side boundary as well as navigation.",
+        "Print the existing transcript viewThe downloadable record must stay connected to the on-screen data.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-480w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 288,
+          "naturalHeight": 136,
+          "displayWidth": 281.625,
+          "displayHeight": 133.515625
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/transcipt-960w.avif",
+          "alt": "UniHub: Student academic transcript. The transcript joins the student’s courses, grades and credits in a printable view. It is an application screen, not a verified academic credential.",
+          "naturalWidth": 748,
+          "naturalHeight": 350,
+          "displayWidth": 732.2249755859375,
+          "displayHeight": 488.1500244140625
+        },
+        {
+          "src": "/projects/unihub/user.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/unihub/user-480w.avif",
+          "alt": "UniHub: Student dashboard",
+          "naturalWidth": 288,
+          "naturalHeight": 136,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/Admin.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Administration dashboard",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/usercourses.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Professor course catalog",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/unihub/transcipt.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Student academic transcript",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-phone.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Mobile student registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/unihub-tablet.webp",
+          "currentSrc": "",
+          "alt": "UniHub: Tablet sign in",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "full-stack-user-management-system",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "User Management",
+        "Self-service without administrative privileges.",
+        "Start with a client account.",
+        "Registration is a client operation",
+        "My part in the work.",
+        "Team",
+        "Keep account rules in the server.",
+        "Assign the public role server-sidePublic registration must not choose administrative access.",
+        "Reload users after token validationA still-valid token may refer to a deleted or changed account.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-480w.avif",
+          "alt": "User Management: Public registration form · portrait capture. The public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.",
+          "naturalWidth": 288,
+          "naturalHeight": 467,
+          "displayWidth": 281.625,
+          "displayHeight": 457.09375
+        },
+        {
+          "src": "/projects/user-management/dashboard.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/user-management/dashboard.webp",
+          "alt": "User Management: Public platform statistics",
+          "naturalWidth": 1920,
+          "naturalHeight": 877,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase3/user-management-registration.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/user-management-registration-480w.avif",
+          "alt": "User Management: Public registration form · portrait capture",
+          "naturalWidth": 288,
+          "naturalHeight": 467,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/responsive/user-management-phone.webp",
+          "currentSrc": "",
+          "alt": "User Management: Mobile registration",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "medicare-hub",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Medicare Hub",
+        "An appointment needs a recorded confirmation.",
+        "Follow the appointment code path.",
+        "Appointment selection → confirmation → history",
+        "Separate the form from the recorded action.",
+        "Confirm against the patient sessionAn appointment selection still needs a recorded scheduling action.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-480w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 288,
+          "naturalHeight": 198,
+          "displayWidth": 281.625,
+          "displayHeight": 193.46875
+        },
+        {
+          "src": "/projects/phase3/medicare-homepage.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase3/medicare-homepage-480w.avif",
+          "alt": "Medicare Hub: Public Medicare Hub homepage",
+          "naturalWidth": 288,
+          "naturalHeight": 198,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/cinematic/medicare-logo.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub: Medicare project identity",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "home-services",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Home Services",
+        "Translate a supplied design into a responsive page.",
+        "The same navigation, at phone width.",
+        "A mobile navigation sidebar",
+        "Adapt the composition through page components.",
+        "Sections and breakpoint-specific navigationThe supplied desktop design still needs a usable narrow layout.",
+        "What was built.",
+        "Scope and limitations."
+      ],
+      "images": [
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page. Mobile navigation sidebar on the public demonstration page.",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 281.625,
+          "displayHeight": 609.453125
+        },
+        {
+          "src": "/projects/cinematic/home-services.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/cinematic/home-services.webp",
+          "alt": "Home Services: Home services landing page",
+          "naturalWidth": 1348,
+          "naturalHeight": 926,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        },
+        {
+          "src": "/projects/phase2/home-services-mobile-menu.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/phase2/home-services-mobile-menu.webp",
+          "alt": "Home Services: Mobile navigation on the public demonstration page",
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "displayWidth": 249.625,
+          "displayHeight": 250
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "collection",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": true,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-collection",
+        "BODY"
+      ],
+      "headings": [
+        "Selected project collection"
+      ],
+      "images": [
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/jobpilot-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/jobpilot-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 336,
+          "displayHeight": 376.765625
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 169.59375,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 169.59375,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/lobby-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/lobby-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 169.59375,
+          "displayHeight": 191.6875
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 134.390625,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 134.390625,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 134.390625,
+          "displayHeight": 165.25
+        },
+        {
+          "src": "/landscape/archive-sculpture.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/archive-sculpture.webp",
+          "alt": "",
+          "naturalWidth": 1254,
+          "naturalHeight": 1254,
+          "displayWidth": 134.390625,
+          "displayHeight": 165.25
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "projects",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Projects",
+        "JobPilot AI",
+        "Lobby",
+        "GameZone Arena",
+        "Cedar Construction",
+        "UniHub",
+        "User Management",
+        "Medicare Hub",
+        "Home Services"
+      ],
+      "images": [
+        {
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/jobpilot-ai-480w.avif",
+          "alt": "JobPilot AI Resume Library with two saved CV versions, sidebar and upload action",
+          "naturalWidth": 288,
+          "naturalHeight": 180,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/lobby.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/lobby-480w.avif",
+          "alt": "Lobby community workspace with a populated conversation, reply, reaction, channels and message composer",
+          "naturalWidth": 288,
+          "naturalHeight": 180,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/gamezone-arena-480w.avif",
+          "alt": "GameZone dashboard with all four metrics and two confirmed upcoming bookings",
+          "naturalWidth": 288,
+          "naturalHeight": 180,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/construction-project-management-accounting-system-480w.avif",
+          "alt": "Cedar project overview with sidebar, four financial metrics, complete progress and project-health panels",
+          "naturalWidth": 288,
+          "naturalHeight": 180,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/unihub.webp",
+          "currentSrc": "http://127.0.0.1:5184/projects/gallery-covers/unihub-480w.avif",
+          "alt": "UniHub admin dashboard with navigation, summary metrics, complete enrollment chart and account-status panel",
+          "naturalWidth": 288,
+          "naturalHeight": 180,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "currentSrc": "",
+          "alt": "User Management administrative table with six demo users and search, city, age and role filters",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "currentSrc": "",
+          "alt": "Medicare Hub public homepage with navigation, healthcare introduction and original reception artwork",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        },
+        {
+          "src": "/projects/gallery-covers/home-services.webp",
+          "currentSrc": "",
+          "alt": "Home Services homepage with navigation, service headline, both complete worker photographs and service facts",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "displayWidth": 281.625,
+          "displayHeight": 176.015625
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "profile",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "Full-Stack Software Engineer",
+        "languages",
+        "frameworks",
+        "databases",
+        "Operations",
+        "Skills"
+      ],
+      "images": [
+        {
+          "src": "/landscape/portrait-striped-finished.webp",
+          "currentSrc": "http://127.0.0.1:5184/landscape/portrait-striped-finished-320w.webp",
+          "alt": "Mahmoud Hussein Abdul Ghani",
+          "naturalWidth": 137,
+          "naturalHeight": 225,
+          "displayWidth": 137.703125,
+          "displayHeight": 225.90625
+        }
+      ],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "contact",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "visible",
+      "clippingAncestors": [
+        "portfolio is-reading is-contact",
+        "BODY"
+      ],
+      "headings": [
+        "Have a project in mind?",
+        "Send a message",
+        "Try the AI Job Match"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    },
+    {
+      "name": "job-match",
+      "width": 320,
+      "height": 844,
+      "mediaErrors": [],
+      "overflow": false,
+      "intrinsicSurfaceOverflow": false,
+      "surfaceOverflowX": "auto",
+      "clippingAncestors": [
+        "portfolio is-reading",
+        "BODY"
+      ],
+      "headings": [
+        "AI Job Match",
+        "Job description",
+        "A clear, evidence-based comparison"
+      ],
+      "images": [],
+      "muted": "#61695e",
+      "pageErrors": []
+    }
+  ]
+}

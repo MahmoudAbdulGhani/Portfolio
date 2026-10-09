@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09T22:46:56.517Z",
+  "code": 1,
+  "baseline": "Phase 3 working tree",
+  "test": "Unchanged slow/failed image case",
+  "project": "tablet-chromium",
+  "repetitions": 3,
+  "workers": 1,
+  "assertions": "Unchanged, including the 5s settled-state and Escape/focus assertions",
+  "summary": [
+    "    Error: expect(locator).toHaveAttribute(expected) failed",
+    "    Expected: \"settled\"",
+    "    Received: \"opening\"",
+    "    Error: expect(locator).toHaveAttribute(expected) failed",
+    "    Expected: \"settled\"",
+    "    Received: \"opening\"",
+    "    Error: expect(locator).toHaveAttribute(expected) failed",
+    "    Expected: \"settled\"",
+    "    Received: \"opening\"",
+    "  3 failed"
+  ]
+}

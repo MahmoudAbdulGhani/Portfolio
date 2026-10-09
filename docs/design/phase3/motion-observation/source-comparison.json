@@ -1,0 +1,35 @@
+{
+  "baseline": "32b75f87a8547393d6b655566543485f0a9c293d",
+  "records": [
+    {
+      "file": "Collection.tsx",
+      "current": "c8210dc62d97a65b6379f16a352e6b3a860f588d75b2a5b576c9e4b5eb3b8565",
+      "baseline": "c8210dc62d97a65b6379f16a352e6b3a860f588d75b2a5b576c9e4b5eb3b8565",
+      "identical": true
+    },
+    {
+      "file": "MotionRig.tsx",
+      "current": "a14ae07cc808bd9da09f5138b506ed3aae234da1989b589bc7b2fd1ee9f1a559",
+      "baseline": "a14ae07cc808bd9da09f5138b506ed3aae234da1989b589bc7b2fd1ee9f1a559",
+      "identical": true
+    },
+    {
+      "file": "motion-rig.ts",
+      "current": "cf41681eba34c53668a12b270e604909b5ba97c5586c6da15ff885922717194b",
+      "baseline": "cf41681eba34c53668a12b270e604909b5ba97c5586c6da15ff885922717194b",
+      "identical": true
+    },
+    {
+      "file": "rig-models.ts",
+      "current": "a9d140466431c566431003f4f75fd5cec098171153af31db36c5c5a40fc383df",
+      "baseline": "a9d140466431c566431003f4f75fd5cec098171153af31db36c5c5a40fc383df",
+      "identical": true
+    },
+    {
+      "file": "selected-project.css",
+      "current": "42acb06e2ac3cad6c0c7f79f5cf5c1d5a37c290e5c0bcfc87842aae99fc211d5",
+      "baseline": "42acb06e2ac3cad6c0c7f79f5cf5c1d5a37c290e5c0bcfc87842aae99fc211d5",
+      "identical": true
+    }
+  ]
+}

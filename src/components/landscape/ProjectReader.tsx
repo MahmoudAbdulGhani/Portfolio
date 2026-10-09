@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useProject, useProjects } from "../../lib/hooks";
@@ -9,8 +9,12 @@ import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { CaseGallery } from "../CaseGallery";
 import { EngineeringCaseStudy } from "../EngineeringCaseStudy";
 import { nonempty, projectDisplayName } from "../../../shared/content-integrity";
-import { caseStudyFor, screenMatches } from "../../../shared/case-study-runtime";
+import { caseStudyFor, screenMatches, caseStudyImageCaption } from "../../../shared/case-study-runtime";
 import { CaseNarrative } from "./CaseNarrative";
+import { CaseDisclosure } from "./CaseDisclosure";
+import { CaseMediaNav } from "./CaseMediaNav";
+import { ScreenshotFrame } from "./ScreenshotFrame";
+import { screenGeometry } from "../../lib/project-detail-screens";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
@@ -18,8 +22,10 @@ export function ProjectReader() {
   const record = useProject(slug),
     projects = useProjects();
   const [chapterRecord, setChapterRecord] = useState({ slug, index: 0 }),
-    [zoom, setZoom] = useState<number | null>(null);
+    [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number } | null>(null);
   const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
+  const zoom = zoomRecord?.slug === slug ? zoomRecord.index : null;
+  const setZoom = (index: number | null) => setZoomRecord(index === null ? null : { slug, index });
   const setChapter = (index: number) => setChapterRecord({ slug, index });
   const [galleryTrigger, setGalleryTrigger] = useState<HTMLButtonElement | null>(null);
   const openGallery = (index: number, trigger: HTMLButtonElement) => {
@@ -53,7 +59,12 @@ export function ProjectReader() {
   const stack = nonempty(project.stack);
   const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
   const overview = project.overview?.trim() || project.description?.trim();
-  const current = screens[chapter] ?? screens[0];
+  const activeIndex = chapter < screens.length ? chapter : 0;
+  const current = screens[activeIndex];
+  const geometry = current && screenGeometry(current);
+  const phone = current?.viewport === 'phone' || Boolean(geometry && geometry.width < 1200 && geometry.height > geometry.width);
+  const artwork = Boolean(current && /artwork|identity/i.test(current.label));
+  const desktopExcerpt = Boolean(study && geometry && !phone && !artwork && geometry.width >= 1200 && geometry.height > geometry.width * 0.72);
   const all =
     projects.data?.filter(
       (item) => item.published && item.showOnPortfolio !== false,
@@ -115,7 +126,7 @@ export function ProjectReader() {
                   rel="noopener noreferrer"
                   className="solid-action"
                 >
-                  Live project
+                  View demo
                   <FiArrowUpRight />
                 </a>
               )}
@@ -125,8 +136,9 @@ export function ProjectReader() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-link"
+                  aria-label={study?.sourceAccess === 'private' ? 'Source code (access required)' : undefined}
                 >
-                  Source code{study?.sourceAccess === 'private' && ' (access required)'}
+                  {study?.sourceAccess === 'private' ? 'Private source' : 'Source code'}
                   <FiArrowUpRight />
                 </a>
               )}
@@ -135,43 +147,16 @@ export function ProjectReader() {
         </header>
         {current && (
           <>
-            <div className="case-screen-tools">
-              <div
-                className="chapter-switch"
-                role="group"
-                aria-label="Case study screenshot"
-              >
-                {screens.map((screen, index) => (
-                  <button
-                    key={screen.src}
-                    aria-pressed={chapter === index}
-                    onClick={() => setChapter(index)}
-                  >
-                    {screen.label}
-                  </button>
-                ))}
-              </div>
-              <button
-                className="text-link"
-                onClick={(event) => openGallery(chapter, event.currentTarget)}
-              >
-                Enlarge
-                <FiArrowUpRight />
-              </button>
-            </div>
-            <button
-              className="case-image"
-              aria-label={`Enlarge ${displayName} screenshot`}
-              onClick={(event) => openGallery(chapter, event.currentTarget)}
-            >
-              <ResponsiveProjectImage
-                src={current.src}
-                alt={`${displayName}: ${current.label}`}
-                sizes="90vw"
-                priority
-              />
-            </button>
-            <p className="image-caption">{study && screenMatches(current.src, study.lead) ? study.leadCaption : current.label}</p>
+            <CaseMediaNav screens={screens} index={activeIndex} select={setChapter} enlarge={trigger => openGallery(activeIndex, trigger)} />
+            <figure className={`case-figure${phone ? ' is-phone' : !artwork ? ' is-wide' : ''}${desktopExcerpt ? ' is-desktop-excerpt' : ''}`}>
+              <ScreenshotFrame src={current.src} alt={`${displayName}: ${current.label}`} label={`${displayName} screenshot`}
+                ratio={desktopExcerpt ? '16 / 10' : `${geometry?.width ?? 16} / ${geometry?.height ?? 10}`}
+                className={desktopExcerpt ? 'is-desktop-excerpt' : ''} buttonClassName="case-image" priority
+                style={{ '--frame-max-width': `${artwork ? 520 : desktopExcerpt ? 1300 : 650 * ((geometry?.width ?? 16) / (geometry?.height ?? 10))}px` } as CSSProperties}
+                sizes={phone ? '(max-width:720px) 90vw, 360px' : '90vw'}
+                enlarge={trigger => openGallery(activeIndex, trigger)} />
+              <figcaption className="image-caption"><span className="primary-excerpt-label">Detail excerpt · inspect the complete image</span>{study ? caseStudyImageCaption(study, current.src, current.label) : current.label}</figcaption>
+            </figure>
           </>
         )}
         {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery} /> : <>
@@ -254,7 +239,7 @@ export function ProjectReader() {
           />
         )}
         </>}
-        {screens.length > 1 && (study ? <details className="case-gallery-disclosure"><summary>All project images ({screens.length})</summary>
+        {screens.length > 1 && (study ? <CaseDisclosure className="case-gallery-disclosure" title={`All project images (${screens.length})`}>
           <section className="reader-gallery" id="gallery">
             <span className="eyebrow">PRODUCT GALLERY / {screens.length} IMAGES</span>
             <div>{screens.map((screen, index) => <button key={screen.src} onClick={event => openGallery(index, event.currentTarget)} aria-label={`Enlarge ${screen.label}`}>
@@ -262,7 +247,7 @@ export function ProjectReader() {
               <span>{screen.label}<FiArrowUpRight /></span>
             </button>)}</div>
           </section>
-        </details> : (
+        </CaseDisclosure> : (
           <section className="reader-gallery" id="gallery">
             <span className="eyebrow">
               PRODUCT GALLERY / {screens.length} IMAGES
@@ -311,6 +296,7 @@ export function ProjectReader() {
           projectName={displayName}
           initialIndex={zoom}
           returnFocusTo={galleryTrigger}
+          notice={study?.mediaQualification}
           onClose={() => setZoom(null)}
         />
       )}
