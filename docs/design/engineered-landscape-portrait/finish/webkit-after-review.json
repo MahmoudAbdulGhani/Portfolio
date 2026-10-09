@@ -1,0 +1,218 @@
+{
+  "phase": "after",
+  "live": false,
+  "engine": "webkit",
+  "browser": "26.5",
+  "views": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 81.765625,
+        "y": 117,
+        "width": 383.828125,
+        "height": 479.78125
+      },
+      "image": {
+        "x": 101.765625,
+        "y": 137,
+        "width": 343.828125,
+        "height": 563.640625,
+        "naturalWidth": 343,
+        "naturalHeight": 563,
+        "currentSrc": "http://127.0.0.1:5175/landscape/portrait-striped-finished-768w.webp",
+        "srcset": "/landscape/portrait-striped-finished-320w.webp 320w, /landscape/portrait-striped-finished-384w.webp 384w, /landscape/portrait-striped-finished-480w.webp 480w, /landscape/portrait-striped-finished-640w.webp 640w, /landscape/portrait-striped-finished-768w.webp 768w",
+        "sizes": "(max-width: 719px) calc(49.28vw - 20px), (max-width: 1050px) calc(29.92vw - 40px), calc(28.16vw - 40px)",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 561.546875,
+        "y": 117
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 768,
+        "height": 1259,
+        "alpha": true,
+        "bytes": 603372,
+        "effectiveDensity": 2.2336741649625087
+      },
+      "errors": []
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 76.796875,
+        "y": 117,
+        "width": 360.4375,
+        "height": 450.546875
+      },
+      "image": {
+        "x": 96.796875,
+        "y": 137,
+        "width": 320.4375,
+        "height": 525.3125,
+        "naturalWidth": 320,
+        "naturalHeight": 525,
+        "currentSrc": "http://127.0.0.1:5175/landscape/portrait-striped-finished-768w.webp",
+        "srcset": "/landscape/portrait-striped-finished-320w.webp 320w, /landscape/portrait-striped-finished-384w.webp 384w, /landscape/portrait-striped-finished-480w.webp 480w, /landscape/portrait-striped-finished-640w.webp 640w, /landscape/portrait-striped-finished-768w.webp 768w",
+        "sizes": "(max-width: 719px) calc(49.28vw - 20px), (max-width: 1050px) calc(29.92vw - 40px), calc(28.16vw - 40px)",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 527.34375,
+        "y": 117
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 768,
+        "height": 1259,
+        "alpha": true,
+        "bytes": 603372,
+        "effectiveDensity": 2.3967232299590404
+      },
+      "errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 23.390625,
+        "y": 150,
+        "width": 192.1875,
+        "height": 220
+      },
+      "image": {
+        "x": 33.390625,
+        "y": 160,
+        "width": 172.1875,
+        "height": 282.5,
+        "naturalWidth": 172,
+        "naturalHeight": 282,
+        "currentSrc": "http://127.0.0.1:5175/landscape/portrait-striped-finished-384w.webp",
+        "srcset": "/landscape/portrait-striped-finished-320w.webp 320w, /landscape/portrait-striped-finished-384w.webp 384w, /landscape/portrait-striped-finished-480w.webp 480w, /landscape/portrait-striped-finished-640w.webp 640w, /landscape/portrait-striped-finished-768w.webp 768w",
+        "sizes": "(max-width: 719px) calc(49.28vw - 20px), (max-width: 1050px) calc(29.92vw - 40px), calc(28.16vw - 40px)",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 23.390625,
+        "y": 513.9375
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 384,
+        "height": 630,
+        "alpha": true,
+        "bytes": 218020,
+        "effectiveDensity": 2.230127041742287
+      },
+      "errors": []
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 21.59375,
+        "y": 150,
+        "width": 177.40625,
+        "height": 220
+      },
+      "image": {
+        "x": 31.59375,
+        "y": 160,
+        "width": 157.40625,
+        "height": 258.234375,
+        "naturalWidth": 157,
+        "naturalHeight": 258,
+        "currentSrc": "http://127.0.0.1:5175/landscape/portrait-striped-finished-320w.webp",
+        "srcset": "/landscape/portrait-striped-finished-320w.webp 320w, /landscape/portrait-striped-finished-384w.webp 384w, /landscape/portrait-striped-finished-480w.webp 480w, /landscape/portrait-striped-finished-640w.webp 640w, /landscape/portrait-striped-finished-768w.webp 768w",
+        "sizes": "(max-width: 719px) calc(49.28vw - 20px), (max-width: 1050px) calc(29.92vw - 40px), calc(28.16vw - 40px)",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 21.59375,
+        "y": 513.9375
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 320,
+        "height": 525,
+        "alpha": true,
+        "bytes": 162196,
+        "effectiveDensity": 2.0329561246773875
+      },
+      "errors": []
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "dpr": 2,
+      "panel": {
+        "x": 115.1875,
+        "y": 117,
+        "width": 540.671875,
+        "height": 675.828125
+      },
+      "image": {
+        "x": 135.1875,
+        "y": 137,
+        "width": 500.671875,
+        "height": 820.75,
+        "naturalWidth": 500,
+        "naturalHeight": 820,
+        "currentSrc": "http://127.0.0.1:5175/landscape/portrait-striped-finished-768w.webp",
+        "srcset": "/landscape/portrait-striped-finished-320w.webp 320w, /landscape/portrait-striped-finished-384w.webp 384w, /landscape/portrait-striped-finished-480w.webp 480w, /landscape/portrait-striped-finished-640w.webp 640w, /landscape/portrait-striped-finished-768w.webp 768w",
+        "sizes": "(max-width: 719px) calc(49.28vw - 20px), (max-width: 1050px) calc(29.92vw - 40px), calc(28.16vw - 40px)",
+        "explicitWidth": "768",
+        "explicitHeight": "1259",
+        "transform": "none",
+        "filter": "none",
+        "objectPosition": "50% 0%"
+      },
+      "heading": {
+        "x": 791.015625,
+        "y": 117
+      },
+      "overflow": false,
+      "deliveredFile": {
+        "width": 768,
+        "height": 1259,
+        "alpha": true,
+        "bytes": 603372,
+        "effectiveDensity": 1.5339387697781106
+      },
+      "errors": []
+    }
+  ]
+}

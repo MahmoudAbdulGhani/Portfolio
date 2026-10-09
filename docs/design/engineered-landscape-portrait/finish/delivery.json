@@ -1,0 +1,37 @@
+{
+  "nativeWidth": 768,
+  "nativeHeight": 1259,
+  "format": "lossless WebP",
+  "variants": [
+    {
+      "width": 320,
+      "height": 525,
+      "bytes": 162196,
+      "src": "/landscape/portrait-striped-finished-320w.webp"
+    },
+    {
+      "width": 384,
+      "height": 630,
+      "bytes": 218020,
+      "src": "/landscape/portrait-striped-finished-384w.webp"
+    },
+    {
+      "width": 480,
+      "height": 787,
+      "bytes": 336560,
+      "src": "/landscape/portrait-striped-finished-480w.webp"
+    },
+    {
+      "width": 640,
+      "height": 1049,
+      "bytes": 553516,
+      "src": "/landscape/portrait-striped-finished-640w.webp"
+    },
+    {
+      "width": 768,
+      "height": 1259,
+      "bytes": 603372,
+      "src": "/landscape/portrait-striped-finished-768w.webp"
+    }
+  ]
+}
