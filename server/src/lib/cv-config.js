@@ -1,5 +1,5 @@
 import { prisma } from "./prisma.js";
-import { dateRange, datePeriod, normalizeExperience, sortExperience, normalizeTraining, normalizeProjectCv, uniqueCapabilities, projectDisplayName } from '../../../shared/content-integrity-runtime.js';
+import { dateRange, datePeriod, normalizeExperience, sortExperience, normalizeTraining, learningEvidence, normalizeProjectCv, uniqueCapabilities, projectDisplayName } from '../../../shared/content-integrity-runtime.js';
 
 export const DEFAULT_HEADER = {
   title: true,
@@ -517,7 +517,9 @@ export async function resolveCvData(modeName = "application") {
     })) },
     projects,
     skills: uniqueCapabilities([...skills, ...mode.cvOnlySkills]),
-    education,
+    // Dates have already resolved explicit CV overrides; enrich evidence without
+    // replacing that presentation choice with the underlying catalog dates.
+    education: education.map(item => ({ ...item, learningEvidence: learningEvidence(item) })),
     certifications,
     languages: mode.languages,
   };

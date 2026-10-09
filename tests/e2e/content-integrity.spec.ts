@@ -54,11 +54,40 @@ test('Profile shares date/status corrections and removes duplicate and unsupport
   await expect(page.locator('.experience-record strong')).toHaveText(['The Digital Hub', 'Oigetit', 'Ishtari']);
   await expect(page.locator('.record-date')).toHaveText(['Jun 2026 – Sep 2026', 'May 2026 – Aug 2026', 'Dec 2025 – Jan 2026']);
   await expect(page.locator('.record-detail').first()).toContainText('Participated in');
+  await expect(page.locator('.record-detail').first()).toContainText('Program completion is not verified');
   await page.getByRole('button', { name: 'Education & training', exact: true }).click();
   await expect(page.locator('.training-record')).toContainText('Jul 2025 – Oct 2025');
   await expect(page.locator('.training-record')).not.toContainText('expected');
+  await expect(page.locator('.training-record')).toContainText('Completion and certification are not verified');
   await expect(page.getByRole('link', { name: 'Program information' })).toBeVisible();
   await page.getByRole('button', { name: 'Capabilities', exact: true }).click();
-  await expect(page.locator('.capability-record li')).toHaveText(['pytest', 'SOLID']);
+  await expect(page.locator('.capability-record li')).toHaveText(['JavaScript', 'pytest', 'SOLID']);
   await expect(page.locator('.capability-record')).not.toContainText('verified');
+});
+
+test('Capabilities has one location per competency across categories and Skills, with evidence at that location', async ({ page }) => {
+  await page.route('**/api/profile', route => route.fulfill({ json: { name: 'Test Owner', title: 'Developer', experience: [], socials: [] } }));
+  await page.route('**/api/technologies', route => route.fulfill({ json: [
+    { name: 'HTML & CSS', category: 'languages' }, { name: 'MySQL / MariaDB', category: 'databases' }, { name: 'Git & GitHub', category: 'ops' },
+  ] }));
+  await page.route('**/api/skills', route => route.fulfill({ json: ['HTML5', 'CSS3', 'MySQL', 'MariaDB', 'Git', 'GitHub', 'Argon2', 'Argon2 Password Hashing', 'AI API Integration', 'AI API Integration — OpenAI'].map(name => ({ name })) }));
+  await page.route('**/api/projects', route => route.fulfill({ json: [{ ...project, slug: 'documented', name: 'Documented team project', myRole: 'Developer', stack: ['HTML5', 'CSS3', 'MySQL', 'MariaDB', 'Git', 'GitHub', 'Argon2', 'OpenAI API'] }] }));
+  for (const width of [1363, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto('/profile');
+    await page.getByRole('button', { name: 'Capabilities', exact: true }).click();
+    const rows = page.locator('.capability-record [data-competency]');
+    await expect(rows).toHaveCount(8);
+    for (const key of ['html', 'css', 'mysql', 'mariadb', 'git', 'github', 'argon2', 'ai api integration']) {
+      const row = page.locator(`[data-competency="${key}"]`);
+      await expect(row).toHaveCount(1);
+      await expect(row.getByRole('link')).toHaveAttribute('href', '/projects/documented');
+    }
+    await expect(page.locator('[data-competency="html"]')).toContainText('HTML5');
+    await expect(page.locator('[data-competency="css"]')).toContainText('CSS3');
+    await expect(page.locator('[data-competency="argon2"]')).toContainText('Password hashing');
+    await expect(page.locator('[data-competency="ai api integration"]')).toContainText('OpenAI');
+    expect(await page.locator('.page-surface').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
 });

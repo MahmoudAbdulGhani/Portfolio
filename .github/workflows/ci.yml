@@ -32,6 +32,9 @@ jobs:
       - name: Install server dependencies
         run: npm ci --prefix server
 
+      - name: Generate server Prisma client
+        run: npm run db:generate --prefix server
+
       - name: Typecheck
         run: npm run typecheck
 
@@ -44,8 +47,12 @@ jobs:
       - name: Test JavaScript-only API package startup
         run: npm run test:api-runtime
 
+      - name: Test learning evidence and Capabilities integrity
+        run: npm run test:integrity
+
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright smoke tests
-        run: npm run test:e2e
+        # Keep software-rendered motion checks from competing for runner GPU/CPU.
+        run: npm run test:e2e -- --workers=1

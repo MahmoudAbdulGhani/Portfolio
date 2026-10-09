@@ -17,6 +17,7 @@
     "test:e2e": "playwright test",
     "test:landscape": "node --test tests/assistant-response.test.mjs server/test/gemini-stream.test.mjs server/test/portfolio-links.test.mjs",
     "test:api-runtime": "node server/scripts/test-api-runtime.mjs",
+    "test:integrity": "node --test tests/content-integrity.test.mjs server/test/learning-context-routes.test.mjs",
     "test:gallery": "node --test tests/gallery-covers.test.mjs",
     "test:portrait": "node --test tests/profile-portrait.test.mjs",
     "test:e2e:install": "playwright install chromium",

@@ -9,6 +9,7 @@ import { consumeRateLimit } from "../lib/rate-limit.js";
 import { assistantSchema } from "../lib/validation.js";
 import { createHash } from "node:crypto";
 import { getClientIp } from "../lib/client-ip.js";
+import { LEARNING_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
 
 const router = Router();
 const WINDOW_MS = 60_000;
@@ -89,13 +90,13 @@ router.post("/", async (req, res, next) => {
 
     if (isStreaming) {
       res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
-      res.setHeader("Cache-Control", "no-cache, no-transform");
+      res.setHeader("Cache-Control", "private, no-store, no-transform");
       res.setHeader("Connection", "keep-alive");
       res.flushHeaders?.();
 
       try {
         await generateStreamWithGemini({
-          systemInstruction: SYSTEM_INSTRUCTION,
+          systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION}`,
           userPrompt: `PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nVISITOR QUESTION\n${question}`,
           onChunk: (chunk) => {
             res.write(`data: ${JSON.stringify({ chunk })}\n\n`);
@@ -118,7 +119,7 @@ router.post("/", async (req, res, next) => {
 
     try {
       const answer = await generateWithGemini({
-        systemInstruction: SYSTEM_INSTRUCTION,
+        systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION}`,
         userPrompt: `PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nVISITOR QUESTION\n${question}`,
       });
       res.setHeader("Cache-Control", "no-store");

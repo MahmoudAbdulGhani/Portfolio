@@ -7,6 +7,7 @@ import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
 import { consumeRateLimit } from "../lib/rate-limit.js";
 import { jobMatchSchema, tailoredCvSchema } from "../lib/validation.js";
 import { getClientIp } from "../lib/client-ip.js";
+import { LEARNING_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
 
 const router = Router();
 export const MAX_JOB_DESCRIPTION_LENGTH = 8_000;
@@ -141,7 +142,7 @@ router.post("/", async (req, res, next) => {
         let chunks = 0;
         try {
           const text = await generateStreamWithGemini({
-            systemInstruction: MATCHER_INSTRUCTION,
+            systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION}`,
             userPrompt,
             maxOutputTokens: 8_192,
             responseMimeType: "application/json",
@@ -163,7 +164,7 @@ router.post("/", async (req, res, next) => {
       }
 
       const text = await generateWithGemini({
-        systemInstruction: MATCHER_INSTRUCTION,
+        systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION}`,
         userPrompt,
         maxOutputTokens: 8_192,
         responseMimeType: "application/json",

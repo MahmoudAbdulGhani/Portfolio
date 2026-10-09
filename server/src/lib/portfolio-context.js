@@ -1,6 +1,6 @@
 import { prisma } from "./prisma.js";
 import { resumeLink } from './portfolio-links.js';
-import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, datePeriod } from '../../../shared/content-integrity-runtime.js';
+import { projectDisplayName, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, normalizeEducation, recordKind } from '../../../shared/content-integrity-runtime.js';
 
 const projectSelect = {
   slug: true, name: true, type: true, tagline: true, description: true,
@@ -29,8 +29,8 @@ export async function getPortfolioContext(projectSlug) {
     }),
     prisma.technology.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
     prisma.skill.findMany({ orderBy: { order: "asc" }, select: { name: true, category: true } }),
-    prisma.education.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { school: true, degree: true, field: true, period: true, details: true } }),
-    prisma.certification.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true, description: true, expectedDate: true, credentialId: true } }),
+    prisma.education.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { school: true, degree: true, field: true, period: true, details: true, startDate: true, endDate: true } }),
+    prisma.certification.findMany({ where: { published: true }, orderBy: { order: "asc" }, select: { title: true, issuer: true, year: true, url: true, description: true, expectedDate: true, credentialId: true, issueDate: true } }),
   ]);
 
   if (!profile) throw new Error("Portfolio profile not found");
@@ -44,7 +44,7 @@ export async function getPortfolioContext(projectSlug) {
     projects: linkedProjects,
     technologies: uniqueCapabilities(technologies),
     skills: uniqueCapabilities(skills),
-    education: education.map(item => ({ ...item, period: datePeriod(item.period) })),
+    education: education.map(normalizeEducation),
     certifications: certifications.map(item => ({ ...normalizeTraining(item), recordKind: recordKind(item) })),
   };
 }

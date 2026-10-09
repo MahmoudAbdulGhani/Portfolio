@@ -1,0 +1,653 @@
+[
+  {
+    "width": 1363,
+    "keys": [
+      "javascript",
+      "typescript",
+      "php",
+      "python",
+      "html",
+      "css",
+      "sql",
+      "django",
+      "fastapi",
+      "django rest framework",
+      "react",
+      "next.js",
+      "angular",
+      "express.js",
+      "nestjs",
+      "tailwind css",
+      "bootstrap",
+      "mongodb",
+      "postgresql",
+      "mysql",
+      "mariadb",
+      "supabase",
+      "git",
+      "github",
+      "node.js",
+      "docker",
+      "stripe",
+      "vercel",
+      "render",
+      "nodemailer / smtp",
+      "livekit cloud",
+      "jwt",
+      "zod",
+      "pnpm workspaces",
+      "vite",
+      "openapi / swagger",
+      "postman",
+      "pydantic",
+      "pytest",
+      "playwright",
+      "structured outputs & json schema",
+      "csrf protection",
+      "argon2",
+      "zustand",
+      "tanstack query",
+      "responsive design",
+      "framer motion",
+      "restful apis",
+      "mongoose",
+      "sqlalchemy",
+      "alembic",
+      "authentication & authorization",
+      "rbac",
+      "secure cookies",
+      "otp verification",
+      "jest",
+      "vitest",
+      "unit & integration testing",
+      "llms",
+      "rag",
+      "prompt engineering",
+      "ai api integration",
+      "solid",
+      "github actions",
+      "design patterns",
+      "ci/cd",
+      "scalable systems",
+      "real-time systems",
+      "clean architecture",
+      "ssr",
+      "seo"
+    ],
+    "duplicateKeys": [],
+    "overflow": false,
+    "evidence": [
+      {
+        "key": "javascript",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "typescript",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "python",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "html",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "css",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "django",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "fastapi",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "django rest framework",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "react",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "next.js",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "express.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "tailwind css",
+        "href": "/projects/lobby"
+      },
+      {
+        "key": "mongodb",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "postgresql",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "supabase",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "git",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "github",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "node.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "docker",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "stripe",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vercel",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "render",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "jwt",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vite",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "postman",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "pydantic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "pytest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "playwright",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "argon2",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "framer motion",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "sqlalchemy",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "alembic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "vitest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "ai api integration",
+        "href": "/projects/jobpilot-ai"
+      }
+    ],
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "keys": [
+      "javascript",
+      "typescript",
+      "php",
+      "python",
+      "html",
+      "css",
+      "sql",
+      "django",
+      "fastapi",
+      "django rest framework",
+      "react",
+      "next.js",
+      "angular",
+      "express.js",
+      "nestjs",
+      "tailwind css",
+      "bootstrap",
+      "mongodb",
+      "postgresql",
+      "mysql",
+      "mariadb",
+      "supabase",
+      "git",
+      "github",
+      "node.js",
+      "docker",
+      "stripe",
+      "vercel",
+      "render",
+      "nodemailer / smtp",
+      "livekit cloud",
+      "jwt",
+      "zod",
+      "pnpm workspaces",
+      "vite",
+      "openapi / swagger",
+      "postman",
+      "pydantic",
+      "pytest",
+      "playwright",
+      "structured outputs & json schema",
+      "csrf protection",
+      "argon2",
+      "zustand",
+      "tanstack query",
+      "responsive design",
+      "framer motion",
+      "restful apis",
+      "mongoose",
+      "sqlalchemy",
+      "alembic",
+      "authentication & authorization",
+      "rbac",
+      "secure cookies",
+      "otp verification",
+      "jest",
+      "vitest",
+      "unit & integration testing",
+      "llms",
+      "rag",
+      "prompt engineering",
+      "ai api integration",
+      "solid",
+      "github actions",
+      "design patterns",
+      "ci/cd",
+      "scalable systems",
+      "real-time systems",
+      "clean architecture",
+      "ssr",
+      "seo"
+    ],
+    "duplicateKeys": [],
+    "overflow": false,
+    "evidence": [
+      {
+        "key": "javascript",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "typescript",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "python",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "html",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "css",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "django",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "fastapi",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "django rest framework",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "react",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "next.js",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "express.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "tailwind css",
+        "href": "/projects/lobby"
+      },
+      {
+        "key": "mongodb",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "postgresql",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "supabase",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "git",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "github",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "node.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "docker",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "stripe",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vercel",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "render",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "jwt",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vite",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "postman",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "pydantic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "pytest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "playwright",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "argon2",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "framer motion",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "sqlalchemy",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "alembic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "vitest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "ai api integration",
+        "href": "/projects/jobpilot-ai"
+      }
+    ],
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "keys": [
+      "javascript",
+      "typescript",
+      "php",
+      "python",
+      "html",
+      "css",
+      "sql",
+      "django",
+      "fastapi",
+      "django rest framework",
+      "react",
+      "next.js",
+      "angular",
+      "express.js",
+      "nestjs",
+      "tailwind css",
+      "bootstrap",
+      "mongodb",
+      "postgresql",
+      "mysql",
+      "mariadb",
+      "supabase",
+      "git",
+      "github",
+      "node.js",
+      "docker",
+      "stripe",
+      "vercel",
+      "render",
+      "nodemailer / smtp",
+      "livekit cloud",
+      "jwt",
+      "zod",
+      "pnpm workspaces",
+      "vite",
+      "openapi / swagger",
+      "postman",
+      "pydantic",
+      "pytest",
+      "playwright",
+      "structured outputs & json schema",
+      "csrf protection",
+      "argon2",
+      "zustand",
+      "tanstack query",
+      "responsive design",
+      "framer motion",
+      "restful apis",
+      "mongoose",
+      "sqlalchemy",
+      "alembic",
+      "authentication & authorization",
+      "rbac",
+      "secure cookies",
+      "otp verification",
+      "jest",
+      "vitest",
+      "unit & integration testing",
+      "llms",
+      "rag",
+      "prompt engineering",
+      "ai api integration",
+      "solid",
+      "github actions",
+      "design patterns",
+      "ci/cd",
+      "scalable systems",
+      "real-time systems",
+      "clean architecture",
+      "ssr",
+      "seo"
+    ],
+    "duplicateKeys": [],
+    "overflow": false,
+    "evidence": [
+      {
+        "key": "javascript",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "typescript",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "python",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "html",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "css",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "django",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "fastapi",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "django rest framework",
+        "href": "/projects/construction-project-management-accounting-system"
+      },
+      {
+        "key": "react",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "next.js",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "express.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "tailwind css",
+        "href": "/projects/lobby"
+      },
+      {
+        "key": "mongodb",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "postgresql",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "supabase",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "git",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "github",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "node.js",
+        "href": "/projects/unihub"
+      },
+      {
+        "key": "docker",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "stripe",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vercel",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "render",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "jwt",
+        "href": "/projects/gamezone-arena"
+      },
+      {
+        "key": "vite",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "postman",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "pydantic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "pytest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "playwright",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "argon2",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "framer motion",
+        "href": "/projects/full-stack-user-management-system"
+      },
+      {
+        "key": "sqlalchemy",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "alembic",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "vitest",
+        "href": "/projects/jobpilot-ai"
+      },
+      {
+        "key": "ai api integration",
+        "href": "/projects/jobpilot-ai"
+      }
+    ],
+    "pageErrors": []
+  }
+]

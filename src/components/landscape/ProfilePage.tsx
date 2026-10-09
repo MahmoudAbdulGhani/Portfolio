@@ -14,7 +14,7 @@ import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
 import { ProfilePortrait } from "./ProfilePortrait";
 import { evidenceUrl } from "../../lib/assistant-response";
-import { monthDate, projectDisplayName, recordKind, skillKey } from "../../../shared/content-integrity";
+import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
 
 export function ProfilePage() {
   const profile = useProfile(),
@@ -25,6 +25,7 @@ export function ProfilePage() {
     skills = useSkills();
   const [tab, setTab] = useState("Experience");
   const person = profile.data;
+  const capabilities = capabilityGroups(technologies.data, skills.data, projects.data);
   if (profile.isLoading || profile.isError || !person)
     return (
       <main className="page-surface">
@@ -115,6 +116,7 @@ export function ProfilePage() {
                   </summary>
                   <div className="record-detail">
                     {(item.description || item.details) && <p>{item.description || item.details}</p>}
+                    {item.learningEvidence?.completion.status === 'unverified' && <p className="learning-status">Program completion is not verified by the available records.</p>}
                     {Boolean(item.bullets?.length) && (
                       <ul>
                         {item.bullets?.map((bullet) => (
@@ -160,6 +162,7 @@ export function ProfilePage() {
                       {[item.issuer, item.year || monthDate(item.issueDate) || (item.expectedDate ? `Expected ${monthDate(item.expectedDate)}` : '')].filter(Boolean).join(' · ')}
                     </p>
                     {item.description && <p>{item.description}</p>}
+                    <p className="learning-status">Completion and certification are not verified by the available records.</p>
                     {item.url && (
                       <a
                         href={item.url}
@@ -187,31 +190,28 @@ export function ProfilePage() {
               }}
               label="capabilities"
             />
-            {["languages", "frameworks", "databases", "ops"].filter(category => technologies.data?.some(item => item.category === category)).map((category) => (
-              <div key={category}>
-                <h2>{category === "ops" ? "Operations" : category}</h2>
-                <p>
-                  {technologies.data
-                    ?.filter((item) => item.category === category)
-                    .map((item) => item.name)
-                    .join(" · ")}
-                </p>
-              </div>
-            ))}
-            <div>
-              <h2>Skills</h2>
-              <ul>
-                {skills.data?.filter(skill => !technologies.data?.some(tech => skillKey(tech.name) === skillKey(skill.name))).map((skill) => {
-                  const evidence = projects.data?.find(project => project.published
-                    && Boolean(project.myRole?.trim() || project.ownership?.trim() || project.contributions?.some(item => item.trim()))
-                    && project.stack.some(tech => skillKey(tech) === skillKey(skill.name)));
-                  return <li key={skill.id}>
-                    {skill.name}
-                    {evidence && <Link className="text-link" to={`/projects/${evidence.slug}`}>Demonstrated in {projectDisplayName(evidence)}<FiArrowUpRight /></Link>}
-                  </li>;
-                })}
-              </ul>
-            </div>
+            {["languages", "frameworks", "databases", "ops", "skills"]
+              .filter(category => capabilities.some(item => item.category === category))
+              .map(category => (
+                <div key={category}>
+                  <h2>{category === "ops" ? "Operations" : category === 'skills' ? 'Skills' : category}</h2>
+                  <ul className={category === 'skills' ? undefined : 'capability-summary'}>
+                    {capabilities.filter(item => item.category === category).map(item => (
+                      <li key={item.key} data-competency={item.key}>
+                        <span>
+                          {item.name}
+                          {item.details.length > 0 && <span className="competency-detail"> — {item.details.join(', ')}</span>}
+                        </span>
+                        {item.evidence.map(project => (
+                          <Link key={project.slug} className="text-link" to={`/projects/${project.slug}`}>
+                            Demonstrated in {project.name}<FiArrowUpRight />
+                          </Link>
+                        ))}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
           </div>
         )}
         <Link className="text-link profile-contact" to="/contact">
