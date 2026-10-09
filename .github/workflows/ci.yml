@@ -32,6 +32,9 @@ jobs:
       - name: Install server dependencies
         run: npm ci --prefix server
 
+      - name: Generate server Prisma client
+        run: npm run db:generate --prefix server
+
       - name: Typecheck
         run: npm run typecheck
 
