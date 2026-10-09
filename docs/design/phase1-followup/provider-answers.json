@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09T13:03:09.753Z",
+  "source": "Real configured Gemini provider through corrected local assistant route, using captured public GET records and in-memory Prisma. Not deployed production responses.",
+  "model": "gemini-3.5-flash",
+  "findings": [
+    {
+      "question": "The AWS re/Start dates are in the past. What can I safely say about attendance, finishing the bootcamp, and an earned AWS certification?",
+      "status": 200,
+      "answer": "### AWS re/Start Bootcamp Status\n\nBased on the available portfolio records:\n\n*   **Attendance:** You can state that Mahmoud has a listed participation in the *AWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals* from **July 2025 – October 2025**.\n*   **Completion:** His completion status is **unverified**. No completion evidence is supplied by the available records, and past dates do not establish completion or graduation.\n*   **Certification:** His certification status is **unverified**. There is no record of an earned vendor certification from Amazon Web Services (AWS) in the portfolio data."
+    },
+    {
+      "question": "Has Mahmoud graduated from the Digital Hub program, or does the available information establish something more limited? Give the dates and evidence limits.",
+      "status": 200,
+      "answer": "### Program Participation and Evidence Limits\n\nMahmoud Abdul Ghani's participation in **The Digital Hub by UNRWA** full-stack software engineering and AI program is listed from **June 2026 to September 2026**. \n\nRegarding his graduation or completion status:\n* **Status:** Unverified. \n* **Evidence Limits:** The available records do not supply independent verification of completion, graduation, or an earned certification for this program. Under the portfolio's records, past dates and listed participation do not establish official graduation."
+    },
+    {
+      "question": "Did Mahmoud independently own all of Lobby and UniHub? Separate what the teams delivered from his recorded personal contributions and identify collaborators where documented.",
+      "status": 200,
+      "answer": "No, Mahmoud did not independently own [Lobby](/projects/lobby) or [UniHub](/projects/unihub). Both are collaborative team projects where feature descriptions reflect team delivery rather than sole ownership.\n\n### [Lobby](/projects/lobby)\n* **His Personal Contributions:** Collaborated on persistent community and temporary guest-room workflows in a TypeScript monorepo; contributed to authenticated and guest access, invitation links, validation, and Supabase-backed services.\n* **Team Delivery:** A real-time communication platform combining persistent communities (servers/channels) with temporary guest rooms, utilizing LiveKit Cloud for voice, messaging, and screen sharing.\n* **Documented Collaborators:** Ahmad Khalaf, Bissan Al Miari, Mohamad El Mawed, Mohammad Hajeer, and Nireez Al Sweidan.\n\n### [UniHub](/projects/unihub)\n* **His Personal Contributions:** Contributed specifically to the Student Portal (covering course enrollment, assignment submissions, attendance, and grade visibility) and integrated protected frontend workflows with the JWT-authenticated REST API.\n* **Team Delivery:** A university management system featuring dedicated role-based portals for students, professors, and administrators.\n* **Documented Collaborators:** Abdulaziz Al Sayyed and Nada Alahmad (Team size: 3)."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { datePeriod, dateRange, monthDate, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, normalizeProjectCv, projectDisplayName } from '../shared/content-integrity.ts';
+import { datePeriod, dateRange, monthDate, normalizeExperience, sortExperience, uniqueCapabilities, normalizeTraining, recordKind, normalizeProjectCv, projectDisplayName, learningEvidence, normalizeEducation, capabilityGroups } from '../shared/content-integrity.ts';
 
 test('dates use one format without interpreting durations or invalid dates as timestamps', () => {
   for (const value of ['June 2026 – Sept 2026', '2026-06 - 2026-09']) assert.equal(datePeriod(value), 'Jun 2026 – Sep 2026');
@@ -70,8 +70,56 @@ test('AI context consumes the same corrected record, evidence names and training
     assert.equal(context.certifications[0].recordKind, 'Training');
     assert.doesNotMatch(context.certifications[0].description, /expected/);
     assert.equal(context.profile.resumeUrl, '/api/cv.pdf');
+    assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'unverified');
+    assert.equal(context.education[0].learningEvidence.completion.status, 'unverified');
+    assert.equal(context.certifications[0].learningEvidence.completion.status, 'unverified');
+    assert.equal(context.certifications[0].learningEvidence.certification.status, 'unverified');
+    assert.equal(context.certifications[0].learningEvidence.dates, 'Jul 2025 – Oct 2025');
   } finally {
     for (const [model, key, fn] of originals) model[key] = fn;
     await prisma.$disconnect();
   }
+});
+
+test('past dates, degree names and listed credential metadata do not establish graduation or certification', () => {
+  const education = normalizeEducation({ degree: 'BSc Computer Science', startDate: '2022-10', endDate: '2025-06', details: 'Graduated in 2025.' });
+  assert.equal(education.learningEvidence.completion.status, 'unverified');
+  assert.deepEqual(education.learningEvidence.completion.recordedClaims, ['Graduated in 2025.']);
+  assert.match(education.learningEvidence.completion.basis, /Past dates do not establish completion or graduation/);
+  const training = normalizeTraining({ title: 'Another training course', year: '2024', credentialId: 'self-reported-id', url: 'https://example.com/course', description: 'Completed the course.' });
+  assert.equal(training.learningEvidence.completion.status, 'unverified');
+  assert.deepEqual(training.learningEvidence.completion.recordedClaims, ['Completed the course.']);
+  assert.equal(training.learningEvidence.certification.status, 'unverified');
+  assert.equal(training.learningEvidence.certification.recordedCredential.id, 'self-reported-id');
+  assert.equal(learningEvidence({ year: '2030' }).completion.status, 'unverified');
+  assert.equal(normalizeExperience({ company: 'Employer', role: 'Backend Developer', endDate: '2024-12' }).learningEvidence, undefined);
+  assert.equal(normalizeExperience({ company: 'Another academy', description: 'Participated in a training program.', endDate: '2024-12' }).learningEvidence.completion.status, 'unverified');
+});
+
+test('Capabilities assigns aliases and composite atoms one location, retaining specific details and personal evidence', () => {
+  const technologies = [
+    { name: 'HTML & CSS', category: 'languages' }, { name: 'MySQL / MariaDB', category: 'databases' },
+    { name: 'Git & GitHub', category: 'ops' }, { name: 'Argon2', category: 'ops' },
+  ];
+  const skills = ['HTML5', 'CSS3', 'MySQL', 'MariaDB', 'Git', 'GitHub', 'Argon2 Password Hashing', 'Argon2', 'AI API Integration', 'AI API Integration — OpenAI', 'Django', 'Django REST Framework', 'SQL', 'SQLAlchemy'].map(name => ({ name }));
+  const projects = [
+    { slug: 'unattributed', name: 'Unattributed', published: true, stack: ['Git', 'OpenAI API'] },
+    { slug: 'hidden', name: 'Hidden', published: true, showOnPortfolio: false, myRole: 'Developer', stack: ['Git'] },
+    { slug: 'documented', name: 'Team delivery', published: true, myRole: 'Documented personal role', stack: ['Git', 'GitHub', 'MySQL', 'MariaDB', 'HTML5', 'CSS3', 'Argon2', 'OpenAI API'] },
+  ];
+  const groups = capabilityGroups(technologies, skills, projects);
+  assert.equal(new Set(groups.map(row => row.key)).size, groups.length);
+  for (const [key, category] of [['html', 'languages'], ['css', 'languages'], ['mysql', 'databases'], ['mariadb', 'databases'], ['git', 'ops'], ['github', 'ops'], ['argon2', 'ops']]) {
+    const matches = groups.filter(row => row.key === key);
+    assert.equal(matches.length, 1, key);
+    assert.equal(matches[0].category, category);
+    assert.deepEqual(matches[0].evidence, [{ slug: 'documented', name: 'Team delivery' }]);
+  }
+  assert.deepEqual(groups.find(row => row.key === 'html').details, ['HTML5']);
+  assert.deepEqual(groups.find(row => row.key === 'css').details, ['CSS3']);
+  assert.deepEqual(groups.find(row => row.key === 'argon2').details, ['Password hashing']);
+  assert.deepEqual(groups.find(row => row.key === 'ai api integration').details, ['OpenAI']);
+  assert.deepEqual(groups.find(row => row.key === 'ai api integration').evidence, [{ slug: 'documented', name: 'Team delivery' }]);
+  for (const name of ['Django', 'Django REST Framework', 'SQL', 'SQLAlchemy']) assert.equal(groups.filter(row => row.name === name).length, 1);
+  assert.deepEqual(technologies[0], { name: 'HTML & CSS', category: 'languages' }, 'Grouping does not mutate CMS data');
 });

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-09",
+  "base": "1d5a04e3c7e4d52dc5d9ccc2f92b6d12ecf33f19",
+  "branch": "refine/phase-1-evidence-capabilities",
+  "checks": [
+    { "command": "npm run typecheck", "result": "passed" },
+    { "command": "npm run lint", "result": "passed" },
+    { "command": "npm run build", "result": "passed", "warning": "Existing 502.76KB motion-rig chunk" },
+    { "command": "npm run test:integrity", "result": "9 passed", "provider": "mocked", "database": "mocked" },
+    { "command": "npm run test:landscape", "result": "10 passed" },
+    { "command": "npm run test:api-runtime", "result": "passed", "database": "mocked", "packaging": "JavaScript only, TypeScript loader disabled" },
+    { "command": "CV_STATIC_ONLY=1 npm run test:cv --prefix server", "result": "passed", "database": "none" },
+    { "command": "npm run test:cv-reference --prefix server", "result": "static fallback passed", "database": "none", "fixtureChanged": false },
+    { "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:5180 npx playwright test tests/e2e/content-integrity.spec.ts tests/e2e/profile-portrait.spec.ts --workers=2", "result": "36 passed", "unexpected": 0, "skipped": 0, "flaky": 0, "retries": 0 },
+    { "command": "node scripts/review-phase1-followup.mjs", "result": "passed", "widths": [1363, 390, 320], "uniqueCompetencies": 71, "duplicateKeys": 0, "overflow": false, "pageErrors": 0 },
+    { "command": "node scripts/review-phase1-provider.mjs --live", "result": "3 real provider responses, HTTP 200; evidence and ownership distinctions preserved", "provider": "Gemini 3.5 Flash", "database": "in-memory public snapshot", "deployedProductionResponses": false },
+    { "command": "git diff --check", "result": "passed" }
+  ]
+}

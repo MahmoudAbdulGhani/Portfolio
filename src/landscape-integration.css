@@ -175,6 +175,9 @@
   text-transform: capitalize;
 }
 .landscape .capability-record li { margin: 12px 0; }
+.landscape .capability-summary { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.landscape .capability-record .capability-summary li { margin: 0; font-size: 13px; }
+.landscape .competency-detail, .landscape .learning-status { color: var(--muted); font-size: 12px; }
 .landscape .capability-record li > .text-link {
   display: flex;
   width: fit-content;

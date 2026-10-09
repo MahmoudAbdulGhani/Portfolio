@@ -12,7 +12,7 @@ import type {
   SiteSection,
 } from "../types";
 import { api } from "./api";
-import { normalizeExperience, normalizeTraining, sortExperience, uniqueCapabilities, datePeriod, dateRange } from '../../shared/content-integrity';
+import { normalizeExperience, normalizeTraining, normalizeEducation, sortExperience, uniqueCapabilities } from '../../shared/content-integrity';
 
 const getProfile = async () => {
   const profile = await api<Profile>("/profile");
@@ -21,7 +21,7 @@ const getProfile = async () => {
 const getProjects = () => api<Project[]>("/projects");
 const getTechnologies = async () => uniqueCapabilities(await api<Technology[]>("/technologies"));
 const getSkills = async () => uniqueCapabilities(await api<Skill[]>("/skills"));
-const getEducation = async () => (await api<Education[]>("/education")).map(item => ({ ...item, period: dateRange(item.startDate, item.endDate) || datePeriod(item.period) }));
+const getEducation = async () => (await api<Education[]>("/education")).map(normalizeEducation);
 const getCertifications = async () => (await api<Certification[]>("/certifications")).map(normalizeTraining);
 
 /* ------------------------------------------------------------------ */

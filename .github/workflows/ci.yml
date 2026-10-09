@@ -44,6 +44,9 @@ jobs:
       - name: Test JavaScript-only API package startup
         run: npm run test:api-runtime
 
+      - name: Test learning evidence and Capabilities integrity
+        run: npm run test:integrity
+
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
