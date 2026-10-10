@@ -1,0 +1,458 @@
+{
+  "date": "2026-10-11",
+  "sources": [
+    {
+      "identity": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "src": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "master": ".motion-preview/phase3-public-media/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "width": 1900,
+      "height": 881,
+      "sha256": "36da17bcf68e953168271fbe2ca3e1895a9abc3b45cf79310c07dafb4630248e",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "src": "79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "master": ".motion-preview/phase3-public-media/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "width": 1899,
+      "height": 877,
+      "sha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "aba248de-e871-483a-b413-e0db8d4df718.png",
+      "src": "aba248de-e871-483a-b413-e0db8d4df718.png",
+      "master": ".motion-preview/phase3-public-media/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "width": 1898,
+      "height": 876,
+      "sha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "src": "8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "master": ".motion-preview/phase3-public-media/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "width": 1900,
+      "height": 870,
+      "sha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "src": "c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "master": ".motion-preview/phase3-public-media/c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3c4a36f01fa625e544ea43155db05f96120ae2c52a2e8f4785d40562180242d7",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/jobpilot-phone.webp",
+      "src": "/projects/responsive/jobpilot-phone.webp",
+      "master": "public/projects/responsive/jobpilot-phone.webp",
+      "width": 375,
+      "height": 1200,
+      "sha256": "0c3d8db17c09b889296a2a95ab8042d0e691a33ede519860b87bf1e9490f5890",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/jobpilot-tablet.webp",
+      "src": "/projects/responsive/jobpilot-tablet.webp",
+      "master": "public/projects/responsive/jobpilot-tablet.webp",
+      "width": 753,
+      "height": 1200,
+      "sha256": "5fbf248f54a78db5931c4f3d311383bb62e96d0bdd6ffd0ef91885c30380eed1",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/friends.webp",
+      "src": "/projects/lobby/friends.webp",
+      "master": "public/projects/lobby/friends.webp",
+      "width": 1920,
+      "height": 877,
+      "sha256": "d75d205eed9522ceefefe5a332d8e6fb4d190c2a8f7158820fd2276d8e3351d6",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/audio-room.webp",
+      "src": "/projects/lobby/audio-room.webp",
+      "master": "public/projects/lobby/audio-room.webp",
+      "width": 1919,
+      "height": 863,
+      "sha256": "7ea008caaf48cc0dbf51c5d8f97cdfd688300dbb31a722f49e0727306878867a",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/community-chat.webp",
+      "src": "/projects/lobby/community-chat.webp",
+      "master": "public/projects/lobby/community-chat.webp",
+      "width": 1920,
+      "height": 870,
+      "sha256": "88de8b14b6b5140c6bba2fa6261440a39fde4fce849158fc442177d0c7f914a5",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/share-room.webp",
+      "src": "/projects/lobby/share-room.webp",
+      "master": "public/projects/lobby/share-room.webp",
+      "width": 1920,
+      "height": 867,
+      "sha256": "0da2ef89009c6f03d6e2306057acf1ebb9f9fff38b0b3c464dd2a1ddfd491073",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/guest-access.webp",
+      "src": "/projects/lobby/guest-access.webp",
+      "master": "public/projects/lobby/guest-access.webp",
+      "width": 1920,
+      "height": 873,
+      "sha256": "26dff12e8c80a7ae5560c965b5dca235ca47febe6d75aeaa9b0f63f7f5fc7b6e",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/lobby-phone.webp",
+      "src": "/projects/responsive/lobby-phone.webp",
+      "master": "public/projects/responsive/lobby-phone.webp",
+      "width": 380,
+      "height": 1210,
+      "sha256": "ee873ff0c7831712aacd05f2d077fdf61129cebafbcc31e3e62123092d5bf4ee",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/lobby-tablet.webp",
+      "src": "/projects/responsive/lobby-tablet.webp",
+      "master": "public/projects/responsive/lobby-tablet.webp",
+      "width": 758,
+      "height": 1100,
+      "sha256": "0110b715d75e75f40a3b24aebe44a58734dad6df7b209d6b01353300bebb61bf",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase3/gamezone-rooms.webp",
+      "src": "/projects/complete/gamezone-rooms.webp",
+      "master": "docs/design/phase3/media-masters/gamezone-rooms.png",
+      "width": 2726,
+      "height": 2792,
+      "sha256": "d60c39ffc57d5b629c66b61d66d1baa1719e25f419f404647c80c8b7e3197e2b",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase3/gamezone-session.webp",
+      "src": "/projects/complete/gamezone-session.webp",
+      "master": "docs/design/phase3/media-masters/gamezone-session.png",
+      "width": 2726,
+      "height": 3006,
+      "sha256": "21672574e908024bea4cd1a75f6cb6c419523ed34fe397ac5f9faea588ebe1e9",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase3/gamezone-devices.webp",
+      "src": "/projects/complete/gamezone-devices.webp",
+      "master": "docs/design/phase3/media-masters/gamezone-devices.png",
+      "width": 2726,
+      "height": 2792,
+      "sha256": "98b5fe56a777c9dcf187a9cc16ea3fbd8a5c7b1ac849ab356d47a7de946f725e",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase3/gamezone-review.webp",
+      "src": "/projects/complete/gamezone-review.webp",
+      "master": "docs/design/phase3/media-masters/gamezone-review.png",
+      "width": 2726,
+      "height": 2792,
+      "sha256": "de7a27a6f29646dfd1691afa61535d230e44f8552e24336e93de9156b1291789",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/user_overview.webp",
+      "src": "/projects/gamezone-arena/user_overview.webp",
+      "master": "public/projects/gamezone-arena/user_overview.webp",
+      "width": 1366,
+      "height": 1446,
+      "sha256": "07d197f0f5ab5e80eb2d35a8f086be2f834f89c6a378ea766997048be8ea0b7d",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/choose_Room.webp",
+      "src": "/projects/gamezone-arena/choose_Room.webp",
+      "master": "public/projects/gamezone-arena/choose_Room.webp",
+      "width": 1920,
+      "height": 3135,
+      "sha256": "8afbd5f570e63913a3f01a676f0f8bf5fe4a01588920db398b6941ad75198b82",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/Booking_date_and_time.webp",
+      "src": "/projects/gamezone-arena/Booking_date_and_time.webp",
+      "master": "public/projects/gamezone-arena/Booking_date_and_time.webp",
+      "width": 1920,
+      "height": 2287,
+      "sha256": "9d10e87b8e8ba9a991926cbbd59dd5f628a94c3eb913f88f3bf3bc113a6a6bfe",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/select_device.webp",
+      "src": "/projects/gamezone-arena/select_device.webp",
+      "master": "public/projects/gamezone-arena/select_device.webp",
+      "width": 1920,
+      "height": 1963,
+      "sha256": "48497af67ab9e70585637762a6ebd20da0428f952597b233c34c597c39daef21",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/confirm_and_pay.webp",
+      "src": "/projects/gamezone-arena/confirm_and_pay.webp",
+      "master": "public/projects/gamezone-arena/confirm_and_pay.webp",
+      "width": 1920,
+      "height": 2059,
+      "sha256": "dc831cc540c4aa297a7a1b980f86d93dad69fc8d6d23fb0b867f7070d231f112",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/admin_overview.webp",
+      "src": "/projects/gamezone-arena/admin_overview.webp",
+      "master": "public/projects/gamezone-arena/admin_overview.webp",
+      "width": 1920,
+      "height": 2076,
+      "sha256": "0f3e794a85a6ca7d018840d4e08ea742b65d4c1d800b40ff00f8db97b0973c2b",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/admin_Rooms.webp",
+      "src": "/projects/gamezone-arena/admin_Rooms.webp",
+      "master": "public/projects/gamezone-arena/admin_Rooms.webp",
+      "width": 1920,
+      "height": 1918,
+      "sha256": "34e76d9364003b9aac21976f2307b40f4b6334268181b0117edaa42140a7f811",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/admin_Users.webp",
+      "src": "/projects/gamezone-arena/admin_Users.webp",
+      "master": "public/projects/gamezone-arena/admin_Users.webp",
+      "width": 1920,
+      "height": 916,
+      "sha256": "e1a9ac36d7dd116306986c63397216fa98480044b7cf9be1121231a107e46a7a",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/gamezone-phone.webp",
+      "src": "/projects/responsive/gamezone-phone.webp",
+      "master": "public/projects/responsive/gamezone-phone.webp",
+      "width": 380,
+      "height": 1200,
+      "sha256": "b4916633b855ef60e0d27e91e704349580074f9105e0b32e58eecc91df5ca250",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/gamezone-tablet.webp",
+      "src": "/projects/responsive/gamezone-tablet.webp",
+      "master": "public/projects/responsive/gamezone-tablet.webp",
+      "width": 758,
+      "height": 1200,
+      "sha256": "24e5299933f49ffbf6aed1c9dee17e55013f8a6ce09693595d8df9bea3a49281",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "425768da-66d4-4088-b725-3199711f8784.png",
+      "src": "425768da-66d4-4088-b725-3199711f8784.png",
+      "master": ".motion-preview/phase3-public-media/425768da-66d4-4088-b725-3199711f8784.png",
+      "width": 1904,
+      "height": 879,
+      "sha256": "e1e1a4ab4f39a7d8b1c3eeb13a4cf23f85f2401c78542202dbeb3f33c22367bc",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "src": "b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "master": ".motion-preview/phase3-public-media/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "width": 1920,
+      "height": 2333,
+      "sha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "src": "c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "master": ".motion-preview/phase3-public-media/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "width": 1920,
+      "height": 1760,
+      "sha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "src": "88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "master": ".motion-preview/phase3-public-media/88b64d21-f5ad-49ff-8392-5176a9358461.png",
+      "width": 572,
+      "height": 768,
+      "sha256": "84c50db70272caa60b3b4a9e63a40604a97faef8f031c519d30ab0bb3042cb30",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement.",
+      "sourceLimit": "Standalone advisor panel belongs to the complete project operations screenshot; retire the duplicate panel from reader images."
+    },
+    {
+      "identity": "3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "src": "3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "master": ".motion-preview/phase3-public-media/3a490b53-ee8b-45a9-99f7-34d394c61ed7.png",
+      "width": 1897,
+      "height": 880,
+      "sha256": "a6f93800dc641b29b1475dc64a0910313df53167f1a4ab9b19e50a081a189711",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/cedar-phone.webp",
+      "src": "/projects/responsive/cedar-phone.webp",
+      "master": "public/projects/responsive/cedar-phone.webp",
+      "width": 375,
+      "height": 1100,
+      "sha256": "02d5c1a0157d599b1dc045530d49804e147070830eb6eeb903702501d53013cc",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/cedar-tablet.webp",
+      "src": "/projects/responsive/cedar-tablet.webp",
+      "master": "public/projects/responsive/cedar-tablet.webp",
+      "width": 753,
+      "height": 1200,
+      "sha256": "a82d417016ce728b13ba8802e49316e01eb2fc587a61ae79861e051049191342",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/unihub/user.webp",
+      "src": "/projects/unihub/user.webp",
+      "master": "public/projects/unihub/user.webp",
+      "width": 1911,
+      "height": 906,
+      "sha256": "a2d7c12af0ceec4b69ce73bef66df75ba805d989e0d30f1571f00e6f3d326380",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/unihub/Admin.webp",
+      "src": "/projects/unihub/Admin.webp",
+      "master": "public/projects/unihub/Admin.webp",
+      "width": 1919,
+      "height": 918,
+      "sha256": "23c9e09242c04eaef230eab52c3a4e69a9dd03f79d6b1c35fbaea72a76049a53",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/unihub/usercourses.webp",
+      "src": "/projects/unihub/usercourses.webp",
+      "master": "public/projects/unihub/usercourses.webp",
+      "width": 1905,
+      "height": 901,
+      "sha256": "5860fcb41588b7ba39e17bac4d836f488ec726e7ab0e0aff0a8bea87ecfc2113",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/unihub/transcipt.webp",
+      "src": "/projects/unihub/transcipt.webp",
+      "master": "public/projects/unihub/transcipt.webp",
+      "width": 1914,
+      "height": 896,
+      "sha256": "d54226e993f775ea7ee939649a568d9524fb8d2e58fe23f0e16836a65abcbcba",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement.",
+      "sourceLimit": "Best located complete transcript screenshot is the existing 1914 × 896 WebP. A higher-quality original or PDF was not located."
+    },
+    {
+      "identity": "/projects/responsive/unihub-phone.webp",
+      "src": "/projects/responsive/unihub-phone.webp",
+      "master": "public/projects/responsive/unihub-phone.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "5856644974b256431cf1c3487eb3b958f475fb5addc19ca886504f11481f486a",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/unihub-tablet.webp",
+      "src": "/projects/responsive/unihub-tablet.webp",
+      "master": "public/projects/responsive/unihub-tablet.webp",
+      "width": 768,
+      "height": 1024,
+      "sha256": "845f0d742fe3f88afd8c3c537894e35b3d0673b74c910d34cfc2af93ef4f50ce",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/user-management/dashboard.webp",
+      "src": "/projects/user-management/dashboard.webp",
+      "master": "public/projects/user-management/dashboard.webp",
+      "width": 1920,
+      "height": 877,
+      "sha256": "18a5fc8dc6fd5872b784aa3d391834f51a4a40bd342f0ca907378e1da5fa32b5",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase3/user-management-registration.webp",
+      "src": "/projects/complete/user-management-registration.webp",
+      "master": "docs/design/phase3/media-masters/user-management-registration.png",
+      "width": 1040,
+      "height": 1688,
+      "sha256": "e4c4388569457b9a525a3e07179057b362b59dc2d0f6bcab933926df410df5cf",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/responsive/user-management-phone.webp",
+      "src": "/projects/responsive/user-management-phone.webp",
+      "master": "public/projects/responsive/user-management-phone.webp",
+      "width": 343,
+      "height": 654,
+      "sha256": "3b3acefd7c0a5766600bc7f575b62d6b0e4c86065ab1f0a695108bbadc1b70f9",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement.",
+      "sourceLimit": "Only this low-resolution registration form excerpt is available for this exact phone state. Complete uncropped 520px portrait exists separately."
+    },
+    {
+      "identity": "/projects/phase3/medicare-homepage.webp",
+      "src": "/projects/complete/medicare-homepage.webp",
+      "master": "docs/design/phase3/media-masters/medicare-homepage.png",
+      "width": 2726,
+      "height": 1872,
+      "sha256": "e8eb6a035384e044bace0efeef52ddbf17041e40cc64eeb71822213c1c988b94",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/cinematic/medicare-logo.webp",
+      "src": "/projects/cinematic/medicare-logo.webp",
+      "master": "public/projects/cinematic/medicare-logo.webp",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "79eace3fa46ec69ad3bfc60f246ebb2a757ca7aa964f76df653f66bf6a4c3c38",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/cinematic/home-services.webp",
+      "src": "/projects/cinematic/home-services.webp",
+      "master": "public/projects/cinematic/home-services.webp",
+      "width": 1348,
+      "height": 926,
+      "sha256": "d28915fc4bb27d0c8337d1fbf22f1c94e6dfc277c3fd79c8acc804c03dd21e93",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/phase2/home-services-mobile-menu.webp",
+      "src": "/projects/phase2/home-services-mobile-menu.webp",
+      "master": "public/projects/phase2/home-services-mobile-menu.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "3da93411417d7818c281f33fe09b2102411a4ca2b2232dc89f07bff0cef8c369",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/lobby/cover.webp",
+      "src": "/projects/lobby/cover.webp",
+      "master": "public/projects/lobby/cover.webp",
+      "width": 1600,
+      "height": 729,
+      "sha256": "d095328f973812eb55941af401ef70e9bb1d0e96622ced66a9d9372940dcbe2b",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/gamezone-arena/cover.webp",
+      "src": "/projects/gamezone-arena/cover.webp",
+      "master": "public/projects/gamezone-arena/cover.webp",
+      "width": 1600,
+      "height": 741,
+      "sha256": "17e589f1bfb82659a20f1bc92d2df04416d6ae2416cc367c70508470a49dba4d",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    }
+  ]
+}

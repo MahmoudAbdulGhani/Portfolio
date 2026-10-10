@@ -1,0 +1,511 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791672935661,
+  "duration": 67537.796,
+  "files": [
+    {
+      "fileId": "c4afda83a973ed6037e1",
+      "fileName": "case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "c4afda83a973ed6037e1-2f787c8e95a2fd370c07",
+          "title": "every named image remains selectable at 320px without opening the viewer",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 4124,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:36.735Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-2df5639568cff1837334",
+          "title": "engineering disclosures show an expanded cue and preserve keyboard position",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 50,
+            "column": 1
+          },
+          "duration": 1180,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:41.435Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-5e99712a47cb8b6fe371",
+          "title": "unavailable media retries the original without moving its caption",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 73,
+            "column": 1
+          },
+          "duration": 1260,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:42.632Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-911381161247c9811469",
+          "title": "primary loading space stays reserved and portrait captures keep their proportions",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 2244,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:43.909Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-0d328742ceb69dfa493e",
+          "title": "jobpilot-ai waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1174,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:46.168Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-316bbda79c45d8311a3b",
+          "title": "gamezone-arena waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1014,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:47.359Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-dba8bb53fcee0e4ffd22",
+          "title": "a workflow deadline starts once at eligibility and does not reset when visibility changes",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 1054,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:48.387Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-8ea2edd95d46f8d0661f",
+          "title": "the collapsed full-image gallery keeps requests gated beyond the deadline",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1263,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:49.456Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-19f513a6af2df2437d36",
+          "title": "changing sources retires the previous deadline and late request events",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 192,
+            "column": 1
+          },
+          "duration": 1045,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:50.733Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-99b63dbaf792e0369a86",
+          "title": "retry owns a fresh deadline and ignores the retired responsive request",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 214,
+            "column": 1
+          },
+          "duration": 900,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:51.793Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-baa1e89885a22dc35cdf",
+          "title": "returning to a decoded cached image is ready without a second request",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 234,
+            "column": 1
+          },
+          "duration": 1485,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:52.714Z",
+              "workerIndex": 0
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 11,
+        "expected": 11,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "b9aa2e0c91e0f07c2559",
+      "fileName": "case-study.spec.ts",
+      "tests": [
+        {
+          "testId": "b9aa2e0c91e0f07c2559-45cd57a646e6e3da6dba",
+          "title": "JobPilot AI retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 3303,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:54.240Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-ea5463b6135dc266f0dc",
+          "title": "Cedar Construction retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 3323,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:55:57.561Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-6f1e2253384b56bdf947",
+          "title": "Lobby retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 3324,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:00.899Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-3ce82c8d031c3d1236f4",
+          "title": "GameZone Arena retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 4264,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:04.235Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-bb75021d927db15ae76f",
+          "title": "UniHub retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 5490,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:08.519Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-54b438c62a4c65739310",
+          "title": "User Management retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 7825,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:14.032Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-172650c638755e894374",
+          "title": "Medicare Hub retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 8015,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:21.894Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-43614732aef913f2fb26",
+          "title": "Home Services retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 17,
+            "column": 42
+          },
+          "duration": 8901,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:29.954Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-ab4762fe54c95273522e",
+          "title": "a delayed workflow image reserves its frame and keeps its caption in place",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 58,
+            "column": 1
+          },
+          "duration": 3271,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:56:38.896Z",
+              "workerIndex": 0
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 9,
+        "expected": 9,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium"
+  ],
+  "stats": {
+    "total": 20,
+    "expected": 20,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

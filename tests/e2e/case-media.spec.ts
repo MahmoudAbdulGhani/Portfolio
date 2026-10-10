@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 import { caseStudyProjects } from '../fixtures/case-study-projects';
 
-const pixel = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jK1cAAAAASUVORK5CYII=', 'base64');
+import { caseImage, sourceRequest } from '../fixtures/case-image';
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.route('https://screens.example.test/**', route => route.fulfill({ contentType: 'image/png', body: pixel }));
+  await page.route('https://screens.example.test/**', async route => route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }));
   await page.route('**/api/**', route => {
     const path = new URL(route.request().url()).pathname;
     const body = path === '/api/projects' ? caseStudyProjects : path.startsWith('/api/projects/') ? caseStudyProjects.find(project => path === `/api/projects/${project.slug}`) : path === '/api/profile' ? { name: 'Fixture owner', title: 'Developer', socials: [], experience: [] } : [];
@@ -21,7 +21,7 @@ test('every named image remains selectable at 320px without opening the viewer',
     await expect(summary).toBeAttached();
     const choices = chooser.locator('button');
     const count = await choices.count();
-    expect(count).toBeGreaterThanOrEqual(6);
+    expect(count).toBe(slug === 'jobpilot-ai' ? 6 : 5); // Cedar's duplicate advisor fragment is retired.
     for (let index = 0; index < count; index++) {
       await summary.focus(); await page.keyboard.press('Enter');
       await expect(chooser).toHaveAttribute('open', '');
@@ -72,7 +72,7 @@ test('engineering disclosures show an expanded cue and preserve keyboard positio
 
 test('unavailable media retries the original without moving its caption', async ({ page }) => {
   let available = false;
-  await page.route('**/projects/phase3/gamezone-rooms*', route => available ? route.fulfill({ contentType: 'image/png', body: pixel }) : route.fulfill({ status: 503, body: '' }));
+  await page.route('**/projects/complete/gamezone-rooms*', async route => available ? route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }) : route.fulfill({ status: 503, body: '' }));
   await page.goto('/projects/gamezone-arena');
   const frame = page.locator('.case-figure .screenshot-frame');
   await frame.scrollIntoViewIfNeeded();
@@ -82,7 +82,7 @@ test('unavailable media retries the original without moving its caption', async 
   available = true;
   await frame.getByRole('button', { name: 'Retry image' }).click();
   await expect(frame).toHaveAttribute('data-image-state', 'ready');
-  await expect(frame.locator('.screenshot-button img')).toHaveAttribute('src', '/projects/phase3/gamezone-rooms.webp');
+  await expect(frame.locator('.screenshot-button img')).toHaveAttribute('src', '/projects/complete/gamezone-rooms.webp');
   const after = await page.locator('.case-figure').evaluate(el => ({ height: el.querySelector('.screenshot-frame')!.getBoundingClientRect().height, caption: el.querySelector('figcaption')!.getBoundingClientRect().top }));
   expect(after.height).toBeCloseTo(before.height, 0); expect(after.caption).toBeCloseTo(before.caption, 0);
   const trigger = frame.getByRole('button', { name: /Enlarge/ });
@@ -94,7 +94,7 @@ test('primary loading space stays reserved and portrait captures keep their prop
   await page.clock.install();
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/710055a0-a275-4e6a-991d-4aaa23c6e549.png', async route => { await pending; await route.fulfill({ contentType: 'image/png', body: pixel }); });
+  await page.route(sourceRequest('710055a0-a275-4e6a-991d-4aaa23c6e549.png'), async route => { await pending; await route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }); });
   await page.goto('/projects/jobpilot-ai');
   const frame = page.locator('.case-figure .screenshot-frame');
   await frame.scrollIntoViewIfNeeded();
@@ -117,10 +117,10 @@ test('primary loading space stays reserved and portrait captures keep their prop
   await expect(page.locator('.case-figure')).not.toHaveClass(/is-wide/);
   await page.goto('/projects/construction-project-management-accounting-system');
   await page.locator('.case-media-chooser summary').click();
-  await page.locator('.case-media-chooser').getByRole('button', { name: /AI project risk and forecast advisor/ }).click();
+  await page.locator('.case-media-chooser').getByRole('button', { name: /Project details and operations/ }).click();
   const advisor = await page.locator('.case-figure .screenshot-frame').boundingBox();
-  expect(advisor!.width / advisor!.height).toBeCloseTo(572 / 768, 2);
-  await expect(page.locator('.case-figure')).toHaveClass(/is-phone/);
+  expect(advisor!.width / advisor!.height).toBeCloseTo(1920 / 2333, 2);
+  expect((await page.locator('.case-figure .screenshot-frame').boundingBox())!.width).toBeGreaterThan(320);
   const inspect = page.locator('.media-enlarge');
   await inspect.click();
   await expect(page.locator('.case-inspector-notice')).toContainText('demonstration data, not business results');
@@ -148,8 +148,8 @@ test('a workflow deadline starts once at eligibility and does not reset when vis
   await page.clock.install({ time: new Date('2026-10-10T00:00:00Z') });
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/projects/case-media/jobpilot-voice*', async route => {
-    await pending; await route.fulfill({ contentType: 'image/png', body: pixel });
+  await page.route(sourceRequest('8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png'), async route => {
+    await pending; await route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) });
   });
   await page.goto('/projects/jobpilot-ai');
   await expect(page.locator('.case-heading')).toBeAttached();
@@ -168,13 +168,34 @@ test('a workflow deadline starts once at eligibility and does not reset when vis
   await expect(frame).toHaveAttribute('data-image-state', 'ready');
 });
 
+test('the collapsed full-image gallery keeps requests gated beyond the deadline', async ({ page }) => {
+  await page.clock.install();
+  await page.goto('/projects/gamezone-arena');
+  const disclosure = page.locator('.case-gallery-disclosure');
+  const frames = disclosure.locator('.screenshot-frame');
+  await expect(frames).toHaveCount(10); // Synthetic CMS fixture; real public inventory has 15.
+  await expect(disclosure).not.toHaveAttribute('open');
+  await page.clock.fastForward(16_000);
+  await expect(frames.locator('.screenshot-button img')).toHaveCount(0);
+  await expect(disclosure.getByText('This image is unavailable.')).toHaveCount(0);
+  await disclosure.locator('summary').click();
+  const frame = frames.last();
+  await frame.scrollIntoViewIfNeeded();
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+  const trigger = frame.getByRole('button', { name: /Enlarge/ });
+  await trigger.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(trigger).toBeFocused();
+});
+
 test('changing sources retires the previous deadline and late request events', async ({ page }) => {
   await page.clock.install();
   let releaseOld!: () => void, releaseNew!: () => void;
   const oldRequest = new Promise<void>(resolve => { releaseOld = resolve; });
   const newRequest = new Promise<void>(resolve => { releaseNew = resolve; });
-  await page.route('**/710055a0-a275-4e6a-991d-4aaa23c6e549.png', async route => { await oldRequest; await route.fulfill({ status: 503, body: '' }); });
-  await page.route('**/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png', async route => { await newRequest; await route.fulfill({ contentType: 'image/png', body: pixel }); });
+  await page.route(sourceRequest('710055a0-a275-4e6a-991d-4aaa23c6e549.png'), async route => { await oldRequest; await route.fulfill({ status: 503, body: '' }); });
+  await page.route(sourceRequest('79bf6e53-1fb5-4453-a438-fb5ead4a4961.png'), async route => { await newRequest; await route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }); });
   await page.goto('/projects/jobpilot-ai');
   const frame = page.locator('.case-figure .screenshot-frame');
   await expect(frame.locator('.screenshot-button img')).toBeAttached();
@@ -194,8 +215,8 @@ test('retry owns a fresh deadline and ignores the retired responsive request', a
   await page.clock.install();
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/projects/phase3/gamezone-rooms*', async route => {
-    if (new URL(route.request().url()).pathname.endsWith('gamezone-rooms.webp')) return route.fulfill({ contentType: 'image/png', body: pixel });
+  await page.route('**/projects/complete/gamezone-rooms*', async route => {
+    if (new URL(route.request().url()).pathname.endsWith('gamezone-rooms.webp')) return route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) });
     await pending; await route.fulfill({ status: 503, body: '' });
   });
   await page.goto('/projects/gamezone-arena');

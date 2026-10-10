@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from 're
 import { ResponsiveProjectImage } from '../ResponsiveProjectImage';
 import './case-media.css';
 import { useMotionPreference } from '../../lib/use-motion-preference';
+import { screenAsset } from '../../lib/project-detail-screens';
 
 type Props = {
   src: string; alt: string; label: string; ratio: string; className?: string; buttonClassName?: string;
@@ -65,14 +66,14 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
   }, [old, status, reduced]);
   const ready = () => setStatus('ready');
   const failed = () => setStatus('failed');
-  return <div ref={frame} className={`screenshot-frame ${className}${old ? ' has-previous-image' : ''}`} data-image-state={status} style={{ aspectRatio: ratio, ...style }}>
+  return <div ref={frame} className={`screenshot-frame ${className}${old ? ' has-previous-image' : ''}`} data-image-state={status} style={{ aspectRatio: ratio, '--source-ratio': ratio, ...style } as CSSProperties}>
     {old && <span className="screenshot-previous" aria-hidden="true"><img src={old.url} alt="" style={{ objectFit: old.fit as CSSProperties['objectFit'], objectPosition: old.position }} /></span>}
     <button type="button" className={`screenshot-button ${buttonClassName}`} aria-label={`Enlarge ${label}`} disabled={status === 'failed'} onClick={event => enlarge(event.currentTarget)}>
       {/* Defer URLs until the visibility gate opens, then start immediately.
           Native lazy thresholds vary by browser and cannot own this deadline. */}
-      {eligible && (original ? <img ref={image} src={src} alt={alt} loading="eager" onLoad={ready} onError={failed} /> : <ResponsiveProjectImage imageRef={image} src={src} alt={alt} sizes={sizes} priority={priority} loading="eager" fit="frame" onLoad={ready} onError={failed} />)}
+      {eligible && (original ? <img ref={image} src={src} alt={alt} loading="eager" onLoad={ready} onError={failed} /> : <ResponsiveProjectImage imageRef={image} src={src} sources={screenAsset(src)} alt={alt} sizes={sizes} priority={priority} loading="eager" onLoad={ready} onError={failed} />)}
     </button>
     {status === 'loading' && <span className="screenshot-status" aria-hidden="true">Loading image…</span>}
-    {status === 'failed' && <div className="screenshot-status screenshot-error" role="status"><p>This image is unavailable.</p><button type="button" className="text-link" onClick={retry}>Retry image</button><span>You can also choose another image.</span></div>}
+    {status === 'failed' && <div className="screenshot-status screenshot-error" role="status"><p>This image is unavailable.</p><button type="button" className="text-link" onClick={() => { frame.current?.closest<HTMLElement>('.project-reader')?.focus({ preventScroll: true }); retry(); }}>Retry image</button><span>You can also choose another image.</span></div>}
   </div>;
 }

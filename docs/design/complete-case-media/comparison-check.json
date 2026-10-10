@@ -1,0 +1,32 @@
+{
+  "clientDate": "2026-10-11",
+  "images": 2100,
+  "uniqueImages": 2100,
+  "allImageFilesDecode": true,
+  "findings": [
+    {
+      "width": 320,
+      "visibleProjects": 8
+    },
+    {
+      "width": 390,
+      "visibleProjects": 8
+    },
+    {
+      "width": 430,
+      "visibleProjects": 8
+    },
+    {
+      "width": 768,
+      "visibleProjects": 8
+    },
+    {
+      "width": 1024,
+      "visibleProjects": 8
+    },
+    {
+      "width": 1440,
+      "visibleProjects": 8
+    }
+  ]
+}

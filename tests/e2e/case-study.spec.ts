@@ -1,3 +1,4 @@
+import { caseImage, sourceRequest } from '../fixtures/case-image';
 import { expect, test } from '@playwright/test';
 import { caseStudyProjects } from '../fixtures/case-study-projects';
 import { caseStudyFor } from '../../shared/case-study-runtime';
@@ -5,7 +6,7 @@ import { projectDisplayName } from '../../shared/content-integrity';
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.route('https://screens.example.test/**', route => route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jK1cAAAAASUVORK5CYII=', 'base64') }));
+  await page.route('https://screens.example.test/**', async route => route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }));
   await page.route('**/api/**', route => {
     const path = new URL(route.request().url()).pathname;
     const body = path === '/api/projects' ? caseStudyProjects : path.startsWith('/api/projects/') ? caseStudyProjects.find(p => path === `/api/projects/${p.slug}`) : path === '/api/profile' ? { name: 'Test owner', shortName: 'Owner', title: 'Developer', socials: [], experience: [] } : [];
@@ -28,8 +29,8 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
     expect(await page.locator('.page-surface').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     for (const caption of await page.locator('.workflow-frames figcaption').all()) {
-      await expect(caption.locator('p')).not.toHaveText('');
-      expect(await caption.locator('p').evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);
+      await expect(caption.locator('p').first()).not.toHaveText('');
+      expect(await caption.locator('p').first().evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);
     }
     if (project.slug === 'home-services') await expect(page.locator('.story-credit')).toContainText('supplied');
     if (project.slug === 'medicare-hub') await expect(page.locator('.decision-path')).toContainText('not a simulated product screen');
@@ -57,9 +58,9 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
 test('a delayed workflow image reserves its frame and keeps its caption in place', async ({ page }) => {
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/projects/case-media/jobpilot-source*', async route => {
+  await page.route(sourceRequest('79bf6e53-1fb5-4453-a438-fb5ead4a4961.png'), async route => {
     await pending;
-    await route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jK1cAAAAASUVORK5CYII=', 'base64') });
+    await route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) });
   });
   await page.goto('/projects/jobpilot-ai');
   const figure = page.locator('.workflow-frames figure').first();

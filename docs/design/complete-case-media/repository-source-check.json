@@ -1,0 +1,74 @@
+{
+  "clientDate": "2026-10-11",
+  "method": "Read-only GitHub trees at the reviewed source revisions; image/document paths only.",
+  "results": [
+    {
+      "repo": "MahmoudAbdulGhani/university-management-system",
+      "revision": "bf341703475285a7fa667fec28ada2b9c3df44d4",
+      "status": 200,
+      "truncated": false,
+      "media": [
+        {
+          "path": "backend/src/uploads/1783616421412-161226415.png",
+          "size": 1976108
+        },
+        {
+          "path": "docs/concept-sketch.jpeg",
+          "size": 145860
+        }
+      ],
+      "candidate": {
+        "path": "backend/src/uploads/1783616421412-161226415.png",
+        "status": 200,
+        "width": 2880,
+        "height": 1640,
+        "assessment": "Background artwork, not a transcript or screenshot. Rejected as an unrelated replacement."
+      },
+      "latestTree": {
+        "status": 200,
+        "sha": "bf341703475285a7fa667fec28ada2b9c3df44d4",
+        "truncated": false,
+        "media": [
+          {
+            "path": "backend/src/uploads/1783616421412-161226415.png",
+            "size": 1976108
+          },
+          {
+            "path": "docs/concept-sketch.jpeg",
+            "size": 145860
+          }
+        ]
+      }
+    },
+    {
+      "repo": "MahmoudAbdulGhani/fastapi-user-management",
+      "revision": "a71660b197e3aaf2aa7223318b12d7f430474205",
+      "status": 200,
+      "truncated": false,
+      "media": [
+        {
+          "path": "src/assets/hero.png",
+          "size": 13057
+        }
+      ],
+      "candidate": {
+        "path": "src/assets/hero.png",
+        "status": 200,
+        "width": 343,
+        "height": 361,
+        "assessment": "Decorative hero artwork, not the complete registration capture. Rejected as an unrelated replacement."
+      },
+      "latestTree": {
+        "status": 200,
+        "sha": "a71660b197e3aaf2aa7223318b12d7f430474205",
+        "truncated": false,
+        "media": [
+          {
+            "path": "src/assets/hero.png",
+            "size": 13057
+          }
+        ]
+      }
+    }
+  ]
+}

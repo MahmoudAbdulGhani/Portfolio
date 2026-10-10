@@ -10,8 +10,26 @@ permissions:
 
 jobs:
   case-media:
+    needs: case-media-engines
+    if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    steps:
+      - name: Require every media engine to pass
+        run: test "${{ needs['case-media-engines'].result }}" = 'success'
+  case-media-engines:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - engine: chromium
+            projects: --project=chromium --project=tablet-chromium --project=mobile-chromium
+          - engine: firefox
+            projects: --project=media-firefox
+          - engine: webkit
+            projects: --project=media-webkit
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,14 +41,14 @@ jobs:
       - name: Verify original identities and authored media provenance
         run: node --test tests/case-media-assets.test.mjs
       - name: Install browser engines
-        run: npx playwright install --with-deps chromium firefox webkit
+        run: npx playwright install --with-deps ${{ matrix.engine }}
       - name: Verify all readers and viewer modes
-        run: npm run test:e2e -- --config=playwright.media.config.ts --workers=1
+        run: npm run test:e2e -- --config=playwright.media.config.ts --workers=1 ${{ matrix.projects }}
       - name: Retain media failure evidence
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: case-media-failure-evidence
+          name: case-media-${{ matrix.engine }}-failure-evidence
           path: test-results/
           if-no-files-found: ignore
           retention-days: 7

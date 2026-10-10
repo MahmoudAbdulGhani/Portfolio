@@ -1,0 +1,5906 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791672029005,
+  "duration": 720617.124,
+  "files": [
+    {
+      "fileId": "0362c6c62272fc7c96d1",
+      "fileName": "mobile-case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "0362c6c62272fc7c96d1-3d7d8c9143c522b1a502",
+          "title": "jobpilot-ai workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1803,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:30.330Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-6148e73ead72d64922b9",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1568,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:32.663Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9df950bce331d7f63df3",
+          "title": "lobby workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1636,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:34.249Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-d1eef4b52b0afa6f6ea9",
+          "title": "gamezone-arena workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1960,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:35.899Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-698c4c7d50335bb8de6c",
+          "title": "unihub workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1030,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:37.873Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-47cc045cf92fcf2f87d0",
+          "title": "full-stack-user-management-system workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1114,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:38.917Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-416845fbeb9c5164875b",
+          "title": "medicare-hub workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 659,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:40.045Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-71a7fe4b0d6b3f79a2a6",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1034,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:40.717Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c4a7149df982f8792c75",
+          "title": "jobpilot-ai workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1743,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:41.767Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-746c72de50dd52accdc5",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1391,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:43.522Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e3992802f96a18fa926b",
+          "title": "lobby workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1763,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:44.927Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-fd38c8bea74be94a52a3",
+          "title": "gamezone-arena workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1829,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:46.702Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3ebeda6ed8155612c276",
+          "title": "unihub workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1029,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:48.545Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e91bb8a655eef411b1c6",
+          "title": "full-stack-user-management-system workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 994,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:49.586Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7d77121c8796bd0b8967",
+          "title": "medicare-hub workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 649,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:50.592Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ae37770fb5b8eba63288",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1017,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:51.253Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2b29a257e917cdf7accc",
+          "title": "jobpilot-ai workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1679,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:52.284Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9a78952272d96fa60a25",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1416,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:53.975Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-19bf593be4e6b015d89e",
+          "title": "lobby workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1687,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:55.404Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-843054ae1cdc7189d0d1",
+          "title": "gamezone-arena workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1815,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:57.104Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9a090affead34647af8d",
+          "title": "unihub workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 993,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:58.930Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ee67c3bbec91654c9cf4",
+          "title": "full-stack-user-management-system workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1024,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:40:59.935Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4d1a701ffa87b9d1210a",
+          "title": "medicare-hub workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 688,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:00.970Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-11cb68924002abcbd392",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1076,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:01.671Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c4ae364f6912632b1dfb",
+          "title": "jobpilot-ai workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1632,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:02.761Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-be614dcf2a1a9026d818",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1479,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:04.409Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-56be86830089d653bf31",
+          "title": "lobby workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1656,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:05.901Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ca3f9bac97863a893d04",
+          "title": "gamezone-arena workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1915,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:07.569Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7f8d74bad61c89180b5f",
+          "title": "unihub workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1031,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:09.497Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c56cf2ee0a7fc057b817",
+          "title": "full-stack-user-management-system workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1065,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:10.542Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ef7cd8e90c9e1191a440",
+          "title": "medicare-hub workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 689,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:11.619Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-82b238e676ed7f24919a",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1002,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:12.324Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-426f2c5655ce700f0543",
+          "title": "jobpilot-ai workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1766,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:13.338Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4b9eb6f41fb15c82f2a2",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1362,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:15.116Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-31dc14486bb61274c445",
+          "title": "lobby workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1864,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:16.490Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-189c0a1b08357a903e5f",
+          "title": "gamezone-arena workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1724,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:18.366Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0675ee1924b6c8ad0773",
+          "title": "unihub workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1150,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:20.103Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-01c60d1d6ce408b30b0c",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1100,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:21.268Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1b828c3a99011c04348c",
+          "title": "medicare-hub workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 747,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:22.380Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5fb48f103bb1f8af1efc",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1041,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:23.141Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-765d9f6704ad7ddb0faf",
+          "title": "jobpilot-ai workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1847,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:24.194Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f022920c266ba4697be7",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1417,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:26.052Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-495e9ef048b70355b778",
+          "title": "lobby workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2823,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:27.482Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-532b3f795bea94954650",
+          "title": "gamezone-arena workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3434,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:30.324Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5f76f08c50473500f5eb",
+          "title": "unihub workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1727,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:33.780Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-31f05177b53afb1958dc",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1530,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:35.524Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c8362ae9c7a045aefe1a",
+          "title": "medicare-hub workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1372,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:37.070Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4af20160db78198a85b1",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1522,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:38.463Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-183caa8aa03413fad6a6",
+          "title": "portrait Fit preserves the full image without upscaling; width and actual modes remain explicit",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 64,
+            "column": 1
+          },
+          "duration": 5543,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:40.004Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ad6b7eabb77a0e03499d",
+          "title": "viewer responsive failure can retry the complete original and retire an earlier attempt",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 1408,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:45.563Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1dedf1ec7e7901f0d399",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 131,
+            "column": 1
+          },
+          "duration": 1410,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:46.989Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-093dc344be100b5983d8",
+          "title": "jobpilot-ai workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2716,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:49.745Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b3eb8819738102aed2a1",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1728,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:53.018Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-796d8b36b506da5db492",
+          "title": "lobby workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1941,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:54.761Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-09baa063bd92da14ce27",
+          "title": "gamezone-arena workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2002,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:56.716Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5885abb252fe818bd1d7",
+          "title": "unihub workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1258,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:41:58.736Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-85aa3ec463fadcd43df8",
+          "title": "full-stack-user-management-system workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1496,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:00.011Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-96e785402362c542327a",
+          "title": "medicare-hub workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 976,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:01.525Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b960f8713f4ee7962d1e",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1457,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:02.518Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9019acb270130182eef6",
+          "title": "jobpilot-ai workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2219,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:03.991Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-d14b208d85fe0cfd3e6f",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1706,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:06.227Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3693cf690d4a1b21828d",
+          "title": "lobby workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1973,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:07.948Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-eb17fcd988d40e8767c0",
+          "title": "gamezone-arena workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2526,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:09.934Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-dbb0f9265abf5cd9a3a6",
+          "title": "unihub workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1342,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:12.474Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3f53ba74265b7efebc12",
+          "title": "full-stack-user-management-system workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1474,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:13.831Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-da0c8a6f5acc9a282a6b",
+          "title": "medicare-hub workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 812,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:15.320Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8d5eb634ba8bf02288fb",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1277,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:16.149Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-159ab89e356886a76a53",
+          "title": "jobpilot-ai workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2475,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:17.441Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-095d643c11ac519c0f18",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1719,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:19.932Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-87d663be0d9fbd7898f2",
+          "title": "lobby workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1870,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:21.665Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-100d3420c1ff3fde9ba8",
+          "title": "gamezone-arena workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2213,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:23.551Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-70c08571b6f04bbd56c1",
+          "title": "unihub workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1245,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:25.782Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-83a29dc8d16d0ed45389",
+          "title": "full-stack-user-management-system workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1390,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:27.045Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-198157771c1057c09695",
+          "title": "medicare-hub workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 959,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:28.450Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-cd7fb2f4b48b3e0c5d35",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1516,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:29.426Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a630cee04f1203752a9e",
+          "title": "jobpilot-ai workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2080,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:30.959Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-837e803e4a9fdff459ed",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1823,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:33.054Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b6b8da1747adeb615ead",
+          "title": "lobby workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2503,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:34.895Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-92dd0df36b56f8740c14",
+          "title": "gamezone-arena workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2375,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:37.414Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-353446b52115dcffe8fd",
+          "title": "unihub workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1577,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:39.807Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-426dcfb35d0b2709b33c",
+          "title": "full-stack-user-management-system workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1301,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:41.401Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-6976ff4db591b239922e",
+          "title": "medicare-hub workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1010,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:42.717Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c8e2185a893cf7a5a49f",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1536,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:43.745Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e370faee06b291d52a54",
+          "title": "jobpilot-ai workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2181,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:45.302Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2963b731d1c26f945271",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1748,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:47.496Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-46d9d405be80b0b20b52",
+          "title": "lobby workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2164,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:49.257Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-99648d8d91528a3e11f6",
+          "title": "gamezone-arena workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2102,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:51.433Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c107c096b4061b8df894",
+          "title": "unihub workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1438,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:53.550Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-99a4a898fc37cc23e137",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1364,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:55.003Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9e3df73efcc125d3fc00",
+          "title": "medicare-hub workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1136,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:56.384Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e065f23715c82b52f449",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1482,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:57.537Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e8e079b8b48d66d65cc6",
+          "title": "jobpilot-ai workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2203,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:42:59.038Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9aceb38781a8f35fbcc5",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2053,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:01.260Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bfac81891eab12e84c07",
+          "title": "lobby workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2273,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:03.329Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-145fabac07df4769f96f",
+          "title": "gamezone-arena workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2245,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:05.618Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-00c8652ae70054361680",
+          "title": "unihub workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1424,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:07.881Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b02d737925e1b551a644",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1512,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:09.320Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-76236e68d6d12fda4e8e",
+          "title": "medicare-hub workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1134,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:10.848Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2963030fe336da400307",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1518,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:12.003Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2715b8952c8d249990bb",
+          "title": "portrait Fit preserves the full image without upscaling; width and actual modes remain explicit",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 64,
+            "column": 1
+          },
+          "duration": 5473,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:13.541Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-17d236df93b6783793db",
+          "title": "viewer responsive failure can retry the complete original and retire an earlier attempt",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 1600,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:19.030Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-952a011ced82ef8e4197",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 131,
+            "column": 1
+          },
+          "duration": 1561,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:20.651Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-536d781bb3aed152e2fe",
+          "title": "jobpilot-ai workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5044,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:24.131Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-fd1272c5abf81ff97d07",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3223,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:29.926Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-19321fab8ddf27a0acdd",
+          "title": "lobby workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3760,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:33.185Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7a0a5631dc9709970dca",
+          "title": "gamezone-arena workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3743,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:36.974Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1d52e57341e0d5846919",
+          "title": "unihub workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2777,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:40.742Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-86811a2bc3b179628b3e",
+          "title": "full-stack-user-management-system workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2929,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:43.560Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-274b865e5ad6a2b19677",
+          "title": "medicare-hub workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2045,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:46.514Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-633425be17de8d4dd11b",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2477,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:48.588Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a7e71952b577101ceb28",
+          "title": "jobpilot-ai workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3780,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:51.095Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-121ce49b155173b2d776",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3149,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:54.901Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a6717f754ef8cb8ff6f2",
+          "title": "lobby workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3011,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:43:58.077Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b8b93182bbac6b1c9f9e",
+          "title": "gamezone-arena workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3715,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:01.110Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7a2f6273bdfe6b02d9f9",
+          "title": "unihub workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2348,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:04.847Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9f7098dd9f46b004cdaa",
+          "title": "full-stack-user-management-system workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2377,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:07.221Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5d66ca51b5e7dbf66d06",
+          "title": "medicare-hub workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1627,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:09.620Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-39ab3617544ce289a35e",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1973,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:11.269Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2b811dc6ab2ea37d4d9d",
+          "title": "jobpilot-ai workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3273,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:13.268Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-012954b2fa92a4a2a674",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3047,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:16.566Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1f0194ab7932484e9bb6",
+          "title": "lobby workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3276,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:19.634Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-50d587cd8cdff690bdc7",
+          "title": "gamezone-arena workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3367,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:22.931Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-98346e34aa5dc123fc70",
+          "title": "unihub workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1628,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:26.317Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-d86d4871dbb0abeb568b",
+          "title": "full-stack-user-management-system workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1412,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:27.959Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a6982074f9b750b7a7b7",
+          "title": "medicare-hub workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1238,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:29.385Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-43e73c229a2b00396a6e",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1623,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:30.640Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b3513cc29e56102936fd",
+          "title": "jobpilot-ai workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2478,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:32.278Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-171b2a46a8fcad051523",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2083,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:34.769Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-18ab806aedbac0dc76a7",
+          "title": "lobby workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2264,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:36.867Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7688ad74d1fdd4b84943",
+          "title": "gamezone-arena workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2623,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:39.144Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4b1ff9b62fd6631abecd",
+          "title": "unihub workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1652,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:41.780Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0117b68062d74583cc5e",
+          "title": "full-stack-user-management-system workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1592,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:43.445Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-33c8c34a7d43d35de1c0",
+          "title": "medicare-hub workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1271,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:45.053Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bcef6ab1089c51ee17fe",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1427,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:46.339Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-d50792fcd236d230f309",
+          "title": "jobpilot-ai workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2499,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:47.781Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9b78c8e17225cf202f1e",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2096,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:50.294Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a1c66e83e19469ad0752",
+          "title": "lobby workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2304,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:52.402Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0e8d5aeb69fa9750856d",
+          "title": "gamezone-arena workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2687,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:54.721Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a82552cd01e9cb0627bd",
+          "title": "unihub workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1727,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:57.425Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a4430d1230323f5f9808",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1633,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:44:59.166Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5d2fb73a05b6b50dc974",
+          "title": "medicare-hub workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1355,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:00.816Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f79b35da18cbf1330a51",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1654,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:02.191Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3a70940b78f9f03b2901",
+          "title": "jobpilot-ai workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2583,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:03.859Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9b4e6ae32875ca57effa",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2134,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:06.456Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-6df18761ef7796a183a4",
+          "title": "lobby workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2537,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:08.605Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ef782b4946246105d578",
+          "title": "gamezone-arena workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3040,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:11.154Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-54873e84ca9cb6c1c3b5",
+          "title": "unihub workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2704,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:14.212Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-859f4839067ce330f4c3",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2265,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:16.937Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e471d71cdddee34841fe",
+          "title": "medicare-hub workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2204,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:19.225Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-929f20d975d4936c556e",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2038,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:21.452Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1849f01eca8c05583a51",
+          "title": "portrait Fit preserves the full image without upscaling; width and actual modes remain explicit",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 64,
+            "column": 1
+          },
+          "duration": 6034,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:23.505Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b68b325f3d42127f7587",
+          "title": "viewer responsive failure can retry the complete original and retire an earlier attempt",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 1525,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:29.554Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5d8c4217eca6333f2be9",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 131,
+            "column": 1
+          },
+          "duration": 1488,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:31.100Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f8b2a374bcb6ede8af68",
+          "title": "jobpilot-ai workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4737,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:33.928Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-6233a4e4da29d28b8623",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2647,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:39.726Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-911e1216fa48f55346dc",
+          "title": "lobby workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2759,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:42.390Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-6bdafe414bd7aaab8d63",
+          "title": "gamezone-arena workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2914,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:45.163Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b4fc49dcc358801f87c9",
+          "title": "unihub workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1957,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:48.088Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-aed9d5f6ee3e243a3b38",
+          "title": "full-stack-user-management-system workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1756,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:50.061Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f8b01fc894bf92bec2f2",
+          "title": "medicare-hub workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1311,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:51.830Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-834b4e8a06b4e8a79ccf",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1862,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:53.157Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-71b686cfb2afc4c1b751",
+          "title": "jobpilot-ai workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2644,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:55.033Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-58301e6ba6f885b58cd3",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3907,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:45:57.691Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9f534dc9ef1a0cf1abd3",
+          "title": "lobby workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2878,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:01.613Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8845acb6a5944f3edee0",
+          "title": "gamezone-arena workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2908,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:04.506Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7963b8e5a77e1de97cb1",
+          "title": "unihub workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1850,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:07.428Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-76b2ac34d93859dc1ba2",
+          "title": "full-stack-user-management-system workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1770,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:09.292Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-347496a9eefeb2a5b779",
+          "title": "medicare-hub workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1419,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:11.078Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-be9affa3309f068321f3",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1737,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:12.511Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-40a3acaed0d2713b14b4",
+          "title": "jobpilot-ai workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2849,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:14.262Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c14e4344c4bcfac8c123",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2367,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:17.127Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a94f9fd719c9b475a184",
+          "title": "lobby workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2717,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:19.509Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2ebf31447dce81daf83d",
+          "title": "gamezone-arena workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4248,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:22.241Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-578a6d7f103f16caa29d",
+          "title": "unihub workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1947,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:26.503Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-341c4c101d3b3899eb0a",
+          "title": "full-stack-user-management-system workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1932,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:28.464Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-260d3a9745e15362c0df",
+          "title": "medicare-hub workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1419,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:30.409Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3306ab0c70a47f2cbbec",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1905,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:31.844Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a32e6f0e21cd3a2ed302",
+          "title": "jobpilot-ai workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3910,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:33.765Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-16184c15cd8026f10796",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2388,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:37.690Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b4a8af1ae2a6b69e452e",
+          "title": "lobby workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2834,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:40.094Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-613ce093fe1d35749666",
+          "title": "gamezone-arena workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2814,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:42.942Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4ca607eccf827bc82d0d",
+          "title": "unihub workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1958,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:45.772Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a3d7018eb8a4c2a64134",
+          "title": "full-stack-user-management-system workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4020,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:47.745Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-61ccc8b0c5b55186e4e3",
+          "title": "medicare-hub workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1259,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:51.779Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c92c2ec8f853778e1e9e",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1831,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:53.051Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-10642732513a5cd3be5b",
+          "title": "jobpilot-ai workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2992,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:54.896Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-22babafb6bc2ffdf6ad6",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2487,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:46:57.904Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c90c2dbae3b1c19fee8f",
+          "title": "lobby workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3165,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:00.406Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e2332b451aee239e1d1b",
+          "title": "gamezone-arena workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2979,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:03.586Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b86ce7c16f444b24546f",
+          "title": "unihub workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1946,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:06.580Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-cc49d8d43b33521b5f74",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1932,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:08.540Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-504a3662801a13f64c35",
+          "title": "medicare-hub workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1200,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:10.487Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1d7f64e5116a8324d66f",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3128,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:11.701Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c349353b0e2ea25921d9",
+          "title": "jobpilot-ai workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3112,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:14.843Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0c12f1ad99db820cf375",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2485,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:17.971Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-52722c78e53e93b78d3b",
+          "title": "lobby workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2919,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:20.473Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bf79423adb16e8157b91",
+          "title": "gamezone-arena workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3194,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:23.409Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ba22472beb82a3bdfc25",
+          "title": "unihub workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2066,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:26.619Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3659fdc5e013f03fceb1",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1903,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:28.703Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-33e4621b4ebe4630fd78",
+          "title": "medicare-hub workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1497,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:30.620Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c864f314bd441fdbce7c",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1911,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:32.133Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-d3ef2175dfcfac1f67a7",
+          "title": "portrait Fit preserves the full image without upscaling; width and actual modes remain explicit",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 64,
+            "column": 1
+          },
+          "duration": 8275,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:34.059Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c8f2ec3c0ef337d37d24",
+          "title": "viewer responsive failure can retry the complete original and retire an earlier attempt",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 3426,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:42.348Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e548fd362863cc0c0f03",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 131,
+            "column": 1
+          },
+          "duration": 1915,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:45.789Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f0309dcce2f6b72c7b6b",
+          "title": "jobpilot-ai workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5143,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:49.276Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-855b3df322527dc38519",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3566,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:54.559Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2718244a2d8aa7f058fc",
+          "title": "lobby workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4697,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:47:58.148Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3d58e9602ff081a0105d",
+          "title": "gamezone-arena workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5222,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:02.859Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4002b67d33ee013d92ff",
+          "title": "unihub workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2888,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:08.094Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-58402845beb6caef94e3",
+          "title": "full-stack-user-management-system workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3938,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:10.996Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-50ea88543e3a732bc29d",
+          "title": "medicare-hub workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2498,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:14.952Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5695f7377e3b8d15824e",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4427,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:17.470Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b6ad883dece8ef90c865",
+          "title": "jobpilot-ai workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5141,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:21.916Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-43f4e5ab3ec14d399ec6",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3735,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:27.073Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ed1f550b82846ab9d7e3",
+          "title": "lobby workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 7377,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:30.822Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bd4350a661fea0055f9c",
+          "title": "gamezone-arena workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5472,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:38.216Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2ae5d479c9ee4bc962ad",
+          "title": "unihub workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2806,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:43.702Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0c38760e621dd83d4cda",
+          "title": "full-stack-user-management-system workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2567,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:46.519Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-82ea673d64024c4ca9d8",
+          "title": "medicare-hub workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1637,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:49.100Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-dba97074bafca0155760",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2792,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:50.750Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-502fe644471ea1109749",
+          "title": "jobpilot-ai workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5246,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:53.553Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3f28b45620f809b2d26d",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4156,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:48:58.812Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-97ecb5a4d9ca37610420",
+          "title": "lobby workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5131,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:02.980Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-a761fcf3094b2f65b5a1",
+          "title": "gamezone-arena workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5502,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:08.123Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8e0af554e7e3b7fcacae",
+          "title": "unihub workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3710,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:13.637Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-467bb7f61271afa1c42f",
+          "title": "full-stack-user-management-system workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4137,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:17.361Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e3c4b1b10ac33e7c97b2",
+          "title": "medicare-hub workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1657,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:21.512Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7c0037cebfb58ca14b43",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2833,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:23.182Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b66afcfed532a4181eaa",
+          "title": "jobpilot-ai workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 7593,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:26.028Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9c6b3bde9c374995fb7f",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5963,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:33.632Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5cf0b2332a571411cc93",
+          "title": "lobby workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 8420,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:39.607Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f46b7ddd2dd3ec293360",
+          "title": "gamezone-arena workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 8298,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:48.042Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-61fd20eb1404cfce7ae2",
+          "title": "unihub workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3600,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:56.353Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b5c39579c75605c04346",
+          "title": "full-stack-user-management-system workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3601,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:49:59.966Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8bd762944bc804f979fb",
+          "title": "medicare-hub workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2131,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:03.581Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bb98f2d6b57aedc04dee",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3801,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:05.726Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1212925b054e69283bd4",
+          "title": "jobpilot-ai workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 10022,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:09.540Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-988da18b6f73074f53cd",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 7603,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:19.574Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e31ccc1563f4d90fa9a8",
+          "title": "lobby workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 8859,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:27.189Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-041406cc91805e636150",
+          "title": "gamezone-arena workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 9707,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:36.063Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e0e6cde95d03ae6cfe7b",
+          "title": "unihub workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4248,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:45.782Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-dcb91a20e9ccf7300b67",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4278,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:50.042Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4879370159dc5c1821c8",
+          "title": "medicare-hub workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2322,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:54.333Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2c0951aeed25c512204b",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4030,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:50:56.669Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-0bf87a2e0bcadf701c4a",
+          "title": "jobpilot-ai workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 11060,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:00.712Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-324e0b6a6913e14d0932",
+          "title": "construction-project-management-accounting-system workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 8048,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:11.783Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-672128167d54934f2c09",
+          "title": "lobby workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 10542,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:19.842Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b13679d6ed02010e78c4",
+          "title": "gamezone-arena workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 11844,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:30.397Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-57f1d23acf30e26f9e87",
+          "title": "unihub workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5563,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:42.255Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-9ebce1c89e643a2b69e2",
+          "title": "full-stack-user-management-system workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 5532,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:47.831Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-89f9cb5a2bc57367fdf6",
+          "title": "medicare-hub workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3150,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:53.374Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ef1cb1a021a102d40dd5",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4692,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:51:56.536Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c30b28308e12a7935d18",
+          "title": "portrait Fit preserves the full image without upscaling; width and actual modes remain explicit",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 64,
+            "column": 1
+          },
+          "duration": 18843,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:52:01.244Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-813aea2c425196f4eade",
+          "title": "viewer responsive failure can retry the complete original and retire an earlier attempt",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 2454,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:52:20.102Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8611d6f2f004bf97800e",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 131,
+            "column": 1
+          },
+          "duration": 6452,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:52:22.570Z",
+              "workerIndex": 4
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 255,
+        "expected": 255,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium",
+    "media-firefox",
+    "media-webkit"
+  ],
+  "stats": {
+    "total": 255,
+    "expected": 255,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

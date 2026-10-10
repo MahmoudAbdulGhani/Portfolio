@@ -1,0 +1,346 @@
+[
+  {
+    "slug": "jobpilot-ai",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 127,
+      "width": 270,
+      "height": 32,
+      "top": 127,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 71,
+      "width": 270,
+      "height": 48,
+      "top": 71,
+      "right": 295,
+      "bottom": 119,
+      "left": 25
+    }
+  },
+  {
+    "slug": "lobby",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 127,
+      "width": 270,
+      "height": 32,
+      "top": 127,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 71,
+      "width": 270,
+      "height": 48,
+      "top": 71,
+      "right": 295,
+      "bottom": 119,
+      "left": 25
+    }
+  },
+  {
+    "slug": "gamezone-arena",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 137,
+      "width": 270,
+      "height": 22,
+      "top": 137,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 81,
+      "width": 270,
+      "height": 48,
+      "top": 81,
+      "right": 295,
+      "bottom": 129,
+      "left": 25
+    }
+  },
+  {
+    "slug": "construction-project-management-accounting-system",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 137,
+      "width": 270,
+      "height": 22,
+      "top": 137,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 81,
+      "width": 270,
+      "height": 48,
+      "top": 81,
+      "right": 295,
+      "bottom": 129,
+      "left": 25
+    }
+  },
+  {
+    "slug": "unihub",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 137,
+      "width": 270,
+      "height": 22,
+      "top": 137,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 81,
+      "width": 270,
+      "height": 48,
+      "top": 81,
+      "right": 295,
+      "bottom": 129,
+      "left": 25
+    }
+  },
+  {
+    "slug": "full-stack-user-management-system",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 127,
+      "width": 270,
+      "height": 32,
+      "top": 127,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 71,
+      "width": 270,
+      "height": 48,
+      "top": 71,
+      "right": 295,
+      "bottom": 119,
+      "left": 25
+    }
+  },
+  {
+    "slug": "medicare-hub",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 137,
+      "width": 270,
+      "height": 22,
+      "top": 137,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 81,
+      "width": 270,
+      "height": 48,
+      "top": 81,
+      "right": 295,
+      "bottom": 129,
+      "left": 25
+    }
+  },
+  {
+    "slug": "home-services",
+    "title": {
+      "x": 25,
+      "y": 19,
+      "width": 270,
+      "height": 18.1875,
+      "top": 19,
+      "right": 295,
+      "bottom": 37.1875,
+      "left": 25
+    },
+    "image": {
+      "x": 25,
+      "y": 127,
+      "width": 270,
+      "height": 32,
+      "top": 127,
+      "right": 295,
+      "bottom": 159,
+      "left": 25
+    },
+    "footer": {
+      "x": 25,
+      "y": 167,
+      "width": 270,
+      "height": 48,
+      "top": 167,
+      "right": 295,
+      "bottom": 215,
+      "left": 25
+    },
+    "tools": {
+      "x": 25,
+      "y": 71,
+      "width": 270,
+      "height": 48,
+      "top": 71,
+      "right": 295,
+      "bottom": 119,
+      "left": 25
+    }
+  }
+]

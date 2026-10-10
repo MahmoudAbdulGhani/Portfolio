@@ -48,3 +48,34 @@ test('authored detail rectangles stay inside complete originals and preserve sou
   assert.equal(caseMedia.filter(item => item.mobile).length, 3);
   assert.equal(caseMedia.filter(item => item.slug === 'medicare-hub').every(item => !item.details.length && !item.mobile), true);
 });
+
+test('complete reader variants preserve every original boundary and never upscale a source', async () => {
+  const assets = JSON.parse((await readFile('src/generated/complete-case-media.ts', 'utf8')).split('export const completeCaseMedia: Record<string, ProjectImageAsset & { src: string }> = ')[1].trim().replace(/;$/, ''));
+  const { sources } = JSON.parse(await readFile('docs/design/complete-case-media/sources.json', 'utf8'));
+  assert.equal(Object.keys(assets).length, 50);
+  const variantOwners = new Map();
+  for (const source of sources) {
+    const asset = assets[source.identity];
+    assert.equal(asset.width, source.width); assert.equal(asset.height, source.height);
+    assert.equal(asset.src, source.src);
+    assert.ok(!asset.src.includes('/projects/case-media/'));
+    for (const format of ['avif', 'webp']) for (const variant of asset[format].split(', ')) {
+      const [src, descriptor] = variant.split(' ');
+      assert.ok(!variantOwners.has(src), `Different originals must not overwrite the same variant: ${src}`);
+      variantOwners.set(src, source.identity);
+      const width = Number(descriptor.slice(0, -1));
+      const metadata = await sharp(`public${src}`).metadata();
+      assert.equal(metadata.width, width, src);
+      assert.ok(width <= source.width, `No invented resolution: ${src}`);
+      assert.ok(Math.abs(metadata.height - source.height * width / source.width) <= 0.5, `Whole original proportions: ${src}`);
+    }
+    if (source.src.startsWith('/projects/complete/')) {
+      const expected = await sharp(source.master).raw().toBuffer();
+      const original = await sharp(`public${source.src}`).raw().toBuffer();
+      assert.deepEqual(original, expected, 'Full-resolution lossless original retains every pixel');
+    }
+  }
+  assert.ok(assets['/projects/phase3/gamezone-session.webp'].width > 2360, 'Restore full desktop master instead of enlarging the 1920px derivative');
+  assert.equal(assets['/projects/unihub/transcipt.webp'].width, 1914, 'Transcript source quality is honestly bounded');
+  assert.equal(assets['/projects/responsive/user-management-phone.webp'].width, 343, 'Phone excerpt is not given invented detail');
+});

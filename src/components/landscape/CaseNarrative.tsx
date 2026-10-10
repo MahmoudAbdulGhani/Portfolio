@@ -1,7 +1,7 @@
 import { FiArrowUpRight } from 'react-icons/fi';
-import { useSyncExternalStore } from 'react';
+import type { CSSProperties } from 'react';
 import type { Project } from '../../types';
-import { mediaPresentation, screenGeometry, type DetailScreen } from '../../lib/project-detail-screens';
+import { completeScreenSource, screenColumnWidth, screenGeometry, screenSizes, type DetailScreen } from '../../lib/project-detail-screens';
 import type { CaseStudy } from '../../../shared/case-study-runtime';
 import { selectedContributions, screenMatches } from '../../../shared/case-study-runtime';
 import { nonempty, projectDisplayName } from '../../../shared/content-integrity';
@@ -9,29 +9,23 @@ import { ScreenshotFrame } from './ScreenshotFrame';
 import { CaseDisclosure } from './CaseDisclosure';
 import './case-narrative.css';
 
-const phoneQuery = '(max-width: 720px)';
-const subscribePhone = (notify: () => void) => {
-  const query = matchMedia(phoneQuery);
-  query.addEventListener('change', notify);
-  return () => query.removeEventListener('change', notify);
-};
-
 export function CaseNarrative({ project, study, screens, openGallery }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
-  openGallery: (index: number, trigger: HTMLButtonElement, alternate?: DetailScreen) => void;
+  openGallery: (index: number, trigger: HTMLButtonElement) => void;
 }) {
-  const phone = useSyncExternalStore(subscribePhone, () => matchMedia(phoneQuery).matches, () => false);
   const workflow = study.workflow.flatMap(step => {
-    const index = step.matches.map(match => screens.findIndex(screen => screenMatches(screen.src, [match]))).find(index => index >= 0) ?? -1;
+    const index = step.matches.map(match => screens.findIndex(screen => screenMatches(screen.src, [completeScreenSource(match)]))).find(index => index >= 0) ?? -1;
     const screen = screens[index];
     const image = screen && screenGeometry(screen);
-    const media = screen && mediaPresentation(screen.src);
-    const mobile = phone ? media?.mobile : undefined;
-    const details = mobile ? [mobile] : media?.details.length ? media.details : screen && image ? [{ ...image, src: screen.src, label: screen.label }] : [];
-    return screen && image ? [{ ...step, index, screen, mobile, details, authored: Boolean(mobile || media?.details.length) }] : [];
-  });
+    return screen && image ? [{ ...step, index, screen, image }] : [];
+  }).reduce<Array<{ index: number; screen: DetailScreen; image: { width: number; height: number }; explanations: CaseStudy['workflow'] }>>((figures, step) => {
+    const existing = figures.find(figure => figure.screen.src === step.screen.src);
+    if (existing) existing.explanations.push(step);
+    else figures.push({ ...step, explanations: [step] });
+    return figures;
+  }, []);
   const role = project.myRole?.trim(), ownership = project.ownership?.trim();
   const completeContributions = nonempty(project.contributions);
   const contributions = selectedContributions(project, study);
@@ -52,14 +46,14 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
           {workflow.map((step, index) => <figure key={step.screen.src}>
             <figcaption className="workflow-intro">
               <span className="workflow-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{step.title}</h3><p>{step.notice}</p></div>
+              <div><h3>{step.explanations[0].title}</h3><p>{step.explanations.map((explanation, i) => <span key={explanation.title}>{i > 0 && <strong>{explanation.title} </strong>}{explanation.notice}{' '}</span>)}</p></div>
             </figcaption>
-            <div className="workflow-details">{step.details.map(detail => <div className={`workflow-detail${detail.height > detail.width ? ' is-portrait' : ''}`} key={detail.src}>
-              {step.authored && <p className="workflow-detail-label">{step.mobile ? 'Phone capture' : 'Detail view'} · {detail.label}</p>}
-              <ScreenshotFrame src={detail.src} alt={`${projectDisplayName(project)}: ${detail.label}. ${step.notice}`} label={detail.label} ratio={`${detail.width} / ${detail.height}`}
-                className="workflow-image" enlarge={trigger => openGallery(step.index, trigger, step.mobile ? { src: step.mobile.fullSrc, label: detail.label, viewport: 'phone' } : undefined)} sizes="(max-width:720px) calc(100vw - 32px), 740px" />
-            </div>)}</div>
-            <button className="text-link workflow-full-screen" onClick={event => openGallery(step.index, event.currentTarget, step.mobile ? { src: step.mobile.fullSrc, label: step.mobile.label, viewport: 'phone' } : undefined)}>View full screen<FiArrowUpRight /></button>
+            <div className="workflow-details">
+              <ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}`} label={step.screen.label} ratio={`${step.image.width} / ${step.image.height}`}
+                style={{ '--frame-max-width': `${screenColumnWidth(step.screen)}px` } as CSSProperties}
+                className="workflow-image" enlarge={trigger => openGallery(step.index, trigger)} sizes={screenSizes(step.screen)} />
+            </div>
+            <button className="text-link workflow-full-screen" onClick={event => openGallery(step.index, event.currentTarget)}>View full screen<FiArrowUpRight /></button>
           </figure>)}
         </div>
       </section>}
