@@ -1,6 +1,6 @@
 # Phase 3 follow-up: lazy-image lifecycle — 10 October 2026
 
-Branch `fix/phase-3-lazy-image-lifecycle` is stacked on approved Phase 3 `21bf413ffc0ec63f7d13d69a6d03b7bffbb61442` / draft #14. Checked branch and working tree first, refreshed origin, and preserved the user's untracked handoff. No newer tracked work was present.
+Branch `fix/phase-3-lazy-image-lifecycle` is stacked on approved Phase 3 `21bf413ffc0ec63f7d13d69a6d03b7bffbb61442` / draft #14. [Draft PR #15](https://github.com/MahmoudAbdulGhani/Portfolio/pull/15) targets `refine/phase-3-composition-media`. Implementation commit: `c8372437852bb94f58c0d480bd051232e92e1098`. Checked branch and working tree first, refreshed origin, and preserved the user's untracked handoff. No newer tracked work was present.
 
 ## Confirmed cause and implementation
 
@@ -15,7 +15,8 @@ Load/error and cached `complete` + positive `naturalWidth` resolve the current a
 - `npm run test:e2e -- tests/e2e/case-media.spec.ts tests/e2e/case-study.spec.ts --workers=1`: **57 passed**, across desktop, tablet and mobile Chrome. Six new cases per browser cover both projects waiting offscreen beyond 15 seconds, a precisely clocked eligible workflow failing at 15,000ms (still loading at 14,999ms), repeated visibility without a reset, source replacement during loading, retired responsive failure after successful original retry, and returning to a decoded cached image without another request. Existing true-error/retry, late stall recovery, chooser, viewer focus, frame/caption and portrait assertions remain.
 - The cached-image case uses a separate browser page with fetch-only API fixtures, retaining native image caching; network routing would disable HTTP caching. Other contract cases use synthetic CMS/pixel responses and held/failed requests. These are controlled regressions, not production asset availability measurements.
 - The existing delayed-workflow test now waits for the image to attach after visibility activation before reading `naturalWidth`; its dimensions, caption and decode assertions are unchanged. Development runs exposed this missing wait and an automatically advancing test clock; the final exact-boundary case pauses the clock after content is ready and scrolls without Playwright's RAF-dependent stability wait. No production timeout or existing assertion threshold was relaxed.
-- Typecheck, lint, production build, JavaScript-only API startup, **16 integrity tests** and whitespace checks passed. The build retains its existing large-chunk advisory. Complete GitHub CI evidence will be recorded in this section and the draft PR after the workflow finishes.
+- Typecheck, lint, production build, JavaScript-only API startup, **16 integrity tests** and whitespace checks passed. The build retains its existing large-chunk advisory.
+- Complete [GitHub CI #69](https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/38042145687) **passed** on implementation `c837243`. Clean Ubuntu/Node 22 runner: both dependency installs, explicit server Prisma generation (no migration), typecheck, lint, build, API startup, all **16 integrity tests** and all **216 browser tests** passed. Browser execution took **5.7 minutes**, with no failures, skips, retries or flaky results. Job `114184348926` completed at `2026-10-10T09:46:06Z`. [Immutable CI evidence](docs/design/phase3/lazy-image-followup/ci-run-69.json). Final documentation-head CI result is recorded in draft PR #15 to avoid another documentation/CI commit loop.
 
 ## Actual-image observations
 
