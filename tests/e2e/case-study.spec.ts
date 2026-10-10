@@ -64,6 +64,7 @@ test('a delayed workflow image reserves its frame and keeps its caption in place
   await page.goto('/projects/jobpilot-ai');
   const figure = page.locator('.workflow-frames figure').first();
   await figure.scrollIntoViewIfNeeded();
+  await expect(figure.locator('img')).toBeAttached();
   const before = await figure.evaluate(el => ({ height: el.querySelector('button')!.getBoundingClientRect().height, caption: el.querySelector('figcaption')!.getBoundingClientRect().top, loaded: (el.querySelector('img') as HTMLImageElement).naturalWidth > 0 }));
   expect(before.height).toBeGreaterThan(150);
   expect(before.loaded).toBe(false);

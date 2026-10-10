@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-10T09:36:58.143Z",
+  "method": "Read-only fresh public original-image GET, compared to recorded Phase 3 hashes",
+  "results": [
+    {
+      "identity": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+      "status": "retrieved",
+      "bytes": 157739,
+      "sha256": "36da17bcf68e953168271fbe2ca3e1895a9abc3b45cf79310c07dafb4630248e",
+      "matched": true
+    },
+    {
+      "identity": "79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "status": "retrieved",
+      "bytes": 160728,
+      "sha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "matched": true
+    },
+    {
+      "identity": "aba248de-e871-483a-b413-e0db8d4df718.png",
+      "status": "retrieved",
+      "bytes": 175620,
+      "sha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "matched": true
+    },
+    {
+      "identity": "8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "status": "retrieved",
+      "bytes": 150829,
+      "sha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "matched": true
+    },
+    {
+      "identity": "c2dd1975-4f17-4f8d-b6ad-eb071dbc20be.png",
+      "status": "retrieved",
+      "bytes": 1746481,
+      "sha256": "3c4a36f01fa625e544ea43155db05f96120ae2c52a2e8f4785d40562180242d7",
+      "matched": true
+    }
+  ]
+}

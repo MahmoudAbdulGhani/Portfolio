@@ -126,3 +126,117 @@ test('primary loading space stays reserved and portrait captures keep their prop
   await expect(page.locator('.case-inspector-notice')).toContainText('demonstration data, not business results');
   await page.keyboard.press('Escape'); await expect(inspect).toBeFocused();
 });
+
+for (const slug of ['jobpilot-ai', 'gamezone-arena']) test(`${slug} waits offscreen beyond the deadline before loading workflow media`, async ({ page }) => {
+  await page.clock.install();
+  await page.goto(`/projects/${slug}`);
+  const frame = page.locator('.workflow-frames .screenshot-frame').last();
+  await expect(frame).toBeAttached();
+  expect((await frame.boundingBox())!.y).toBeGreaterThan((page.viewportSize()!.height) + 600);
+  await expect(frame.locator('img')).toHaveCount(0);
+  const dimensions = await frame.evaluate(el => ({ width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height }));
+  await page.clock.fastForward(16_000);
+  await expect(frame).toHaveAttribute('data-image-state', 'loading');
+  await expect(frame.getByText('This image is unavailable.')).toHaveCount(0);
+  await expect(frame.locator('img')).toHaveCount(0);
+  await frame.scrollIntoViewIfNeeded();
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+  expect(await frame.evaluate(el => ({ width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height }))).toEqual(dimensions);
+});
+
+test('a workflow deadline starts once at eligibility and does not reset when visibility changes', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-10-10T00:00:00Z') });
+  let release!: () => void;
+  const pending = new Promise<void>(resolve => { release = resolve; });
+  await page.route('**/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png', async route => {
+    await pending; await route.fulfill({ contentType: 'image/png', body: pixel });
+  });
+  await page.goto('/projects/jobpilot-ai');
+  await expect(page.locator('.case-heading')).toBeAttached();
+  await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 1_000));
+  const frame = page.locator('.workflow-frames .screenshot-frame').last();
+  await frame.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+  await expect(frame.locator('img')).toBeAttached();
+  await page.clock.fastForward(10_000);
+  await page.locator('.case-heading').evaluate(el => el.scrollIntoView({ behavior: 'instant' }));
+  await frame.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+  await page.clock.fastForward(4_999);
+  await expect(frame).toHaveAttribute('data-image-state', 'loading');
+  await page.clock.fastForward(1);
+  await expect(frame).toHaveAttribute('data-image-state', 'failed');
+  release();
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+});
+
+test('changing sources retires the previous deadline and late request events', async ({ page }) => {
+  await page.clock.install();
+  let releaseOld!: () => void, releaseNew!: () => void;
+  const oldRequest = new Promise<void>(resolve => { releaseOld = resolve; });
+  const newRequest = new Promise<void>(resolve => { releaseNew = resolve; });
+  await page.route('**/710055a0-a275-4e6a-991d-4aaa23c6e549.png', async route => { await oldRequest; await route.fulfill({ status: 503, body: '' }); });
+  await page.route('**/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png', async route => { await newRequest; await route.fulfill({ contentType: 'image/png', body: pixel }); });
+  await page.goto('/projects/jobpilot-ai');
+  const frame = page.locator('.case-figure .screenshot-frame');
+  await expect(frame.locator('img')).toBeAttached();
+  await page.clock.fastForward(10_000);
+  await page.locator('.case-media-chooser summary').click();
+  await page.locator('.case-media-chooser').getByRole('button', { name: /Discover jobs/ }).click();
+  await expect(frame.locator('img')).toHaveAttribute('src', /79bf6e53/);
+  await page.clock.fastForward(5_000);
+  await expect(frame).toHaveAttribute('data-image-state', 'loading');
+  releaseNew(); await expect(frame).toHaveAttribute('data-image-state', 'ready');
+  releaseOld(); await page.clock.fastForward(16_000);
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+  await expect(frame.getByText('This image is unavailable.')).toHaveCount(0);
+});
+
+test('retry owns a fresh deadline and ignores the retired responsive request', async ({ page }) => {
+  await page.clock.install();
+  let release!: () => void;
+  const pending = new Promise<void>(resolve => { release = resolve; });
+  await page.route('**/projects/phase3/gamezone-rooms*', async route => {
+    if (new URL(route.request().url()).pathname.endsWith('gamezone-rooms.webp')) return route.fulfill({ contentType: 'image/png', body: pixel });
+    await pending; await route.fulfill({ status: 503, body: '' });
+  });
+  await page.goto('/projects/gamezone-arena');
+  const frame = page.locator('.case-figure .screenshot-frame');
+  await expect(frame.locator('img')).toBeAttached();
+  await page.clock.fastForward(15_000);
+  await expect(frame).toHaveAttribute('data-image-state', 'failed');
+  await frame.getByRole('button', { name: 'Retry image' }).click();
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+  await expect(frame.locator('picture')).toHaveCount(0);
+  release(); await page.clock.fastForward(16_000);
+  await expect(frame).toHaveAttribute('data-image-state', 'ready');
+});
+
+test('returning to a decoded cached image is ready without a second request', async ({ browser, baseURL }) => {
+  // A separate page with fetch-only API fixtures keeps native image caching
+  // enabled. Playwright request routing disables the browser's HTTP cache.
+  const cachedPage = await browser.newPage({ reducedMotion: 'reduce' });
+  try {
+    await cachedPage.addInitScript(projects => {
+      const fetch = window.fetch.bind(window);
+      window.fetch = (input, init) => {
+        const path = new URL(typeof input === 'string' ? input : input instanceof Request ? input.url : input.toString(), location.href).pathname;
+        if (path.startsWith('/api/')) {
+          const body = path === '/api/projects' ? projects : path.startsWith('/api/projects/') ? projects.find(project => path === `/api/projects/${project.slug}`) : [];
+          return Promise.resolve(new Response(JSON.stringify(body ?? []), { headers: { 'Content-Type': 'application/json' } }));
+        }
+        return fetch(input, init);
+      };
+    }, caseStudyProjects);
+    await cachedPage.goto(`${baseURL}/projects/gamezone-arena`);
+    const frame = cachedPage.locator('.case-figure .screenshot-frame');
+    await expect(frame).toHaveAttribute('data-image-state', 'ready');
+    const src = await frame.locator('img').evaluate(img => (img as HTMLImageElement).currentSrc);
+    const requests = await cachedPage.evaluate(url => performance.getEntriesByName(url).length, src);
+    const chooser = cachedPage.locator('.case-media-chooser');
+    await chooser.locator('summary').click(); await chooser.locator('button').nth(1).click();
+    await expect(frame).toHaveAttribute('data-image-state', 'ready');
+    await chooser.locator('summary').click(); await chooser.locator('button').first().click();
+    await expect(frame).toHaveAttribute('data-image-state', 'ready');
+    expect(await frame.locator('img').evaluate(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0)).toBe(true);
+    expect(await cachedPage.evaluate(url => performance.getEntriesByName(url).length, src)).toBe(requests);
+  } finally { await cachedPage.close(); }
+});
