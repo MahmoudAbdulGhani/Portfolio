@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791635695064,
+  "duration": 36742.309,
+  "files": [
+    {
+      "fileId": "5089bec74d87a8f9e39c",
+      "fileName": "engineered-landscape.spec.ts",
+      "tests": [
+        {
+          "testId": "5089bec74d87a8f9e39c-998159c14777a59029ea",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 5698,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:34:56.815Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-85bafc26dfa073e42829",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 4244,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:03.010Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-ee376a69ff178bf7e0c1",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 1432,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:07.275Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-1dc8883a5f5cd00c1537",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 3624,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:09.739Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-9f38ddde3d38bca4dabe",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 4407,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:13.824Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-d0d069289ab54d923e46",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 1460,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:18.259Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-13457ea1360fc77dd402",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 4013,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:20.655Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b013226e39af587850e0",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 4442,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:25.212Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-bfaaee216ec0999872e8",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 1712,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:35:29.673Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 9,
+        "expected": 9,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 9,
+    "expected": 9,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

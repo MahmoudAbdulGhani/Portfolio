@@ -388,10 +388,10 @@ test("photographic fallback reserves the image and keeps caption and controls us
   );
   const observations = await page.evaluate(
     () =>
-      new Promise<{ captionTops: number[]; partialImage: boolean; blockedControls: boolean }>(
+      new Promise<{ captionTops: number[]; partialImage: boolean; blockedControls: boolean; blankHandoff: boolean }>(
         (resolve) => {
           const captionTops: number[] = [];
-          let partialImage = false, blockedControls = false;
+          let partialImage = false, blockedControls = false, blankHandoff = false;
           const inspect = () => {
             const surface =
               document.querySelector<HTMLElement>(".product-surface")!;
@@ -403,12 +403,16 @@ test("photographic fallback reserves the image and keeps caption and controls us
             const image = surface.querySelector<HTMLImageElement>('.project-image-current img')!;
             if (getComputedStyle(image).visibility !== 'hidden' && (!image.complete || !image.naturalWidth || surface.dataset.imageReady !== 'true')) partialImage = true;
             if (detail.inert || parseFloat(getComputedStyle(detail).opacity) < 0.999) blockedControls = true;
+            const photograph = document.querySelector<HTMLElement>('.cedar-object')!;
+            const core = photograph.querySelector<HTMLElement>('.object-core')!;
+            const photoOpacity = parseFloat(getComputedStyle(photograph).opacity) * parseFloat(getComputedStyle(core).opacity);
+            if (photoOpacity < 0.01 && parseFloat(getComputedStyle(surface).opacity) < 0.01) blankHandoff = true;
             if (
               document
                 .querySelector(".is-expanded")
                 ?.getAttribute("data-selection-state") === "settled"
             )
-              resolve({ captionTops, partialImage, blockedControls });
+              resolve({ captionTops, partialImage, blockedControls, blankHandoff });
             else requestAnimationFrame(inspect);
           };
           inspect();
@@ -417,6 +421,7 @@ test("photographic fallback reserves the image and keeps caption and controls us
   );
   expect(observations.partialImage).toBe(false);
   expect(observations.blockedControls).toBe(false);
+  expect(observations.blankHandoff).toBe(false);
   expect(
     Math.max(...observations.captionTops) -
       Math.min(...observations.captionTops),

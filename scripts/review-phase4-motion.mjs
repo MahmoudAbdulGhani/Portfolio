@@ -8,7 +8,8 @@ const phase = process.argv[2] || 'before';
 if (!['before', 'after'].includes(phase)) throw new Error('Unknown phase');
 const port = phase === 'before' ? 5186 : Number(process.argv[3] || 5185);
 const timingsOnly = process.argv.includes('--timings-only');
-const output = `docs/design/phase4/${phase}`;
+const forcedFallback = process.argv.includes('--fallback');
+const output = `docs/design/phase4/${forcedFallback?'fallback':phase}`;
 await mkdir(output, { recursive: true });
 const content = JSON.parse(await readFile('.motion-preview/phase3-public-content.json', 'utf8'));
 const originals = JSON.parse(await readFile('docs/design/phase3/published-image-dimensions.json', 'utf8')).records;
@@ -16,7 +17,7 @@ const objects = [['jobpilot', 'JobPilot AI'], ['lobby', 'Lobby'], ['cedar', 'Ced
 const findings = [];
 const browser = await chromium.launch({ channel: 'chrome' });
 try {
-  for (const [width, height] of [[1363, 936], [1024, 1366], [390, 844], [320, 844]]) for (const [kind, title] of objects) {
+  for (const [width, height] of (forcedFallback ? [[1363,936],[390,844]] : [[1363, 936], [1024, 1366], [390, 844], [320, 844]])) for (const [kind, title] of objects) {
     const context = await browser.newContext({ viewport: { width, height }, hasTouch: width <= 1024, reducedMotion: 'no-preference', recordVideo: timingsOnly ? undefined : { dir: '.motion-preview/phase4-videos', size: { width, height } } });
     const page = await context.newPage();
     const screenshot = options => timingsOnly ? Promise.resolve() : page.screenshot(options);
@@ -51,6 +52,10 @@ try {
         requestAnimationFrame(acknowledged);
       });
     });
+    if (forcedFallback) await page.addInitScript(() => {
+      const getContext = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function(type,...args) { return type==='webgl2'?null:getContext.call(this,type,...args); };
+    });
     page.on('pageerror', error => errors.push(error.message));
     await page.route('**/*', route => {
       if (!['GET','HEAD'].includes(route.request().method())) { writes.push(route.request().method()); return route.abort(); }
@@ -77,7 +82,7 @@ try {
     await expect(rig).toHaveAttribute('data-renderer', /webgl|fallback/);
     const renderer = await rig.getAttribute('data-renderer');
     await page.waitForTimeout(150);
-    await screenshot({ path: `${output}/${kind}-${width}-02-articulation.jpg`, quality: 85 });
+    await screenshot({ path: `${output}/${kind}-${width}-02-${forcedFallback?'handoff':'articulation'}.jpg`, quality: 85 });
     await expect(page.locator('.is-expanded')).toHaveAttribute('data-selection-state', 'settled');
     await screenshot({ path: `${output}/${kind}-${width}-03-active.jpg`, quality: 85 });
     let device = null;
@@ -118,4 +123,4 @@ try {
     console.log(`${phase}: ${kind} ${width}px ${renderer} opening/return passed`);
   }
 } finally { await browser.close(); }
-await writeFile(`${output}/${timingsOnly?'timings':'findings'}.json`, JSON.stringify({ date:new Date().toISOString(), phase, timingsOnly, source: phase==='before'?'Approved 66bba23 isolated worktree':'Current Phase 4 code', data:'Frozen Phase 3 public GET snapshot; API writes/counters blocked', media:'Actual local sculpture/project images and hash-verified unmodified public PNGs; no pixel fixtures', browser:'Installed Chrome default renderer; no forced fallback/software flags; native no-preference', findings },null,2)+'\n');
+await writeFile(`${output}/${timingsOnly?'timings':'findings'}.json`, JSON.stringify({ date:new Date().toISOString(), phase, timingsOnly, source: phase==='before'?'Approved 66bba23 isolated worktree':'Current Phase 4 code', data:'Frozen Phase 3 public GET snapshot; API writes/counters blocked', media:'Actual local sculpture/project images and hash-verified unmodified public PNGs; no pixel fixtures', browser:forcedFallback?'Controlled unsupported-WebGL getContext result; photographic fallback with actual media; not GPU proof':'Installed Chrome default renderer; no forced fallback/software flags; native no-preference', findings },null,2)+'\n');

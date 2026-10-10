@@ -289,7 +289,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
       } });
       animation.current = timeline;
       timeline.to(objects.filter(item => item !== object), { opacity: 0.12, duration: reduced ? 0.01 : 0.16 }, 0)
-        .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.48)
+        .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.68)
         .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : 0.68);
       if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: 0, duration: 0.2 }, 0.78);
       else timeline.to(object, { opacity: 0.12, duration, ease: 'power2.inOut' }, 0);
