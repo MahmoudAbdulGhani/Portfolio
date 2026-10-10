@@ -21,3 +21,14 @@
   object-position: center;
   transform: none;
 }
+
+.project-image-handoff { display: block; position: relative; width: 100%; }
+.project-image-handoff.is-frame, .project-image-handoff.is-frame .project-image-current { height: 100%; }
+.project-image-current { display: block; opacity: 0; transition: opacity 220ms ease-in-out; }
+.project-image-handoff[data-image-state="ready"] > .project-image-current { opacity: 1; }
+.project-image-previous { position: absolute; inset: 0; display: block; pointer-events: none; opacity: 1; transition: opacity 220ms ease-in-out; }
+.project-image-previous img { display: block; width: 100%; height: auto; }
+.project-image-handoff.is-frame .project-image-previous img { height: 100%; object-fit: contain; }
+.project-image-handoff[data-image-state="ready"] > .project-image-previous { opacity: 0; }
+.project-image-handoff.is-natural[data-image-state="loading"] > .project-image-current { position: absolute; inset: 0; }
+@media (prefers-reduced-motion: reduce) { .project-image-current, .project-image-previous { transition: none; } }

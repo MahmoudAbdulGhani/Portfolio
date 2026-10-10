@@ -54,3 +54,7 @@ export function stopFiniteMotion(timeline: Timeline | null | undefined) {
   running.get(timeline)?.cancel();
   timeline.kill();
 }
+
+export function finishFiniteMotion(timeline: Timeline | null | undefined) {
+  if (timeline) running.get(timeline)?.finish();
+}

@@ -13,6 +13,8 @@ import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
 import { ProfilePortrait } from "./ProfilePortrait";
+import { CaseDisclosure } from './CaseDisclosure';
+import { ProfileEntry } from './ProfileEntry';
 import { evidenceUrl } from "../../lib/assistant-response";
 import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
 
@@ -43,7 +45,7 @@ export function ProfilePage() {
         title={`Profile — ${person.name}`}
         description={person.professionalSummary ?? person.bio}
       />
-      <div className="profile-portrait">
+      <ProfileEntry className="profile-portrait">
         <ProfilePortrait name={person.name} photo={person.photo} />
         <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
@@ -77,8 +79,8 @@ export function ProfilePage() {
             "/api/cv.pdf"
           }
         />
-      </div>
-      <div className="profile-record">
+      </ProfileEntry>
+      <ProfileEntry className="profile-record">
         <span className="eyebrow">PROFILE / WORKING RECORD</span>
         <h1 className="view-heading">{person.title}</h1>
         <p className="profile-intro">
@@ -102,8 +104,7 @@ export function ProfilePage() {
             {person.experience
               .filter((item) => item.published !== false)
               .map((item, index) => (
-                <details key={item.id ?? index} open={index === 0 || undefined}>
-                  <summary>
+                <CaseDisclosure key={item.id ?? index} title={item.company || item.facility || 'Experience'} defaultOpen={index === 0} summary={<>
                     <span className="record-number">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -112,8 +113,8 @@ export function ProfilePage() {
                       <span>{item.role || item.milestone}</span>
                     </span>
                     {item.meta && <span className="record-date">{item.meta}</span>}
-                    <FiPlus />
-                  </summary>
+                    <FiPlus className="disclosure-indicator" />
+                  </>}>
                   <div className="record-detail">
                     {(item.description || item.details) && <p>{item.description || item.details}</p>}
                     {item.learningEvidence?.completion.status === 'unverified' && <p className="learning-status">Program completion is not verified by the available records.</p>}
@@ -126,7 +127,7 @@ export function ProfilePage() {
                     )}
                     {item.location && <span className="eyebrow">{item.location}</span>}
                   </div>
-                </details>
+                </CaseDisclosure>
               ))}
           </div>
         )}
@@ -218,7 +219,7 @@ export function ProfilePage() {
           Let’s build something useful
           <FiArrowUpRight />
         </Link>
-      </div>
+      </ProfileEntry>
     </main>
   );
 }

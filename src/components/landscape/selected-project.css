@@ -54,6 +54,7 @@
 .landscape .is-expanded .product-surface[data-image-ready="true"] img {
   visibility: visible;
 }
+.landscape .is-expanded .product-surface .project-image-previous img { visibility: visible; }
 .landscape .is-expanded .selection-preview-status {
   position: absolute;
   inset: 0;

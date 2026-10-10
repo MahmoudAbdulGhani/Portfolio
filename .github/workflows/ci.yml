@@ -50,6 +50,9 @@ jobs:
       - name: Test learning evidence and Capabilities integrity
         run: npm run test:integrity
 
+      - name: Test sculpture geometry and hinge attachments
+        run: npm run test:motion
+
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 

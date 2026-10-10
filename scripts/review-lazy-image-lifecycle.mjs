@@ -53,7 +53,7 @@ try {
       expect(after.height).toBeCloseTo(before.height, 0);
       expect(after.captionOffset).toBeCloseTo(before.captionOffset, 0);
       workflow.push({ caption: await figure.locator('figcaption').innerText(), before, after,
-        image: await frame.locator('img').evaluate(img => ({ src: img.src, currentSrc: img.currentSrc, width: img.naturalWidth, height: img.naturalHeight })) });
+        image: await frame.locator('.screenshot-button img').evaluate(img => ({ src: img.src, currentSrc: img.currentSrc, width: img.naturalWidth, height: img.naturalHeight })) });
     }
     await page.screenshot({ path: `${output}/${slug}-later-workflow-${width}.jpg`, quality: 85 });
     const trigger = later.getByRole('button', { name: /Enlarge/ });
@@ -72,7 +72,7 @@ try {
     await page.screenshot({ path: `${output}/${slug}-selected-${width}.jpg`, quality: 85 });
     // Controlled transport failure, followed by the actual original bytes.
     // This exercises retry; it is not evidence of a spontaneous CDN failure.
-    const source = await primary.locator('img').getAttribute('src');
+    const source = await primary.locator('.screenshot-button img').getAttribute('src');
     const assetPath = source.split('?')[0].replace(/\.[^.]+$/, '');
     const faultMatcher = url => url.href.startsWith(assetPath) || url.pathname.startsWith(assetPath);
     await page.route(faultMatcher, route => route.abort());

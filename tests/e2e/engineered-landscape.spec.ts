@@ -264,7 +264,7 @@ for (const [width, height] of [
         await expect(
           page.getByRole("region", { name: "Selected project" }),
         ).toHaveAccessibleDescription(record.name);
-      const image = page.locator(".product-surface img");
+      const image = page.locator(".product-surface .project-image-current img");
       await expect(image).toHaveAttribute(
         "alt",
         new RegExp(record.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
@@ -364,7 +364,7 @@ for (const [width, height] of [
   });
 }
 
-test("photographic fallback reserves the caption and reveals it after the image settles", async ({
+test("photographic fallback reserves the image and keeps caption and controls usable during handoff", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -388,10 +388,10 @@ test("photographic fallback reserves the caption and reveals it after the image 
   );
   const observations = await page.evaluate(
     () =>
-      new Promise<{ captionTops: number[]; prematureCaption: boolean }>(
+      new Promise<{ captionTops: number[]; partialImage: boolean; blockedControls: boolean }>(
         (resolve) => {
           const captionTops: number[] = [];
-          let prematureCaption = false;
+          let partialImage = false, blockedControls = false;
           const inspect = () => {
             const surface =
               document.querySelector<HTMLElement>(".product-surface")!;
@@ -400,24 +400,23 @@ test("photographic fallback reserves the caption and reveals it after the image 
             const detail =
               document.querySelector<HTMLElement>(".selection-detail")!;
             captionTops.push(caption.getBoundingClientRect().top + scrollY);
-            if (
-              parseFloat(getComputedStyle(detail).opacity) > 0.01 &&
-              parseFloat(getComputedStyle(surface).opacity) < 0.999
-            )
-              prematureCaption = true;
+            const image = surface.querySelector<HTMLImageElement>('.project-image-current img')!;
+            if (getComputedStyle(image).visibility !== 'hidden' && (!image.complete || !image.naturalWidth || surface.dataset.imageReady !== 'true')) partialImage = true;
+            if (detail.inert || parseFloat(getComputedStyle(detail).opacity) < 0.999) blockedControls = true;
             if (
               document
                 .querySelector(".is-expanded")
                 ?.getAttribute("data-selection-state") === "settled"
             )
-              resolve({ captionTops, prematureCaption });
+              resolve({ captionTops, partialImage, blockedControls });
             else requestAnimationFrame(inspect);
           };
           inspect();
         },
       ),
   );
-  expect(observations.prematureCaption).toBe(false);
+  expect(observations.partialImage).toBe(false);
+  expect(observations.blockedControls).toBe(false);
   expect(
     Math.max(...observations.captionTops) -
       Math.min(...observations.captionTops),
@@ -468,10 +467,12 @@ test("a slow or failed screenshot cannot reveal a partial image or strand select
     await page
       .locator(".selection-detail")
       .evaluate((el) => (el as HTMLElement).inert),
-  ).toBe(true);
+  ).toBe(false);
+  await expect(page.locator('.is-expanded')).toHaveAttribute('data-content-state', 'ready');
+  await expect(page.getByRole('link', { name: 'Open case study', exact: true })).toBeFocused();
   expect(
     await page
-      .locator(".product-surface img")
+      .locator(".product-surface .project-image-current img")
       .evaluate((el) => getComputedStyle(el).visibility),
   ).toBe("hidden");
   const captionTop = await page

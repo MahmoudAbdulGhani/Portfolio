@@ -9,29 +9,39 @@ export function MotionRig({
 }: {
   kind: RigKind;
   reduced: boolean;
-  onReady: () => void;
+  onReady: (renderer: 'webgl' | 'fallback') => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
     if (reduced) return;
     let cancelled = false;
+    let firstFrame = 0, paintFrame = 0;
     let dispose: (() => void) | undefined;
-    const ready = (renderer: string) => {
+    const ready = (renderer: 'webgl' | 'fallback') => {
       if (!cancelled) {
         if (host.current) host.current.dataset.renderer = renderer;
         setState(renderer);
-        onReady();
+        onReady(renderer);
       }
     };
     warmRig()
       .then(({ mountRig }) => {
-        if (!cancelled && host.current)
-          dispose = mountRig(host.current, kind, ready);
+        // Let selection acknowledgement paint before cold GPU initialization.
+        firstFrame = requestAnimationFrame(() => {
+          paintFrame = requestAnimationFrame(() => {
+            if (!cancelled && host.current) {
+              try { dispose = mountRig(host.current, kind, ready); }
+              catch { ready('fallback'); }
+            }
+          });
+        });
       })
       .catch(() => ready("fallback"));
     return () => {
       cancelled = true;
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(paintFrame);
       dispose?.();
     };
   }, [kind, reduced, onReady]);

@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from "react";
+import { useCallback, useState, type CSSProperties } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useProject, useProjects } from "../../lib/hooks";
@@ -24,6 +24,8 @@ export function ProjectReader() {
   const [chapterRecord, setChapterRecord] = useState({ slug, index: 0 }),
     [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number } | null>(null);
   const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
+  const [readyRecord, setReadyRecord] = useState<{ slug: string; src: string } | null>(null);
+  const imageReady = useCallback((src: string) => setReadyRecord(previous => previous?.slug === slug && previous.src === src ? previous : { slug, src }), [slug]);
   const zoom = zoomRecord?.slug === slug ? zoomRecord.index : null;
   const setZoom = (index: number | null) => setZoomRecord(index === null ? null : { slug, index });
   const setChapter = (index: number) => setChapterRecord({ slug, index });
@@ -61,6 +63,8 @@ export function ProjectReader() {
   const overview = project.overview?.trim() || project.description?.trim();
   const activeIndex = chapter < screens.length ? chapter : 0;
   const current = screens[activeIndex];
+  const displayedIndex = readyRecord?.slug === slug ? screens.findIndex(screen => screen.src === readyRecord.src) : -1;
+  const displayed = screens[displayedIndex] ?? current;
   const geometry = current && screenGeometry(current);
   const phone = current?.viewport === 'phone' || Boolean(geometry && geometry.width < 1200 && geometry.height > geometry.width);
   const artwork = Boolean(current && /artwork|identity/i.test(current.label));
@@ -147,15 +151,15 @@ export function ProjectReader() {
         </header>
         {current && (
           <>
-            <CaseMediaNav screens={screens} index={activeIndex} select={setChapter} enlarge={trigger => openGallery(activeIndex, trigger)} />
+            <CaseMediaNav screens={screens} index={activeIndex} select={setChapter} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
             <figure className={`case-figure${phone ? ' is-phone' : !artwork ? ' is-wide' : ''}${desktopExcerpt ? ' is-desktop-excerpt' : ''}`}>
               <ScreenshotFrame src={current.src} alt={`${displayName}: ${current.label}`} label={`${displayName} screenshot`}
                 ratio={desktopExcerpt ? '16 / 10' : `${geometry?.width ?? 16} / ${geometry?.height ?? 10}`}
                 className={desktopExcerpt ? 'is-desktop-excerpt' : ''} buttonClassName="case-image" priority
                 style={{ '--frame-max-width': `${artwork ? 520 : desktopExcerpt ? 1300 : 650 * ((geometry?.width ?? 16) / (geometry?.height ?? 10))}px` } as CSSProperties}
                 sizes={phone ? '(max-width:720px) 90vw, 360px' : '90vw'}
-                enlarge={trigger => openGallery(activeIndex, trigger)} />
-              <figcaption className="image-caption"><span className="primary-excerpt-label">Detail excerpt · inspect the complete image</span>{study ? caseStudyImageCaption(study, current.src, current.label) : current.label}</figcaption>
+                onImageReady={imageReady} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
+              <figcaption className="image-caption"><span className="primary-excerpt-label">Detail excerpt · inspect the complete image</span>{study ? caseStudyImageCaption(study, displayed.src, displayed.label) : displayed.label}</figcaption>
             </figure>
           </>
         )}

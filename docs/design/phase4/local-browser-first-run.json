@@ -1,0 +1,6129 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791632970149,
+  "duration": 616328.321,
+  "files": [
+    {
+      "fileId": "219f2f1c6368d84b11d2",
+      "fileName": "signature-motion.spec.ts",
+      "tests": [
+        {
+          "testId": "219f2f1c6368d84b11d2-429f54e346918d681a39",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 280,
+            "column": 1
+          },
+          "duration": 5136,
+          "annotations": [],
+          "tags": [],
+          "outcome": "unexpected",
+          "path": [],
+          "ok": false,
+          "results": [
+            {
+              "attachments": [
+                {
+                  "name": "screenshot",
+                  "contentType": "image/png",
+                  "path": "data/e10f9fcf8c04d4a305b1a3400788c64aee56ec95.png"
+                },
+                {
+                  "name": "error-context",
+                  "contentType": "text/markdown",
+                  "path": "data/6a5a006c03623b6d91f3c7911d0f0f904512fdaa.md"
+                },
+                {
+                  "name": "trace",
+                  "contentType": "application/zip",
+                  "path": "data/1f4fca461a4d3f06348a004b8d208679349842f4.zip"
+                }
+              ],
+              "startTime": "2026-10-10T11:59:40.349Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-f03d18f08193425c2e33",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 6520,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:07.641Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-aa8e8da07099f80a6721",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2472,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:14.174Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-fab623a1415b480a6595",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4383,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:16.662Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-f375d9a4a9366025bac5",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 3875,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:21.081Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-9753513b8d89f96cbf20",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 2518,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:24.970Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-d5e272597f1717aa6b31",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1775,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:27.503Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-62166c7df6b7cd226c06",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 145,
+            "column": 1
+          },
+          "duration": 3403,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:29.293Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-c30dbe864a8aef2be8f6",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 167,
+            "column": 1
+          },
+          "duration": 2826,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:32.709Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-679f45d4fb0dd79f8ecb",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 179,
+            "column": 1
+          },
+          "duration": 3512,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:35.555Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-0ad3ff570110067d031a",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 1539,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:39.084Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f40b7a717629b74af52",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 211,
+            "column": 1
+          },
+          "duration": 1643,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:40.650Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-d69d9a507a779c88e441",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 226,
+            "column": 1
+          },
+          "duration": 1337,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:42.306Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-854726bd610bd6feff43",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 243,
+            "column": 1
+          },
+          "duration": 12130,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:43.666Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-3b4bc91120866a7ab37e",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 280,
+            "column": 1
+          },
+          "duration": 2401,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:55.817Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8abf57faf8d13ca26fda",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 6480,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:25.684Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-35de15d5efffac8200e3",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2492,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:32.181Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-da0f03b09d8e721e8657",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4482,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:34.687Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-b7c5305ecc2456da9f62",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 4139,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:39.188Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-a6cc2ef6f17eee6442de",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 2696,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:43.343Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-ae317d9d4d7ebbb3b5b5",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1935,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:46.052Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-469c8335943597dbb064",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 145,
+            "column": 1
+          },
+          "duration": 3493,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:48.001Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8035de39974bedf8946b",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 167,
+            "column": 1
+          },
+          "duration": 2640,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:51.508Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-231ea3cdfd71997b2c60",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 179,
+            "column": 1
+          },
+          "duration": 3635,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:54.168Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-dfd87f72cec123899f3c",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 1535,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:57.818Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f23335480700e258106",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 211,
+            "column": 1
+          },
+          "duration": 1678,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:59.366Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-648e39e4db7805d2b8b4",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 226,
+            "column": 1
+          },
+          "duration": 1425,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:01.059Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-cc2b4e02207de3731347",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 243,
+            "column": 1
+          },
+          "duration": 12247,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:02.498Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-3c412ba94e55d82129c5",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 280,
+            "column": 1
+          },
+          "duration": 2338,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:14.763Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-e6fdc8eab0dc9791acf2",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 7970,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:50.212Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-fa33d806940b5f660986",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2608,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:58.196Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f2e96cdfdd2c8c91d02",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4283,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:00.820Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-911ace31e81c6931cc23",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 4023,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:05.115Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-e3935ba0bae74361fd16",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 2710,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:09.153Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-818407f69e0c5fd8a063",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1971,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:11.882Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-1427f46faf966c2015a8",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 145,
+            "column": 1
+          },
+          "duration": 3525,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:13.868Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8b7d87c1281bd3db0283",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 167,
+            "column": 1
+          },
+          "duration": 2694,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:17.407Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-4ce0f0e01b73ccfdb96a",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 179,
+            "column": 1
+          },
+          "duration": 3677,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:20.116Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-0d69d58c71ed60857e3b",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 1553,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:23.812Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-1bbc13d19d0ff097da39",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 211,
+            "column": 1
+          },
+          "duration": 1650,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:25.381Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-de6ad2cdb9597313d211",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 226,
+            "column": 1
+          },
+          "duration": 1315,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:27.051Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-a97f0dcb2f89f9b7cb71",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 243,
+            "column": 1
+          },
+          "duration": 11948,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:59:28.380Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 42,
+        "expected": 41,
+        "unexpected": 1,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": false
+      }
+    },
+    {
+      "fileId": "d4043a9dd1ab94463227",
+      "fileName": "admin.spec.ts",
+      "tests": [
+        {
+          "testId": "d4043a9dd1ab94463227-7660bf7f25e10302efd2",
+          "title": "admin login form is accessible",
+          "projectName": "chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 3687,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:32.530Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-10853099f6ff611dfe78",
+          "title": "experience editing sends structured dates and current status",
+          "projectName": "chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 22,
+            "column": 1
+          },
+          "duration": 1834,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:36.702Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-8933b245331583d785f9",
+          "title": "project editor sends the personal role field",
+          "projectName": "chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 40,
+            "column": 1
+          },
+          "duration": 1930,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:38.552Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-0c0dc4399218d011a687",
+          "title": "admin login form is accessible",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 1363,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:59.713Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-e67713d9415f3dd8ef0a",
+          "title": "experience editing sends structured dates and current status",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 22,
+            "column": 1
+          },
+          "duration": 1797,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:02.722Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-35b5dd353dd4c02550f9",
+          "title": "project editor sends the personal role field",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 40,
+            "column": 1
+          },
+          "duration": 1786,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:04.536Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-9efec3841f7f7db02c92",
+          "title": "admin login form is accessible",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 1383,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:18.515Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-bdf5748a23fdb676c5bf",
+          "title": "experience editing sends structured dates and current status",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 22,
+            "column": 1
+          },
+          "duration": 1836,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:20.348Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "d4043a9dd1ab94463227-fb772c73824596750281",
+          "title": "project editor sends the personal role field",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "admin.spec.ts",
+            "line": 40,
+            "column": 1
+          },
+          "duration": 1813,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:22.203Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 9,
+        "expected": 9,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "b0157bbfa85bceaa9c48",
+      "fileName": "api-client.spec.ts",
+      "tests": [
+        {
+          "testId": "b0157bbfa85bceaa9c48-7c71bd1e821530b7cc60",
+          "title": "API transport merges streaming Accept with JSON for every HeadersInit form",
+          "projectName": "chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 3,
+            "column": 1
+          },
+          "duration": 936,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:40.518Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b0157bbfa85bceaa9c48-d744d647f5e186d1b2ec",
+          "title": "API transport preserves multipart boundaries and admin unauthorized events",
+          "projectName": "chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 72,
+            "column": 1
+          },
+          "duration": 850,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:41.471Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b0157bbfa85bceaa9c48-38a81f5ae0d41013cfe0",
+          "title": "API transport merges streaming Accept with JSON for every HeadersInit form",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 3,
+            "column": 1
+          },
+          "duration": 899,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:06.348Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b0157bbfa85bceaa9c48-a1f4d8c09fdf6fce8b9c",
+          "title": "API transport preserves multipart boundaries and admin unauthorized events",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 72,
+            "column": 1
+          },
+          "duration": 875,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:07.261Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b0157bbfa85bceaa9c48-f87727f58623be536e38",
+          "title": "API transport merges streaming Accept with JSON for every HeadersInit form",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 3,
+            "column": 1
+          },
+          "duration": 944,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:24.049Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b0157bbfa85bceaa9c48-200089965a395753ff7a",
+          "title": "API transport preserves multipart boundaries and admin unauthorized events",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "api-client.spec.ts",
+            "line": 72,
+            "column": 1
+          },
+          "duration": 855,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:25.010Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 6,
+        "expected": 6,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "c4afda83a973ed6037e1",
+      "fileName": "case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "c4afda83a973ed6037e1-2f787c8e95a2fd370c07",
+          "title": "every named image remains selectable at 320px without opening the viewer",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 5414,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:42.349Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-2df5639568cff1837334",
+          "title": "engineering disclosures show an expanded cue and preserve keyboard position",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 50,
+            "column": 1
+          },
+          "duration": 1568,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:47.781Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-5e99712a47cb8b6fe371",
+          "title": "unavailable media retries the original without moving its caption",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 73,
+            "column": 1
+          },
+          "duration": 1511,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:49.366Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-911381161247c9811469",
+          "title": "primary loading space stays reserved and portrait captures keep their proportions",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 3000,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:50.904Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-0d328742ceb69dfa493e",
+          "title": "jobpilot-ai waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1209,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:53.934Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-316bbda79c45d8311a3b",
+          "title": "gamezone-arena waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1405,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:55.158Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-dba8bb53fcee0e4ffd22",
+          "title": "a workflow deadline starts once at eligibility and does not reset when visibility changes",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 1218,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:56.578Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-19f513a6af2df2437d36",
+          "title": "changing sources retires the previous deadline and late request events",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1265,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:57.810Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-99b63dbaf792e0369a86",
+          "title": "retry owns a fresh deadline and ignores the retired responsive request",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 193,
+            "column": 1
+          },
+          "duration": 1196,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:49:59.100Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-baa1e89885a22dc35cdf",
+          "title": "returning to a decoded cached image is ready without a second request",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 1785,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:00.317Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-d7b060421b594169b36c",
+          "title": "every named image remains selectable at 320px without opening the viewer",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 5115,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:08.168Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-54ea9b42ff4c2f70d6c8",
+          "title": "engineering disclosures show an expanded cue and preserve keyboard position",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 50,
+            "column": 1
+          },
+          "duration": 1340,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:13.301Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-ef9a7407551901ac91ed",
+          "title": "unavailable media retries the original without moving its caption",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 73,
+            "column": 1
+          },
+          "duration": 1520,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:14.655Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-83a7db2945df8b44cdad",
+          "title": "primary loading space stays reserved and portrait captures keep their proportions",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 2868,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:16.189Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-124ad631931f63c2d651",
+          "title": "jobpilot-ai waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1190,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:19.072Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-6b5cb78d2a8ab08508e5",
+          "title": "gamezone-arena waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1239,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:20.277Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-215e6ccd86ce11ca167e",
+          "title": "a workflow deadline starts once at eligibility and does not reset when visibility changes",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 1255,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:21.530Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-fc3c7d7ff13297c34a4b",
+          "title": "changing sources retires the previous deadline and late request events",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1224,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:22.799Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-0a41638819240d973f56",
+          "title": "retry owns a fresh deadline and ignores the retired responsive request",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 193,
+            "column": 1
+          },
+          "duration": 1136,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:24.037Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-3ef0591d51f32a9f0923",
+          "title": "returning to a decoded cached image is ready without a second request",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 1790,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:25.191Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-bf21ec41a5f662cdddde",
+          "title": "every named image remains selectable at 320px without opening the viewer",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 4936,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:25.906Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-5d872ac418fc4c53126f",
+          "title": "engineering disclosures show an expanded cue and preserve keyboard position",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 50,
+            "column": 1
+          },
+          "duration": 1393,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:30.858Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-7c4eedb03177e57174d8",
+          "title": "unavailable media retries the original without moving its caption",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 73,
+            "column": 1
+          },
+          "duration": 1452,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:32.265Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-2bac8698b849aa7e9b64",
+          "title": "primary loading space stays reserved and portrait captures keep their proportions",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 2928,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:33.732Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-281927cb79ad36820f6c",
+          "title": "jobpilot-ai waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1261,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:36.680Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-a33e7639cce354f0907a",
+          "title": "gamezone-arena waits offscreen beyond the deadline before loading workflow media",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 130,
+            "column": 55
+          },
+          "duration": 1345,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:37.957Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-e46130cb9086a70bf6d3",
+          "title": "a workflow deadline starts once at eligibility and does not reset when visibility changes",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 1256,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:39.316Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-6b5d3bab2a8f60f5ec80",
+          "title": "changing sources retires the previous deadline and late request events",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1242,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:40.590Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-513f25d03e55d8a1c026",
+          "title": "retry owns a fresh deadline and ignores the retired responsive request",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 193,
+            "column": 1
+          },
+          "duration": 1157,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:41.868Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-6230c539c3b940712941",
+          "title": "returning to a decoded cached image is ready without a second request",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 1775,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:43.040Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 30,
+        "expected": 30,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "b9aa2e0c91e0f07c2559",
+      "fileName": "case-study.spec.ts",
+      "tests": [
+        {
+          "testId": "b9aa2e0c91e0f07c2559-45cd57a646e6e3da6dba",
+          "title": "JobPilot AI retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4401,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:02.145Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-ea5463b6135dc266f0dc",
+          "title": "Cedar Construction retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4230,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:06.564Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-6f1e2253384b56bdf947",
+          "title": "Lobby retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4256,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:10.807Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-3ce82c8d031c3d1236f4",
+          "title": "GameZone Arena retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4388,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:15.079Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-bb75021d927db15ae76f",
+          "title": "UniHub retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3978,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:19.482Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-54b438c62a4c65739310",
+          "title": "User Management retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3856,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:23.474Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-172650c638755e894374",
+          "title": "Medicare Hub retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3649,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:27.346Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-43614732aef913f2fb26",
+          "title": "Home Services retains a concise sourced story and working reader at four widths",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3862,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:31.013Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-ab4762fe54c95273522e",
+          "title": "a delayed workflow image reserves its frame and keeps its caption in place",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 57,
+            "column": 1
+          },
+          "duration": 1112,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:34.892Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-972bf9b54ad50d024725",
+          "title": "JobPilot AI retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4206,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:27.012Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-79b85c5e9f49f57611d3",
+          "title": "Cedar Construction retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4195,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:31.232Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-96ccfd66a20f8b001289",
+          "title": "Lobby retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4223,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:35.441Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-04f2d40bcf97aab7ca9b",
+          "title": "GameZone Arena retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4261,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:39.679Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-5f4f7d9fe54deffc5c02",
+          "title": "UniHub retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3750,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:43.956Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-fa282522a1111c54a668",
+          "title": "User Management retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3760,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:47.720Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-db5c170686f2bcc63b28",
+          "title": "Medicare Hub retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3708,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:51.494Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-03cc23c9ab145c5e8283",
+          "title": "Home Services retains a concise sourced story and working reader at four widths",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3864,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:55.217Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-a61e08dd934aae1922f9",
+          "title": "a delayed workflow image reserves its frame and keeps its caption in place",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 57,
+            "column": 1
+          },
+          "duration": 1106,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:53:59.097Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-b32a831392058cc2e1b3",
+          "title": "JobPilot AI retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4188,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:44.859Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-f50f2fb5cdfde6a48ca7",
+          "title": "Cedar Construction retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4205,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:49.060Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-2cb991158af428f41a9f",
+          "title": "Lobby retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4180,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:53.280Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-a8a5c4f6c008f300fec5",
+          "title": "GameZone Arena retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 4182,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:56:57.473Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-8b604c6db5d1c930d3a9",
+          "title": "UniHub retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3976,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:01.668Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-721ca5f692f54f0c2ad3",
+          "title": "User Management retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3711,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:05.657Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-916dac5e2f3ae0dcddb4",
+          "title": "Medicare Hub retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3526,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:09.383Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-cf245f94e8b768b95932",
+          "title": "Home Services retains a concise sourced story and working reader at four widths",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 16,
+            "column": 42
+          },
+          "duration": 3765,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:12.925Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "b9aa2e0c91e0f07c2559-44cbf3e090fdbf77e9e5",
+          "title": "a delayed workflow image reserves its frame and keeps its caption in place",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-study.spec.ts",
+            "line": 57,
+            "column": 1
+          },
+          "duration": 1169,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:16.704Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 27,
+        "expected": 27,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "c4caed10111e1010bc48",
+      "fileName": "contact-responsive.spec.ts",
+      "tests": [
+        {
+          "testId": "c4caed10111e1010bc48-220e49193deb53dae92b",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 320x568",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1575,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:36.040Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-10cce18e992103ff0316",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 360x800",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1900,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:37.629Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-54964ebbca2cb857af13",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 390x844",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1685,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:39.544Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-c9890e1c2d50c55b4a97",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 430x932",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1621,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:41.243Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-30ccc5bc3b46f7c278c9",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 844x390",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1549,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:42.881Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-fa6ffc86f7a99d5c15de",
+          "title": "Contact keeps fields and submit above a reduced visual viewport and restores the AI launcher",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 218,
+            "column": 1
+          },
+          "duration": 2258,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:44.446Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-a51bf00b87b00a026694",
+          "title": "Contact retains the accepted desktop grid and form dimensions",
+          "projectName": "chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 313,
+            "column": 1
+          },
+          "duration": 1062,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:46.718Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-aeb07ea98c848b7d38c1",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 320x568",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1455,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:00.225Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-65f1ddf45effd552421f",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 360x800",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1511,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:01.693Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-d147b13b157437ae3abe",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 390x844",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1481,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:03.219Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-46ac4d01e45617e25b9f",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 430x932",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1534,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:04.715Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-07b8ccd776ed25a59e0d",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 844x390",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1483,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:06.265Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-0b53a95c964d744fded1",
+          "title": "Contact keeps fields and submit above a reduced visual viewport and restores the AI launcher",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 218,
+            "column": 1
+          },
+          "duration": 1996,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:07.762Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-d3a992d54b31cdbda8a3",
+          "title": "Contact retains the accepted desktop grid and form dimensions",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 313,
+            "column": 1
+          },
+          "duration": 911,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:09.774Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-35130fd2bc7f1a530e36",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 320x568",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1561,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:17.917Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-1bf18b9a6a30bf84bd8b",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 360x800",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1668,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:19.493Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-c1d655aa16d648ab6525",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 390x844",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1597,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:21.178Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-ab4916ce8664e27d6e8c",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 430x932",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1653,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:22.790Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-c953bd29131a025c8b8d",
+          "title": "Contact has one gutter and reachable initial/error/pending/failure/success states at 844x390",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 65,
+            "column": 3
+          },
+          "duration": 1571,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:24.458Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-068124ed3492fc10b836",
+          "title": "Contact keeps fields and submit above a reduced visual viewport and restores the AI launcher",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 218,
+            "column": 1
+          },
+          "duration": 2143,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:26.044Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "c4caed10111e1010bc48-b923df0379952384d212",
+          "title": "Contact retains the accepted desktop grid and form dimensions",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "contact-responsive.spec.ts",
+            "line": 313,
+            "column": 1
+          },
+          "duration": 1172,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:28.201Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "1c62254cf7057438aae4",
+      "fileName": "content-integrity.spec.ts",
+      "tests": [
+        {
+          "testId": "1c62254cf7057438aae4-47cf31a6cdc0d854ae40",
+          "title": "whitespace-only contributions and metadata disappear without a reserved column",
+          "projectName": "chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 1463,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:47.811Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-300a3ec118e2687141fa",
+          "title": "a contribution with no role renders its documented list and no empty paragraph",
+          "projectName": "chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 26,
+            "column": 1
+          },
+          "duration": 913,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:49.288Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-45a38863ccf37df03788",
+          "title": "team-only records preserve collaborators without implying a personal contribution",
+          "projectName": "chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 34,
+            "column": 1
+          },
+          "duration": 1019,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:50.216Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-3d5e0a44ed45d1f50151",
+          "title": "Profile shares date/status corrections and removes duplicate and unsupported skill badges",
+          "projectName": "chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 42,
+            "column": 1
+          },
+          "duration": 1126,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:51.249Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-d15af9a2fc7b8cf05ca4",
+          "title": "Capabilities has one location per competency across categories and Skills, with evidence at that location",
+          "projectName": "chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 68,
+            "column": 1
+          },
+          "duration": 1915,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:52.391Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-3eb23e91483959d072b5",
+          "title": "whitespace-only contributions and metadata disappear without a reserved column",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 1390,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:10.720Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-672a5a7b6ca7070b039f",
+          "title": "a contribution with no role renders its documented list and no empty paragraph",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 26,
+            "column": 1
+          },
+          "duration": 889,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:12.123Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-cf23118904b48a2bc717",
+          "title": "team-only records preserve collaborators without implying a personal contribution",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 34,
+            "column": 1
+          },
+          "duration": 871,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:13.026Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-229a1289b5591ea39ed9",
+          "title": "Profile shares date/status corrections and removes duplicate and unsupported skill badges",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 42,
+            "column": 1
+          },
+          "duration": 1084,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:13.911Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-f67edb5bc3df7ffd678a",
+          "title": "Capabilities has one location per competency across categories and Skills, with evidence at that location",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 68,
+            "column": 1
+          },
+          "duration": 1738,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:15.009Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-b2cfd3150b024dd60c58",
+          "title": "whitespace-only contributions and metadata disappear without a reserved column",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 1575,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:29.396Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-9d73fd3f1e31ccbba8de",
+          "title": "a contribution with no role renders its documented list and no empty paragraph",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 26,
+            "column": 1
+          },
+          "duration": 1024,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:30.984Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-b7bc3424ca5c3b003913",
+          "title": "team-only records preserve collaborators without implying a personal contribution",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 34,
+            "column": 1
+          },
+          "duration": 1011,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:32.022Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-4b633d452818f294a613",
+          "title": "Profile shares date/status corrections and removes duplicate and unsupported skill badges",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 42,
+            "column": 1
+          },
+          "duration": 1190,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:33.047Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "1c62254cf7057438aae4-a5bc615ae4ee40db5272",
+          "title": "Capabilities has one location per competency across categories and Skills, with evidence at that location",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "content-integrity.spec.ts",
+            "line": 68,
+            "column": 1
+          },
+          "duration": 1888,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:34.252Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 15,
+        "expected": 15,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "5089bec74d87a8f9e39c",
+      "fileName": "engineered-landscape.spec.ts",
+      "tests": [
+        {
+          "testId": "5089bec74d87a8f9e39c-ee24cdd8682da8c70e2e",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1579,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:54.349Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-dca5f58a76a555385fea",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 5744,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:50:55.943Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-68cabd34d9396f3ea558",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1680,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:01.701Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b479d8df05943a123592",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 2343,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:03.397Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-8ed0b1d39af7e04bb02c",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3547,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:05.754Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-84fb95995f9df938f4a4",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3149,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:09.315Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-1e7cd86e35beb1891aad",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3017,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:12.478Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-3e8d52745d9bbe1f2e02",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2930,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:15.514Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-998159c14777a59029ea",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 3328,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:18.459Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-85bafc26dfa073e42829",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 437,
+            "column": 1
+          },
+          "duration": 4345,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:21.803Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-ee376a69ff178bf7e0c1",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 509,
+            "column": 1
+          },
+          "duration": 2055,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:26.169Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-73025b91246b6426cfa9",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 523,
+            "column": 1
+          },
+          "duration": 1442,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:28.243Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-e1c58b309dbf2af6490a",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 566,
+            "column": 1
+          },
+          "duration": 1656,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:29.703Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-87a54b987635b52a50cb",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 613,
+            "column": 1
+          },
+          "duration": 1324,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:31.375Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-55e38a366b97c8b01616",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 660,
+            "column": 1
+          },
+          "duration": 1495,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:32.714Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-e556f93fe480661d1dc8",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1620,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:16.790Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-7bdb0c49417e1436c878",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 4823,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:18.422Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2ba801ea871003e904b4",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1519,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:23.259Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2f08d556d78d2e937743",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 2078,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:24.794Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-4ec9e98b7898e343f43d",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3103,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:26.888Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-261918d47bcb1740fb3f",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2908,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:30.006Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-8a4229b431f6a613c10f",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2728,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:32.928Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-d077fbdeb31c2a71f80c",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2743,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:35.670Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-1dc8883a5f5cd00c1537",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 3531,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:38.430Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-9f38ddde3d38bca4dabe",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 437,
+            "column": 1
+          },
+          "duration": 4523,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:41.975Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-d0d069289ab54d923e46",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 509,
+            "column": 1
+          },
+          "duration": 1397,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:46.515Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-0904d999809b94cb3415",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 523,
+            "column": 1
+          },
+          "duration": 1295,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:47.926Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-c3198e3de22f8461ed1e",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 566,
+            "column": 1
+          },
+          "duration": 1554,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:49.233Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-88216bbed3458f622180",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 613,
+            "column": 1
+          },
+          "duration": 1224,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:50.801Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-308d6e5b5bef4ccb0a38",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 660,
+            "column": 1
+          },
+          "duration": 1476,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:52.039Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2ffe0a494a4677871b6e",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1803,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:36.178Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b1981e22c36caa1b7e59",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 5328,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:37.996Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-499c0e6ac72fe83109dc",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1518,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:43.339Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-78a6310083f89df4ad13",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 2001,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:44.872Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-0e08bf950319cb2ace5a",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 4700,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:46.887Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-c08ac3b0c70fbcf88d8b",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 4062,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:51.599Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-475a8a50c37ae4118f09",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3288,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:55.674Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-600fc9b04a96596c8d05",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3017,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:57:58.975Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-13457ea1360fc77dd402",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 3475,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:02.006Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b013226e39af587850e0",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 437,
+            "column": 1
+          },
+          "duration": 4534,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:05.499Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-bfaaee216ec0999872e8",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 509,
+            "column": 1
+          },
+          "duration": 1636,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:10.047Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-eadc5c1dab3d00fe90b9",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 523,
+            "column": 1
+          },
+          "duration": 1387,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:11.697Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b52aaef1c0043a2616de",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 566,
+            "column": 1
+          },
+          "duration": 1801,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:13.098Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-6f1720a54d7261050b54",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 613,
+            "column": 1
+          },
+          "duration": 1350,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:14.914Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-ec7289eb51751d2ab7b5",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 660,
+            "column": 1
+          },
+          "duration": 1534,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:16.279Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 45,
+        "expected": 45,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "a396733df6465ec69bf5",
+      "fileName": "profile-portrait.spec.ts",
+      "tests": [
+        {
+          "testId": "a396733df6465ec69bf5-951c118f2bb8c4677bf2",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1311,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:34.309Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-b3a79bd0550f742b3ed3",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1232,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:35.633Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-35b069acaae8c250af43",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1007,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:36.880Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-8a9aa0141846d96c7e8c",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1092,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:37.907Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-4b0c2efbe7144c9758a5",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1427,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:39.016Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-3cd023d45bb2e3fa76a5",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 1099,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:40.458Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-913898f948ecfe4230fb",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 1259,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:41.577Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-13b5dae67420e2a38a30",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1154,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:53.610Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-3c4c7772717f588c7806",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1138,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:54.778Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-e056e0dbccdf872ab8b5",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 956,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:55.930Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-4bde0365718229cc5d75",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 992,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:56.899Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-da8eb1c8e6f137cf16d2",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1358,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:57.903Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-a8c9954f21d29078e7f7",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 1117,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:54:59.276Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-494acde9dfa6329f52da",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 1117,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:00.418Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-38bf80b0e04903a6b1cd",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1214,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:17.913Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-dc094817c5eedebbdf1d",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1192,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:19.140Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-6c90bafa3cec75d4bb4f",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1039,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:20.346Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-9828de130680c8cf1792",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 963,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:21.402Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-45c14fda4ddd094c1e34",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1404,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:22.380Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-a5eababdaa26e31873e7",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 907,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:23.800Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-6567056370fcfc9fee18",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 975,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:24.720Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "bd5bf95926bf9e767c61",
+      "fileName": "project-preview.spec.ts",
+      "tests": [
+        {
+          "testId": "bd5bf95926bf9e767c61-9528fc586fb3874d8f84",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1363x936",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2583,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:42.881Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-2542bbc9ec69d42eb71a",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1280x720",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2545,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:45.479Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-7ea9263db94217075575",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 390x844",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2448,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:48.039Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-04b3f0ccda574cef10c5",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 320x568",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2481,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:50.504Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-e8cd01da1df2637a1f03",
+          "title": "slow and failed previews reserve their frame and keep the case study keyboard accessible",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 100,
+            "column": 1
+          },
+          "duration": 1380,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:53.000Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-36e1e8fa9fedaad5c949",
+          "title": "shared display names remain searchable by either title and preserve functional descriptions and media",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1428,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:54.397Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-17891b3d7edf63c316bf",
+          "title": "a future CMS project still bounds its tall original without a dedicated cover",
+          "projectName": "chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 152,
+            "column": 1
+          },
+          "duration": 1644,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:55.848Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-b1e21c54494423d3c822",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1363x936",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2301,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:01.572Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-bd5b977b76f0b0bd80eb",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1280x720",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2305,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:03.886Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-0c822e7c80a0d800a440",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 390x844",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2434,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:06.207Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-fea28528a67ed29f0bf9",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 320x568",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2574,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:08.656Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-97ad7ce30ce398ae2fda",
+          "title": "slow and failed previews reserve their frame and keep the case study keyboard accessible",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 100,
+            "column": 1
+          },
+          "duration": 1148,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:11.250Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-f6a8d4fb20a070fb68d1",
+          "title": "shared display names remain searchable by either title and preserve functional descriptions and media",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1354,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:12.420Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-3313a5acfbe974ef6444",
+          "title": "a future CMS project still bounds its tall original without a dedicated cover",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 152,
+            "column": 1
+          },
+          "duration": 1532,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:13.787Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-b2fdd9d38737f0e76cd0",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1363x936",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2726,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:25.733Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-1b36b1007f5017658cdd",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 1280x720",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2571,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:28.471Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-4925162065c63de01e53",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 390x844",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2496,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:31.058Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-1f0ccac88f11de51c56f",
+          "title": "all eight previews remain complete on hover and Gallery/Index changes at 320x568",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 39,
+            "column": 3
+          },
+          "duration": 2338,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:33.569Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-72e3496d36e7ebf95b20",
+          "title": "slow and failed previews reserve their frame and keep the case study keyboard accessible",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 100,
+            "column": 1
+          },
+          "duration": 1093,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:35.927Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-44e3b0ab2ad2a35e8c6e",
+          "title": "shared display names remain searchable by either title and preserve functional descriptions and media",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 130,
+            "column": 1
+          },
+          "duration": 1339,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:37.039Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "bd5bf95926bf9e767c61-c4f7efc710fb082cc8c8",
+          "title": "a future CMS project still bounds its tall original without a dedicated cover",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "project-preview.spec.ts",
+            "line": 152,
+            "column": 1
+          },
+          "duration": 1640,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:38.395Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "349fc90c6061c792a808",
+      "fileName": "public.spec.ts",
+      "tests": [
+        {
+          "testId": "349fc90c6061c792a808-278922bbd7253be62c27",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 917,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:57.522Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-457417fef57be392bb87",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 2940,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:51:58.454Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-30d0edab49527f5ba4dc",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 1230,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:01.408Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-cecf2ead00a93c20ce7c",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 1116,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:02.654Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-d6ec737a5f7f7aaa087c",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 1021,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:03.785Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-a8044bd4c6378919b1dd",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1408,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:04.822Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-18d86d0bae29f9037bfb",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1349,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:52:06.246Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-36bf82a69deb9be93a45",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 970,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:15.348Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-ed1067fe8e0e906d2f1c",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 3012,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:16.331Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-0f682d405bcae7f684db",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 1356,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:19.357Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-b9720f2df4c88ccdd46b",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 1091,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:20.728Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-c422075f963b7dac9406",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 1037,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:21.834Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-2215c960d1425a97bea7",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1463,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:22.886Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-aedc665338eadade6197",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1282,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:55:24.363Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-50379135bb5a8e16607a",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 958,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:40.064Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-2fd8b6fce2a8821f626d",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 2960,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:41.035Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-00935cb72fbeff727c72",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 1219,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:44.008Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-9267b6403b74f0cb81b1",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 1106,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:45.243Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-d254eb9dbd05a2c0d406",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 1024,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:46.362Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-7158d19a6bcfa7862c08",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1413,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:47.400Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-ac0a1917cfdf402e07b8",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1345,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T11:58:48.828Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 258,
+    "expected": 257,
+    "unexpected": 1,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": false
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

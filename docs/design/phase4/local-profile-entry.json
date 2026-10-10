@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791634076747,
+  "duration": 11489.262999999999,
+  "files": [
+    {
+      "fileId": "219f2f1c6368d84b11d2",
+      "fileName": "signature-motion.spec.ts",
+      "tests": [
+        {
+          "testId": "219f2f1c6368d84b11d2-a7dc9589e54430c5ae8c",
+          "title": "Profile groups enter once and preference changes finish without replay",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 327,
+            "column": 1
+          },
+          "duration": 3328,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:07:58.550Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-85b4e47d6584f417b732",
+          "title": "Profile groups enter once and preference changes finish without replay",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 327,
+            "column": 1
+          },
+          "duration": 1498,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:08:03.093Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-7386475fb9e62a11493d",
+          "title": "Profile groups enter once and preference changes finish without replay",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 327,
+            "column": 1
+          },
+          "duration": 1625,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:08:05.828Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 3,
+        "expected": 3,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 3,
+    "expected": 3,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

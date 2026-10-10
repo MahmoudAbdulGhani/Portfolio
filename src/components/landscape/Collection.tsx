@@ -5,10 +5,10 @@ import {
   useMemo,
   useRef,
   useState,
+  useSyncExternalStore,
 } from "react";
-import { useReducedMotion } from "framer-motion";
 import { gsap } from "gsap";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useNavigationType, useSearchParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useProjects } from "../../lib/hooks";
 import { detailScreens } from "../../lib/project-detail-screens";
@@ -16,7 +16,9 @@ import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { MotionRig } from "./MotionRig";
 import { warmRig } from "./rig-loader";
-import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
+import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './finite-motion';
+import { collectionTiming, createCollectionMotion } from './collection-motion';
+import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preference';
 import type { RigKind } from "./rig-models";
 import type { Project } from "../../types";
 import { projectDisplayName } from "../../../shared/content-integrity";
@@ -49,6 +51,7 @@ const artwork: {
   },
 ];
 type Sculpture = (typeof artwork)[number] & { project: Project; displayTitle: string };
+type Origin = { kind: RigKind; scroll: { x: number; y: number }; width: number; objects?: Partial<Record<RigKind, { left: number; top: number; width: number }>> };
 const masks: Record<RigKind, string[]> = {
   jobpilot: [
     "polygon(0% 0%,38% 0%,55% 68%,0% 42%)",
@@ -65,12 +68,15 @@ const masks: Record<RigKind, string[]> = {
 export function Collection() {
   const projects = useProjects();
   const location = useLocation();
+  const navigate = useNavigate();
+  const navigation = useNavigationType();
   const [params, setParams] = useSearchParams();
-  const [returned, setReturned] = useState<string | null>(
-    () =>
-      artwork.find((item) => item.slug === location.state?.returnProject)
-        ?.kind ?? null,
-  );
+  const selectionLock = useRef(false);
+  const [origin, setOrigin] = useState<Origin | null>(() => {
+    const kind = artwork.find(item => item.slug === location.state?.returnProject)?.kind;
+    return location.state?.collectionReturn ?? (kind ? { kind, scroll: { x: 0, y: 0 }, width: innerWidth } : null);
+  });
+  useEffect(() => { selectionLock.current = false; }, [location.key]);
   const items = useMemo(
     () =>
       artwork.flatMap((art) => {
@@ -105,15 +111,26 @@ export function Collection() {
       </main>
     );
   const select = (slug: string) => {
+    if (selectionLock.current || selected) return;
+    selectionLock.current = true;
+    const kind = items.find(item => item.slug === slug)!.kind;
+    const objects = Object.fromEntries(items.map(item => {
+      const box = document.querySelector(`.stage .${item.kind}-object`)!.getBoundingClientRect();
+      return [item.kind, { left: box.left, top: box.top, width: box.width }];
+    }));
+    const returning: Origin = { kind, scroll: { x: scrollX, y: scrollY }, width: innerWidth, objects };
+    setOrigin(returning);
     const next = new URLSearchParams(params);
     next.set("project", slug);
-    setParams(next);
+    setParams(next, { state: { collectionReturn: returning } });
   };
   const restore = () => {
-    setReturned(selected?.kind ?? null);
+    if (!selected) return;
+    setOrigin(previous => previous ?? { kind: selected.kind, scroll: { x: 0, y: 0 }, width: innerWidth });
+    if (location.state?.collectionReturn) { navigate(-1); return; }
     const next = new URLSearchParams(params);
     next.delete("project");
-    setParams(next);
+    setParams(next, { replace: true });
   };
   return (
     <CollectionScene
@@ -122,304 +139,175 @@ export function Collection() {
       selected={selected}
       select={select}
       restore={restore}
-      returned={returned}
+      origin={origin}
+      restored={navigation === 'POP' && Boolean(location.state?.collectionReturn)}
     />
   );
 }
 
-function CollectionScene({
-  items,
-  selected,
-  select,
-  restore,
-  returned,
-}: {
-  items: Sculpture[];
-  selected?: Sculpture;
-  select: (slug: string) => void;
-  restore: () => void;
-  returned: string | null;
+function CollectionScene({ items, selected, select, restore, origin, restored }: {
+  items: Sculpture[]; selected?: Sculpture; select: (slug: string) => void; restore: () => void; origin: Origin | null; restored: boolean;
 }) {
   const root = useRef<HTMLElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null);
-  const closing = useRef(false);
+  const originalTransforms = useRef(new Map<HTMLElement, { x: number; y: number; scale: number }>());
+  const [motion] = useState(() => createCollectionMotion(Boolean(selected), prefersReducedMotion(), restored));
+  const state = useSyncExternalStore(motion.subscribe, motion.snapshot, motion.snapshot);
+  const reduced = state.reduced;
+  const kind = selected?.kind;
   const [ready, setReady] = useState(false);
-  const [rigReady, setRigReady] = useState(false);
   const [chapter, setChapter] = useState(0);
   const [decoded, setDecoded] = useState<Set<string>>(() => new Set());
   const [failedPreview, setFailedPreview] = useState<string | null>(null);
-  const reduced = Boolean(useReducedMotion());
-  const readyRig = useCallback(() => setRigReady(true), []);
-  useEffect(() => {
-    const objects = root.current?.querySelectorAll(".object");
-    return () => {
-      stopFiniteMotion(animation.current);
-      if (objects) gsap.killTweensOf(objects);
-    };
-  }, []);
-  const hover = (kind: RigKind, active: boolean) => {
-    if (!reduced && active) void warmRig().catch(() => {});
-    if (selected || reduced || animation.current?.isActive()) return;
-    const object = root.current?.querySelector(`.${kind}-object`);
-    if (!object) return;
-    gsap.to(object, {
-      rotationY: active ? (kind === "lobby" ? -6 : 4) : 0,
-      y: active ? -8 : 0,
-      scale: active ? 1.018 : 1,
-      duration: 0.35,
-      ease: "power2.out",
-      overwrite: "auto",
-    });
-  };
   const screens = selected ? detailScreens(selected.project) : [];
-  const previewReady = !screens[0] || decoded.has(screens[0].src);
-  const markDecoded = (src: string) => {
-    setDecoded((previous) => new Set(previous).add(src));
-  };
-  const back = useCallback(() => {
-    if (!selected || closing.current) return;
-    closing.current = true;
+  // Selection can change before the first request finishes. Any completed
+  // preview attempt makes the handoff eligible; chapter changes cannot cancel
+  // or restart the selection's finite opening clock.
+  const previewReady = !screens.length || decoded.size > 0;
+  const eligible = ready && previewReady && (state.renderer !== 'loading' || !state.allowGPU);
+  const markDecoded = (src: string) => setDecoded(previous => new Set(previous).add(src));
+  const readyRig = useCallback((renderer: 'webgl' | 'fallback') => {
+    motion.rendererReady(renderer);
+    if (renderer === 'fallback' && motion.snapshot().phase === 'opening') finishFiniteMotion(animation.current);
+  }, [motion]);
+
+  useLayoutEffect(() => {
+    if (!selected || !restored) return;
     stopFiniteMotion(animation.current);
+    motion.restore();
+    const scope = root.current;
+    if (scope) {
+      gsap.set(scope.querySelector('.product-surface'), { opacity: 1, scale: 1, y: 0 });
+      gsap.set(scope.querySelector('.selection-detail'), { opacity: 1, y: 0 });
+      gsap.set(scope.querySelector('.' + selected.kind + '-object .object-core'), { opacity: 0 });
+      scope.querySelector<HTMLElement>('.open-case')?.focus({ preventScroll: true });
+    }
+  }, [motion, restored, selected]);
+
+  useEffect(() => {
+    const media = window.matchMedia(motionQuery);
+    const change = () => {
+      motion.preference(media.matches);
+      if (media.matches) finishFiniteMotion(animation.current);
+    };
+    media.addEventListener('change', change);
+    return () => { media.removeEventListener('change', change); stopFiniteMotion(animation.current); };
+  }, [motion]);
+
+  useLayoutEffect(() => {
     const scope = root.current;
     if (!scope) return;
-    scope.dataset.selectionState = "closing";
-    const mesh = scope.querySelector<HTMLElement>(".motion-rig");
-    const gpu = !reduced && mesh?.dataset.renderer === "webgl";
-    scope.querySelector<HTMLElement>(".selection-detail")!.inert = true;
-    if (gpu) mesh.dispatchEvent(new CustomEvent("rig-close"));
-    const duration = reduced ? 0.01 : gpu ? 1.55 : 0.8;
-    const timeline = gsap.timeline({ onComplete: restore });
-    animation.current = timeline;
-    timeline
-      .to(
-        ".selection-detail",
-        { opacity: 0, y: 12, duration: reduced ? 0.01 : 0.2 },
-        0,
-      )
-      .to(
-        ".product-surface",
-        { opacity: 0, scale: 0.9, duration: reduced ? 0.01 : 0.35 },
-        0,
-      )
-      .to(
-        scope.querySelectorAll(".object"),
-        { x: 0, y: 0, scale: 1, opacity: 1, duration, ease: "power3.inOut" },
-        0,
-      )
-      .to(
-        scope.querySelector(`.${selected.kind}-object .object-core`),
-        { opacity: 1, duration: reduced ? 0.01 : 0.3 },
-        gpu ? 1.15 : 0.1,
-      );
-    playFiniteMotion(timeline);
-  }, [selected, reduced, restore]);
+    // Acknowledgement/focus never wait on imagery, WebGL or choreography.
+    if (selected) scope.querySelector<HTMLElement>('.open-case')?.focus({ preventScroll: true });
+    else if (origin) {
+      window.scrollTo(origin.scroll.x, origin.scroll.y);
+      scope.querySelector<HTMLElement>('[data-project="' + origin.kind + '"]')?.focus({ preventScroll: true });
+    }
+    if (selected && origin?.objects && origin.width === innerWidth) {
+      for (const item of items) {
+        const object = scope.querySelector<HTMLElement>('.' + item.kind + '-object')!;
+        const before = origin.objects[item.kind], after = object.getBoundingClientRect();
+        if (before) {
+          const transform = { x: before.left - after.left, y: before.top - after.top, scale: before.width / after.width };
+          originalTransforms.current.set(object, transform);
+          gsap.set(object, { ...transform, transformOrigin: 'top left' });
+        }
+      }
+    }
+  }, [items, selected, origin]);
+
   useEffect(() => {
     let cancelled = false;
-    Promise.all(
-      items.map(
-        (item) =>
-          new Promise<void>((resolve) => {
-            const image = new Image();
-            image.onload = () => resolve();
-            image.onerror = () => resolve();
-            image.src = `/landscape/${item.asset}`;
-          }),
-      ),
-    ).then(() => {
-      if (!cancelled) setReady(true);
+    const images = items.map(item => {
+      const image = new Image();
+      return { image, loaded: new Promise<void>(resolve => { image.onload = image.onerror = () => resolve(); image.src = '/landscape/' + item.asset; }) };
     });
-    return () => {
-      cancelled = true;
-    };
+    Promise.all(images.map(item => item.loaded)).then(() => { if (!cancelled) setReady(true); });
+    return () => { cancelled = true; for (const { image } of images) image.onload = image.onerror = null; };
   }, [items]);
+
+  const hover = (_kind: RigKind, active: boolean) => {
+    if (!motion.snapshot().reduced && active) void warmRig().catch(() => {});
+  };
+
+  const back = useCallback(() => {
+    if (!selected || !motion.close()) return;
+    const scope = root.current;
+    if (!scope) { restore(); return; }
+    const previous = animation.current?.time() ?? 0;
+    stopFiniteMotion(animation.current);
+    if (motion.snapshot().reduced) { restore(); return; }
+    const mesh = scope.querySelector<HTMLElement>('.motion-rig');
+    const gpu = mesh?.dataset.renderer === 'webgl';
+    const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
+    const object = scope.querySelector<HTMLElement>('.' + selected.kind + '-object')!;
+    const duration = collectionTiming.returning;
+    const progress = Math.min(1, previous / collectionTiming.articulation);
+    const timeline = gsap.timeline({ paused: true, onUpdate: () => {
+      if (gpu) mesh.dispatchEvent(new CustomEvent('rig-frame', { detail: { progress: progress * (1 - timeline.time() / duration), closing: true } }));
+    } });
+    animation.current = timeline;
+    timeline.to(scope.querySelector('.selection-detail'), { opacity: 0, duration: 0.16 }, 0)
+      .to(scope.querySelector('.product-surface'), { opacity: 0, duration: 0.2 }, 0)
+      .to(objects, { x: (_index, target) => originalTransforms.current.get(target)?.x ?? 0,
+        y: (_index, target) => originalTransforms.current.get(target)?.y ?? 0,
+        scale: (_index, target) => originalTransforms.current.get(target)?.scale ?? 1,
+        opacity: 1, duration, ease: 'power3.inOut' }, 0)
+      .to(object.querySelector('.object-core'), { opacity: 1, duration: 0.12 }, gpu ? 0.42 : 0.1);
+    if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.08 }, 0).to(mesh, { opacity: 0, duration: 0.12 }, 0.44);
+    // The close owner restores navigation even if decorative tweens are killed.
+    playFiniteMotion(timeline, { complete: restore });
+  }, [selected, motion, restore]);
+
   useEffect(() => {
     if (!selected) return;
     const escape = (event: KeyboardEvent) => {
-      if (
-        event.key === "Escape" &&
-        !document.querySelector('[role="dialog"], dialog[open]')
-      )
-        back();
+      if (event.key === 'Escape' && !document.querySelector('[role="dialog"], dialog[open]')) back();
     };
-    window.addEventListener("keydown", escape);
-    return () => window.removeEventListener("keydown", escape);
+    window.addEventListener('keydown', escape);
+    return () => window.removeEventListener('keydown', escape);
   }, [selected, back]);
+
   useLayoutEffect(() => {
     const scope = root.current;
-    if (
-      !scope ||
-      closing.current ||
-      !ready ||
-      (selected && !previewReady) ||
-      (selected && !reduced && !rigReady)
-    )
+    if (!scope || !kind || motion.snapshot().phase === 'closing') return;
+    const object = scope.querySelector<HTMLElement>('.' + kind + '-object')!;
+    const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
+    if (motion.snapshot().phase === 'active') {
+      gsap.set(objects.filter(item => item !== object), { opacity: 0.12 });
+      gsap.set(object.querySelector('.object-core'), { opacity: 0 });
+      gsap.set(scope.querySelector('.product-surface'), { opacity: 1, scale: 1, y: 0 });
       return;
+    }
+    if (!eligible || !motion.open()) return;
+    const mesh = scope.querySelector<HTMLElement>('.motion-rig');
+    const gpu = mesh?.dataset.renderer === 'webgl';
     const ctx = gsap.context(() => {
-      const objects = Array.from(
-        scope.querySelectorAll<HTMLElement>(".object"),
-      );
-      const duration = (value: number) => (reduced ? 0.01 : value);
-      if (!selected) {
-        animation.current = gsap
-          .timeline({
-            onComplete: () => {
-              if (returned)
-                scope
-                  .querySelector<HTMLElement>(`[data-project="${returned}"]`)
-                  ?.focus({ preventScroll: true });
-            },
-          })
-          .fromTo(
-            objects,
-            {
-              opacity: returned ? 1 : 0,
-              y: returned ? 0 : 24,
-              scale: returned ? 1 : 0.95,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: duration(returned ? 0.01 : 0.85),
-              stagger: reduced ? 0 : 0.12,
-              ease: "power3.out",
-            },
-          );
-        return;
-      }
-      const object = scope.querySelector<HTMLElement>(
-        `.${selected.kind}-object`,
-      )!;
-      const core = object.querySelector(".object-core");
-      const leaves = object.querySelectorAll(".piece");
-      const detail = scope.querySelector<HTMLElement>(".selection-detail")!;
-      detail.inert = true;
-      scope.dataset.selectionState = "opening";
-      const mobile = innerWidth < 720;
-      const shift =
-        selected.kind === "jobpilot"
-          ? {
-              x: mobile ? 0 : innerWidth * 0.14,
-              y: mobile ? -40 : -20,
-              scale: mobile ? 0.92 : 1.03,
-            }
-          : selected.kind === "lobby"
-            ? {
-                x: mobile ? -55 : -innerWidth * 0.25,
-                y: mobile ? -200 : -80,
-                scale: mobile ? 1.45 : 1.5,
-              }
-            : {
-                x: mobile ? 55 : -innerWidth * 0.39,
-                y: mobile ? -200 : 55,
-                scale: mobile ? 2.4 : 2.1,
-              };
-      const gpu =
-        scope.querySelector<HTMLElement>(".motion-rig")?.dataset.renderer ===
-        "webgl";
-      const timeline = gsap.timeline({
-        onComplete: () => {
-          detail.inert = false;
-          scope.dataset.selectionState = "settled";
-          scope
-            .querySelector<HTMLElement>(".open-case")
-            ?.focus({ preventScroll: true });
-        },
-      });
+      const duration = reduced ? 0.01 : collectionTiming.articulation;
+      const timeline = gsap.timeline({ paused: true, onUpdate: () => {
+        if (gpu) mesh.dispatchEvent(new CustomEvent('rig-frame', { detail: { progress: Math.min(1, timeline.time() / collectionTiming.articulation), closing: false } }));
+      } });
       animation.current = timeline;
-      timeline
-        .to(
-          objects.filter((item) => item !== object),
-          {
-            opacity: 0.12,
-            scale: 0.76,
-            x: (index: number) => (index ? 100 : -100),
-            y: 30,
-            duration: duration(0.65),
-          },
-          0,
-        )
-        .to(
-          object,
-          { ...shift, duration: duration(0.9), ease: "power3.inOut" },
-          0,
-        )
-        .to(core, { opacity: 0, duration: duration(0.22) }, 0);
-      if (!gpu && !reduced) {
-        timeline
-          .set(leaves, { opacity: 1 }, 0)
-          .to(
-            leaves,
-            {
-              x: (index: number) => (index % 2 ? 1 : -1) * (mobile ? 55 : 130),
-              rotationY: (index: number) => (index % 2 ? 25 : -25),
-              duration: 0.9,
-              stagger: 0.05,
-            },
-            0,
-          )
-          .to(leaves, { opacity: 0, duration: 0.25 }, 1);
-      }
-      timeline
-        .fromTo(
-          ".product-surface",
-          { opacity: 0, scale: 0.76, y: 30 },
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: duration(0.72),
-            ease: "power3.out",
-          },
-          reduced ? 0 : 0.85,
-        )
-        .fromTo(
-          detail,
-          { opacity: 0 },
-          { opacity: 1, duration: duration(0.15) },
-          reduced ? 0 : gpu ? 1.85 : 1.6,
-        )
-        .fromTo(
-          ".selection-caption",
-          { clipPath: "inset(100% 0 0 0)" },
-          {
-            clipPath: "inset(0% 0 0 0)",
-            duration: duration(0.4),
-            ease: "power2.out",
-          },
-          reduced ? 0 : gpu ? 1.85 : 1.6,
-        )
-        .fromTo(
-          ".selection-caption-inner",
-          { y: 16 },
-          { y: 0, duration: duration(0.4), ease: "power2.out" },
-          reduced ? 0 : gpu ? 1.85 : 1.6,
-        )
-        .fromTo(
-          ".selection-actions",
-          { opacity: 0, y: 8 },
-          { opacity: 1, y: 0, duration: duration(0.25) },
-          reduced ? 0 : gpu ? 2 : 1.75,
-        )
-        .to(
-          core,
-          { opacity: gpu ? 0 : 0.16, duration: duration(0.25) },
-          reduced ? 0 : 1.04,
-        );
+      timeline.to(objects.filter(item => item !== object), { opacity: 0.12, duration: reduced ? 0.01 : 0.16 }, 0)
+        .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.48)
+        .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : 0.68);
+      if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: 0, duration: 0.2 }, 0.78);
+      else timeline.to(object, { opacity: 0.12, duration, ease: 'power2.inOut' }, 0);
+      playFiniteMotion(timeline, { complete: () => motion.activate() });
     }, scope);
     const timeline = animation.current;
-    if (timeline) playFiniteMotion(timeline);
-    return () => {
-      stopFiniteMotion(timeline);
-      ctx.revert();
-    };
-  }, [selected, ready, previewReady, rigReady, reduced, returned]);
+    return () => { stopFiniteMotion(timeline); ctx.revert(); };
+  }, [eligible, kind, reduced, motion]);
+
   return (
     <main
       id="main-content"
       tabIndex={-1}
       className={`stage${selected ? " is-expanded" : ""}`}
-      data-selection-state={selected ? "loading" : undefined}
+      data-selection-state={state.phase === 'active' ? 'settled' : state.phase === 'selecting' ? 'loading' : state.phase}
+      data-motion-phase={state.phase}
+      data-content-state="ready"
+      data-motion-renderer={state.renderer}
       ref={root}
       aria-label="Project collection"
     >
@@ -499,7 +387,7 @@ function CollectionScene({
       )}
       {selected && (
         <>
-          {previewReady && (
+          {previewReady && state.allowGPU && !reduced && (
             <MotionRig
               kind={selected.kind}
               reduced={reduced}
@@ -533,17 +421,20 @@ function CollectionScene({
                     alt={`${selected.project.name}: ${screens[chapter].label}`}
                     sizes="(max-width: 1000px) 88vw, 880px"
                     priority
-                    onLoad={(event) => {
+                    retainPrevious
+                    onReadyImage={(image) => {
                       const src = screens[chapter].src;
-                      void event.currentTarget
+                      void image
                         .decode()
                         .then(() => {
+                          if (!image.isConnected) return;
                           setFailedPreview((previous) =>
                             previous === src ? null : previous,
                           );
                           markDecoded(src);
                         })
                         .catch(() => {
+                          if (!image.isConnected) return;
                           setFailedPreview(src);
                           markDecoded(src);
                         });
@@ -564,8 +455,7 @@ function CollectionScene({
                   ? "selected-project-full-name"
                   : undefined
               }
-              style={{ opacity: 0 }}
-              inert={!previewReady || (!reduced && !rigReady)}
+              inert={state.phase === 'closing'}
             >
               <div className="selection-caption">
                 <div className="selection-caption-inner">

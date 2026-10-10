@@ -1,0 +1,18 @@
+/* The sculpture is the signature sequence; page and status motion stays quiet. */
+.landscape .site-header nav a::after { transition-duration: 160ms; }
+.landscape :is(.text-link, .solid-action, .back-collection, .record-tabs button, .project-view-switch button, .chapter-switch button) {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.landscape .case-disclosure > summary { transition: color 160ms ease; }
+.landscape .experience-record .case-disclosure > summary { padding-block: 22px; }
+.landscape .stage .objects { transition: opacity 160ms ease; }
+.landscape .stage[data-motion-phase="selecting"] .objects { opacity: 0.35; }
+.landscape .experience-record .case-disclosure[data-expanded="false"] .disclosure-indicator { transform: none; }
+.landscape :is(.inline-state-enter, .ai-state-enter) { animation: status-in 160ms ease-out both; }
+@keyframes status-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .landscape .profile-page :is(.profile-portrait, .profile-record, .experience-record, .education-record, .capability-record),
+  .landscape :is(.inline-state-enter, .ai-state-enter, .animate-spin) { animation: none; }
+  .landscape :is(.text-link, .solid-action, .back-collection, .record-tabs button, .project-view-switch button, .chapter-switch button, .site-header nav a::after, .case-disclosure > summary, .stage .objects) { transition: none; }
+}
+.landscape .work-preview img { transition-duration: 160ms; }

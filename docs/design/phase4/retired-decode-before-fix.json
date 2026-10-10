@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791633615731,
+  "duration": 13198.569,
+  "files": [
+    {
+      "fileId": "219f2f1c6368d84b11d2",
+      "fileName": "signature-motion.spec.ts",
+      "tests": [
+        {
+          "testId": "219f2f1c6368d84b11d2-d696b0221117de36339a",
+          "title": "a retired preview decode cannot overwrite the current failed preview state",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 10385,
+          "annotations": [],
+          "tags": [],
+          "outcome": "unexpected",
+          "path": [],
+          "ok": false,
+          "results": [
+            {
+              "attachments": [
+                {
+                  "name": "screenshot",
+                  "contentType": "image/png",
+                  "path": "data/fb6c4b43c74a4725c0b2763b8e1682594794cbbf.png"
+                },
+                {
+                  "name": "error-context",
+                  "contentType": "text/markdown",
+                  "path": "data/e79c7dfbf408775841a8f49d9c788ead2523aea1.md"
+                },
+                {
+                  "name": "trace",
+                  "contentType": "application/zip",
+                  "path": "data/fc2eaa702f9126b5085744ae9aeae2301752a3c5.zip"
+                }
+              ],
+              "startTime": "2026-10-10T12:00:17.571Z",
+              "workerIndex": 0
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 1,
+        "expected": 0,
+        "unexpected": 1,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": false
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium"
+  ],
+  "stats": {
+    "total": 1,
+    "expected": 0,
+    "unexpected": 1,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": false
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

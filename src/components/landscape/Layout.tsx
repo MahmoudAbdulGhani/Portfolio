@@ -10,6 +10,7 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "../../landscape.css";
 import "../../landscape-integration.css";
 import './composition.css';
+import './motion-language.css';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({
