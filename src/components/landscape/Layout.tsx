@@ -43,6 +43,7 @@ export function LandscapeLayout() {
         <a
           className="skip-link"
           href="#main-content"
+          tabIndex={0}
           onClick={(event) => {
             event.preventDefault();
             document

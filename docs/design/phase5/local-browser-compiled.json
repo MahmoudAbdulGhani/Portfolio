@@ -1,0 +1,1571 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791640696057,
+  "duration": 111094.805,
+  "files": [
+    {
+      "fileId": "5089bec74d87a8f9e39c",
+      "fileName": "engineered-landscape.spec.ts",
+      "tests": [
+        {
+          "testId": "5089bec74d87a8f9e39c-ee24cdd8682da8c70e2e",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1375,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:16.759Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-dca5f58a76a555385fea",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 2697,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:18.590Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-68cabd34d9396f3ea558",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 921,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:21.302Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b479d8df05943a123592",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 1151,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:22.238Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-8ed0b1d39af7e04bb02c",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2261,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:23.404Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-84fb95995f9df938f4a4",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2078,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:25.679Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-1e7cd86e35beb1891aad",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 1985,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:27.769Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-3e8d52745d9bbe1f2e02",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 1823,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:29.769Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-998159c14777a59029ea",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 2788,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:31.605Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-85bafc26dfa073e42829",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 3678,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:34.408Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-ee376a69ff178bf7e0c1",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 980,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:38.100Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-73025b91246b6426cfa9",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 528,
+            "column": 1
+          },
+          "duration": 857,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:39.094Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-e1c58b309dbf2af6490a",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 571,
+            "column": 1
+          },
+          "duration": 1044,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:39.964Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-87a54b987635b52a50cb",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 618,
+            "column": 1
+          },
+          "duration": 872,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:41.019Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-55e38a366b97c8b01616",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 665,
+            "column": 1
+          },
+          "duration": 1010,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:41.906Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-e556f93fe480661d1dc8",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1423,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:51.450Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-7bdb0c49417e1436c878",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 2742,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:53.323Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2ba801ea871003e904b4",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 940,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:56.081Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2f08d556d78d2e937743",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 1214,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:57.034Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-4ec9e98b7898e343f43d",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2392,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:58.261Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-261918d47bcb1740fb3f",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2093,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:00.666Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-8a4229b431f6a613c10f",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 1896,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:02.774Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-d077fbdeb31c2a71f80c",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 1874,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:04.685Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-1dc8883a5f5cd00c1537",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 2908,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:06.572Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-9f38ddde3d38bca4dabe",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 3920,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:09.496Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-d0d069289ab54d923e46",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 1120,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:13.432Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-0904d999809b94cb3415",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 528,
+            "column": 1
+          },
+          "duration": 901,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:14.566Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-c3198e3de22f8461ed1e",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 571,
+            "column": 1
+          },
+          "duration": 1115,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:15.480Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-88216bbed3458f622180",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 618,
+            "column": 1
+          },
+          "duration": 884,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:16.607Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-308d6e5b5bef4ccb0a38",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 665,
+            "column": 1
+          },
+          "duration": 1049,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:17.506Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-2ffe0a494a4677871b6e",
+          "title": "CMS-backed collection selects with keyboard, opens real slug and returns focus",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 1651,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:27.520Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b1981e22c36caa1b7e59",
+          "title": "all eight records survive gallery/index search and narrow deep-link reloads",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 114,
+            "column": 1
+          },
+          "duration": 2862,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:29.616Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-499c0e6ac72fe83109dc",
+          "title": "construction display label stays compact while CMS and accessible names remain complete",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 980,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:32.494Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-78a6310083f89df4ad13",
+          "title": "case metadata keeps the team phrase together and Projects search reserves icon space",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 1263,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:33.489Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-0e08bf950319cb2ace5a",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1363x936",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3694,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:34.766Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-c08ac3b0c70fbcf88d8b",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 1280x720",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 3140,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:38.473Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-475a8a50c37ae4118f09",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 390x844",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2351,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:41.629Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-600fc9b04a96596c8d05",
+          "title": "selected projects share a complete image, aligned caption and usable controls at 320x568",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 233,
+            "column": 3
+          },
+          "duration": 2080,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:43.994Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-13457ea1360fc77dd402",
+          "title": "photographic fallback reserves the image and keeps caption and controls usable during handoff",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 367,
+            "column": 1
+          },
+          "duration": 3109,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:46.088Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b013226e39af587850e0",
+          "title": "a slow or failed screenshot cannot reveal a partial image or strand selection controls",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 442,
+            "column": 1
+          },
+          "duration": 4017,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:49.214Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-bfaaee216ec0999872e8",
+          "title": "Escape interrupts selection and restores the originating sculpture",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 514,
+            "column": 1
+          },
+          "duration": 1296,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:53.255Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-eadc5c1dab3d00fe90b9",
+          "title": "assistant preserves stream whitespace, native modal focus and project request context",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 528,
+            "column": 1
+          },
+          "duration": 1008,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:54.565Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-b52aaef1c0043a2616de",
+          "title": "assistant exposes rate-limit retry and cancellation without invented replies",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 571,
+            "column": 1
+          },
+          "duration": 1120,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:55.590Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-6f1720a54d7261050b54",
+          "title": "Contact sends only the established payload to an intercepted fixture and retains errors",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 618,
+            "column": 1
+          },
+          "duration": 890,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:56.725Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "5089bec74d87a8f9e39c-ec7289eb51751d2ab7b5",
+          "title": "real Job Match contract retains report, evidence, export and token-gated CV on route return",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "engineered-landscape.spec.ts",
+            "line": 665,
+            "column": 1
+          },
+          "duration": 1100,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:57.628Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 45,
+        "expected": 45,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    },
+    {
+      "fileId": "349fc90c6061c792a808",
+      "fileName": "public.spec.ts",
+      "tests": [
+        {
+          "testId": "349fc90c6061c792a808-278922bbd7253be62c27",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 603,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:42.947Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-457417fef57be392bb87",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 2521,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:43.564Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-30d0edab49527f5ba4dc",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 809,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:46.099Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-cecf2ead00a93c20ce7c",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 815,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:46.921Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-d6ec737a5f7f7aaa087c",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 683,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:47.749Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-a8044bd4c6378919b1dd",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1054,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:48.445Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-18d86d0bae29f9037bfb",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 956,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:58:49.514Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-36bf82a69deb9be93a45",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 636,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:18.574Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-ed1067fe8e0e906d2f1c",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 2639,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:19.223Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-0f682d405bcae7f684db",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 1014,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:21.875Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-b9720f2df4c88ccdd46b",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 812,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:22.903Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-c422075f963b7dac9406",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 682,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:23.730Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-2215c960d1425a97bea7",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1080,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:24.425Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-aedc665338eadade6197",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1027,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:25.519Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-50379135bb5a8e16607a",
+          "title": "accepted public navigation and metadata work",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 643,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:58.758Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-2fd8b6fce2a8821f626d",
+          "title": "project gallery opens and supports navigation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 27,
+            "column": 1
+          },
+          "duration": 2532,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T13:59:59.413Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-00935cb72fbeff727c72",
+          "title": "contact form validates and handles a successful submission",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 97,
+            "column": 1
+          },
+          "duration": 917,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T14:00:01.961Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-9267b6403b74f0cb81b1",
+          "title": "CV download rejects text responses instead of saving cv.txt",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 109,
+            "column": 1
+          },
+          "duration": 875,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T14:00:02.893Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-d254eb9dbd05a2c0d406",
+          "title": "Collection navigation returns to the accepted collection route",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 116,
+            "column": 1
+          },
+          "duration": 713,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T14:00:03.781Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-7158d19a6bcfa7862c08",
+          "title": "Command palette opens via shortcut and supports search navigation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 1177,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T14:00:04.506Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "349fc90c6061c792a808-ac0a1917cfdf402e07b8",
+          "title": "Developer terminal supports commands and history",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "public.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 1071,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T14:00:05.697Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 66,
+    "expected": 66,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

@@ -1,0 +1,6 @@
+{
+  "environment": "Actual downloaded production PDF, before local repair",
+  "status": 1,
+  "output": "",
+  "error": "Traceback (most recent call last):\r\n  File \"C:\\Users\\Admin\\Desktop\\portfolio\\scripts\\verify-cv-overflow.py\", line 17, in <module>\r\n    assert max(line[\"bbox\"][3] for line in summary_lines) + 5 < experience_heading[\"bbox\"][1], \"Summary overlaps the next section\"\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: Summary overlaps the next section\r\n"
+}

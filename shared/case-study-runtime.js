@@ -1,7 +1,7 @@
 // Reviewed, versioned editorial evidence. Identity, attribution, links and media
 // remain CMS-owned. Never persist these read-time presentation records.
 const repoSource = (repository, revision, id, label, file, access = 'public') => ({
-    id, label, access, url: `${repository}/blob/${revision}/${file}`,
+    id, label, access, url: `${repository}/blob/${revision}/${file.split('/').map(encodeURIComponent).join('/')}`,
 });
 const jobpilotRepo = 'https://github.com/MahmoudAbdulGhani/jobpilot-ai';
 const jobpilotRevision = '344b0d77d3d3525e8617df0a48e303055fbb024f';

@@ -1,0 +1,612 @@
+{
+  "date": "2026-10-10T13:27:51.664Z",
+  "environment": "Actual production UI and live public list/profile/site GETs; detail counters intercepted from current public list",
+  "browser": "chromium",
+  "physicalDevice": false,
+  "screenReader": false,
+  "findings": [
+    {
+      "path": "/",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Collection"
+        ],
+        "headings": [],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "The work, collected."
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/contact",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Collection"
+        ],
+        "headings": [],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "The work, collected."
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/contact",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [
+        {
+          "id": "link-name",
+          "impact": "serious",
+          "description": "Ensure links have discernible text",
+          "nodes": [
+            {
+              "target": [
+                ".link-inline"
+              ],
+              "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+              "html": "<a href=\"mailto:\" class=\"link-inline\"></a>"
+            }
+          ]
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "errors": [],
+  "writes": []
+}

@@ -794,11 +794,14 @@ function drawApplicationCv(doc, data, origin) {
     configuration.professionalSummary ||
     profile.professionalSummary ||
     "";
-  paragraph(summary, 117.78, { leading: APPLICATION.bodyLeading });
+  const summaryBottom = paragraph(summary, 117.78, { leading: APPLICATION.bodyLeading });
+  // Keep the three-line reference unchanged. Longer provider summaries need
+  // the same inter-section space, rather than overlapping the fixed heading.
+  const summaryShift = Math.max(0, summaryBottom + 19.05 - 162.33);
 
   // --- PROFESSIONAL EXPERIENCE ---
-  line([{ text: "PROFESSIONAL EXPERIENCE", face: "bold", size: 11 }], 162.33);
-  sectionRule(179.55);
+  line([{ text: "PROFESSIONAL EXPERIENCE", face: "bold", size: 11 }], 162.33 + summaryShift);
+  sectionRule(179.55 + summaryShift);
 
   // Reference bullets sit on a 12.25pt rhythm: the glyph is drawn 1.53pt above
   // the text top, and each bullet block advances by its own line count.
@@ -846,7 +849,7 @@ function drawApplicationCv(doc, data, origin) {
       ...(tailSize === 10 ? [{ text: ", ", face: "bold", size: 10, dy: 0.95 }] : []),
       ...(tail ? [{ text: tail, size: tailSize, dy: tailDy }] : []),
     ];
-    const titleY = APPLICATION.experienceTitleY[index] ?? 183.33;
+    const titleY = (APPLICATION.experienceTitleY[index] ?? 183.33) + summaryShift;
     line(titleRuns, titleY);
     if (dateText) {
       // Right-aligned on the lower baseline, matching the reference's edge.
@@ -863,7 +866,7 @@ function drawApplicationCv(doc, data, origin) {
       : item.bullets?.length
         ? item.bullets
         : splitDetails(item.details);
-    let bulletCursor = APPLICATION.experienceBulletY[index] ?? 201.31;
+    let bulletCursor = (APPLICATION.experienceBulletY[index] ?? 201.31) + summaryShift;
     bullets.forEach((value, bulletIndex) => {
       bulletCursor = bullet(value, bulletCursor, {
         // The reference hugs the marker to the text once the gaps tighten.
@@ -877,8 +880,8 @@ function drawApplicationCv(doc, data, origin) {
   });
 
   // --- PROJECT EXPERIENCE ---
-  line([{ text: "PROJECT EXPERIENCE", face: "bold", size: 11 }], 358.4);
-  sectionRule(375.87);
+  line([{ text: "PROJECT EXPERIENCE", face: "bold", size: 11 }], 358.4 + summaryShift);
+  sectionRule(375.87 + summaryShift);
 
   const projectLinks = (project) =>
     [
@@ -904,7 +907,7 @@ function drawApplicationCv(doc, data, origin) {
       );
     // Retain the standard reference anchors; reordered tailored projects must
     // leave room for the preceding paragraph's real line count.
-    const titleY = Math.max(projectTitleY[index] ?? 379.4 + index * 55, projectBottom + 14);
+    const titleY = Math.max((projectTitleY[index] ?? 379.4 + index * 55) + summaryShift, projectBottom + 14);
     line(runs, titleY);
 
     const description =
@@ -919,7 +922,7 @@ function drawApplicationCv(doc, data, origin) {
   }
 
   // --- TECHNICAL SKILLS ---
-  const projectShift = Math.max(0, projectBottom + 18 - 520.45);
+  const projectShift = Math.max(summaryShift, projectBottom + 18 - 520.45);
   line([{ text: "TECHNICAL SKILLS", face: "bold", size: 11 }], 520.45 + projectShift);
   sectionRule(537.92 + projectShift);
 

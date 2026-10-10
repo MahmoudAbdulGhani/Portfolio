@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-10T13:52:04.420Z",
+  "environment": "Local compiled build. Real assets/record snapshot; controlled throttling on local only, not production services. Intel desktop renderer, phone viewport emulation, not a physical-phone performance claim.",
+  "findings": [
+    {
+      "slug": "jobpilot-ai",
+      "waitMs": 16000,
+      "waitingOffscreen": true,
+      "heightBefore": 228.8125,
+      "heightAfter": 228.8125,
+      "status": "ready on eligibility"
+    },
+    {
+      "slug": "gamezone-arena",
+      "waitMs": 16000,
+      "waitingOffscreen": true,
+      "heightBefore": 228.8125,
+      "heightAfter": 228.8125,
+      "status": "ready on eligibility"
+    },
+    {
+      "scenario": "Local 150ms latency / 1.6Mbps down / CPU 4x, real compiled assets and HTTP media. Selection content is ready independently of delayed decoration; immediate interruption restores focus.",
+      "state": {
+        "content": "ready",
+        "motion": "selecting"
+      },
+      "focusReturned": true
+    }
+  ]
+}

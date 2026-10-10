@@ -70,6 +70,10 @@ export function LandscapeAssistant() {
     () => conversations[context] || [],
     [conversations, context],
   );
+  const latestAnswer = [...messages].reverse().find((message) => message.role === "assistant");
+  const announcement = running
+    ? "Reading the portfolio evidence…"
+    : latestAnswer?.error || (latestAnswer?.text ? "Response ready. Read the answer in the conversation." : "");
   const dialog = useRef<HTMLDialogElement>(null),
     input = useRef<HTMLTextAreaElement>(null),
     log = useRef<HTMLDivElement>(null),
@@ -231,6 +235,7 @@ export function LandscapeAssistant() {
             <FiMessageSquare />
             <span>{project ? projectDisplayName(project) : "Projects, skills & experience"}</span>
           </div>
+          <p className="sr-only" role="status" aria-atomic="true">{announcement}</p>
           <div ref={log} className="assistant-log" aria-busy={running}>
             {!messages.length && (
               <div className="assistant-welcome">
@@ -259,11 +264,7 @@ export function LandscapeAssistant() {
                 </div>
               </div>
             )}
-            <div
-              className="assistant-messages"
-              aria-live="polite"
-              aria-relevant="additions text"
-            >
+            <div className="assistant-messages">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -273,7 +274,7 @@ export function LandscapeAssistant() {
                     {message.role === "user" ? "YOUR QUESTION" : "PORTFOLIO AI"}
                   </span>
                   {message.pending ? (
-                    <p role="status">Reading the portfolio evidence…</p>
+                    <p>Reading the portfolio evidence…</p>
                   ) : (
                     <ReactMarkdown
                       components={{
@@ -312,7 +313,7 @@ export function LandscapeAssistant() {
                       {message.text}
                     </ReactMarkdown>
                   )}
-                  {message.error && <p role="status">{message.error}</p>}
+                  {message.error && <p>{message.error}</p>}
                   {message.retry && (
                     <button
                       className="text-link assistant-retry"

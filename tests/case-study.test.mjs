@@ -3,6 +3,13 @@ import assert from 'node:assert/strict';
 import { caseStudyFor, caseStudies, selectedContributions, screenMatches, caseStudyImageCaption } from '../shared/case-study-runtime.js';
 import { caseStudyProjects } from './fixtures/case-study-projects.ts';
 
+test('source links encode dynamic-route path segments without changing their revision', () => {
+  const source = caseStudies['gamezone-arena'].sources.find(source => source.url.includes('approve-cash'));
+  assert.ok(source);
+  assert.match(source.url, /bookings\/%5Bid%5D\/approve-cash\/route\.ts$/);
+  assert.match(decodeURIComponent(source.url), /bookings\/\[id\]\/approve-cash\/route\.ts$/);
+});
+
 test('reviewed stories require the linked repository, not merely a familiar slug', () => {
   assert.equal(Object.keys(caseStudies).length, 8);
   for (const project of caseStudyProjects) {
