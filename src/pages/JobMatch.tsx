@@ -1,4 +1,3 @@
-import { Reveal } from "../components/Reveal";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiAlertCircle, FiArrowRight, FiCheck, FiCopy, FiDownload, FiRefreshCw, FiSearch, FiZap, FiLoader, FiFileText, FiBarChart2, FiFolder, FiAlertTriangle } from "react-icons/fi";
@@ -206,12 +205,12 @@ export function JobMatch() {
     <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
     <main id="main-content" tabIndex={-1} className="public-page ai-page">
       <section className="public-container">
-          <Reveal y={12} className="ai-intro">
+          <div className="ai-intro">
             <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>
             <h1>{section?.heading?.startsWith("AI") ? section.heading : `AI ${section?.heading || "Job Match"}`}</h1>
             <p className="public-display-accent">{typeof section?.content.displaySubtitle === "string" ? section.content.displaySubtitle : "See the fit. Understand the gaps."}</p>
             <p className="ai-description">{section?.description || "Paste a job description to compare the role with my portfolio evidence."}</p>
-          </Reveal>
+          </div>
           <div className="ai-workbench">
             <form onSubmit={submit} className="ai-form">
               <div className="flex items-start gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent"><FiSearch /></span><div><h2 className="font-display text-lg font-bold text-ink">Job description</h2><p className="mt-1 text-sm text-muted">Include responsibilities, required skills, and experience level.</p></div></div>

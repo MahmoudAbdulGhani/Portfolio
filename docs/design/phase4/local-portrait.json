@@ -1,0 +1,522 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791634183232,
+  "duration": 30986.18,
+  "files": [
+    {
+      "fileId": "a396733df6465ec69bf5",
+      "fileName": "profile-portrait.spec.ts",
+      "tests": [
+        {
+          "testId": "a396733df6465ec69bf5-951c118f2bb8c4677bf2",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 3205,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:44.994Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-b3a79bd0550f742b3ed3",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1154,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:48.653Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-35b069acaae8c250af43",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 950,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:49.825Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-8a9aa0141846d96c7e8c",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 965,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:50.791Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-4b0c2efbe7144c9758a5",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1299,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:51.772Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-3cd023d45bb2e3fa76a5",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 1047,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:53.085Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-913898f948ecfe4230fb",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 1088,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:54.147Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-13b5dae67420e2a38a30",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1331,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:56.168Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-3c4c7772717f588c7806",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1109,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:57.955Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-e056e0dbccdf872ab8b5",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1022,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:09:59.081Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-4bde0365718229cc5d75",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 932,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:00.117Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-da8eb1c8e6f137cf16d2",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1358,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:01.066Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-a8c9954f21d29078e7f7",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 1062,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:02.440Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-494acde9dfa6329f52da",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 1098,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:03.516Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-38bf80b0e04903a6b1cd",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1363px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1321,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:05.585Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-dc094817c5eedebbdf1d",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 1280px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1151,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:07.363Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-6c90bafa3cec75d4bb4f",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 1057,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:08.530Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-9828de130680c8cf1792",
+          "title": "Profile preserves the accepted frame and delivers native 2x detail at 360px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 20,
+            "column": 3
+          },
+          "duration": 980,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:09.610Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-45c14fda4ddd094c1e34",
+          "title": "very wide Profile screens cap the portrait at native source detail",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 1333,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:10.606Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-a5eababdaa26e31873e7",
+          "title": "a future CMS portrait retains its own source and has no person-specific treatment",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 67,
+            "column": 1
+          },
+          "duration": 896,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:11.955Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "a396733df6465ec69bf5-6567056370fcfc9fee18",
+          "title": "delayed portrait loading reserves the accepted panel and explicit image dimensions",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "profile-portrait.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 943,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:10:12.865Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 21,
+        "expected": 21,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 21,
+    "expected": 21,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

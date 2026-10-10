@@ -1,0 +1,646 @@
+{
+  "date": "2026-10-10T10:34:41.962Z",
+  "phase": "before",
+  "source": "Approved 66bba23 isolated worktree",
+  "data": "Frozen Phase 3 public GET snapshot; API writes/counters blocked",
+  "media": "Actual local sculpture/project images and hash-verified unmodified public PNGs; no pixel fixtures",
+  "browser": "Installed Chrome default renderer; no forced fallback/software flags; native no-preference",
+  "findings": [
+    {
+      "kind": "jobpilot",
+      "width": 1363,
+      "height": 936,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1363,
+        "pixelHeight": 776
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1965.2000000001863,
+          "attribute": "input"
+        },
+        {
+          "time": 2742.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2742.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2760.9000000003725,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 5002.4000000003725,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 5469.4000000003725,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "lobby",
+      "width": 1363,
+      "height": 936,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1363,
+        "pixelHeight": 776
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 2088,
+          "attribute": "input"
+        },
+        {
+          "time": 2463.2000000001863,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2463.2000000001863,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2478.5999999996275,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4726,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 5074.799999999814,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "cedar",
+      "width": 1363,
+      "height": 936,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1363,
+        "pixelHeight": 776
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1938.5,
+          "attribute": "input"
+        },
+        {
+          "time": 2335.7000000001863,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2335.7999999998137,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2353.7999999998137,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4593.9000000003725,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 5000.200000000186,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "jobpilot",
+      "width": 1024,
+      "height": 1366,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1024,
+        "pixelHeight": 1206
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1959.5,
+          "attribute": "input"
+        },
+        {
+          "time": 2380.699999999255,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2380.699999999255,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2398.399999999441,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4647.899999999441,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 5022.5999999996275,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "lobby",
+      "width": 1024,
+      "height": 1366,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1024,
+        "pixelHeight": 1206
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1940,
+          "attribute": "input"
+        },
+        {
+          "time": 2328.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2328.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2345.4000000003725,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4594.700000000186,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4998.299999999814,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "cedar",
+      "width": 1024,
+      "height": 1366,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 1024,
+        "pixelHeight": 1206
+      },
+      "geometry": {
+        "width": 880,
+        "height": 596.046875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 2276.5,
+          "attribute": "input"
+        },
+        {
+          "time": 2713.4000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2713.4000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2733.7000000001863,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4981.5999999996275,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 5485,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "jobpilot",
+      "width": 390,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 390,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 343.1875,
+        "height": 433.546875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 2021.3999999994412,
+          "attribute": "input"
+        },
+        {
+          "time": 2399,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2399,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2415.5,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4659.0999999996275,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4860.199999999255,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "lobby",
+      "width": 390,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 390,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 343.1875,
+        "height": 433.546875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1893.5,
+          "attribute": "input"
+        },
+        {
+          "time": 2243.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2243.5,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2259.5,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4499,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4733.799999999814,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "cedar",
+      "width": 390,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 390,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 343.1875,
+        "height": 433.546875,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1860.2999999998137,
+          "attribute": "input"
+        },
+        {
+          "time": 2189.5999999996275,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2189.5999999996275,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2206.399999999441,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4450.299999999814,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4683.399999999441,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "jobpilot",
+      "width": 320,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 320,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 281.59375,
+        "height": 404.90625,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1838.2000000001863,
+          "attribute": "input"
+        },
+        {
+          "time": 2202.9000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2202.9000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2218,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4461.300000000745,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4687.600000000559,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "lobby",
+      "width": 320,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 320,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 281.59375,
+        "height": 404.90625,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1830,
+          "attribute": "input"
+        },
+        {
+          "time": 2186.9000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2186.9000000003725,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2210.0999999996275,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4452.5999999996275,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4737.5,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    },
+    {
+      "kind": "cedar",
+      "width": 320,
+      "height": 844,
+      "renderer": "webgl",
+      "device": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "pixelWidth": 320,
+        "pixelHeight": 661
+      },
+      "geometry": {
+        "width": 281.59375,
+        "height": 404.90625,
+        "captionGap": 24,
+        "overflow": false
+      },
+      "focusReturned": true,
+      "canvasDisposed": true,
+      "errors": [],
+      "writes": [],
+      "samples": [
+        {
+          "time": 1902.7000000001863,
+          "attribute": "input"
+        },
+        {
+          "time": 2262.100000000559,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2262.100000000559,
+          "attribute": "data-renderer",
+          "value": "webgl"
+        },
+        {
+          "time": 2279.7999999998137,
+          "attribute": "data-selection-state",
+          "value": "opening"
+        },
+        {
+          "time": 4525.100000000559,
+          "attribute": "data-selection-state",
+          "value": "settled"
+        },
+        {
+          "time": 4792.799999999814,
+          "attribute": "data-selection-state",
+          "value": "closing"
+        }
+      ]
+    }
+  ]
+}

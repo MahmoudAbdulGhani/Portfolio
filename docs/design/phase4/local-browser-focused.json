@@ -1,0 +1,1074 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791633653033,
+  "duration": 172593.23,
+  "files": [
+    {
+      "fileId": "219f2f1c6368d84b11d2",
+      "fileName": "signature-motion.spec.ts",
+      "tests": [
+        {
+          "testId": "219f2f1c6368d84b11d2-f03d18f08193425c2e33",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 8983,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:00:54.686Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-aa8e8da07099f80a6721",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2243,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:04.141Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-fab623a1415b480a6595",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4311,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:06.415Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-f375d9a4a9366025bac5",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 3598,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:10.756Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-d696b0221117de36339a",
+          "title": "a retired preview decode cannot overwrite the current failed preview state",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 3556,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:14.370Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-9753513b8d89f96cbf20",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 122,
+            "column": 1
+          },
+          "duration": 2400,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:17.940Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-d5e272597f1717aa6b31",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 153,
+            "column": 1
+          },
+          "duration": 1769,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:20.353Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-62166c7df6b7cd226c06",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 3286,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:22.140Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-c30dbe864a8aef2be8f6",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 2344,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:25.440Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-679f45d4fb0dd79f8ecb",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 202,
+            "column": 1
+          },
+          "duration": 3379,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:27.797Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-0ad3ff570110067d031a",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 2016,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:31.190Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f40b7a717629b74af52",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 234,
+            "column": 1
+          },
+          "duration": 1566,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:33.220Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-d69d9a507a779c88e441",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 249,
+            "column": 1
+          },
+          "duration": 1241,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:34.799Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-854726bd610bd6feff43",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 266,
+            "column": 1
+          },
+          "duration": 12013,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:36.053Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-3b4bc91120866a7ab37e",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 303,
+            "column": 1
+          },
+          "duration": 2314,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:48.081Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8abf57faf8d13ca26fda",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 6925,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:51.403Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-35de15d5efffac8200e3",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2351,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:01:58.774Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-da0f03b09d8e721e8657",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4440,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:01.140Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-b7c5305ecc2456da9f62",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 3964,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:05.595Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8447dbd63ad9c0f8e0e1",
+          "title": "a retired preview decode cannot overwrite the current failed preview state",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 3785,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:09.575Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-a6cc2ef6f17eee6442de",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 122,
+            "column": 1
+          },
+          "duration": 2597,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:13.376Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-ae317d9d4d7ebbb3b5b5",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 153,
+            "column": 1
+          },
+          "duration": 1948,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:15.987Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-469c8335943597dbb064",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 3342,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:17.948Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8035de39974bedf8946b",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 2621,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:21.308Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-231ea3cdfd71997b2c60",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 202,
+            "column": 1
+          },
+          "duration": 3560,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:23.945Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-dfd87f72cec123899f3c",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 1505,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:27.520Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f23335480700e258106",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 234,
+            "column": 1
+          },
+          "duration": 1616,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:29.037Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-648e39e4db7805d2b8b4",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 249,
+            "column": 1
+          },
+          "duration": 1311,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:30.667Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-cc2b4e02207de3731347",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 266,
+            "column": 1
+          },
+          "duration": 11848,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:31.996Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-3c412ba94e55d82129c5",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 303,
+            "column": 1
+          },
+          "duration": 2375,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:43.859Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-e6fdc8eab0dc9791acf2",
+          "title": "tablet opening keeps its existing deadline after long frames on supported WebGL",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 8523,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:47.249Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-fa33d806940b5f660986",
+          "title": "selection controls work before imagery and renderer readiness, including cancellation",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 2642,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:56.219Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8f2e96cdfdd2c8c91d02",
+          "title": "rapid clicks have one owner and route replacement retires the old opening",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 4260,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:02:58.883Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-911ace31e81c6931cc23",
+          "title": "changing the preview before the first asset finishes still starts one opening",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 83,
+            "column": 1
+          },
+          "duration": 4111,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:03.168Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-9007069fd12135de2320",
+          "title": "a retired preview decode cannot overwrite the current failed preview state",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 99,
+            "column": 1
+          },
+          "duration": 3911,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:07.300Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-e3935ba0bae74361fd16",
+          "title": "Escape reverses the current pose and repeated close cannot restore twice",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 122,
+            "column": 1
+          },
+          "duration": 2757,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:11.233Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-818407f69e0c5fd8a063",
+          "title": "browser Back restores selected content and collection focus without stale overlays",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 153,
+            "column": 1
+          },
+          "duration": 1970,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:14.012Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-1427f46faf966c2015a8",
+          "title": "reduced motion works on first render and preference changes retire an active renderer",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 168,
+            "column": 1
+          },
+          "duration": 3621,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:15.996Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-8b7d87c1281bd3db0283",
+          "title": "renderer context loss cannot strand content, closing or GPU resources",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 190,
+            "column": 1
+          },
+          "duration": 2763,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:19.631Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-4ce0f0e01b73ccfdb96a",
+          "title": "a failed lazy engine leaves the photographic handoff and navigation usable",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 202,
+            "column": 1
+          },
+          "duration": 3750,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:22.409Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-0d69d58c71ed60857e3b",
+          "title": "reader retains the loaded image and its caption until the next request is ready",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 213,
+            "column": 1
+          },
+          "duration": 1530,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:26.173Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-1bbc13d19d0ff097da39",
+          "title": "inspector interruption and route unmount restore focus and scrolling",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 234,
+            "column": 1
+          },
+          "duration": 1756,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:27.718Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-de6ad2cdb9597313d211",
+          "title": "disclosure interruption and reduced motion finish with correct expanded state and unclipped content",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 249,
+            "column": 1
+          },
+          "duration": 1314,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:29.490Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-a97f0dcb2f89f9b7cb71",
+          "title": "touch needs no hover, pixel density stays bounded and the active rig does not render continuously",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 266,
+            "column": 1
+          },
+          "duration": 12055,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:30.819Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "219f2f1c6368d84b11d2-429f54e346918d681a39",
+          "title": "reader Back restores the previous reading position and hash links still reach their target",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "signature-motion.spec.ts",
+            "line": 303,
+            "column": 1
+          },
+          "duration": 2274,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T12:03:42.891Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 45,
+        "expected": 45,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 45,
+    "expected": 45,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

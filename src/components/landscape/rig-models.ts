@@ -97,6 +97,7 @@ export function createRig(kind: RigKind, lowResolution = false) {
       materials.metal,
       parent,
     );
+    p.name = 'hinge-axle';
     p.rotation.x = Math.PI / 2;
     p.position.set(x, y, z);
     const cap = mesh(
@@ -104,6 +105,7 @@ export function createRig(kind: RigKind, lowResolution = false) {
       materials.metal,
       parent,
     );
+    cap.name = 'hinge-cap';
     cap.position.set(x, y, z + 0.18);
   };
   if (kind === "jobpilot") {
@@ -137,11 +139,11 @@ export function createRig(kind: RigKind, lowResolution = false) {
           );
         },
         0.035,
-        lowResolution ? 16 : 48,
-        lowResolution ? 8 : 28,
+        lowResolution ? 28 : 48,
+        lowResolution ? 16 : 28,
       );
       mesh(geo, i % 2 ? materials.paper : materials.oxide, pivot);
-      pin(pivot, 0, 0.05, 0);
+      pin(pivot, 0, 0, 0);
       joints.push({
         pivot,
         rotation: {
@@ -162,6 +164,13 @@ export function createRig(kind: RigKind, lowResolution = false) {
       const pivot = new THREE.Group();
       group.add(pivot);
       pivot.rotation.y = (i * Math.PI) / 3;
+      // Unfurl about the support rod, rather than orbiting the ribbon centre.
+      // The offset preserves the accepted closed ribbon geometry exactly.
+      const hinge = new THREE.Vector3(0.8, 0, 0.28);
+      pivot.position.copy(hinge).applyEuler(pivot.rotation);
+      const ribbon = new THREE.Group();
+      ribbon.position.copy(hinge).negate();
+      pivot.add(ribbon);
       const geo = sheet(
         (u, v) => {
           const a = u * Math.PI * 2;
@@ -173,28 +182,27 @@ export function createRig(kind: RigKind, lowResolution = false) {
           );
         },
         0.035,
-        lowResolution ? 40 : 96,
-        lowResolution ? 3 : 8,
+        lowResolution ? 56 : 96,
+        lowResolution ? 6 : 8,
       );
-      mesh(geo, [materials.ink, materials.sage, materials.paper][i], pivot);
+      mesh(geo, [materials.ink, materials.sage, materials.paper][i], ribbon);
       const rod = mesh(
         new THREE.CylinderGeometry(0.025, 0.025, 2.6, 12),
         materials.metal,
         pivot,
       );
-      rod.position.set(0.8, 0, 0.28);
-      pin(pivot, 0.8, -1.23, 0.28);
+      rod.name = 'support-rod';
+      pin(pivot, 0, -1.23, 0);
+      pin(pivot, 0, 1.23, 0);
+      const opening = new THREE.Euler((i - 1) * 0.38, (i * Math.PI) / 3 + (i - 1) * 0.72, (i - 1) * 0.38);
+      const destination = hinge.clone().applyEuler(opening).add(new THREE.Vector3((i - 1) * 2.85, i % 2 ? 0.65 : -0.1, (i - 1) * 0.6));
       joints.push({
         pivot,
         rotation: {
-          x: (i - 1) * 0.38,
-          y: (i * Math.PI) / 3 + (i - 1) * 0.72,
-          z: (i - 1) * 0.38,
+          x: opening.x, y: opening.y, z: opening.z,
         },
         position: {
-          x: (i - 1) * 2.85,
-          y: i % 2 ? 0.65 : -0.1,
-          z: (i - 1) * 0.6,
+          x: destination.x, y: destination.y, z: destination.z,
         },
         delay: i * 0.09,
       });
@@ -203,31 +211,34 @@ export function createRig(kind: RigKind, lowResolution = false) {
     const beams = [
       [-0.85, 0, 0.2, 0],
       [0.65, 0, -0.1, 0],
-      [0, 1, -0.35, Math.PI / 2],
-      [0, -1, 0.4, Math.PI / 2],
-      [0.1, 0, 0.55, -0.72],
-      [-0.4, 0.4, -0.55, 0.68],
+      [0, 1, -0.40, Math.PI / 2],
+      [0, -1, 0.50, Math.PI / 2],
+      [0.1, 0, 0.80, -0.72],
+      [-0.4, 0.4, -0.70, 0.68],
     ];
     beams.forEach(([x, y, z, a], i) => {
       const pivot = new THREE.Group();
       group.add(pivot);
-      pivot.position.set(x, y, z);
       pivot.rotation.z = a;
-      mesh(
+      const hinge = new THREE.Vector3(0, 1.12, 0);
+      pivot.position.copy(new THREE.Vector3(x, y, z)).sub(hinge.clone().applyEuler(pivot.rotation));
+      const beam = mesh(
         new THREE.BoxGeometry(0.31, 2.8, 0.28),
         i === 2 || i === 5 ? materials.paper : materials.forest,
         pivot,
       );
-      pin(pivot, 0, -1.12, 0.15);
-      pin(pivot, 0, 1.12, 0.15);
+      beam.position.copy(hinge);
+      pin(pivot, 0, 0, 0.15);
+      pin(pivot, 0, 2.24, 0.15);
       const side = i % 2 ? 1 : -1;
+      const opening = new THREE.Euler(0, side * 0.12, i < 2 ? 0 : Math.PI / 2);
+      const destination = new THREE.Vector3(i < 2 ? side * 2.9 : 0, i < 2 ? 0 : i < 4 ? side * 1.8 : side * 2.15, (i - 2) * 0.12)
+        .sub(hinge.clone().applyEuler(opening));
       joints.push({
         pivot,
-        rotation: { x: 0, y: side * 0.12, z: i < 2 ? 0 : Math.PI / 2 },
+        rotation: { x: opening.x, y: opening.y, z: opening.z },
         position: {
-          x: i < 2 ? side * 2.9 : 0,
-          y: i < 2 ? 0 : i < 4 ? side * 1.8 : side * 2.15,
-          z: (i - 2) * 0.12,
+          x: destination.x, y: destination.y, z: destination.z,
         },
         delay: i * 0.055,
       });

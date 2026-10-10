@@ -27,6 +27,13 @@
 .landscape .screenshot-error { flex-direction: column; gap: 10px; padding: 20px; pointer-events: auto; text-align: center; }
 .landscape .screenshot-error button { min-height: 44px; padding: 8px 14px; }
 .landscape .screenshot-error > span { font-size: 12px; }
+.landscape .screenshot-previous { display: block; position: absolute; inset: 0; pointer-events: none; opacity: 1; transition: opacity 220ms ease-in-out; }
+.landscape .screenshot-previous img { display: block; width: 100%; height: 100%; }
+.landscape .screenshot-frame .screenshot-button { opacity: 0; transition: opacity 220ms ease-in-out; }
+.landscape .screenshot-frame[data-image-state="ready"] .screenshot-button { opacity: 1; }
+.landscape .screenshot-frame[data-image-state="ready"] .screenshot-previous { opacity: 0; }
+.landscape .screenshot-frame.has-previous-image .screenshot-status:not(.screenshot-error) { inset: auto 12px 12px; padding: 8px 12px; width: max-content; max-width: calc(100% - 24px); }
+@media (prefers-reduced-motion: reduce) { .landscape .screenshot-frame .screenshot-button, .landscape .screenshot-previous { transition: none; } }
 .landscape .case-figure { margin: 0; }
 .landscape .case-figure .screenshot-frame { max-width: var(--frame-max-width); margin-inline: auto; }
 .landscape .case-figure.is-phone .screenshot-frame { max-width: 360px; }

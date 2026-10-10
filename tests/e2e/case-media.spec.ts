@@ -82,7 +82,7 @@ test('unavailable media retries the original without moving its caption', async 
   available = true;
   await frame.getByRole('button', { name: 'Retry image' }).click();
   await expect(frame).toHaveAttribute('data-image-state', 'ready');
-  await expect(frame.locator('img')).toHaveAttribute('src', '/projects/phase3/gamezone-rooms.webp');
+  await expect(frame.locator('.screenshot-button img')).toHaveAttribute('src', '/projects/phase3/gamezone-rooms.webp');
   const after = await page.locator('.case-figure').evaluate(el => ({ height: el.querySelector('.screenshot-frame')!.getBoundingClientRect().height, caption: el.querySelector('figcaption')!.getBoundingClientRect().top }));
   expect(after.height).toBeCloseTo(before.height, 0); expect(after.caption).toBeCloseTo(before.caption, 0);
   const trigger = frame.getByRole('button', { name: /Enlarge/ });
@@ -111,7 +111,7 @@ test('primary loading space stays reserved and portrait captures keep their prop
   await page.locator('.case-media-chooser summary').click();
   await page.locator('.case-media-chooser').getByRole('button', { name: /Mobile navigation on the public demonstration page/ }).click();
   const portrait = page.locator('.case-figure .screenshot-frame');
-  await expect(portrait.locator('img')).toHaveAttribute('src', '/projects/phase2/home-services-mobile-menu.webp');
+  await expect(portrait.locator('.screenshot-button img')).toHaveAttribute('src', '/projects/phase2/home-services-mobile-menu.webp');
   const bounds = await portrait.boundingBox();
   expect(bounds!.width / bounds!.height).toBeCloseTo(390 / 844, 2);
   await expect(page.locator('.case-figure')).not.toHaveClass(/is-wide/);
@@ -133,12 +133,12 @@ for (const slug of ['jobpilot-ai', 'gamezone-arena']) test(`${slug} waits offscr
   const frame = page.locator('.workflow-frames .screenshot-frame').last();
   await expect(frame).toBeAttached();
   expect((await frame.boundingBox())!.y).toBeGreaterThan((page.viewportSize()!.height) + 600);
-  await expect(frame.locator('img')).toHaveCount(0);
+  await expect(frame.locator('.screenshot-button img')).toHaveCount(0);
   const dimensions = await frame.evaluate(el => ({ width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height }));
   await page.clock.fastForward(16_000);
   await expect(frame).toHaveAttribute('data-image-state', 'loading');
   await expect(frame.getByText('This image is unavailable.')).toHaveCount(0);
-  await expect(frame.locator('img')).toHaveCount(0);
+  await expect(frame.locator('.screenshot-button img')).toHaveCount(0);
   await frame.scrollIntoViewIfNeeded();
   await expect(frame).toHaveAttribute('data-image-state', 'ready');
   expect(await frame.evaluate(el => ({ width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height }))).toEqual(dimensions);
@@ -156,7 +156,7 @@ test('a workflow deadline starts once at eligibility and does not reset when vis
   await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 1_000));
   const frame = page.locator('.workflow-frames .screenshot-frame').last();
   await frame.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
-  await expect(frame.locator('img')).toBeAttached();
+  await expect(frame.locator('.screenshot-button img')).toBeAttached();
   await page.clock.fastForward(10_000);
   await page.locator('.case-heading').evaluate(el => el.scrollIntoView({ behavior: 'instant' }));
   await frame.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
@@ -177,11 +177,11 @@ test('changing sources retires the previous deadline and late request events', a
   await page.route('**/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png', async route => { await newRequest; await route.fulfill({ contentType: 'image/png', body: pixel }); });
   await page.goto('/projects/jobpilot-ai');
   const frame = page.locator('.case-figure .screenshot-frame');
-  await expect(frame.locator('img')).toBeAttached();
+  await expect(frame.locator('.screenshot-button img')).toBeAttached();
   await page.clock.fastForward(10_000);
   await page.locator('.case-media-chooser summary').click();
   await page.locator('.case-media-chooser').getByRole('button', { name: /Discover jobs/ }).click();
-  await expect(frame.locator('img')).toHaveAttribute('src', /79bf6e53/);
+  await expect(frame.locator('.screenshot-button img')).toHaveAttribute('src', /79bf6e53/);
   await page.clock.fastForward(5_000);
   await expect(frame).toHaveAttribute('data-image-state', 'loading');
   releaseNew(); await expect(frame).toHaveAttribute('data-image-state', 'ready');
@@ -200,7 +200,7 @@ test('retry owns a fresh deadline and ignores the retired responsive request', a
   });
   await page.goto('/projects/gamezone-arena');
   const frame = page.locator('.case-figure .screenshot-frame');
-  await expect(frame.locator('img')).toBeAttached();
+  await expect(frame.locator('.screenshot-button img')).toBeAttached();
   await page.clock.fastForward(15_000);
   await expect(frame).toHaveAttribute('data-image-state', 'failed');
   await frame.getByRole('button', { name: 'Retry image' }).click();
@@ -229,14 +229,14 @@ test('returning to a decoded cached image is ready without a second request', as
     await cachedPage.goto(`${baseURL}/projects/gamezone-arena`);
     const frame = cachedPage.locator('.case-figure .screenshot-frame');
     await expect(frame).toHaveAttribute('data-image-state', 'ready');
-    const src = await frame.locator('img').evaluate(img => (img as HTMLImageElement).currentSrc);
+    const src = await frame.locator('.screenshot-button img').evaluate(img => (img as HTMLImageElement).currentSrc);
     const requests = await cachedPage.evaluate(url => performance.getEntriesByName(url).length, src);
     const chooser = cachedPage.locator('.case-media-chooser');
     await chooser.locator('summary').click(); await chooser.locator('button').nth(1).click();
     await expect(frame).toHaveAttribute('data-image-state', 'ready');
     await chooser.locator('summary').click(); await chooser.locator('button').first().click();
     await expect(frame).toHaveAttribute('data-image-state', 'ready');
-    expect(await frame.locator('img').evaluate(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0)).toBe(true);
+    expect(await frame.locator('.screenshot-button img').evaluate(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0)).toBe(true);
     expect(await cachedPage.evaluate(url => performance.getEntriesByName(url).length, src)).toBe(requests);
   } finally { await cachedPage.close(); }
 });

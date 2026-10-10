@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-10T12:18:31.595Z",
+  "build": "Local production build",
+  "media": "Actual local assets and SHA-256 verified public PNG cache",
+  "records": "Frozen public GET snapshot; writes and counters blocked",
+  "provider": "No live provider responses; API behavior verified separately by regression fixtures",
+  "findings": [
+    {
+      "width": 1363,
+      "height": 936,
+      "checks": [
+        "Original portrait and major group entry; experience reverse; unchanged Capabilities",
+        {
+          "slug": "jobpilot-ai",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        {
+          "slug": "gamezone-arena",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        "Contact and Job Match immediately editable; no submissions or provider operations"
+      ],
+      "errors": [],
+      "writes": [],
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "height": 1366,
+      "checks": [
+        "Original portrait and major group entry; experience reverse; unchanged Capabilities",
+        {
+          "slug": "jobpilot-ai",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        {
+          "slug": "gamezone-arena",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        "Contact and Job Match immediately editable; no submissions or provider operations"
+      ],
+      "errors": [],
+      "writes": [],
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "checks": [
+        "Original portrait and major group entry; experience reverse; unchanged Capabilities",
+        {
+          "slug": "jobpilot-ai",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        {
+          "slug": "gamezone-arena",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        "Contact and Job Match immediately editable; no submissions or provider operations"
+      ],
+      "errors": [],
+      "writes": [],
+      "horizontalOverflow": false
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "checks": [
+        "Original portrait and major group entry; experience reverse; unchanged Capabilities",
+        {
+          "slug": "jobpilot-ai",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        {
+          "slug": "gamezone-arena",
+          "introductionWaitMs": 16000,
+          "waitingOffscreen": true,
+          "workflow": "All actual frames ready with stable heights",
+          "selection": true,
+          "inspector": "Keyboard, actual size, Escape and focus",
+          "disclosure": true
+        },
+        "Contact and Job Match immediately editable; no submissions or provider operations"
+      ],
+      "errors": [],
+      "writes": [],
+      "horizontalOverflow": false
+    }
+  ]
+}

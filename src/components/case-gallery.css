@@ -15,7 +15,12 @@
 .case-inspector::backdrop {
   background: #20262980;
   backdrop-filter: blur(8px);
+  opacity: 1;
+  transition: opacity 220ms ease;
 }
+.case-inspector[data-viewer-state="closing"]::backdrop { opacity: 0; }
+@starting-style { .case-inspector[open]::backdrop { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .case-inspector::backdrop { transition: none; } }
 .case-inspector .case-inspector-inner {
   height: 100%;
   min-height: 0;

@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiX } from "react-icons/fi";
 import { ResponsiveProjectImage } from "./ResponsiveProjectImage";
 import type { DetailScreen } from "../lib/project-detail-screens";
 import "./case-gallery.css";
+import { gsap } from 'gsap';
+import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './landscape/finite-motion';
+import { prefersReducedMotion, useMotionPreference } from '../lib/use-motion-preference';
 
 export function CaseGallery({
   screens,
@@ -24,8 +27,11 @@ export function CaseGallery({
   const [actual, setActual] = useState(false);
   const [failed, setFailed] = useState<string | null>(null);
   const close = useRef<HTMLButtonElement>(null);
+  const animation = useRef<gsap.core.Timeline | null>(null), closing = useRef(false);
+  const unlock = useRef<(() => void) | null>(null);
+  const reduced = useMotionPreference();
   const screen = screens[index];
-  useEffect(() => {
+  useLayoutEffect(() => {
     const modal = dialog.current;
     const trigger =
       returnFocusTo ??
@@ -33,19 +39,57 @@ export function CaseGallery({
         ? document.activeElement
         : null);
     const overflow = document.body.style.overflow;
+    const padding = document.body.style.paddingRight;
+    const scrollbar = innerWidth - document.documentElement.clientWidth;
+    if (scrollbar > 0) document.body.style.paddingRight = `${parseFloat(getComputedStyle(document.body).paddingRight) + scrollbar}px`;
     document.body.style.overflow = "hidden";
+    let locked = true;
+    const releaseScroll = () => {
+      if (!locked) return;
+      locked = false;
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = padding;
+    };
+    unlock.current = releaseScroll;
     modal?.showModal();
     close.current?.focus();
+    if (modal) {
+      if (prefersReducedMotion()) modal.dataset.viewerState = 'active';
+      else {
+        modal.dataset.viewerState = 'opening';
+        const timeline = gsap.timeline({ paused: true });
+        animation.current = timeline;
+        timeline.fromTo(modal, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' });
+        playFiniteMotion(timeline, { complete: () => { modal.dataset.viewerState = 'active'; } });
+      }
+    }
     return () => {
+      stopFiniteMotion(animation.current);
       modal?.close();
-      document.body.style.overflow = overflow;
-      trigger?.focus({ preventScroll: true });
+      releaseScroll();
+      unlock.current = null;
+      if (trigger?.isConnected) trigger.focus({ preventScroll: true });
     };
   }, [returnFocusTo]);
+  useEffect(() => { if (reduced) finishFiniteMotion(animation.current); }, [reduced]);
+  const requestClose = () => {
+    if (closing.current) return;
+    closing.current = true;
+    stopFiniteMotion(animation.current);
+    const modal = dialog.current;
+    if (!modal || reduced) { onClose(); return; }
+    modal.dataset.viewerState = 'closing';
+    const timeline = gsap.timeline({ paused: true });
+    animation.current = timeline;
+    timeline.to(modal, { opacity: 0, y: 6, duration: 0.22, ease: 'power2.in' });
+    playFiniteMotion(timeline, { complete: onClose });
+  };
   useEffect(() => {
     dialog.current
       ?.querySelector<HTMLElement>('[aria-current="true"]')
       ?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    const region = dialog.current?.querySelector('.case-inspector-image');
+    region?.scrollTo(0, 0);
   }, [index]);
   const step = (delta: number) =>
     setIndex((index + delta + screens.length) % screens.length);
@@ -56,10 +100,23 @@ export function CaseGallery({
       aria-label={`${projectName} image gallery`}
       onCancel={(event) => {
         event.preventDefault();
+        // A repeated native close request may be non-cancelable. Retire the
+        // React owner and scroll lock immediately instead of leaving a hidden
+        // mounted dialog until its decorative exit finishes.
+        if (!event.cancelable) {
+          stopFiniteMotion(animation.current);
+          unlock.current?.();
+          onClose();
+        } else requestClose();
+      }}
+      onClose={() => {
+        if (dialog.current?.open) return; // Ignore a Strict Mode re-open's old event.
+        stopFiniteMotion(animation.current);
+        unlock.current?.();
         onClose();
       }}
       onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
+        if (event.target === event.currentTarget) requestClose();
       }}
       onKeyDown={(event) => {
         if (
@@ -93,7 +150,7 @@ export function CaseGallery({
             <button
               ref={close}
               type="button"
-              onClick={onClose}
+              onClick={requestClose}
               aria-label="Close gallery"
             >
               <FiX size={22} />
@@ -101,7 +158,7 @@ export function CaseGallery({
           </div>
         </header>
         <div
-          key={`${screen.src}:${actual}`}
+          key={String(actual)}
           className={`case-inspector-image ${actual ? "is-actual" : ""}`}
           data-viewport={screen.viewport}
           role="region"
@@ -112,18 +169,14 @@ export function CaseGallery({
             <p className="case-shot-error">
               This image is unavailable. Select another screen below.
             </p>
-          ) : actual ? (
-            <img
-              src={screen.src}
-              alt={`${projectName}: ${screen.label}`}
-              onError={() => setFailed(screen.src)}
-            />
           ) : (
             <ResponsiveProjectImage
               src={screen.src}
               alt={`${projectName}: ${screen.label}`}
               sizes="96vw"
               priority
+              retainPrevious
+              original={actual}
               onError={() => setFailed(screen.src)}
             />
           )}
