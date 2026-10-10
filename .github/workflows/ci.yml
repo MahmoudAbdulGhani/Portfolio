@@ -9,6 +9,31 @@ permissions:
   contents: read
 
 jobs:
+  case-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Verify original identities and authored media provenance
+        run: node --test tests/case-media-assets.test.mjs
+      - name: Install browser engines
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Verify all readers and viewer modes
+        run: npm run test:e2e -- --config=playwright.media.config.ts --workers=1
+      - name: Retain media failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: case-media-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
   cv-layout:
     runs-on: ubuntu-latest
     timeout-minutes: 15

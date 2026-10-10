@@ -1,7 +1,7 @@
 import { FiArrowUpRight } from 'react-icons/fi';
-import type { CSSProperties } from 'react';
+import { useSyncExternalStore } from 'react';
 import type { Project } from '../../types';
-import { screenGeometry, type DetailScreen } from '../../lib/project-detail-screens';
+import { mediaPresentation, screenGeometry, type DetailScreen } from '../../lib/project-detail-screens';
 import type { CaseStudy } from '../../../shared/case-study-runtime';
 import { selectedContributions, screenMatches } from '../../../shared/case-study-runtime';
 import { nonempty, projectDisplayName } from '../../../shared/content-integrity';
@@ -9,18 +9,28 @@ import { ScreenshotFrame } from './ScreenshotFrame';
 import { CaseDisclosure } from './CaseDisclosure';
 import './case-narrative.css';
 
+const phoneQuery = '(max-width: 720px)';
+const subscribePhone = (notify: () => void) => {
+  const query = matchMedia(phoneQuery);
+  query.addEventListener('change', notify);
+  return () => query.removeEventListener('change', notify);
+};
+
 export function CaseNarrative({ project, study, screens, openGallery }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
-  openGallery: (index: number, trigger: HTMLButtonElement) => void;
+  openGallery: (index: number, trigger: HTMLButtonElement, alternate?: DetailScreen) => void;
 }) {
+  const phone = useSyncExternalStore(subscribePhone, () => matchMedia(phoneQuery).matches, () => false);
   const workflow = study.workflow.flatMap(step => {
     const index = step.matches.map(match => screens.findIndex(screen => screenMatches(screen.src, [match]))).find(index => index >= 0) ?? -1;
     const screen = screens[index];
     const image = screen && screenGeometry(screen);
-    const excerpt = Boolean(image && !screen.viewport && image.width >= 1200 && image.height > image.width * 0.72);
-    return screen && image ? [{ ...step, index, screen, excerpt, portrait: image.width < 1200 && image.height > image.width, ratio: excerpt ? '16 / 10' : `${image.width} / ${image.height}` }] : [];
+    const media = screen && mediaPresentation(screen.src);
+    const mobile = phone ? media?.mobile : undefined;
+    const details = mobile ? [mobile] : media?.details.length ? media.details : screen && image ? [{ ...image, src: screen.src, label: screen.label }] : [];
+    return screen && image ? [{ ...step, index, screen, mobile, details, authored: Boolean(mobile || media?.details.length) }] : [];
   });
   const role = project.myRole?.trim(), ownership = project.ownership?.trim();
   const completeContributions = nonempty(project.contributions);
@@ -39,15 +49,17 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
         <span className="eyebrow">{study.kind === 'compact' ? 'A CLOSER LOOK' : 'PRODUCT WORKFLOW'}</span>
         <h2>{study.workflowHeading}</h2>
         <div className="workflow-frames">
-          {workflow.map((step, index) => <figure key={step.screen.src} className={step.portrait ? 'portrait-workflow' : undefined}>
-            <ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}. ${step.notice}`} label={step.screen.label} ratio={step.ratio}
-              className={`workflow-image${step.mobileCrop ? ' has-mobile-crop' : ''}${step.excerpt ? ' is-desktop-excerpt' : ''}`} style={{
-              '--crop-zoom': step.mobileCrop?.zoom, '--crop-x': `${step.mobileCrop?.x}%`, '--crop-y': `${step.mobileCrop?.y}%`,
-            } as CSSProperties} enlarge={trigger => openGallery(step.index, trigger)} sizes={step.mobileCrop ? `(max-width:720px) ${Math.ceil(step.mobileCrop.zoom * 90)}vw, 90vw` : '90vw'} />
-            <figcaption>
+          {workflow.map((step, index) => <figure key={step.screen.src}>
+            <figcaption className="workflow-intro">
               <span className="workflow-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{step.title}</h3>{(step.mobileCrop || step.excerpt) && <span className={`workflow-crop-label${step.excerpt ? ' is-desktop-crop' : ''}`}>Detail excerpt · full screen in the gallery</span>}<p>{step.notice}</p><button className="text-link" onClick={event => openGallery(step.index, event.currentTarget)}>Inspect image<FiArrowUpRight /></button></div>
+              <div><h3>{step.title}</h3><p>{step.notice}</p></div>
             </figcaption>
+            <div className="workflow-details">{step.details.map(detail => <div className={`workflow-detail${detail.height > detail.width ? ' is-portrait' : ''}`} key={detail.src}>
+              {step.authored && <p className="workflow-detail-label">{step.mobile ? 'Phone capture' : 'Detail view'} · {detail.label}</p>}
+              <ScreenshotFrame src={detail.src} alt={`${projectDisplayName(project)}: ${detail.label}. ${step.notice}`} label={detail.label} ratio={`${detail.width} / ${detail.height}`}
+                className="workflow-image" enlarge={trigger => openGallery(step.index, trigger, step.mobile ? { src: step.mobile.fullSrc, label: detail.label, viewport: 'phone' } : undefined)} sizes="(max-width:720px) calc(100vw - 32px), 740px" />
+            </div>)}</div>
+            <button className="text-link workflow-full-screen" onClick={event => openGallery(step.index, event.currentTarget, step.mobile ? { src: step.mobile.fullSrc, label: step.mobile.label, viewport: 'phone' } : undefined)}>View full screen<FiArrowUpRight /></button>
           </figure>)}
         </div>
       </section>}

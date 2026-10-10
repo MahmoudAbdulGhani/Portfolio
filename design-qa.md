@@ -1,3 +1,121 @@
+# Mobile case-study media refinement — 10 October 2026
+
+Started from Phase 5 ef76dab47d050ce37641c24e283553758c3d209f on verify/phase-5-readiness after inspecting the branch/tree. Origin still points to that Phase 5 head after refresh. New branch: refine/mobile-case-media. The untracked Codex_Engineered_Landscape_Handoff.md is untouched and excluded from commits. The attached All_Project_Case_Media_Audit.html supplies observations; the pasted request defines scope. Product Design audit captures use genuine assets; no replacement UI artwork or fabricated responsive screens are introduced.
+
+[Self-contained before/after comparison](docs/design/mobile-case-media/comparison.html) · [original/source verification](docs/design/mobile-case-media/current-public-sources.json) · [authored compositions and hashes](docs/design/mobile-case-media/compositions.json) · [phone capture provenance](docs/design/mobile-case-media/phone-captures.json).
+
+## Confirmed cause and implementation
+
+The baseline revalidates all 50 gallery entries and 15 workflow tasks across eight readers. Twelve workflow previews had forced phone 3:2 frames plus cover/transform enlargement up to 3×. Five tall desktop task screens became excerpts through a dimension heuristic. This cut or hid meaningful task areas. Existing captions matched their sources, but appeared after the image. The original inspector fitted width alone: Cedar's small portrait could expand beyond its image-region height.
+
+Retired the shared crop fields, dimension-based excerpt decisions and phone transform/cover rules. The measured, explicit identity manifest now classifies all 50 originals, records task associations and reserves original geometry even for older phone/tablet captures that lacked responsive metadata. Unknown media keeps a safe uncropped fallback. The accepted Collection/gallery cover proportions, sculptures, palette, portrait, motion and AI/CV integrity remain unchanged.
+
+The workflow uses title → explanation → labelled image detail(s) → View full screen, with 16px phone gutters, 12–16px internal spacing and 32px between tasks. The 15 tasks now contain 27 inline frames: 21 authored details, three genuine GameZone phone task captures and three preserved original portrait captures. Authored rectangles retain relevant controls rather than uniformly shrinking entire dashboards. Every detail opens its complete source; phone task views record an explicit complete-source path. The 50 original gallery entries remain selectable.
+
+Fit uses both region dimensions with scale-down; it never enlarges a small original. The responsive sizes hint is also bounded by the measured source width, preventing width descriptors from inflating a small source's CSS intrinsic dimensions on desktop. Separate Fit width / Actual size controls retain scrolling and raw originals. Controls are 48px; safe-area padding, keyboard arrows, Escape, native dialog containment, focus return and the existing finite handoff/reduced-motion behavior remain. Original-image retry now works in the inspector and moves focus into the stable image region before removing its button.
+
+Two additional failures found during verification were repaired without changing motion: at a genuine 400% zoom / 320×234 equivalent, the old short-height header pushed navigation outside the dialog. The compact layout keeps navigation/tools visible and the image region positive; full title/qualification text stays in a keyboard-focusable, scrollable caption region. WebKit pointerdown could focus the reader main, causing the chooser's blur handler to close before click. A scoped internal-pointer guard preserves click delivery, with pointer-up/cancel cleanup and normal outside/keyboard dismissal. The accepted chooser layout is unchanged.
+
+ScreenshotFrame's visibility gate, one-shot 15,000ms deadline, keyed source/retry isolation, cached-image handling, timer cleanup and 220ms/reduced-motion handoff are unchanged. Responsive variants and measured metadata are generated through the existing pipeline; no viewer library or dependency is added.
+
+## Per-project decisions and limits
+
+1. **JobPilot AI — improved:** source/city and country/sort details; saved-role context, original-posting reference and complete workspace tabs; complete voice consent/draft context plus readable start/text actions. Existing public welcome phone captures are retained in the gallery and never substituted for these authenticated tasks. Fine print in the full consent context still needs viewer zoom.
+2. **Lobby — improved:** complete code/Join panel; complete invitation dialog including QR, link, Copy/Download/Share; audio context plus readable Start audio/Hide chat actions; complete chat panel/composer. No active conversation is fabricated and no call-quality claim is added.
+3. **GameZone — improved:** genuine same-task phone session, device and review views, captured from the deployed frontend with synthetic GET records and a declared demonstration clock. All writes are blocked; final submission is never activated. Date/slot/duration, selected device, price, cash-pending explanation and confirmation control stay visible. Desktop originals and older room-only phone/tablet captures remain distinct gallery evidence. Backend availability, booking/payment outcomes and deployed source revision remain unverified.
+4. **Cedar — improved:** project identity/actions/tabs; complete budget and cost tile groups; phase progress/detailed-plan action; posted revenue/expense totals, receivables, complete Profit & Loss tile and Coming soon inventory tile. Full financial originals remain accessible and numbers remain demonstration data. The original 572×768 advisor is complete and bounded in Fit. Public landing phone captures never stand in for financial work.
+5. **UniHub — improved within available evidence:** a complete transcript document retains its header, every column label and row, credits/GPA and source demonstration disclaimer. Student registration does not replace transcript evidence. Fine text/columns need Fit width / Actual size on a narrow phone; no academic credential is established.
+6. **User Management — preserved and clarified:** complete original portrait registration is clearer than the genuine phone version, whose source password guidance overlaps. Both remain available; no fields or validation context are painted over. This portfolio change does not repair the source application's layout.
+7. **Medicare — honest fallback:** public homepage and identity are contained at measured proportions, with consistent complete-image access. The source-based appointment diagram remains; authenticated clinical screenshots are unavailable.
+8. **Home Services — preserved:** genuine 390×844 mobile menu keeps its proportions and supplied-design attribution. The entire source fits in the viewer, with width/native modes available for detail.
+
+## Visual evidence and validation
+
+The before build is an isolated checkout of ef76dab; the after build is the compiled refinement. Frozen public GET records make comparisons repeatable, and actual local project assets / unmodified cached remote originals are used. Fresh production GETs confirmed all eight media source lists unchanged and all ten remote original SHA-256 hashes unchanged (HTTP 200). Cached layout checks therefore use the current published originals, but do not promise future CDN uptime.
+
+At 320, 390, 768 and 1363px: 60 workflow task checks / 108 inline-frame observations, 60 complete-source workflow viewer captures, and all 200 original-gallery viewer captures. Every original loads; all default Fit observations stay within their region. Each of the 200 gallery selections was exercised in Fit width, Actual size and Fit (600 mode observations). Gallery thumbnails and accepted covers remain separate from evidence-frame proportions. Complete workflow figures are stitched from native clips inside the reader scroll area; sticky navigation is excluded by capture position, with no product CSS/viewport alteration. Invalid earlier overlay captures were rejected and replaced.
+
+The standalone comparison embeds 704 real before/after captures for all eight projects and all four widths, plus every per-image decision. All 704 embedded images decode and all four width selectors expose the correct eight project sections. It needs no external script/style/image resource. [Comparison validation](docs/design/mobile-case-media/comparison-validation.json).
+
+Genuine Chromium tab zoom was verified through chrome.tabs.setZoom/getZoom at 200% and 400%: 26 route checks and 16 reader-viewer openings. Explicit 320×234 checks across all eight readers keep footer controls inside the viewport and leave a positive image region. At this extreme height the image is necessarily small; width/native modes scroll, and caption text can be scrolled with keyboard or touch. No physical browser chrome, notch or virtual-keyboard result is claimed.
+
+- Typecheck, lint and production build pass. Existing approximately 504KB motion chunk warning remains; no motion code is altered. Main entry gzip is approximately 83.7KB versus 76.7KB baseline; explicit metadata and viewer controls add approximately 7KB. Images remain visibility-gated and responsive; this is a build-size observation, not a new LCP/field-performance claim.
+- 19 focused Node tests pass: learning/context/content integrity, source links, attribution/captions and two new independent source-dimension/provenance tests. JavaScript-only API startup and health/projects/profile pass; all three sculpture geometry tests pass.
+- 93 affected existing Chromium desktop/tablet/phone tests pass without retries/skips or relaxed deadlines: case stories, chooser, public gallery/form fixtures, assistant accessibility, lazy requests, exact deadline, source changes, original retry and caching. Mock Contact success is a local route fixture, never a production submission.
+- The portrait/viewer regression passes in all five configurations (three Chromium configurations, Firefox and emulated phone WebKit), including 320×234, portrait, landscape, all fit modes, control bounds and complete source dimensions.
+- The complete 170-case media run passes locally (7.5 minutes), followed by all five configurations passing an additional small-responsive-source regression. The resulting 175-case multi-engine media suite and required GitHub jobs are run for final closeout. Immutable final-head results are recorded in the draft PR closeout; pending CI is not predeclared green in this committed note. The media suite has its own 15-minute job, preserving the original smoke/motion suite and timeouts. No assertion/deadline is loosened. An intermediate same-size fixture incorrectly compared density-rounded intrinsic dimensions and a picture wrapper; those checks now assert measured source geometry and absence of responsive sources. Exact actual-size CSS dimensions avoid fractional DOMRect noise. Pointer-selection and short-height failures led to product fixes. Intermediate results remain separately labelled and are superseded by final runs.
+
+## Remaining gaps
+
+Physical Android portrait signoff remains open: the user's original report is valuable evidence, but no phone model/version or post-change physical result is supplied. Browser emulation is not a substitute for that gate. Physical Safari/iOS, browser chrome/safe areas/keyboards and screen-reader speech remain unverified. Genuine matching phone evidence is unavailable for JobPilot, Lobby, Cedar and UniHub; reviewed authentic details are the documented fallback, and full source zoom remains necessary for fine text. Medicare clinical media and User Management's source-form layout remain source-project gaps.
+
+Keep the previously documented tablet opening instability and Phase 4 motion findings separate. This media change does not claim to repair that historical issue. No merge, manual deployment, live CMS/database change, production Contact enquiry, reservation/payment submission or authenticated source-project operation was performed.
+
+## Every original image decision
+
+| Project / image | Role / measured dimensions | Workflow association | Presentation / complete-source policy |
+| --- | --- | --- | --- |
+| jobpilot-ai / Resume library and upload | overview; 1900 × 881 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| jobpilot-ai / Discover jobs | overview; 1899 × 877 | Find an opportunity | Authored complete task details; full original remains available. Source and city filters; Country and sort filters. |
+| jobpilot-ai / Saved job and application workspace | overview; 1898 × 876 | Keep the application together | Authored complete task details; full original remains available. Saved role and workspace identity; Original posting reference; Overview, application pack and tracking tabs. |
+| jobpilot-ai / Live voice interview practice | overview; 1900 × 870 | Prepare the conversation | Authored complete task details; full original remains available. Complete voice consent and draft-status panel; Start voice practice or choose text instead. |
+| jobpilot-ai / JobPilot product overview artwork | artwork; 1254 × 1254 | Gallery evidence only | Contained identity/artwork; no workflow claim. |
+| jobpilot-ai / Mobile welcome and application workflow | phone; 375 × 1200 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| jobpilot-ai / Tablet application workflow | tablet; 753 × 1200 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| lobby / Screen sharing in an audio room | overview; 1600 × 729 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| lobby / Friends directory | overview; 1920 × 877 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| lobby / Audio room and chat | overview; 1919 × 863 | Keep chat beside the call | Authored complete task details; full original remains available. Audio and chat context; Start audio or hide chat; Complete chat panel and message composer. |
+| lobby / Community chat | overview; 1920 × 870 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| lobby / Room invitation and QR code | overview; 1920 × 867 | Share one invitation | Authored complete task details; full original remains available. Complete invitation dialog, QR and sharing actions. |
+| lobby / Guest room access | overview; 1920 × 873 | Join a temporary room | Authored complete task details; full original remains available. Invitation code and Join room action. |
+| lobby / Mobile welcome and workspace preview | phone; 380 × 1210 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| lobby / Tablet welcome and workspace preview | tablet; 758 × 1100 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| gamezone-arena / Room selection Â· demonstration data | overview; 1920 × 1966 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Session date and time Â· demonstration data | overview; 1920 × 2117 | Choose the session | Genuine same-task phone capture for workflow; complete desktop original retained in gallery. |
+| gamezone-arena / Device selection Â· demonstration data | overview; 1920 × 1966 | Choose the devices | Genuine same-task phone capture for workflow; complete desktop original retained in gallery. |
+| gamezone-arena / Booking review Â· demonstration data | overview; 1920 × 1966 | Review before confirmation | Genuine same-task phone capture for workflow; complete desktop original retained in gallery. |
+| gamezone-arena / Customer bookings dashboard | overview; 1366 × 1446 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Choose a gaming room | overview; 1920 × 3135 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Booking date and time | overview; 1920 × 2287 | Choose the session | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Device selection | overview; 1920 × 1963 | Choose the devices | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Booking confirmation and payment | overview; 1920 × 2059 | Review before confirmation | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Arena administration overview | overview; 1920 × 2076 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Room management | overview; 1920 × 1918 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / User management | overview; 1920 × 916 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Arena landing page | overview; 1600 × 741 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| gamezone-arena / Mobile gaming rooms | phone; 380 × 1200 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| gamezone-arena / Tablet gaming rooms | tablet; 758 × 1200 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| construction-project-management-accounting-system / Construction portfolio overview | overview; 1904 × 879 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| construction-project-management-accounting-system / Project details and operations | overview; 1920 × 2333 | Read the project together | Authored complete task details; full original remains available. Project identity, actions and section tabs; Contract value and approved budget; Actual cost and forecast profit; Complete phase progress and detailed-plan action. |
+| construction-project-management-accounting-system / Financial reports | overview; 1920 × 1760 | Inspect the posted results | Authored complete task details; full original remains available. Posted revenue and expense totals; Outstanding receivables from unpaid invoices; Complete Profit & Loss report tile; Inventory valuation remains Coming soon. |
+| construction-project-management-accounting-system / AI project risk and forecast advisor | task; 572 × 768 | Explain a calculated estimate | Uncropped original at measured proportions; use viewer for fine detail. |
+| construction-project-management-accounting-system / Cedar public landing page | overview; 1897 × 880 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| construction-project-management-accounting-system / Mobile public landing page | phone; 375 × 1100 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| construction-project-management-accounting-system / Tablet public landing page | tablet; 753 × 1200 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| unihub / Student dashboard | overview; 1911 × 906 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| unihub / Administration dashboard | overview; 1919 × 918 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| unihub / Professor course catalog | overview; 1905 × 901 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| unihub / Student academic transcript | document; 1914 × 896 | Bring courses and grades together | Authored complete task details; full original remains available. Complete demonstration transcript document. |
+| unihub / Mobile student registration | phone; 390 × 844 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| unihub / Tablet sign in | tablet; 768 × 1024 | Gallery evidence only | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| full-stack-user-management-system / Public platform statistics | overview; 1920 × 877 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| full-stack-user-management-system / Public registration form Â· portrait capture | task; 1040 × 1688 | Registration is a client operation | Uncropped original at measured proportions; use viewer for fine detail. |
+| full-stack-user-management-system / Mobile registration | phone; 343 × 654 | Registration is a client operation | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+| medicare-hub / Public Medicare Hub homepage | overview; 1920 × 1319 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| medicare-hub / Medicare project identity | artwork; 1000 × 1000 | Gallery evidence only | Contained identity/artwork; no workflow claim. |
+| home-services / Home services landing page | overview; 1348 × 926 | Gallery evidence only | Uncropped original at measured proportions; use viewer for fine detail. |
+| home-services / Mobile navigation on the public demonstration page | phone; 390 × 844 | A mobile navigation sidebar | Complete authentic capture; no forced desktop proportions or workflow substitution. |
+
+## Changed files
+
+Runtime: CaseNarrative.tsx / case-narrative.css, ProjectReader.tsx, CaseGallery.tsx / case-gallery.css, CaseMediaNav.tsx, case-media.css, project-detail-screens.ts, generated case-media.ts / project-images.ts, and removal of unused shared case-study crop fields. ScreenshotFrame, ResponsiveProjectImage, Collection/portrait/sculpture/motion implementations, backend protections, learning policy, CV geometry and fixtures are preserved.
+
+Regression/CI: case-media-assets.test.mjs, mobile-case-media.spec.ts, focused asset/first-focus updates in case-media.spec.ts / case-study.spec.ts / readiness.spec.ts, playwright.media.config.ts, scoped testIgnore in the base config, and an additional media job in ci.yml. Existing smoke assertions remain owned by the original verify job.
+
+Assets/tooling/evidence: public/projects/case-media (21 authored detail masters, six phone full/task masters and responsive variants), prepare-case-media.mjs, capture-case-media-phone.mjs, review-case-media.mjs, build-case-media-comparison.mjs, this QA section, and docs/design/mobile-case-media (actual captures, standalone comparison, manifests/provenance, zoom and regression evidence). Build output, generated Prisma clients, local cached API records and the user's handoff are excluded.
+
+---
+
 # Phase 5: final validation — 10 October 2026
 
 Started on approved Phase 4 `de9f6657903c4e308ea4e3887f23cebc59fdb056` after checking branch/tree, refreshing origin and checking newer commits. Branch: `verify/phase-5-readiness`. The user's untracked handoff is untouched. Read the Phase 1–4 QA and evidence before testing. The Product Design audit used fresh captures; the accepted composition, portrait, palette, gallery, captions, motion and integrity rules are preserved. Draft review targets `refine/phase-4-signature-motion`. Implementation/final SHA, draft PR URL and immutable final-head CI are recorded in the PR closeout returned with this review; the committed matrix does not predeclare a pending workflow green.

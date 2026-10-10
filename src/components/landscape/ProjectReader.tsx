@@ -14,7 +14,7 @@ import { CaseNarrative } from "./CaseNarrative";
 import { CaseDisclosure } from "./CaseDisclosure";
 import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
-import { screenGeometry } from "../../lib/project-detail-screens";
+import { mediaPresentation, screenGeometry, type DetailScreen } from "../../lib/project-detail-screens";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
@@ -22,7 +22,7 @@ export function ProjectReader() {
   const record = useProject(slug),
     projects = useProjects();
   const [chapterRecord, setChapterRecord] = useState({ slug, index: 0 }),
-    [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number } | null>(null);
+    [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number; alternate?: DetailScreen } | null>(null);
   const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
   const [readyRecord, setReadyRecord] = useState<{ slug: string; src: string } | null>(null);
   const imageReady = useCallback((src: string) => setReadyRecord(previous => previous?.slug === slug && previous.src === src ? previous : { slug, src }), [slug]);
@@ -30,9 +30,9 @@ export function ProjectReader() {
   const setZoom = (index: number | null) => setZoomRecord(index === null ? null : { slug, index });
   const setChapter = (index: number) => setChapterRecord({ slug, index });
   const [galleryTrigger, setGalleryTrigger] = useState<HTMLButtonElement | null>(null);
-  const openGallery = (index: number, trigger: HTMLButtonElement) => {
+  const openGallery = (index: number, trigger: HTMLButtonElement, alternate?: DetailScreen) => {
     setGalleryTrigger(trigger);
-    setZoom(index);
+    setZoomRecord({ slug, index, alternate });
   };
   const project = record.data;
   if (record.isLoading || record.isError || !project)
@@ -66,9 +66,9 @@ export function ProjectReader() {
   const displayedIndex = readyRecord?.slug === slug ? screens.findIndex(screen => screen.src === readyRecord.src) : -1;
   const displayed = screens[displayedIndex] ?? current;
   const geometry = current && screenGeometry(current);
-  const phone = current?.viewport === 'phone' || Boolean(geometry && geometry.width < 1200 && geometry.height > geometry.width);
-  const artwork = Boolean(current && /artwork|identity/i.test(current.label));
-  const desktopExcerpt = Boolean(study && geometry && !phone && !artwork && geometry.width >= 1200 && geometry.height > geometry.width * 0.72);
+  const presentation = current && mediaPresentation(current.src);
+  const phone = current?.viewport === 'phone' || presentation?.role === 'phone' || presentation?.role === 'task' && Boolean(geometry && geometry.height > geometry.width);
+  const artwork = presentation?.role === 'artwork';
   const all =
     projects.data?.filter(
       (item) => item.published && item.showOnPortfolio !== false,
@@ -152,14 +152,14 @@ export function ProjectReader() {
         {current && (
           <>
             <CaseMediaNav screens={screens} index={activeIndex} select={setChapter} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
-            <figure className={`case-figure${phone ? ' is-phone' : !artwork ? ' is-wide' : ''}${desktopExcerpt ? ' is-desktop-excerpt' : ''}`}>
+            <figure className={`case-figure${phone ? ' is-phone' : !artwork ? ' is-wide' : ''}`}>
               <ScreenshotFrame src={current.src} alt={`${displayName}: ${current.label}`} label={`${displayName} screenshot`}
-                ratio={desktopExcerpt ? '16 / 10' : `${geometry?.width ?? 16} / ${geometry?.height ?? 10}`}
-                className={desktopExcerpt ? 'is-desktop-excerpt' : ''} buttonClassName="case-image" priority
-                style={{ '--frame-max-width': `${artwork ? 520 : desktopExcerpt ? 1300 : 650 * ((geometry?.width ?? 16) / (geometry?.height ?? 10))}px` } as CSSProperties}
+                ratio={`${geometry?.width ?? 16} / ${geometry?.height ?? 10}`}
+                buttonClassName="case-image" priority
+                style={{ '--frame-max-width': `${artwork ? 520 : Math.min(1300, 650 * ((geometry?.width ?? 16) / (geometry?.height ?? 10)))}px` } as CSSProperties}
                 sizes={phone ? '(max-width:720px) 90vw, 360px' : '90vw'}
                 onImageReady={imageReady} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
-              <figcaption className="image-caption"><span className="primary-excerpt-label">Detail excerpt · inspect the complete image</span>{study ? caseStudyImageCaption(study, displayed.src, displayed.label) : displayed.label}</figcaption>
+              <figcaption className="image-caption">{study ? caseStudyImageCaption(study, displayed.src, displayed.label) : displayed.label}</figcaption>
             </figure>
           </>
         )}
@@ -296,7 +296,7 @@ export function ProjectReader() {
       {zoom !== null && screens[zoom] && (
         <CaseGallery
           key={project.id}
-          screens={screens}
+          screens={zoomRecord?.alternate ? screens.map((screen, index) => index === zoom ? zoomRecord.alternate! : screen) : screens}
           projectName={displayName}
           initialIndex={zoom}
           returnFocusTo={galleryTrigger}

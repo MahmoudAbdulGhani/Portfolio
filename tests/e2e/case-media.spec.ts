@@ -148,7 +148,7 @@ test('a workflow deadline starts once at eligibility and does not reset when vis
   await page.clock.install({ time: new Date('2026-10-10T00:00:00Z') });
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png', async route => {
+  await page.route('**/projects/case-media/jobpilot-voice*', async route => {
     await pending; await route.fulfill({ contentType: 'image/png', body: pixel });
   });
   await page.goto('/projects/jobpilot-ai');

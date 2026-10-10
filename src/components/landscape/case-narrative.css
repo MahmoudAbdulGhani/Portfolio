@@ -7,17 +7,19 @@
 .landscape .story-credit { font-size: 13px; }
 .landscape .story-credit a, .landscape .story-support a { text-decoration: underline; text-underline-offset: 4px; }
 .landscape .workflow-frames { display: grid; gap: 44px; margin-top: 30px; }
-.landscape .workflow-frames figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.landscape .workflow-frames figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 .landscape .workflow-frames .workflow-image { display: block; border: 0; padding: 0; background: transparent; width: 100%; overflow: hidden; cursor: zoom-in; }
 .landscape .workflow-frames img { width: 100%; height: 100%; display: block; }
 .landscape .workflow-frames figcaption { display: flex; gap: 14px; min-width: 0; }
 .landscape .workflow-frames figcaption > div { max-width: 740px; }
-.landscape .workflow-crop-label { display: none; }
-.landscape .workflow-crop-label.is-desktop-crop { display: block; font: 12px/1.6 var(--mono); color: var(--muted); margin-top: 8px; }
-.landscape .case-narrative-compact .workflow-frames figure { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
-.landscape .workflow-frames figure.portrait-workflow { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
+.landscape .workflow-details { display: grid; gap: 16px; max-width: 100%; }
+.landscape .workflow-detail { width: 100%; max-width: 740px; }
+.landscape .workflow-detail.is-portrait { max-width: 360px; }
+.landscape .workflow-frames .workflow-detail-label { margin: 0 0 12px; font: 12px/1.6 var(--mono); color: var(--muted); }
+.landscape .workflow-full-screen { justify-self: start; min-height: 48px; padding: 8px 0; }
+.landscape .workflow-intro h3 { margin: 0; }
 .landscape .case-narrative-compact .engineering-decisions { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
-.landscape .workflow-frames figcaption p { margin: 12px 0; color: var(--muted); font-size: 14px; }
+.landscape .workflow-frames figcaption p { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
 .landscape .workflow-number { font: 11px 'IBM Plex Mono', monospace; color: var(--accent); padding-top: 5px; }
 .landscape .story-contribution { border-top: 1px solid var(--line); padding-top: 32px; }
 .landscape .story-contribution > ul { max-width: 780px; padding-left: 20px; }
@@ -55,14 +57,8 @@
 @media (max-width: 720px) {
   .landscape .case-narrative section { margin-top: 38px; }
   .landscape .workflow-frames figure, .landscape .story-scope { grid-template-columns: minmax(0, 1fr); }
-  .landscape .case-narrative-compact .workflow-frames figure { grid-template-columns: minmax(0, 1fr); }
-  .landscape .workflow-frames figure.portrait-workflow { grid-template-columns: minmax(0, 1fr); }
-  .landscape .portrait-workflow .screenshot-frame { max-width: 360px; margin-inline: auto; }
   .landscape .workflow-frames { gap: 32px; }
-  .landscape .workflow-image.has-mobile-crop { aspect-ratio: 3 / 2 !important; }
-  .landscape .workflow-image.has-mobile-crop img { transform: scale(var(--crop-zoom)); transform-origin: var(--crop-x) var(--crop-y); }
-  .landscape .case-page .workflow-image.has-mobile-crop .screenshot-button img { object-fit: cover; object-position: var(--crop-x) var(--crop-y); }
-  .landscape .workflow-crop-label { display: block; font: 12px/1.6 var(--mono); color: var(--muted); margin-top: 8px; }
+  .landscape .project-reader { padding-inline: 16px; }
   .landscape .story-scope { gap: 24px; }
   .landscape .decision-path ol { display: grid; grid-template-columns: minmax(0, 1fr); }
 }

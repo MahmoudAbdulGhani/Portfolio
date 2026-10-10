@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791651352692,
+  "duration": 22017.309,
+  "files": [
+    {
+      "fileId": "0362c6c62272fc7c96d1",
+      "fileName": "mobile-case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "0362c6c62272fc7c96d1-1dedf1ec7e7901f0d399",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 121,
+            "column": 1
+          },
+          "duration": 1183,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T16:55:53.977Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-952a011ced82ef8e4197",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 121,
+            "column": 1
+          },
+          "duration": 1256,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T16:55:56.653Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5d8c4217eca6333f2be9",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 121,
+            "column": 1
+          },
+          "duration": 1694,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T16:55:59.503Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e548fd362863cc0c0f03",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 121,
+            "column": 1
+          },
+          "duration": 2954,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T16:56:02.757Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8611d6f2f004bf97800e",
+          "title": "small responsive portrait keeps its native density hint in the desktop viewer",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 121,
+            "column": 1
+          },
+          "duration": 6047,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T16:56:08.137Z",
+              "workerIndex": 4
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 5,
+        "expected": 5,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium",
+    "media-firefox",
+    "media-webkit"
+  ],
+  "stats": {
+    "total": 5,
+    "expected": 5,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

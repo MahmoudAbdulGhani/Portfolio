@@ -17,7 +17,7 @@ export interface CaseStudy {
     mediaNotes?: string[];
     mediaQualification?: string;
     workflowHeading: string;
-    workflow: { title: string; matches: string[]; notice: string; ratio?: string; mobileCrop?: { zoom: number; x: number; y: number } }[];
+    workflow: { title: string; matches: string[]; notice: string; ratio?: string }[];
     contributionIndexes: number[];
     engineeringHeading: string;
     decisions: { title: string; constraint: string; choice: string; consequence: string; sources: string[]; evidenceKind?: string; personalAuthorship?: string }[];

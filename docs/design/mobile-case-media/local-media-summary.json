@@ -1,0 +1,29 @@
+{
+  "provenance": "Observed Playwright CLI completion; summary rather than a raw Playwright report. The subsequent focused run replaced the report output directory.",
+  "suite": {
+    "command": "node .motion-preview/run-phase5-browser.mjs --config=playwright.media.config.ts",
+    "total": 170,
+    "passed": 170,
+    "failed": 0,
+    "retries": 0,
+    "skipped": 0,
+    "elapsed": "7.5 minutes"
+  },
+  "addedDensityCheck": {
+    "command": "node .motion-preview/run-phase5-browser.mjs --config=playwright.media.config.ts --grep=small",
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "elapsed": "22 seconds",
+    "rawReport": "local-density-final.json"
+  },
+  "existingAffected": {
+    "total": 93,
+    "passed": 93,
+    "failed": 0,
+    "elapsed": "2.9 minutes",
+    "rawReport": "local-existing-final.json"
+  },
+  "environment": "Windows; Chromium desktop/tablet/phone configurations, Firefox and phone WebKit emulation. Compiled local preview and controlled public-route fixtures; no physical-device claim.",
+  "finalCI": "The complete 175-case suite and all original jobs run on the committed head. See draft PR closeout for immutable CI status."
+}

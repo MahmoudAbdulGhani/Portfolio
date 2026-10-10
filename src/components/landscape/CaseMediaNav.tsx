@@ -8,13 +8,24 @@ export function CaseMediaNav({ screens, index, select, enlarge }: {
 }) {
   const chooser = useRef<HTMLDetailsElement>(null);
   const trigger = useRef<HTMLElement>(null);
+  const selecting = useRef(false);
   const titleId = useId();
   useEffect(() => {
     const closeOutside = (event: PointerEvent) => {
       if (chooser.current?.open && event.target instanceof Node && !chooser.current.contains(event.target)) chooser.current.open = false;
     };
+    const finishPointer = (event: PointerEvent) => {
+      selecting.current = false;
+      if (event.type === 'pointerup') closeOutside(event);
+    };
     document.addEventListener('pointerdown', closeOutside);
-    return () => document.removeEventListener('pointerdown', closeOutside);
+    document.addEventListener('pointerup', finishPointer);
+    document.addEventListener('pointercancel', finishPointer);
+    return () => {
+      document.removeEventListener('pointerdown', closeOutside);
+      document.removeEventListener('pointerup', finishPointer);
+      document.removeEventListener('pointercancel', finishPointer);
+    };
   }, []);
   return <div className="case-screen-tools case-media-nav">
     <p className="case-media-title" id={titleId} aria-live="polite" aria-atomic="true"><strong>{screens[index].label}</strong><span>{index + 1} / {screens.length}</span></p>
@@ -30,11 +41,16 @@ export function CaseMediaNav({ screens, index, select, enlarge }: {
         node.dataset.placement = upwards ? 'above' : 'below';
         node.style.setProperty('--chooser-height', `${Math.max(88, Math.min(420, innerHeight * 0.55, (upwards ? above : below) - 16))}px`);
       }}
-      onBlur={event => { if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false; }}
+      onBlur={event => {
+        // WebKit can focus the reader main on a button pointerdown. Keep the
+        // menu present until that internal pointer can deliver its click;
+        // external pointer and keyboard dismissal retain their normal paths.
+        if (!selecting.current && event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+      }}
       onKeyDown={event => { if (event.key === 'Escape' && event.currentTarget.open) { event.preventDefault(); event.stopPropagation(); event.currentTarget.open = false; trigger.current?.focus({ preventScroll: true }); } }}>
       <summary ref={trigger} aria-describedby={titleId}>Choose image<FiChevronDown aria-hidden="true" /></summary>
       <ol className="chapter-switch" aria-label="Case study screenshot">
-        {screens.map((screen, position) => <li key={screen.src}><button type="button" aria-pressed={position === index} onClick={() => {
+        {screens.map((screen, position) => <li key={screen.src}><button type="button" aria-pressed={position === index} onPointerDown={() => { selecting.current = true; }} onClick={() => {
           select(position); if (chooser.current) chooser.current.open = false; trigger.current?.focus({ preventScroll: true });
         }}><span className="media-choice-number">{String(position + 1).padStart(2, '0')}</span><span>{screen.label}</span>{position === index && <FiCheck aria-hidden="true" />}</button></li>)}
       </ol>

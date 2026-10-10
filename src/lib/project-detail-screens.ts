@@ -3,8 +3,14 @@ import { coverDirections } from '../components/cinematic/project-cover-direction
 import { projectScreens } from './project-presentation';
 import { caseStudyFor } from '../../shared/case-study-runtime';
 import { projectImages } from '../generated/project-images';
+import { caseMedia } from '../generated/case-media';
 
 export interface DetailScreen { src: string; label: string; viewport?: 'phone' | 'tablet' }
+
+export function mediaPresentation(src: string) {
+  const path = src.split(/[?#]/)[0];
+  return caseMedia.find(media => media.identity === path || media.identity === path.split('/').at(-1));
+}
 
 // Dimensions of the published image identities, measured in the Phase 3
 // baseline. Reserve the frame before remote images arrive; never infer shape
@@ -23,9 +29,10 @@ const publishedDimensions: Record<string, { width: number; height: number }> = {
 };
 
 export function screenGeometry(screen: DetailScreen) {
+  const reviewed = mediaPresentation(screen.src);
   const asset = projectImages[screen.src];
   const identity = screen.src.split(/[?#]/)[0].split('/').at(-1) ?? '';
-  return asset ?? publishedDimensions[identity] ?? (screen.viewport === 'phone' ? { width: 390, height: 844 } : { width: 1600, height: 1000 });
+  return reviewed ?? asset ?? publishedDimensions[identity] ?? (screen.viewport === 'phone' ? { width: 390, height: 844 } : { width: 1600, height: 1000 });
 }
 
 // Presentation labels describe existing captures; project narrative stays CMS-owned.
