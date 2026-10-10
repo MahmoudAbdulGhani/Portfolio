@@ -1,0 +1,1823 @@
+{
+  "date": "2026-10-10T13:27:10.078Z",
+  "environment": "Local compiled build; frozen public GET snapshot and SHA-verified actual media; writes blocked",
+  "browser": "chromium",
+  "physicalDevice": false,
+  "screenReader": false,
+  "findings": [
+    {
+      "path": "/",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 31
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 1363,
+      "height": 936,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 23
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 17
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 19
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 17
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 17
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 1024,
+      "height": 1366,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": false,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": false,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 320,
+      "height": 844,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 844,
+      "height": 390,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": false,
+        "active": [
+          "Collection"
+        ],
+        "headings": [
+          "Selected project collection"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/projects",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Projects"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "JobPilot AI"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Lobby"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "GameZone Arena"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Cedar Construction"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "UniHub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "User Management"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Medicare Hub"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Projects"
+        ],
+        "headings": [
+          "Home Services"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "path": "/profile",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Profile"
+        ],
+        "headings": [
+          "Full-Stack Software Engineer"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "Contact"
+        ],
+        "headings": [
+          "Have a project in mind?"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "path": "/job-match",
+      "width": 640,
+      "height": 468,
+      "status": 200,
+      "geometry": {
+        "document": true,
+        "main": true,
+        "active": [
+          "AI Job Match"
+        ],
+        "headings": [
+          "AI Job Match"
+        ],
+        "smallTargets": []
+      },
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "errors": [],
+  "writes": []
+}

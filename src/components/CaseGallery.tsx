@@ -119,6 +119,18 @@ export function CaseGallery({
         if (event.target === event.currentTarget) requestClose();
       }}
       onKeyDown={(event) => {
+        if (event.key === "Tab") {
+          const controls = [...event.currentTarget.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex="0"]')]
+            .filter((element) => element.getClientRects().length > 0 && !element.closest('[inert]'));
+          const first = controls[0], last = controls[controls.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last?.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first?.focus();
+          }
+        }
         if (
           actual &&
           (event.target as HTMLElement).classList.contains(

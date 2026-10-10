@@ -47,6 +47,8 @@ test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, owners
       const instruction = request.systemInstruction.parts[0].text;
       assert.match(instruction, /Past dates.*never imply completion, graduation/);
       assert.match(instruction, /explicitly say it is not verified/);
+      assert.match(instruction, /Unverified also does not establish that a qualification was not earned/);
+      assert.match(instruction, /whether it was earned or completed remains unknown/);
       assert.match(instruction, /personal work only to documented myRole, ownership and contributions/);
       assert.match(instruction, /Source inspection is not a passed test, deployed feature/);
       assert.match(instruction, /use exclusively caseStudy.authorship.documentedPersonalWork/);

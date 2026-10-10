@@ -1,0 +1,813 @@
+{
+  "date": "2026-10-10T13:36:11.060Z",
+  "environment": "Local compiled build; captured public records and actual assets; intercepted counters and blocked writes. Native reduced motion for keyboard/media review. Emulated sizes and viewport reduction are not physical keyboard or Safari observations.",
+  "engine": "chromium",
+  "findings": [
+    {
+      "width": 1363,
+      "slug": "jobpilot-ai",
+      "actual": {
+        "scrollWidth": 1899,
+        "clientWidth": 1208,
+        "scrollHeight": 877,
+        "clientHeight": 555,
+        "scrollTop": 2
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 553.9375,
+          "after": 553.9375
+        },
+        {
+          "before": 553.59375,
+          "after": 553.59375
+        },
+        {
+          "before": 549.21875,
+          "after": 549.21875
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "lobby",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 1208,
+        "scrollHeight": 877,
+        "clientHeight": 555,
+        "scrollTop": 1
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 545.375,
+          "after": 545.375
+        },
+        {
+          "before": 541.625,
+          "after": 541.625
+        },
+        {
+          "before": 539.40625,
+          "after": 539.40625
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "gamezone-arena",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 1208,
+        "scrollHeight": 2117,
+        "clientHeight": 506,
+        "scrollTop": 2
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "construction-project-management-accounting-system",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 1208,
+        "scrollHeight": 2333,
+        "clientHeight": 527,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 483.34375,
+          "after": 483.34375
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "unihub",
+      "actual": {
+        "scrollWidth": 1919,
+        "clientWidth": 1208,
+        "scrollHeight": 918,
+        "clientHeight": 527,
+        "scrollTop": 2
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 561.5,
+          "after": 561.5
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "full-stack-user-management-system",
+      "actual": {
+        "scrollWidth": 1208,
+        "clientWidth": 1208,
+        "scrollHeight": 1688,
+        "clientHeight": 555,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 584.296875,
+          "after": 584.296875
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "medicare-hub",
+      "actual": {
+        "scrollWidth": 1208,
+        "clientWidth": 1208,
+        "scrollHeight": 1000,
+        "clientHeight": 527,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": []
+    },
+    {
+      "width": 1363,
+      "slug": "home-services",
+      "actual": {
+        "scrollWidth": 1208,
+        "clientWidth": 1208,
+        "scrollHeight": 844,
+        "clientHeight": 555,
+        "scrollTop": 1
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 779.0625,
+          "after": 779.0625
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 307.359375,
+          "width": 250,
+          "height": 144,
+          "top": 307.359375,
+          "right": 285,
+          "bottom": 451.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.453125,
+          "width": 774,
+          "height": 144,
+          "top": 230.453125,
+          "right": 809,
+          "bottom": 374.453125,
+          "left": 35
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.359375,
+          "width": 320,
+          "height": 144,
+          "top": 230.359375,
+          "right": 355,
+          "bottom": 374.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 585.0625,
+          "y": 483.09375,
+          "width": 445.140625,
+          "height": 144,
+          "top": 483.09375,
+          "right": 1030.203125,
+          "bottom": 627.09375,
+          "left": 585.0625
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 40.1875,
+          "y": 248.640625,
+          "width": 239.625,
+          "height": 320,
+          "top": 248.640625,
+          "right": 279.8125,
+          "bottom": 568.640625,
+          "left": 40.1875
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 79.625,
+          "y": 94.640625,
+          "width": 290.875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 370.5,
+          "bottom": 414.640625,
+          "left": 79.625
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 44.390625,
+          "y": 94.640625,
+          "width": 301.21875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 345.609375,
+          "bottom": 414.640625,
+          "left": 44.390625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 105.796875,
+          "y": 290.609375,
+          "width": 482.703125,
+          "height": 320,
+          "top": 290.609375,
+          "right": 588.5,
+          "bottom": 610.609375,
+          "left": 105.796875
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "width": 390,
+      "slug": "jobpilot-ai",
+      "actual": {
+        "scrollWidth": 1899,
+        "clientWidth": 338,
+        "scrollHeight": 877,
+        "clientHeight": 552,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "lobby",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 338,
+        "scrollHeight": 877,
+        "clientHeight": 552,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "gamezone-arena",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 338,
+        "scrollHeight": 2117,
+        "clientHeight": 480,
+        "scrollTop": 2
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "construction-project-management-accounting-system",
+      "actual": {
+        "scrollWidth": 1920,
+        "clientWidth": 338,
+        "scrollHeight": 2333,
+        "clientHeight": 502,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 460.8125,
+          "after": 460.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "unihub",
+      "actual": {
+        "scrollWidth": 1919,
+        "clientWidth": 338,
+        "scrollHeight": 918,
+        "clientHeight": 502,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "full-stack-user-management-system",
+      "actual": {
+        "scrollWidth": 1040,
+        "clientWidth": 338,
+        "scrollHeight": 1688,
+        "clientHeight": 552,
+        "scrollTop": 0
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 557.0625,
+          "after": 557.0625
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "medicare-hub",
+      "actual": {
+        "scrollWidth": 1000,
+        "clientWidth": 338,
+        "scrollHeight": 1000,
+        "clientHeight": 523,
+        "scrollTop": 2
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": []
+    },
+    {
+      "width": 390,
+      "slug": "home-services",
+      "actual": {
+        "scrollWidth": 390,
+        "clientWidth": 338,
+        "scrollHeight": 844,
+        "clientHeight": 530,
+        "scrollTop": 1
+      },
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 742.75,
+          "after": 742.75
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 307.359375,
+          "width": 250,
+          "height": 144,
+          "top": 307.359375,
+          "right": 285,
+          "bottom": 451.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.453125,
+          "width": 774,
+          "height": 144,
+          "top": 230.453125,
+          "right": 809,
+          "bottom": 374.453125,
+          "left": 35
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.359375,
+          "width": 320,
+          "height": 144,
+          "top": 230.359375,
+          "right": 355,
+          "bottom": 374.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 585.0625,
+          "y": 483.09375,
+          "width": 445.140625,
+          "height": 144,
+          "top": 483.09375,
+          "right": 1030.203125,
+          "bottom": 627.09375,
+          "left": 585.0625
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 40.1875,
+          "y": 248.640625,
+          "width": 239.625,
+          "height": 320,
+          "top": 248.640625,
+          "right": 279.8125,
+          "bottom": 568.640625,
+          "left": 40.1875
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 79.625,
+          "y": 94.640625,
+          "width": 290.875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 370.5,
+          "bottom": 414.640625,
+          "left": 79.625
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 44.390625,
+          "y": 94.640625,
+          "width": 301.21875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 345.609375,
+          "bottom": 414.640625,
+          "left": 44.390625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 105.796875,
+          "y": 290.609375,
+          "width": 482.703125,
+          "height": 320,
+          "top": 290.609375,
+          "right": 588.5,
+          "bottom": 610.609375,
+          "left": 105.796875
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    }
+  ]
+}

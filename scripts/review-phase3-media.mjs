@@ -3,12 +3,13 @@ import { chromium } from '@playwright/test';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 const content = JSON.parse(await readFile('.motion-preview/phase3-public-content.json', 'utf8'));
 const originals = JSON.parse(await readFile('docs/design/phase3/published-image-dimensions.json', 'utf8')).records;
-const output = 'docs/design/phase3/media-review';
+const phase5 = process.argv.includes('--phase5');
+const output = `docs/design/${phase5?'phase5':'phase3'}/media-review`;
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chrome' });
 const findings = [];
 try {
-  for (const width of [1363, 390]) {
+  for (const width of (phase5 ? [1363,1024,390,320] : [1363,390])) {
     const page = await browser.newPage({ viewport: { width, height: 936 }, reducedMotion: 'reduce' });
     await page.route('**/*', route => ['GET', 'HEAD'].includes(route.request().method()) ? route.continue() : route.abort());
     await page.route('**/api/**', route => {
@@ -25,11 +26,11 @@ try {
       for (let index = 0; index < count; index++) {
         await summary.click(); await page.locator('.chapter-switch button').nth(index).click();
         await page.locator('.case-figure').evaluate(el => el.scrollIntoView({ block: 'center' }));
-        await page.locator('.case-figure img').evaluate(img => img.decode());
+        await page.locator('.case-figure .screenshot-button img').evaluate(img => img.decode());
         const title = await page.locator('.case-media-title strong').innerText();
         const record = await page.locator('.case-figure').evaluate(el => {
-          const img = el.querySelector('img'), frame = el.querySelector('.screenshot-frame');
-          return { src: img.src, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, frameWidth: frame.getBoundingClientRect().width, frameHeight: frame.getBoundingClientRect().height, caption: el.querySelector('figcaption').textContent.trim(), status: frame.dataset.imageState };
+          const img = el.querySelector('.screenshot-button img'), frame = el.querySelector('.screenshot-frame');
+          return { src: img.currentSrc, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, frameWidth: frame.getBoundingClientRect().width, frameHeight: frame.getBoundingClientRect().height, fit:getComputedStyle(img).objectFit, excerpt:el.classList.contains('is-desktop-excerpt'), caption: el.querySelector('figcaption').textContent.trim(), status: frame.dataset.imageState };
         });
         const screenshot = `${project.slug}-${String(index + 1).padStart(2, '0')}-${width}.jpg`;
         await page.screenshot({ path: `${output}/${screenshot}`, type: 'jpeg', quality: 85 });

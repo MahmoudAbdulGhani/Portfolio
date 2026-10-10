@@ -9,7 +9,8 @@ if (!['before', 'after'].includes(phase)) throw new Error('Unknown phase');
 const port = phase === 'before' ? 5186 : Number(process.argv[3] || 5185);
 const timingsOnly = process.argv.includes('--timings-only');
 const forcedFallback = process.argv.includes('--fallback');
-const output = `docs/design/phase4/${forcedFallback?'fallback':phase}`;
+const phase5 = process.argv.includes('--phase5');
+const output = `docs/design/${phase5?'phase5/motion':'phase4'}/${forcedFallback?'fallback':phase}`;
 await mkdir(output, { recursive: true });
 const content = JSON.parse(await readFile('.motion-preview/phase3-public-content.json', 'utf8'));
 const originals = JSON.parse(await readFile('docs/design/phase3/published-image-dimensions.json', 'utf8')).records;
@@ -123,4 +124,4 @@ try {
     console.log(`${phase}: ${kind} ${width}px ${renderer} opening/return passed`);
   }
 } finally { await browser.close(); }
-await writeFile(`${output}/${timingsOnly?'timings':'findings'}.json`, JSON.stringify({ date:new Date().toISOString(), phase, timingsOnly, source: phase==='before'?'Approved 66bba23 isolated worktree':'Current Phase 4 code', data:'Frozen Phase 3 public GET snapshot; API writes/counters blocked', media:'Actual local sculpture/project images and hash-verified unmodified public PNGs; no pixel fixtures', browser:forcedFallback?'Controlled unsupported-WebGL getContext result; photographic fallback with actual media; not GPU proof':'Installed Chrome default renderer; no forced fallback/software flags; native no-preference', findings },null,2)+'\n');
+await writeFile(`${output}/${timingsOnly?'timings':'findings'}.json`, JSON.stringify({ date:new Date().toISOString(), phase, timingsOnly, source: phase==='before'?'Approved 66bba23 isolated worktree':phase5?'Phase 5 compiled production build':'Current Phase 4 code', data:'Frozen Phase 3 public GET snapshot; API writes/counters blocked', media:'Actual local sculpture/project images and hash-verified unmodified public PNGs; no pixel fixtures', browser:forcedFallback?'Controlled unsupported-WebGL getContext result; photographic fallback with actual media; not GPU proof':'Installed Chrome default renderer; no forced fallback/software flags; native no-preference', findings },null,2)+'\n');

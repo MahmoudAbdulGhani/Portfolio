@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-10T14:05:09.846Z",
+  "verdict": "Blocked for production closeout by named deployed defects: tailored-CV overlap, accessibility/focus/link defects and unsupported negative qualification inference. Repairs pass within the verified local branch coverage; final CI and unavailable device gates are separate. No manual deployment or merge.",
+  "checks": [
+    {
+      "check": "Production revision",
+      "status": "passed",
+      "environment": "GitHub successful Vercel Production deployment for de9f665; alias asset fingerprint corroborates the approved build",
+      "evidence": "deployment.json"
+    },
+    {
+      "check": "Public routes and eight readers",
+      "status": "passed",
+      "environment": "Actual production: 26 route/width scans; live list/profile/site GETs, detail counters intercepted",
+      "evidence": "production-chromium/findings.json"
+    },
+    {
+      "check": "Current public layouts and axe scan",
+      "status": "passed",
+      "environment": "Local compiled build: Chromium, Firefox and WebKit; 234 route/size scans, zero detected violations/errors",
+      "evidence": "final-chromium/findings.json"
+    },
+    {
+      "check": "All selectable project images",
+      "status": "passed",
+      "environment": "Actual assets: 50 images × four widths = 200 decoded/framed observations; not synthetic pixels",
+      "evidence": "media-review/findings.json"
+    },
+    {
+      "check": "Inspector/media/disclosures",
+      "status": "passed",
+      "environment": "Local actual-media: all eight readers × desktop/390px × three engines = 48 reader walkthroughs",
+      "evidence": "interactions-chromium/findings.json"
+    },
+    {
+      "check": "Production inspector focus wrap",
+      "status": "failed",
+      "environment": "Actual production native Tab reaches the body while dialog remains open; corrected local wrap passes",
+      "evidence": "production-interactions-chromium/findings.json"
+    },
+    {
+      "check": "Async link names / streaming announcements / skip link",
+      "status": "passed",
+      "environment": "Corrected local DOM and fixture regressions across Chromium, Firefox and WebKit; spoken reader behavior not verified",
+      "evidence": "local-browser-compiled.json"
+    },
+    {
+      "check": "Production transient Contact link name",
+      "status": "failed",
+      "environment": "Actual production capture found an empty mailto link while profile was pending; corrected branch guards it",
+      "evidence": "production-chromium/findings.json"
+    },
+    {
+      "check": "Collection motion and bounded cleanup",
+      "status": "passed",
+      "environment": "Local actual Intel UHD/ANGLE D3D11: all three × four widths, 12 recordings and isolated timings; zero idle draws",
+      "evidence": "motion/after/timings.json"
+    },
+    {
+      "check": "Reduced motion / unsupported WebGL",
+      "status": "passed",
+      "environment": "Native preference and controlled fallback separately; fallback is simulated, not phone-GPU proof",
+      "evidence": "motion/fallback/findings.json"
+    },
+    {
+      "check": "Visibility gate and stalled-request deadline",
+      "status": "passed",
+      "environment": "Real assets wait 16s offscreen then load; fixture regressions retain exact 14,999/15,000ms and original retry",
+      "evidence": "resilience/findings.json"
+    },
+    {
+      "check": "Resize, landscape and focused fields",
+      "status": "passed",
+      "environment": "Local three-engine reduced viewport/resize observations; actual keyboard/chrome behavior remains open",
+      "evidence": "interactions-webkit/findings.json"
+    },
+    {
+      "check": "200% and 400% browser zoom",
+      "status": "passed",
+      "environment": "Genuine isolated Chromium tab zoom via tabs.setZoom/getZoom; 26 routes at 640/320 CSS px",
+      "evidence": "zoom/findings.json"
+    },
+    {
+      "check": "Initial performance and image/JS transfer",
+      "status": "passed",
+      "environment": "Separate local/production lab runs: three HTTP-cold/warm pairs per route; no production throttling",
+      "evidence": "performance/navigation.json"
+    },
+    {
+      "check": "AWS/Digital Hub uncertainty and team attribution",
+      "status": "passed",
+      "environment": "Actual production genuine AWS/Digital Hub/Lobby samples retain status and team boundaries; finite sample only",
+      "evidence": "production-provider/findings.json"
+    },
+    {
+      "check": "AI initial Cedar response",
+      "status": "failed",
+      "environment": "Actual production SSE interrupted; one bounded fresh attempt recovered successfully, failure retained",
+      "evidence": "production-provider/findings.json"
+    },
+    {
+      "check": "Job Match negative qualification inference",
+      "status": "failed",
+      "environment": "Actual production report asserted no formal AWS certification was earned; shared policy repaired locally",
+      "evidence": "production-provider/findings.json"
+    },
+    {
+      "check": "Corrected qualification policy",
+      "status": "passed",
+      "environment": "Outgoing JSON/SSE context regressions + one genuine local answer preserves unknown versus unearned",
+      "evidence": "local-provider/findings.json"
+    },
+    {
+      "check": "Current local provider availability",
+      "status": "failed",
+      "environment": "Two of three bounded local provider calls returned upstream 503/API 502; not mocked, no overload/retry loop",
+      "evidence": "local-provider/findings.json"
+    },
+    {
+      "check": "Standard CV download/font/content",
+      "status": "passed",
+      "environment": "Actual production download: one Letter page, Carlito, 10 links, neutral training and co-developed attribution",
+      "evidence": "production-provider/pdf-inspection.json"
+    },
+    {
+      "check": "Production tailored CV readability",
+      "status": "failed",
+      "environment": "Actual genuine-provider download overlaps summary and Experience; repaired local render passes",
+      "evidence": "production-provider/overlap-regression.json"
+    },
+    {
+      "check": "Repaired CV / unchanged reference",
+      "status": "passed",
+      "environment": "Static local generator; same real provider summary + long fixture; Letter/Carlito, A4/Source Sans master and strict reference",
+      "evidence": "local-cv/provenance.json"
+    },
+    {
+      "check": "Public engineering evidence links",
+      "status": "passed",
+      "environment": "19 direct public HEAD successes; one original bracket path 404 repaired with segment encoding/200; three private links remain access-limited",
+      "evidence": "source-links.json"
+    },
+    {
+      "check": "Android physical portrait/keyboard",
+      "status": "unverified",
+      "environment": "User reports clear landscape and partial case-study imagery in portrait; model/version/specific image and keyboard results unavailable",
+      "evidence": "device-checklist.md"
+    },
+    {
+      "check": "Physical iPhone/iPad and desktop Safari",
+      "status": "unverified",
+      "environment": "Unavailable; automated Windows WebKit is separately verified and does not close these gates",
+      "evidence": "device-checklist.md"
+    },
+    {
+      "check": "Screen reader spoken walkthrough",
+      "status": "unverified",
+      "environment": "No connected reader audio/control walkthrough; DOM live-region tests do not prove speech",
+      "evidence": "device-checklist.md"
+    },
+    {
+      "check": "Production Contact delivery",
+      "status": "unverified",
+      "environment": "No authorized test destination or external mail; local fixture payload/client path checks passed",
+      "evidence": "device-checklist.md"
+    },
+    {
+      "check": "Production INP/phone GPU/sustained CDN reliability",
+      "status": "unverified",
+      "environment": "No field dataset, physical GPU measurement or prolonged CDN study; bounded probes are not reliability guarantees",
+      "evidence": "device-checklist.md"
+    },
+    {
+      "check": "Final-head complete CI",
+      "status": "unverified",
+      "environment": "Pending at this evidence commit; immutable final-head result is recorded in draft PR closeout, without another documentation-only commit",
+      "evidence": "validation-matrix.json"
+    }
+  ]
+}

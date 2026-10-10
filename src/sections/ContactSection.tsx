@@ -261,15 +261,15 @@ export function ContactSection() {
                       </>
                     )}
                   </button>
-                  <span className="text-xs text-faint">
+                  {profile?.email?.trim() && <span className="text-xs text-faint">
                     Prefer email? Write to{" "}
                     <a
-                      href={`mailto:${profile?.email ?? ""}`}
+                      href={`mailto:${profile.email}`}
                       className="link-inline"
                     >
                       {profile?.email}
                     </a>
-                  </span>
+                  </span>}
                 </div>
               </form>
         )}
@@ -280,6 +280,6 @@ export function ContactSection() {
         <div className="contact-socials">{cards.filter(card => !card.priority).map(card => { const Icon = card.icon; return <a key={card.id} href={card.href} target="_blank" rel="noopener noreferrer" aria-label={`${card.label}: ${card.value}`}><Icon aria-hidden />{card.label}<FiArrowUpRight aria-hidden /></a>; })}</div>
       </div>
     </div>
-    {jobMatchSection?.visible !== false && <div><div className="contact-promotion"><div><FiZap size={24} aria-hidden /><div><h2>{contentText("jobMatchHeading")}</h2><p>{contentText("jobMatchText")}</p></div></div><Link to="/job-match">{contentText("jobMatchCta")}<FiArrowRight aria-hidden /></Link></div></div>}
+    {jobMatchSection?.visible !== false && <div><div className="contact-promotion"><div><FiZap size={24} aria-hidden /><div><h2>{contentText("jobMatchHeading")}</h2><p>{contentText("jobMatchText")}</p></div></div><Link to="/job-match">{contentText("jobMatchCta") || "AI Job Match"}<FiArrowRight aria-hidden /></Link></div></div>}
   </section>;
 }

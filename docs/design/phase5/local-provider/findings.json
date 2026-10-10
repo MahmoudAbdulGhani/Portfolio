@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-10T13:50:17.072Z",
+  "environment": "Real configured Gemini provider through corrected local Express routes; frozen public snapshot; Prisma reads/rate limits are fail-closed in memory. Not deployed production answers. No DB writes. Signed export token intentionally excluded.",
+  "findings": [
+    {
+      "question": "What qualification status can a recruiter actually establish for the AWS program and Digital Hub from this portfolio? Include dates and the limits of the available evidence.",
+      "status": 502,
+      "message": "The AI assistant is temporarily unavailable. Please try again."
+    },
+    {
+      "question": "Does an absent AWS credential verification prove that Mahmoud never earned a certificate or failed to finish the program? Explain the evidentiary distinction.",
+      "status": 200,
+      "answer": "No. An absent verification does not establish that the qualification was not earned or that the program was not finished. Whether it was completed or earned simply remains **unknown** based on the available data.\n\n### Evidentiary Distinction\n\n* **Unverified Status:** Means that the portfolio snapshot lacks independent, verifiable completion records (such as an official credential ID or verified issuer link). Missing evidence cannot be converted into a negative factual claim.\n* **Earned/Completed vs. Unverified:** Unverified status indicates only that completion is **not verified by the available records**, not that the program was failed or unearned. Past dates or listed titles do not independently document graduation or vendor certification."
+    },
+    {
+      "jobDescription": "We need a full-stack developer who works with React, TypeScript, validated APIs and SQL databases in collaborative teams. AWS certification is optional. Describe the strongest relevant project evidence, individual contribution boundaries, and qualifications that still need recruiter verification.",
+      "status": 502,
+      "message": "The AI job matcher is temporarily unavailable. Please try again."
+    }
+  ]
+}

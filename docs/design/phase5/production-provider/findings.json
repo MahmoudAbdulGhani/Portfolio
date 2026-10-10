@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-10T13:30:49.458Z",
+  "environment": "Genuine production UI/provider responses and CV downloads; no fixtures or Contact submission",
+  "findings": [
+    {
+      "name": "general",
+      "path": "/profile",
+      "question": "Give a concise recruiter overview of the published portfolio, citing useful project evidence and distinguishing documented personal work from team delivery.",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\nCandidate Summary\n\nMahmoud Hussein Abdul Ghani is a Full-Stack Software Engineer based in Tripoli, Lebanon, with professional backend experience in PHP/MySQL at Ishtari Group and full-stack/AI training through UNRWA's The Digital Hub.\n\nCore Tech Stack\nLanguages & Frameworks: React, Next.js, TypeScript, Node.js, Express.js, FastAPI, Django, PHP\nDatabases & Tools: PostgreSQL, MongoDB, Supabase, MySQL, Docker, Tailwind CSS\nKey Projects & Work Distinction\n\nJobPilot AI (Flagship Solo Project)\n\nTeam Delivery: Connected CV review, saved jobs, application packs, and interview practice.\nDocumented Personal Work: Owned product requirements, configured Vercel/Render/Supabase deployments, and integrated AI workflows with structured validation and consent checks.\n\nCedar Construction (4-Person Team)\n\nTeam Delivery: Construction budgets, balanced ledger posting, payment allocations, and Groq-powered cost analyses.\nDocumented Personal Work: Developed Django accounting/project workflows, configured Docker/Gunicorn/WhiteNoise deployment, and deployed to Render.\n\nLobby (Team Project)\n\nTeam Delivery: Real-time communications platform with LiveKit audio/video and chat.\nDocumented Personal Work: Contributed to guest and authenticated access, invitation link validation, and Supabase backend services.\nVerified Credentials Notice\n\nEducation (B.S. in Computer Science at LIU) and certifications (AWS re/Start Bootcamp) list program participation; completion and earned vendor certifications are not verified by available records.\n\nCV Download: Download Resume",
+      "errors": []
+    },
+    {
+      "name": "cedar",
+      "path": "/projects/construction-project-management-accounting-system",
+      "question": "Explain Cedar’s accounting and advisor implementation. Which parts are deterministic and which involve an AI provider? What does the review actually verify?",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\n\nGeneration interrupted\n\nTry again",
+      "errors": [
+        "PORTFOLIO AIGeneration interruptedTry again"
+      ]
+    },
+    {
+      "name": "aws",
+      "path": "/profile",
+      "question": "If I am checking qualifications for hiring, do the AWS re/Start dates establish graduation or an earned AWS certification? State only what the available portfolio evidence establishes.",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\n\nBased on the available portfolio records:\n\nNo Verified Certification or Graduation: The AWS re/Start Bootcamp is recorded as a training program (Jul 2025 – Oct 2025). The listed dates do not establish graduation, program completion, or an earned vendor certification.\nVerification Status: Both completion status and certification status are explicitly unverified by the available records. No credential ID or independent vendor verification is supplied.",
+      "errors": []
+    },
+    {
+      "name": "digital-hub",
+      "path": "/profile",
+      "question": "What status can you substantiate for the Digital Hub program? Please separate listed participation dates from evidence of completing or graduating the program.",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\nThe Digital Hub Program Status\nListed Participation Dates: Listed as June 2026 – September 2026 for the Full-Stack Developer Intern role at The Digital Hub (UNRWA).\nCompletion & Graduation Evidence: Unverified. The available records provide no completion or graduation evidence. Listed past dates do not establish that the program was completed or graduated from, and completion is explicitly not verified by available records.\nCertification Status: Unverified. Training participation does not constitute an independently verified vendor certification.",
+      "errors": []
+    },
+    {
+      "name": "ownership",
+      "path": "/projects/lobby",
+      "question": "Can I credit all of Lobby’s media and access infrastructure to Mahmoud individually? Explain the documented personal scope and collaborative ownership, including any attribution limits.",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\nScope & Ownership\n\nNo, you cannot credit all of Lobby’s media and access infrastructure to Mahmoud individually.\n\nLobby is a collaborative team project delivered by a six-person team. Feature descriptions describe total team delivery rather than individual ownership.\n\nDocumented Personal Scope\n\nMahmoud’s documented personal contributions are limited to:\n\nCollaborating on persistent community and temporary guest-room workflows in a TypeScript monorepo.\nContributing to authenticated and guest access, invitation links, validation, and Supabase-backed services.\nAttribution Limits\nEngineering Decisions: Code-inspected architecture decisions (such as Zod schema validation and LiveKit media grant minting) describe overall project implementation; personal authorship of these specific mechanisms is not established by code inspection.\nMedia & Call Features: LiveKit media paths, audio/screen sharing, and live chat represent team implementation. Individual ownership is strictly bounded by his documented contribution record.",
+      "errors": []
+    },
+    {
+      "name": "cedar-retry",
+      "path": "/projects/construction-project-management-accounting-system",
+      "question": "Explain Cedar’s accounting and advisor implementation. Which parts are deterministic and which involve an AI provider? What does the review actually verify?",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "answer": "PORTFOLIO AI\nCedar's Accounting & Advisor Implementation\nAccounting Logic: Uses an atomic ledger posting service that validates draft status, nonempty lines, and equal debit/credit totals before finalizing journal lines. Outstanding balances are dynamically derived from payment allocations.\nAdvisor Architecture: Fully deterministic. Financial trends and risk levels are computed directly by Django rules.\nAI Provider Role: Groq is used optionally for narration only. It receives pre-calculated Django outputs to write explanations. If Groq fails or credentials are missing, the system defaults to deterministic explanatory text without altering financial numbers.\nVerification Limits\n\nThe review verified the source code structure via static inspection. It explicitly did not execute live runtime tests, authenticated accounting workflows, concurrent posting, or Groq API behavior.",
+      "errors": []
+    },
+    {
+      "name": "standard-cv",
+      "downloadError": null
+    },
+    {
+      "name": "job-match",
+      "description": "We are hiring a full-stack developer to build accessible React and TypeScript interfaces, connect validated REST APIs, work with SQL databases and collaborate using Git and GitHub. Show evidence from personal contributions and team projects. AWS certification is optional; do not assume training dates verify qualifications. Clearly identify skills or experience not demonstrated by the portfolio.",
+      "status": 200,
+      "transport": "text/event-stream; charset=utf-8",
+      "report": [
+        "Match ReportStrong MatchMahmoud Abdul Ghani demonstrates strong alignment with the job requirements through documented hands-on professional experience, team project work, and personal projects. He has explicit evidence of building React and TypeScript user interfaces, building and integrating validated REST APIs, working with SQL databases (PostgreSQL, MySQL, MariaDB), and using Git/GitHub for version control and team collaboration.Copy Executive SummaryExport ReportDownload Tailored CVStrong MatchesReact and TypeScript interface development (evidenced in JobPilot AI, Lobby, UniHub, and Full-Stack User Management System)REST API development and integration using Node.js/Express, FastAPI, and Django REST FrameworkSQL database query writing and ORM integration using PostgreSQL, MySQL, MariaDB, and SQLAlchemyVersion control and team collaboration using Git and GitHub across multiple personal and team projectsRelevant ExperienceBackend Developer at Ishtari Group (Dec 2025 – Jan 2026): Developed PHP MVC modules for production administration, writing MySQL/MariaDB queries for reporting and building AJAX interfaces.Full-Stack Developer Intern at The Digital Hub, UNRWA (Jun 2026 – Sep 2026): Developed type-safe React/Next.js apps, built REST APIs with Node.js/Express/FastAPI/Django REST, and implemented SQL data layers in Agile teams.Relevant ProjectsJobPilot AIOwner and developer for a Next.js/TypeScript frontend and FastAPI backend utilizing PostgreSQL/SQLAlchemy, structured validation, and Git/GitHub.User ManagementDesigned and implemented a full-stack React and FastAPI application using TypeScript/JavaScript, PostgreSQL, SQLAlchemy, and Alembic with end-to-end API testing.LobbyCollaborated in a team monorepo using Angular, NestJS, TypeScript, and Git/GitHub, contributing to validated request schemas and backend workflows.Cedar ConstructionWorked across Django REST Framework and PostgreSQL modules, implementing financial workflows, Docker configurations, and Git/GitHub collaboration.Partial MatchesAccessibility: The portfolio mentions reviewing accessibility checks in JobPilot AI, but detailed accessibility standards (such as WCAG compliance or explicit ARIA implementations) are not deeply documented.Gaps / Not DemonstratedAWS Certification: While an AWS re/Start Bootcamp is listed under training, the portfolio explicitly notes that completion and certification status are unverified by available records, and no formal AWS vendor certification is earned or documented.Recruiter SummaryMahmoud Abdul Ghani provides solid evidence for core full-stack requirements, including React, TypeScript, validated REST APIs, SQL databases, and Git/GitHub workflows. His experience spans professional PHP/SQL backend work at Ishtari Group as well as multi-stack team and flagship projects (Next.js, FastAPI, Django, React). Note that his listed university degree (BS in Computer Science from LIU) and bootcamps (including AWS re/Start) are recorded as unverified for formal completion/certification in the available snapshot records, though his technical execution is clearly demonstrated through audited project repositories."
+      ],
+      "errors": []
+    },
+    {
+      "name": "tailored-cv",
+      "downloadError": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-10T14:01:55.583Z",
+  "os": "Windows 11 Pro",
+  "node": "v24.16.0",
+  "cpu": "11th Gen Intel(R) Core(TM) i7-11850H @ 2.50GHz",
+  "logicalCores": 8,
+  "browsers": {
+    "chromium": "154.0.8037.99",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "physical": false,
+  "screenReader": "No connected reader control/audio walkthrough; not performed. DOM announcement behavior and keyboard/AX checks are separate evidence."
+}

@@ -1,0 +1,799 @@
+{
+  "date": "2026-10-10T13:49:12.681Z",
+  "environment": "Actual production UI/live images; current public list intercepts detail counters; writes blocked. Bounded JobPilot/GameZone smoke. Emulated viewports, not physical device.",
+  "engine": "chromium",
+  "findings": [
+    {
+      "width": 1363,
+      "slug": "jobpilot-ai",
+      "actual": {
+        "scrollWidth": 1208,
+        "clientWidth": 1208,
+        "scrollHeight": 555,
+        "clientHeight": 555,
+        "scrollTop": 0
+      },
+      "focusObservations": [
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Resume library and upload\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Discover jobs\" aria-current=\"true\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Saved job and application workspace\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Live voice interview practice\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd7",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show JobPilot product overview artwork\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Mobile welcome and application workflow\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"/projects/responsive/jobpilot-phone.webp\"><span>06</span></button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Tablet application workflow\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"/projects/responsive/jobpilot-tablet.webp\"><span>07</span></button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Previous screenshot\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"19",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Next screenshot\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"5\" y1=",
+          "open": true
+        },
+        {
+          "contained": false,
+          "active": "<body style=\"overflow: hidden;\">\n    <div id=\"root\"><div class=\"landscape\"><div class=\"portfolio is-reading\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><a class=\"identity\" aria-label=\"Mahmoud Hussein Abdu",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-pressed=\"true\">Fit width</button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Close gallery\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"22\" width=\"22\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"18\" y1=\"6\"",
+          "open": true
+        }
+      ],
+      "focusContained": false,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 553.9375,
+          "after": 553.9375
+        },
+        {
+          "before": 553.59375,
+          "after": 553.59375
+        },
+        {
+          "before": 549.21875,
+          "after": 549.21875
+        }
+      ]
+    },
+    {
+      "width": 1363,
+      "slug": "gamezone-arena",
+      "actual": {
+        "scrollWidth": 1208,
+        "clientWidth": 1208,
+        "scrollHeight": 506,
+        "clientHeight": 506,
+        "scrollTop": 0
+      },
+      "focusObservations": [
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Room selection · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-rooms-480w.avif 480w, /projects/phase3/gamezone-rooms-960w.avif 960w, /projects/phase3/gamezone-rooms-160",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Session date and time · demonstration data\" aria-current=\"true\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-session-480w.avif 480w, /projects/phase3/gamezone-session-960w.avif 960w, /pro",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Device selection · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-devices-480w.avif 480w, /projects/phase3/gamezone-devices-960w.avif 960w, /projects/phase3/gamezone-dev",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking review · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-review-480w.avif 480w, /projects/phase3/gamezone-review-960w.avif 960w, /projects/phase3/gamezone-review-",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Customer bookings dashboard\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/user_overview-480w.avif 480w, /projects/gamezone-arena/user_overview-960w.avif 960w, /projects/gamezone-arena/user",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Choose a gaming room\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/choose_Room-480w.avif 480w, /projects/gamezone-arena/choose_Room-960w.avif 960w, /projects/gamezone-arena/choose_Room-160",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking date and time\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/Booking_date_and_time-480w.avif 480w, /projects/gamezone-arena/Booking_date_and_time-960w.avif 960w, /projects/gamezone-",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Device selection\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/select_device-480w.avif 480w, /projects/gamezone-arena/select_device-960w.avif 960w, /projects/gamezone-arena/select_device-1",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking confirmation and payment\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/confirm_and_pay-480w.avif 480w, /projects/gamezone-arena/confirm_and_pay-960w.avif 960w, /projects/gamezone-a",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Arena administration overview\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_overview-480w.avif 480w, /projects/gamezone-arena/admin_overview-960w.avif 960w, /projects/gamezone-arena/",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Room management\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_Rooms-480w.avif 480w, /projects/gamezone-arena/admin_Rooms-960w.avif 960w, /projects/gamezone-arena/admin_Rooms-1600w.av",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show User management\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_Users-480w.avif 480w, /projects/gamezone-arena/admin_Users-960w.avif 960w, /projects/gamezone-arena/admin_Users-1600w.av",
+          "open": true
+        }
+      ],
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        },
+        {
+          "before": 749.65625,
+          "after": 749.65625
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 308.265625,
+          "width": 250,
+          "height": 144,
+          "top": 308.265625,
+          "right": 285,
+          "bottom": 452.265625,
+          "left": 35
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.453125,
+          "width": 774,
+          "height": 144,
+          "top": 230.453125,
+          "right": 809,
+          "bottom": 374.453125,
+          "left": 35
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.359375,
+          "width": 320,
+          "height": 144,
+          "top": 230.359375,
+          "right": 355,
+          "bottom": 374.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 585.0625,
+          "y": 483.09375,
+          "width": 445.140625,
+          "height": 144,
+          "top": 483.09375,
+          "right": 1030.203125,
+          "bottom": 627.09375,
+          "left": 585.0625
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 40.1875,
+          "y": 249.140625,
+          "width": 239.625,
+          "height": 320,
+          "top": 249.140625,
+          "right": 279.8125,
+          "bottom": 569.140625,
+          "left": 40.1875
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 79.625,
+          "y": 95.390625,
+          "width": 290.875,
+          "height": 320,
+          "top": 95.390625,
+          "right": 370.5,
+          "bottom": 415.390625,
+          "left": 79.625
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 44.390625,
+          "y": 94.640625,
+          "width": 301.21875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 345.609375,
+          "bottom": 414.640625,
+          "left": 44.390625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 1363,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 105.796875,
+          "y": 290.609375,
+          "width": 482.703125,
+          "height": 320,
+          "top": 290.609375,
+          "right": 588.5,
+          "bottom": 610.609375,
+          "left": 105.796875
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "width": 390,
+      "slug": "jobpilot-ai",
+      "actual": {
+        "scrollWidth": 338,
+        "clientWidth": 338,
+        "scrollHeight": 552,
+        "clientHeight": 552,
+        "scrollTop": 0
+      },
+      "focusObservations": [
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Resume library and upload\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Discover jobs\" aria-current=\"true\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Saved job and application workspace\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Live voice interview practice\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd7",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show JobPilot product overview artwork\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/c2",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Mobile welcome and application workflow\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"/projects/responsive/jobpilot-phone.webp\"><span>06</span></button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Tablet application workflow\"><img alt=\"\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" src=\"/projects/responsive/jobpilot-tablet.webp\"><span>07</span></button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Previous screenshot\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"19",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Next screenshot\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"5\" y1=",
+          "open": true
+        },
+        {
+          "contained": false,
+          "active": "<body style=\"overflow: hidden;\">\n    <div id=\"root\"><div class=\"landscape\"><div class=\"portfolio is-reading\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><a class=\"identity\" aria-label=\"Mahmoud Hussein Abdu",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-pressed=\"true\">Fit width</button>",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Close gallery\"><svg stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" height=\"22\" width=\"22\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"18\" y1=\"6\"",
+          "open": true
+        }
+      ],
+      "focusContained": false,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "slug": "gamezone-arena",
+      "actual": {
+        "scrollWidth": 338,
+        "clientWidth": 338,
+        "scrollHeight": 502,
+        "clientHeight": 502,
+        "scrollTop": 0
+      },
+      "focusObservations": [
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Room selection · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-rooms-480w.avif 480w, /projects/phase3/gamezone-rooms-960w.avif 960w, /projects/phase3/gamezone-rooms-160",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Session date and time · demonstration data\" aria-current=\"true\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-session-480w.avif 480w, /projects/phase3/gamezone-session-960w.avif 960w, /pro",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Device selection · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-devices-480w.avif 480w, /projects/phase3/gamezone-devices-960w.avif 960w, /projects/phase3/gamezone-dev",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking review · demonstration data\"><picture><source type=\"image/avif\" srcset=\"/projects/phase3/gamezone-review-480w.avif 480w, /projects/phase3/gamezone-review-960w.avif 960w, /projects/phase3/gamezone-review-",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Customer bookings dashboard\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/user_overview-480w.avif 480w, /projects/gamezone-arena/user_overview-960w.avif 960w, /projects/gamezone-arena/user",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Choose a gaming room\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/choose_Room-480w.avif 480w, /projects/gamezone-arena/choose_Room-960w.avif 960w, /projects/gamezone-arena/choose_Room-160",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking date and time\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/Booking_date_and_time-480w.avif 480w, /projects/gamezone-arena/Booking_date_and_time-960w.avif 960w, /projects/gamezone-",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Device selection\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/select_device-480w.avif 480w, /projects/gamezone-arena/select_device-960w.avif 960w, /projects/gamezone-arena/select_device-1",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Booking confirmation and payment\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/confirm_and_pay-480w.avif 480w, /projects/gamezone-arena/confirm_and_pay-960w.avif 960w, /projects/gamezone-a",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Arena administration overview\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_overview-480w.avif 480w, /projects/gamezone-arena/admin_overview-960w.avif 960w, /projects/gamezone-arena/",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show Room management\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_Rooms-480w.avif 480w, /projects/gamezone-arena/admin_Rooms-960w.avif 960w, /projects/gamezone-arena/admin_Rooms-1600w.av",
+          "open": true
+        },
+        {
+          "contained": true,
+          "active": "<button type=\"button\" aria-label=\"Show User management\"><picture><source type=\"image/avif\" srcset=\"/projects/gamezone-arena/admin_Users-480w.avif 480w, /projects/gamezone-arena/admin_Users-960w.avif 960w, /projects/gamezone-arena/admin_Users-1600w.av",
+          "open": true
+        }
+      ],
+      "focusContained": true,
+      "focusReturned": true,
+      "violations": [],
+      "workflowHeights": [
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        },
+        {
+          "before": 228.8125,
+          "after": 228.8125
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 308.265625,
+          "width": 250,
+          "height": 144,
+          "top": 308.265625,
+          "right": 285,
+          "bottom": 452.265625,
+          "left": 35
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.359375,
+          "width": 774,
+          "height": 144,
+          "top": 230.359375,
+          "right": 809,
+          "bottom": 374.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 35,
+          "y": 230.359375,
+          "width": 320,
+          "height": 144,
+          "top": 230.359375,
+          "right": 355,
+          "bottom": 374.359375,
+          "left": 35
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/contact",
+      "startWidth": 390,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 585.0625,
+          "y": 483.09375,
+          "width": 445.140625,
+          "height": 144,
+          "top": 483.09375,
+          "right": 1030.203125,
+          "bottom": 627.09375,
+          "left": 585.0625
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "rect": {
+          "x": 40.1875,
+          "y": 249.140625,
+          "width": 239.625,
+          "height": 320,
+          "top": 249.140625,
+          "right": 279.8125,
+          "bottom": 569.140625,
+          "left": 40.1875
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 79.625,
+          "y": 95.390625,
+          "width": 290.875,
+          "height": 320,
+          "top": 95.390625,
+          "right": 370.5,
+          "bottom": 415.390625,
+          "left": 79.625
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 390
+      },
+      "geometry": {
+        "rect": {
+          "x": 44.390625,
+          "y": 94.640625,
+          "width": 301.21875,
+          "height": 320,
+          "top": 94.640625,
+          "right": 345.609375,
+          "bottom": 414.640625,
+          "left": 44.390625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 390
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    },
+    {
+      "path": "/job-match",
+      "startWidth": 390,
+      "viewport": {
+        "width": 1280,
+        "height": 936
+      },
+      "geometry": {
+        "rect": {
+          "x": 105.796875,
+          "y": 290.609375,
+          "width": 482.703125,
+          "height": 320,
+          "top": 290.609375,
+          "right": 588.5,
+          "bottom": 610.609375,
+          "left": 105.796875
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 936
+        },
+        "overflow": false
+      },
+      "focused": true,
+      "keyboard": "Reduced viewport simulation; no physical on-screen keyboard"
+    }
+  ]
+}
