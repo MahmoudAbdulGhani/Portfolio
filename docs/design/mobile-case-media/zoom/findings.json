@@ -1,0 +1,1221 @@
+{
+  "date": "2026-10-10T16:42:04.902Z",
+  "environment": "Bundled Chromium, real 200% and 400% tab zoom verified by chrome.tabs.getZoom; isolated temporary extension/profile removed afterward; real assets, captured public records, native reduced motion, no writes. This is browser reflow coverage, not physical mobile or GPU-motion evidence.",
+  "reference": "https://developer.chrome.com/docs/extensions/reference/api/tabs#method-setZoom",
+  "findings": [
+    {
+      "path": "/",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 367.8515625,
+            "bottom": 125,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 77,
+            "width": 73.109375,
+            "height": 48,
+            "top": 77,
+            "right": 448.9609375,
+            "bottom": 125,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 77,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 77,
+            "right": 543,
+            "bottom": 125,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 599,
+            "bottom": 125,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/lobby",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 367.8515625,
+            "bottom": 125,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 77,
+            "width": 73.109375,
+            "height": 48,
+            "top": 77,
+            "right": 448.9609375,
+            "bottom": 125,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 77,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 77,
+            "right": 543,
+            "bottom": 125,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 599,
+            "bottom": 125,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 87,
+            "width": 48,
+            "height": 48,
+            "top": 87,
+            "right": 367.8515625,
+            "bottom": 135,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 87,
+            "width": 73.109375,
+            "height": 48,
+            "top": 87,
+            "right": 448.9609375,
+            "bottom": 135,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 87,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 87,
+            "right": 543,
+            "bottom": 135,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 87,
+            "width": 48,
+            "height": 48,
+            "top": 87,
+            "right": 599,
+            "bottom": 135,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 367.8515625,
+            "bottom": 127.9921875,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 79.9921875,
+            "width": 73.109375,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 448.9609375,
+            "bottom": 127.9921875,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 79.9921875,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 543,
+            "bottom": 127.9921875,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 599,
+            "bottom": 127.9921875,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/unihub",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 367.8515625,
+            "bottom": 127.9921875,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 79.9921875,
+            "width": 73.109375,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 448.9609375,
+            "bottom": 127.9921875,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 79.9921875,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 543,
+            "bottom": 127.9921875,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 599,
+            "bottom": 127.9921875,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 367.8515625,
+            "bottom": 125,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 77,
+            "width": 73.109375,
+            "height": 48,
+            "top": 77,
+            "right": 448.9609375,
+            "bottom": 125,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 77,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 77,
+            "right": 543,
+            "bottom": 125,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 599,
+            "bottom": 125,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 367.8515625,
+            "bottom": 127.9921875,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 79.9921875,
+            "width": 73.109375,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 448.9609375,
+            "bottom": 127.9921875,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 79.9921875,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 543,
+            "bottom": 127.9921875,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 79.9921875,
+            "width": 48,
+            "height": 48,
+            "top": 79.9921875,
+            "right": 599,
+            "bottom": 127.9921875,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/projects/home-services",
+      "actualZoom": 2,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 319.8515625,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 367.8515625,
+            "bottom": 125,
+            "left": 319.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 375.8515625,
+            "y": 77,
+            "width": 73.109375,
+            "height": 48,
+            "top": 77,
+            "right": 448.9609375,
+            "bottom": 125,
+            "left": 375.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 456.9609375,
+            "y": 77,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 77,
+            "right": 543,
+            "bottom": 125,
+            "left": 456.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 551,
+            "y": 77,
+            "width": 48,
+            "height": 48,
+            "top": 77,
+            "right": 599,
+            "bottom": 125,
+            "left": 551
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/profile",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/contact",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/job-match",
+      "actualZoom": 2,
+      "geometry": {
+        "innerWidth": 640,
+        "innerHeight": 468,
+        "dpr": 2,
+        "scrollWidth": 640,
+        "mainWidth": 640
+      }
+    },
+    {
+      "path": "/",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 75.8515625,
+            "bottom": 119,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 71,
+            "width": 73.109375,
+            "height": 48,
+            "top": 71,
+            "right": 152.9609375,
+            "bottom": 119,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 71,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 71,
+            "right": 243,
+            "bottom": 119,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 295,
+            "bottom": 119,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/jobpilot-ai",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/lobby",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 75.8515625,
+            "bottom": 119,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 71,
+            "width": 73.109375,
+            "height": 48,
+            "top": 71,
+            "right": 152.9609375,
+            "bottom": 119,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 71,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 71,
+            "right": 243,
+            "bottom": 119,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 295,
+            "bottom": 119,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/lobby",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 75.8515625,
+            "bottom": 129,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 81,
+            "width": 73.109375,
+            "height": 48,
+            "top": 81,
+            "right": 152.9609375,
+            "bottom": 129,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 81,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 81,
+            "right": 243,
+            "bottom": 129,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 295,
+            "bottom": 129,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/gamezone-arena",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 75.8515625,
+            "bottom": 129,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 81,
+            "width": 73.109375,
+            "height": 48,
+            "top": 81,
+            "right": 152.9609375,
+            "bottom": 129,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 81,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 81,
+            "right": 243,
+            "bottom": 129,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 295,
+            "bottom": 129,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/construction-project-management-accounting-system",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/unihub",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 75.8515625,
+            "bottom": 129,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 81,
+            "width": 73.109375,
+            "height": 48,
+            "top": 81,
+            "right": 152.9609375,
+            "bottom": 129,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 81,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 81,
+            "right": 243,
+            "bottom": 129,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 295,
+            "bottom": 129,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/unihub",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 75.8515625,
+            "bottom": 119,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 71,
+            "width": 73.109375,
+            "height": 48,
+            "top": 71,
+            "right": 152.9609375,
+            "bottom": 119,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 71,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 71,
+            "right": 243,
+            "bottom": 119,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 295,
+            "bottom": 119,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/full-stack-user-management-system",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 75.8515625,
+            "bottom": 129,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 81,
+            "width": 73.109375,
+            "height": 48,
+            "top": 81,
+            "right": 152.9609375,
+            "bottom": 129,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 81,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 81,
+            "right": 243,
+            "bottom": 129,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "top": 81,
+            "right": 295,
+            "bottom": 129,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/medicare-hub",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/projects/home-services",
+      "actualZoom": 3.9999999999999996,
+      "viewerControls": [
+        {
+          "text": "Fit",
+          "box": {
+            "x": 27.8515625,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 75.8515625,
+            "bottom": 119,
+            "left": 27.8515625
+          }
+        },
+        {
+          "text": "Fit width",
+          "box": {
+            "x": 79.8515625,
+            "y": 71,
+            "width": 73.109375,
+            "height": 48,
+            "top": 71,
+            "right": 152.9609375,
+            "bottom": 119,
+            "left": 79.8515625
+          }
+        },
+        {
+          "text": "Actual size",
+          "box": {
+            "x": 156.9609375,
+            "y": 71,
+            "width": 86.0390625,
+            "height": 48,
+            "top": 71,
+            "right": 243,
+            "bottom": 119,
+            "left": 156.9609375
+          }
+        },
+        {
+          "text": "",
+          "box": {
+            "x": 247,
+            "y": 71,
+            "width": 48,
+            "height": 48,
+            "top": 71,
+            "right": 295,
+            "bottom": 119,
+            "left": 247
+          }
+        }
+      ]
+    },
+    {
+      "path": "/projects/home-services",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/profile",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/contact",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    },
+    {
+      "path": "/job-match",
+      "actualZoom": 3.9999999999999996,
+      "geometry": {
+        "innerWidth": 320,
+        "innerHeight": 234,
+        "dpr": 4,
+        "scrollWidth": 320,
+        "mainWidth": 320
+      }
+    }
+  ]
+}

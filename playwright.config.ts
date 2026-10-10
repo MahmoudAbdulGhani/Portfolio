@@ -5,6 +5,9 @@ const port = new URL(baseURL).port || '5173';
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  // Broad per-image checks have a separate multi-engine CI job. Existing
+  // smoke/motion assertions keep their original coverage and deadline.
+  testIgnore: '**/mobile-case-media.spec.ts',
   fullyParallel: false,
   retries: process.env.CI ? 2 : 0,
   reporter: [["list"], ["html", { open: "never" }]],

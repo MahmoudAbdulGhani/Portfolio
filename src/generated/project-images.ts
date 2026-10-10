@@ -175,5 +175,194 @@ export const projectImages: Record<string, ProjectImageAsset> = {
     "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQBACdASogADQAPzmQvVavKiYjrBqpmeAnCWUAAHiWv/PXe4j9M4TA/oAyz/9kqAD+0+ubMhMAICaDgZGl1CtRXjjxlaUqSf5WkS0zitS7WgcaNLo7CHFaRvTwb9DYO8VSAZr3h64MQGdc3igIQfDGCKrJ9x2TnCZG0LV9U8grXcwIAAA=",
     "webp": "/projects/phase3/user-management-registration-480w.webp 480w, /projects/phase3/user-management-registration-960w.webp 960w, /projects/phase3/user-management-registration-1040w.webp 1040w",
     "avif": "/projects/phase3/user-management-registration-480w.avif 480w, /projects/phase3/user-management-registration-960w.avif 960w, /projects/phase3/user-management-registration-1040w.avif 1040w"
+  },
+  "/projects/case-media/cedar-inventory.webp": {
+    "width": 500,
+    "height": 300,
+    "placeholder": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASogABMAPzmUwVmvKicjqAgB4CcJaQDQVBZl0fWoZ7SQAP7tglAKn2AIVbUpyH1I9ucXN65fwgfSUURAAAA=",
+    "webp": "/projects/case-media/cedar-inventory-480w.webp 480w, /projects/case-media/cedar-inventory-500w.webp 500w",
+    "avif": "/projects/case-media/cedar-inventory-480w.avif 480w, /projects/case-media/cedar-inventory-500w.avif 500w"
+  },
+  "/projects/case-media/cedar-posted.webp": {
+    "width": 600,
+    "height": 190,
+    "placeholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASogAAoAPzmGuVOvKSWisAgB4CcJbACsLwACbX07uXSAAP7ieXlBqOxdJZHt8/BTqEyqRnWbxdqMRRKIZ82u8JP/2L4KhujUywNwAAAA",
+    "webp": "/projects/case-media/cedar-posted-480w.webp 480w, /projects/case-media/cedar-posted-600w.webp 600w",
+    "avif": "/projects/case-media/cedar-posted-480w.avif 480w, /projects/case-media/cedar-posted-600w.avif 600w"
+  },
+  "/projects/case-media/cedar-profit.webp": {
+    "width": 493,
+    "height": 300,
+    "placeholder": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAABQAwCdASogABMAPzmSvFgvKiWjqAqp4CcJZwDO7BbnHKpWAAD+7YJQCp9gB+DI0rCInVCKs2LDoroAAAA=",
+    "webp": "/projects/case-media/cedar-profit-480w.webp 480w, /projects/case-media/cedar-profit-493w.webp 493w",
+    "avif": "/projects/case-media/cedar-profit-480w.avif 480w, /projects/case-media/cedar-profit-493w.avif 493w"
+  },
+  "/projects/case-media/cedar-progress.webp": {
+    "width": 910,
+    "height": 510,
+    "placeholder": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASogABIAPzmUwVmvKicjqAgB4CcJaQAAQnjkAAD+7PYwDJKQCgJLs55DYQAAAA==",
+    "webp": "/projects/case-media/cedar-progress-480w.webp 480w, /projects/case-media/cedar-progress-910w.webp 910w",
+    "avif": "/projects/case-media/cedar-progress-480w.avif 480w, /projects/case-media/cedar-progress-910w.avif 910w"
+  },
+  "/projects/case-media/cedar-summary.webp": {
+    "width": 1520,
+    "height": 230,
+    "placeholder": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAwCdASogAAUAPzmIu1QvKSYjMAgB4CcJQAAj43rncgAA/uuZ/eW7rWFyh2uU2RGm9axASZFhEb3H48jVHsAA",
+    "webp": "/projects/case-media/cedar-summary-480w.webp 480w, /projects/case-media/cedar-summary-960w.webp 960w, /projects/case-media/cedar-summary-1520w.webp 1520w",
+    "avif": "/projects/case-media/cedar-summary-480w.avif 480w, /projects/case-media/cedar-summary-960w.avif 960w, /projects/case-media/cedar-summary-1520w.avif 1520w"
+  },
+  "/projects/case-media/gamezone-devices-phone-task.webp": {
+    "width": 390,
+    "height": 848,
+    "placeholder": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAADwBwCdASogAEYAPzmUwFqvKaYkI0uJ4CcJYwDNSq1QJ2z/3o2jLmyXHPNlFOI8bKc1t57bkg6mtl+YeKPnjUXZYpn2vM6viwAA/odW125DZt0nOw7+naV1Rq2vIgR0WG3snJovho676BOTPg0m5VO1vyS3687ZsLmoV38hOnUOh8g+iOkZtTx3pjhpXf5E0/6Erd/W53OcuXu8sMyos6fdAbtH3ZWkpeherQL2LFz1B8VSi6p4hoP9AcspthPO5XI1B4gO0U70UNxaYqcvasLPZv6TutjqxPQVoqYnAM0f1lbfR6AMbMZqAAA=",
+    "webp": "/projects/case-media/gamezone-devices-phone-task-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-devices-phone-task-390w.avif 390w"
+  },
+  "/projects/case-media/gamezone-devices-phone.webp": {
+    "width": 390,
+    "height": 2061,
+    "placeholder": "data:image/webp;base64,UklGRpABAABXRUJQVlA4IIQBAADwCwCdASogAKkAPzmQvVgvKaYjqNVcAeAnCWcA09qtwCPFWbjCX4z2YbT1IZ1zNwk5j6IietOKqJvqpekfLBIO50tU4k5Mk4fLMwUpUR177VKVL5mEX+vXqvG/5Jn5Fr0oX4h3XFxHgAD+rERnhx8Ted0ncDx+oP1seCKLRhLM1ID5zLUf27p8zNktz0UChUy4lG6vxXqkCCCWhI/kFb7epwL9hyH19Vkt4YGZfmakYpCiv2yAknM3pzJwYH6dHjPZQfG11TQkcZfGekFg0B17QIiTi4mTEG/pGw2w3/DUnRJ83KAtg0Oy0ee/hxxjxGNS1l+RvXDRwvVLUoDqVJzwPuxN4HXPwT7PKionLufXtkB4DjxHIEdg0edvtp9PnPnegEKjp4hWp6HWSCMYQQN1cNKxNSAWkMFPPn8E0jkOPCtYZgObwjywjYb9QwCqHasfFJtJwBH53XwjFeF5ExfSX4vMo9vz8LRFiUGGpecIYTlPEpX0oSm4t6fSpDtz7zogAAAA",
+    "webp": "/projects/case-media/gamezone-devices-phone-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-devices-phone-390w.avif 390w"
+  },
+  "/projects/case-media/gamezone-review-phone-task.webp": {
+    "width": 390,
+    "height": 1260,
+    "placeholder": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4IDYBAADQCACdASogAGcAPzmMvlevKSYjqTQMyeAnCWMAzygENeTL6Ay5mvumVZH07RjlQ7iLVgxsNs3N0Cg0kdxINYWpszIdMCSmXi8M7xR5pB7AAP6HVkbnIbNuk52HdBtK6o1bXkQQMeeXRUtzzwsoVT0MP3Cg78Djh14V5JUC2QSF/tvhGeLrT8F01vwrweiWuG5AVTeDHXTeWdwv8RI1yNTHN2BsC+U7zuen3ezGgxed0OJX5PnZ8ARRcZlhP8/CZBL/OrmaCFIsH14sWWpPkAIo1lEHX05YB1g7yQiWeRRCStO96xlwJVEmprQQl9pwRgP40AWRQpZeba6pQc7Mq5gA5SRK30cDgP+84aGIA5fJc8PQq0hd+cxlAv5sTDc81VHGLULvuo0KahYLprxZ4H0y2ZsuAAAA",
+    "webp": "/projects/case-media/gamezone-review-phone-task-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-review-phone-task-390w.avif 390w"
+  },
+  "/projects/case-media/gamezone-review-phone.webp": {
+    "width": 390,
+    "height": 2473,
+    "placeholder": "data:image/webp;base64,UklGRtYBAABXRUJQVlA4IMoBAABwDACdASogAMsAPzmSuVavKqUjrFM8AeAnCWUcZg7oP50B0NR3wIUwu21Y25K5Eu2VF2CRF19iT36SRgit8anfdfWOZauHwey+pbaU/gjvYrJIfjsHlUoO6k7UpRncnY7yPMgnPQjmg3D2DwAA/qxEZ4cfE3ndJ3A/bMO/WPat+2wKXnDdhYFIcguKj8etRjK4vU8Inu2hAJ3s9jEHQmSmsietWF0/+HRE1zPQJ7zFL2TUiJJHuld4UYa9+umwlDlsuQIbMJcffwrOX+0o80gNkTF3PnSfjUKwrgJ8D2cPr/gTwdVsXaP/14nx36CArWu8KRkSJfWsZZ91v9hclPcABHGocQFseeWaEjIYq3gOSCXUvoJfIfIFZIf7UIVZOuKoQ6IAMVKx3fW/3HVGsKmMi7KTiJiXASvlNmEJZCGkWkgcceUNqNLn5eP2K6G/lse/GKNDbErVGJKbQfRSOUXq2ioamYCdn6qtGIunXtUEnPwwu/KlQUNP/uk0EjAhRYfKSgD5MgTdmAG4AqUfZ4u5TX66vpnffXHQOhCHiq1dXGX8HnmyMuCNuVdIU3VKPvDIV+GL+yKKQPwoVv7OWZIioNzqM1YK+gAAAA==",
+    "webp": "/projects/case-media/gamezone-review-phone-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-review-phone-390w.avif 390w"
+  },
+  "/projects/case-media/gamezone-session-phone-task.webp": {
+    "width": 390,
+    "height": 1015,
+    "placeholder": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADwBgCdASogAFMAPzmEvVWvKCajKrQN+eAnCWMA0FiTWZcAKVQ6nKoQFrM1jt6blWMe/VqJG/xRPKiYX1+Re+6AAP6HVa94KMTs4We85V4ZqzWaqEcpuiCsJY4Ou6EdrVQTtqQaiXEdqErVmNzHOYIX/KZRSTBJezsTIF8CWNGHJ2uycrRPdhJsXJ+Pth3XK6ODZg7Av0dV4vYDBt7QkMyfuDkDkAuFUxzV1QZrBTOm6ERwN/WBePtfoCIA+hWIJXJIdTQkrLUvFllW1TJgJXFC4bsRz8wSzYgiL0UdoWEFCeUpzNoAAA==",
+    "webp": "/projects/case-media/gamezone-session-phone-task-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-session-phone-task-390w.avif 390w"
+  },
+  "/projects/case-media/gamezone-session-phone.webp": {
+    "width": 390,
+    "height": 2229,
+    "placeholder": "data:image/webp;base64,UklGRo4BAABXRUJQVlA4IIIBAAAQCwCdASogALcAPzmQvFavKiYjqVksOeAnCWcAzyqs4D6kBAr3CuqaQty40AExj0JQWUSd7/0pMIQMZElhDypKzpKGvZ3cAbvQ/xa1zWc4qNbbBc39igVxxbVQm0FPgo7AAP6sRGeHHxNqyq0xN3iBXG9zuVol6PTMO3CDEO4S+l/zjV8zAItpFM2NvOUrXLKWGE9BRZaarTqAex84hTBdQlYEYi3c6Il9GrERkpz/P7p3nIqQqgKDONgWo4wRJckLTg06rcwi/w5/v57sD2XmhMWQKqQ1c8iXHlnwGqwNG30a7mDqDYKK6OJ0yRTM2NkmX8smTgOt0+BA+z/50M3O/EHy2xUeoHZQ9YJq8ET/ScycxLEEqVz4Ch46DgNClKtcG1iuTJsUXyimHKImPV7x0yUa/X8ppHgQLR1AO6X0TSIDaKAelzJQnCyWjY7SXKmaGO4QcvLwwrNi+FrGe5LGm8j8SKuGcyKhaXalxL7l0XgK2NJxaHvLOEbMQuqk3GAAAA==",
+    "webp": "/projects/case-media/gamezone-session-phone-390w.webp 390w",
+    "avif": "/projects/case-media/gamezone-session-phone-390w.avif 390w"
+  },
+  "/projects/case-media/jobpilot-location.webp": {
+    "width": 475,
+    "height": 227,
+    "placeholder": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABwAwCdASogAA8APzmEuVOvKKWisAgB4CcJaQAAW4MejpC410AA/tPbYON3gQFvNREcior0N3qLyAibyief4AAA",
+    "webp": "/projects/case-media/jobpilot-location-475w.webp 475w",
+    "avif": "/projects/case-media/jobpilot-location-475w.avif 475w"
+  },
+  "/projects/case-media/jobpilot-source.webp": {
+    "width": 480,
+    "height": 277,
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASogABIAPzmQvFgvKaWjqAqp4CcJaQAALtcLhlW1WES+VgAA/tPbW5jKFTw/AM8t/dsNNSfqlXbBfUQRRVd3bAuDS9xPk25GZGvMywsEGVtGsAAA",
+    "webp": "/projects/case-media/jobpilot-source-480w.webp 480w",
+    "avif": "/projects/case-media/jobpilot-source-480w.avif 480w"
+  },
+  "/projects/case-media/jobpilot-tabs.webp": {
+    "width": 670,
+    "height": 100,
+    "placeholder": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASogAAUAPzmEuVOvKKWisAgB4CcJaQAAhAwAAP7t9m33y+cBPhGbegAA",
+    "webp": "/projects/case-media/jobpilot-tabs-480w.webp 480w, /projects/case-media/jobpilot-tabs-670w.webp 670w",
+    "avif": "/projects/case-media/jobpilot-tabs-480w.avif 480w, /projects/case-media/jobpilot-tabs-670w.avif 670w"
+  },
+  "/projects/case-media/jobpilot-voice.webp": {
+    "width": 1220,
+    "height": 495,
+    "placeholder": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASogAA0APzmEuVOvKKWisAgB4CcJZwAAXfT4JbiJcTJZgAD+0zG14QBZGTDFxvsIqNSMjXUkOWA2x71GBAAAAA==",
+    "webp": "/projects/case-media/jobpilot-voice-480w.webp 480w, /projects/case-media/jobpilot-voice-960w.webp 960w, /projects/case-media/jobpilot-voice-1220w.webp 1220w",
+    "avif": "/projects/case-media/jobpilot-voice-480w.avif 480w, /projects/case-media/jobpilot-voice-960w.avif 960w, /projects/case-media/jobpilot-voice-1220w.avif 1220w"
+  },
+  "/projects/case-media/jobpilot-workspace.webp": {
+    "width": 1000,
+    "height": 310,
+    "placeholder": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAgCdASogAAoAPzmGulOvKKWisAgB4CcJaQAAhAwAAP7tuWe4GNfPISlvCWJH1+gAAA==",
+    "webp": "/projects/case-media/jobpilot-workspace-480w.webp 480w, /projects/case-media/jobpilot-workspace-960w.webp 960w, /projects/case-media/jobpilot-workspace-1000w.webp 1000w",
+    "avif": "/projects/case-media/jobpilot-workspace-480w.avif 480w, /projects/case-media/jobpilot-workspace-960w.avif 960w, /projects/case-media/jobpilot-workspace-1000w.avif 1000w"
+  },
+  "/projects/case-media/lobby-call.webp": {
+    "width": 900,
+    "height": 375,
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACQAwCdASogAA0APzmGuVOvKSWisAgB4CcJQBibBDtQTp3S6DgAAP7ankengNzn2qMACCbQKdN0oV+VlHOYQjYsvNDKavB+dZ/RVBvcSLeSLx6g3aRAAA==",
+    "webp": "/projects/case-media/lobby-call-480w.webp 480w, /projects/case-media/lobby-call-900w.webp 900w",
+    "avif": "/projects/case-media/lobby-call-480w.avif 480w, /projects/case-media/lobby-call-900w.avif 900w"
+  },
+  "/projects/case-media/lobby-chat.webp": {
+    "width": 489,
+    "height": 793,
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASogADQAPzmUwFevKqcjrBVZmeAnCWkAzygKwA9qbagnBTNHkAAA/u4RoMRxckLLDZLVMTq1uiWa1x1+4SpXhgi8btD5wZ2fB9l2wZ1NoAAAAA==",
+    "webp": "/projects/case-media/lobby-chat-480w.webp 480w, /projects/case-media/lobby-chat-489w.webp 489w",
+    "avif": "/projects/case-media/lobby-chat-480w.avif 480w, /projects/case-media/lobby-chat-489w.avif 489w"
+  },
+  "/projects/case-media/lobby-invite.webp": {
+    "width": 646,
+    "height": 770,
+    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBgCdASogACYAPyl6s1OuJ6SiurZoAcAlCWUAzf3cC4DwgcjiyPDRKyZZH4hbvM/8IC82w8ZMyEBGfZqTI+AA/uzaj5hz/VwZt8SA9D+k0Rr4oXFsYJCp+W3Qe4AIceB4gW07xLaRi1AFJzVlIFT6XkHp5QtOsZqh2M5oA32F626lElBp9OT8npB/sV/BIPxFVV5CE4BHNbXVDLlNUJgB7ME4xx1qPckdvtdWjrl1hUqSAjI2MxjT4MwzAAAA",
+    "webp": "/projects/case-media/lobby-invite-480w.webp 480w, /projects/case-media/lobby-invite-646w.webp 646w",
+    "avif": "/projects/case-media/lobby-invite-480w.avif 480w, /projects/case-media/lobby-invite-646w.avif 646w"
+  },
+  "/projects/case-media/lobby-join.webp": {
+    "width": 415,
+    "height": 270,
+    "placeholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBACdASogABUAPzGAtlOuqCUisAwB0CYJZADNwCHe7RkrT5bhjFNWiNqwAP7o3wvHEyzLOIj0OYzGwfNNqycl7S9Ck/NXIYWzF8ARhIRinLd5qOgpgiBDUMfsYnc7Jb5zaIyIHxIw69fzkfCLD/3pkYAAAA==",
+    "webp": "/projects/case-media/lobby-join-415w.webp 415w",
+    "avif": "/projects/case-media/lobby-join-415w.avif 415w"
+  },
+  "/projects/case-media/unihub-document.webp": {
+    "width": 962,
+    "height": 701,
+    "placeholder": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAwAwCdASogABcAPzmWwlmvKqcjqAgB4CcJaQAALrGpIoMgAP7HJzy8MAbjrO2gTsOIHGHXugMsRnFeyW8KLidqLvMAAA==",
+    "webp": "/projects/case-media/unihub-document-480w.webp 480w, /projects/case-media/unihub-document-960w.webp 960w, /projects/case-media/unihub-document-962w.webp 962w",
+    "avif": "/projects/case-media/unihub-document-480w.avif 480w, /projects/case-media/unihub-document-960w.avif 960w, /projects/case-media/unihub-document-962w.avif 962w"
+  },
+  "/projects/case-media/cedar-budget.webp": {
+    "width": 745,
+    "height": 255,
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASogAAsAPzmGulQvKSWjMAgB4CcJbACdL1J6SAYZIlGqfZh8gAD8XimglI6RcBTfEHOkhHgCvmEzcqoo9ALdjcil/A24vXqphkb+edTrWfoAAA==",
+    "webp": "/projects/case-media/cedar-budget-480w.webp 480w, /projects/case-media/cedar-budget-745w.webp 745w",
+    "avif": "/projects/case-media/cedar-budget-480w.avif 480w, /projects/case-media/cedar-budget-745w.avif 745w"
+  },
+  "/projects/case-media/cedar-cost.webp": {
+    "width": 755,
+    "height": 255,
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASogAAsAPzmGvFQvKSYjMAgB4CcJbACdMoRwAHlfNl6FkAD+jUR1CeMPbKIjiGVNbEHWtFIzIqK3/FntWv/Xs3up8YVwQkbdQ8Fw5aUAAAA=",
+    "webp": "/projects/case-media/cedar-cost-480w.webp 480w, /projects/case-media/cedar-cost-755w.webp 755w",
+    "avif": "/projects/case-media/cedar-cost-480w.avif 480w, /projects/case-media/cedar-cost-755w.avif 755w"
+  },
+  "/projects/case-media/cedar-receivables.webp": {
+    "width": 300,
+    "height": 190,
+    "placeholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQBACdASogABQAPzmKvFUvKSYjKA1R4CcJZACzgA9VR5hX9gW4HxsxsknTE88TAAD90UYSiYBjuLpRVEyd/gYWb2ygTzvKDu2eP3OjnoJdLdb/exTo+330mh1Rly1Zag5pQBBxXNppAH0ROcNgAA==",
+    "webp": "/projects/case-media/cedar-receivables-300w.webp 300w",
+    "avif": "/projects/case-media/cedar-receivables-300w.avif 300w"
+  },
+  "/projects/case-media/jobpilot-posting.webp": {
+    "width": 258,
+    "height": 80,
+    "placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASogAAoAPzmGuVOvKSWisAgB4CcJZAC7ACHfrERe96cGAAD+CZMV4J2EA590wLBaC7CIDzt/yb8cLKqOL6c8eP6IQ50WrHlZUXKF6zxZQkKZmJ3h1K9WKAAA",
+    "webp": "/projects/case-media/jobpilot-posting-258w.webp 258w",
+    "avif": "/projects/case-media/jobpilot-posting-258w.avif 258w"
+  },
+  "/projects/case-media/jobpilot-voice-action.webp": {
+    "width": 360,
+    "height": 169,
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABwAwCdASogAA8APzmGulOvKSWisAgB4CcJZAAAW9IA+iwz8gAA/OLu729CMxphNliu7ZB+n77q+Hk8NkMNXLpfZKXV98xECNwI4V3jrRHyMPfizElkjdvg8AA=",
+    "webp": "/projects/case-media/jobpilot-voice-action-360w.webp 360w",
+    "avif": "/projects/case-media/jobpilot-voice-action-360w.avif 360w"
+  },
+  "/projects/case-media/lobby-call-actions.webp": {
+    "width": 430,
+    "height": 80,
+    "placeholder": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASogAAYAPzmKulOvKaWisAgB4CcJagAAW9NEZa9iy0oAAPuZL+yVguQttf/JvrV/0Yn44il4BvWD7IX/vzRcMD88xBwgAA==",
+    "webp": "/projects/case-media/lobby-call-actions-430w.webp 430w",
+    "avif": "/projects/case-media/lobby-call-actions-430w.avif 430w"
   }
 };

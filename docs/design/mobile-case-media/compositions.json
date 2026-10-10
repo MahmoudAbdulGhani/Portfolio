@@ -1,0 +1,278 @@
+{
+  "entries": 50,
+  "compositions": [
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "originalSha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "detail": "/projects/case-media/jobpilot-source.webp",
+      "label": "Source and city filters",
+      "rectangle": {
+        "left": 390,
+        "top": 600,
+        "width": 480,
+        "height": 277
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+      "originalSha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "detail": "/projects/case-media/jobpilot-location.webp",
+      "label": "Country and sort filters",
+      "rectangle": {
+        "left": 870,
+        "top": 650,
+        "width": 475,
+        "height": 227
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "originalSha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "detail": "/projects/case-media/jobpilot-workspace.webp",
+      "label": "Saved role and workspace identity",
+      "rectangle": {
+        "left": 330,
+        "top": 120,
+        "width": 1000,
+        "height": 310
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "originalSha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "detail": "/projects/case-media/jobpilot-posting.webp",
+      "label": "Original posting reference",
+      "rectangle": {
+        "left": 1640,
+        "top": 350,
+        "width": 258,
+        "height": 80
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+      "originalSha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "detail": "/projects/case-media/jobpilot-tabs.webp",
+      "label": "Overview, application pack and tracking tabs",
+      "rectangle": {
+        "left": 330,
+        "top": 435,
+        "width": 670,
+        "height": 100
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "originalSha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "detail": "/projects/case-media/jobpilot-voice.webp",
+      "label": "Complete voice consent and draft-status panel",
+      "rectangle": {
+        "left": 490,
+        "top": 238,
+        "width": 1220,
+        "height": 495
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+      "originalSha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "detail": "/projects/case-media/jobpilot-voice-action.webp",
+      "label": "Start voice practice or choose text instead",
+      "rectangle": {
+        "left": 515,
+        "top": 562,
+        "width": 360,
+        "height": 169
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/lobby/audio-room.webp",
+      "originalSha256": "7ea008caaf48cc0dbf51c5d8f97cdfd688300dbb31a722f49e0727306878867a",
+      "detail": "/projects/case-media/lobby-call.webp",
+      "label": "Audio and chat context",
+      "rectangle": {
+        "left": 28,
+        "top": 210,
+        "width": 900,
+        "height": 375
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/lobby/audio-room.webp",
+      "originalSha256": "7ea008caaf48cc0dbf51c5d8f97cdfd688300dbb31a722f49e0727306878867a",
+      "detail": "/projects/case-media/lobby-call-actions.webp",
+      "label": "Start audio or hide chat",
+      "rectangle": {
+        "left": 45,
+        "top": 505,
+        "width": 430,
+        "height": 80
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/lobby/audio-room.webp",
+      "originalSha256": "7ea008caaf48cc0dbf51c5d8f97cdfd688300dbb31a722f49e0727306878867a",
+      "detail": "/projects/case-media/lobby-chat.webp",
+      "label": "Complete chat panel and message composer",
+      "rectangle": {
+        "left": 1430,
+        "top": 70,
+        "width": 489,
+        "height": 793
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/lobby/share-room.webp",
+      "originalSha256": "0da2ef89009c6f03d6e2306057acf1ebb9f9fff38b0b3c464dd2a1ddfd491073",
+      "detail": "/projects/case-media/lobby-invite.webp",
+      "label": "Complete invitation dialog, QR and sharing actions",
+      "rectangle": {
+        "left": 637,
+        "top": 53,
+        "width": 646,
+        "height": 770
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/lobby/guest-access.webp",
+      "originalSha256": "26dff12e8c80a7ae5560c965b5dca235ca47febe6d75aeaa9b0f63f7f5fc7b6e",
+      "detail": "/projects/case-media/lobby-join.webp",
+      "label": "Invitation code and Join room action",
+      "rectangle": {
+        "left": 915,
+        "top": 440,
+        "width": 415,
+        "height": 270
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "originalSha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "detail": "/projects/case-media/cedar-summary.webp",
+      "label": "Project identity, actions and section tabs",
+      "rectangle": {
+        "left": 365,
+        "top": 170,
+        "width": 1520,
+        "height": 230
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "originalSha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "detail": "/projects/case-media/cedar-budget.webp",
+      "label": "Contract value and approved budget",
+      "rectangle": {
+        "left": 365,
+        "top": 400,
+        "width": 745,
+        "height": 255
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "originalSha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "detail": "/projects/case-media/cedar-cost.webp",
+      "label": "Actual cost and forecast profit",
+      "rectangle": {
+        "left": 1130,
+        "top": 400,
+        "width": 755,
+        "height": 255
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png",
+      "originalSha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "detail": "/projects/case-media/cedar-progress.webp",
+      "label": "Complete phase progress and detailed-plan action",
+      "rectangle": {
+        "left": 365,
+        "top": 670,
+        "width": 910,
+        "height": 510
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "originalSha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "detail": "/projects/case-media/cedar-posted.webp",
+      "label": "Posted revenue and expense totals",
+      "rectangle": {
+        "left": 365,
+        "top": 278,
+        "width": 600,
+        "height": 190
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "originalSha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "detail": "/projects/case-media/cedar-receivables.webp",
+      "label": "Outstanding receivables from unpaid invoices",
+      "rectangle": {
+        "left": 1290,
+        "top": 278,
+        "width": 300,
+        "height": 190
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "originalSha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "detail": "/projects/case-media/cedar-profit.webp",
+      "label": "Complete Profit & Loss report tile",
+      "rectangle": {
+        "left": 365,
+        "top": 465,
+        "width": 493,
+        "height": 300
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png",
+      "originalSha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "detail": "/projects/case-media/cedar-inventory.webp",
+      "label": "Inventory valuation remains Coming soon",
+      "rectangle": {
+        "left": 888,
+        "top": 780,
+        "width": 500,
+        "height": 300
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    },
+    {
+      "original": "/projects/unihub/transcipt.webp",
+      "originalSha256": "d54226e993f775ea7ee939649a568d9524fb8d2e58fe23f0e16836a65abcbcba",
+      "detail": "/projects/case-media/unihub-document.webp",
+      "label": "Complete demonstration transcript document",
+      "rectangle": {
+        "left": 655,
+        "top": 195,
+        "width": 962,
+        "height": 701
+      },
+      "modifications": "Rectangular extraction and lossless WebP. No pixel replacement, UI fabrication or CSS enlargement."
+    }
+  ]
+}

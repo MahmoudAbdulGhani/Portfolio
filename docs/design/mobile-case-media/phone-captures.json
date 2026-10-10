@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-10T16:21:43.999Z",
+  "writes": "All non-GET/HEAD requests blocked; final submission never activated.",
+  "captures": [
+    {
+      "name": "gamezone-session",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "demonstrationClock": "2026-10-10T08:00:00+03:00",
+      "asset": "public/projects/case-media/gamezone-session-phone.webp",
+      "taskAsset": "public/projects/case-media/gamezone-session-phone-task.webp",
+      "taskRectangle": {
+        "left": 0,
+        "top": 80,
+        "width": 390,
+        "height": 1015
+      },
+      "data": "Synthetic demonstration rooms, devices, prices and availability.",
+      "limitations": "Frontend rendering only; deployed revision not independently verified. No booking, payment or backend availability established.",
+      "modifications": "Full document and complete booking section, lossless WebP conversion followed by the existing responsive optimizer. No DOM styling or fabricated UI."
+    },
+    {
+      "name": "gamezone-devices",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "demonstrationClock": "2026-10-10T08:00:00+03:00",
+      "asset": "public/projects/case-media/gamezone-devices-phone.webp",
+      "taskAsset": "public/projects/case-media/gamezone-devices-phone-task.webp",
+      "taskRectangle": {
+        "left": 0,
+        "top": 80,
+        "width": 390,
+        "height": 848
+      },
+      "data": "Synthetic demonstration rooms, devices, prices and availability.",
+      "limitations": "Frontend rendering only; deployed revision not independently verified. No booking, payment or backend availability established.",
+      "modifications": "Full document and complete booking section, lossless WebP conversion followed by the existing responsive optimizer. No DOM styling or fabricated UI."
+    },
+    {
+      "name": "gamezone-review",
+      "source": "https://gaming-arena-reservation-system.vercel.app/booking",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "demonstrationClock": "2026-10-10T08:00:00+03:00",
+      "asset": "public/projects/case-media/gamezone-review-phone.webp",
+      "taskAsset": "public/projects/case-media/gamezone-review-phone-task.webp",
+      "taskRectangle": {
+        "left": 0,
+        "top": 80,
+        "width": 390,
+        "height": 1260
+      },
+      "data": "Synthetic demonstration rooms, devices, prices and availability.",
+      "limitations": "Frontend rendering only; deployed revision not independently verified. No booking, payment or backend availability established.",
+      "modifications": "Full document and complete booking section, lossless WebP conversion followed by the existing responsive optimizer. No DOM styling or fabricated UI."
+    }
+  ]
+}

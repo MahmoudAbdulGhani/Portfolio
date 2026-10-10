@@ -27,7 +27,7 @@
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto auto;
   gap: 16px;
-  padding: 24px;
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
 }
 .case-inspector .case-inspector-inner > header {
   display: flex;
@@ -62,8 +62,8 @@
   flex-shrink: 0;
 }
 .case-inspector button {
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 48px;
+  min-height: 48px;
   color: inherit;
   cursor: pointer;
 }
@@ -78,6 +78,7 @@
   font-size: 12px;
 }
 .case-inspector button:focus-visible,
+.case-inspector .case-inspector-caption:focus-visible,
 .case-inspector .case-inspector-image:focus-visible {
   outline: 2px solid var(--accent, #a44424);
   outline-offset: -2px;
@@ -91,6 +92,11 @@
   border: 1px solid var(--line, #c8c6bc);
   scrollbar-width: thin;
 }
+.case-inspector .case-inspector-image.is-fit { overflow: hidden; }
+.case-inspector .case-inspector-image.is-fit .project-image-handoff,
+.case-inspector .case-inspector-image.is-fit .project-image-current,
+.case-inspector .case-inspector-image.is-fit picture { width: 100%; height: 100%; }
+.case-inspector .case-inspector-image.is-fit img { width: 100%; height: 100%; object-fit: scale-down; object-position: center; }
 .case-inspector-image picture {
   display: block;
 }
@@ -104,7 +110,8 @@
   width: auto;
   max-width: none;
 }
-.case-inspector .case-inspector-image[data-viewport="phone"]:not(.is-actual) {
+.case-inspector .case-inspector-image.is-actual .project-image-handoff { width: max-content; min-width: 100%; }
+.case-inspector .case-inspector-image[data-viewport="phone"].is-width {
   width: min(100%, 480px);
   margin-inline: auto;
 }
@@ -180,7 +187,7 @@
     max-height: calc(100dvh - 20px);
   }
   .case-inspector .case-inspector-inner {
-    padding: 14px;
+    padding: max(14px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(14px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
     gap: 12px;
   }
   .case-inspector .case-inspector-inner > header {
@@ -192,9 +199,20 @@
     font-size: 17px;
   }
   .case-inspector .case-inspector-tools {
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 4px;
   }
   .case-inspector .case-inspector-thumbs {
     gap: 8px;
   }
+}
+@media (max-height: 500px) {
+  .case-inspector .case-inspector-inner { gap: 8px; padding-block-start: max(8px, env(safe-area-inset-top)); padding-block-end: max(8px, env(safe-area-inset-bottom)); }
+  .case-inspector .public-eyebrow, .case-inspector .case-inspector-thumbs { display: none; }
+  .case-inspector .case-inspector-inner { grid-template-rows: auto minmax(0, 1fr) auto; }
+  .case-inspector .case-inspector-inner > footer { grid-row: 3; }
+  .case-inspector .case-inspector-inner > header { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .case-inspector header > div:first-child { min-height: 44px; max-height: 54px; overflow-y: auto; }
+  .case-inspector .case-inspector-tools { justify-content: flex-end; }
+  .case-inspector header h2 { font-size: 14px; }
 }

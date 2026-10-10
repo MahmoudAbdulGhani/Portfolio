@@ -57,19 +57,19 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
 test('a delayed workflow image reserves its frame and keeps its caption in place', async ({ page }) => {
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png', async route => {
+  await page.route('**/projects/case-media/jobpilot-source*', async route => {
     await pending;
     await route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jK1cAAAAASUVORK5CYII=', 'base64') });
   });
   await page.goto('/projects/jobpilot-ai');
   const figure = page.locator('.workflow-frames figure').first();
   await figure.scrollIntoViewIfNeeded();
-  await expect(figure.locator('img')).toBeAttached();
+  await expect(figure.locator('.screenshot-button img').first()).toBeAttached();
   const before = await figure.evaluate(el => ({ height: el.querySelector('button')!.getBoundingClientRect().height, caption: el.querySelector('figcaption')!.getBoundingClientRect().top, loaded: (el.querySelector('img') as HTMLImageElement).naturalWidth > 0 }));
   expect(before.height).toBeGreaterThan(150);
   expect(before.loaded).toBe(false);
   release();
-  await figure.locator('img').evaluate(img => (img as HTMLImageElement).decode());
+  await figure.locator('.screenshot-button img').first().evaluate(img => (img as HTMLImageElement).decode());
   const after = await figure.evaluate(el => ({ height: el.querySelector('button')!.getBoundingClientRect().height, caption: el.querySelector('figcaption')!.getBoundingClientRect().top }));
   expect(after.height).toBeCloseTo(before.height, 0);
   expect(after.caption).toBeCloseTo(before.caption, 0);

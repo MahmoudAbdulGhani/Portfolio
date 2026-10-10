@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiX } from "react-icons/fi";
 import { ResponsiveProjectImage } from "./ResponsiveProjectImage";
-import type { DetailScreen } from "../lib/project-detail-screens";
+import { screenGeometry, type DetailScreen } from "../lib/project-detail-screens";
 import "./case-gallery.css";
 import { gsap } from 'gsap';
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './landscape/finite-motion';
@@ -24,13 +24,18 @@ export function CaseGallery({
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState(initialIndex);
-  const [actual, setActual] = useState(false);
+  const [fit, setFit] = useState<'fit' | 'width' | 'actual'>('fit');
+  const actual = fit === 'actual';
+  const [retry, setRetry] = useState<{ src: string; attempt: number } | null>(null);
   const [failed, setFailed] = useState<string | null>(null);
   const close = useRef<HTMLButtonElement>(null);
+  const imageRegion = useRef<HTMLDivElement>(null);
+  const caption = useRef<HTMLDivElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null), closing = useRef(false);
   const unlock = useRef<(() => void) | null>(null);
   const reduced = useMotionPreference();
   const screen = screens[index];
+  const geometry = screenGeometry(screen);
   useLayoutEffect(() => {
     const modal = dialog.current;
     const trigger =
@@ -90,7 +95,8 @@ export function CaseGallery({
       ?.scrollIntoView({ block: "nearest", inline: "nearest" });
     const region = dialog.current?.querySelector('.case-inspector-image');
     region?.scrollTo(0, 0);
-  }, [index]);
+    caption.current?.scrollTo(0, 0);
+  }, [index, fit]);
   const step = (delta: number) =>
     setIndex((index + delta + screens.length) % screens.length);
   return (
@@ -132,7 +138,7 @@ export function CaseGallery({
           }
         }
         if (
-          actual &&
+          fit !== 'fit' &&
           (event.target as HTMLElement).classList.contains(
             "case-inspector-image",
           )
@@ -146,19 +152,13 @@ export function CaseGallery({
     >
       <div className="case-inspector-inner">
         <header>
-          <div>
+          <div ref={caption} className="case-inspector-caption" role="region" tabIndex={0} aria-label="Image title and evidence note">
             <p className="public-eyebrow">{projectName}</p>
             <h2>{screen.label}</h2>
             {notice && <p className="case-inspector-notice">{notice}</p>}
           </div>
           <div className="case-inspector-tools">
-            <button
-              type="button"
-              onClick={() => setActual(!actual)}
-              aria-pressed={actual}
-            >
-              {actual ? "Fit width" : "Actual size"}
-            </button>
+            {(['fit', 'width', 'actual'] as const).map(mode => <button key={mode} type="button" onClick={() => setFit(mode)} aria-pressed={fit === mode}>{mode === 'fit' ? 'Fit' : mode === 'width' ? 'Fit width' : 'Actual size'}</button>)}
             <button
               ref={close}
               type="button"
@@ -170,25 +170,28 @@ export function CaseGallery({
           </div>
         </header>
         <div
-          key={String(actual)}
-          className={`case-inspector-image ${actual ? "is-actual" : ""}`}
+          ref={imageRegion}
+          className={`case-inspector-image is-${fit}`}
           data-viewport={screen.viewport}
           role="region"
           tabIndex={0}
-          aria-label={`${screen.label}. Scroll to inspect the full screenshot.`}
+          aria-label={`${screen.label}. ${fit === 'fit' ? 'Complete image fitted to the viewer.' : 'Scroll to inspect the full screenshot.'}`}
         >
           {failed === screen.src ? (
-            <p className="case-shot-error">
-              This image is unavailable. Select another screen below.
-            </p>
+            <div className="case-shot-error" role="status"><p>This image is unavailable.</p><button type="button" onClick={() => { imageRegion.current?.focus(); setRetry(previous => ({ src: screen.src, attempt: previous?.src === screen.src ? previous.attempt + 1 : 1 })); setFailed(null); }}>Retry original image</button><p>You can also select another screen below.</p></div>
           ) : (
             <ResponsiveProjectImage
+              key={`${screen.src}:${retry?.src === screen.src ? retry.attempt : 0}`}
               src={screen.src}
               alt={`${projectName}: ${screen.label}`}
-              sizes="96vw"
+              // Bound the responsive density hint too: a width descriptor with
+              // an oversized sizes value can inflate CSS intrinsic dimensions
+              // and make scale-down enlarge a physically small source.
+              sizes={`(min-width: ${Math.ceil(geometry.width / 0.96)}px) ${geometry.width}px, 96vw`}
               priority
               retainPrevious
-              original={actual}
+              fit={fit === 'fit' ? 'frame' : 'natural'}
+              original={actual || retry?.src === screen.src}
               onError={() => setFailed(screen.src)}
             />
           )}

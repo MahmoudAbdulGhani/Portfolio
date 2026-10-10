@@ -78,7 +78,7 @@ test('inspector wraps forward and reverse focus without losing Escape or return 
   await expect(dialog).toBeVisible();
   await dialog.getByRole('button',{name:'Next screenshot',exact:true}).focus();
   await page.keyboard.press('Tab');
-  await expect(dialog.getByRole('button',{name:'Actual size',exact:true})).toBeFocused();
+  await expect(dialog.getByRole('region',{name:'Image title and evidence note',exact:true})).toBeFocused();
   await page.keyboard.press('Shift+Tab');
   await expect(dialog.getByRole('button',{name:'Next screenshot',exact:true})).toBeFocused();
   await page.keyboard.press('ArrowRight');
