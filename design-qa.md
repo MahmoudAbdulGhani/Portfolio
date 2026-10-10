@@ -1,3 +1,25 @@
+# Phase 4: signature motion — 10 October 2026 (implementation in progress)
+
+Branch `refine/phase-4-signature-motion` starts at approved `66bba231335c391117dda39209301759925a5b90` / draft #15. Refreshed origin and checked branch/tree first; the user's untracked handoff remains untouched. No newer tracked work was present. Phase 1–3 integrity, media loading deadlines and accepted design are preserved.
+
+## Opening diagnosis before choreography changes
+
+An isolated approved checkout and the current checkout used the same installed Chrome, 1024×1366 touch viewport, dependencies, one browser worker, cold contexts, service fixtures and original deadlines. The unchanged slow/failed screenshot test passed **3/3** in each ordinary hardware-GPU run. Current captures identify **Intel UHD Graphics via ANGLE/Direct3D11**, rather than inferring hardware from the word WebGL. These healthy observations do not erase the historical failures.
+
+The confirmed application failure mechanism is **UI readiness coupled to GSAP's lag-smoothed animation clock**. The installed GSAP code and [primary documentation](https://gsap.com/docs/v3/GSAP/gsap.ticker/#gsaptickerlagsmoothing) show that a frame gap above 500ms counts as 33ms. Both mesh and DOM timelines used that global clock, and project controls remained inert until timeline `onComplete`. Long frames could therefore extend a nominal 2.25-second opening beyond the unchanged five-second readiness deadline. Resource readiness and the opening itself were measured separately.
+
+Controlled evidence: six explicitly injected **650ms** frame stalls on the real Intel WebGL renderer reproduced the deadline failure **3/3** on approved code and **3/3** on current, with no forced fallback or retry. Opening-to-interactive measured **5.96–5.97s**; at the five-second observation the page was still `opening` and controls inert. This is a reproducible stress fixture, not a claim that those precise stalls occurred in production. Exploratory supported SwiftShader WebGL observations separately measured long frame gaps around 2.1–2.3s and ordinary openings around 4.53s; software rendering is not hardware-GPU proof. The exact environmental trigger in the older October 9 failures cannot be reconstructed because those traces did not record GPU identity or frame timings.
+
+The first correction keeps the original choreography/durations unchanged and advances only each finite GSAP timeline from `performance.now()`. A scoped frame/deadline owner handles completion, interruption and cleanup independently of a decorative GSAP callback; global ticker settings remain untouched. The same six-stall experiment then passed **3/3**, settling in **2.65–2.66s** with controls usable at five seconds. The first focused regression uses supported WebGL and retains the existing five-second assertion. This demonstrates the elapsed-time correction before any faster Phase 4 tuning can influence the result.
+
+Evidence: `docs/design/phase4/diagnosis/{baseline,current}-original-test.json`, `{baseline,current}-frame-stalls.json`, `clock-fix-frame-stalls.json`; local raw traces remain ignored. Ordinary timing runs, software-renderer probes and controlled long-frame tests are distinct. An initial warm-browser exploration and interrupted/contended diagnostic attempts are excluded from the matched evidence.
+
+The Product Design audit captured all three accepted sculptures on actual Intel WebGL at **1363×936, 1024×1366, 390×844 and 320×844**, using a frozen public GET snapshot, real local sculpture/project media and hash-verified original PNGs. Writes and project view-counter routes were intercepted. **12 before recordings and 60 sequence screenshots** include idle → opening → active → reverse → restored focus, saved in `docs/design/phase4/before/`. Actual screenshots were inspected before refining choreography. Confirmed defects: brief ghosted photo/mesh substitution, visibly different closed silhouettes and roughly 1.55-second GPU return. Opening and return work in these unstressed observations; the three mechanisms remain distinct. The temporary baseline checkout was safely removed after head/path/status validation and unlinking its shared dependency junction; shared dependencies remain intact. An initial lint attempt encountered that temporary nested checkout's duplicate config roots; standard lint is rerun after removing it.
+
+This entry will be completed with the final state model, motion tuning, supporting-page work, regressions, recordings, checks and draft PR/CI evidence. No merge, manual deployment, live CMS/database change, Contact submission or Phase 5 work.
+
+---
+
 # Phase 3 follow-up: lazy-image lifecycle — 10 October 2026
 
 Branch `fix/phase-3-lazy-image-lifecycle` is stacked on approved Phase 3 `21bf413ffc0ec63f7d13d69a6d03b7bffbb61442` / draft #14. [Draft PR #15](https://github.com/MahmoudAbdulGhani/Portfolio/pull/15) targets `refine/phase-3-composition-media`. Implementation commit: `c8372437852bb94f58c0d480bd051232e92e1098`. Checked branch and working tree first, refreshed origin, and preserved the user's untracked handoff. No newer tracked work was present.

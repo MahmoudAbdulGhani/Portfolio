@@ -16,6 +16,7 @@ import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { MotionRig } from "./MotionRig";
 import { warmRig } from "./rig-loader";
+import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import type { RigKind } from "./rig-models";
 import type { Project } from "../../types";
 import { projectDisplayName } from "../../../shared/content-integrity";
@@ -152,7 +153,7 @@ function CollectionScene({
   useEffect(() => {
     const objects = root.current?.querySelectorAll(".object");
     return () => {
-      animation.current?.kill();
+      stopFiniteMotion(animation.current);
       if (objects) gsap.killTweensOf(objects);
     };
   }, []);
@@ -178,7 +179,7 @@ function CollectionScene({
   const back = useCallback(() => {
     if (!selected || closing.current) return;
     closing.current = true;
-    animation.current?.kill();
+    stopFiniteMotion(animation.current);
     const scope = root.current;
     if (!scope) return;
     scope.dataset.selectionState = "closing";
@@ -210,6 +211,7 @@ function CollectionScene({
         { opacity: 1, duration: reduced ? 0.01 : 0.3 },
         gpu ? 1.15 : 0.1,
       );
+    playFiniteMotion(timeline);
   }, [selected, reduced, restore]);
   useEffect(() => {
     let cancelled = false;
@@ -405,7 +407,10 @@ function CollectionScene({
           reduced ? 0 : 1.04,
         );
     }, scope);
+    const timeline = animation.current;
+    if (timeline) playFiniteMotion(timeline);
     return () => {
+      stopFiniteMotion(timeline);
       ctx.revert();
     };
   }, [selected, ready, previewReady, rigReady, reduced, returned]);

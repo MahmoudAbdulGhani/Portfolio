@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-10T10:27:25.678Z",
+  "target": "current",
+  "base": "http://127.0.0.1:5185",
+  "head": "Approved 66bba23; motion files unchanged",
+  "test": "Existing slow/failed screenshot test unchanged",
+  "viewport": "tablet-chromium 1024x1366 hasTouch",
+  "renderer": "Default installed Chrome; no forced fallback/software renderer",
+  "execution": "One worker, no concurrent browser capture or test job",
+  "repetitions": 3,
+  "code": 0,
+  "summary": [
+    "  3 passed (24.1s)"
+  ]
+}

@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { gsap } from "gsap";
 import { createRig, type RigKind } from "./rig-models";
+import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 
 export function mountRig(
   host: HTMLElement,
@@ -190,7 +191,7 @@ export function mountRig(
     1.35,
   );
   const reverse = () => {
-    timeline.time(1.35).reverse();
+    playFiniteMotion(timeline, { from: 1.35, to: 0 });
     host.dataset.state = "closing";
   };
   const observer = new ResizeObserver(size);
@@ -206,7 +207,7 @@ export function mountRig(
   };
   const lost = (event: Event) => {
     event.preventDefault();
-    timeline.kill();
+    stopFiniteMotion(timeline);
     host.dataset.renderer = "fallback";
     host.style.opacity = "0";
     onReady("fallback");
@@ -214,10 +215,11 @@ export function mountRig(
   host.addEventListener("rig-close", reverse);
   document.addEventListener("visibilitychange", visibility);
   canvas.addEventListener("webglcontextlost", lost);
+  playFiniteMotion(timeline);
   onReady("webgl");
   return () => {
     disposed = true;
-    timeline.kill();
+    stopFiniteMotion(timeline);
     observer.disconnect();
     host.removeEventListener("rig-close", reverse);
     document.removeEventListener("visibilitychange", visibility);
