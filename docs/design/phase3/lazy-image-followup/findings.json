@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-10T09:39:37.600Z",
+  "interface": "Local production build",
+  "records": "Frozen Phase 3 public GET snapshot; API detail counters intercepted; no writes",
+  "media": "Actual local assets and unmodified public PNG cache verified against Phase 3 SHA-256; no pixel fixtures",
+  "clock": "Real 16-second introduction wait",
+  "reducedMotion": true,
+  "findings": [
+    {
+      "slug": "jobpilot-ai",
+      "width": 1363,
+      "waitMilliseconds": 16000,
+      "offscreenReadyToWait": true,
+      "workflow": [
+        {
+          "caption": "01\nFind an opportunity\n\nSource and workplace filters narrow discovery. The original listing remains the reference for the role.\n\nInspect image",
+          "before": {
+            "height": 553.9375,
+            "captionOffset": 573.9375
+          },
+          "after": {
+            "height": 553.9375,
+            "captionOffset": 573.9375
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+            "width": 1899,
+            "height": 877
+          }
+        },
+        {
+          "caption": "02\nKeep the application together\n\nA saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.\n\nInspect image",
+          "before": {
+            "height": 553.59375,
+            "captionOffset": 573.59375
+          },
+          "after": {
+            "height": 553.59375,
+            "captionOffset": 573.59375
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+            "width": 1898,
+            "height": 876
+          }
+        },
+        {
+          "caption": "03\nPrepare the conversation\n\nVoice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.\n\nInspect image",
+          "before": {
+            "height": 549.21875,
+            "captionOffset": 569.21875
+          },
+          "after": {
+            "height": 549.21875,
+            "captionOffset": 569.21875
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+            "width": 1900,
+            "height": 870
+          }
+        }
+      ],
+      "selection": "ready; chooser summary focus restored",
+      "retry": "controlled transport abort; original actual image ready",
+      "selectedGeometry": {
+        "height": 553.9375,
+        "captionOffset": 569.9375
+      },
+      "failedGeometry": {
+        "height": 553.9375,
+        "captionOffset": 569.9375
+      },
+      "retryGeometry": {
+        "height": 553.9375,
+        "captionOffset": 569.9375
+      },
+      "horizontalOverflow": false,
+      "viewer": "workflow and retried primary opened; Escape and Close returned focus",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "slug": "gamezone-arena",
+      "width": 1363,
+      "waitMilliseconds": 16000,
+      "offscreenReadyToWait": true,
+      "workflow": [
+        {
+          "caption": "01\nChoose the session\nDetail excerpt · full screen in the gallery\n\nChoose a date and session before selecting devices. This interface uses synthetic demonstration availability.\n\nInspect image",
+          "before": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "after": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-session.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-1600w.avif",
+            "width": 1226,
+            "height": 1352
+          }
+        },
+        {
+          "caption": "02\nChoose the devices\nDetail excerpt · full screen in the gallery\n\nDevice choices belong to the selected room and session. The pictured stations are synthetic demonstration data.\n\nInspect image",
+          "before": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "after": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-devices.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-1600w.avif",
+            "width": 1226,
+            "height": 1255
+          }
+        },
+        {
+          "caption": "03\nReview before confirmation\nDetail excerpt · full screen in the gallery\n\nReview the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.\n\nInspect image",
+          "before": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "after": {
+            "height": 749.65625,
+            "captionOffset": 769.65625
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-review.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-1600w.avif",
+            "width": 1226,
+            "height": 1255
+          }
+        }
+      ],
+      "selection": "ready; chooser summary focus restored",
+      "retry": "controlled transport abort; original actual image ready",
+      "selectedGeometry": {
+        "height": 749.65625,
+        "captionOffset": 765.65625
+      },
+      "failedGeometry": {
+        "height": 749.65625,
+        "captionOffset": 765.65625
+      },
+      "retryGeometry": {
+        "height": 749.65625,
+        "captionOffset": 765.65625
+      },
+      "horizontalOverflow": false,
+      "viewer": "workflow and retried primary opened; Escape and Close returned focus",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "slug": "jobpilot-ai",
+      "width": 390,
+      "waitMilliseconds": 16000,
+      "offscreenReadyToWait": true,
+      "workflow": [
+        {
+          "caption": "01\nFind an opportunity\nDetail excerpt · full screen in the gallery\n\nSource and workplace filters narrow discovery. The original listing remains the reference for the role.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png",
+            "width": 1899,
+            "height": 877
+          }
+        },
+        {
+          "caption": "02\nKeep the application together\nDetail excerpt · full screen in the gallery\n\nA saved job has one workspace for its overview, application pack and tracking. This capture shows the overview, not an approved document.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/aba248de-e871-483a-b413-e0db8d4df718.png",
+            "width": 1898,
+            "height": 876
+          }
+        },
+        {
+          "caption": "03\nPrepare the conversation\nDetail excerpt · full screen in the gallery\n\nVoice practice starts with explicit consent. The pictured setup explains that answers remain a draft until the transcript is reviewed.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+            "currentSrc": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png",
+            "width": 1900,
+            "height": 870
+          }
+        }
+      ],
+      "selection": "ready; chooser summary focus restored",
+      "retry": "controlled transport abort; original actual image ready",
+      "selectedGeometry": {
+        "height": 158.5,
+        "captionOffset": 174.5
+      },
+      "failedGeometry": {
+        "height": 158.5,
+        "captionOffset": 174.5
+      },
+      "retryGeometry": {
+        "height": 158.5,
+        "captionOffset": 174.5
+      },
+      "horizontalOverflow": false,
+      "viewer": "workflow and retried primary opened; Escape and Close returned focus",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "slug": "gamezone-arena",
+      "width": 390,
+      "waitMilliseconds": 16000,
+      "offscreenReadyToWait": true,
+      "workflow": [
+        {
+          "caption": "01\nChoose the session\nDetail excerpt · full screen in the gallery\n\nChoose a date and session before selecting devices. This interface uses synthetic demonstration availability.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-session.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-session-960w.avif",
+            "width": 877,
+            "height": 967
+          }
+        },
+        {
+          "caption": "02\nChoose the devices\nDetail excerpt · full screen in the gallery\n\nDevice choices belong to the selected room and session. The pictured stations are synthetic demonstration data.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-devices.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-devices-1600w.avif",
+            "width": 1053,
+            "height": 1078
+          }
+        },
+        {
+          "caption": "03\nReview before confirmation\nDetail excerpt · full screen in the gallery\n\nReview the booking and payment choice. The demonstration stops before submission; no transaction or payment settlement is established.\n\nInspect image",
+          "before": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "after": {
+            "height": 228.8125,
+            "captionOffset": 248.8125
+          },
+          "image": {
+            "src": "http://127.0.0.1:5184/projects/phase3/gamezone-review.webp",
+            "currentSrc": "http://127.0.0.1:5184/projects/phase3/gamezone-review-960w.avif",
+            "width": 877,
+            "height": 898
+          }
+        }
+      ],
+      "selection": "ready; chooser summary focus restored",
+      "retry": "controlled transport abort; original actual image ready",
+      "selectedGeometry": {
+        "height": 214.5,
+        "captionOffset": 230.5
+      },
+      "failedGeometry": {
+        "height": 214.5,
+        "captionOffset": 230.5
+      },
+      "retryGeometry": {
+        "height": 214.5,
+        "captionOffset": 230.5
+      },
+      "horizontalOverflow": false,
+      "viewer": "workflow and retried primary opened; Escape and Close returned focus",
+      "errors": [],
+      "writes": []
+    }
+  ]
+}
