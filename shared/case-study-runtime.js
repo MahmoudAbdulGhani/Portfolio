@@ -217,7 +217,7 @@ export const caseStudies = {
         problem: 'The implementation turns a supplied landing-page composition into React sections, with breakpoint-specific layouts and a mobile navigation sidebar.',
         designCredit: { label: 'Figma UI kit', url: 'https://www.figma.com/proto/XG6hWGb51vw6XBhUuwMghG/Home-Services---Website---UI-Kit--Community-?node-id=806-5605', creator: null, creatorStatus: 'not identified by the available records' },
         lead: ['/projects/cinematic/home-services.webp'],
-        leadCaption: 'The supplied-design landing-page hero. Marketing promises shown in the template are not verified business outcomes.',
+        leadCaption: 'The complete supplied-design landing page. Marketing promises shown in the template are not verified business outcomes.',
         workflowHeading: 'The same navigation, at phone width.',
         workflow: [
             { title: 'A mobile navigation sidebar', matches: ['/projects/phase2/home-services-mobile-menu.webp'], ratio: '390 / 844', notice: 'Mobile navigation sidebar on the public demonstration page.' },

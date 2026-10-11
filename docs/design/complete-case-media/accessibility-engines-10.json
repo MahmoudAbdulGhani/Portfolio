@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791673174679,
+  "duration": 88252.172,
+  "files": [
+    {
+      "fileId": "ed8fb6c90a074cb4e48e",
+      "fileName": "readiness.spec.ts",
+      "tests": [
+        {
+          "testId": "ed8fb6c90a074cb4e48e-a8798ccf41ce030fbde3",
+          "title": "Contact never exposes an unnamed email link during a delayed profile read",
+          "projectName": "firefox-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 11519,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:59:37.951Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-7e1899050a9ac5f5c7f1",
+          "title": "streaming announcements stay separate from partial and historical answer text",
+          "projectName": "firefox-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 25,
+            "column": 1
+          },
+          "duration": 5532,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:59:52.330Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-026b2d06b21b2146a9f1",
+          "title": "keyboard skip link, form errors and reflow retain usable controls",
+          "projectName": "firefox-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 55,
+            "column": 1
+          },
+          "duration": 8193,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:59:57.911Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-fbdf7d11a190377a6976",
+          "title": "inspector wraps forward and reverse focus without losing Escape or return focus",
+          "projectName": "firefox-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 71,
+            "column": 1
+          },
+          "duration": 4445,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:06.149Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-dae555d3a4c5d01b88d6",
+          "title": "assistant keeps the 55-second deadline and recovers through explicit retry",
+          "projectName": "firefox-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 89,
+            "column": 1
+          },
+          "duration": 4641,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:10.632Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-c51520c29a9f5adf4f66",
+          "title": "Contact never exposes an unnamed email link during a delayed profile read",
+          "projectName": "webkit-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 9289,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:19.393Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-6ef7ce54523dc16e5d67",
+          "title": "streaming announcements stay separate from partial and historical answer text",
+          "projectName": "webkit-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 25,
+            "column": 1
+          },
+          "duration": 8998,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:28.988Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-ca7495586c0c5d4d72c5",
+          "title": "keyboard skip link, form errors and reflow retain usable controls",
+          "projectName": "webkit-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 55,
+            "column": 1
+          },
+          "duration": 11115,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:38.033Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-81e96d5259728d566768",
+          "title": "inspector wraps forward and reverse focus without losing Escape or return focus",
+          "projectName": "webkit-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 71,
+            "column": 1
+          },
+          "duration": 6242,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:49.197Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "ed8fb6c90a074cb4e48e-7ba31fa420f3b820cb7d",
+          "title": "assistant keeps the 55-second deadline and recovers through explicit retry",
+          "projectName": "webkit-readiness",
+          "location": {
+            "file": "readiness.spec.ts",
+            "line": 89,
+            "column": 1
+          },
+          "duration": 7008,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T23:00:55.481Z",
+              "workerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 10,
+        "expected": 10,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "firefox-readiness",
+    "webkit-readiness"
+  ],
+  "stats": {
+    "total": 10,
+    "expected": 10,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

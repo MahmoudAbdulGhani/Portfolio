@@ -1,0 +1,731 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791710637562,
+  "duration": 60845.851,
+  "files": [
+    {
+      "fileId": "0362c6c62272fc7c96d1",
+      "fileName": "mobile-case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "0362c6c62272fc7c96d1-71a7fe4b0d6b3f79a2a6",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1067,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:23:58.703Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ae37770fb5b8eba63288",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 996,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:00.215Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-11cb68924002abcbd392",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 950,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:01.225Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-82b238e676ed7f24919a",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1122,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:02.190Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5fb48f103bb1f8af1efc",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1078,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:03.326Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-4af20160db78198a85b1",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1072,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:04.417Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-b960f8713f4ee7962d1e",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1100,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:06.448Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-8d5eb634ba8bf02288fb",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1016,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:07.998Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-cd7fb2f4b48b3e0c5d35",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 996,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:09.031Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c8e2185a893cf7a5a49f",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1175,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:10.043Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-e065f23715c82b52f449",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1088,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:11.231Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2963030fe336da400307",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1047,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:12.338Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-633425be17de8d4dd11b",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1321,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:14.323Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-39ab3617544ce289a35e",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1105,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:16.091Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-43e73c229a2b00396a6e",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1245,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:17.212Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bcef6ab1089c51ee17fe",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1403,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:18.471Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-f79b35da18cbf1330a51",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1432,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:19.888Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-929f20d975d4936c556e",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1314,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:21.333Z",
+              "workerIndex": 2
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-834b4e8a06b4e8a79ccf",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3066,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:23.620Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-be9affa3309f068321f3",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1558,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:27.854Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-3306ab0c70a47f2cbbec",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1507,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:29.426Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c92c2ec8f853778e1e9e",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1560,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:30.947Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-1d7f64e5116a8324d66f",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1570,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:32.522Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-c864f314bd441fdbce7c",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "media-firefox",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 1495,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:34.104Z",
+              "workerIndex": 3
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-5695f7377e3b8d15824e",
+          "title": "home-services workflow order and complete frames at 320px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2876,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:36.853Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-dba97074bafca0155760",
+          "title": "home-services workflow order and complete frames at 390px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2676,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:39.964Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-7c0037cebfb58ca14b43",
+          "title": "home-services workflow order and complete frames at 430px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 2776,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:42.656Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-bb98f2d6b57aedc04dee",
+          "title": "home-services workflow order and complete frames at 768px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 3571,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:45.454Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-2c0951aeed25c512204b",
+          "title": "home-services workflow order and complete frames at 1024px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4156,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:49.044Z",
+              "workerIndex": 4
+            }
+          ]
+        },
+        {
+          "testId": "0362c6c62272fc7c96d1-ef1cb1a021a102d40dd5",
+          "title": "home-services workflow order and complete frames at 1440px",
+          "projectName": "media-webkit",
+          "location": {
+            "file": "mobile-case-media.spec.ts",
+            "line": 21,
+            "column": 96
+          },
+          "duration": 4816,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-11T09:24:53.216Z",
+              "workerIndex": 4
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 30,
+        "expected": 30,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium",
+    "media-firefox",
+    "media-webkit"
+  ],
+  "stats": {
+    "total": 30,
+    "expected": 30,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

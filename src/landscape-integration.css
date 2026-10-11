@@ -351,7 +351,7 @@
 }
 .landscape .reader-gallery > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
   margin-top: 20px;
 }
@@ -360,8 +360,12 @@
   text-align: left;
   padding: 16px;
 }
+.landscape .reader-gallery figure { margin: 0; min-width: 0; display: grid; gap: 16px; }
+.landscape .reader-gallery figure h3 { margin: 0; font-size: 16px; }
+.landscape .reader-gallery figcaption p { max-width: 80ch; margin: 8px 0 0; font-size: 14px; line-height: 1.7; color: var(--muted); }
+.landscape .reader-gallery figure > button { justify-self: start; min-height: 48px; padding: 8px 0; }
 .landscape .reader-gallery img {
-  height: 250px;
+  height: auto;
   width: 100%;
   object-fit: contain;
   object-position: top;

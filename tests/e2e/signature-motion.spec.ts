@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { caseImage, sourceRequest } from '../fixtures/case-image';
 import { caseStudyProjects } from '../fixtures/case-study-projects';
 
 const pixel = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jK1cAAAAASUVORK5CYII=', 'base64');
@@ -213,7 +214,7 @@ test('a failed lazy engine leaves the photographic handoff and navigation usable
 test('reader retains the loaded image and its caption until the next request is ready', async ({ page }) => {
   let release!: () => void;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/79bf6e53-1fb5-4453-a438-fb5ead4a4961.png', async route => { await pending; await route.fulfill({ contentType: 'image/png', body: pixel }); });
+  await page.route(sourceRequest('79bf6e53-1fb5-4453-a438-fb5ead4a4961.png'), async route => { await pending; await route.fulfill({ contentType: 'image/png', body: await caseImage(route.request().url()) }); });
   await page.goto('/projects/jobpilot-ai');
   const frame = page.locator('.case-figure .screenshot-frame');
   await expect(frame).toHaveAttribute('data-image-state', 'ready');

@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "actualWorkers": 1
+  },
+  "startTime": 1791671956538,
+  "duration": 8964.100999999999,
+  "files": [
+    {
+      "fileId": "c4afda83a973ed6037e1",
+      "fileName": "case-media.spec.ts",
+      "tests": [
+        {
+          "testId": "c4afda83a973ed6037e1-8ea2edd95d46f8d0661f",
+          "title": "the collapsed full-image gallery keeps requests gated beyond the deadline",
+          "projectName": "chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1282,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:39:17.700Z",
+              "workerIndex": 0
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-a5bd59092571d7edc387",
+          "title": "the collapsed full-image gallery keeps requests gated beyond the deadline",
+          "projectName": "tablet-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1370,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:39:20.438Z",
+              "workerIndex": 1
+            }
+          ]
+        },
+        {
+          "testId": "c4afda83a973ed6037e1-f10f0a1357c3546ff3d6",
+          "title": "the collapsed full-image gallery keeps requests gated beyond the deadline",
+          "projectName": "mobile-chromium",
+          "location": {
+            "file": "case-media.spec.ts",
+            "line": 171,
+            "column": 1
+          },
+          "duration": 1440,
+          "annotations": [],
+          "tags": [],
+          "outcome": "expected",
+          "path": [],
+          "ok": true,
+          "results": [
+            {
+              "attachments": [],
+              "startTime": "2026-10-10T22:39:23.363Z",
+              "workerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "total": 3,
+        "expected": 3,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      }
+    }
+  ],
+  "projectNames": [
+    "chromium",
+    "tablet-chromium",
+    "mobile-chromium"
+  ],
+  "stats": {
+    "total": 3,
+    "expected": 3,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "errors": [],
+  "options": {},
+  "machines": []
+}

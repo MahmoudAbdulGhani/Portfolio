@@ -4,12 +4,45 @@ import { projectScreens } from './project-presentation';
 import { caseStudyFor } from '../../shared/case-study-runtime';
 import { projectImages } from '../generated/project-images';
 import { caseMedia } from '../generated/case-media';
+import { completeCaseMedia } from '../generated/complete-case-media';
 
 export interface DetailScreen { src: string; label: string; viewport?: 'phone' | 'tablet' }
 
+const advisorPanel = '88b64d21-f5ad-49ff-8392-5176a9358461.png';
+const projectOperations = 'b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png';
+export function completeScreenSource(src: string) {
+  const identity = src.split(/[?#]/)[0].split('/').at(-1);
+  if (identity === advisorPanel) return src.replace(advisorPanel, projectOperations);
+  const complete = screenAsset(src)?.src;
+  return complete?.startsWith('/') ? complete : src;
+}
+
+export function screenOriginalSource(src: string) {
+  return Object.entries(completeCaseMedia).find(([, asset]) => asset.src === src)?.[0] ?? src;
+}
+
+export function screenAsset(src: string) {
+  const path = src.split(/[?#]/)[0];
+  return completeCaseMedia[path] ?? completeCaseMedia[path.split('/').at(-1) ?? ''] ?? Object.values(completeCaseMedia).find(asset => asset.src === path);
+}
+
+// Content type is reviewed explicitly. A tall desktop page remains a desktop page.
+export function screenColumnWidth(screen: DetailScreen) {
+  const role = mediaPresentation(screen.src)?.role;
+  const native = screenGeometry(screen).width;
+  if (screen.viewport === 'phone' || role === 'phone' || screen.src.endsWith('/user-management-registration.webp')) return Math.min(420, native);
+  if (role === 'artwork') return Math.min(520, native);
+  if (screen.viewport === 'tablet' || role === 'tablet') return Math.min(768, native);
+  return Math.min(1180, native);
+}
+
+export function screenSizes(screen: DetailScreen) {
+  return `(max-width: 720px) calc(100vw - 32px), ${screenColumnWidth(screen)}px`;
+}
+
 export function mediaPresentation(src: string) {
   const path = src.split(/[?#]/)[0];
-  return caseMedia.find(media => media.identity === path || media.identity === path.split('/').at(-1));
+  return caseMedia.find(media => media.identity === path || media.identity === path.split('/').at(-1) || completeCaseMedia[media.identity]?.src === path);
 }
 
 // Dimensions of the published image identities, measured in the Phase 3
@@ -32,7 +65,7 @@ export function screenGeometry(screen: DetailScreen) {
   const reviewed = mediaPresentation(screen.src);
   const asset = projectImages[screen.src];
   const identity = screen.src.split(/[?#]/)[0].split('/').at(-1) ?? '';
-  return reviewed ?? asset ?? publishedDimensions[identity] ?? (screen.viewport === 'phone' ? { width: 390, height: 844 } : { width: 1600, height: 1000 });
+  return screenAsset(screen.src) ?? reviewed ?? asset ?? publishedDimensions[identity] ?? (screen.viewport === 'phone' ? { width: 390, height: 844 } : { width: 1600, height: 1000 });
 }
 
 // Presentation labels describe existing captures; project narrative stays CMS-owned.
@@ -57,7 +90,7 @@ const labels: Record<string, string> = {
   '/projects/gamezone-arena/admin_Rooms.webp': 'Room management',
   '/projects/gamezone-arena/admin_Users.webp': 'User management',
   '/projects/gamezone-arena/cover.webp': 'Arena landing page',
-  '/projects/cinematic/home-services.webp': 'Home services landing page',
+  '/projects/cinematic/home-services.webp': 'Complete home services landing page',
   '/projects/cinematic/medicare-logo.webp': 'Medicare project identity',
   '/projects/cinematic/jobpilot-screen.webp': 'Resume library and upload',
   '/projects/cinematic/cedar-screen.webp': 'Construction portfolio overview',
@@ -106,5 +139,10 @@ export function detailScreens(project: Project): DetailScreen[] {
   if (project.slug === 'home-services' && caseStudyFor(project)) screens.push({
     src: '/projects/phase2/home-services-mobile-menu.webp', label: 'Mobile navigation on the public demonstration page', viewport: 'phone',
   });
-  return screens;
+  // The separate advisor upload is a fragment of the complete operations screen.
+  // Its explanatory workflow stays attached to that full screen, without a duplicate image.
+  return screens.filter(screen => !screen.src.includes(advisorPanel)).map(screen => ({
+    ...screen, src: completeScreenSource(screen.src),
+    label: screen.src.endsWith('/user-management-phone.webp') ? 'Registration form excerpt · complete source unavailable' : screen.label,
+  }));
 }

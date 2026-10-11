@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiX } from "react-icons/fi";
 import { ResponsiveProjectImage } from "./ResponsiveProjectImage";
-import { screenGeometry, type DetailScreen } from "../lib/project-detail-screens";
+import { screenAsset, screenGeometry, type DetailScreen } from "../lib/project-detail-screens";
 import "./case-gallery.css";
 import { gsap } from 'gsap';
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './landscape/finite-motion';
@@ -183,6 +183,7 @@ export function CaseGallery({
             <ResponsiveProjectImage
               key={`${screen.src}:${retry?.src === screen.src ? retry.attempt : 0}`}
               src={screen.src}
+              sources={screenAsset(screen.src)}
               alt={`${projectName}: ${screen.label}`}
               // Bound the responsive density hint too: a width descriptor with
               // an oversized sizes value can inflate CSS intrinsic dimensions
@@ -206,7 +207,7 @@ export function CaseGallery({
                 aria-current={position === index ? "true" : undefined}
                 onClick={() => setIndex(position)}
               >
-                <ResponsiveProjectImage src={item.src} alt="" sizes="100px" />
+                <ResponsiveProjectImage src={item.src} sources={screenAsset(item.src)} alt="" sizes="100px" />
                 <span>{String(position + 1).padStart(2, "0")}</span>
               </button>
             ))}
