@@ -13,7 +13,7 @@ import { CaseNarrative } from "./CaseNarrative";
 import { CaseDisclosure } from "./CaseDisclosure";
 import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
-import { completeScreenSource, mediaPresentation, screenColumnWidth, screenGeometry, screenOriginalSource, screenSizes, type DetailScreen } from "../../lib/project-detail-screens";
+import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenColumnWidth, screenGeometry, screenOriginalSource, screenSizes, type DetailScreen } from "../../lib/project-detail-screens";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
@@ -86,7 +86,7 @@ export function ProjectReader() {
       <PageMeta
         title={displayName}
         description={study?.summary || project.description || undefined}
-        image={project.coverImage}
+        image={isRegistrationExcerpt(project.coverImage ?? '') ? screens[0]?.src : project.coverImage}
         canonicalPath={`/projects/${slug}`}
       />
       <article className={`case-page${study ? ` reviewed-case reviewed-case-${study.kind}` : ''}`}>

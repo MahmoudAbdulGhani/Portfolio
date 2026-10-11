@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { caseImage } from '../fixtures/case-image';
-import { completeScreenSource, screenColumnWidth, screenGeometry } from '../../src/lib/project-detail-screens';
+import { completeScreenSource, detailScreens, screenColumnWidth, screenGeometry } from '../../src/lib/project-detail-screens';
 import { caseStudyProjects } from '../fixtures/case-study-projects';
 
 // Synthetic same-dimension rasters for controlled geometry/network regressions.
@@ -130,15 +130,128 @@ test('viewer responsive failure can retry the complete original and retire an ea
 
 test('small responsive portrait keeps its native density hint in the desktop viewer', async ({ page }) => {
   await page.setViewportSize({ width: 1363, height: 936 });
-  await page.goto('/projects/full-stack-user-management-system');
+  await page.goto('/projects/home-services');
   await page.locator('.case-media-chooser summary').click();
-  await page.locator('.case-media-chooser').getByRole('button', { name: /Registration form excerpt/ }).click();
+  await page.locator('.case-media-chooser').getByRole('button', { name: /Mobile navigation on the public demonstration page/ }).click();
   await expect(page.locator('.case-figure .screenshot-frame')).toHaveAttribute('data-image-state', 'ready');
-  await expect(page.locator('.case-figure figcaption')).toContainText('Registration form excerpt');
+  await expect(page.locator('.case-figure figcaption')).toContainText('Mobile navigation on the public demonstration page');
   await page.locator('.media-enlarge').click();
   const image = page.locator('.case-inspector-image .project-image-current img');
   await image.evaluate(node => (node as HTMLImageElement).decode());
   const dimensions = await image.evaluate(node => ({ width: (node as HTMLImageElement).naturalWidth, height: (node as HTMLImageElement).naturalHeight }));
-  expect(dimensions.width).toBeLessThanOrEqual(343);
-  expect(dimensions.height).toBeLessThanOrEqual(654);
+  expect(dimensions.width).toBeLessThanOrEqual(390);
+  expect(dimensions.height).toBeLessThanOrEqual(844);
+});
+
+test('public media normalization excludes every registration excerpt alias and retains one complete capture', () => {
+  const project = caseStudyProjects.find(project => project.slug === 'full-stack-user-management-system')!;
+  const excerpt = '/projects/responsive/user-management-phone.webp';
+  const variants = [excerpt, `${excerpt}?revision=2#image`, 'https://cms.example.test/projects/complete/user-management-phone-343w.avif?asset=1', '/projects/complete/user-management-phone-343w.webp', '/projects/responsive/%75ser-management-phone.webp'];
+  for (const legacy of variants) {
+    for (const screenshots of [undefined, [legacy], [...variants, '/projects/phase3/user-management-registration.webp', 'https://cms.example.test/projects/complete/user-management-registration.webp?revision=3']]) {
+      const record = { ...project, coverImage: legacy, screenshots };
+      const original = JSON.stringify(record);
+      const screens = detailScreens(record);
+      expect(screens.some(screen => screen.src.includes('user-management-phone'))).toBe(false);
+      expect(screens.filter(screen => screen.src === '/projects/complete/user-management-registration.webp')).toHaveLength(1);
+      expect(screens.find(screen => screen.src.endsWith('/user-management-registration.webp'))?.label).toBe('Public registration form · portrait capture');
+      expect(new Set(screens.map(screen => screen.src)).size).toBe(screens.length);
+      expect(JSON.stringify(record)).toBe(original);
+    }
+  }
+});
+
+for (const width of [320, 390, 430, 768, 1024, 1440]) test(`User Management exposes only complete images through every public selection path at ${width}px`, async ({ page }) => {
+  const project = caseStudyProjects.find(project => project.slug === 'full-stack-user-management-system')!;
+  await page.route('**/api/projects/full-stack-user-management-system', route => route.fulfill({ json: {
+    ...project, coverImage: '/projects/responsive/user-management-phone.webp?legacy=1',
+    screenshots: [...project.screenshots!, '/projects/responsive/user-management-phone.webp', '/projects/complete/user-management-phone-343w.avif?legacy=2', '/projects/phase3/user-management-registration.webp', 'https://cms.example.test/projects/complete/user-management-registration.webp?legacy=3'],
+  } }));
+  const requested: string[] = [];
+  page.on('request', request => requested.push(request.url()));
+  const labels = ['Public platform statistics', 'Public registration form · portrait capture'];
+    await page.setViewportSize({ width, height: 936 });
+    await page.goto('/projects/full-stack-user-management-system');
+    const chooser = page.locator('.case-media-chooser');
+    await chooser.locator('summary').click();
+    await expect(chooser.locator('li button')).toHaveCount(2);
+    await expect(chooser.locator('.media-choice-number')).toHaveText(['01', '02']);
+    await expect(chooser.getByText(/Registration form excerpt/)).toHaveCount(0);
+    await chooser.locator('summary').click();
+    for (const [index, label] of labels.entries()) {
+      await chooser.locator('summary').click();
+      await chooser.getByRole('button', { name: new RegExp(label) }).click();
+      await expect(page.locator('.case-media-title > span')).toHaveText(`${index + 1} / 2`);
+      await expect(page.locator('.case-media-title strong')).toHaveText(label);
+      await expect(page.locator('.case-figure .screenshot-frame')).toHaveAttribute('data-image-state', 'ready');
+      await expect(page.locator('.case-figure figcaption')).toContainText(index === 0 ? 'Public aggregate statistics, not an admin dashboard.' : label);
+      const trigger = page.locator('.media-enlarge');
+      await trigger.click();
+      const dialog = page.getByRole('dialog');
+      await expect(dialog.locator('h2')).toHaveText(label);
+      await expect(dialog.locator('.case-inspector-thumbs button')).toHaveCount(2);
+      await expect(dialog.locator('footer > p')).toHaveText(`${index + 1} / 2`);
+      await dialog.getByRole('button', { name: 'Next screenshot', exact: true }).click();
+      await expect(dialog.locator('h2')).toHaveText(labels[(index + 1) % 2]);
+      await dialog.getByRole('button', { name: 'Previous screenshot', exact: true }).click();
+      await expect(dialog.locator('h2')).toHaveText(label);
+      await page.keyboard.press('ArrowRight');
+      await expect(dialog.locator('h2')).toHaveText(labels[(index + 1) % 2]);
+      await page.keyboard.press('Escape');
+      await expect(trigger).toBeFocused();
+    }
+    const workflow = page.locator('.workflow-frames .screenshot-frame');
+    await expect(workflow).toHaveCount(1);
+    await workflow.scrollIntoViewIfNeeded();
+    await expect(workflow.locator('img')).toHaveAttribute('src', '/projects/complete/user-management-registration.webp');
+    const gallerySummary = page.locator('.case-gallery-disclosure > summary');
+    await expect(gallerySummary).toContainText('All project images (2)');
+    await gallerySummary.click();
+    const figures = page.locator('.reader-gallery figure');
+    await expect(figures).toHaveCount(2);
+    await expect(figures.locator('h3')).toHaveText(labels);
+    for (const [index, figure] of (await figures.all()).entries()) {
+      await figure.scrollIntoViewIfNeeded();
+      await expect(figure.locator('.screenshot-frame')).toHaveAttribute('data-image-state', 'ready');
+      const trigger = figure.getByRole('button', { name: 'View full screen', exact: true });
+      await trigger.click();
+      await expect(page.getByRole('dialog').locator('h2')).toHaveText(labels[index]);
+      await page.keyboard.press('Escape');
+      await expect(trigger).toBeFocused();
+    }
+    await expect(page.getByText(/Registration form excerpt/)).toHaveCount(0);
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/projects\/user-management\/dashboard\.webp/);
+    expect(await page.locator('img').evaluateAll(images => images.some(image => image.src.includes('user-management-phone')))).toBe(false);
+  expect(requested.some(url => url.includes('user-management-phone'))).toBe(false);
+});
+
+test('viewer keeps the complete registration source when refreshed CMS media changes the count', async ({ page }) => {
+  const project = caseStudyProjects.find(project => project.slug === 'full-stack-user-management-system')!;
+  let record = project;
+  await page.route('**/api/projects/full-stack-user-management-system', route => route.fulfill({ json: record }));
+  await page.clock.install();
+  await page.goto('/projects/full-stack-user-management-system');
+  const trigger = page.locator('.media-enlarge');
+  await trigger.click();
+  const dialog = page.getByRole('dialog');
+  await dialog.getByRole('button', { name: 'Next screenshot', exact: true }).click();
+  await expect(dialog.locator('h2')).toHaveText('Public registration form · portrait capture');
+  await expect(dialog.locator('.project-image-handoff')).toHaveAttribute('data-image-state', 'ready');
+  record = { ...project, coverImage: '/projects/responsive/user-management-phone.webp', screenshots: ['/projects/complete/user-management-phone-343w.avif'] };
+  await page.clock.fastForward(61_000);
+  await page.evaluate(() => { window.dispatchEvent(new Event('offline')); window.dispatchEvent(new Event('online')); });
+  await expect(dialog.locator('footer > p')).toHaveText('1 / 1');
+  await expect(dialog.locator('h2')).toHaveText('Public registration form · portrait capture');
+  // A single remaining image needs no thumbnail navigation.
+  await expect(dialog.locator('.case-inspector-thumbs')).toHaveCount(0);
+  await expect(dialog.getByRole('button', { name: 'Next screenshot', exact: true })).toBeDisabled();
+  await expect(dialog.locator('.project-image-current img')).toHaveAttribute('src', '/projects/complete/user-management-registration.webp');
+  record = project;
+  await page.clock.fastForward(61_000);
+  await page.evaluate(() => { window.dispatchEvent(new Event('offline')); window.dispatchEvent(new Event('online')); });
+  await expect(dialog.locator('footer > p')).toHaveText('2 / 2');
+  await expect(dialog.locator('h2')).toHaveText('Public registration form · portrait capture');
+  await expect(dialog.locator('.case-inspector-thumbs button')).toHaveCount(2);
+  await page.keyboard.press('Escape');
+  await expect(trigger).toBeFocused();
 });

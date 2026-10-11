@@ -23,7 +23,9 @@ export function CaseGallery({
   notice?: string;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [index, setIndex] = useState(initialIndex);
+  const [selectedSource, setSelectedSource] = useState(screens[initialIndex]?.src ?? screens[0]?.src);
+  const index = Math.max(0, screens.findIndex(screen => screen.src === selectedSource));
+  const setIndex = (next: number) => setSelectedSource(screens[next]?.src);
   const [fit, setFit] = useState<'fit' | 'width' | 'actual'>('fit');
   const actual = fit === 'actual';
   const [retry, setRetry] = useState<{ src: string; attempt: number } | null>(null);

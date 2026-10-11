@@ -1,0 +1,37 @@
+{
+  "clientDate": "2026-10-11",
+  "baseCommit": "bddad2570fb114670b4c1aea132e6c61fe555a25",
+  "widths": [
+    320,
+    390,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "environment": "Chrome browser emulation, actual project assets and frozen public GET records. No physical-device verification.",
+  "beforeSelectionCount": 3,
+  "afterSelectionCount": 2,
+  "beforeObservedStates": 66,
+  "afterObservedStates": 48,
+  "workflowCount": 1,
+  "viewerModeObservations": 36,
+  "retainedOriginal": {
+    "src": "/projects/complete/user-management-registration.webp",
+    "width": 1040,
+    "height": 1688
+  },
+  "archivedExcerpt": {
+    "src": "/projects/responsive/user-management-phone.webp",
+    "preserved": true,
+    "sha256": "3b3acefd7c0a5766600bc7f575b62d6b0e4c86065ab1f0a695108bbadc1b70f9"
+  },
+  "archivalManifestIdentities": 50,
+  "publicReaderImagesAcrossEightProjects": 48,
+  "controlledRegressionFixtures": "Synthetic same-dimension rasters and mocked CMS/network responses; separate from the actual asset screenshots in this directory.",
+  "remainingGaps": [
+    "Physical Android/iOS testing unavailable for this change.",
+    "External CDN runtime availability is not proved by cached-original checks.",
+    "Prior tablet opening instability remains separate and is not claimed fixed."
+  ]
+}

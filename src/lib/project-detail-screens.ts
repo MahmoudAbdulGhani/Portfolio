@@ -10,6 +10,16 @@ export interface DetailScreen { src: string; label: string; viewport?: 'phone' |
 
 const advisorPanel = '88b64d21-f5ad-49ff-8392-5176a9358461.png';
 const projectOperations = 'b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png';
+function caseSourcePath(src: string) {
+  try { return decodeURIComponent(new URL(src, 'https://portfolio.invalid').pathname); }
+  catch { return src.split(/[?#]/)[0]; }
+}
+
+// Keep the archived file and CMS records intact, but never select this incomplete
+// capture (including its generated variants) in a public reader or preview.
+export function isRegistrationExcerpt(src: string) {
+  return /^user-management-phone(?:-\d+w)?\.(?:webp|avif)$/i.test(caseSourcePath(src).split('/').at(-1) ?? '');
+}
 export function completeScreenSource(src: string) {
   const identity = src.split(/[?#]/)[0].split('/').at(-1);
   if (identity === advisorPanel) return src.replace(advisorPanel, projectOperations);
@@ -75,6 +85,7 @@ const labels: Record<string, string> = {
   '/projects/unihub/Admin.webp': 'Administration dashboard',
   '/projects/unihub/transcipt.webp': 'Student academic transcript',
   '/projects/user-management/dashboard.webp': 'Public platform statistics',
+  '/projects/phase3/user-management-registration.webp': 'Public registration form · portrait capture',
   '/projects/lobby/friends.webp': 'Friends directory',
   '/projects/lobby/audio-room.webp': 'Audio room and chat',
   '/projects/lobby/community-chat.webp': 'Community chat',
@@ -133,16 +144,21 @@ export function detailScreens(project: Project): DetailScreen[] {
   if (caseStudyFor(project) && project.slug === 'full-stack-user-management-system') screens.push({
     src: '/projects/phase3/user-management-registration.webp', label: 'Public registration form · portrait capture',
   });
-  if (project.slug === 'full-stack-user-management-system') screens.push({
-    src: '/projects/responsive/user-management-phone.webp', label: 'Mobile registration', viewport: 'phone',
-  });
   if (project.slug === 'home-services' && caseStudyFor(project)) screens.push({
     src: '/projects/phase2/home-services-mobile-menu.webp', label: 'Mobile navigation on the public demonstration page', viewport: 'phone',
   });
   // The separate advisor upload is a fragment of the complete operations screen.
   // Its explanatory workflow stays attached to that full screen, without a duplicate image.
-  return screens.filter(screen => !screen.src.includes(advisorPanel)).map(screen => ({
-    ...screen, src: completeScreenSource(screen.src),
-    label: screen.src.endsWith('/user-management-phone.webp') ? 'Registration form excerpt · complete source unavailable' : screen.label,
-  }));
+  const seen = new Set<string>();
+  return screens.flatMap(screen => {
+    const path = caseSourcePath(screen.src);
+    if (isRegistrationExcerpt(screen.src) || path.endsWith(advisorPanel)) return [];
+    // Recognize CMS absolute URLs for known local originals before deduplicating
+    // their canonical reader source. Remote originals keep their published URL.
+    const source = screenAsset(path)?.src.startsWith('/') ? path : screen.src;
+    const src = completeScreenSource(source);
+    if (isRegistrationExcerpt(src) || seen.has(src)) return [];
+    seen.add(src);
+    return [{ ...screen, src, label: labels[screenOriginalSource(src)] ?? screen.label }];
+  });
 }

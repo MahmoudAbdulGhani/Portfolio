@@ -1,0 +1,594 @@
+{
+  "clientDate": "2026-10-11",
+  "environment": "Chrome browser emulation, real local assets and cached original remote PNG bytes, frozen GET records, writes blocked. Not physical-device evidence.",
+  "findings": [
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 268,
+          "height": 636,
+          "scrollWidth": 268,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 307,
+          "nativeHeight": 140,
+          "imageWidth": 268,
+          "imageHeight": 122.266
+        },
+        {
+          "mode": "Actual size",
+          "width": 268,
+          "height": 636,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 1652,
+          "top": 241,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 268,
+          "height": 636,
+          "scrollWidth": 268,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 307,
+          "nativeHeight": 140,
+          "imageWidth": 268,
+          "imageHeight": 635.906
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 268,
+          "height": 614,
+          "scrollWidth": 268,
+          "scrollHeight": 614,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 307,
+          "nativeHeight": 498,
+          "imageWidth": 268,
+          "imageHeight": 434.938
+        },
+        {
+          "mode": "Actual size",
+          "width": 268,
+          "height": 614,
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "left": 772,
+          "top": 1074,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 268,
+          "height": 614,
+          "scrollWidth": 268,
+          "scrollHeight": 614,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 307,
+          "nativeHeight": 498,
+          "imageWidth": 268,
+          "imageHeight": 613.812
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 374,
+          "nativeHeight": 170,
+          "imageWidth": 338,
+          "imageHeight": 154.203
+        },
+        {
+          "mode": "Actual size",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 1582,
+          "top": 241,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 374,
+          "nativeHeight": 170,
+          "imageWidth": 338,
+          "imageHeight": 635.906
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 374,
+          "nativeHeight": 607,
+          "imageWidth": 338,
+          "imageHeight": 548.531
+        },
+        {
+          "mode": "Actual size",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "left": 702,
+          "top": 1052,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 374,
+          "nativeHeight": 607,
+          "imageWidth": 338,
+          "imageHeight": 635.906
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 412,
+          "nativeHeight": 188,
+          "imageWidth": 378,
+          "imageHeight": 172.453
+        },
+        {
+          "mode": "Actual size",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 1542,
+          "top": 241,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 412,
+          "nativeHeight": 188,
+          "imageWidth": 378,
+          "imageHeight": 635.906
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 412,
+          "nativeHeight": 669,
+          "imageWidth": 378,
+          "imageHeight": 613.453
+        },
+        {
+          "mode": "Actual size",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "left": 662,
+          "top": 1052,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 378,
+          "height": 636,
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 412,
+          "nativeHeight": 669,
+          "imageWidth": 378,
+          "imageHeight": 635.906
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 684,
+          "height": 639,
+          "scrollWidth": 684,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 737,
+          "nativeHeight": 336,
+          "imageWidth": 684,
+          "imageHeight": 312.5
+        },
+        {
+          "mode": "Actual size",
+          "width": 684,
+          "height": 639,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 1236,
+          "top": 238,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 684,
+          "height": 639,
+          "scrollWidth": 684,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 737,
+          "nativeHeight": 336,
+          "imageWidth": 684,
+          "imageHeight": 639.406
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 684,
+          "height": 611,
+          "scrollWidth": 684,
+          "scrollHeight": 1110,
+          "left": 0,
+          "top": 499,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 737,
+          "nativeHeight": 1196,
+          "imageWidth": 684,
+          "imageHeight": 1110.06
+        },
+        {
+          "mode": "Actual size",
+          "width": 684,
+          "height": 611,
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "left": 356,
+          "top": 1077,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 684,
+          "height": 611,
+          "scrollWidth": 684,
+          "scrollHeight": 611,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 737,
+          "nativeHeight": 1196,
+          "imageWidth": 684,
+          "imageHeight": 610.812
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 983,
+          "nativeHeight": 449,
+          "imageWidth": 940,
+          "imageHeight": 429.453
+        },
+        {
+          "mode": "Actual size",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 980,
+          "top": 238,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 983,
+          "nativeHeight": 449,
+          "imageWidth": 940,
+          "imageHeight": 639.406
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 940,
+          "scrollHeight": 1526,
+          "left": 0,
+          "top": 887,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 983,
+          "nativeHeight": 1595,
+          "imageWidth": 940,
+          "imageHeight": 1525.69
+        },
+        {
+          "mode": "Actual size",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "left": 100,
+          "top": 1049,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 940,
+          "height": 639,
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 983,
+          "nativeHeight": 1595,
+          "imageWidth": 940,
+          "imageHeight": 639.406
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1382,
+          "nativeHeight": 631,
+          "imageWidth": 1208,
+          "imageHeight": 551.891
+        },
+        {
+          "mode": "Actual size",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "left": 712,
+          "top": 238,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1920,
+          "nativeHeight": 877,
+          "imageWidth": 1920,
+          "imageHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/user-management/dashboard.webp",
+          "nativeWidth": 1382,
+          "nativeHeight": 631,
+          "imageWidth": 1208,
+          "imageHeight": 639.406
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 1,
+      "modes": [
+        {
+          "mode": "Fit width",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 1961,
+          "left": 0,
+          "top": 1322,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1208,
+          "imageHeight": 1960.67
+        },
+        {
+          "mode": "Actual size",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 1688,
+          "left": 0,
+          "top": 1049,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1040,
+          "imageHeight": 1688
+        },
+        {
+          "mode": "Fit",
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "left": 0,
+          "top": 0,
+          "src": "/projects/complete/user-management-registration.webp",
+          "nativeWidth": 1040,
+          "nativeHeight": 1688,
+          "imageWidth": 1208,
+          "imageHeight": 639.406
+        }
+      ]
+    }
+  ]
+}
