@@ -7,6 +7,7 @@ import { selectedContributions, screenMatches } from '../../../shared/case-study
 import { nonempty, projectDisplayName } from '../../../shared/content-integrity';
 import { ScreenshotFrame } from './ScreenshotFrame';
 import { CaseDisclosure } from './CaseDisclosure';
+import { ProfileBoundary } from './ProfileBoundary';
 import './case-narrative.css';
 
 export function CaseNarrative({ project, study, screens, openGallery }: {
@@ -76,7 +77,8 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
         <span className="eyebrow">ENGINEERING DECISIONS</span>
         <h2>{study.engineeringHeading}</h2>
         {team.length > 1 && <p className="story-evidence-note">These decisions describe the team’s implementation. Individual contributions are listed separately above.</p>}
-        {study.flow && !study.flowPlacement && <figure className="decision-path">
+        {project.slug === 'jobpilot-ai' && <ProfileBoundary />}
+        {study.flow && !study.flowPlacement && project.slug !== 'jobpilot-ai' && <figure className="decision-path">
           <h3>{study.flow.title}</h3>
           <ol>{study.flow.steps.map(step => <li key={step}>{step}</li>)}</ol>
           <figcaption>{study.flow.description}</figcaption>

@@ -489,7 +489,7 @@ test("a slow or failed screenshot cannot reveal a partial image or strand select
     await route.fulfill({ status: 404, body: "Fixture missing image" });
   });
   await page.goto("/?project=jobpilot-ai", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("status")).toContainText(
+  await expect(page.locator('.selection-image-frame').getByRole("status")).toContainText(
     "Loading project preview",
   );
   await expect(page.locator(".motion-rig")).toHaveCount(0);
@@ -521,7 +521,7 @@ test("a slow or failed screenshot cannot reveal a partial image or strand select
     "data-selection-state",
     "settled",
   );
-  await expect(page.getByRole("status")).toContainText("Preview unavailable");
+  await expect(page.locator('.selection-image-frame').getByRole("status")).toContainText("Preview unavailable");
   expect(
     await page
       .locator(".selection-caption")

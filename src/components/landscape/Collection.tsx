@@ -15,6 +15,7 @@ import { detailScreens } from "../../lib/project-detail-screens";
 import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { MotionRig } from "./MotionRig";
+import { ProfileBoundary } from './ProfileBoundary';
 import { warmRig } from "./rig-loader";
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { collectionTiming, createCollectionMotion } from './collection-motion';
@@ -303,7 +304,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
     <main
       id="main-content"
       tabIndex={-1}
-      className={`stage${selected ? " is-expanded" : ""}`}
+      className={`stage${selected ? " is-expanded" : ""}${selected?.kind === 'jobpilot' ? ' has-profile-boundary' : ''}`}
       data-selection-state={state.phase === 'active' ? 'settled' : state.phase === 'selecting' ? 'loading' : state.phase}
       data-motion-phase={state.phase}
       data-content-state="ready"
@@ -395,6 +396,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
             />
           )}
           <div className="selection-frame">
+            {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Suggestions become saved information only after review.</p>}
             <div className="selection-image-frame">
               {screens[chapter] && !decoded.has(screens[chapter].src) && (
                 <p className="selection-preview-status" role="status">
@@ -501,6 +503,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
               </div>
             </section>
           </div>
+          {selected.kind === 'jobpilot' && <div className="collection-boundary"><ProfileBoundary headingLevel={2} suspended={state.phase === 'closing'} /></div>}
         </>
       )}
     </main>
