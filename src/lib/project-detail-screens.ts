@@ -90,7 +90,7 @@ const labels: Record<string, string> = {
   '/projects/gamezone-arena/admin_Rooms.webp': 'Room management',
   '/projects/gamezone-arena/admin_Users.webp': 'User management',
   '/projects/gamezone-arena/cover.webp': 'Arena landing page',
-  '/projects/cinematic/home-services.webp': 'Home services landing page',
+  '/projects/cinematic/home-services.webp': 'Complete home services landing page',
   '/projects/cinematic/medicare-logo.webp': 'Medicare project identity',
   '/projects/cinematic/jobpilot-screen.webp': 'Resume library and upload',
   '/projects/cinematic/cedar-screen.webp': 'Construction portfolio overview',

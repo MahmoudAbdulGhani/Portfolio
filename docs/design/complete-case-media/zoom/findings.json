@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-10T22:38:15.549Z",
+  "date": "2026-10-11T09:25:25.420Z",
   "environment": "Bundled Chromium, real 200% and 400% tab zoom verified by chrome.tabs.getZoom; isolated temporary extension/profile removed afterward; real assets, captured public records, native reduced motion, no writes. This is browser reflow coverage, not physical mobile or GPU-motion evidence.",
   "reference": "https://developer.chrome.com/docs/extensions/reference/api/tabs#method-setZoom",
   "findings": [

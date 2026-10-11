@@ -386,12 +386,12 @@ export const completeCaseMedia: Record<string, ProjectImageAsset & { src: string
     "avif": "/projects/complete/medicare-logo-480w.avif 480w, /projects/complete/medicare-logo-960w.avif 960w, /projects/complete/medicare-logo-1000w.avif 1000w"
   },
   "/projects/cinematic/home-services.webp": {
-    "src": "/projects/cinematic/home-services.webp",
-    "width": 1348,
-    "height": 926,
-    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAADQBQCdASogABYAPzmIvFavKKYjsBgIAeAnCWQAthcuCN5iitcWbOrnmnBP27PK8LEwchg0SFGAAP68HYIsnjP56oSZLQdDtJX41jmunB5JPgSXAyG0ygKeyY3SK9azum8j4pp2Lczz2V4zOAj5Bszs8QA8oYli4rEB/J+7Jcdt1ffiBXzIgAXvzTuFKq0jeWKFY2O/JaE52q2MW2QUiGo8WxEl1dlGgLdcbpaHQ5i+YAI37+DM2MU4oNt8/CgRleAAAA==",
-    "webp": "/projects/complete/home-services-480w.webp 480w, /projects/complete/home-services-960w.webp 960w, /projects/complete/home-services-1348w.webp 1348w",
-    "avif": "/projects/complete/home-services-480w.avif 480w, /projects/complete/home-services-960w.avif 960w, /projects/complete/home-services-1348w.avif 1348w"
+    "src": "/projects/complete/home-services-page.webp",
+    "width": 1920,
+    "height": 8828,
+    "placeholder": "data:image/webp;base64,UklGRqwCAABXRUJQVlA4IKACAABQDgCdASogAJMAPzmIulWvKKWjLNIOqeAnCUAX3DOvgDHdke62UNQVo+FhkviuMl+N/W9OCEwozqhBOOz5WbihdT/i+eikXgPlJVigE5B4a7y28Yiqrcqy/EpM2pwkfK3EDQiKaKsAFrXabBToptcpmrXdl3JAM/HB2gAA+yL1kHl15aDMbbu2GwY1hrUgaEQggoJGZWhSjFaE5Ul4p6XrPMSC1pLRQtQZ/KC7Rh5E/NlzDl1I7arS0xH5Q2u/4Q2Z4duyZpdTjQWRTsQ96GydwlJVuYhZxTtQhKk04vsGm20/MJeE3+bA7D/6VhZIFoh6N6F5Y/cRIzpRTqdEipgsbdsb9tx3f9eGpw/cfUr2vMJbfL5Xs8k+iljs5rcZs36aBlTxXWxByPeaM5iMxB95yoFIUj4Z6aPKPpvqSmpoN7jVDRRcGHcXxfj8P5SLC0Hbx6ljsdP4i9rjdhYZKGEG3cyGhvtt7N8awPxaXb2xhI9Nakr0C9hiCBM5Om4hXoTqjb27aup6GN4RKGPOHcw9r7bKm17k98t1uiBTBYkNai+JFx288A6GfoT4n7q/n/TKHn8sw0EOMlRcHImmsRDfo0YHloo5/e/lbujxVg8lO3wBQJn9RMLqTn7D/vUv4sJuWjWLTQ4aerR/Qp+Ih120EvQi4vU6HnxmpJ4rmjOBtNoLD5djClvGROKMG4u8uz4uDzum8v1R1/3gPlVoQp4yKaiPdnqufMsNy1+30Mu+uNZTtm0s+8G4f1T8B1eUf+/q4ekvHezoEgSDUd5JnJKcmnEJPqtNsk3jo4JDX8OH4rLEMvu0Kd1JHw8lhEH+68yRwAauKAbkufZzzDCpkjdrfxZXn3GAVBolwlHnGzB1FdUCys6ururZOIHilZ0AAAA=",
+    "webp": "/projects/complete/home-services-page-480w.webp 480w, /projects/complete/home-services-page-960w.webp 960w, /projects/complete/home-services-page-1600w.webp 1600w, /projects/complete/home-services-page-1920w.webp 1920w",
+    "avif": "/projects/complete/home-services-page-480w.avif 480w, /projects/complete/home-services-page-960w.avif 960w, /projects/complete/home-services-page-1600w.avif 1600w, /projects/complete/home-services-page-1920w.avif 1920w"
   },
   "/projects/phase2/home-services-mobile-menu.webp": {
     "src": "/projects/phase2/home-services-mobile-menu.webp",

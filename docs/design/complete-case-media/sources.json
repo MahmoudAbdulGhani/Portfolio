@@ -419,15 +419,6 @@
       "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
     },
     {
-      "identity": "/projects/cinematic/home-services.webp",
-      "src": "/projects/cinematic/home-services.webp",
-      "master": "public/projects/cinematic/home-services.webp",
-      "width": 1348,
-      "height": 926,
-      "sha256": "d28915fc4bb27d0c8337d1fbf22f1c94e6dfc277c3fd79c8acc804c03dd21e93",
-      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
-    },
-    {
       "identity": "/projects/phase2/home-services-mobile-menu.webp",
       "src": "/projects/phase2/home-services-mobile-menu.webp",
       "master": "public/projects/phase2/home-services-mobile-menu.webp",
@@ -452,6 +443,15 @@
       "width": 1600,
       "height": 741,
       "sha256": "17e589f1bfb82659a20f1bc92d2df04416d6ae2416cc367c70508470a49dba4d",
+      "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
+    },
+    {
+      "identity": "/projects/cinematic/home-services.webp",
+      "src": "/projects/complete/home-services-page.webp",
+      "master": "docs/design/complete-case-media/media-masters/home-services-page.png",
+      "width": 1920,
+      "height": 8828,
+      "sha256": "45d3872d0e42c2264d26a2a09269fab3c74a387b9054d90b896e15b751d03e65",
       "modifications": "Whole image resize and encoding only; no extraction, pixel replacement or enlargement."
     }
   ]

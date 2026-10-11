@@ -15,8 +15,8 @@ const duplicateNames = new Set(entries.map(item => basename(item.identity)).filt
 const names = ['gamezone-rooms', 'gamezone-session', 'gamezone-devices', 'gamezone-review', 'user-management-registration', 'medicare-homepage'];
 for (const item of entries) {
   if (selected.length && !selected.includes(item.identity)) continue;
-  const masterName = names.find(name => item.identity === `/projects/phase3/${name}.webp`);
-  const master = masterName ? `docs/design/phase3/media-masters/${masterName}.png` : item.identity.startsWith('/') ? `public${item.identity}` : remote.find(record => record.identity === item.identity).file;
+  const masterName = item.identity === '/projects/cinematic/home-services.webp' ? 'home-services-page' : names.find(name => item.identity === `/projects/phase3/${name}.webp`);
+  const master = masterName === 'home-services-page' ? `${root}/media-masters/${masterName}.png` : masterName ? `docs/design/phase3/media-masters/${masterName}.png` : item.identity.startsWith('/') ? `public${item.identity}` : remote.find(record => record.identity === item.identity).file;
   const bytes = await readFile(master), geometry = await sharp(bytes).metadata();
   const src = masterName ? `/projects/complete/${masterName}.webp` : item.identity;
   if (masterName) await sharp(bytes).webp({ lossless: true }).toFile(`public${src}`);

@@ -1,0 +1,132 @@
+{
+  "clientDate": "2026-10-11",
+  "method": "Read-only local source recheck after the user highlighted locally available project screenshots. Original files remain untouched. No unrelated private documents or reference artwork are copied into portfolio assets.",
+  "records": [
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\job pilot screenshots\\{0C82D414-71CF-49B4-91A6-3D0CFEAE7D7E}.png",
+      "dimensions": [
+        1900,
+        881
+      ],
+      "sha256": "36da17bcf68e953168271fbe2ca3e1895a9abc3b45cf79310c07dafb4630248e",
+      "matchingPublishedOriginals": [
+        "710055a0-a275-4e6a-991d-4aaa23c6e549.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\job pilot screenshots\\{3EDB6274-6F1D-4C15-A5C1-751A9074AB03}.png",
+      "dimensions": [
+        1899,
+        877
+      ],
+      "sha256": "b42e545b09643adcda10a6554bf26325506b6920dfbc4f36bd1ca98f4ae8a3a8",
+      "matchingPublishedOriginals": [
+        "79bf6e53-1fb5-4453-a438-fb5ead4a4961.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\job pilot screenshots\\{90A43027-6AD3-4669-8F7E-23F87A23F934}.png",
+      "dimensions": [
+        1898,
+        876
+      ],
+      "sha256": "cb6018801eee9ac8bbd67404857aa2ec22169f45808523e856415eac25662e25",
+      "matchingPublishedOriginals": [
+        "aba248de-e871-483a-b413-e0db8d4df718.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\job pilot screenshots\\{91E26667-1AA8-4235-B313-0634BED55F5E}.png",
+      "dimensions": [
+        1900,
+        870
+      ],
+      "sha256": "621e66950b8bc689b5c25ee55cde8e6312b58986ab012b33b481831c20dd0766",
+      "matchingPublishedOriginals": [
+        "8a7fd732-16a0-4b77-a1ad-8ad92e6151f1.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\imges\\Ai.png",
+      "dimensions": [
+        572,
+        768
+      ],
+      "sha256": "84c50db70272caa60b3b4a9e63a40604a97faef8f031c519d30ab0bb3042cb30",
+      "matchingPublishedOriginals": [
+        "88b64d21-f5ad-49ff-8392-5176a9358461.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\imges\\dashboard.png",
+      "dimensions": [
+        1904,
+        879
+      ],
+      "sha256": "e1e1a4ab4f39a7d8b1c3eeb13a4cf23f85f2401c78542202dbeb3f33c22367bc",
+      "matchingPublishedOriginals": [
+        "425768da-66d4-4088-b725-3199711f8784.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\imges\\landing.png",
+      "dimensions": [
+        1897,
+        880
+      ],
+      "sha256": "a6f93800dc641b29b1475dc64a0910313df53167f1a4ab9b19e50a081a189711",
+      "matchingPublishedOriginals": [
+        "3a490b53-ee8b-45a9-99f7-34d394c61ed7.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\imges\\projects.png",
+      "dimensions": [
+        1920,
+        2333
+      ],
+      "sha256": "723efb6f18f37b8bd7507f59d3d3330c3b2a69cdac48be9d2d8a02e4af93ce4b",
+      "matchingPublishedOriginals": [
+        "b5279347-d2cd-41a6-ac25-84b2cbf7fe71.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\imges\\reports.png",
+      "dimensions": [
+        1920,
+        1760
+      ],
+      "sha256": "8cc7dd5491ab157a2b9bf4ba21873106cfe7779ab298d53729ea5805624e4264",
+      "matchingPublishedOriginals": [
+        "c6dd1c73-c5dc-4e0c-b30b-3b521d7b5ac5.png"
+      ],
+      "assessment": "Identical original PNG bytes"
+    },
+    {
+      "localFile": "C:\\Users\\Admin\\Desktop\\home proj\\home-services\\Screenshots of the website\\website screen.png",
+      "dimensions": [
+        1920,
+        8828
+      ],
+      "sha256": "45d3872d0e42c2264d26a2a09269fab3c74a387b9054d90b896e15b751d03e65",
+      "selectedIdentity": "/projects/cinematic/home-services.webp",
+      "selectedCompleteSource": "/projects/complete/home-services-page.webp",
+      "assessment": "Complete supplied-design page matches the hero interface and includes all remaining sections/footer; copied without pixel edits and encoded losslessly"
+    }
+  ],
+  "otherProjects": {
+    "Lobby": "Existing complete room/invitation/chat captures retained; local landing1.png is a different landing-page capture and does not restore pixels to those room states.",
+    "GameZone Arena": "Eight original local workflow/dashboard PNG dimensions match their complete existing WebP images. The older Home_Page.png has a different hero image and signed-in UI from the selected hero viewport, so it is not substituted as an exact source. New complete demonstration masters remain selected for the main workflow.",
+    "UniHub": "Complete 1914x896 application transcript retained. The local university repository image is background artwork; the downloaded real university enrollment document belongs to a different system and is rejected as unrelated.",
+    "User Management": "Complete 1040x1688 registration master retained. Local hero artwork does not provide the missing surroundings of the separate 343x654 excerpt.",
+    "Medicare Hub": "Complete 2726x1872 public homepage master retained; no authenticated clinical screenshot is introduced."
+  }
+}
