@@ -1,0 +1,82 @@
+{
+  "phase": "before",
+  "baseline": "4a501ad8ebb95bfa01e6d665ad89652cb6bbbff6",
+  "environment": "Installed Windows Chrome, frozen public GET records and cached original images. Intel GPU for normal opening; forced unavailable WebGL for fallback. Browser viewport emulation, not physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "layout": {
+        "width": 880,
+        "overflow": false,
+        "artWidth": 180,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      },
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "layout": {
+        "width": 880,
+        "overflow": false,
+        "artWidth": 180,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      },
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "layout": {
+        "width": 676,
+        "overflow": false,
+        "artWidth": 180,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      },
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "layout": {
+        "width": 343,
+        "overflow": false,
+        "artWidth": 140,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      },
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "layout": {
+        "width": 282,
+        "overflow": false,
+        "artWidth": 140,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      },
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  ]
+}

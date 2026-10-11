@@ -9,7 +9,7 @@ import {
 } from "react";
 import { gsap } from "gsap";
 import { Link, useLocation, useNavigate, useNavigationType, useSearchParams } from "react-router-dom";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useProjects } from "../../lib/hooks";
 import { detailScreens } from "../../lib/project-detail-screens";
 import { PublicDataState } from "../PublicDataState";
@@ -149,6 +149,7 @@ export function Collection() {
 function CollectionScene({ items, selected, select, restore, origin, restored }: {
   items: Sculpture[]; selected?: Sculpture; select: (slug: string) => void; restore: () => void; origin: Origin | null; restored: boolean;
 }) {
+  const location = useLocation();
   const root = useRef<HTMLElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null);
   const originalTransforms = useRef(new Map<HTMLElement, { x: number; y: number; scale: number }>());
@@ -216,6 +217,12 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
       }
     }
   }, [items, selected, origin]);
+
+  useLayoutEffect(() => {
+    if (selected?.kind === 'jobpilot' && location.hash === '#jobpilot-engineering') {
+      root.current?.querySelector<HTMLElement>('#jobpilot-engineering')?.focus({ preventScroll: true });
+    }
+  }, [items, selected, location.key, location.hash]);
 
   useEffect(() => {
     let cancelled = false;
@@ -300,6 +307,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
   }, [eligible, kind, reduced, motion]);
 
+  const caseLink = selected && <Link className="solid-action open-case" to={`/projects/${selected.slug}`} state={{ collection: `/?project=${selected.slug}` }}>Open case study<FiArrowRight /></Link>;
   return (
     <main
       id="main-content"
@@ -396,7 +404,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
             />
           )}
           <div className="selection-frame">
-            {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Suggestions become saved information only after review.</p>}
+            {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
             <div className="selection-image-frame">
               {screens[chapter] && !decoded.has(screens[chapter].src) && (
                 <p className="selection-preview-status" role="status">
@@ -488,14 +496,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
                     ))}
                   </div>
                 )}
-                <Link
-                  className="solid-action open-case"
-                  to={`/projects/${selected.slug}`}
-                  state={{ collection: `/?project=${selected.slug}` }}
-                >
-                  Open case study
-                  <FiArrowRight />
-                </Link>
+                {selected.kind === 'jobpilot' ? <div className="selection-project-links" role="group" aria-label="Selected project navigation">
+                  {caseLink}
+                  <Link className="explore-engineering" tabIndex={0} to={{ search: location.search, hash: '#jobpilot-engineering' }} replace state={location.state}>Explore the engineering<FiArrowDown /></Link>
+                </div> : caseLink}
                 <button className="back-collection" onClick={back}>
                   <FiArrowLeft />
                   Collection
@@ -503,7 +507,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
               </div>
             </section>
           </div>
-          {selected.kind === 'jobpilot' && <div className="collection-boundary"><ProfileBoundary headingLevel={2} suspended={state.phase === 'closing'} /></div>}
+          {selected.kind === 'jobpilot' && <div className="collection-boundary"><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} /></div>}
         </>
       )}
     </main>

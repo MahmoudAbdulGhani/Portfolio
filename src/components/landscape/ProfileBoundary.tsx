@@ -46,18 +46,22 @@ function BoundarySculpture({ phase, reduced, suspended }: { phase: BoundaryPhase
       </defs>
       <image href="/landscape/jobpilot-sculpture.webp" width="1254" height="1254" mask={`url(#${id}-body)`} />
       <g ref={plate} data-angle="0" className="boundary-plate"><image href="/landscape/jobpilot-sculpture.webp" width="1254" height="1254" clipPath={`url(#${id}-plate)`} /></g>
+      <path className="boundary-plate-guide" d="M285 966 L220 1175 H1180" fill="none" />
+      <circle className="boundary-plate-point" cx="285" cy="966" r="12" />
     </svg>
-    <span>{pending ? 'Proposal held apart' : phase === 'accept' ? 'Reviewed and aligned' : 'Accepted information'}</span>
+    <div className="boundary-plate-label"><span>Ivory plate · proposed change</span><span>{pending ? 'Held apart until approval' : phase === 'accept' ? 'Aligned after acceptance' : 'Aligned · no proposal yet'}</span></div>
   </div>;
 }
 
-export function ProfileBoundary({ suspended = false, headingLevel = 3 }: { suspended?: boolean; headingLevel?: 2 | 3 }) {
+export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string }) {
   const [state, dispatch] = useReducer(boundaryReducer, undefined, initialBoundary);
   const reduced = useMotionPreference();
   const text = useRef<HTMLParagraphElement>(null);
   const stale = state.phase === 'review' && state.reviewed?.revision !== state.revision;
   const study = caseStudies['jobpilot-ai'];
   const Heading = headingLevel === 2 ? 'h2' : 'h3';
+  const currentStep = state.phase === 'review' ? 1 : state.phase === 'accept' ? 2 : 0;
+  const pending = state.phase === 'propose' || state.phase === 'review';
   useLayoutEffect(() => {
     if (!text.current) return;
     if (reduced || suspended) { gsap.set(text.current, { opacity: 1 }); return; }
@@ -67,27 +71,40 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3 }: { suspe
     return () => stopFiniteMotion(timeline);
   }, [state.phase, state.blocked, reduced, suspended]);
   return <section className="profile-boundary" aria-label="The profile save boundary" data-phase={state.phase} data-stale={stale} inert={suspended}>
-    <div className="boundary-heading"><span>Engineering demonstration — sample data.</span><span>{state.phase}</span></div>
+    <header className="boundary-heading">
+      <Heading className="boundary-title" id={headingId} tabIndex={headingId ? -1 : undefined}>The profile save boundary</Heading>
+      <p className="boundary-label">Engineering demonstration — sample data.</p>
+      <ol className="boundary-progress" role="list" aria-label="Review progress">
+        {['Propose', 'Review', 'Accepted'].map((label, index) => <li key={label} aria-current={currentStep === index ? 'step' : undefined} data-complete={index < currentStep}>
+          <span className="boundary-step-number" aria-hidden="true">{index + 1}</span><span>{label}</span>{index < 2 && <span className="boundary-step-arrow" aria-hidden="true">→</span>}
+        </li>)}
+      </ol>
+    </header>
     <div className="boundary-body">
       <BoundarySculpture phase={state.phase} reduced={reduced} suspended={suspended} />
       <div className="boundary-content">
-        <Heading>The profile save boundary</Heading>
-        <p className="boundary-message" ref={text}>{state.blocked ? 'The old review cannot be applied; review again before accepting.' : messages[state.phase]}</p>
-        {state.phase !== 'rest' && <>
-          <p className="boundary-source">Fictional candidate · confirmed sample CV: “Location: Tripoli”.</p>
-          <dl className="boundary-comparison">
-            <div className="boundary-saved"><dt>{state.phase === 'accept' ? 'Saved · accepted' : 'Saved information'}</dt><dd>{state.saved}</dd><span>Location · revision {state.revision}</span></div>
-            <div className="boundary-proposed"><dt>{state.phase === 'accept' ? 'Reviewed change' : 'Proposed change'}</dt><dd>{proposedLocation}</dd><span>{state.phase === 'accept' ? 'Accepted after review' : 'Location · not saved'}</span></div>
-          </dl>
-          {state.phase === 'review' && <p className="boundary-review-basis">Review compares {state.reviewed?.saved} → {proposedLocation}.{stale && ' Saved information changed; this review is out of date.'}</p>}
-        </>}
+        <p className="boundary-message" ref={text}>{state.blocked ? 'The old review cannot be applied; review again before accepting.' : stale ? 'Saved information changed; this review is out of date.' : messages[state.phase]}</p>
+        <p className="boundary-source">Fictional candidate · confirmed sample CV: “Location: Tripoli”.</p>
+        <dl className="boundary-comparison">
+          <div className="boundary-proposed" data-pending={pending}>
+            <dt>{state.phase === 'accept' ? 'Reviewed change' : 'Proposed change'}</dt>
+            <dd><strong className="boundary-value">{state.phase === 'rest' ? 'None yet' : proposedLocation}</strong><span className="boundary-value-note">{state.phase === 'rest' ? 'Start with a proposal' : state.phase === 'accept' ? 'Accepted after review' : state.phase === 'review' ? 'Not saved · awaiting approval' : 'Not saved · awaiting review'}</span></dd>
+          </div>
+          <div className="boundary-saved" data-changed={stale}>
+            <dt>{state.phase === 'accept' ? 'Saved · accepted' : 'Saved information'}</dt>
+            <dd><strong className="boundary-value">{state.saved}</strong><span className="boundary-value-note">Location · revision {state.revision}</span>{stale && <span className="boundary-changed-label">Changed during review</span>}</dd>
+          </div>
+        </dl>
+        <p className="boundary-review-basis" data-outdated={stale}>
+          {state.phase === 'review' ? <>{stale && <strong>Outdated review. </strong>}Review compares {state.reviewed?.saved} → {proposedLocation}.{stale && ' Another review is required.'}</> : state.phase === 'accept' ? 'Saved information now matches the reviewed proposal.' : 'The ivory plate represents the proposed value, separate from saved information.'}
+        </p>
         <div className="boundary-actions">
           <button className="boundary-primary" onClick={() => dispatch(state.phase === 'rest' ? 'propose' : state.phase === 'propose' || state.blocked ? 'review' : 'accept')} aria-disabled={state.phase === 'accept'}>
             {state.phase === 'rest' ? 'Propose a change' : state.phase === 'propose' ? 'Review the change' : state.blocked ? 'Review again' : state.phase === 'accept' ? 'Accepted' : 'Accept reviewed change'}
           </button>
           <button onClick={() => dispatch('reset')}>Reset</button>
         </div>
-        {state.phase === 'review' && <button className="boundary-change" onClick={() => dispatch('change-saved')} aria-disabled={state.saved === 'Byblos'}>Change the saved profile during review.</button>}
+        <div className="boundary-option">{state.phase === 'review' && <button className="boundary-change" onClick={() => dispatch('change-saved')} aria-disabled={state.saved === 'Byblos'}>Change the saved profile during review.</button>}</div>
       </div>
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>

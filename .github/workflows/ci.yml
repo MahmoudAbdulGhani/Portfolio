@@ -99,6 +99,68 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
+    needs: [checks, smoke-engines, profile-boundary]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Require checks and every browser group to pass
+        run: |
+          test "${{ needs.checks.result }}" = 'success'
+          test "${{ needs['smoke-engines'].result }}" = 'success'
+          test "${{ needs['profile-boundary'].result }}" = 'success'
+  smoke-engines:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, tablet-chromium, mobile-chromium]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run existing smoke tests on one independent runner
+        # One worker per runner; retain all three original configurations.
+        run: npm run test:e2e -- --workers=1 --project=${{ matrix.project }} --grep-invert='profile-boundary.spec.ts'
+      - name: Retain browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-${{ matrix.project }}-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+  profile-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify JobPilot boundary and engineering navigation
+        run: npm run test:e2e -- tests/e2e/profile-boundary.spec.ts --workers=1
+      - name: Retain boundary failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile-boundary-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+  checks:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -141,19 +203,3 @@ jobs:
 
       - name: Test sculpture geometry and hinge attachments
         run: npm run test:motion
-
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Run Playwright smoke tests
-        # Keep software-rendered motion checks from competing for runner GPU/CPU.
-        run: npm run test:e2e -- --workers=1
-
-      - name: Retain browser failure evidence
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browser-failure-evidence
-          path: test-results/
-          if-no-files-found: ignore
-          retention-days: 7

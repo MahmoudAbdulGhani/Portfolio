@@ -1,0 +1,125 @@
+{
+  "environment": "Actual assets/frozen public GET records; installed Windows Chrome with native reduced-motion emulation. Separate heading and controls viewport captures preserve the reader’s natural inner scrolling. Not physical-device testing.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "review",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "accept",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "stale",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "state": "review",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "state": "accept",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "state": "stale",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "review",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "accept",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "stale",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "review",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "accept",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "stale",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "state": "review",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "state": "accept",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "state": "stale",
+      "writes": [],
+      "overflow": false,
+      "metadata": "12px"
+    }
+  ]
+}
