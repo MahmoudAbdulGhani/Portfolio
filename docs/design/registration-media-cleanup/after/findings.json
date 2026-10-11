@@ -1,0 +1,1054 @@
+{
+  "phase": "after",
+  "clientDate": "2026-10-11",
+  "capturedAtHostTime": "2026-10-11T11:35:01.859Z",
+  "provenance": "Frozen public GET records; original remote PNG bytes from recorded hash cache; genuine local assets. Chrome emulation, not a physical phone.",
+  "inventory": [
+    {
+      "slug": "full-stack-user-management-system",
+      "index": 0,
+      "title": "Public platform statistics",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-1600w.avif",
+      "naturalWidth": 1382,
+      "naturalHeight": 631,
+      "displayedWidth": 1208,
+      "displayedHeight": 639.40625,
+      "availableWidth": 1208,
+      "availableHeight": 639,
+      "scrollWidth": 1208,
+      "scrollHeight": 639
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-1040w.avif",
+      "naturalWidth": 1040,
+      "naturalHeight": 1688,
+      "displayedWidth": 1208,
+      "displayedHeight": 639.40625,
+      "availableWidth": 1208,
+      "availableHeight": 639,
+      "scrollWidth": 1208,
+      "scrollHeight": 639
+    }
+  ],
+  "findings": [
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-320.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 288,
+          "naturalHeight": 467,
+          "displayedWidth": 288,
+          "displayedHeight": 467.4375,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-320.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-320.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-480w.avif",
+      "naturalWidth": 307,
+      "naturalHeight": 140,
+      "displayedWidth": 268,
+      "displayedHeight": 635.90625,
+      "availableWidth": 268,
+      "availableHeight": 636,
+      "scrollWidth": 268,
+      "scrollHeight": 636,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 268,
+          "scrollHeight": 636,
+          "availableWidth": 268,
+          "availableHeight": 636
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 268,
+          "availableHeight": 636
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 268,
+          "scrollHeight": 636,
+          "availableWidth": 268,
+          "availableHeight": 636
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-320.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-480w.avif",
+      "naturalWidth": 307,
+      "naturalHeight": 498,
+      "displayedWidth": 268,
+      "displayedHeight": 613.8125,
+      "availableWidth": 268,
+      "availableHeight": 614,
+      "scrollWidth": 268,
+      "scrollHeight": 614,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 268,
+          "scrollHeight": 614,
+          "availableWidth": 268,
+          "availableHeight": 614
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "availableWidth": 268,
+          "availableHeight": 614
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 268,
+          "scrollHeight": 614,
+          "availableWidth": 268,
+          "availableHeight": 614
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-320.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 288,
+      "naturalHeight": 131,
+      "displayedWidth": 288,
+      "displayedHeight": 131.546875,
+      "frameWidth": 288,
+      "frameHeight": 131.546875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-320.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 288,
+      "naturalHeight": 467,
+      "displayedWidth": 288,
+      "displayedHeight": 467.4375,
+      "frameWidth": 288,
+      "frameHeight": 467.4375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-320.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 288,
+      "naturalHeight": 131,
+      "displayedWidth": 288,
+      "displayedHeight": 131.546875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 320,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-320.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 288,
+      "naturalHeight": 467,
+      "displayedWidth": 288,
+      "displayedHeight": 467.4375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-390.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 358,
+          "naturalHeight": 581,
+          "displayedWidth": 358,
+          "displayedHeight": 581.046875,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-390.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-390.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-480w.avif",
+      "naturalWidth": 374,
+      "naturalHeight": 170,
+      "displayedWidth": 338,
+      "displayedHeight": 635.90625,
+      "availableWidth": 338,
+      "availableHeight": 636,
+      "scrollWidth": 338,
+      "scrollHeight": 636,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "availableWidth": 338,
+          "availableHeight": 636
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 338,
+          "availableHeight": 636
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "availableWidth": 338,
+          "availableHeight": 636
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-390.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-480w.avif",
+      "naturalWidth": 374,
+      "naturalHeight": 607,
+      "displayedWidth": 338,
+      "displayedHeight": 635.90625,
+      "availableWidth": 338,
+      "availableHeight": 636,
+      "scrollWidth": 338,
+      "scrollHeight": 636,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "availableWidth": 338,
+          "availableHeight": 636
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "availableWidth": 338,
+          "availableHeight": 636
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "availableWidth": 338,
+          "availableHeight": 636
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-390.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 358,
+      "naturalHeight": 163,
+      "displayedWidth": 358,
+      "displayedHeight": 163.515625,
+      "frameWidth": 358,
+      "frameHeight": 163.515625,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-390.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 358,
+      "naturalHeight": 581,
+      "displayedWidth": 358,
+      "displayedHeight": 581.046875,
+      "frameWidth": 358,
+      "frameHeight": 581.046875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-390.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 358,
+      "naturalHeight": 163,
+      "displayedWidth": 358,
+      "displayedHeight": 163.515625,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-390.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 358,
+      "naturalHeight": 581,
+      "displayedWidth": 358,
+      "displayedHeight": 581.046875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-430.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 398,
+          "naturalHeight": 645,
+          "displayedWidth": 398,
+          "displayedHeight": 645.984375,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-430.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-430.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-480w.avif",
+      "naturalWidth": 412,
+      "naturalHeight": 188,
+      "displayedWidth": 378,
+      "displayedHeight": 635.90625,
+      "availableWidth": 378,
+      "availableHeight": 636,
+      "scrollWidth": 378,
+      "scrollHeight": 636,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "availableWidth": 378,
+          "availableHeight": 636
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 378,
+          "availableHeight": 636
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "availableWidth": 378,
+          "availableHeight": 636
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-430.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-480w.avif",
+      "naturalWidth": 412,
+      "naturalHeight": 669,
+      "displayedWidth": 378,
+      "displayedHeight": 635.90625,
+      "availableWidth": 378,
+      "availableHeight": 636,
+      "scrollWidth": 378,
+      "scrollHeight": 636,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "availableWidth": 378,
+          "availableHeight": 636
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "availableWidth": 378,
+          "availableHeight": 636
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 378,
+          "scrollHeight": 636,
+          "availableWidth": 378,
+          "availableHeight": 636
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-430.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 398,
+      "naturalHeight": 181,
+      "displayedWidth": 398,
+      "displayedHeight": 181.78125,
+      "frameWidth": 398,
+      "frameHeight": 181.78125,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-430.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 398,
+      "naturalHeight": 645,
+      "displayedWidth": 398,
+      "displayedHeight": 645.984375,
+      "frameWidth": 398,
+      "frameHeight": 645.984375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-430.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 398,
+      "naturalHeight": 181,
+      "displayedWidth": 398,
+      "displayedHeight": 181.78125,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 430,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-430.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 398,
+      "naturalHeight": 645,
+      "displayedWidth": 398,
+      "displayedHeight": 645.984375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-768.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 419,
+          "naturalHeight": 681,
+          "displayedWidth": 420,
+          "displayedHeight": 681.6875,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-768.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-768.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-1600w.avif",
+      "naturalWidth": 737,
+      "naturalHeight": 336,
+      "displayedWidth": 684,
+      "displayedHeight": 639.40625,
+      "availableWidth": 684,
+      "availableHeight": 639,
+      "scrollWidth": 684,
+      "scrollHeight": 639,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 684,
+          "scrollHeight": 639,
+          "availableWidth": 684,
+          "availableHeight": 639
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 684,
+          "availableHeight": 639
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 684,
+          "scrollHeight": 639,
+          "availableWidth": 684,
+          "availableHeight": 639
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-768.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-960w.avif",
+      "naturalWidth": 737,
+      "naturalHeight": 1196,
+      "displayedWidth": 684,
+      "displayedHeight": 610.8125,
+      "availableWidth": 684,
+      "availableHeight": 611,
+      "scrollWidth": 684,
+      "scrollHeight": 611,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 684,
+          "scrollHeight": 1110,
+          "availableWidth": 684,
+          "availableHeight": 611
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "availableWidth": 684,
+          "availableHeight": 611
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 684,
+          "scrollHeight": 611,
+          "availableWidth": 684,
+          "availableHeight": 611
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-768.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 675.84375,
+      "displayedHeight": 308.703125,
+      "frameWidth": 675.84375,
+      "frameHeight": 308.703125,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-768.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 419,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "frameWidth": 420,
+      "frameHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-768.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 675.84375,
+      "displayedHeight": 308.703125,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 768,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-768.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 419,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-1024.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 419,
+          "naturalHeight": 681,
+          "displayedWidth": 420,
+          "displayedHeight": 681.6875,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-1024.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-1024.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-1600w.avif",
+      "naturalWidth": 983,
+      "naturalHeight": 449,
+      "displayedWidth": 940,
+      "displayedHeight": 639.40625,
+      "availableWidth": 940,
+      "availableHeight": 639,
+      "scrollWidth": 940,
+      "scrollHeight": 639,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "availableWidth": 940,
+          "availableHeight": 639
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 940,
+          "availableHeight": 639
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "availableWidth": 940,
+          "availableHeight": 639
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-1024.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-1040w.avif",
+      "naturalWidth": 983,
+      "naturalHeight": 1595,
+      "displayedWidth": 940,
+      "displayedHeight": 639.40625,
+      "availableWidth": 940,
+      "availableHeight": 639,
+      "scrollWidth": 940,
+      "scrollHeight": 639,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 940,
+          "scrollHeight": 1526,
+          "availableWidth": 940,
+          "availableHeight": 639
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1040,
+          "scrollHeight": 1688,
+          "availableWidth": 940,
+          "availableHeight": 639
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 940,
+          "scrollHeight": 639,
+          "availableWidth": 940,
+          "availableHeight": 639
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-1024.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 901.125,
+      "displayedHeight": 411.59375,
+      "frameWidth": 901.125,
+      "frameHeight": 411.59375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-1024.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 420,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "frameWidth": 420,
+      "frameHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-1024.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 901.125,
+      "displayedHeight": 411.59375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 1024,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-1024.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 420,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "workflow",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-1-1440.jpg",
+      "text": "01\nRegistration is a client operation\n\nThe public registration form collects account details. The server assigns the Client role; the form does not offer administrative access.\n\nView full screen",
+      "images": [
+        {
+          "src": "/projects/complete/user-management-registration.webp",
+          "naturalWidth": 419,
+          "naturalHeight": 681,
+          "displayedWidth": 420,
+          "displayedHeight": 681.6875,
+          "fit": "contain",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "type": "workflow-viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-workflow-viewer-1-1440.jpg",
+      "title": "Public registration form · portrait capture"
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "title": "Public platform statistics",
+      "screenshot": "full-stack-user-management-system-viewer-1-1440.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/dashboard-1600w.avif",
+      "naturalWidth": 1382,
+      "naturalHeight": 631,
+      "displayedWidth": 1208,
+      "displayedHeight": 639.40625,
+      "availableWidth": 1208,
+      "availableHeight": 639,
+      "scrollWidth": 1208,
+      "scrollHeight": 639,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        }
+      ]
+    },
+    {
+      "type": "viewer",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 1,
+      "title": "Public registration form · portrait capture",
+      "screenshot": "full-stack-user-management-system-viewer-2-1440.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "currentSrc": "http://127.0.0.1:5184/projects/complete/user-management-registration-1040w.avif",
+      "naturalWidth": 1040,
+      "naturalHeight": 1688,
+      "displayedWidth": 1208,
+      "displayedHeight": 639.40625,
+      "availableWidth": 1208,
+      "availableHeight": 639,
+      "scrollWidth": 1208,
+      "scrollHeight": 639,
+      "modes": [
+        {
+          "name": "Fit width",
+          "scrollWidth": 1208,
+          "scrollHeight": 1961,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        },
+        {
+          "name": "Actual size",
+          "scrollWidth": 1208,
+          "scrollHeight": 1688,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        },
+        {
+          "name": "Fit",
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "availableWidth": 1208,
+          "availableHeight": 639
+        }
+      ]
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-primary-1-1440.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 1180,
+      "displayedHeight": 538.984375,
+      "frameWidth": 1180,
+      "frameHeight": 538.984375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "primary",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-primary-2-1440.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 420,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "frameWidth": 420,
+      "frameHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 0,
+      "screenshot": "full-stack-user-management-system-expanded-1-1440.jpg",
+      "src": "/projects/user-management/dashboard.webp",
+      "naturalWidth": 1180,
+      "naturalHeight": 539,
+      "displayedWidth": 1180,
+      "displayedHeight": 538.984375,
+      "fit": "contain",
+      "transform": "none"
+    },
+    {
+      "type": "expanded",
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "index": 1,
+      "screenshot": "full-stack-user-management-system-expanded-2-1440.jpg",
+      "src": "/projects/complete/user-management-registration.webp",
+      "naturalWidth": 420,
+      "naturalHeight": 681,
+      "displayedWidth": 420,
+      "displayedHeight": 681.6875,
+      "fit": "contain",
+      "transform": "none"
+    }
+  ]
+}
