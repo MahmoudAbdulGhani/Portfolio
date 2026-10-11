@@ -1,44 +1,84 @@
-.landscape .profile-boundary { border-block: 1px solid var(--line); margin-block: 24px; padding-block: 18px 0; min-width: 0; }
-.landscape .boundary-heading { display: flex; justify-content: space-between; gap: 16px; font: 10px/1.6 var(--mono); color: #585c52; }
-.landscape .boundary-heading > span:last-child { text-transform: uppercase; color: var(--accent); }
-.landscape .boundary-body { display: grid; grid-template-columns: 180px minmax(0,1fr); align-items: center; gap: 28px; padding-block: 16px; }
-.landscape .boundary-art { position: relative; width: 180px; height: 210px; }
-.landscape .boundary-art svg { width: 100%; height: 180px; overflow: visible; }
-.landscape .boundary-art > span { position: absolute; bottom: 8px; inset-inline: 0; text-align: center; font: 10px/1.6 var(--mono); color: #585c52; }
+.landscape .profile-boundary { border-block: 1px solid var(--line); background: var(--paper); margin-block: 24px; padding: 24px 24px 0; min-width: 0; color: var(--ink); }
+.landscape .boundary-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 14px 24px; }
+.landscape .profile-boundary .boundary-title { grid-column: 1 / -1; font-size: 28px; font-weight: 500; line-height: 1.2; letter-spacing: -.04em; margin: 0; scroll-margin-block-start: 24px; }
+.landscape .boundary-title:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+.landscape .profile-boundary .boundary-label { margin: 0; font: 12px/1.6 var(--mono); color: #4d5249; }
+.landscape .boundary-progress { display: flex; align-items: center; gap: 12px; list-style: none; padding: 0; margin: 0; font-size: 13px; }
+.landscape .boundary-progress li { display: flex; align-items: center; gap: 7px; color: #4d5249; white-space: nowrap; }
+.landscape .boundary-step-number { display: grid; place-content: center; width: 24px; height: 24px; border: 1px solid var(--line); font: 12px/1 var(--mono); }
+.landscape .boundary-progress [aria-current="step"] { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
+.landscape .boundary-progress [aria-current="step"] .boundary-step-number { border: 2px solid var(--accent); color: var(--accent); }
+.landscape .boundary-progress [data-complete="true"] .boundary-step-number { background: #34483d; border-color: #34483d; color: var(--paper); }
+.landscape .boundary-step-arrow { color: #4d5249; font-weight: 400; text-decoration: none; margin-left: 4px; }
+.landscape .boundary-body { display: grid; grid-template-columns: 260px minmax(0,1fr); align-items: center; gap: 28px; padding-block: 24px 8px; }
+.landscape .boundary-art { width: 260px; min-width: 0; }
+.landscape .boundary-art svg { display: block; width: 100%; aspect-ratio: 1; overflow: visible; }
+.landscape .boundary-plate-guide { stroke: #777568; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.landscape .boundary-plate-point { fill: var(--paper); stroke: var(--ink); stroke-width: 6; }
+.landscape .boundary-plate-label { margin-top: 4px; text-align: center; line-height: 1.6; }
+.landscape .boundary-plate-label > span { display: block; font-size: 14px; }
+.landscape .boundary-plate-label > span:last-child { font-size: 12px; color: #4d5249; }
+.landscape .boundary-art[data-pose="pending"] .boundary-plate-label > span:first-child { text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 5px; }
 .landscape .boundary-content { min-width: 0; }
-.landscape .profile-boundary .boundary-content :is(h2,h3) { font-size: 24px; font-weight: 500; letter-spacing: -.04em; margin: 0; }
-.landscape .profile-boundary .boundary-content .boundary-message { font-size: 15px; line-height: 1.6; margin: 8px 0 12px; max-width: 48ch; }
-.landscape .profile-boundary .boundary-content .boundary-source, .landscape .profile-boundary .boundary-content .boundary-review-basis { font-size: 12px; line-height: 1.6; margin: 10px 0; color: #585c52; }
-.landscape .boundary-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 14px 0; }
-.landscape .boundary-comparison > div { padding: 12px 16px; border-left: 2px solid #34483d; background: #e4e5db; }
+.landscape .profile-boundary .boundary-content .boundary-message { min-height: 3.2em; font-size: 15px; line-height: 1.6; margin: 0 0 10px; max-width: 48ch; }
+.landscape .profile-boundary .boundary-content .boundary-source { font-size: 14px; line-height: 1.6; margin: 0 0 14px; color: #4d5249; }
+.landscape .boundary-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 0; }
+.landscape .boundary-comparison > div { padding: 14px; border-left: 2px solid #34483d; background: #e4e5db; min-width: 0; min-height: 150px; }
 .landscape .boundary-comparison .boundary-proposed { border-color: var(--accent); background: #e9dfd2; }
-.landscape .boundary-comparison dt { font: 10px/1.6 var(--mono); }
-.landscape .boundary-comparison dd { font-size: 25px; line-height: 1.4; margin: 6px 0; letter-spacing: -.035em; }
-.landscape .boundary-comparison span { display: block; font: 10px/1.6 var(--mono); }
+.landscape .boundary-proposed[data-pending="true"] { border-left-style: dashed; }
+.landscape .boundary-proposed[data-pending="true"] dt { text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 5px; }
+.landscape .boundary-comparison dt { font-size: 14px; line-height: 1.6; }
+.landscape .boundary-comparison dd { margin: 8px 0 0; }
+.landscape .boundary-value { display: block; font-size: 28px; font-weight: 500; line-height: 1.4; letter-spacing: -.035em; }
+.landscape .boundary-value-note, .landscape .boundary-changed-label { display: block; font: 12px/1.6 var(--mono); margin-top: 6px; }
+.landscape .boundary-saved[data-changed="true"] { outline: 2px solid var(--accent); outline-offset: -2px; }
+.landscape .boundary-changed-label { font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.landscape .profile-boundary .boundary-content .boundary-review-basis { min-height: 3.2em; font-size: 14px; line-height: 1.6; margin: 16px 0; color: #4d5249; }
+.landscape .boundary-review-basis[data-outdated="true"] { padding-left: 12px; border-left: 2px dashed var(--accent); }
+.landscape .boundary-review-basis strong { font-weight: 600; color: var(--ink); }
 .landscape .boundary-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
-.landscape .boundary-actions button { min-height: 44px; padding: 10px 6px; font-size: 13px; }
+.landscape .boundary-actions button { min-height: 44px; padding: 10px 6px; font-size: 14px; }
 .landscape .boundary-actions .boundary-primary { border: 1px solid var(--accent); padding-inline: 16px; color: var(--accent); }
 .landscape .boundary-actions .boundary-primary[aria-disabled="true"] { border-color: #34483d; color: #34483d; cursor: default; }
-.landscape .boundary-change { display: block; text-align: left; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; min-height: 44px; margin-top: 4px; }
-.landscape .boundary-change[aria-disabled="true"] { color: #585c52; cursor: default; }
-.landscape .boundary-disclosure { border-top: 1px solid var(--line); font-size: 12px; }
-.landscape .profile-boundary .boundary-disclosure p { font-size: 13px; line-height: 1.7; margin-block: 12px; max-width: 70ch; }
+.landscape .boundary-option { min-height: 48px; }
+.landscape .boundary-change { display: block; text-align: left; font-size: 14px; line-height: 1.6; text-decoration: underline; text-underline-offset: 3px; min-height: 44px; margin-top: 4px; padding: 0; }
+.landscape .boundary-change[aria-disabled="true"] { color: #4d5249; cursor: default; }
+.landscape .boundary-disclosure { border-top: 1px solid var(--line); font-size: 14px; }
+.landscape .profile-boundary .boundary-disclosure p { font-size: 14px; line-height: 1.7; margin-block: 12px; max-width: 70ch; }
 .landscape .boundary-disclosure .text-link { min-height: 44px; display: inline-flex; align-items: center; margin-bottom: 12px; }
-@media (max-width: 600px) {
-  .landscape .boundary-heading { font-size: 9px; }
-  .landscape .boundary-body { grid-template-columns: minmax(0,1fr); gap: 12px; }
-  .landscape .boundary-art { width: 140px; height: 160px; justify-self: center; }
-  .landscape .boundary-art svg { height: 130px; }
-  .landscape .profile-boundary .boundary-content :is(h2,h3) { font-size: 23px; }
-  .landscape .boundary-comparison { grid-template-columns: minmax(0,1fr); gap: 8px; }
-  .landscape .boundary-comparison > div { padding: 10px 14px; }
-  .landscape .boundary-comparison dd { margin-block: 2px; }
-  .landscape .boundary-comparison dt, .landscape .boundary-comparison span { font-size: 11px; }
-}
 .landscape .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { align-content: start; grid-template-rows: minmax(calc(100svh - 256px), auto) auto; }
 .landscape .stage.has-profile-boundary .selection-frame { align-self: center; }
-.landscape .is-expanded .selection-boundary-intro { position: absolute; bottom: calc(100% + 6px); width: 100%; max-width: none; margin: 0; font-size: 12px; line-height: 1.4; color: #585c52; }
-.landscape .collection-boundary { width: min(880px,88%); min-width: 0; margin-inline: auto; transition: opacity 160ms; }
+.landscape .is-expanded .selection-boundary-intro { position: absolute; bottom: calc(100% + 6px); width: 100%; max-width: none; margin: 0; font-size: 12px; line-height: 1.4; color: #4d5249; }
+.landscape .collection-boundary { position: relative; z-index: 8; width: min(880px,88%); min-width: 0; margin-inline: auto; transition: opacity 160ms; }
 .landscape .stage[data-motion-phase="closing"] .collection-boundary { opacity: 0; }
-@media (max-width: 719px) { .landscape .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { grid-template-rows: minmax(calc(100svh - 263px), auto) auto; } }
+.landscape .selection-project-links { display: flex; align-items: center; gap: 16px; }
+.landscape .is-expanded .explore-engineering { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1px solid var(--line); padding: 10px 14px; min-height: 44px; line-height: 22px; font-size: 14px; color: #34483d; white-space: nowrap; }
+@media (max-width: 1000px) {
+  .landscape .boundary-body { grid-template-columns: 240px minmax(0,1fr); gap: 24px; }
+  .landscape .boundary-art { width: 240px; }
+  .landscape .boundary-heading { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .landscape .boundary-title { grid-column: auto; }
+}
+@media (max-width: 719px) {
+  /* The additional stacked link adds 56px; retain the preview's former center. */
+  .landscape .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { grid-template-rows: minmax(calc(100svh - 207px), auto) auto; }
+  .landscape .selection-project-links { flex-direction: column; align-items: stretch; gap: 12px; }
+  .landscape .is-expanded .explore-engineering { width: 100%; }
+}
+@media (max-width: 680px) {
+  .landscape .profile-boundary { padding: 20px 16px 0; }
+  .landscape .boundary-body { grid-template-columns: minmax(0,1fr); gap: 24px; padding-top: 16px; }
+  .landscape .boundary-art { width: min(220px,100%); justify-self: center; }
+  .landscape .profile-boundary .boundary-title { font-size: 25px; }
+  .landscape .boundary-comparison { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .landscape .boundary-comparison > div { min-height: 124px; }
+  .landscape .boundary-value { font-size: 28px; }
+  .landscape .boundary-progress { gap: 8px; font-size: 12px; }
+  .landscape .boundary-progress li { gap: 5px; }
+  .landscape .boundary-step-arrow { margin-left: 0; }
+}
+@media (max-width: 360px) {
+  .landscape .boundary-progress { flex-direction: column; align-items: stretch; gap: 8px; }
+  .landscape .boundary-step-arrow { display: none; }
+}
 @media (prefers-reduced-motion: reduce) { .landscape .collection-boundary { transition: none; } }

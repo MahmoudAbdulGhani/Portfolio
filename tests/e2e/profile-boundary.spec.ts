@@ -12,11 +12,12 @@ async function fixtures(page: Page) {
   });
 }
 const region = (page: Page) => page.getByRole('region', { name: 'The profile save boundary' });
+const currentStep = (page: Page) => region(page).getByRole('list', { name: 'Review progress' }).locator('[aria-current="step"]');
 async function proposeAndReview(page: Page) {
   const demo = region(page);
   await demo.getByRole('button', { name: 'Propose a change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Beirut');
-  await expect(demo.locator('.boundary-proposed dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Beirut');
+  await expect(demo.locator('.boundary-proposed .boundary-value')).toHaveText('Tripoli');
   await demo.getByRole('button', { name: 'Review the change', exact: true }).click();
 }
 test.beforeEach(async ({ page }) => { await fixtures(page); });
@@ -27,22 +28,31 @@ test('saved information changes only after approval, stale approval is blocked, 
   await page.goto('/?project=jobpilot-ai');
   const demo = region(page);
   await proposeAndReview(page);
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Beirut');
+  await expect(currentStep(page)).toContainText('Review');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Beirut');
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
   await expect(demo.getByRole('status')).toHaveText('Reviewed changes accepted. Saved location: Tripoli.');
+  await expect(currentStep(page)).toContainText('Accepted');
   await demo.getByRole('button', { name: 'Reset', exact: true }).click();
+  await expect(currentStep(page)).toContainText('Propose');
   await proposeAndReview(page);
   await demo.getByRole('button', { name: 'Change the saved profile during review.', exact: true }).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Byblos');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Byblos');
+  await expect(demo.locator('.boundary-changed-label')).toHaveText('Changed during review');
+  await expect(demo.locator('.boundary-review-basis')).toContainText('Outdated review.');
+  await expect(currentStep(page)).toContainText('Review');
   await expect(demo.locator('.boundary-review-basis')).toContainText('Beirut → Tripoli');
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Byblos');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Byblos');
   await expect(demo.getByRole('status')).toHaveText('Old review blocked. Review again before accepting.');
+  await expect(currentStep(page)).toContainText('Review');
+  await expect(demo.locator('.boundary-review-basis')).toContainText('Another review is required.');
   await demo.getByRole('button', { name: 'Review again', exact: true }).click();
   await expect(demo.locator('.boundary-review-basis')).toContainText('Byblos → Tripoli');
+  await expect(demo.locator('.boundary-changed-label')).toHaveCount(0);
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
   expect(writes).toEqual([]);
 });
 
@@ -102,6 +112,50 @@ test('keyboard and reduced motion preserve every state, disclosure and navigatio
   await expect(page).toHaveURL(/projects\/jobpilot-ai/);
   await expect(region(page)).toHaveCount(1);
   await expect(page.locator('.decision-path')).toHaveCount(0);
+  await expect(currentStep(page)).toContainText('Propose');
+  expect((await new AxeBuilder({page}).include('.profile-boundary').analyze()).violations).toEqual([]);
+});
+
+test('engineering navigation focuses a visible heading and preserves Back and Collection closing', async ({ page }) => {
+  for (const reducedMotion of ['no-preference','reduce'] as const) {
+    await page.emulateMedia({reducedMotion});
+    await page.goto('/');
+    await page.getByRole('button',{name:'Explore JobPilot AI',exact:true}).click();
+    const primary=page.getByRole('link',{name:'Open case study',exact:true});
+    const engineering=page.getByRole('link',{name:'Explore the engineering',exact:true});
+    await expect(primary).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(engineering).toBeFocused();
+    await expect(engineering).toHaveAttribute('href','/?project=jobpilot-ai#jobpilot-engineering');
+    const length=await page.evaluate(()=>history.length);
+    await page.keyboard.press('Enter');
+    const heading=region(page).getByRole('heading',{name:'The profile save boundary',exact:true});
+    await expect(heading).toBeFocused();
+    await expect(heading).toBeInViewport({ratio:1});
+    expect(await page.evaluate(()=>history.length)).toBe(length);
+    expect(await heading.evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(0);
+    await region(page).getByRole('button',{name:'Propose a change',exact:true}).click();
+    await expect(currentStep(page)).toContainText('Propose');
+    await page.goBack();
+    await expect(page.getByRole('button',{name:'Explore JobPilot AI',exact:true})).toBeFocused();
+    await page.getByRole('button',{name:'Explore JobPilot AI',exact:true}).click();
+    await engineering.click();
+    await region(page).getByRole('button',{name:'Propose a change',exact:true}).click();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('button',{name:'Explore JobPilot AI',exact:true})).toBeFocused();
+  }
+});
+
+test('a direct engineering fragment focuses the same demonstration and keeps primary navigation', async ({ page }) => {
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('/?project=jobpilot-ai#jobpilot-engineering');
+  const heading=region(page).getByRole('heading',{name:'The profile save boundary',exact:true});
+  await expect(heading).toBeFocused();
+  await expect(heading).toBeInViewport({ratio:1});
+  await expect(region(page)).toHaveCount(1);
+  await page.getByRole('link',{name:'Open case study',exact:true}).click();
+  await expect(page).toHaveURL(/projects\/jobpilot-ai$/);
+  await expect(region(page)).toHaveCount(1);
 });
 
 test('unavailable WebGL retains the complete controls and explanation', async ({ page }) => {
@@ -119,7 +173,7 @@ test('unavailable WebGL retains the complete controls and explanation', async ({
   await expect(demo.locator('.boundary-art')).toHaveAttribute('data-renderer','photographic-svg');
   await expect(demo.locator('svg').first()).toBeVisible();
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
   await demo.locator('summary').click();
   await expect(demo.locator('.disclosure-content')).toContainText('row locks');
 });
@@ -141,7 +195,7 @@ test('context loss retains the boundary and an OS preference change finishes art
   await expect(demo.locator('.boundary-message')).toHaveCSS('opacity','1');
   await demo.getByRole('button',{name:'Review the change',exact:true}).click();
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
 });
 
 test('plate returns to alignment after approval and performs no perpetual updates', async ({ page }) => {
@@ -172,11 +226,29 @@ for (const width of [1440,768,390,320]) test(`comparison and actions stay readab
   const preview = await page.locator('.selection-image-frame').boundingBox();
   expect(intro!.y).toBeGreaterThanOrEqual(header!.y + header!.height - 1);
   expect(intro!.y + intro!.height).toBeLessThanOrEqual(preview!.y);
+  await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();
+  const heading=demo.getByRole('heading',{name:'The profile save boundary',exact:true});
+  await expect(heading).toBeFocused();
+  await expect(heading).toBeInViewport({ratio:1});
+  await expect(currentStep(page)).toContainText('Review');
+  const sizes=await demo.evaluate(el=>({
+    background:getComputedStyle(el).backgroundColor,
+    metadata:Math.min(...Array.from(el.querySelectorAll('.boundary-label,.boundary-value-note,.boundary-plate-label > span:last-child')).map(node=>parseFloat(getComputedStyle(node).fontSize))),
+    explanatory:Math.min(...Array.from(el.querySelectorAll('.boundary-message,.boundary-source,.boundary-review-basis')).map(node=>parseFloat(getComputedStyle(node).fontSize))),
+    artWidth:el.querySelector('.boundary-art')!.getBoundingClientRect().width,
+  }));
+  expect(sizes.background).toBe('rgb(236, 235, 227)');
+  const foreground=await page.locator('.collection-boundary').evaluate(el=>Number(getComputedStyle(el).zIndex));
+  const decoration=await page.locator('.objects').evaluate(el=>Number(getComputedStyle(el).zIndex)||0);
+  expect(foreground).toBeGreaterThan(decoration);
+  expect(sizes.metadata).toBeGreaterThanOrEqual(12);
+  expect(sizes.explanatory).toBeGreaterThanOrEqual(14);
+  if(width===1440)expect(sizes.artWidth).toBeGreaterThanOrEqual(240);
   expect(await demo.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
   const boxes = await demo.locator('.boundary-comparison > div').evaluateAll(elements=>elements.map(el=>{
     const box=el.getBoundingClientRect(); return {x:box.x,y:box.y,width:box.width,height:box.height};
   }));
   if(width<=390) expect(boxes[1].y).toBeGreaterThanOrEqual(boxes[0].y+boxes[0].height);
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved dd')).toHaveText('Tripoli');
+  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
 });

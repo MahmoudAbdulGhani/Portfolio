@@ -138,14 +138,19 @@ test('Escape reverses the current pose and repeated close cannot restore twice',
     await page.clock.runFor(16);
     return page.locator('.motion-rig').getAttribute('data-renderer').catch(() => null);
   }).toBe('webgl');
-  await page.clock.runFor(180);
+  // Sample elapsed poses rather than rasterizing every synthetic 16ms frame.
+  // CI's software WebGL can spend the test deadline drawing those frames even
+  // when reversal, focus return and disposal are correct. Keep the real rig,
+  // original elapsed deadlines and multiple closing samples below.
+  await page.clock.fastForward(180);
   const before = await page.evaluate(() => (window as unknown as { motionFrames: Array<{ progress: number; closing: boolean }> }).motionFrames.filter(frame => !frame.closing).at(-1)!.progress);
   expect(before).toBeGreaterThan(0); expect(before).toBeLessThan(1);
   await page.keyboard.press('Escape'); await page.keyboard.press('Escape');
-  await page.clock.runFor(600);
+  for (const elapsed of [16, 100, 100, 100, 284]) await page.clock.fastForward(elapsed);
   await expect(page.getByRole('button', { name: 'Explore JobPilot AI', exact: true })).toBeFocused();
   await expect(page.locator('canvas')).toHaveCount(0);
   const closing = await page.evaluate(() => (window as unknown as { motionFrames: Array<{ progress: number; closing: boolean }> }).motionFrames.filter(frame => frame.closing).map(frame => frame.progress));
+  expect(closing.length).toBeGreaterThanOrEqual(4);
   expect(closing[0]).toBeLessThanOrEqual(before + 0.01);
   expect(closing.at(-1)).toBeCloseTo(0, 4);
   expect(closing.every((value, index) => !index || value <= closing[index - 1])).toBe(true);

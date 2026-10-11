@@ -1,0 +1,61 @@
+{
+  "phase": "after",
+  "baseline": "4a501ad8ebb95bfa01e6d665ad89652cb6bbbff6",
+  "environment": "Installed Windows Chrome, frozen public GET records and cached original images. Intel GPU for normal opening; forced unavailable WebGL for fallback. Browser viewport emulation, not physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 650,
+      "mode": "reduced",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "reduced",
+      "destination": {
+        "top": 120.046875,
+        "bottom": 153.640625
+      },
+      "layout": {
+        "width": 880,
+        "overflow": false,
+        "artWidth": 260,
+        "copy": "The profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned after acceptance\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nReviewed change\nTripoli\nAccepted after review\nSaved · accepted\nTripoli\nLocation · revision 3\n\nSaved information now matches the reviewed proposal.\n\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "reduced",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "reduced",
+      "destination": {
+        "top": 120,
+        "bottom": 150
+      },
+      "layout": {
+        "width": 343,
+        "overflow": false,
+        "artWidth": 220,
+        "copy": "The profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned after acceptance\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nReviewed change\nTripoli\nAccepted after review\nSaved · accepted\nTripoli\nLocation · revision 3\n\nSaved information now matches the reviewed proposal.\n\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "mode": "reduced",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "reduced",
+      "destination": {
+        "top": 120,
+        "bottom": 180
+      },
+      "layout": {
+        "width": 282,
+        "overflow": false,
+        "artWidth": 220,
+        "copy": "The profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n2\nReview\n3\nAccepted\nIvory plate · proposed change\nAligned after acceptance\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nReviewed change\nTripoli\nAccepted after review\nSaved · accepted\nTripoli\nLocation · revision 3\n\nSaved information now matches the reviewed proposal.\n\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    }
+  ]
+}
