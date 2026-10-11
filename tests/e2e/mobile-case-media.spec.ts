@@ -161,7 +161,7 @@ test('public media normalization excludes every registration excerpt alias and r
   }
 });
 
-test('User Management exposes only complete images through every public selection path', async ({ page }) => {
+for (const width of [320, 390, 430, 768, 1024, 1440]) test(`User Management exposes only complete images through every public selection path at ${width}px`, async ({ page }) => {
   const project = caseStudyProjects.find(project => project.slug === 'full-stack-user-management-system')!;
   await page.route('**/api/projects/full-stack-user-management-system', route => route.fulfill({ json: {
     ...project, coverImage: '/projects/responsive/user-management-phone.webp?legacy=1',
@@ -170,7 +170,6 @@ test('User Management exposes only complete images through every public selectio
   const requested: string[] = [];
   page.on('request', request => requested.push(request.url()));
   const labels = ['Public platform statistics', 'Public registration form · portrait capture'];
-  for (const width of [320, 390, 430, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 936 });
     await page.goto('/projects/full-stack-user-management-system');
     const chooser = page.locator('.case-media-chooser');
@@ -223,7 +222,6 @@ test('User Management exposes only complete images through every public selectio
     await expect(page.getByText(/Registration form excerpt/)).toHaveCount(0);
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/projects\/user-management\/dashboard\.webp/);
     expect(await page.locator('img').evaluateAll(images => images.some(image => image.src.includes('user-management-phone')))).toBe(false);
-  }
   expect(requested.some(url => url.includes('user-management-phone'))).toBe(false);
 });
 
