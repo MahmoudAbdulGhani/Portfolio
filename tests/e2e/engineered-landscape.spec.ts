@@ -84,6 +84,31 @@ test.beforeEach(async ({ page }) => {
     });
   });
 });
+test('Cedar collection caption stays below navigation in short desktop windows', async ({ page }) => {
+  await page.goto('/');
+  const cedar = page.getByRole('button', { name: 'Explore Cedar Construction', exact: true });
+  await expect(cedar).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
+  for (const [width, height] of [[1120, 600], [1280, 720], [1366, 768], [1440, 650], [1440, 900], [1536, 800], [1920, 1080]]) {
+    await page.setViewportSize({ width, height });
+    const header = await page.locator('.site-header').boundingBox();
+    const footer = await page.locator('.stage-footer').boundingBox();
+    expect(header).not.toBeNull();
+    expect(footer).not.toBeNull();
+    for (const selector of ['.project-number', '.project-name', '.project-purpose']) {
+      const text = cedar.locator(selector);
+      await expect(text).toBeVisible();
+      const box = await text.boundingBox();
+      expect(box, `${selector} at ${width}×${height}`).not.toBeNull();
+      expect(box!.y, `${selector} clears navigation at ${width}×${height}`).toBeGreaterThanOrEqual(header!.y + header!.height + 16);
+      expect(box!.y + box!.height).toBeLessThanOrEqual(footer!.y);
+      expect(box!.x).toBeGreaterThanOrEqual(0);
+      expect(box!.x + box!.width).toBeLessThanOrEqual(width);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+  }
+});
+
 test("CMS-backed collection selects with keyboard, opens real slug and returns focus", async ({
   page,
 }) => {

@@ -1,0 +1,839 @@
+{
+  "clientDate": "2026-10-11",
+  "url": "https://mahmoud-portfolio-omega.vercel.app",
+  "scope": "Primary selection and viewer only for every project at two widths. Browser emulation; actual production API/assets. GET/HEAD only, writes blocked. Not every gallery selection or physical-device evidence.",
+  "findings": [
+    {
+      "slug": "jobpilot-ai",
+      "width": 390,
+      "inline": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/710055a0-a275-4e6a-991d-4aaa23c6e549-480w.avif",
+        "width": 358,
+        "height": 165.984375,
+        "naturalWidth": 358,
+        "naturalHeight": 166,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 173
+        },
+        {
+          "mode": "Actual size",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 1562,
+          "scrollTop": 245,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1900,
+          "scrollHeight": 881,
+          "naturalWidth": 1900,
+          "naturalHeight": 881
+        },
+        {
+          "mode": "Fit",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 173
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "lobby",
+      "width": 390,
+      "inline": {
+        "src": "/projects/lobby/cover.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/lobby-cover-480w.avif",
+        "width": 358,
+        "height": 163.109375,
+        "naturalWidth": 358,
+        "naturalHeight": 163,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 170
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 1262,
+          "scrollTop": 93,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1600,
+          "scrollHeight": 729,
+          "naturalWidth": 1600,
+          "naturalHeight": 729
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 170
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "gamezone-arena",
+      "width": 390,
+      "inline": {
+        "src": "/projects/complete/gamezone-rooms.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/gamezone-rooms-480w.avif",
+        "width": 358,
+        "height": 366.65625,
+        "naturalWidth": 358,
+        "naturalHeight": 366,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 383
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 2388,
+          "scrollTop": 2206,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 2726,
+          "scrollHeight": 2792,
+          "naturalWidth": 2726,
+          "naturalHeight": 2792
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 383
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "width": 390,
+      "inline": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/425768da-66d4-4088-b725-3199711f8784-480w.avif",
+        "width": 358,
+        "height": 165.265625,
+        "naturalWidth": 358,
+        "naturalHeight": 165,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 173
+        },
+        {
+          "mode": "Actual size",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 1566,
+          "scrollTop": 293,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 1904,
+          "scrollHeight": 879,
+          "naturalWidth": 1904,
+          "naturalHeight": 879
+        },
+        {
+          "mode": "Fit",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 173
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "unihub",
+      "width": 390,
+      "inline": {
+        "src": "/projects/unihub/user.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/user-480w.avif",
+        "width": 358,
+        "height": 169.71875,
+        "naturalWidth": 358,
+        "naturalHeight": 170,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 177
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 1573,
+          "scrollTop": 320,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 1911,
+          "scrollHeight": 906,
+          "naturalWidth": 1911,
+          "naturalHeight": 906
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 586,
+          "scrollWidth": 338,
+          "scrollHeight": 586,
+          "naturalWidth": 374,
+          "naturalHeight": 177
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 390,
+      "inline": {
+        "src": "/projects/user-management/dashboard.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/dashboard-480w.avif",
+        "width": 358,
+        "height": 163.515625,
+        "naturalWidth": 358,
+        "naturalHeight": 163,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 170
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 1582,
+          "scrollTop": 241,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "naturalWidth": 1920,
+          "naturalHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 170
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "medicare-hub",
+      "width": 390,
+      "inline": {
+        "src": "/projects/complete/medicare-homepage.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/medicare-homepage-480w.avif",
+        "width": 358,
+        "height": 245.84375,
+        "naturalWidth": 358,
+        "naturalHeight": 246,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 607,
+          "scrollWidth": 338,
+          "scrollHeight": 607,
+          "naturalWidth": 374,
+          "naturalHeight": 257
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 2388,
+          "scrollTop": 1265,
+          "width": 338,
+          "height": 607,
+          "scrollWidth": 2726,
+          "scrollHeight": 1872,
+          "naturalWidth": 2726,
+          "naturalHeight": 1872
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 607,
+          "scrollWidth": 338,
+          "scrollHeight": 607,
+          "naturalWidth": 374,
+          "naturalHeight": 257
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "home-services",
+      "width": 390,
+      "inline": {
+        "src": "/projects/complete/home-services-page.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/home-services-page-480w.avif",
+        "width": 358,
+        "height": 1646.046875,
+        "naturalWidth": 358,
+        "naturalHeight": 1646,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 0,
+          "scrollTop": 918,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 1554,
+          "naturalWidth": 374,
+          "naturalHeight": 1721
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 1582,
+          "scrollTop": 8192,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 1920,
+          "scrollHeight": 8828,
+          "naturalWidth": 1920,
+          "naturalHeight": 8828
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 338,
+          "height": 636,
+          "scrollWidth": 338,
+          "scrollHeight": 636,
+          "naturalWidth": 374,
+          "naturalHeight": 1721
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "jobpilot-ai",
+      "width": 1440,
+      "inline": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/710055a0-a275-4e6a-991d-4aaa23c6e549-1600w.avif",
+        "width": 1180,
+        "height": 547.140625,
+        "naturalWidth": 1180,
+        "naturalHeight": 547,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 641
+        },
+        {
+          "mode": "Actual size",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 692,
+          "scrollTop": 242,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1900,
+          "scrollHeight": 881,
+          "naturalWidth": 1900,
+          "naturalHeight": 881
+        },
+        {
+          "mode": "Fit",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 641
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "lobby",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/lobby/cover.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/lobby-cover-1600w.avif",
+        "width": 1180,
+        "height": 537.625,
+        "naturalWidth": 1180,
+        "naturalHeight": 537,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 629
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 392,
+          "scrollTop": 90,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1600,
+          "scrollHeight": 729,
+          "naturalWidth": 1600,
+          "naturalHeight": 729
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/lobby/cover.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 629
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "gamezone-arena",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/complete/gamezone-rooms.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/gamezone-rooms-1600w.avif",
+        "width": 1180,
+        "height": 1208.5625,
+        "naturalWidth": 1180,
+        "naturalHeight": 1208,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 0,
+          "scrollTop": 647,
+          "width": 1208,
+          "height": 590,
+          "scrollWidth": 1208,
+          "scrollHeight": 1237,
+          "naturalWidth": 1382,
+          "naturalHeight": 1416
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 1518,
+          "scrollTop": 2202,
+          "width": 1208,
+          "height": 590,
+          "scrollWidth": 2726,
+          "scrollHeight": 2792,
+          "naturalWidth": 2726,
+          "naturalHeight": 2792
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/gamezone-rooms.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 590,
+          "scrollWidth": 1208,
+          "scrollHeight": 590,
+          "naturalWidth": 1382,
+          "naturalHeight": 1416
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "construction-project-management-accounting-system",
+      "width": 1440,
+      "inline": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/425768da-66d4-4088-b725-3199711f8784-1600w.avif",
+        "width": 1180,
+        "height": 544.75,
+        "naturalWidth": 1180,
+        "naturalHeight": 545,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 611,
+          "naturalWidth": 1382,
+          "naturalHeight": 638
+        },
+        {
+          "mode": "Actual size",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 696,
+          "scrollTop": 268,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1904,
+          "scrollHeight": 879,
+          "naturalWidth": 1904,
+          "naturalHeight": 879
+        },
+        {
+          "mode": "Fit",
+          "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/construction-project-management-accounting-system/425768da-66d4-4088-b725-3199711f8784.png",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 611,
+          "naturalWidth": 1382,
+          "naturalHeight": 638
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "unihub",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/unihub/user.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/user-1600w.avif",
+        "width": 1180,
+        "height": 559.421875,
+        "naturalWidth": 1180,
+        "naturalHeight": 559,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 611,
+          "naturalWidth": 1382,
+          "naturalHeight": 655
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 703,
+          "scrollTop": 295,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1911,
+          "scrollHeight": 906,
+          "naturalWidth": 1911,
+          "naturalHeight": 906
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/unihub/user.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 611,
+          "naturalWidth": 1382,
+          "naturalHeight": 655
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "full-stack-user-management-system",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/user-management/dashboard.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/dashboard-1600w.avif",
+        "width": 1180,
+        "height": 538.984375,
+        "naturalWidth": 1180,
+        "naturalHeight": 539,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 631
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 712,
+          "scrollTop": 238,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1920,
+          "scrollHeight": 877,
+          "naturalWidth": 1920,
+          "naturalHeight": 877
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/user-management/dashboard.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 631
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "medicare-hub",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/complete/medicare-homepage.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/medicare-homepage-1600w.avif",
+        "width": 1180,
+        "height": 810.328125,
+        "naturalWidth": 1180,
+        "naturalHeight": 810,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 0,
+          "scrollTop": 219,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 830,
+          "naturalWidth": 1382,
+          "naturalHeight": 949
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 1518,
+          "scrollTop": 1261,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 2726,
+          "scrollHeight": 1872,
+          "naturalWidth": 2726,
+          "naturalHeight": 1872
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/medicare-homepage.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 611,
+          "scrollWidth": 1208,
+          "scrollHeight": 611,
+          "naturalWidth": 1382,
+          "naturalHeight": 949
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    },
+    {
+      "slug": "home-services",
+      "width": 1440,
+      "inline": {
+        "src": "/projects/complete/home-services-page.webp",
+        "currentSrc": "https://mahmoud-portfolio-omega.vercel.app/projects/complete/home-services-page-1600w.avif",
+        "width": 1180,
+        "height": 5425.53125,
+        "naturalWidth": 1180,
+        "naturalHeight": 5425,
+        "fit": "contain"
+      },
+      "modes": [
+        {
+          "mode": "Fit width",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 0,
+          "scrollTop": 4916,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 5555,
+          "naturalWidth": 1382,
+          "naturalHeight": 6356
+        },
+        {
+          "mode": "Actual size",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 712,
+          "scrollTop": 8189,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1920,
+          "scrollHeight": 8828,
+          "naturalWidth": 1920,
+          "naturalHeight": 8828
+        },
+        {
+          "mode": "Fit",
+          "src": "/projects/complete/home-services-page.webp",
+          "scrollLeft": 0,
+          "scrollTop": 0,
+          "width": 1208,
+          "height": 639,
+          "scrollWidth": 1208,
+          "scrollHeight": 639,
+          "naturalWidth": 1382,
+          "naturalHeight": 6356
+        }
+      ],
+      "closeAndFocusReturn": "pass"
+    }
+  ]
+}

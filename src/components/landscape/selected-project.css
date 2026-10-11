@@ -3,6 +3,20 @@
   display: block;
   font-size: 12px;
 }
+@media (min-width: 1051px) {
+  /* Keep the original lower alignment when it fits. A short stage must grow
+     the caption down from a safe top edge instead of hiding its number. */
+  .landscape .cedar-hit .project-label {
+    top: 16px;
+    left: min(72%, calc(100% - 120px));
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: safe flex-end;
+    gap: 0;
+  }
+}
 .landscape .portfolio.is-selected {
   height: auto;
   min-height: 100svh;
