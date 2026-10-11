@@ -206,6 +206,7 @@
     "src/components/landscape/Collection.tsx",
     "src/components/landscape/ProfileBoundary.tsx",
     "src/components/landscape/profile-boundary.css",
-    "tests/e2e/profile-boundary.spec.ts"
+    "tests/e2e/profile-boundary.spec.ts",
+    "tests/e2e/signature-motion.spec.ts"
   ]
 }
