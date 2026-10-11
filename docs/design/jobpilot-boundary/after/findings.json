@@ -1,0 +1,92 @@
+{
+  "phase": "after",
+  "baseline": "2c00c354d7b6c727f26efb4fdaaabce4f9212588",
+  "environment": "Installed Windows Chrome; actual artwork/GPU and cached original screenshots, frozen public GET records. Browser viewport emulation, not physical devices. Writes blocked.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "demoRenderer": "photographic-svg",
+      "gpu": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "layout": {
+        "width": 880,
+        "overflow": false,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "demoRenderer": "photographic-svg",
+      "gpu": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "layout": {
+        "width": 880,
+        "overflow": false,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "demoRenderer": "photographic-svg",
+      "gpu": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "layout": {
+        "width": 676,
+        "overflow": false,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "demoRenderer": "photographic-svg",
+      "gpu": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "layout": {
+        "width": 343,
+        "overflow": false,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "demoRenderer": "photographic-svg",
+      "gpu": {
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "layout": {
+        "width": 282,
+        "overflow": false,
+        "copy": "Engineering demonstration — sample data.\nACCEPT\nReviewed and aligned\nThe profile save boundary\n\nReviewed changes accepted.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nSaved · accepted\nTripoli\nLocation · revision 3\nReviewed change\nTripoli\nAccepted after review\nAccepted\nReset\n\nReviewed changes accepted. Saved location: Tripoli.\n\nHow this maps to the implementation"
+      }
+    }
+  ]
+}

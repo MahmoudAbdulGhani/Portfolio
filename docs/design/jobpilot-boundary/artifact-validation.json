@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "size": "1440-900",
+      "decodedImages": 10
+    },
+    {
+      "size": "1440-650",
+      "decodedImages": 10
+    },
+    {
+      "size": "768-1024",
+      "decodedImages": 10
+    },
+    {
+      "size": "390-844",
+      "decodedImages": 10
+    },
+    {
+      "size": "320-844",
+      "decodedImages": 10
+    }
+  ],
+  "videoDurations": [
+    12.12,
+    11.72
+  ]
+}

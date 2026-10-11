@@ -1,0 +1,42 @@
+{
+  "phase": "before",
+  "baseline": "2c00c354d7b6c727f26efb4fdaaabce4f9212588",
+  "environment": "Installed Windows Chrome; actual artwork/GPU and cached original screenshots, frozen public GET records. Browser viewport emulation, not physical devices. Writes blocked.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl"
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl"
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl"
+    }
+  ]
+}
