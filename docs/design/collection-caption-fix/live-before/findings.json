@@ -1,0 +1,957 @@
+{
+  "clientDate": "2026-10-11",
+  "url": "https://mahmoud-portfolio-omega.vercel.app",
+  "environment": "Chrome browser emulation. Read-only requests to the live application; no API fixtures or production submissions.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440x900.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "top": 0,
+        "right": 1440,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 740,
+        "top": 92,
+        "right": 1440,
+        "bottom": 832,
+        "left": 0
+      },
+      "button": {
+        "x": 979.1875,
+        "y": 92,
+        "width": 432,
+        "height": 288.59375,
+        "top": 92,
+        "right": 1411.1875,
+        "bottom": 380.59375,
+        "left": 979.1875
+      },
+      "label": {
+        "x": 1290.21875,
+        "y": 125.984375,
+        "width": 120,
+        "height": 116.09375,
+        "top": 125.984375,
+        "right": 1410.21875,
+        "bottom": 242.078125,
+        "left": 1290.21875
+      },
+      "number": {
+        "x": 1290.21875,
+        "y": 125.984375,
+        "width": 120,
+        "height": 14,
+        "top": 125.984375,
+        "right": 1410.21875,
+        "bottom": 139.984375,
+        "left": 1290.21875
+      },
+      "title": {
+        "x": 1290.21875,
+        "y": 149.984375,
+        "width": 120,
+        "height": 47.5,
+        "top": 149.984375,
+        "right": 1410.21875,
+        "bottom": 197.484375,
+        "left": 1290.21875
+      },
+      "purpose": {
+        "x": 1290.21875,
+        "y": 202.484375,
+        "width": 120,
+        "height": 39.59375,
+        "top": 202.484375,
+        "right": 1410.21875,
+        "bottom": 242.078125,
+        "left": 1290.21875
+      },
+      "sculpture": {
+        "x": 979.1875,
+        "y": 84.609375,
+        "width": 345.59375,
+        "height": 303.390625,
+        "top": 84.609375,
+        "right": 1324.78125,
+        "bottom": 388,
+        "left": 979.1875
+      },
+      "labelStyle": {
+        "top": "33.9844px",
+        "bottom": "138.516px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "file": "1366x768.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1366,
+        "height": 92,
+        "top": 0,
+        "right": 1366,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1366,
+        "height": 608,
+        "top": 92,
+        "right": 1366,
+        "bottom": 700,
+        "left": 0
+      },
+      "button": {
+        "x": 928.875,
+        "y": 92,
+        "width": 409.796875,
+        "height": 237.109375,
+        "top": 92,
+        "right": 1338.671875,
+        "bottom": 329.109375,
+        "left": 928.875
+      },
+      "label": {
+        "x": 1223.921875,
+        "y": 99.203125,
+        "width": 120,
+        "height": 116.09375,
+        "top": 99.203125,
+        "right": 1343.921875,
+        "bottom": 215.296875,
+        "left": 1223.921875
+      },
+      "number": {
+        "x": 1223.921875,
+        "y": 99.203125,
+        "width": 120,
+        "height": 14,
+        "top": 99.203125,
+        "right": 1343.921875,
+        "bottom": 113.203125,
+        "left": 1223.921875
+      },
+      "title": {
+        "x": 1223.921875,
+        "y": 123.203125,
+        "width": 120,
+        "height": 47.5,
+        "top": 123.203125,
+        "right": 1343.921875,
+        "bottom": 170.703125,
+        "left": 1223.921875
+      },
+      "purpose": {
+        "x": 1223.921875,
+        "y": 175.703125,
+        "width": 120,
+        "height": 39.59375,
+        "top": 175.703125,
+        "right": 1343.921875,
+        "bottom": 215.296875,
+        "left": 1223.921875
+      },
+      "sculpture": {
+        "x": 928.875,
+        "y": 85.921875,
+        "width": 327.828125,
+        "height": 249.265625,
+        "top": 85.921875,
+        "right": 1256.703125,
+        "bottom": 335.1875,
+        "left": 928.875
+      },
+      "labelStyle": {
+        "top": "7.20312px",
+        "bottom": "113.812px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1366,
+      "scrollHeight": 768,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280x720.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 92,
+        "top": 0,
+        "right": 1280,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1280,
+        "height": 560,
+        "top": 92,
+        "right": 1280,
+        "bottom": 652,
+        "left": 0
+      },
+      "button": {
+        "x": 870.390625,
+        "y": 92,
+        "width": 384,
+        "height": 218.390625,
+        "top": 92,
+        "right": 1254.390625,
+        "bottom": 310.390625,
+        "left": 870.390625
+      },
+      "label": {
+        "x": 1146.859375,
+        "y": 89.484375,
+        "width": 120,
+        "height": 116.09375,
+        "top": 89.484375,
+        "right": 1266.859375,
+        "bottom": 205.578125,
+        "left": 1146.859375
+      },
+      "number": {
+        "x": 1146.859375,
+        "y": 89.484375,
+        "width": 120,
+        "height": 14,
+        "top": 89.484375,
+        "right": 1266.859375,
+        "bottom": 103.484375,
+        "left": 1146.859375
+      },
+      "title": {
+        "x": 1146.859375,
+        "y": 113.484375,
+        "width": 120,
+        "height": 47.5,
+        "top": 113.484375,
+        "right": 1266.859375,
+        "bottom": 160.984375,
+        "left": 1146.859375
+      },
+      "purpose": {
+        "x": 1146.859375,
+        "y": 165.984375,
+        "width": 120,
+        "height": 39.59375,
+        "top": 165.984375,
+        "right": 1266.859375,
+        "bottom": 205.578125,
+        "left": 1146.859375
+      },
+      "sculpture": {
+        "x": 870.390625,
+        "y": 86.40625,
+        "width": 307.1875,
+        "height": 229.59375,
+        "top": 86.40625,
+        "right": 1177.578125,
+        "bottom": 316,
+        "left": 870.390625
+      },
+      "labelStyle": {
+        "top": "-2.51562px",
+        "bottom": "104.812px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1280,
+      "scrollHeight": 720,
+      "clippedByHeader": true,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "file": "1440x650.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "top": 0,
+        "right": 1440,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 490,
+        "top": 92,
+        "right": 1440,
+        "bottom": 582,
+        "left": 0
+      },
+      "button": {
+        "x": 979.1875,
+        "y": 92,
+        "width": 432,
+        "height": 191.09375,
+        "top": 92,
+        "right": 1411.1875,
+        "bottom": 283.09375,
+        "left": 979.1875
+      },
+      "label": {
+        "x": 1290.21875,
+        "y": 75.28125,
+        "width": 120,
+        "height": 116.09375,
+        "top": 75.28125,
+        "right": 1410.21875,
+        "bottom": 191.375,
+        "left": 1290.21875
+      },
+      "number": {
+        "x": 1290.21875,
+        "y": 75.28125,
+        "width": 120,
+        "height": 14,
+        "top": 75.28125,
+        "right": 1410.21875,
+        "bottom": 89.28125,
+        "left": 1290.21875
+      },
+      "title": {
+        "x": 1290.21875,
+        "y": 99.28125,
+        "width": 120,
+        "height": 47.5,
+        "top": 99.28125,
+        "right": 1410.21875,
+        "bottom": 146.78125,
+        "left": 1290.21875
+      },
+      "purpose": {
+        "x": 1290.21875,
+        "y": 151.78125,
+        "width": 120,
+        "height": 39.59375,
+        "top": 151.78125,
+        "right": 1410.21875,
+        "bottom": 191.375,
+        "left": 1290.21875
+      },
+      "sculpture": {
+        "x": 979.1875,
+        "y": 87.109375,
+        "width": 345.59375,
+        "height": 200.890625,
+        "top": 87.109375,
+        "right": 1324.78125,
+        "bottom": 288,
+        "left": 979.1875
+      },
+      "labelStyle": {
+        "top": "-16.7188px",
+        "bottom": "91.7188px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1440,
+      "scrollHeight": 650,
+      "clippedByHeader": true,
+      "errors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "file": "1920x1080.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 92,
+        "top": 0,
+        "right": 1920,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1920,
+        "height": 920,
+        "top": 92,
+        "right": 1920,
+        "bottom": 1012,
+        "left": 0
+      },
+      "button": {
+        "x": 1305.59375,
+        "y": 92,
+        "width": 576,
+        "height": 358.796875,
+        "top": 92,
+        "right": 1881.59375,
+        "bottom": 450.796875,
+        "left": 1305.59375
+      },
+      "label": {
+        "x": 1720.3125,
+        "y": 162.484375,
+        "width": 120,
+        "height": 116.09375,
+        "top": 162.484375,
+        "right": 1840.3125,
+        "bottom": 278.578125,
+        "left": 1720.3125
+      },
+      "number": {
+        "x": 1720.3125,
+        "y": 162.484375,
+        "width": 120,
+        "height": 14,
+        "top": 162.484375,
+        "right": 1840.3125,
+        "bottom": 176.484375,
+        "left": 1720.3125
+      },
+      "title": {
+        "x": 1720.3125,
+        "y": 186.484375,
+        "width": 120,
+        "height": 47.5,
+        "top": 186.484375,
+        "right": 1840.3125,
+        "bottom": 233.984375,
+        "left": 1720.3125
+      },
+      "purpose": {
+        "x": 1720.3125,
+        "y": 238.984375,
+        "width": 120,
+        "height": 39.59375,
+        "top": 238.984375,
+        "right": 1840.3125,
+        "bottom": 278.578125,
+        "left": 1720.3125
+      },
+      "sculpture": {
+        "x": 1305.59375,
+        "y": 82.8125,
+        "width": 460.796875,
+        "height": 377.1875,
+        "top": 82.8125,
+        "right": 1766.390625,
+        "bottom": 460,
+        "left": 1305.59375
+      },
+      "labelStyle": {
+        "top": "70.4844px",
+        "bottom": "172.219px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 1120,
+      "height": 600,
+      "file": "1120x600.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1120,
+        "height": 92,
+        "top": 0,
+        "right": 1120,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1120,
+        "height": 490,
+        "top": 92,
+        "right": 1120,
+        "bottom": 582,
+        "left": 0
+      },
+      "button": {
+        "x": 761.59375,
+        "y": 92,
+        "width": 336,
+        "height": 191.09375,
+        "top": 92,
+        "right": 1097.59375,
+        "bottom": 283.09375,
+        "left": 761.59375
+      },
+      "label": {
+        "x": 1003.5,
+        "y": 75.28125,
+        "width": 120,
+        "height": 116.09375,
+        "top": 75.28125,
+        "right": 1123.5,
+        "bottom": 191.375,
+        "left": 1003.5
+      },
+      "number": {
+        "x": 1003.5,
+        "y": 75.28125,
+        "width": 120,
+        "height": 14,
+        "top": 75.28125,
+        "right": 1123.5,
+        "bottom": 89.28125,
+        "left": 1003.5
+      },
+      "title": {
+        "x": 1003.5,
+        "y": 99.28125,
+        "width": 120,
+        "height": 47.5,
+        "top": 99.28125,
+        "right": 1123.5,
+        "bottom": 146.78125,
+        "left": 1003.5
+      },
+      "purpose": {
+        "x": 1003.5,
+        "y": 151.78125,
+        "width": 120,
+        "height": 39.59375,
+        "top": 151.78125,
+        "right": 1123.5,
+        "bottom": 191.375,
+        "left": 1003.5
+      },
+      "sculpture": {
+        "x": 761.59375,
+        "y": 87.109375,
+        "width": 268.796875,
+        "height": 200.890625,
+        "top": 87.109375,
+        "right": 1030.390625,
+        "bottom": 288,
+        "left": 761.59375
+      },
+      "labelStyle": {
+        "top": "-16.7188px",
+        "bottom": "91.7188px",
+        "height": "116.094px",
+        "width": "120px"
+      },
+      "scrollWidth": 1120,
+      "scrollHeight": 650,
+      "clippedByHeader": true,
+      "errors": []
+    },
+    {
+      "width": 646,
+      "height": 365,
+      "file": "646x365.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 646,
+        "height": 125,
+        "top": 0,
+        "right": 646,
+        "bottom": 125,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 125,
+        "width": 646,
+        "height": 577,
+        "top": 125,
+        "right": 646,
+        "bottom": 702,
+        "left": 0
+      },
+      "button": {
+        "x": 38.75,
+        "y": 494.265625,
+        "width": 239.015625,
+        "height": 207.71875,
+        "top": 494.265625,
+        "right": 277.765625,
+        "bottom": 701.984375,
+        "left": 38.75
+      },
+      "label": {
+        "x": 38.75,
+        "y": 621.984375,
+        "width": 239.015625,
+        "height": 83,
+        "top": 621.984375,
+        "right": 277.765625,
+        "bottom": 704.984375,
+        "left": 38.75
+      },
+      "number": {
+        "x": 38.75,
+        "y": 621.984375,
+        "width": 239.015625,
+        "height": 11,
+        "top": 621.984375,
+        "right": 277.765625,
+        "bottom": 632.984375,
+        "left": 38.75
+      },
+      "title": {
+        "x": 38.75,
+        "y": 635.984375,
+        "width": 142.71875,
+        "height": 47.5,
+        "top": 635.984375,
+        "right": 181.46875,
+        "bottom": 683.484375,
+        "left": 38.75
+      },
+      "purpose": {
+        "x": 38.75,
+        "y": 688.484375,
+        "width": 239.015625,
+        "height": 16.5,
+        "top": 688.484375,
+        "right": 277.765625,
+        "bottom": 704.984375,
+        "left": 38.75
+      },
+      "sculpture": {
+        "x": 6.453125,
+        "y": 494.265625,
+        "width": 271.3125,
+        "height": 144.25,
+        "top": 494.265625,
+        "right": 277.765625,
+        "bottom": 638.515625,
+        "left": 6.453125
+      },
+      "labelStyle": {
+        "top": "127.719px",
+        "bottom": "-3px",
+        "height": "83px",
+        "width": "239.016px"
+      },
+      "scrollWidth": 646,
+      "scrollHeight": 760,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "file": "390x844.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 125,
+        "top": 0,
+        "right": 390,
+        "bottom": 125,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 125,
+        "width": 390,
+        "height": 661,
+        "top": 125,
+        "right": 390,
+        "bottom": 786,
+        "left": 0
+      },
+      "button": {
+        "x": 23.390625,
+        "y": 548.03125,
+        "width": 144.296875,
+        "height": 237.953125,
+        "top": 548.03125,
+        "right": 167.6875,
+        "bottom": 785.984375,
+        "left": 23.390625
+      },
+      "label": {
+        "x": 23.390625,
+        "y": 689.484375,
+        "width": 144.296875,
+        "height": 99.5,
+        "top": 689.484375,
+        "right": 167.6875,
+        "bottom": 788.984375,
+        "left": 23.390625
+      },
+      "number": {
+        "x": 23.390625,
+        "y": 689.484375,
+        "width": 144.296875,
+        "height": 11,
+        "top": 689.484375,
+        "right": 167.6875,
+        "bottom": 700.484375,
+        "left": 23.390625
+      },
+      "title": {
+        "x": 23.390625,
+        "y": 703.484375,
+        "width": 142.71875,
+        "height": 47.5,
+        "top": 703.484375,
+        "right": 166.109375,
+        "bottom": 750.984375,
+        "left": 23.390625
+      },
+      "purpose": {
+        "x": 23.390625,
+        "y": 755.984375,
+        "width": 144.296875,
+        "height": 33,
+        "top": 755.984375,
+        "right": 167.6875,
+        "bottom": 788.984375,
+        "left": 23.390625
+      },
+      "sculpture": {
+        "x": 3.890625,
+        "y": 548.03125,
+        "width": 163.796875,
+        "height": 165.25,
+        "top": 548.03125,
+        "right": 167.6875,
+        "bottom": 713.28125,
+        "left": 3.890625
+      },
+      "labelStyle": {
+        "top": "141.453px",
+        "bottom": "-3px",
+        "height": "99.5px",
+        "width": "144.297px"
+      },
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "file": "768x1024.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 92,
+        "top": 0,
+        "right": 768,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 768,
+        "height": 864,
+        "top": 92,
+        "right": 768,
+        "bottom": 956,
+        "left": 0
+      },
+      "button": {
+        "x": 522.234375,
+        "y": 92,
+        "width": 230.390625,
+        "height": 336.953125,
+        "top": 92,
+        "right": 752.625,
+        "bottom": 428.953125,
+        "left": 522.234375
+      },
+      "label": {
+        "x": 549.875,
+        "y": 353.28125,
+        "width": 165,
+        "height": 116.09375,
+        "top": 353.28125,
+        "right": 714.875,
+        "bottom": 469.375,
+        "left": 549.875
+      },
+      "number": {
+        "x": 549.875,
+        "y": 353.28125,
+        "width": 165,
+        "height": 14,
+        "top": 353.28125,
+        "right": 714.875,
+        "bottom": 367.28125,
+        "left": 549.875
+      },
+      "title": {
+        "x": 549.875,
+        "y": 377.28125,
+        "width": 142.71875,
+        "height": 47.5,
+        "top": 377.28125,
+        "right": 692.59375,
+        "bottom": 424.78125,
+        "left": 549.875
+      },
+      "purpose": {
+        "x": 549.875,
+        "y": 429.78125,
+        "width": 165,
+        "height": 39.59375,
+        "top": 429.78125,
+        "right": 714.875,
+        "bottom": 469.375,
+        "left": 549.875
+      },
+      "sculpture": {
+        "x": 522.234375,
+        "y": 83.375,
+        "width": 184.3125,
+        "height": 354.234375,
+        "top": 83.375,
+        "right": 706.546875,
+        "bottom": 437.609375,
+        "left": 522.234375
+      },
+      "labelStyle": {
+        "top": "261.281px",
+        "bottom": "-40.4219px",
+        "height": "116.094px",
+        "width": "165px"
+      },
+      "scrollWidth": 768,
+      "scrollHeight": 1024,
+      "clippedByHeader": false,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "file": "1024x768.png",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 92,
+        "top": 0,
+        "right": 1024,
+        "bottom": 92,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 92,
+        "width": 1024,
+        "height": 608,
+        "top": 92,
+        "right": 1024,
+        "bottom": 700,
+        "left": 0
+      },
+      "button": {
+        "x": 696.3125,
+        "y": 92,
+        "width": 307.1875,
+        "height": 237.109375,
+        "top": 92,
+        "right": 1003.5,
+        "bottom": 329.109375,
+        "left": 696.3125
+      },
+      "label": {
+        "x": 733.171875,
+        "y": 241.46875,
+        "width": 165,
+        "height": 116.09375,
+        "top": 241.46875,
+        "right": 898.171875,
+        "bottom": 357.5625,
+        "left": 733.171875
+      },
+      "number": {
+        "x": 733.171875,
+        "y": 241.46875,
+        "width": 165,
+        "height": 14,
+        "top": 241.46875,
+        "right": 898.171875,
+        "bottom": 255.46875,
+        "left": 733.171875
+      },
+      "title": {
+        "x": 733.171875,
+        "y": 265.46875,
+        "width": 142.71875,
+        "height": 47.5,
+        "top": 265.46875,
+        "right": 875.890625,
+        "bottom": 312.96875,
+        "left": 733.171875
+      },
+      "purpose": {
+        "x": 733.171875,
+        "y": 317.96875,
+        "width": 165,
+        "height": 39.59375,
+        "top": 317.96875,
+        "right": 898.171875,
+        "bottom": 357.5625,
+        "left": 733.171875
+      },
+      "sculpture": {
+        "x": 696.3125,
+        "y": 85.921875,
+        "width": 245.75,
+        "height": 249.265625,
+        "top": 85.921875,
+        "right": 942.0625,
+        "bottom": 335.1875,
+        "left": 696.3125
+      },
+      "labelStyle": {
+        "top": "149.469px",
+        "bottom": "-28.4531px",
+        "height": "116.094px",
+        "width": "165px"
+      },
+      "scrollWidth": 1024,
+      "scrollHeight": 768,
+      "clippedByHeader": false,
+      "errors": []
+    }
+  ]
+}
