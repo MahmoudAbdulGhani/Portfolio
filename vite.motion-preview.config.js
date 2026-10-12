@@ -5,6 +5,9 @@ import { reviewFixtures } from './scripts/review-fixtures.mjs';
 // Explicit review mode: public CMS snapshot only; no requests reach production.
 config.server.allowedHosts = ['terminal.local'];
 config.server.proxy = {};
+// Generated QA recordings can be locked while Playwright finalizes them on
+// Windows. Serve them normally without making the frontend watcher own them.
+config.server.watch = { ...config.server.watch, ignored: ['**/docs/design/**', '**/.motion-preview/**'] };
 config.plugins.push({ name: 'readonly-motion-preview',
   // Explicit frontend fixture; never changes browser/OS preferences or production.
   transformIndexHtml: {

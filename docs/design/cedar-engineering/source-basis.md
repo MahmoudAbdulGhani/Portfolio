@@ -1,0 +1,38 @@
+# Cedar: calculated facts and interpretation
+
+Inspected 12 October 2026. Portfolio baseline: `2f2eb61ad0ca2c2cd3fe97b8711ac67a583185da`. Source repository requested by the user: [nireezalsweidan/Construction-Project-Management-Accounting-System](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System), pinned at **`ab4aff541fb46b6c54831f16a4352657369c1063`**. Read-only clone; no Django startup, environment-file access, migrations, financial submission, live database or provider call. The inspected advisor and financial modules have no diff from the existing case study's `0a47f1fe1d16d587116d5debcc63fd76538a0e24` reference. Older evidence links remain valid.
+
+| Boundary | Inspected source and finding |
+| --- | --- |
+| Actual financial figures | [`apps/projects/financial.py`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/apps/projects/financial.py), `_invoice_bucket` / `get_project_financial_summary`: project-linked supplier and contractor invoice totals form `expenses.invoiced`. Billed states are SENT, PARTIALLY_PAID, PAID and OVERDUE; draft/cancelled records are excluded. Allocated payments separately produce paid/outstanding figures. |
+| Calculation before narration | [`apps/projects/advisor.py`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/apps/projects/advisor.py), `_project_progress_ratio` / `get_project_risk_forecast`: average phase progress is clamped to 0–100%. For positive contract and progress, total-cost estimate = invoiced actual cost ÷ progress ratio, bounded below by actual cost. Otherwise it retains actual cost. Margin = (contract − estimate) ÷ contract × 100, or 0 for a nonpositive contract. `_risk_level` chooses the worst applicable explicit threshold; risk is not chosen by the LLM. |
+| AI inputs | `_build_groq_summary` sends project code/name, calculated risk label, formatted contract, actual cost, estimated total cost, estimated margin, cost ratio and four threshold sets. Raw invoices, allocations and phase records are not sent. Average phase progress is not a separate payload key; it has already influenced the estimate. |
+| AI output and writes | The optional Groq chat completion returns text. The function trims a nonempty string and returns it as `explanation`. No tool/function-call contract or financial update is present in this inspected path. [`apps/projects/views.py`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/apps/projects/views.py), `ProjectViewSet.risk_forecast`, is a GET action returning that result. [`apps/projects/models.py`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/apps/projects/models.py), `get_active_budget`, reads budget rows. No financial save/update is called by the advisor boundary. This finding concerns this path, not every endpoint in the application. |
+| Failure and validation | Missing key, failed SDK import, provider exceptions and empty/non-string content retain deterministic explanatory text. The prompt instructs the model to use provided numbers, but nonempty text receives no numerical verification. Do not imply that every generated explanation is accurate or audited. |
+| Browser rendering | [`static/js/project_detail.js`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/static/js/project_detail.js), `loadRiskForecast`, reads the GET result and assigns explanation via `textContent`. Request failure presents an unavailable-estimate message. |
+| Existing tests | [`apps/projects/tests.py`](https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System/blob/ab4aff541fb46b6c54831f16a4352657369c1063/apps/projects/tests.py) documents forecast label/threshold and worst-indicator tests. These Django tests were inspected, not executed against the remote/shared database. |
+
+## Demonstration assumptions
+
+- Fictional contract USD 100,000; supplier invoices USD 25,000 and contractor invoices USD 15,000. Actual invoiced cost is USD 40,000. These are teaching values, not financial results or records copied from Cedar.
+- One local control changes average phase progress: 0, 25, 50, 75 or 100%. The source computes that mean from phase records; the demonstration takes the mean as its input. USD is an explicit sample currency, not a claim about every source record's currency.
+- At 50%, cost ÷ 0.50 = USD 80,000, margin 20%. At 25%, estimate is USD 160,000, margin −60%. At 0%, source fallback retains USD 40,000 rather than extrapolating. The explanation warns that this is not evidence of the eventual completion cost.
+- JavaScript implements this limited arithmetic for the selected samples. Its finite/nonnegative amount validation is a local demonstration rule, not an asserted source API policy. It is not a replacement for Python Decimal accounting, invoice validation, budget/risk/schedule calculations, provenance, locking or an accounting audit.
+- Interpret reveals a prewritten, local explanation. It cannot modify the calculated values and makes no AI/network/database request. Refresh regenerates only this teaching text.
+- Retaining an old explanation, marking it outdated and requiring an explicit refresh are **demonstration teaching behavior**. The inspected source does not implement this freshness workflow. This is deliberately distinct from JobPilot's actual revision-protected acceptance boundary.
+- The fixed cross-beam represents calculated facts and the diagonal their relationship to interpretation. Numbered markers/labels identify actual photographed beams. Only a connector's emphasis and text opacity change; there is no invented mechanical articulation, altered joint, masked gap or new artwork. This remains an artistic metaphor.
+
+## Attribution and verification limits
+
+The frozen public CMS lists **Mahmoud Abdul Ghani, Mohammad Dib, Nireez Al Sweidan and Nada Al Ahmad**. The advisor/domain architecture is team implementation; code inspection does not establish exclusive personal authorship. Mahmoud's three selected contribution statements and all eleven statements in disclosure are unchanged, as are the existing role/collaborator treatment and other case-study source references.
+
+`scripts/verify-cedar-source.py` extracts the original advisor functions with Python AST and supplies offline settings, phase aggregation, financial-summary and budget/time stubs. **Nine** calculation cases produce the committed Decimal reference fixture; **eight** narration/fallback checks exercise the original return behavior through a fake SDK, without provider traffic. `tests/cedar-boundary.test.mjs` compares the portfolio arithmetic against that source-generated fixture and checks state separation/reset. This is isolated source-function evidence, not a Django integration, provider-quality, production accounting or concurrency test.
+
+To reproduce after obtaining a read-only checkout of the pinned revision:
+
+```text
+python scripts/verify-cedar-source.py <path-to-pinned-checkout>
+node --test tests/cedar-boundary.test.mjs
+```
+
+Browser/GPU scope, before/after captures, recordings, final CI and remaining gaps are recorded in `design-qa.md`, the review HTML and the draft PR closeout. No boundary substitution was necessary: the requested calculation/interpretation boundary is supported by the inspected implementation.
