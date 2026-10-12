@@ -1,0 +1,78 @@
+{
+  "sourceRevision": "ab4aff541fb46b6c54831f16a4352657369c1063",
+  "sourcePath": "apps/projects/advisor.py",
+  "cases": [
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 50,
+      "total": "80000.00",
+      "margin": "20.00%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 25,
+      "total": "160000.00",
+      "margin": "-60.00%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 75,
+      "total": "53333.33",
+      "margin": "46.67%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 100,
+      "total": "40000.00",
+      "margin": "60.00%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 0,
+      "total": "40000.00",
+      "margin": "60.00%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 0,
+      "progress": 50,
+      "total": "0.00",
+      "margin": "100.00%",
+      "costRatio": "0.00%"
+    },
+    {
+      "contract": 0,
+      "actual": 40000,
+      "progress": 50,
+      "total": "40000.00",
+      "margin": "0.00%",
+      "costRatio": "0.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": -10,
+      "total": "40000.00",
+      "margin": "60.00%",
+      "costRatio": "40.00%"
+    },
+    {
+      "contract": 100000,
+      "actual": 40000,
+      "progress": 110,
+      "total": "40000.00",
+      "margin": "60.00%",
+      "costRatio": "40.00%"
+    }
+  ]
+}

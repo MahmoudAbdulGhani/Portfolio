@@ -16,6 +16,7 @@ import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { MotionRig } from "./MotionRig";
 import { ProfileBoundary } from './ProfileBoundary';
+import { CedarBoundary } from './CedarBoundary';
 import { warmRig } from "./rig-loader";
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { collectionTiming, createCollectionMotion } from './collection-motion';
@@ -219,8 +220,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
   }, [items, selected, origin]);
 
   useLayoutEffect(() => {
-    if (selected?.kind === 'jobpilot' && location.hash === '#jobpilot-engineering') {
-      root.current?.querySelector<HTMLElement>('#jobpilot-engineering')?.focus({ preventScroll: true });
+    const headingId = selected?.kind === 'jobpilot' ? 'jobpilot-engineering' : selected?.kind === 'cedar' ? 'cedar-engineering' : null;
+    if (headingId && location.hash === `#${headingId}`) {
+      root.current?.querySelector<HTMLElement>(`#${headingId}`)?.focus({ preventScroll: true });
     }
   }, [items, selected, location.key, location.hash]);
 
@@ -312,7 +314,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
     <main
       id="main-content"
       tabIndex={-1}
-      className={`stage${selected ? " is-expanded" : ""}${selected?.kind === 'jobpilot' ? ' has-profile-boundary' : ''}`}
+      className={`stage${selected ? " is-expanded" : ""}${selected?.kind === 'jobpilot' ? ' has-profile-boundary' : selected?.kind === 'cedar' ? ' has-cedar-boundary' : ''}`}
       data-selection-state={state.phase === 'active' ? 'settled' : state.phase === 'selecting' ? 'loading' : state.phase}
       data-motion-phase={state.phase}
       data-content-state="ready"
@@ -496,9 +498,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
                     ))}
                   </div>
                 )}
-                {selected.kind === 'jobpilot' ? <div className="selection-project-links" role="group" aria-label="Selected project navigation">
+                {['jobpilot', 'cedar'].includes(selected.kind) ? <div className="selection-project-links" role="group" aria-label="Selected project navigation">
                   {caseLink}
-                  <Link className="explore-engineering" tabIndex={0} to={{ search: location.search, hash: '#jobpilot-engineering' }} replace state={location.state}>Explore the engineering<FiArrowDown /></Link>
+                  <Link className="explore-engineering" tabIndex={0} to={{ search: location.search, hash: `#${selected.kind}-engineering` }} replace state={location.state}>Explore the engineering<FiArrowDown /></Link>
                 </div> : caseLink}
                 <button className="back-collection" onClick={back}>
                   <FiArrowLeft />
@@ -508,6 +510,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
             </section>
           </div>
           {selected.kind === 'jobpilot' && <div className="collection-boundary"><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} /></div>}
+          {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
         </>
       )}
     </main>

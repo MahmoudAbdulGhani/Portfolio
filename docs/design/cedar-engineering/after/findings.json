@@ -1,0 +1,102 @@
+{
+  "phase": "after",
+  "baseline": "2f2eb61ad0ca2c2cd3fe97b8711ac67a583185da",
+  "environment": "Windows Chrome with original assets and frozen public GET records. Normal opening: actual GPU; forced unavailable WebGL fallback. Tablet/phone viewports and reduced motion are browser emulation, not physical-device testing.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "destination": {
+        "top": 120,
+        "bottom": 153.59375
+      },
+      "layout": {
+        "overflow": false,
+        "artWidth": 260,
+        "copy": "Calculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nDemonstration reset. Progress: 50%. Calculated estimate: USD 80,000.00.\n\nSource basis and demonstration limits"
+      },
+      "readerOverflow": false
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "destination": {
+        "top": 120.046875,
+        "bottom": 153.640625
+      },
+      "layout": {
+        "overflow": false,
+        "artWidth": 260,
+        "copy": "Calculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nDemonstration reset. Progress: 50%. Calculated estimate: USD 80,000.00.\n\nSource basis and demonstration limits"
+      },
+      "readerOverflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "destination": {
+        "top": 120,
+        "bottom": 153.59375
+      },
+      "layout": {
+        "overflow": false,
+        "artWidth": 240,
+        "copy": "Calculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nDemonstration reset. Progress: 50%. Calculated estimate: USD 80,000.00.\n\nSource basis and demonstration limits"
+      },
+      "readerOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "destination": {
+        "top": 120,
+        "bottom": 180
+      },
+      "layout": {
+        "overflow": false,
+        "artWidth": 220,
+        "copy": "Calculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nDemonstration reset. Progress: 50%. Calculated estimate: USD 80,000.00.\n\nSource basis and demonstration limits"
+      },
+      "readerOverflow": false
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "mode": "normal",
+      "errors": [],
+      "writes": [],
+      "openingRenderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "destination": {
+        "top": 120,
+        "bottom": 210
+      },
+      "layout": {
+        "overflow": false,
+        "artWidth": 220,
+        "copy": "Calculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n2\nInterpret\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nDemonstration reset. Progress: 50%. Calculated estimate: USD 80,000.00.\n\nSource basis and demonstration limits"
+      },
+      "readerOverflow": false
+    }
+  ]
+}
