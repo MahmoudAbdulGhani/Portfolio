@@ -8,7 +8,22 @@ test.beforeEach(async({page})=>{
   await page.route('**/api/**',route=>{const path=new URL(route.request().url()).pathname;return route.fulfill({json:path==='/api/projects'?caseStudyProjects:path.startsWith('/api/projects/')?caseStudyProjects.find(p=>path===`/api/projects/${p.slug}`):path==='/api/profile'?{name:'Test owner',title:'Developer',socials:[],experience:[]}:[]});});
 });
 test('invitation, membership and explicit call attempt remain distinct; rejected requests do not change membership',async({page})=>{
-  const writes:string[]=[],sockets:string[]=[];page.on('request',r=>{if(!['GET','HEAD'].includes(r.method()))writes.push(r.url());});page.on('websocket',s=>sockets.push(s.url()));
+  const writes:string[]=[];page.on('request',r=>{if(!['GET','HEAD'].includes(r.method()))writes.push(r.url());});
+  await page.addInitScript(()=>{
+    const attempted:string[]=[];
+    Object.assign(window,{__lobbyApplicationSockets:attempted});
+    const Original=window.WebSocket;
+    window.WebSocket=class extends Original {
+      constructor(url:string|URL,protocols?:string|string[]){
+        // Vite's own development connection uses this explicit subprotocol.
+        // Record every application attempt, including ones that never connect.
+        const target=new URL(String(url),location.href);
+        const vite=protocols==='vite-hmr'&&target.host===location.host&&target.pathname==='/'&&target.searchParams.has('token');
+        if(!vite)attempted.push(String(url));
+        super(url,protocols);
+      }
+    };
+  });
   await page.goto('/?project=lobby');const demo=region(page);
   await expect(demo.locator('.lobby-membership')).toHaveText('Invited · not a member');
   await demo.getByRole('button',{name:'Try to enter the call',exact:true}).click();
@@ -27,7 +42,8 @@ test('invitation, membership and explicit call attempt remain distinct; rejected
   await demo.getByRole('button',{name:'Try to enter the call',exact:true}).click();await expect(demo).toHaveAttribute('data-phase','denied');
   await demo.getByLabel('Fictional participant').selectOption('mira');await expect(demo.locator('.lobby-membership')).toHaveText('Active member');
   await demo.getByRole('button',{name:'Reset',exact:true}).click();await expect(demo.locator('.lobby-membership')).toHaveText('Invited · not a member');
-  expect(writes).toEqual([]);expect(sockets).toEqual([]);
+  expect(writes).toEqual([]);
+  expect(await page.evaluate(()=>(window as unknown as {__lobbyApplicationSockets:string[]}).__lobbyApplicationSockets)).toEqual([]);
 });
 test('rapid actions, Reset and closing cancel obsolete guide emphasis without gating controls',async({page})=>{
   await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');await page.getByRole('button',{name:'Explore Lobby',exact:true}).click();
