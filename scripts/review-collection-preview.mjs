@@ -5,7 +5,7 @@ import path from 'node:path';
 const phase=process.argv[2]??'after';
 if(!['before','after'].includes(phase))throw new Error('Use before or after');
 const mode=process.argv.includes('--fallback')?'fallback':process.argv.includes('--reduced')?'reduced':'normal';
-const output=`docs/design/collection-preview/${mode==='normal'?phase:mode}`;
+const output=`${process.env.REVIEW_OUTPUT_ROOT??'docs/design/collection-preview'}/${mode==='normal'?phase:mode}`;
 await mkdir(output,{recursive:true});
 const content=JSON.parse(await readFile('.motion-preview/public-content.json','utf8'));
 const baseUrl=process.env.PLAYWRIGHT_BASE_URL??'http://127.0.0.1:5185';

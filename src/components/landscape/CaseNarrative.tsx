@@ -9,6 +9,7 @@ import { ScreenshotFrame } from './ScreenshotFrame';
 import { CaseDisclosure } from './CaseDisclosure';
 import { ProfileBoundary } from './ProfileBoundary';
 import { CedarBoundary } from './CedarBoundary';
+import { LobbyBoundary } from './LobbyBoundary';
 import './case-narrative.css';
 
 export function CaseNarrative({ project, study, screens, openGallery }: {
@@ -80,12 +81,13 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
         {team.length > 1 && <p className="story-evidence-note">These decisions describe the team’s implementation. Individual contributions are listed separately above.</p>}
         {project.slug === 'jobpilot-ai' && <ProfileBoundary />}
         {project.slug === 'construction-project-management-accounting-system' && <CedarBoundary />}
+        {project.slug === 'lobby' && <LobbyBoundary />}
         {study.flow && !study.flowPlacement && project.slug !== 'jobpilot-ai' && <figure className="decision-path">
           <h3>{study.flow.title}</h3>
           <ol>{study.flow.steps.map(step => <li key={step}>{step}</li>)}</ol>
           <figcaption>{study.flow.description}</figcaption>
         </figure>}
-        <div className="engineering-decisions">{study.decisions.filter(decision => !(project.slug === 'construction-project-management-accounting-system' && decision.sources.includes('advisor'))).map(decision => <CaseDisclosure key={decision.title} heading title={decision.title} description={decision.constraint}>
+        <div className="engineering-decisions">{study.decisions.filter(decision => !(project.slug === 'construction-project-management-accounting-system' && decision.sources.includes('advisor')) && !(project.slug === 'lobby' && decision.sources.includes('media'))).map(decision => <CaseDisclosure key={decision.title} heading title={decision.title} description={decision.constraint}>
           <div><p>{decision.choice}</p><p>{decision.consequence}</p>
             {study.sources.filter(source => decision.sources.includes(source.id)).map(source => <a className="text-link" key={source.id} href={source.url} target="_blank" rel="noopener noreferrer">{source.label}{source.access === 'private' && ' (access required)'}<FiArrowUpRight /></a>)}
           </div>

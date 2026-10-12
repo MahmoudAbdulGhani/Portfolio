@@ -17,7 +17,9 @@ async function fixtures(page: Page, mode: typeof modes[number]) {
   await page.route('https://screens.example.test/**', async route => route.fulfill({contentType:'image/png', body:await caseImage(route.request().url())}));
   await page.route('**/api/**', route => {
     const path = new URL(route.request().url()).pathname;
-    return route.fulfill({json: path === '/api/projects' ? caseStudyProjects : []});
+    // Match the two actual exposed Lobby choices, rather than its reader cover.
+    const projects=caseStudyProjects.map(project=>project.slug==='lobby' ? {...project,screenshots:['/projects/lobby/friends.webp','/projects/lobby/audio-room.webp',...project.screenshots!]} : project);
+    return route.fulfill({json: path === '/api/projects' ? projects : []});
   });
 }
 async function bounds(page: Page) {
@@ -75,9 +77,9 @@ for (const mode of modes) {
           expect(await choices.nth(i).evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         }
       }
-      if (slug !== 'lobby') {
+      {
         await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();
-        const heading=page.locator(slug === cedar ? '#cedar-engineering' : '#jobpilot-engineering');
+        const heading=page.locator(slug === cedar ? '#cedar-engineering' : slug === 'lobby' ? '#lobby-engineering' : '#jobpilot-engineering');
         await expect(heading).toBeFocused(); await expect(heading).toBeInViewport({ratio:1});
       }
       await page.keyboard.press('Escape');

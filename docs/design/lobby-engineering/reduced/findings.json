@@ -1,0 +1,247 @@
+{
+  "phase": "after",
+  "baseline": "76f7575d858feab4b4640d6650f150abce0812ee",
+  "environment": "Windows Chrome. GPU strings identify actual WebGL; phone/tablet viewports, reduced motion and unavailable-WebGL fallback are browser emulation. No physical device testing.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 541.5,
+        "captionTop": 565.453125,
+        "controlsTop": 675.203125,
+        "proportionError": 0.04379977246873068,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120.203125,
+        "bottom": 153.796875
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 536,
+        "captionTop": 559.4375,
+        "controlsTop": 669.1875,
+        "proportionError": 0.5506257110352522,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120.1875,
+        "bottom": 153.78125
+      }
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 541.5,
+        "captionTop": 565.453125,
+        "controlsTop": 675.203125,
+        "proportionError": 0.04379977246873068,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120.203125,
+        "bottom": 153.796875
+      }
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 536,
+        "captionTop": 559.4375,
+        "controlsTop": 669.1875,
+        "proportionError": 0.5506257110352522,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120.1875,
+        "bottom": 153.78125
+      }
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 555.390625,
+        "captionTop": 579.34375,
+        "controlsTop": 689.09375,
+        "proportionError": 0.04379977246873068,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 153.59375
+      }
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 552.90625,
+        "captionTop": 576.34375,
+        "controlsTop": 686.09375,
+        "proportionError": 0.5506257110352522,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 153.59375
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 552.78125,
+        "captionTop": 576.8125,
+        "controlsTop": 686.5625,
+        "proportionError": 0.034120370370374076,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 187.1875
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 550.546875,
+        "captionTop": 574.796875,
+        "controlsTop": 684.546875,
+        "proportionError": 0.2635879629629585,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 187.1875
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 397.0625,
+        "captionTop": 420.5625,
+        "controlsTop": 505.5,
+        "proportionError": 0.49284803206995775,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 210
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 395.90625,
+        "captionTop": 419.5625,
+        "controlsTop": 504.5,
+        "proportionError": 0.33769132653060296,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 210
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "choice": 0,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 382.859375,
+        "captionTop": 406.65625,
+        "controlsTop": 491.59375,
+        "proportionError": 0.19828736654804402,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 240
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "choice": 1,
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "geometry": {
+        "imageBottom": 382.09375,
+        "captionTop": 405.65625,
+        "controlsTop": 490.59375,
+        "proportionError": 0.43688834519572595,
+        "overflow": false
+      },
+      "errors": [],
+      "destination": {
+        "top": 120,
+        "bottom": 240
+      }
+    }
+  ]
+}

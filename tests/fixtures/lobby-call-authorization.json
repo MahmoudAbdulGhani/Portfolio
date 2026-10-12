@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/Ahmad-khalaf517/lobby",
+  "revision": "2c8b1d3948b799acfe76d2559723aace143a1f52",
+  "file": "apps/api/src/modules/calls/calls.service.ts",
+  "sha256": "cc851b5ee5eaef47c762865e4f1b11f809e3347b25e7bbb43b2e303a91952190",
+  "method": "  private async authorizeMembership(\n    userId: string,\n    channelId: string,\n  ): Promise<{ member: GuestMember; channel: GuestChannel }> {\n    const guest = this.supabase.client.schema('guest');\n    const [memberResult, channelResult] = await Promise.all([\n      guest\n        .from('channel_members')\n        .select()\n        .eq('channel_id', channelId)\n        .eq('user_id', userId)\n        .is('left_at', null)\n        .is('removed_at', null)\n        .maybeSingle(),\n      guest.from('channels').select().eq('id', channelId).maybeSingle(),\n    ]);\n\n    if (memberResult.error || channelResult.error) {\n      throw memberResult.error ?? channelResult.error;\n    }\n    if (!channelResult.data) {\n      throw new NotFoundException('Guest channel was not found');\n    }\n    if (!memberResult.data) {\n      throw new ForbiddenException('Active guest channel membership required');\n    }\n    if (\n      channelResult.data.status !== 'active' ||\n      new Date(channelResult.data.expires_at).getTime() <= Date.now()\n    ) {\n      throw new GoneException('Guest channel is no longer active');\n    }\n\n    return { member: memberResult.data, channel: channelResult.data };\n  }\n\n"
+}

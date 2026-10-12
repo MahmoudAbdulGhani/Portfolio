@@ -1,0 +1,19 @@
+{
+  "environment": "Local Chrome WebM metadata and midpoint decoding; not physical-device playback.",
+  "findings": [
+    {
+      "src": "after/1440-900-interaction.webm",
+      "duration": 35.24,
+      "width": 1440,
+      "height": 900,
+      "error": null
+    },
+    {
+      "src": "after/390-844-interaction.webm",
+      "duration": 33.88,
+      "width": 390,
+      "height": 844,
+      "error": null
+    }
+  ]
+}
