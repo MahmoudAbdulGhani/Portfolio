@@ -44,7 +44,7 @@ try {
       await experience.locator('summary').click(); await page.waitForTimeout(240);
       await expect(experience).toHaveAttribute('open','');
     }
-    await page.getByRole('button',{name:'Capabilities',exact:true}).click();
+    await page.getByRole('tab',{name:'Capabilities',exact:true}).click();
     await shot('capabilities');
     checks.push('Original portrait and major group entry; experience reverse; unchanged Capabilities');
     await go('/projects'); await expect(page.locator('.work-preview').first()).toBeVisible();

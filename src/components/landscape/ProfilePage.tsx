@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
 import { FiPlus, FiArrowUpRight } from "react-icons/fi";
 import {
@@ -17,6 +17,10 @@ import { CaseDisclosure } from './CaseDisclosure';
 import { ProfileEntry } from './ProfileEntry';
 import { evidenceUrl } from "../../lib/assistant-response";
 import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
+import { profileCapabilityEvidence } from './profile-evidence';
+import './profile-record.css';
+
+const tabs = ['Experience', 'Education & training', 'Capabilities'];
 
 export function ProfilePage() {
   const profile = useProfile(),
@@ -26,6 +30,13 @@ export function ProfilePage() {
     projects = useProjects(),
     skills = useSkills();
   const [tab, setTab] = useState("Experience");
+  const id = useId(), tabButtons = useRef<Array<HTMLButtonElement | null>>([]);
+  const tabKey = (label: string) => `${id}-${tabs.indexOf(label)}`;
+  const moveTab = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : event.key === 'ArrowLeft' ? (index + tabs.length - 1) % tabs.length : event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : null;
+    if (next === null) return;
+    event.preventDefault(); setTab(tabs[next]); tabButtons.current[next]?.focus();
+  };
   const person = profile.data;
   const capabilities = capabilityGroups(technologies.data, skills.data, projects.data);
   if (profile.isLoading || profile.isError || !person)
@@ -84,14 +95,17 @@ export function ProfilePage() {
         <span className="eyebrow">PROFILE / WORKING RECORD</span>
         <h1 className="view-heading">{person.title}</h1>
         <p className="profile-intro">
-          {person.professionalSummary || person.bio}
+          I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.
         </p>
-        <div className="record-tabs" role="group" aria-label="Profile records">
-          {["Experience", "Education & training", "Capabilities"].map(
-            (label) => (
+        <div className="record-tabs" role="tablist" aria-label="Profile records">
+          {tabs.map(
+            (label, index) => (
               <button
                 key={label}
-                aria-pressed={tab === label}
+                type="button" role="tab" id={`${tabKey(label)}-tab`} aria-controls={`${tabKey(label)}-panel`}
+                aria-selected={tab === label} tabIndex={tab === label ? 0 : -1}
+                ref={element => { tabButtons.current[index] = element; }}
+                onKeyDown={event => moveTab(event, index)}
                 onClick={() => setTab(label)}
               >
                 {label}
@@ -99,25 +113,24 @@ export function ProfilePage() {
             ),
           )}
         </div>
-        {tab === "Experience" && (
-          <div className="experience-record">
+          <div className="experience-record" role="tabpanel" id={`${tabKey('Experience')}-panel`} aria-labelledby={`${tabKey('Experience')}-tab`} hidden={tab !== 'Experience'} tabIndex={0}>
             {person.experience
               .filter((item) => item.published !== false)
               .map((item, index) => (
-                <CaseDisclosure key={item.id ?? index} title={item.company || item.facility || 'Experience'} defaultOpen={index === 0} summary={<>
+                <CaseDisclosure key={item.id ?? index} title={item.role || item.milestone || 'Experience'} defaultOpen={index === 0} summary={<>
                     <span className="record-number">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span>
-                      <strong>{item.company || item.facility}</strong>
-                      <span>{item.role || item.milestone}</span>
+                    <span className="record-copy">
+                      <strong>{item.role || item.milestone}</strong>
+                      <span className="record-organization">{item.company || item.facility}</span>
+                      {item.meta && <span className="record-date">{item.meta}</span>}
+                      {item.learningEvidence?.completion.status === 'unverified' && <span className="learning-status">Program completion is not verified by the available records.</span>}
                     </span>
-                    {item.meta && <span className="record-date">{item.meta}</span>}
-                    <FiPlus className="disclosure-indicator" />
+                    <FiPlus className="disclosure-indicator" aria-hidden="true" />
                   </>}>
                   <div className="record-detail">
                     {(item.description || item.details) && <p>{item.description || item.details}</p>}
-                    {item.learningEvidence?.completion.status === 'unverified' && <p className="learning-status">Program completion is not verified by the available records.</p>}
                     {Boolean(item.bullets?.length) && (
                       <ul>
                         {item.bullets?.map((bullet) => (
@@ -125,14 +138,12 @@ export function ProfilePage() {
                         ))}
                       </ul>
                     )}
-                    {item.location && <span className="eyebrow">{item.location}</span>}
+                    {item.location && <span className="record-location">{item.location}</span>}
                   </div>
                 </CaseDisclosure>
               ))}
           </div>
-        )}
-        {tab === "Education & training" && (
-          <div className="education-record">
+          <div className="education-record" role="tabpanel" id={`${tabKey('Education & training')}-panel`} aria-labelledby={`${tabKey('Education & training')}-tab`} hidden={tab !== 'Education & training'} tabIndex={0}>
             <PublicDataState
               loading={education.isLoading || certifications.isLoading}
               error={education.isError || certifications.isError}
@@ -144,24 +155,27 @@ export function ProfilePage() {
             />
             {education.data
               ?.filter((item) => item.published !== false)
-              .map((item) => (
+              .map((item, index) => (
                 <section key={item.id}>
-                  <span className="eyebrow">{item.period}</span>
+                  <span className="record-number">{String(index + 1).padStart(2,'0')} / Education</span>
                   <h2>{item.degree}</h2>
-                  <p>{item.school}</p>
+                  <p className="record-organization">{item.school}</p>
+                  {item.period && <p className="record-date">{item.period}</p>}
                   {item.details && <p>{item.details}</p>}
+                  {item.learningEvidence?.completion.status === 'unverified' && <p className="learning-status">Completion is not independently verified by the available records.</p>}
                 </section>
               ))}
             <div className="training-record">
               {certifications.data
                 ?.filter((item) => item.published !== false)
-                .map((item) => (
+                .map((item, index) => {
+                  const period = item.year || monthDate(item.issueDate) || (item.expectedDate ? `Expected ${monthDate(item.expectedDate)}` : '');
+                  return (
                   <div key={item.id}>
-                    <span className="eyebrow">{recordKind(item)}</span>
+                    <span className="record-number">{String(index + 1).padStart(2,'0')} / {recordKind(item)}</span>
                     <h3>{item.title}</h3>
-                    <p>
-                      {[item.issuer, item.year || monthDate(item.issueDate) || (item.expectedDate ? `Expected ${monthDate(item.expectedDate)}` : '')].filter(Boolean).join(' · ')}
-                    </p>
+                    {item.issuer && <p className="record-organization">{item.issuer}</p>}
+                    {period && <p className="record-date">{period}</p>}
                     {item.description && <p>{item.description}</p>}
                     <p className="learning-status">Completion and certification are not verified by the available records.</p>
                     {item.url && (
@@ -176,12 +190,10 @@ export function ProfilePage() {
                       </a>
                     )}
                   </div>
-                ))}
+                ); })}
             </div>
           </div>
-        )}
-        {tab === "Capabilities" && (
-          <div className="capability-record">
+          <div className="capability-record" role="tabpanel" id={`${tabKey('Capabilities')}-panel`} aria-labelledby={`${tabKey('Capabilities')}-tab`} hidden={tab !== 'Capabilities'} tabIndex={0}>
             <PublicDataState
               loading={technologies.isLoading || skills.isLoading}
               error={technologies.isError || skills.isError}
@@ -191,11 +203,12 @@ export function ProfilePage() {
               }}
               label="capabilities"
             />
+            <p className="capability-evidence-note">Project references connect these capabilities to documented work. Team-project evidence describes the shared implementation.</p>
             {["languages", "frameworks", "databases", "ops", "skills"]
               .filter(category => capabilities.some(item => item.category === category))
-              .map(category => (
+              .map((category, index) => (
                 <div key={category}>
-                  <h2>{category === "ops" ? "Operations" : category === 'skills' ? 'Skills' : category}</h2>
+                  <h2><span className="record-number">{String(index + 1).padStart(2,'0')}</span>{category === "ops" ? "Operations" : category === 'skills' ? 'Practices' : category}</h2>
                   <ul className={category === 'skills' ? undefined : 'capability-summary'}>
                     {capabilities.filter(item => item.category === category).map(item => (
                       <li key={item.key} data-competency={item.key}>
@@ -203,18 +216,15 @@ export function ProfilePage() {
                           {item.name}
                           {item.details.length > 0 && <span className="competency-detail"> — {item.details.join(', ')}</span>}
                         </span>
-                        {item.evidence.map(project => (
-                          <Link key={project.slug} className="text-link" to={`/projects/${project.slug}`}>
-                            Demonstrated in {project.name}<FiArrowUpRight />
-                          </Link>
-                        ))}
+                        {profileCapabilityEvidence(item, projects.data ?? []).map(project => <Link key={project.slug} className="text-link profile-evidence-link" to={project.href}>
+                          <span><span className="profile-evidence-scope">{project.scope}</span><span>{project.number && `${project.number} `}{project.name}{project.boundary && <span className="profile-evidence-boundary">{project.boundary}</span>}</span></span><FiArrowUpRight aria-hidden="true" />
+                        </Link>)}
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
           </div>
-        )}
         <Link className="text-link profile-contact" to="/contact">
           Let’s build something useful
           <FiArrowUpRight />

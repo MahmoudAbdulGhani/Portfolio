@@ -1,0 +1,1263 @@
+{
+  "images": 189,
+  "htmlMediaReferences": 378,
+  "competencyInventoryPreserved": true,
+  "reports": {
+    "before": {
+      "viewports": 5,
+      "tabs": 15,
+      "expandedEntries": 20,
+      "overflow": false,
+      "errors": [],
+      "writes": [],
+      "cv": [
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        }
+      ]
+    },
+    "after": {
+      "viewports": 5,
+      "tabs": 15,
+      "expandedEntries": 20,
+      "overflow": false,
+      "errors": [],
+      "writes": [],
+      "cv": [
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        }
+      ]
+    },
+    "reduced": {
+      "viewports": 5,
+      "tabs": 15,
+      "expandedEntries": 20,
+      "overflow": false,
+      "errors": [],
+      "writes": [],
+      "cv": [
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        },
+        {
+          "filename": "portfolio-cv.pdf",
+          "failure": null,
+          "sourceBytes": 31205,
+          "signature": "%PDF-"
+        }
+      ]
+    }
+  },
+  "decodedImages": [
+    {
+      "path": "reduced/1440-650-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 5241,
+      "bytes": 303677
+    },
+    {
+      "path": "reduced/1440-650-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 96514
+    },
+    {
+      "path": "reduced/1440-650-education-complete.jpg",
+      "width": 1440,
+      "height": 1588,
+      "bytes": 164557
+    },
+    {
+      "path": "reduced/1440-650-education-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 98017
+    },
+    {
+      "path": "reduced/1440-650-experience-0.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 101447
+    },
+    {
+      "path": "reduced/1440-650-experience-1.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 70006
+    },
+    {
+      "path": "reduced/1440-650-experience-2.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 68718
+    },
+    {
+      "path": "reduced/1440-650-experience-3.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59663
+    },
+    {
+      "path": "reduced/1440-650-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1234,
+      "bytes": 131919
+    },
+    {
+      "path": "reduced/1440-650-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 60596
+    },
+    {
+      "path": "reduced/1440-650-experience-complete.jpg",
+      "width": 1440,
+      "height": 1392,
+      "bytes": 158098
+    },
+    {
+      "path": "reduced/1440-650-experience-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 105236
+    },
+    {
+      "path": "reduced/1440-900-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 5241,
+      "bytes": 303676
+    },
+    {
+      "path": "reduced/1440-900-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 127646
+    },
+    {
+      "path": "reduced/1440-900-education-complete.jpg",
+      "width": 1440,
+      "height": 1588,
+      "bytes": 164557
+    },
+    {
+      "path": "reduced/1440-900-education-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 129116
+    },
+    {
+      "path": "reduced/1440-900-experience-0.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 119048
+    },
+    {
+      "path": "reduced/1440-900-experience-1.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 99768
+    },
+    {
+      "path": "reduced/1440-900-experience-2.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 101734
+    },
+    {
+      "path": "reduced/1440-900-experience-3.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 102247
+    },
+    {
+      "path": "reduced/1440-900-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1234,
+      "bytes": 131919
+    },
+    {
+      "path": "reduced/1440-900-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 102660
+    },
+    {
+      "path": "reduced/1440-900-experience-complete.jpg",
+      "width": 1440,
+      "height": 1392,
+      "bytes": 158098
+    },
+    {
+      "path": "reduced/1440-900-experience-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 142955
+    },
+    {
+      "path": "reduced/320-844-capabilities-complete.jpg",
+      "width": 320,
+      "height": 7093,
+      "bytes": 224915
+    },
+    {
+      "path": "reduced/320-844-capabilities-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "reduced/320-844-education-complete.jpg",
+      "width": 320,
+      "height": 2398,
+      "bytes": 115412
+    },
+    {
+      "path": "reduced/320-844-education-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "reduced/320-844-experience-0.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 53775
+    },
+    {
+      "path": "reduced/320-844-experience-1.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 41005
+    },
+    {
+      "path": "reduced/320-844-experience-2.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48460
+    },
+    {
+      "path": "reduced/320-844-experience-3.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 41986
+    },
+    {
+      "path": "reduced/320-844-experience-collapsed-complete.jpg",
+      "width": 320,
+      "height": 1903,
+      "bytes": 87268
+    },
+    {
+      "path": "reduced/320-844-experience-collapsed-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37729
+    },
+    {
+      "path": "reduced/320-844-experience-complete.jpg",
+      "width": 320,
+      "height": 2236,
+      "bytes": 114070
+    },
+    {
+      "path": "reduced/320-844-experience-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "reduced/390-844-capabilities-complete.jpg",
+      "width": 390,
+      "height": 7005,
+      "bytes": 228826
+    },
+    {
+      "path": "reduced/390-844-capabilities-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "reduced/390-844-education-complete.jpg",
+      "width": 390,
+      "height": 2259,
+      "bytes": 116695
+    },
+    {
+      "path": "reduced/390-844-education-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "reduced/390-844-experience-0.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 59129
+    },
+    {
+      "path": "reduced/390-844-experience-1.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 42007
+    },
+    {
+      "path": "reduced/390-844-experience-2.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 50663
+    },
+    {
+      "path": "reduced/390-844-experience-3.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43824
+    },
+    {
+      "path": "reduced/390-844-experience-collapsed-complete.jpg",
+      "width": 390,
+      "height": 1764,
+      "bytes": 89600
+    },
+    {
+      "path": "reduced/390-844-experience-collapsed-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 44329
+    },
+    {
+      "path": "reduced/390-844-experience-complete.jpg",
+      "width": 390,
+      "height": 2022,
+      "bytes": 114230
+    },
+    {
+      "path": "reduced/390-844-experience-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "reduced/768-1024-capabilities-complete.jpg",
+      "width": 768,
+      "height": 6516,
+      "bytes": 257903
+    },
+    {
+      "path": "reduced/768-1024-capabilities-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 89701
+    },
+    {
+      "path": "reduced/768-1024-education-complete.jpg",
+      "width": 768,
+      "height": 1749,
+      "bytes": 126254
+    },
+    {
+      "path": "reduced/768-1024-education-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 100431
+    },
+    {
+      "path": "reduced/768-1024-experience-0.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 87688
+    },
+    {
+      "path": "reduced/768-1024-experience-1.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 78734
+    },
+    {
+      "path": "reduced/768-1024-experience-2.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 78828
+    },
+    {
+      "path": "reduced/768-1024-experience-3.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 79496
+    },
+    {
+      "path": "reduced/768-1024-experience-collapsed-complete.jpg",
+      "width": 768,
+      "height": 1291,
+      "bytes": 98560
+    },
+    {
+      "path": "reduced/768-1024-experience-collapsed-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 84864
+    },
+    {
+      "path": "reduced/768-1024-experience-complete.jpg",
+      "width": 768,
+      "height": 1524,
+      "bytes": 125405
+    },
+    {
+      "path": "reduced/768-1024-experience-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 112260
+    },
+    {
+      "path": "before/1440-650-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 3407,
+      "bytes": 244841
+    },
+    {
+      "path": "before/1440-650-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 99443
+    },
+    {
+      "path": "before/1440-650-education-complete.jpg",
+      "width": 1440,
+      "height": 1432,
+      "bytes": 153554
+    },
+    {
+      "path": "before/1440-650-education-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 100831
+    },
+    {
+      "path": "before/1440-650-experience-0.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 96291
+    },
+    {
+      "path": "before/1440-650-experience-1.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 69620
+    },
+    {
+      "path": "before/1440-650-experience-2.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 68685
+    },
+    {
+      "path": "before/1440-650-experience-3.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 68086
+    },
+    {
+      "path": "before/1440-650-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1123,
+      "bytes": 130275
+    },
+    {
+      "path": "before/1440-650-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77020
+    },
+    {
+      "path": "before/1440-650-experience-complete.jpg",
+      "width": 1440,
+      "height": 1277,
+      "bytes": 152498
+    },
+    {
+      "path": "before/1440-650-experience-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 115239
+    },
+    {
+      "path": "before/1440-900-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 3407,
+      "bytes": 244841
+    },
+    {
+      "path": "before/1440-900-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 134849
+    },
+    {
+      "path": "before/1440-900-education-complete.jpg",
+      "width": 1440,
+      "height": 1432,
+      "bytes": 153554
+    },
+    {
+      "path": "before/1440-900-education-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 135464
+    },
+    {
+      "path": "before/1440-900-experience-0.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 113707
+    },
+    {
+      "path": "before/1440-900-experience-1.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 118908
+    },
+    {
+      "path": "before/1440-900-experience-2.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 114116
+    },
+    {
+      "path": "before/1440-900-experience-3.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 113256
+    },
+    {
+      "path": "before/1440-900-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1123,
+      "bytes": 130275
+    },
+    {
+      "path": "before/1440-900-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 122273
+    },
+    {
+      "path": "before/1440-900-experience-complete.jpg",
+      "width": 1440,
+      "height": 1277,
+      "bytes": 152498
+    },
+    {
+      "path": "before/1440-900-experience-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 144830
+    },
+    {
+      "path": "before/320-844-capabilities-complete.jpg",
+      "width": 320,
+      "height": 5126,
+      "bytes": 185115
+    },
+    {
+      "path": "before/320-844-capabilities-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 46108
+    },
+    {
+      "path": "before/320-844-education-complete.jpg",
+      "width": 320,
+      "height": 2170,
+      "bytes": 103074
+    },
+    {
+      "path": "before/320-844-education-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 45953
+    },
+    {
+      "path": "before/320-844-experience-0.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 44300
+    },
+    {
+      "path": "before/320-844-experience-1.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38415
+    },
+    {
+      "path": "before/320-844-experience-2.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 40035
+    },
+    {
+      "path": "before/320-844-experience-3.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36841
+    },
+    {
+      "path": "before/320-844-experience-collapsed-complete.jpg",
+      "width": 320,
+      "height": 1771,
+      "bytes": 80995
+    },
+    {
+      "path": "before/320-844-experience-collapsed-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 35797
+    },
+    {
+      "path": "before/320-844-experience-complete.jpg",
+      "width": 320,
+      "height": 2041,
+      "bytes": 98227
+    },
+    {
+      "path": "before/320-844-experience-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 45953
+    },
+    {
+      "path": "before/390-844-capabilities-complete.jpg",
+      "width": 390,
+      "height": 4706,
+      "bytes": 184357
+    },
+    {
+      "path": "before/390-844-capabilities-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 53367
+    },
+    {
+      "path": "before/390-844-education-complete.jpg",
+      "width": 390,
+      "height": 2027,
+      "bytes": 106335
+    },
+    {
+      "path": "before/390-844-education-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 53212
+    },
+    {
+      "path": "before/390-844-experience-0.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 49569
+    },
+    {
+      "path": "before/390-844-experience-1.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 41082
+    },
+    {
+      "path": "before/390-844-experience-2.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 45588
+    },
+    {
+      "path": "before/390-844-experience-3.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40812
+    },
+    {
+      "path": "before/390-844-experience-collapsed-complete.jpg",
+      "width": 390,
+      "height": 1625,
+      "bytes": 81853
+    },
+    {
+      "path": "before/390-844-experience-collapsed-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 42424
+    },
+    {
+      "path": "before/390-844-experience-complete.jpg",
+      "width": 390,
+      "height": 1874,
+      "bytes": 100794
+    },
+    {
+      "path": "before/390-844-experience-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 53212
+    },
+    {
+      "path": "before/768-1024-capabilities-complete.jpg",
+      "width": 768,
+      "height": 3988,
+      "bytes": 210684
+    },
+    {
+      "path": "before/768-1024-capabilities-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 93784
+    },
+    {
+      "path": "before/768-1024-education-complete.jpg",
+      "width": 768,
+      "height": 1578,
+      "bytes": 116831
+    },
+    {
+      "path": "before/768-1024-education-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 99348
+    },
+    {
+      "path": "before/768-1024-experience-0.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69654
+    },
+    {
+      "path": "before/768-1024-experience-1.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 77659
+    },
+    {
+      "path": "before/768-1024-experience-2.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69729
+    },
+    {
+      "path": "before/768-1024-experience-3.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 72953
+    },
+    {
+      "path": "before/768-1024-experience-collapsed-complete.jpg",
+      "width": 768,
+      "height": 1314,
+      "bytes": 96386
+    },
+    {
+      "path": "before/768-1024-experience-collapsed-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 88027
+    },
+    {
+      "path": "before/768-1024-experience-complete.jpg",
+      "width": 768,
+      "height": 1582,
+      "bytes": 117099
+    },
+    {
+      "path": "before/768-1024-experience-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 103943
+    },
+    {
+      "path": "after/1440-650-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 5241,
+      "bytes": 303676
+    },
+    {
+      "path": "after/1440-650-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 96514
+    },
+    {
+      "path": "after/1440-650-education-complete.jpg",
+      "width": 1440,
+      "height": 1588,
+      "bytes": 164557
+    },
+    {
+      "path": "after/1440-650-education-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 98017
+    },
+    {
+      "path": "after/1440-650-experience-0.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 101447
+    },
+    {
+      "path": "after/1440-650-experience-1.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 70006
+    },
+    {
+      "path": "after/1440-650-experience-2.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 68718
+    },
+    {
+      "path": "after/1440-650-experience-3.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59663
+    },
+    {
+      "path": "after/1440-650-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1234,
+      "bytes": 131919
+    },
+    {
+      "path": "after/1440-650-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 60596
+    },
+    {
+      "path": "after/1440-650-experience-complete.jpg",
+      "width": 1440,
+      "height": 1392,
+      "bytes": 158098
+    },
+    {
+      "path": "after/1440-650-experience-viewport.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 105236
+    },
+    {
+      "path": "after/1440-900-capabilities-complete.jpg",
+      "width": 1440,
+      "height": 5241,
+      "bytes": 303677
+    },
+    {
+      "path": "after/1440-900-capabilities-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 127646
+    },
+    {
+      "path": "after/1440-900-education-complete.jpg",
+      "width": 1440,
+      "height": 1588,
+      "bytes": 164557
+    },
+    {
+      "path": "after/1440-900-education-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 129116
+    },
+    {
+      "path": "after/1440-900-experience-0.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 119048
+    },
+    {
+      "path": "after/1440-900-experience-1.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 99768
+    },
+    {
+      "path": "after/1440-900-experience-2.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 101734
+    },
+    {
+      "path": "after/1440-900-experience-3.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 102247
+    },
+    {
+      "path": "after/1440-900-experience-collapsed-complete.jpg",
+      "width": 1440,
+      "height": 1234,
+      "bytes": 131919
+    },
+    {
+      "path": "after/1440-900-experience-collapsed-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 102660
+    },
+    {
+      "path": "after/1440-900-experience-complete.jpg",
+      "width": 1440,
+      "height": 1392,
+      "bytes": 158098
+    },
+    {
+      "path": "after/1440-900-experience-viewport.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 142955
+    },
+    {
+      "path": "after/1440-evidence-ai-api-integration.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 85383
+    },
+    {
+      "path": "after/1440-evidence-django.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 108973
+    },
+    {
+      "path": "after/1440-evidence-supabase.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 111806
+    },
+    {
+      "path": "after/320-844-capabilities-complete.jpg",
+      "width": 320,
+      "height": 7093,
+      "bytes": 224915
+    },
+    {
+      "path": "after/320-844-capabilities-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "after/320-844-education-complete.jpg",
+      "width": 320,
+      "height": 2398,
+      "bytes": 115412
+    },
+    {
+      "path": "after/320-844-education-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "after/320-844-experience-0.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 53775
+    },
+    {
+      "path": "after/320-844-experience-1.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 41005
+    },
+    {
+      "path": "after/320-844-experience-2.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48460
+    },
+    {
+      "path": "after/320-844-experience-3.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 41986
+    },
+    {
+      "path": "after/320-844-experience-collapsed-complete.jpg",
+      "width": 320,
+      "height": 1903,
+      "bytes": 87268
+    },
+    {
+      "path": "after/320-844-experience-collapsed-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37729
+    },
+    {
+      "path": "after/320-844-experience-complete.jpg",
+      "width": 320,
+      "height": 2236,
+      "bytes": 114070
+    },
+    {
+      "path": "after/320-844-experience-viewport.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 48215
+    },
+    {
+      "path": "after/320-evidence-ai-api-integration.jpg",
+      "width": 320,
+      "height": 900,
+      "bytes": 41890
+    },
+    {
+      "path": "after/320-evidence-django.jpg",
+      "width": 320,
+      "height": 900,
+      "bytes": 46774
+    },
+    {
+      "path": "after/320-evidence-supabase.jpg",
+      "width": 320,
+      "height": 900,
+      "bytes": 51480
+    },
+    {
+      "path": "after/390-844-capabilities-complete.jpg",
+      "width": 390,
+      "height": 7005,
+      "bytes": 228826
+    },
+    {
+      "path": "after/390-844-capabilities-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "after/390-844-education-complete.jpg",
+      "width": 390,
+      "height": 2259,
+      "bytes": 116695
+    },
+    {
+      "path": "after/390-844-education-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "after/390-844-experience-0.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 59129
+    },
+    {
+      "path": "after/390-844-experience-1.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 42007
+    },
+    {
+      "path": "after/390-844-experience-2.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 50663
+    },
+    {
+      "path": "after/390-844-experience-3.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43824
+    },
+    {
+      "path": "after/390-844-experience-collapsed-complete.jpg",
+      "width": 390,
+      "height": 1764,
+      "bytes": 89600
+    },
+    {
+      "path": "after/390-844-experience-collapsed-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 44329
+    },
+    {
+      "path": "after/390-844-experience-complete.jpg",
+      "width": 390,
+      "height": 2022,
+      "bytes": 114230
+    },
+    {
+      "path": "after/390-844-experience-viewport.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 52591
+    },
+    {
+      "path": "after/390-evidence-ai-api-integration.jpg",
+      "width": 390,
+      "height": 900,
+      "bytes": 51664
+    },
+    {
+      "path": "after/390-evidence-django.jpg",
+      "width": 390,
+      "height": 900,
+      "bytes": 58444
+    },
+    {
+      "path": "after/390-evidence-supabase.jpg",
+      "width": 390,
+      "height": 900,
+      "bytes": 55754
+    },
+    {
+      "path": "after/768-1024-capabilities-complete.jpg",
+      "width": 768,
+      "height": 6516,
+      "bytes": 257903
+    },
+    {
+      "path": "after/768-1024-capabilities-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 89701
+    },
+    {
+      "path": "after/768-1024-education-complete.jpg",
+      "width": 768,
+      "height": 1749,
+      "bytes": 126254
+    },
+    {
+      "path": "after/768-1024-education-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 100431
+    },
+    {
+      "path": "after/768-1024-experience-0.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 87688
+    },
+    {
+      "path": "after/768-1024-experience-1.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 78734
+    },
+    {
+      "path": "after/768-1024-experience-2.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 78828
+    },
+    {
+      "path": "after/768-1024-experience-3.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 79496
+    },
+    {
+      "path": "after/768-1024-experience-collapsed-complete.jpg",
+      "width": 768,
+      "height": 1291,
+      "bytes": 98560
+    },
+    {
+      "path": "after/768-1024-experience-collapsed-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 84864
+    },
+    {
+      "path": "after/768-1024-experience-complete.jpg",
+      "width": 768,
+      "height": 1524,
+      "bytes": 125405
+    },
+    {
+      "path": "after/768-1024-experience-viewport.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 112260
+    }
+  ]
+}

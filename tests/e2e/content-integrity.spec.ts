@@ -51,16 +51,16 @@ test('Profile shares date/status corrections and removes duplicate and unsupport
   await page.route('**/api/skills', route => route.fulfill({ json: ['pytest', 'Pytest', 'SOLID', 'SOLID Principles', 'JavaScript', 'JavaScript (ES6+)'].map((name, i) => ({ id: i, name, status: 'verified' })) }));
   await page.route('**/api/certifications', route => route.fulfill({ json: [{ id: 'aws', title: 'AWS re/Start Bootcamp', issuer: 'AWS', year: 'July 2025 - Oct 2025', description: 'Cloud training; completion expected in 2026.', expectedDate: '2026', url: 'https://example.com/program' }] }));
   await page.goto('/profile');
-  await expect(page.locator('.experience-record strong')).toHaveText(['The Digital Hub', 'Oigetit', 'Ishtari']);
-  await expect(page.locator('.record-date')).toHaveText(['Jun 2026 – Sep 2026', 'May 2026 – Aug 2026', 'Dec 2025 – Jan 2026']);
+  await expect(page.locator('.experience-record .record-organization')).toHaveText(['The Digital Hub', 'Oigetit', 'Ishtari']);
+  await expect(page.locator('.experience-record .record-date')).toHaveText(['Jun 2026 – Sep 2026', 'May 2026 – Aug 2026', 'Dec 2025 – Jan 2026']);
   await expect(page.locator('.record-detail').first()).toContainText('Participated in');
-  await expect(page.locator('.record-detail').first()).toContainText('Program completion is not verified');
-  await page.getByRole('button', { name: 'Education & training', exact: true }).click();
+  await expect(page.locator('.experience-record .learning-status').first()).toContainText('Program completion is not verified');
+  await page.getByRole('tab', { name: 'Education & training', exact: true }).click();
   await expect(page.locator('.training-record')).toContainText('Jul 2025 – Oct 2025');
   await expect(page.locator('.training-record')).not.toContainText('expected');
   await expect(page.locator('.training-record')).toContainText('Completion and certification are not verified');
   await expect(page.getByRole('link', { name: 'Program information' })).toBeVisible();
-  await page.getByRole('button', { name: 'Capabilities', exact: true }).click();
+  await page.getByRole('tab', { name: 'Capabilities', exact: true }).click();
   await expect(page.locator('.capability-record li')).toHaveText(['JavaScript', 'pytest', 'SOLID']);
   await expect(page.locator('.capability-record')).not.toContainText('verified');
 });
@@ -75,7 +75,7 @@ test('Capabilities has one location per competency across categories and Skills,
   for (const width of [1363, 320]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto('/profile');
-    await page.getByRole('button', { name: 'Capabilities', exact: true }).click();
+    await page.getByRole('tab', { name: 'Capabilities', exact: true }).click();
     const rows = page.locator('.capability-record [data-competency]');
     await expect(rows).toHaveCount(8);
     for (const key of ['html', 'css', 'mysql', 'mariadb', 'git', 'github', 'argon2', 'ai api integration']) {

@@ -75,7 +75,7 @@ try {
         await page.locator('.contact-form').scrollIntoViewIfNeeded();
         await page.screenshot({ path: `${output}/contact-form-${width}.jpg`, type: 'jpeg', quality: 85 });
       } else if (route.name === 'profile') {
-        const capabilities = page.getByRole('button', { name: 'Capabilities', exact: true });
+        const capabilities = page.getByRole('tab', { name: 'Capabilities', exact: true });
         await capabilities.click();
         await page.locator('.capability-record').evaluate(el => el.scrollIntoView({ block: 'start' }));
         await page.screenshot({ path: `${output}/profile-capabilities-${width}.jpg`, type: 'jpeg', quality: 85 });
