@@ -276,7 +276,6 @@ for (const [width, height] of [
         category: "Project operations & accounting",
       },
     ];
-    const captionTops: number[] = [];
     for (const { record, title, category } of selections) {
       await page.goto(`/?project=${record.slug}`);
       await expect(page.locator(".is-expanded")).toHaveAttribute(
@@ -322,6 +321,8 @@ for (const [width, height] of [
             fontSize: parseFloat(getComputedStyle(title).fontSize),
             objectFit: getComputedStyle(image).objectFit,
             imageLoaded: image.complete && image.naturalWidth > 0,
+            imageBeforeCaption: image.getBoundingClientRect().bottom <= caption.top,
+            proportionError: Math.abs(image.getBoundingClientRect().height - image.getBoundingClientRect().width * image.naturalHeight / image.naturalWidth),
             controlsBelow: controls.top >= caption.bottom,
             cta: {
               width: ctaBox.width,
@@ -343,6 +344,8 @@ for (const [width, height] of [
       expect(geometry.fontSize).toBe(width < 720 ? 32 : 52);
       expect(geometry.objectFit).toBe("contain");
       expect(geometry.imageLoaded).toBe(true);
+      expect(geometry.imageBeforeCaption).toBe(true);
+      expect(geometry.proportionError).toBeLessThan(1);
       expect(geometry.controlsBelow).toBe(true);
       expect(geometry.cta.width).toBeGreaterThanOrEqual(180);
       expect(geometry.cta.height).toBeGreaterThanOrEqual(44);
@@ -351,7 +354,6 @@ for (const [width, height] of [
         expect(geometry.cta.width).toBeCloseTo(geometry.cta.frameWidth, 0);
       expect(geometry.horizontalOverflow).toBe(false);
       expect(geometry.normalScroll).toBe(true);
-      captionTops.push(geometry.captionTop);
       const choices = page
         .getByRole("group", { name: "Preview workflow" })
         .getByRole("button");
@@ -368,11 +370,16 @@ for (const [width, height] of [
           ),
         ),
       );
-      expect(
-        await page
-          .locator(".selection-caption")
-          .evaluate((el) => el.getBoundingClientRect().top + scrollY),
-      ).toBeCloseTo(geometry.captionTop, 0);
+      await image.evaluate(node => (node as HTMLImageElement).decode());
+      await expect(page.locator('.project-image-previous')).toHaveCount(0);
+      const switched = await page.locator('.selection-frame').evaluate(frame => {
+        const image = frame.querySelector('.project-image-current img')!.getBoundingClientRect();
+        const reserved = frame.querySelector('.selection-image-frame')!.getBoundingClientRect();
+        const caption = frame.querySelector('.selection-caption')!.getBoundingClientRect();
+        return { gap: caption.top - reserved.bottom, complete: image.bottom <= caption.top };
+      });
+      expect(switched.gap).toBeCloseTo(24, 0);
+      expect(switched.complete).toBe(true);
       const cta = page.getByRole("link", {
         name: "Open case study",
         exact: true,
@@ -385,7 +392,6 @@ for (const [width, height] of [
       ).toBeFocused();
       await expect(page.locator("canvas")).toHaveCount(0);
     }
-    expect(Math.max(...captionTops) - Math.min(...captionTops)).toBeLessThan(1);
   });
 }
 

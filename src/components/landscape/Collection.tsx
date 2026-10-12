@@ -11,7 +11,7 @@ import { gsap } from "gsap";
 import { Link, useLocation, useNavigate, useNavigationType, useSearchParams } from "react-router-dom";
 import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useProjects } from "../../lib/hooks";
-import { detailScreens } from "../../lib/project-detail-screens";
+import { detailScreens, screenGeometry } from "../../lib/project-detail-screens";
 import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
 import { MotionRig } from "./MotionRig";
@@ -407,7 +407,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
           )}
           <div className="selection-frame">
             {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
-            <div className="selection-image-frame">
+            <div className="selection-image-frame" style={!screens[chapter] ? { aspectRatio: 2.15 } : undefined}>
               {screens[chapter] && !decoded.has(screens[chapter].src) && (
                 <p className="selection-preview-status" role="status">
                   Loading project preview…
@@ -432,6 +432,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored }:
                     src={screens[chapter].src}
                     alt={`${selected.project.name}: ${screens[chapter].label}`}
                     sizes="(max-width: 1000px) 88vw, 880px"
+                    dimensions={screenGeometry(screens[chapter])}
                     priority
                     retainPrevious
                     onReadyImage={(image) => {
