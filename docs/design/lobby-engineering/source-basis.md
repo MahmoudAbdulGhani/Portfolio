@@ -1,0 +1,36 @@
+# Lobby connection and access: inspected source
+
+Source repository: [Ahmad-khalaf517/lobby](https://github.com/Ahmad-khalaf517/lobby), revision **2c8b1d3948b799acfe76d2559723aace143a1f52**. This is both the existing reader’s pinned revision and the public repository HEAD inspected on 12 October 2026. The source was read from an ignored, separate no-checkout clone. No project environment file, credentials, live database or backend was accessed.
+
+## Chosen boundary
+
+**An invitation offers a connection; active room membership permits the initial call-access check.** The original proposal is supported, with the specific distinction between joining a guest room and entering its call. No substitute boundary was needed. The interface calls its action “Try to enter the call” to avoid implying that data access and media admission have identical rules.
+
+| Path at the pinned revision | Observed rule |
+| --- | --- |
+| `apps/web/src/app/features/guest-room/share-room-dialog/share-room-dialog.component.ts` | Shares a caller-provided room URL/code via link/QR. Sharing itself grants no membership. |
+| `apps/web/src/app/features/guest-room/services/guest-channel.store.ts` | `join` establishes a session, uppercases/trims the invitation code, invokes `guest.join_channel`, then loads the returned room/membership. `restore` reuses eligible current state or a readable room; registered users can join by code. `load` reads active membership and room-scoped data before subscribing. |
+| `apps/api/supabase/migrations/20260805153246_use_supabase_anonymous_auth.sql` | Identity derives from `auth.uid()`. Anonymous Supabase sessions use the authenticated database role. Display names must be trimmed, 1–40 characters and contain no control characters; registered identities use their stored profile. `is_active_channel_member` tests user/room identity with `left_at` and `removed_at` null. Room/messages/reactions SELECT policies use that helper. Guest tables are added to the Postgres Changes publication. |
+| `apps/api/supabase/migrations/20260808070905_guest_member_moderation.sql`, final `join_channel`, lines 278–433 | Requires identity; locks the normalized-code room; rejects missing room, inactive/expired room and a room-block record. Resolves display name; locks latest membership; rejects a membership marked blocked. Restores eligible existing membership by clearing departure/removal fields. For a new membership only, counts active members and rejects a full room before inserting. Success updates room activity; no invitation-acceptance row is consumed. |
+| Same migration, lines 435–445 | Membership SELECT also permits a user’s own row, so removal notifications remain readable. This exception does not grant room-message access. |
+| `apps/api/src/common/guards/supabase-auth.guard.ts`; `apps/api/src/modules/calls/calls.controller.ts` | HTTP call-token route requires a verified session and a validated UUID request. Registered community/server routes are separate from guest-room routes. |
+| `apps/api/src/modules/calls/calls.service.ts`, `authorizeMembership` | Queries the specific user/room membership with departure/removal null. Rejects missing room, missing active membership, then inactive/expired room, in that order. Does not use an invitation code or friendship status. |
+| Same service, `issueCallToken` | Prepares the LiveKit room, reads participants, checks capacity (existing identity excepted), then issues a room-specific grant. LiveKit availability may fail. The grant permits microphone and screen sharing and has a 10-minute token lifetime; that token lifetime is not an invitation lifetime. |
+| `apps/api/src/modules/servers/servers.controller.ts`, `servers.service.ts`, `servers.repository.ts`; `server-members.service.ts` | Registered community invitation codes resolve a server; joining creates missing server membership, while repeated membership is reused. Not the guest-room transition demonstrated here. |
+| `apps/api/supabase/migrations/20260809190000_harden_public_authenticated_schema.sql`; `20260809203000_require_active_channel_membership_for_realtime.sql` | Separate registered-channel policies require registered identity, server membership and active channel membership. They must not be confused with the guest helper. |
+
+The guest HTTP media path and guest data/realtime policies share the active-membership condition. **They are not the same complete rule:** the guest data helper does not inspect room expiry/status; the call service does. Client subscription filters are not authorization. Migration inspection is evidence of intended policies, not confirmation that those migrations are deployed or a proof of runtime enforcement.
+
+## Personal attribution
+
+The current public record identifies **Full-Stack Developer (team project)** and collaborative ownership. Mahmoud’s two documented statements remain unchanged: collaboration on persistent community and temporary guest-room workflows; contributions to authenticated/guest access, invitation links, validation and Supabase-backed services. The team remains Ahmad Khalaf, Bissan Al Miari, Mohamad El Mawed, Mohammad Hajeer, Nireez Al Sweidan and Mahmoud Abdul Ghani. Source inspection does not establish who authored the specific membership or media checks.
+
+## Teaching assumptions and limits
+
+Mira and Rowan, a Studio room, a ready valid session, a valid shared code, an active unexpired room and available capacity are fixed fictional inputs. Mira initially lacks membership; joining creates it locally. Rowan has an already-existing room block and cannot join. The participant selector changes which fictional identity is examined; it does not create or remove a block. A call attempt evaluates only the inspected membership/room gate. “Permitted” means that gate permits the next call step, assuming later capacity/provider checks; no call is connected and no room contents are displayed.
+
+Reset, progress, deliberate reattempt and sculpture guides are teaching controls. A denied attempt and blocked join preserve local membership. No API writes, real invitation, Supabase client, sockets or microphone/camera request exist in the component. No claims are made about friendship granting room access, single-use links, immediate connection revocation, deployed policies, concurrency, performance or call quality. Room expiry is present in source but is held constant here rather than presented as a link-expiry feature.
+
+## Verification basis
+
+`tests/fixtures/lobby-call-authorization.json` preserves the original inspected `authorizeMembership` method with revision/path and the SHA-256 of its containing source file. A Node regression transpiles that original method and executes it with isolated database stubs, comparing six allowed/denied combinations against the teaching gate, including rejection order and departure/removal filters. This is an isolated service-method check, not a real NestJS/Supabase/LiveKit integration test. SQL join behavior is source observation; the database migration suite was not executed. Reducer and browser regressions separately check the local teaching transition, unchanged denial, block rejection, Reset, motion interruption, focus, announcements and fallback.

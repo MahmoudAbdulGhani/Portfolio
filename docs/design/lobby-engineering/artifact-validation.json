@@ -1,0 +1,3390 @@
+{
+  "images": 558,
+  "htmlMediaReferences": 1118,
+  "videos": [
+    {
+      "path": "after/1440-900-interaction.webm",
+      "bytes": 4300855
+    },
+    {
+      "path": "after/390-844-interaction.webm",
+      "bytes": 2897106
+    }
+  ],
+  "reports": {
+    "before": {
+      "reviewedSelections": 12,
+      "overlap": false,
+      "overflow": false,
+      "errors": []
+    },
+    "after": {
+      "reviewedSelections": 12,
+      "overlap": false,
+      "overflow": false,
+      "errors": []
+    },
+    "reduced": {
+      "reviewedSelections": 12,
+      "overlap": false,
+      "overflow": false,
+      "errors": []
+    },
+    "fallback": {
+      "reviewedSelections": 12,
+      "overlap": false,
+      "overflow": false,
+      "errors": []
+    }
+  },
+  "decodedImages": [
+    {
+      "path": "reduced/1363-936-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "reduced/1363-936-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "reduced/1363-936-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "reduced/1363-936-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "reduced/1363-936-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "reduced/1363-936-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "reduced/1363-936-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "reduced/1363-936-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "reduced/1363-936-0-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 137615
+    },
+    {
+      "path": "reduced/1363-936-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "reduced/1363-936-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "reduced/1363-936-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "reduced/1363-936-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "reduced/1363-936-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "reduced/1363-936-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "reduced/1363-936-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "reduced/1363-936-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "reduced/1363-936-1-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 146789
+    },
+    {
+      "path": "reduced/1363-936-reader-allowed-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "reduced/1363-936-reader-allowed-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "reduced/1363-936-reader-denied-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "reduced/1363-936-reader-denied-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "reduced/1363-936-reader-inspect-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "reduced/1363-936-reader-inspect-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "reduced/1363-936-reader-joined-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "reduced/1363-936-reader-joined-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "reduced/1363-936-reader-rejected-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "reduced/1363-936-reader-rejected-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "reduced/1440-650-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77966
+    },
+    {
+      "path": "reduced/1440-650-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80168
+    },
+    {
+      "path": "reduced/1440-650-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "reduced/1440-650-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78760
+    },
+    {
+      "path": "reduced/1440-650-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80795
+    },
+    {
+      "path": "reduced/1440-650-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79976
+    },
+    {
+      "path": "reduced/1440-650-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81280
+    },
+    {
+      "path": "reduced/1440-650-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80795
+    },
+    {
+      "path": "reduced/1440-650-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 140137
+    },
+    {
+      "path": "reduced/1440-650-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77858
+    },
+    {
+      "path": "reduced/1440-650-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80151
+    },
+    {
+      "path": "reduced/1440-650-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81865
+    },
+    {
+      "path": "reduced/1440-650-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78760
+    },
+    {
+      "path": "reduced/1440-650-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80786
+    },
+    {
+      "path": "reduced/1440-650-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79936
+    },
+    {
+      "path": "reduced/1440-650-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81251
+    },
+    {
+      "path": "reduced/1440-650-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80786
+    },
+    {
+      "path": "reduced/1440-650-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150750
+    },
+    {
+      "path": "reduced/1440-650-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59279
+    },
+    {
+      "path": "reduced/1440-650-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 74307
+    },
+    {
+      "path": "reduced/1440-650-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 60362
+    },
+    {
+      "path": "reduced/1440-650-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 75375
+    },
+    {
+      "path": "reduced/1440-650-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 62327
+    },
+    {
+      "path": "reduced/1440-650-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77343
+    },
+    {
+      "path": "reduced/1440-650-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61509
+    },
+    {
+      "path": "reduced/1440-650-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 76604
+    },
+    {
+      "path": "reduced/1440-650-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61542
+    },
+    {
+      "path": "reduced/1440-650-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77765
+    },
+    {
+      "path": "reduced/1440-900-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77567
+    },
+    {
+      "path": "reduced/1440-900-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79769
+    },
+    {
+      "path": "reduced/1440-900-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81599
+    },
+    {
+      "path": "reduced/1440-900-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78524
+    },
+    {
+      "path": "reduced/1440-900-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80459
+    },
+    {
+      "path": "reduced/1440-900-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79605
+    },
+    {
+      "path": "reduced/1440-900-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80965
+    },
+    {
+      "path": "reduced/1440-900-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80459
+    },
+    {
+      "path": "reduced/1440-900-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 139989
+    },
+    {
+      "path": "reduced/1440-900-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77598
+    },
+    {
+      "path": "reduced/1440-900-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79755
+    },
+    {
+      "path": "reduced/1440-900-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81554
+    },
+    {
+      "path": "reduced/1440-900-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78497
+    },
+    {
+      "path": "reduced/1440-900-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80437
+    },
+    {
+      "path": "reduced/1440-900-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79585
+    },
+    {
+      "path": "reduced/1440-900-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80938
+    },
+    {
+      "path": "reduced/1440-900-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80418
+    },
+    {
+      "path": "reduced/1440-900-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150712
+    },
+    {
+      "path": "reduced/1440-900-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "reduced/1440-900-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "reduced/1440-900-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "reduced/1440-900-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "reduced/1440-900-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "reduced/1440-900-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "reduced/1440-900-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "reduced/1440-900-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "reduced/1440-900-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "reduced/1440-900-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "reduced/320-844-0-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69045
+    },
+    {
+      "path": "reduced/320-844-0-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 71330
+    },
+    {
+      "path": "reduced/320-844-0-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 72924
+    },
+    {
+      "path": "reduced/320-844-0-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69960
+    },
+    {
+      "path": "reduced/320-844-0-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "reduced/320-844-0-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 70815
+    },
+    {
+      "path": "reduced/320-844-0-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 72049
+    },
+    {
+      "path": "reduced/320-844-0-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "reduced/320-844-0-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 96502
+    },
+    {
+      "path": "reduced/320-844-1-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69045
+    },
+    {
+      "path": "reduced/320-844-1-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 71330
+    },
+    {
+      "path": "reduced/320-844-1-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 72924
+    },
+    {
+      "path": "reduced/320-844-1-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69960
+    },
+    {
+      "path": "reduced/320-844-1-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "reduced/320-844-1-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 70815
+    },
+    {
+      "path": "reduced/320-844-1-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 72049
+    },
+    {
+      "path": "reduced/320-844-1-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "reduced/320-844-1-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 98041
+    },
+    {
+      "path": "reduced/320-844-reader-allowed-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36137
+    },
+    {
+      "path": "reduced/320-844-reader-allowed-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38831
+    },
+    {
+      "path": "reduced/320-844-reader-denied-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36837
+    },
+    {
+      "path": "reduced/320-844-reader-denied-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39251
+    },
+    {
+      "path": "reduced/320-844-reader-inspect-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37403
+    },
+    {
+      "path": "reduced/320-844-reader-inspect-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39235
+    },
+    {
+      "path": "reduced/320-844-reader-joined-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36489
+    },
+    {
+      "path": "reduced/320-844-reader-joined-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38686
+    },
+    {
+      "path": "reduced/320-844-reader-rejected-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36975
+    },
+    {
+      "path": "reduced/320-844-reader-rejected-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 40374
+    },
+    {
+      "path": "reduced/390-844-0-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "reduced/390-844-0-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "reduced/390-844-0-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "reduced/390-844-0-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "reduced/390-844-0-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "reduced/390-844-0-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "reduced/390-844-0-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "reduced/390-844-0-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "reduced/390-844-0-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 99441
+    },
+    {
+      "path": "reduced/390-844-1-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "reduced/390-844-1-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "reduced/390-844-1-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "reduced/390-844-1-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "reduced/390-844-1-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "reduced/390-844-1-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "reduced/390-844-1-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "reduced/390-844-1-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "reduced/390-844-1-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 102484
+    },
+    {
+      "path": "reduced/390-844-reader-allowed-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 37821
+    },
+    {
+      "path": "reduced/390-844-reader-allowed-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43013
+    },
+    {
+      "path": "reduced/390-844-reader-denied-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 38834
+    },
+    {
+      "path": "reduced/390-844-reader-denied-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43989
+    },
+    {
+      "path": "reduced/390-844-reader-inspect-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40236
+    },
+    {
+      "path": "reduced/390-844-reader-inspect-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43857
+    },
+    {
+      "path": "reduced/390-844-reader-joined-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39377
+    },
+    {
+      "path": "reduced/390-844-reader-joined-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43057
+    },
+    {
+      "path": "reduced/390-844-reader-rejected-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39443
+    },
+    {
+      "path": "reduced/390-844-reader-rejected-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 45161
+    },
+    {
+      "path": "reduced/768-1024-0-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74918
+    },
+    {
+      "path": "reduced/768-1024-0-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77898
+    },
+    {
+      "path": "reduced/768-1024-0-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77977
+    },
+    {
+      "path": "reduced/768-1024-0-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76620
+    },
+    {
+      "path": "reduced/768-1024-0-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76768
+    },
+    {
+      "path": "reduced/768-1024-0-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77541
+    },
+    {
+      "path": "reduced/768-1024-0-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78953
+    },
+    {
+      "path": "reduced/768-1024-0-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76768
+    },
+    {
+      "path": "reduced/768-1024-0-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 116770
+    },
+    {
+      "path": "reduced/768-1024-1-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74918
+    },
+    {
+      "path": "reduced/768-1024-1-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77898
+    },
+    {
+      "path": "reduced/768-1024-1-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77977
+    },
+    {
+      "path": "reduced/768-1024-1-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76620
+    },
+    {
+      "path": "reduced/768-1024-1-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76768
+    },
+    {
+      "path": "reduced/768-1024-1-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77541
+    },
+    {
+      "path": "reduced/768-1024-1-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78953
+    },
+    {
+      "path": "reduced/768-1024-1-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76768
+    },
+    {
+      "path": "reduced/768-1024-1-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 123877
+    },
+    {
+      "path": "reduced/768-1024-reader-allowed-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "reduced/768-1024-reader-allowed-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "reduced/768-1024-reader-denied-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "reduced/768-1024-reader-denied-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "reduced/768-1024-reader-inspect-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "reduced/768-1024-reader-inspect-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "reduced/768-1024-reader-joined-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "reduced/768-1024-reader-joined-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "reduced/768-1024-reader-rejected-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    },
+    {
+      "path": "reduced/768-1024-reader-rejected-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    },
+    {
+      "path": "fallback/1363-936-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "fallback/1363-936-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "fallback/1363-936-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "fallback/1363-936-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "fallback/1363-936-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "fallback/1363-936-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "fallback/1363-936-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "fallback/1363-936-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "fallback/1363-936-0-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 137633
+    },
+    {
+      "path": "fallback/1363-936-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "fallback/1363-936-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "fallback/1363-936-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "fallback/1363-936-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "fallback/1363-936-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "fallback/1363-936-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "fallback/1363-936-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "fallback/1363-936-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "fallback/1363-936-1-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 146688
+    },
+    {
+      "path": "fallback/1363-936-reader-allowed-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "fallback/1363-936-reader-allowed-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "fallback/1363-936-reader-denied-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "fallback/1363-936-reader-denied-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "fallback/1363-936-reader-inspect-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "fallback/1363-936-reader-inspect-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "fallback/1363-936-reader-joined-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "fallback/1363-936-reader-joined-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "fallback/1363-936-reader-rejected-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "fallback/1363-936-reader-rejected-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "fallback/1440-650-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78019
+    },
+    {
+      "path": "fallback/1440-650-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80270
+    },
+    {
+      "path": "fallback/1440-650-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82071
+    },
+    {
+      "path": "fallback/1440-650-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78963
+    },
+    {
+      "path": "fallback/1440-650-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80819
+    },
+    {
+      "path": "fallback/1440-650-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80049
+    },
+    {
+      "path": "fallback/1440-650-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81469
+    },
+    {
+      "path": "fallback/1440-650-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80884
+    },
+    {
+      "path": "fallback/1440-650-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 140316
+    },
+    {
+      "path": "fallback/1440-650-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78072
+    },
+    {
+      "path": "fallback/1440-650-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80240
+    },
+    {
+      "path": "fallback/1440-650-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82040
+    },
+    {
+      "path": "fallback/1440-650-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78967
+    },
+    {
+      "path": "fallback/1440-650-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80894
+    },
+    {
+      "path": "fallback/1440-650-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80155
+    },
+    {
+      "path": "fallback/1440-650-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81451
+    },
+    {
+      "path": "fallback/1440-650-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80929
+    },
+    {
+      "path": "fallback/1440-650-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150911
+    },
+    {
+      "path": "fallback/1440-650-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59279
+    },
+    {
+      "path": "fallback/1440-650-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 74307
+    },
+    {
+      "path": "fallback/1440-650-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 60362
+    },
+    {
+      "path": "fallback/1440-650-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 75375
+    },
+    {
+      "path": "fallback/1440-650-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 62327
+    },
+    {
+      "path": "fallback/1440-650-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77343
+    },
+    {
+      "path": "fallback/1440-650-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61509
+    },
+    {
+      "path": "fallback/1440-650-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 76604
+    },
+    {
+      "path": "fallback/1440-650-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61542
+    },
+    {
+      "path": "fallback/1440-650-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77765
+    },
+    {
+      "path": "fallback/1440-900-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77583
+    },
+    {
+      "path": "fallback/1440-900-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79769
+    },
+    {
+      "path": "fallback/1440-900-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81598
+    },
+    {
+      "path": "fallback/1440-900-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78524
+    },
+    {
+      "path": "fallback/1440-900-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80459
+    },
+    {
+      "path": "fallback/1440-900-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79605
+    },
+    {
+      "path": "fallback/1440-900-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80965
+    },
+    {
+      "path": "fallback/1440-900-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80459
+    },
+    {
+      "path": "fallback/1440-900-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 140073
+    },
+    {
+      "path": "fallback/1440-900-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77598
+    },
+    {
+      "path": "fallback/1440-900-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79755
+    },
+    {
+      "path": "fallback/1440-900-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81534
+    },
+    {
+      "path": "fallback/1440-900-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78509
+    },
+    {
+      "path": "fallback/1440-900-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80418
+    },
+    {
+      "path": "fallback/1440-900-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79585
+    },
+    {
+      "path": "fallback/1440-900-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80938
+    },
+    {
+      "path": "fallback/1440-900-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80437
+    },
+    {
+      "path": "fallback/1440-900-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150778
+    },
+    {
+      "path": "fallback/1440-900-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "fallback/1440-900-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "fallback/1440-900-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "fallback/1440-900-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "fallback/1440-900-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "fallback/1440-900-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "fallback/1440-900-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "fallback/1440-900-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "fallback/1440-900-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "fallback/1440-900-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "fallback/320-844-0-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69039
+    },
+    {
+      "path": "fallback/320-844-0-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 71330
+    },
+    {
+      "path": "fallback/320-844-0-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 72924
+    },
+    {
+      "path": "fallback/320-844-0-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69960
+    },
+    {
+      "path": "fallback/320-844-0-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77359
+    },
+    {
+      "path": "fallback/320-844-0-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 76379
+    },
+    {
+      "path": "fallback/320-844-0-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77648
+    },
+    {
+      "path": "fallback/320-844-0-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77359
+    },
+    {
+      "path": "fallback/320-844-0-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 100642
+    },
+    {
+      "path": "fallback/320-844-1-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 74342
+    },
+    {
+      "path": "fallback/320-844-1-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 76870
+    },
+    {
+      "path": "fallback/320-844-1-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 78626
+    },
+    {
+      "path": "fallback/320-844-1-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 75352
+    },
+    {
+      "path": "fallback/320-844-1-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77359
+    },
+    {
+      "path": "fallback/320-844-1-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 76379
+    },
+    {
+      "path": "fallback/320-844-1-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77648
+    },
+    {
+      "path": "fallback/320-844-1-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 77359
+    },
+    {
+      "path": "fallback/320-844-1-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 102240
+    },
+    {
+      "path": "fallback/320-844-reader-allowed-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36137
+    },
+    {
+      "path": "fallback/320-844-reader-allowed-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38831
+    },
+    {
+      "path": "fallback/320-844-reader-denied-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36837
+    },
+    {
+      "path": "fallback/320-844-reader-denied-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39251
+    },
+    {
+      "path": "fallback/320-844-reader-inspect-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37403
+    },
+    {
+      "path": "fallback/320-844-reader-inspect-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39235
+    },
+    {
+      "path": "fallback/320-844-reader-joined-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36489
+    },
+    {
+      "path": "fallback/320-844-reader-joined-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38686
+    },
+    {
+      "path": "fallback/320-844-reader-rejected-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36975
+    },
+    {
+      "path": "fallback/320-844-reader-rejected-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 40374
+    },
+    {
+      "path": "fallback/390-844-0-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "fallback/390-844-0-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "fallback/390-844-0-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "fallback/390-844-0-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "fallback/390-844-0-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "fallback/390-844-0-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "fallback/390-844-0-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "fallback/390-844-0-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "fallback/390-844-0-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 99441
+    },
+    {
+      "path": "fallback/390-844-1-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "fallback/390-844-1-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "fallback/390-844-1-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "fallback/390-844-1-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "fallback/390-844-1-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "fallback/390-844-1-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "fallback/390-844-1-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "fallback/390-844-1-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "fallback/390-844-1-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 102464
+    },
+    {
+      "path": "fallback/390-844-reader-allowed-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 37821
+    },
+    {
+      "path": "fallback/390-844-reader-allowed-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43013
+    },
+    {
+      "path": "fallback/390-844-reader-denied-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 38834
+    },
+    {
+      "path": "fallback/390-844-reader-denied-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43989
+    },
+    {
+      "path": "fallback/390-844-reader-inspect-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40236
+    },
+    {
+      "path": "fallback/390-844-reader-inspect-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43857
+    },
+    {
+      "path": "fallback/390-844-reader-joined-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39377
+    },
+    {
+      "path": "fallback/390-844-reader-joined-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43057
+    },
+    {
+      "path": "fallback/390-844-reader-rejected-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39443
+    },
+    {
+      "path": "fallback/390-844-reader-rejected-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 45161
+    },
+    {
+      "path": "fallback/768-1024-0-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74508
+    },
+    {
+      "path": "fallback/768-1024-0-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77465
+    },
+    {
+      "path": "fallback/768-1024-0-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77588
+    },
+    {
+      "path": "fallback/768-1024-0-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76186
+    },
+    {
+      "path": "fallback/768-1024-0-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "fallback/768-1024-0-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77132
+    },
+    {
+      "path": "fallback/768-1024-0-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78610
+    },
+    {
+      "path": "fallback/768-1024-0-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "fallback/768-1024-0-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 116517
+    },
+    {
+      "path": "fallback/768-1024-1-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74508
+    },
+    {
+      "path": "fallback/768-1024-1-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77465
+    },
+    {
+      "path": "fallback/768-1024-1-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77588
+    },
+    {
+      "path": "fallback/768-1024-1-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76186
+    },
+    {
+      "path": "fallback/768-1024-1-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "fallback/768-1024-1-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77132
+    },
+    {
+      "path": "fallback/768-1024-1-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78610
+    },
+    {
+      "path": "fallback/768-1024-1-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "fallback/768-1024-1-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 123668
+    },
+    {
+      "path": "fallback/768-1024-reader-allowed-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "fallback/768-1024-reader-allowed-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "fallback/768-1024-reader-denied-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "fallback/768-1024-reader-denied-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "fallback/768-1024-reader-inspect-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "fallback/768-1024-reader-inspect-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "fallback/768-1024-reader-joined-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "fallback/768-1024-reader-joined-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "fallback/768-1024-reader-rejected-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    },
+    {
+      "path": "fallback/768-1024-reader-rejected-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    },
+    {
+      "path": "before/1363-936-0-selected.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 56023
+    },
+    {
+      "path": "before/1363-936-1-selected.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 65388
+    },
+    {
+      "path": "before/1363-936-reader.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 99532
+    },
+    {
+      "path": "before/1440-650-0-selected.jpg",
+      "width": 1440,
+      "height": 908,
+      "bytes": 54243
+    },
+    {
+      "path": "before/1440-650-1-selected.jpg",
+      "width": 1440,
+      "height": 902,
+      "bytes": 63684
+    },
+    {
+      "path": "before/1440-650-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59545
+    },
+    {
+      "path": "before/1440-900-0-selected.jpg",
+      "width": 1440,
+      "height": 908,
+      "bytes": 54484
+    },
+    {
+      "path": "before/1440-900-1-selected.jpg",
+      "width": 1440,
+      "height": 902,
+      "bytes": 64013
+    },
+    {
+      "path": "before/1440-900-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 99578
+    },
+    {
+      "path": "before/320-844-0-selected.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 25259
+    },
+    {
+      "path": "before/320-844-1-selected.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 26671
+    },
+    {
+      "path": "before/320-844-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39052
+    },
+    {
+      "path": "before/390-844-0-selected.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 26886
+    },
+    {
+      "path": "before/390-844-1-selected.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 29843
+    },
+    {
+      "path": "before/390-844-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 48751
+    },
+    {
+      "path": "before/768-1024-0-selected.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 41053
+    },
+    {
+      "path": "before/768-1024-1-selected.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 48579
+    },
+    {
+      "path": "before/768-1024-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 85861
+    },
+    {
+      "path": "all-previews/after/1363-936-cedar-0.jpg",
+      "width": 1363,
+      "height": 1821,
+      "bytes": 188654
+    },
+    {
+      "path": "all-previews/after/1363-936-cedar-1.jpg",
+      "width": 1363,
+      "height": 2461,
+      "bytes": 242417
+    },
+    {
+      "path": "all-previews/after/1363-936-jobpilot-0.jpg",
+      "width": 1363,
+      "height": 1575,
+      "bytes": 142761
+    },
+    {
+      "path": "all-previews/after/1363-936-jobpilot-1.jpg",
+      "width": 1363,
+      "height": 1575,
+      "bytes": 145546
+    },
+    {
+      "path": "all-previews/after/1363-936-lobby-0.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 149722
+    },
+    {
+      "path": "all-previews/after/1363-936-lobby-1.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 159791
+    },
+    {
+      "path": "all-previews/after/1440-650-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798,
+      "bytes": 188683
+    },
+    {
+      "path": "all-previews/after/1440-650-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461,
+      "bytes": 243973
+    },
+    {
+      "path": "all-previews/after/1440-650-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554,
+      "bytes": 145131
+    },
+    {
+      "path": "all-previews/after/1440-650-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552,
+      "bytes": 146648
+    },
+    {
+      "path": "all-previews/after/1440-650-lobby-0.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 152609
+    },
+    {
+      "path": "all-previews/after/1440-650-lobby-1.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 164294
+    },
+    {
+      "path": "all-previews/after/1440-900-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798,
+      "bytes": 188017
+    },
+    {
+      "path": "all-previews/after/1440-900-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461,
+      "bytes": 244764
+    },
+    {
+      "path": "all-previews/after/1440-900-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554,
+      "bytes": 144626
+    },
+    {
+      "path": "all-previews/after/1440-900-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552,
+      "bytes": 146020
+    },
+    {
+      "path": "all-previews/after/1440-900-lobby-0.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 152331
+    },
+    {
+      "path": "all-previews/after/1440-900-lobby-1.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 164222
+    },
+    {
+      "path": "all-previews/after/320-844-cedar-0.jpg",
+      "width": 320,
+      "height": 2561,
+      "bytes": 114349
+    },
+    {
+      "path": "all-previews/after/320-844-cedar-1.jpg",
+      "width": 320,
+      "height": 2656,
+      "bytes": 121469
+    },
+    {
+      "path": "all-previews/after/320-844-jobpilot-0.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 80440
+    },
+    {
+      "path": "all-previews/after/320-844-jobpilot-1.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 79677
+    },
+    {
+      "path": "all-previews/after/320-844-lobby-0.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 104100
+    },
+    {
+      "path": "all-previews/after/320-844-lobby-1.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 105742
+    },
+    {
+      "path": "all-previews/after/390-844-cedar-0.jpg",
+      "width": 390,
+      "height": 2323,
+      "bytes": 119726
+    },
+    {
+      "path": "all-previews/after/390-844-cedar-1.jpg",
+      "width": 390,
+      "height": 2493,
+      "bytes": 128096
+    },
+    {
+      "path": "all-previews/after/390-844-jobpilot-0.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 84881
+    },
+    {
+      "path": "all-previews/after/390-844-jobpilot-1.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 84537
+    },
+    {
+      "path": "all-previews/after/390-844-lobby-0.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 107217
+    },
+    {
+      "path": "all-previews/after/390-844-lobby-1.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 110385
+    },
+    {
+      "path": "all-previews/after/768-1024-cedar-0.jpg",
+      "width": 768,
+      "height": 1983,
+      "bytes": 152456
+    },
+    {
+      "path": "all-previews/after/768-1024-cedar-1.jpg",
+      "width": 768,
+      "height": 2287,
+      "bytes": 183529
+    },
+    {
+      "path": "all-previews/after/768-1024-jobpilot-0.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 112496
+    },
+    {
+      "path": "all-previews/after/768-1024-jobpilot-1.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 114456
+    },
+    {
+      "path": "all-previews/after/768-1024-lobby-0.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 125495
+    },
+    {
+      "path": "all-previews/after/768-1024-lobby-1.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 133644
+    },
+    {
+      "path": "after/1363-936-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "after/1363-936-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "after/1363-936-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "after/1363-936-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "after/1363-936-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "after/1363-936-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "after/1363-936-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "after/1363-936-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "after/1363-936-0-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 137590
+    },
+    {
+      "path": "after/1363-936-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78707
+    },
+    {
+      "path": "after/1363-936-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81175
+    },
+    {
+      "path": "after/1363-936-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82495
+    },
+    {
+      "path": "after/1363-936-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79703
+    },
+    {
+      "path": "after/1363-936-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "after/1363-936-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80489
+    },
+    {
+      "path": "after/1363-936-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81890
+    },
+    {
+      "path": "after/1363-936-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81333
+    },
+    {
+      "path": "after/1363-936-1-selected.jpg",
+      "width": 1363,
+      "height": 1727,
+      "bytes": 146698
+    },
+    {
+      "path": "after/1363-936-reader-allowed-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "after/1363-936-reader-allowed-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 92328
+    },
+    {
+      "path": "after/1363-936-reader-denied-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "after/1363-936-reader-denied-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 93557
+    },
+    {
+      "path": "after/1363-936-reader-inspect-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "after/1363-936-reader-inspect-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95255
+    },
+    {
+      "path": "after/1363-936-reader-joined-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "after/1363-936-reader-joined-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 94359
+    },
+    {
+      "path": "after/1363-936-reader-rejected-controls.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "after/1363-936-reader-rejected-heading.jpg",
+      "width": 1363,
+      "height": 936,
+      "bytes": 95744
+    },
+    {
+      "path": "after/1440-650-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78019
+    },
+    {
+      "path": "after/1440-650-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80270
+    },
+    {
+      "path": "after/1440-650-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82071
+    },
+    {
+      "path": "after/1440-650-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78900
+    },
+    {
+      "path": "after/1440-650-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80819
+    },
+    {
+      "path": "after/1440-650-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80049
+    },
+    {
+      "path": "after/1440-650-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81469
+    },
+    {
+      "path": "after/1440-650-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80884
+    },
+    {
+      "path": "after/1440-650-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 140269
+    },
+    {
+      "path": "after/1440-650-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78072
+    },
+    {
+      "path": "after/1440-650-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80240
+    },
+    {
+      "path": "after/1440-650-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 82040
+    },
+    {
+      "path": "after/1440-650-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78967
+    },
+    {
+      "path": "after/1440-650-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80894
+    },
+    {
+      "path": "after/1440-650-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80155
+    },
+    {
+      "path": "after/1440-650-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81451
+    },
+    {
+      "path": "after/1440-650-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80929
+    },
+    {
+      "path": "after/1440-650-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150829
+    },
+    {
+      "path": "after/1440-650-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59279
+    },
+    {
+      "path": "after/1440-650-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 74307
+    },
+    {
+      "path": "after/1440-650-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 60362
+    },
+    {
+      "path": "after/1440-650-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 75375
+    },
+    {
+      "path": "after/1440-650-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 62327
+    },
+    {
+      "path": "after/1440-650-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77343
+    },
+    {
+      "path": "after/1440-650-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61509
+    },
+    {
+      "path": "after/1440-650-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 76604
+    },
+    {
+      "path": "after/1440-650-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61542
+    },
+    {
+      "path": "after/1440-650-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 77765
+    },
+    {
+      "path": "after/1440-900-0-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77567
+    },
+    {
+      "path": "after/1440-900-0-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79747
+    },
+    {
+      "path": "after/1440-900-0-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81598
+    },
+    {
+      "path": "after/1440-900-0-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78524
+    },
+    {
+      "path": "after/1440-900-0-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80468
+    },
+    {
+      "path": "after/1440-900-0-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79609
+    },
+    {
+      "path": "after/1440-900-0-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80943
+    },
+    {
+      "path": "after/1440-900-0-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80468
+    },
+    {
+      "path": "after/1440-900-0-selected.jpg",
+      "width": 1440,
+      "height": 1699,
+      "bytes": 139995
+    },
+    {
+      "path": "after/1440-900-1-allowed.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 77598
+    },
+    {
+      "path": "after/1440-900-1-blocked-call.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79755
+    },
+    {
+      "path": "after/1440-900-1-blocked-participant.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 81554
+    },
+    {
+      "path": "after/1440-900-1-denied.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 78497
+    },
+    {
+      "path": "after/1440-900-1-inspect.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80418
+    },
+    {
+      "path": "after/1440-900-1-joined.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 79585
+    },
+    {
+      "path": "after/1440-900-1-rejected.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80938
+    },
+    {
+      "path": "after/1440-900-1-reset.jpg",
+      "width": 880,
+      "height": 742,
+      "bytes": 80437
+    },
+    {
+      "path": "after/1440-900-1-selected.jpg",
+      "width": 1440,
+      "height": 1693,
+      "bytes": 150688
+    },
+    {
+      "path": "after/1440-900-reader-allowed-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "after/1440-900-reader-allowed-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 91371
+    },
+    {
+      "path": "after/1440-900-reader-denied-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "after/1440-900-reader-denied-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92516
+    },
+    {
+      "path": "after/1440-900-reader-inspect-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "after/1440-900-reader-inspect-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94530
+    },
+    {
+      "path": "after/1440-900-reader-joined-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "after/1440-900-reader-joined-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 93739
+    },
+    {
+      "path": "after/1440-900-reader-rejected-controls.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "after/1440-900-reader-rejected-heading.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94899
+    },
+    {
+      "path": "after/320-844-0-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69045
+    },
+    {
+      "path": "after/320-844-0-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 71330
+    },
+    {
+      "path": "after/320-844-0-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 72924
+    },
+    {
+      "path": "after/320-844-0-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69960
+    },
+    {
+      "path": "after/320-844-0-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "after/320-844-0-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 70815
+    },
+    {
+      "path": "after/320-844-0-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 72049
+    },
+    {
+      "path": "after/320-844-0-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "after/320-844-0-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 96502
+    },
+    {
+      "path": "after/320-844-1-allowed.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69039
+    },
+    {
+      "path": "after/320-844-1-blocked-call.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 71330
+    },
+    {
+      "path": "after/320-844-1-blocked-participant.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 72924
+    },
+    {
+      "path": "after/320-844-1-denied.jpg",
+      "width": 281,
+      "height": 1612,
+      "bytes": 69960
+    },
+    {
+      "path": "after/320-844-1-inspect.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "after/320-844-1-joined.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 70815
+    },
+    {
+      "path": "after/320-844-1-rejected.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 72049
+    },
+    {
+      "path": "after/320-844-1-reset.jpg",
+      "width": 281,
+      "height": 1634,
+      "bytes": 71679
+    },
+    {
+      "path": "after/320-844-1-selected.jpg",
+      "width": 320,
+      "height": 2583,
+      "bytes": 98062
+    },
+    {
+      "path": "after/320-844-reader-allowed-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36137
+    },
+    {
+      "path": "after/320-844-reader-allowed-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38831
+    },
+    {
+      "path": "after/320-844-reader-denied-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36837
+    },
+    {
+      "path": "after/320-844-reader-denied-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39251
+    },
+    {
+      "path": "after/320-844-reader-inspect-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37403
+    },
+    {
+      "path": "after/320-844-reader-inspect-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39235
+    },
+    {
+      "path": "after/320-844-reader-joined-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36489
+    },
+    {
+      "path": "after/320-844-reader-joined-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38686
+    },
+    {
+      "path": "after/320-844-reader-rejected-controls.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36975
+    },
+    {
+      "path": "after/320-844-reader-rejected-heading.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 40374
+    },
+    {
+      "path": "after/390-844-0-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "after/390-844-0-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "after/390-844-0-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "after/390-844-0-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "after/390-844-0-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "after/390-844-0-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "after/390-844-0-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "after/390-844-0-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "after/390-844-0-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 99455
+    },
+    {
+      "path": "after/390-844-1-allowed.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 72128
+    },
+    {
+      "path": "after/390-844-1-blocked-call.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 73670
+    },
+    {
+      "path": "after/390-844-1-blocked-participant.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 75712
+    },
+    {
+      "path": "after/390-844-1-denied.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 72343
+    },
+    {
+      "path": "after/390-844-1-inspect.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "after/390-844-1-joined.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 73960
+    },
+    {
+      "path": "after/390-844-1-rejected.jpg",
+      "width": 343,
+      "height": 1457,
+      "bytes": 74760
+    },
+    {
+      "path": "after/390-844-1-reset.jpg",
+      "width": 343,
+      "height": 1477,
+      "bytes": 74759
+    },
+    {
+      "path": "after/390-844-1-selected.jpg",
+      "width": 390,
+      "height": 2425,
+      "bytes": 102464
+    },
+    {
+      "path": "after/390-844-reader-allowed-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 37821
+    },
+    {
+      "path": "after/390-844-reader-allowed-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43013
+    },
+    {
+      "path": "after/390-844-reader-denied-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 38834
+    },
+    {
+      "path": "after/390-844-reader-denied-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43989
+    },
+    {
+      "path": "after/390-844-reader-inspect-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40236
+    },
+    {
+      "path": "after/390-844-reader-inspect-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43857
+    },
+    {
+      "path": "after/390-844-reader-joined-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39377
+    },
+    {
+      "path": "after/390-844-reader-joined-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43057
+    },
+    {
+      "path": "after/390-844-reader-rejected-controls.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39443
+    },
+    {
+      "path": "after/390-844-reader-rejected-heading.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 45161
+    },
+    {
+      "path": "after/768-1024-0-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74508
+    },
+    {
+      "path": "after/768-1024-0-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77465
+    },
+    {
+      "path": "after/768-1024-0-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77588
+    },
+    {
+      "path": "after/768-1024-0-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76186
+    },
+    {
+      "path": "after/768-1024-0-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "after/768-1024-0-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77132
+    },
+    {
+      "path": "after/768-1024-0-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78610
+    },
+    {
+      "path": "after/768-1024-0-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "after/768-1024-0-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 116400
+    },
+    {
+      "path": "after/768-1024-1-allowed.jpg",
+      "width": 675,
+      "height": 896,
+      "bytes": 74508
+    },
+    {
+      "path": "after/768-1024-1-blocked-call.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 77465
+    },
+    {
+      "path": "after/768-1024-1-blocked-participant.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 77588
+    },
+    {
+      "path": "after/768-1024-1-denied.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 76186
+    },
+    {
+      "path": "after/768-1024-1-inspect.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "after/768-1024-1-joined.jpg",
+      "width": 675,
+      "height": 903,
+      "bytes": 77132
+    },
+    {
+      "path": "after/768-1024-1-rejected.jpg",
+      "width": 675,
+      "height": 919,
+      "bytes": 78610
+    },
+    {
+      "path": "after/768-1024-1-reset.jpg",
+      "width": 675,
+      "height": 925,
+      "bytes": 76389
+    },
+    {
+      "path": "after/768-1024-1-selected.jpg",
+      "width": 768,
+      "height": 1998,
+      "bytes": 123626
+    },
+    {
+      "path": "after/768-1024-reader-allowed-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "after/768-1024-reader-allowed-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 80125
+    },
+    {
+      "path": "after/768-1024-reader-denied-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "after/768-1024-reader-denied-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 81198
+    },
+    {
+      "path": "after/768-1024-reader-inspect-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "after/768-1024-reader-inspect-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82107
+    },
+    {
+      "path": "after/768-1024-reader-joined-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "after/768-1024-reader-joined-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82803
+    },
+    {
+      "path": "after/768-1024-reader-rejected-controls.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    },
+    {
+      "path": "after/768-1024-reader-rejected-heading.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 82983
+    }
+  ]
+}
