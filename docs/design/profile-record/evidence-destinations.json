@@ -1,0 +1,338 @@
+{
+  "environment": "Actual current public records, keyboard navigation, Windows Chrome; phone sizes/reduced motion emulated.",
+  "findings": [
+    {
+      "width": 1440,
+      "key": "ai api integration",
+      "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+      "href": "/projects/jobpilot-ai#engineering",
+      "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document.",
+      "entries": [
+        {
+          "width": 760,
+          "scrollWidth": 765,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 4.14208984375,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "key": "django",
+      "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+      "href": "/projects/construction-project-management-accounting-system#engineering",
+      "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments.",
+      "entries": [
+        {
+          "width": 760,
+          "scrollWidth": 765,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 4.14208984375,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "key": "supabase",
+      "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+      "href": "/projects/lobby#engineering",
+      "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n→\n2\nJoin\n→\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings.",
+      "entries": [
+        {
+          "width": 760,
+          "scrollWidth": 765,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 4.14208984375,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        },
+        {
+          "width": 760,
+          "scrollWidth": 760,
+          "bounds": 760.34375,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": -36
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "key": "ai api integration",
+      "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+      "href": "/projects/jobpilot-ai#engineering",
+      "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document.",
+      "entries": [
+        {
+          "width": 343,
+          "scrollWidth": 347,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "key": "django",
+      "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+      "href": "/projects/construction-project-management-accounting-system#engineering",
+      "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments.",
+      "entries": [
+        {
+          "width": 343,
+          "scrollWidth": 347,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "key": "supabase",
+      "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+      "href": "/projects/lobby#engineering",
+      "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n→\n2\nJoin\n→\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings.",
+      "entries": [
+        {
+          "width": 343,
+          "scrollWidth": 347,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 343,
+          "scrollWidth": 343,
+          "bounds": 343.21875,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "key": "ai api integration",
+      "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+      "href": "/projects/jobpilot-ai#engineering",
+      "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n2\nReview\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document.",
+      "entries": [
+        {
+          "width": 282,
+          "scrollWidth": 286,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "key": "django",
+      "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+      "href": "/projects/construction-project-management-accounting-system#engineering",
+      "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n2\nInterpret\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments.",
+      "entries": [
+        {
+          "width": 282,
+          "scrollWidth": 286,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "key": "supabase",
+      "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+      "href": "/projects/lobby#engineering",
+      "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n2\nJoin\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings.",
+      "entries": [
+        {
+          "width": 282,
+          "scrollWidth": 286,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 4.14215087890625,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        },
+        {
+          "width": 282,
+          "scrollWidth": 282,
+          "bounds": 281.625,
+          "indicatorBeyondEntry": 0,
+          "textBeyondEntry": 0
+        }
+      ]
+    }
+  ]
+}

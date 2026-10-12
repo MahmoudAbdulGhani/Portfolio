@@ -1,0 +1,1627 @@
+{
+  "phase": "before",
+  "baseline": "bc957ee65f2e85ce8a07eafedc15475d10666e28",
+  "environment": "Windows Chrome with actual current public GET records, original portrait and published CV. Tablet/phone viewports and reduced motion are browser emulation, not physical-device testing. Complete captures temporarily extend camera height; viewport captures retain the stated height.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "entries": [
+        {
+          "label": "01\nThe Digital Hub, UNRWA, Beirut, Hybrid\nFull-Stack Developer Intern\nJun 2026 – Sep 2026",
+          "body": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nProgram completion is not verified by the available records.\n\nBEIRUT, HYBRID",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Jun 2026 – Sep 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "02\nOigetit\nQA Intern\nMay 2026 – Aug 2026",
+          "body": "Tested application flows, documented bugs, and used logs to help identify and reproduce failures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "May 2026 – Aug 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "03\nIshtari Group, Tripoli, Onsite\nBackend Developer\nDec 2025 – Jan 2026",
+          "body": "Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.\n\nTRIPOLI, LEBANON",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Dec 2025 – Jan 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "04\nKfW & EU Graduate Support Program · FALA Association\nWeb Development Trainer\nApr 2025 – Jun 2025",
+          "body": "Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Apr 2025 – Jun 2025",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        }
+      ],
+      "tabs": [
+        {
+          "label": "Experience",
+          "height": 1005,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "height": 1160,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "height": 3135,
+          "top": 92,
+          "overflow": false
+        }
+      ],
+      "professionalLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahmoud_abdulghani2",
+          "target": "_blank"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.",
+          "target": "_blank"
+        }
+      ],
+      "education": "OCT 2022 – JUN 2025\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nTRAINING\nAngular Independent Study\n\nSelf-directed learning · Sep 2025\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services · Jul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nFull-Stack Web Development\n\nyoubee.ai · 4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+      "capabilities": {
+        "text": "Languages\nJavaScript\nDemonstrated in Cedar Construction\nTypeScript\nDemonstrated in JobPilot AI\nPHP\nPython\nDemonstrated in JobPilot AI\nHTML — HTML5\nDemonstrated in Cedar Construction\nCSS — CSS3\nDemonstrated in Cedar Construction\nSQL\nFrameworks\nDjango\nDemonstrated in Cedar Construction\nFastAPI\nDemonstrated in JobPilot AI\nDjango REST Framework\nDemonstrated in Cedar Construction\nReact\nDemonstrated in JobPilot AI\nNext.js\nDemonstrated in JobPilot AI\nAngular\nExpress.js\nDemonstrated in UniHub\nNestJS\nTailwind CSS\nDemonstrated in Lobby\nBootstrap\nDatabases\nMongoDB\nDemonstrated in GameZone Arena\nPostgreSQL\nDemonstrated in JobPilot AI\nMySQL\nMariaDB\nSupabase\nDemonstrated in JobPilot AI\nOperations\nGit\nDemonstrated in JobPilot AI\nGitHub\nDemonstrated in JobPilot AI\nNode.js\nDemonstrated in UniHub\nDocker\nDemonstrated in JobPilot AI\nStripe\nDemonstrated in GameZone Arena\nVercel\nDemonstrated in JobPilot AI\nRender\nDemonstrated in JobPilot AI\nNodemailer / SMTP\nLiveKit Cloud\nJWT — Authentication\nDemonstrated in GameZone Arena\nZod\npnpm Workspaces\nVite\nDemonstrated in User Management\nOpenAPI / Swagger\nPostman\nDemonstrated in User Management\nSkills\nPydantic\nDemonstrated in JobPilot AI\npytest\nDemonstrated in JobPilot AI\nPlaywright\nDemonstrated in JobPilot AI\nStructured Outputs & JSON Schema\nCSRF Protection\nArgon2 — Password hashing\nDemonstrated in User Management\nZustand\nTanStack Query\nResponsive Design\nFramer Motion\nDemonstrated in User Management\nRESTful APIs\nMongoose\nSQLAlchemy\nDemonstrated in JobPilot AI\nAlembic\nDemonstrated in JobPilot AI\nAuthentication & Authorization\nRBAC\nSecure Cookies\nOTP Verification\nJest\nVitest\nDemonstrated in JobPilot AI\nUnit & Integration Testing\nLLMs\nRAG\nPrompt Engineering\nAI API Integration — OpenAI\nDemonstrated in JobPilot AI\nSOLID\nGitHub Actions\nDesign Patterns\nCI/CD\nScalable Systems\nReal-time Systems\nClean Architecture\nSSR\nSEO",
+        "links": [
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in Lobby",
+            "url": "/projects/lobby"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          }
+        ],
+        "competencies": [
+          "javascript",
+          "typescript",
+          "php",
+          "python",
+          "html",
+          "css",
+          "sql",
+          "django",
+          "fastapi",
+          "django rest framework",
+          "react",
+          "next.js",
+          "angular",
+          "express.js",
+          "nestjs",
+          "tailwind css",
+          "bootstrap",
+          "mongodb",
+          "postgresql",
+          "mysql",
+          "mariadb",
+          "supabase",
+          "git",
+          "github",
+          "node.js",
+          "docker",
+          "stripe",
+          "vercel",
+          "render",
+          "nodemailer / smtp",
+          "livekit cloud",
+          "jwt",
+          "zod",
+          "pnpm workspaces",
+          "vite",
+          "openapi / swagger",
+          "postman",
+          "pydantic",
+          "pytest",
+          "playwright",
+          "structured outputs & json schema",
+          "csrf protection",
+          "argon2",
+          "zustand",
+          "tanstack query",
+          "responsive design",
+          "framer motion",
+          "restful apis",
+          "mongoose",
+          "sqlalchemy",
+          "alembic",
+          "authentication & authorization",
+          "rbac",
+          "secure cookies",
+          "otp verification",
+          "jest",
+          "vitest",
+          "unit & integration testing",
+          "llms",
+          "rag",
+          "prompt engineering",
+          "ai api integration",
+          "solid",
+          "github actions",
+          "design patterns",
+          "ci/cd",
+          "scalable systems",
+          "real-time systems",
+          "clean architecture",
+          "ssr",
+          "seo"
+        ]
+      },
+      "cv": {
+        "filename": "portfolio-cv.pdf",
+        "failure": null,
+        "sourceBytes": 31205,
+        "signature": "%PDF-"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "entries": [
+        {
+          "label": "01\nThe Digital Hub, UNRWA, Beirut, Hybrid\nFull-Stack Developer Intern\nJun 2026 – Sep 2026",
+          "body": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nProgram completion is not verified by the available records.\n\nBEIRUT, HYBRID",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Jun 2026 – Sep 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "02\nOigetit\nQA Intern\nMay 2026 – Aug 2026",
+          "body": "Tested application flows, documented bugs, and used logs to help identify and reproduce failures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "May 2026 – Aug 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "03\nIshtari Group, Tripoli, Onsite\nBackend Developer\nDec 2025 – Jan 2026",
+          "body": "Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.\n\nTRIPOLI, LEBANON",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Dec 2025 – Jan 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "04\nKfW & EU Graduate Support Program · FALA Association\nWeb Development Trainer\nApr 2025 – Jun 2025",
+          "body": "Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Apr 2025 – Jun 2025",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        }
+      ],
+      "tabs": [
+        {
+          "label": "Experience",
+          "height": 1005,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "height": 1160,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "height": 3135,
+          "top": 92,
+          "overflow": false
+        }
+      ],
+      "professionalLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahmoud_abdulghani2",
+          "target": "_blank"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.",
+          "target": "_blank"
+        }
+      ],
+      "education": "OCT 2022 – JUN 2025\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nTRAINING\nAngular Independent Study\n\nSelf-directed learning · Sep 2025\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services · Jul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nFull-Stack Web Development\n\nyoubee.ai · 4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+      "capabilities": {
+        "text": "Languages\nJavaScript\nDemonstrated in Cedar Construction\nTypeScript\nDemonstrated in JobPilot AI\nPHP\nPython\nDemonstrated in JobPilot AI\nHTML — HTML5\nDemonstrated in Cedar Construction\nCSS — CSS3\nDemonstrated in Cedar Construction\nSQL\nFrameworks\nDjango\nDemonstrated in Cedar Construction\nFastAPI\nDemonstrated in JobPilot AI\nDjango REST Framework\nDemonstrated in Cedar Construction\nReact\nDemonstrated in JobPilot AI\nNext.js\nDemonstrated in JobPilot AI\nAngular\nExpress.js\nDemonstrated in UniHub\nNestJS\nTailwind CSS\nDemonstrated in Lobby\nBootstrap\nDatabases\nMongoDB\nDemonstrated in GameZone Arena\nPostgreSQL\nDemonstrated in JobPilot AI\nMySQL\nMariaDB\nSupabase\nDemonstrated in JobPilot AI\nOperations\nGit\nDemonstrated in JobPilot AI\nGitHub\nDemonstrated in JobPilot AI\nNode.js\nDemonstrated in UniHub\nDocker\nDemonstrated in JobPilot AI\nStripe\nDemonstrated in GameZone Arena\nVercel\nDemonstrated in JobPilot AI\nRender\nDemonstrated in JobPilot AI\nNodemailer / SMTP\nLiveKit Cloud\nJWT — Authentication\nDemonstrated in GameZone Arena\nZod\npnpm Workspaces\nVite\nDemonstrated in User Management\nOpenAPI / Swagger\nPostman\nDemonstrated in User Management\nSkills\nPydantic\nDemonstrated in JobPilot AI\npytest\nDemonstrated in JobPilot AI\nPlaywright\nDemonstrated in JobPilot AI\nStructured Outputs & JSON Schema\nCSRF Protection\nArgon2 — Password hashing\nDemonstrated in User Management\nZustand\nTanStack Query\nResponsive Design\nFramer Motion\nDemonstrated in User Management\nRESTful APIs\nMongoose\nSQLAlchemy\nDemonstrated in JobPilot AI\nAlembic\nDemonstrated in JobPilot AI\nAuthentication & Authorization\nRBAC\nSecure Cookies\nOTP Verification\nJest\nVitest\nDemonstrated in JobPilot AI\nUnit & Integration Testing\nLLMs\nRAG\nPrompt Engineering\nAI API Integration — OpenAI\nDemonstrated in JobPilot AI\nSOLID\nGitHub Actions\nDesign Patterns\nCI/CD\nScalable Systems\nReal-time Systems\nClean Architecture\nSSR\nSEO",
+        "links": [
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in Lobby",
+            "url": "/projects/lobby"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          }
+        ],
+        "competencies": [
+          "javascript",
+          "typescript",
+          "php",
+          "python",
+          "html",
+          "css",
+          "sql",
+          "django",
+          "fastapi",
+          "django rest framework",
+          "react",
+          "next.js",
+          "angular",
+          "express.js",
+          "nestjs",
+          "tailwind css",
+          "bootstrap",
+          "mongodb",
+          "postgresql",
+          "mysql",
+          "mariadb",
+          "supabase",
+          "git",
+          "github",
+          "node.js",
+          "docker",
+          "stripe",
+          "vercel",
+          "render",
+          "nodemailer / smtp",
+          "livekit cloud",
+          "jwt",
+          "zod",
+          "pnpm workspaces",
+          "vite",
+          "openapi / swagger",
+          "postman",
+          "pydantic",
+          "pytest",
+          "playwright",
+          "structured outputs & json schema",
+          "csrf protection",
+          "argon2",
+          "zustand",
+          "tanstack query",
+          "responsive design",
+          "framer motion",
+          "restful apis",
+          "mongoose",
+          "sqlalchemy",
+          "alembic",
+          "authentication & authorization",
+          "rbac",
+          "secure cookies",
+          "otp verification",
+          "jest",
+          "vitest",
+          "unit & integration testing",
+          "llms",
+          "rag",
+          "prompt engineering",
+          "ai api integration",
+          "solid",
+          "github actions",
+          "design patterns",
+          "ci/cd",
+          "scalable systems",
+          "real-time systems",
+          "clean architecture",
+          "ssr",
+          "seo"
+        ]
+      },
+      "cv": {
+        "filename": "portfolio-cv.pdf",
+        "failure": null,
+        "sourceBytes": 31205,
+        "signature": "%PDF-"
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "entries": [
+        {
+          "label": "01\nThe Digital Hub, UNRWA, Beirut, Hybrid\nFull-Stack Developer Intern\nJun 2026 – Sep 2026",
+          "body": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nProgram completion is not verified by the available records.\n\nBEIRUT, HYBRID",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Jun 2026 – Sep 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 124,
+          "overflow": true
+        },
+        {
+          "label": "02\nOigetit\nQA Intern\nMay 2026 – Aug 2026",
+          "body": "Tested application flows, documented bugs, and used logs to help identify and reproduce failures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "May 2026 – Aug 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 95.5,
+          "overflow": true
+        },
+        {
+          "label": "03\nIshtari Group, Tripoli, Onsite\nBackend Developer\nDec 2025 – Jan 2026",
+          "body": "Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.\n\nTRIPOLI, LEBANON",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Dec 2025 – Jan 2026",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 124,
+          "overflow": true
+        },
+        {
+          "label": "04\nKfW & EU Graduate Support Program · FALA Association\nWeb Development Trainer\nApr 2025 – Jun 2025",
+          "body": "Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "bodySize": 13,
+          "dates": [
+            {
+              "text": "Apr 2025 – Jun 2025",
+              "size": 10
+            }
+          ],
+          "summaryHeight": 152.5,
+          "overflow": true
+        }
+      ],
+      "tabs": [
+        {
+          "label": "Experience",
+          "height": 1310,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "height": 1306,
+          "top": 92,
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "height": 3716,
+          "top": 92,
+          "overflow": false
+        }
+      ],
+      "professionalLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahmoud_abdulghani2",
+          "target": "_blank"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.",
+          "target": "_blank"
+        }
+      ],
+      "education": "OCT 2022 – JUN 2025\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nTRAINING\nAngular Independent Study\n\nSelf-directed learning · Sep 2025\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services · Jul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nFull-Stack Web Development\n\nyoubee.ai · 4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+      "capabilities": {
+        "text": "Languages\nJavaScript\nDemonstrated in Cedar Construction\nTypeScript\nDemonstrated in JobPilot AI\nPHP\nPython\nDemonstrated in JobPilot AI\nHTML — HTML5\nDemonstrated in Cedar Construction\nCSS — CSS3\nDemonstrated in Cedar Construction\nSQL\nFrameworks\nDjango\nDemonstrated in Cedar Construction\nFastAPI\nDemonstrated in JobPilot AI\nDjango REST Framework\nDemonstrated in Cedar Construction\nReact\nDemonstrated in JobPilot AI\nNext.js\nDemonstrated in JobPilot AI\nAngular\nExpress.js\nDemonstrated in UniHub\nNestJS\nTailwind CSS\nDemonstrated in Lobby\nBootstrap\nDatabases\nMongoDB\nDemonstrated in GameZone Arena\nPostgreSQL\nDemonstrated in JobPilot AI\nMySQL\nMariaDB\nSupabase\nDemonstrated in JobPilot AI\nOperations\nGit\nDemonstrated in JobPilot AI\nGitHub\nDemonstrated in JobPilot AI\nNode.js\nDemonstrated in UniHub\nDocker\nDemonstrated in JobPilot AI\nStripe\nDemonstrated in GameZone Arena\nVercel\nDemonstrated in JobPilot AI\nRender\nDemonstrated in JobPilot AI\nNodemailer / SMTP\nLiveKit Cloud\nJWT — Authentication\nDemonstrated in GameZone Arena\nZod\npnpm Workspaces\nVite\nDemonstrated in User Management\nOpenAPI / Swagger\nPostman\nDemonstrated in User Management\nSkills\nPydantic\nDemonstrated in JobPilot AI\npytest\nDemonstrated in JobPilot AI\nPlaywright\nDemonstrated in JobPilot AI\nStructured Outputs & JSON Schema\nCSRF Protection\nArgon2 — Password hashing\nDemonstrated in User Management\nZustand\nTanStack Query\nResponsive Design\nFramer Motion\nDemonstrated in User Management\nRESTful APIs\nMongoose\nSQLAlchemy\nDemonstrated in JobPilot AI\nAlembic\nDemonstrated in JobPilot AI\nAuthentication & Authorization\nRBAC\nSecure Cookies\nOTP Verification\nJest\nVitest\nDemonstrated in JobPilot AI\nUnit & Integration Testing\nLLMs\nRAG\nPrompt Engineering\nAI API Integration — OpenAI\nDemonstrated in JobPilot AI\nSOLID\nGitHub Actions\nDesign Patterns\nCI/CD\nScalable Systems\nReal-time Systems\nClean Architecture\nSSR\nSEO",
+        "links": [
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in Lobby",
+            "url": "/projects/lobby"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          }
+        ],
+        "competencies": [
+          "javascript",
+          "typescript",
+          "php",
+          "python",
+          "html",
+          "css",
+          "sql",
+          "django",
+          "fastapi",
+          "django rest framework",
+          "react",
+          "next.js",
+          "angular",
+          "express.js",
+          "nestjs",
+          "tailwind css",
+          "bootstrap",
+          "mongodb",
+          "postgresql",
+          "mysql",
+          "mariadb",
+          "supabase",
+          "git",
+          "github",
+          "node.js",
+          "docker",
+          "stripe",
+          "vercel",
+          "render",
+          "nodemailer / smtp",
+          "livekit cloud",
+          "jwt",
+          "zod",
+          "pnpm workspaces",
+          "vite",
+          "openapi / swagger",
+          "postman",
+          "pydantic",
+          "pytest",
+          "playwright",
+          "structured outputs & json schema",
+          "csrf protection",
+          "argon2",
+          "zustand",
+          "tanstack query",
+          "responsive design",
+          "framer motion",
+          "restful apis",
+          "mongoose",
+          "sqlalchemy",
+          "alembic",
+          "authentication & authorization",
+          "rbac",
+          "secure cookies",
+          "otp verification",
+          "jest",
+          "vitest",
+          "unit & integration testing",
+          "llms",
+          "rag",
+          "prompt engineering",
+          "ai api integration",
+          "solid",
+          "github actions",
+          "design patterns",
+          "ci/cd",
+          "scalable systems",
+          "real-time systems",
+          "clean architecture",
+          "ssr",
+          "seo"
+        ]
+      },
+      "cv": {
+        "filename": "portfolio-cv.pdf",
+        "failure": null,
+        "sourceBytes": 31205,
+        "signature": "%PDF-"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "entries": [
+        {
+          "label": "01\nThe Digital Hub, UNRWA, Beirut, Hybrid\nFull-Stack Developer Intern\nJun 2026 – Sep 2026",
+          "body": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nProgram completion is not verified by the available records.\n\nBEIRUT, HYBRID",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Jun 2026 – Sep 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 115,
+          "overflow": true
+        },
+        {
+          "label": "02\nOigetit\nQA Intern\nMay 2026 – Aug 2026",
+          "body": "Tested application flows, documented bugs, and used logs to help identify and reproduce failures.",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "May 2026 – Aug 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 89.5,
+          "overflow": true
+        },
+        {
+          "label": "03\nIshtari Group, Tripoli, Onsite\nBackend Developer\nDec 2025 – Jan 2026",
+          "body": "Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.\n\nTRIPOLI, LEBANON",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Dec 2025 – Jan 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 89.5,
+          "overflow": true
+        },
+        {
+          "label": "04\nKfW & EU Graduate Support Program · FALA Association\nWeb Development Trainer\nApr 2025 – Jun 2025",
+          "body": "Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Apr 2025 – Jun 2025",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 115,
+          "overflow": true
+        }
+      ],
+      "tabs": [
+        {
+          "label": "Experience",
+          "height": 1569,
+          "top": 125,
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "height": 1722,
+          "top": 125,
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "height": 4401,
+          "top": 125,
+          "overflow": false
+        }
+      ],
+      "professionalLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahmoud_abdulghani2",
+          "target": "_blank"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.",
+          "target": "_blank"
+        }
+      ],
+      "education": "OCT 2022 – JUN 2025\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nTRAINING\nAngular Independent Study\n\nSelf-directed learning · Sep 2025\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services · Jul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nFull-Stack Web Development\n\nyoubee.ai · 4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+      "capabilities": {
+        "text": "Languages\nJavaScript\nDemonstrated in Cedar Construction\nTypeScript\nDemonstrated in JobPilot AI\nPHP\nPython\nDemonstrated in JobPilot AI\nHTML — HTML5\nDemonstrated in Cedar Construction\nCSS — CSS3\nDemonstrated in Cedar Construction\nSQL\nFrameworks\nDjango\nDemonstrated in Cedar Construction\nFastAPI\nDemonstrated in JobPilot AI\nDjango REST Framework\nDemonstrated in Cedar Construction\nReact\nDemonstrated in JobPilot AI\nNext.js\nDemonstrated in JobPilot AI\nAngular\nExpress.js\nDemonstrated in UniHub\nNestJS\nTailwind CSS\nDemonstrated in Lobby\nBootstrap\nDatabases\nMongoDB\nDemonstrated in GameZone Arena\nPostgreSQL\nDemonstrated in JobPilot AI\nMySQL\nMariaDB\nSupabase\nDemonstrated in JobPilot AI\nOperations\nGit\nDemonstrated in JobPilot AI\nGitHub\nDemonstrated in JobPilot AI\nNode.js\nDemonstrated in UniHub\nDocker\nDemonstrated in JobPilot AI\nStripe\nDemonstrated in GameZone Arena\nVercel\nDemonstrated in JobPilot AI\nRender\nDemonstrated in JobPilot AI\nNodemailer / SMTP\nLiveKit Cloud\nJWT — Authentication\nDemonstrated in GameZone Arena\nZod\npnpm Workspaces\nVite\nDemonstrated in User Management\nOpenAPI / Swagger\nPostman\nDemonstrated in User Management\nSkills\nPydantic\nDemonstrated in JobPilot AI\npytest\nDemonstrated in JobPilot AI\nPlaywright\nDemonstrated in JobPilot AI\nStructured Outputs & JSON Schema\nCSRF Protection\nArgon2 — Password hashing\nDemonstrated in User Management\nZustand\nTanStack Query\nResponsive Design\nFramer Motion\nDemonstrated in User Management\nRESTful APIs\nMongoose\nSQLAlchemy\nDemonstrated in JobPilot AI\nAlembic\nDemonstrated in JobPilot AI\nAuthentication & Authorization\nRBAC\nSecure Cookies\nOTP Verification\nJest\nVitest\nDemonstrated in JobPilot AI\nUnit & Integration Testing\nLLMs\nRAG\nPrompt Engineering\nAI API Integration — OpenAI\nDemonstrated in JobPilot AI\nSOLID\nGitHub Actions\nDesign Patterns\nCI/CD\nScalable Systems\nReal-time Systems\nClean Architecture\nSSR\nSEO",
+        "links": [
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in Lobby",
+            "url": "/projects/lobby"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          }
+        ],
+        "competencies": [
+          "javascript",
+          "typescript",
+          "php",
+          "python",
+          "html",
+          "css",
+          "sql",
+          "django",
+          "fastapi",
+          "django rest framework",
+          "react",
+          "next.js",
+          "angular",
+          "express.js",
+          "nestjs",
+          "tailwind css",
+          "bootstrap",
+          "mongodb",
+          "postgresql",
+          "mysql",
+          "mariadb",
+          "supabase",
+          "git",
+          "github",
+          "node.js",
+          "docker",
+          "stripe",
+          "vercel",
+          "render",
+          "nodemailer / smtp",
+          "livekit cloud",
+          "jwt",
+          "zod",
+          "pnpm workspaces",
+          "vite",
+          "openapi / swagger",
+          "postman",
+          "pydantic",
+          "pytest",
+          "playwright",
+          "structured outputs & json schema",
+          "csrf protection",
+          "argon2",
+          "zustand",
+          "tanstack query",
+          "responsive design",
+          "framer motion",
+          "restful apis",
+          "mongoose",
+          "sqlalchemy",
+          "alembic",
+          "authentication & authorization",
+          "rbac",
+          "secure cookies",
+          "otp verification",
+          "jest",
+          "vitest",
+          "unit & integration testing",
+          "llms",
+          "rag",
+          "prompt engineering",
+          "ai api integration",
+          "solid",
+          "github actions",
+          "design patterns",
+          "ci/cd",
+          "scalable systems",
+          "real-time systems",
+          "clean architecture",
+          "ssr",
+          "seo"
+        ]
+      },
+      "cv": {
+        "filename": "portfolio-cv.pdf",
+        "failure": null,
+        "sourceBytes": 31205,
+        "signature": "%PDF-"
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "entries": [
+        {
+          "label": "01\nThe Digital Hub, UNRWA, Beirut, Hybrid\nFull-Stack Developer Intern\nJun 2026 – Sep 2026",
+          "body": "Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nProgram completion is not verified by the available records.\n\nBEIRUT, HYBRID",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Jun 2026 – Sep 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 140.5,
+          "overflow": true
+        },
+        {
+          "label": "02\nOigetit\nQA Intern\nMay 2026 – Aug 2026",
+          "body": "Tested application flows, documented bugs, and used logs to help identify and reproduce failures.",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "May 2026 – Aug 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 89.5,
+          "overflow": true
+        },
+        {
+          "label": "03\nIshtari Group, Tripoli, Onsite\nBackend Developer\nDec 2025 – Jan 2026",
+          "body": "Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.\n\nTRIPOLI, LEBANON",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Dec 2025 – Jan 2026",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 115,
+          "overflow": true
+        },
+        {
+          "label": "04\nKfW & EU Graduate Support Program · FALA Association\nWeb Development Trainer\nApr 2025 – Jun 2025",
+          "body": "Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "bodySize": 12,
+          "dates": [
+            {
+              "text": "Apr 2025 – Jun 2025",
+              "size": 8
+            }
+          ],
+          "summaryHeight": 140.5,
+          "overflow": true
+        }
+      ],
+      "tabs": [
+        {
+          "label": "Experience",
+          "height": 1736,
+          "top": 125,
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "height": 1865,
+          "top": 125,
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "height": 4821,
+          "top": 125,
+          "overflow": false
+        }
+      ],
+      "professionalLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/MahmoudAbdulGhani",
+          "target": "_blank"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mahmoud_abdulghani2",
+          "target": "_blank"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.",
+          "target": "_blank"
+        }
+      ],
+      "education": "OCT 2022 – JUN 2025\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nTRAINING\nAngular Independent Study\n\nSelf-directed learning · Sep 2025\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services · Jul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\nTRAINING\nFull-Stack Web Development\n\nyoubee.ai · 4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+      "capabilities": {
+        "text": "Languages\nJavaScript\nDemonstrated in Cedar Construction\nTypeScript\nDemonstrated in JobPilot AI\nPHP\nPython\nDemonstrated in JobPilot AI\nHTML — HTML5\nDemonstrated in Cedar Construction\nCSS — CSS3\nDemonstrated in Cedar Construction\nSQL\nFrameworks\nDjango\nDemonstrated in Cedar Construction\nFastAPI\nDemonstrated in JobPilot AI\nDjango REST Framework\nDemonstrated in Cedar Construction\nReact\nDemonstrated in JobPilot AI\nNext.js\nDemonstrated in JobPilot AI\nAngular\nExpress.js\nDemonstrated in UniHub\nNestJS\nTailwind CSS\nDemonstrated in Lobby\nBootstrap\nDatabases\nMongoDB\nDemonstrated in GameZone Arena\nPostgreSQL\nDemonstrated in JobPilot AI\nMySQL\nMariaDB\nSupabase\nDemonstrated in JobPilot AI\nOperations\nGit\nDemonstrated in JobPilot AI\nGitHub\nDemonstrated in JobPilot AI\nNode.js\nDemonstrated in UniHub\nDocker\nDemonstrated in JobPilot AI\nStripe\nDemonstrated in GameZone Arena\nVercel\nDemonstrated in JobPilot AI\nRender\nDemonstrated in JobPilot AI\nNodemailer / SMTP\nLiveKit Cloud\nJWT — Authentication\nDemonstrated in GameZone Arena\nZod\npnpm Workspaces\nVite\nDemonstrated in User Management\nOpenAPI / Swagger\nPostman\nDemonstrated in User Management\nSkills\nPydantic\nDemonstrated in JobPilot AI\npytest\nDemonstrated in JobPilot AI\nPlaywright\nDemonstrated in JobPilot AI\nStructured Outputs & JSON Schema\nCSRF Protection\nArgon2 — Password hashing\nDemonstrated in User Management\nZustand\nTanStack Query\nResponsive Design\nFramer Motion\nDemonstrated in User Management\nRESTful APIs\nMongoose\nSQLAlchemy\nDemonstrated in JobPilot AI\nAlembic\nDemonstrated in JobPilot AI\nAuthentication & Authorization\nRBAC\nSecure Cookies\nOTP Verification\nJest\nVitest\nDemonstrated in JobPilot AI\nUnit & Integration Testing\nLLMs\nRAG\nPrompt Engineering\nAI API Integration — OpenAI\nDemonstrated in JobPilot AI\nSOLID\nGitHub Actions\nDesign Patterns\nCI/CD\nScalable Systems\nReal-time Systems\nClean Architecture\nSSR\nSEO",
+        "links": [
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in Cedar Construction",
+            "url": "/projects/construction-project-management-accounting-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in Lobby",
+            "url": "/projects/lobby"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in UniHub",
+            "url": "/projects/unihub"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in GameZone Arena",
+            "url": "/projects/gamezone-arena"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in User Management",
+            "url": "/projects/full-stack-user-management-system"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          },
+          {
+            "text": "Demonstrated in JobPilot AI",
+            "url": "/projects/jobpilot-ai"
+          }
+        ],
+        "competencies": [
+          "javascript",
+          "typescript",
+          "php",
+          "python",
+          "html",
+          "css",
+          "sql",
+          "django",
+          "fastapi",
+          "django rest framework",
+          "react",
+          "next.js",
+          "angular",
+          "express.js",
+          "nestjs",
+          "tailwind css",
+          "bootstrap",
+          "mongodb",
+          "postgresql",
+          "mysql",
+          "mariadb",
+          "supabase",
+          "git",
+          "github",
+          "node.js",
+          "docker",
+          "stripe",
+          "vercel",
+          "render",
+          "nodemailer / smtp",
+          "livekit cloud",
+          "jwt",
+          "zod",
+          "pnpm workspaces",
+          "vite",
+          "openapi / swagger",
+          "postman",
+          "pydantic",
+          "pytest",
+          "playwright",
+          "structured outputs & json schema",
+          "csrf protection",
+          "argon2",
+          "zustand",
+          "tanstack query",
+          "responsive design",
+          "framer motion",
+          "restful apis",
+          "mongoose",
+          "sqlalchemy",
+          "alembic",
+          "authentication & authorization",
+          "rbac",
+          "secure cookies",
+          "otp verification",
+          "jest",
+          "vitest",
+          "unit & integration testing",
+          "llms",
+          "rag",
+          "prompt engineering",
+          "ai api integration",
+          "solid",
+          "github actions",
+          "design patterns",
+          "ci/cd",
+          "scalable systems",
+          "real-time systems",
+          "clean architecture",
+          "ssr",
+          "seo"
+        ]
+      },
+      "cv": {
+        "filename": "portfolio-cv.pdf",
+        "failure": null,
+        "sourceBytes": 31205,
+        "signature": "%PDF-"
+      }
+    }
+  ]
+}

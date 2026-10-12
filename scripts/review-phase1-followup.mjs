@@ -19,7 +19,7 @@ try {
     await page.evaluate(() => document.fonts.ready);
     if (!await page.evaluate(() => document.fonts.check('400 14px Manrope'))) throw new Error('Manrope did not load');
     await page.locator('.profile-portrait img').evaluate(img => img.decode());
-    await page.getByRole('button', { name: 'Capabilities', exact: true }).click();
+    await page.getByRole('tab', { name: 'Capabilities', exact: true }).click();
     await page.locator('[data-competency]').first().waitFor();
     if (width !== 320) await page.screenshot({ path: `${out}/capabilities-${width}.jpg`, type: 'jpeg', quality: 85 });
     await page.locator('.capability-record h2').filter({ hasText: /^databases$/i }).scrollIntoViewIfNeeded();
@@ -37,7 +37,7 @@ try {
         evidence: [...document.querySelectorAll('[data-competency]')].filter(el => el.querySelector('a')).map(el => ({ key: el.dataset.competency, href: el.querySelector('a').getAttribute('href') })),
       };
     }), pageErrors: errors });
-    await page.getByRole('button', { name: 'Education & training', exact: true }).click();
+    await page.getByRole('tab', { name: 'Education & training', exact: true }).click();
     await page.locator('.training-record').scrollIntoViewIfNeeded();
     if (width !== 320) await page.screenshot({ path: `${out}/training-${width}.jpg`, type: 'jpeg', quality: 85 });
     await page.close();

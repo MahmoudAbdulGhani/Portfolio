@@ -41,7 +41,7 @@ for (const width of [1363, 390, 320]) {
   await page.locator('.profile-record').waitFor();
   await page.locator('.profile-portrait img').evaluate(img => img.decode().catch(() => {}));
   for (const tab of ['Experience', 'Education & training', 'Capabilities']) {
-    await page.getByRole('button', { name: tab, exact: true }).click();
+    await page.getByRole('tab', { name: tab, exact: true }).click();
     if (width !== 320) await page.screenshot({ path: `${out}/profile-${tab.split(' ')[0].toLowerCase()}-${width}.jpg`, fullPage: true, type: 'jpeg', quality: 75 });
     const target = tab === 'Education & training' ? '.training-record' : tab === 'Capabilities' ? '.capability-record ul' : '.experience-record';
     await page.locator(target).scrollIntoViewIfNeeded();
