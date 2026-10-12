@@ -1,0 +1,727 @@
+{
+  "captures": 144,
+  "completeAssetObservations": 144,
+  "decodedCaptures": [
+    {
+      "file": "before/1440-900-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1539
+    },
+    {
+      "file": "before/1440-900-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1539
+    },
+    {
+      "file": "before/1440-900-cedar-0.jpg",
+      "width": 1440,
+      "height": 1785
+    },
+    {
+      "file": "before/1440-900-cedar-1.jpg",
+      "width": 1440,
+      "height": 1785
+    },
+    {
+      "file": "before/1440-900-lobby-0.jpg",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "before/1440-900-lobby-1.jpg",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "before/1440-650-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1491
+    },
+    {
+      "file": "before/1440-650-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1491
+    },
+    {
+      "file": "before/1440-650-cedar-0.jpg",
+      "width": 1440,
+      "height": 1737
+    },
+    {
+      "file": "before/1440-650-cedar-1.jpg",
+      "width": 1440,
+      "height": 1737
+    },
+    {
+      "file": "before/1440-650-lobby-0.jpg",
+      "width": 1440,
+      "height": 852
+    },
+    {
+      "file": "before/1440-650-lobby-1.jpg",
+      "width": 1440,
+      "height": 852
+    },
+    {
+      "file": "before/1363-936-jobpilot-0.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "before/1363-936-jobpilot-1.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "before/1363-936-cedar-0.jpg",
+      "width": 1363,
+      "height": 1821
+    },
+    {
+      "file": "before/1363-936-cedar-1.jpg",
+      "width": 1363,
+      "height": 1821
+    },
+    {
+      "file": "before/1363-936-lobby-0.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "before/1363-936-lobby-1.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "before/768-1024-jobpilot-0.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "before/768-1024-jobpilot-1.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "before/768-1024-cedar-0.jpg",
+      "width": 768,
+      "height": 1983
+    },
+    {
+      "file": "before/768-1024-cedar-1.jpg",
+      "width": 768,
+      "height": 1983
+    },
+    {
+      "file": "before/768-1024-lobby-0.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "before/768-1024-lobby-1.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "before/390-844-jobpilot-0.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "before/390-844-jobpilot-1.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "before/390-844-cedar-0.jpg",
+      "width": 390,
+      "height": 2323
+    },
+    {
+      "file": "before/390-844-cedar-1.jpg",
+      "width": 390,
+      "height": 2323
+    },
+    {
+      "file": "before/390-844-lobby-0.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "before/390-844-lobby-1.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "before/320-844-jobpilot-0.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "before/320-844-jobpilot-1.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "before/320-844-cedar-0.jpg",
+      "width": 320,
+      "height": 2561
+    },
+    {
+      "file": "before/320-844-cedar-1.jpg",
+      "width": 320,
+      "height": 2561
+    },
+    {
+      "file": "before/320-844-lobby-0.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "before/320-844-lobby-1.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "after/1440-900-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "after/1440-900-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "after/1440-900-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "after/1440-900-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "after/1440-900-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "after/1440-900-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "after/1440-650-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "after/1440-650-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "after/1440-650-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "after/1440-650-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "after/1440-650-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "after/1440-650-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "after/1363-936-jobpilot-0.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "after/1363-936-jobpilot-1.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "after/1363-936-cedar-0.jpg",
+      "width": 1363,
+      "height": 1821
+    },
+    {
+      "file": "after/1363-936-cedar-1.jpg",
+      "width": 1363,
+      "height": 2461
+    },
+    {
+      "file": "after/1363-936-lobby-0.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "after/1363-936-lobby-1.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "after/768-1024-jobpilot-0.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "after/768-1024-jobpilot-1.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "after/768-1024-cedar-0.jpg",
+      "width": 768,
+      "height": 1983
+    },
+    {
+      "file": "after/768-1024-cedar-1.jpg",
+      "width": 768,
+      "height": 2287
+    },
+    {
+      "file": "after/768-1024-lobby-0.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "after/768-1024-lobby-1.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "after/390-844-jobpilot-0.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "after/390-844-jobpilot-1.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "after/390-844-cedar-0.jpg",
+      "width": 390,
+      "height": 2323
+    },
+    {
+      "file": "after/390-844-cedar-1.jpg",
+      "width": 390,
+      "height": 2493
+    },
+    {
+      "file": "after/390-844-lobby-0.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after/390-844-lobby-1.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after/320-844-jobpilot-0.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "after/320-844-jobpilot-1.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "after/320-844-cedar-0.jpg",
+      "width": 320,
+      "height": 2561
+    },
+    {
+      "file": "after/320-844-cedar-1.jpg",
+      "width": 320,
+      "height": 2656
+    },
+    {
+      "file": "after/320-844-lobby-0.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "after/320-844-lobby-1.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "reduced/1440-900-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "reduced/1440-900-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "reduced/1440-900-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "reduced/1440-900-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "reduced/1440-900-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "reduced/1440-900-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "reduced/1440-650-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "reduced/1440-650-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "reduced/1440-650-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "reduced/1440-650-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "reduced/1440-650-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "reduced/1440-650-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "reduced/1363-936-jobpilot-0.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "reduced/1363-936-jobpilot-1.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "reduced/1363-936-cedar-0.jpg",
+      "width": 1363,
+      "height": 1821
+    },
+    {
+      "file": "reduced/1363-936-cedar-1.jpg",
+      "width": 1363,
+      "height": 2461
+    },
+    {
+      "file": "reduced/1363-936-lobby-0.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "reduced/1363-936-lobby-1.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "reduced/768-1024-jobpilot-0.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "reduced/768-1024-jobpilot-1.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "reduced/768-1024-cedar-0.jpg",
+      "width": 768,
+      "height": 1983
+    },
+    {
+      "file": "reduced/768-1024-cedar-1.jpg",
+      "width": 768,
+      "height": 2287
+    },
+    {
+      "file": "reduced/768-1024-lobby-0.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "reduced/768-1024-lobby-1.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "reduced/390-844-jobpilot-0.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "reduced/390-844-jobpilot-1.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "reduced/390-844-cedar-0.jpg",
+      "width": 390,
+      "height": 2323
+    },
+    {
+      "file": "reduced/390-844-cedar-1.jpg",
+      "width": 390,
+      "height": 2493
+    },
+    {
+      "file": "reduced/390-844-lobby-0.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "reduced/390-844-lobby-1.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "reduced/320-844-jobpilot-0.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "reduced/320-844-jobpilot-1.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "reduced/320-844-cedar-0.jpg",
+      "width": 320,
+      "height": 2561
+    },
+    {
+      "file": "reduced/320-844-cedar-1.jpg",
+      "width": 320,
+      "height": 2656
+    },
+    {
+      "file": "reduced/320-844-lobby-0.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "reduced/320-844-lobby-1.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "fallback/1440-900-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "fallback/1440-900-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "fallback/1440-900-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "fallback/1440-900-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "fallback/1440-900-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "fallback/1440-900-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "fallback/1440-650-jobpilot-0.jpg",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "file": "fallback/1440-650-jobpilot-1.jpg",
+      "width": 1440,
+      "height": 1552
+    },
+    {
+      "file": "fallback/1440-650-cedar-0.jpg",
+      "width": 1440,
+      "height": 1798
+    },
+    {
+      "file": "fallback/1440-650-cedar-1.jpg",
+      "width": 1440,
+      "height": 2461
+    },
+    {
+      "file": "fallback/1440-650-lobby-0.jpg",
+      "width": 1440,
+      "height": 908
+    },
+    {
+      "file": "fallback/1440-650-lobby-1.jpg",
+      "width": 1440,
+      "height": 902
+    },
+    {
+      "file": "fallback/1363-936-jobpilot-0.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "fallback/1363-936-jobpilot-1.jpg",
+      "width": 1363,
+      "height": 1575
+    },
+    {
+      "file": "fallback/1363-936-cedar-0.jpg",
+      "width": 1363,
+      "height": 1821
+    },
+    {
+      "file": "fallback/1363-936-cedar-1.jpg",
+      "width": 1363,
+      "height": 2461
+    },
+    {
+      "file": "fallback/1363-936-lobby-0.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "fallback/1363-936-lobby-1.jpg",
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "file": "fallback/768-1024-jobpilot-0.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "fallback/768-1024-jobpilot-1.jpg",
+      "width": 768,
+      "height": 1714
+    },
+    {
+      "file": "fallback/768-1024-cedar-0.jpg",
+      "width": 768,
+      "height": 1983
+    },
+    {
+      "file": "fallback/768-1024-cedar-1.jpg",
+      "width": 768,
+      "height": 2287
+    },
+    {
+      "file": "fallback/768-1024-lobby-0.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "fallback/768-1024-lobby-1.jpg",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "fallback/390-844-jobpilot-0.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "fallback/390-844-jobpilot-1.jpg",
+      "width": 390,
+      "height": 1974
+    },
+    {
+      "file": "fallback/390-844-cedar-0.jpg",
+      "width": 390,
+      "height": 2323
+    },
+    {
+      "file": "fallback/390-844-cedar-1.jpg",
+      "width": 390,
+      "height": 2493
+    },
+    {
+      "file": "fallback/390-844-lobby-0.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "fallback/390-844-lobby-1.jpg",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "fallback/320-844-jobpilot-0.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "fallback/320-844-jobpilot-1.jpg",
+      "width": 320,
+      "height": 2129
+    },
+    {
+      "file": "fallback/320-844-cedar-0.jpg",
+      "width": 320,
+      "height": 2561
+    },
+    {
+      "file": "fallback/320-844-cedar-1.jpg",
+      "width": 320,
+      "height": 2656
+    },
+    {
+      "file": "fallback/320-844-lobby-0.jpg",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "fallback/320-844-lobby-1.jpg",
+      "width": 320,
+      "height": 844
+    }
+  ],
+  "reviewScope": "Six exposed Collection choices at six sizes. Before plus normal/reduced/fallback after. Actual published images, no production writes."
+}

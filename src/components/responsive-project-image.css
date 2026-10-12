@@ -31,4 +31,5 @@
 .project-image-handoff.is-frame .project-image-previous img { height: 100%; object-fit: contain; }
 .project-image-handoff[data-image-state="ready"] > .project-image-previous { opacity: 0; }
 .project-image-handoff.is-natural[data-image-state="loading"] > .project-image-current { position: absolute; inset: 0; }
+.project-image-handoff.is-natural.has-dimensions > .project-image-current { position: absolute; inset: 0; }
 @media (prefers-reduced-motion: reduce) { .project-image-current, .project-image-previous { transition: none; } }

@@ -1,0 +1,1627 @@
+{
+  "phase": "before",
+  "baseline": "03eccaa5cac93818ed7cb7eedc85a2631887c9ce",
+  "environment": "Windows Chrome, original assets and frozen public GET records; GPU strings recorded when WebGL is available. Tablet/phone sizes, reduced motion and unavailable-WebGL fallback are browser emulation, not physical-device tests.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 572,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 570.359375,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 570.21875,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 1233.25,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 565.46875,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 163.96875,
+        "bottom": 559.96875,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 163.96875,
+        "bottom": 573.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 597.265625,
+        "bottom": 687.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 707.015625,
+        "bottom": 760.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 548.03125,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 546.390625,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 546.25,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 541.5,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 140,
+        "bottom": 536,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 549.296875,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 573.296875,
+        "bottom": 663.046875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 683.046875,
+        "bottom": 736.046875,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 590,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 588.359375,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 354
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 588.21875,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 1251.25,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 354,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 583.46875,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 181.96875,
+        "bottom": 577.96875,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 181.96875,
+        "bottom": 591.265625,
+        "width": 880,
+        "height": 409.296875
+      },
+      "caption": {
+        "top": 615.265625,
+        "bottom": 705.015625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 725.015625,
+        "bottom": 778.015625,
+        "width": 880,
+        "height": 53
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 579,
+        "scrollWidth": 579
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 586.8125,
+        "width": 675.828125,
+        "height": 313.359375
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 150,
+        "scrollWidth": 263
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 585.5625,
+        "width": 675.828125,
+        "height": 312.109375
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 150,
+        "scrollWidth": 263
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 585.453125,
+        "width": 675.828125,
+        "height": 312
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 150,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 1094.640625,
+        "width": 675.828125,
+        "height": 821.1875
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 150,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 581.796875,
+        "width": 675.828125,
+        "height": 308.34375
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 675,
+        "height": 308
+      },
+      "selectors": {
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 273.453125,
+        "bottom": 577.5625,
+        "width": 675.828125,
+        "height": 304.109375
+      },
+      "frame": {
+        "top": 273.453125,
+        "bottom": 587.78125,
+        "width": 675.828125,
+        "height": 314.328125
+      },
+      "caption": {
+        "top": 611.78125,
+        "bottom": 701.53125,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 721.53125,
+        "bottom": 774.53125,
+        "width": 675.828125,
+        "height": 53
+      },
+      "natural": {
+        "width": 675,
+        "height": 304
+      },
+      "selectors": {
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 397.84375,
+        "width": 343.1875,
+        "height": 159.125
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 728.265625,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 397.203125,
+        "width": 343.1875,
+        "height": 158.484375
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 728.265625,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 397.140625,
+        "width": 343.1875,
+        "height": 158.421875
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 728.265625,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 655.71875,
+        "width": 343.1875,
+        "height": 417
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 728.265625,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 395.296875,
+        "width": 343.1875,
+        "height": 156.578125
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 672.265625,
+        "width": 343.1875,
+        "height": 165
+      },
+      "natural": {
+        "width": 343,
+        "height": 156
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 238.71875,
+        "bottom": 393.140625,
+        "width": 343.1875,
+        "height": 154.421875
+      },
+      "frame": {
+        "top": 238.71875,
+        "bottom": 398.328125,
+        "width": 343.1875,
+        "height": 159.609375
+      },
+      "caption": {
+        "top": 422.328125,
+        "bottom": 487.265625,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.265625,
+        "bottom": 672.265625,
+        "width": 343.1875,
+        "height": 165
+      },
+      "natural": {
+        "width": 343,
+        "height": 154
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 383.609375,
+        "width": 281.59375,
+        "height": 130.5625
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 713.953125,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 383.078125,
+        "width": 281.59375,
+        "height": 130.03125
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 713.953125,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 383.046875,
+        "width": 281.59375,
+        "height": 130
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 713.953125,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 595.203125,
+        "width": 281.59375,
+        "height": 342.15625
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 713.953125,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 395
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 381.515625,
+        "width": 281.59375,
+        "height": 128.46875
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 657.953125,
+        "width": 281.59375,
+        "height": 165
+      },
+      "natural": {
+        "width": 281,
+        "height": 128
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "normal",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "image": {
+        "top": 253.046875,
+        "bottom": 379.75,
+        "width": 281.59375,
+        "height": 126.703125
+      },
+      "frame": {
+        "top": 253.046875,
+        "bottom": 384.015625,
+        "width": 281.59375,
+        "height": 130.96875
+      },
+      "caption": {
+        "top": 408.015625,
+        "bottom": 472.953125,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.953125,
+        "bottom": 657.953125,
+        "width": 281.59375,
+        "height": 165
+      },
+      "natural": {
+        "width": 281,
+        "height": 126
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

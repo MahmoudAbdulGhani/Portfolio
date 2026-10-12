@@ -1,0 +1,1627 @@
+{
+  "phase": "after",
+  "baseline": "03eccaa5cac93818ed7cb7eedc85a2631887c9ce",
+  "environment": "Windows Chrome, original assets and frozen public GET records; GPU strings recorded when WebGL is available. Tablet/phone sizes, reduced motion and unavailable-WebGL fallback are browser emulation, not physical-device tests.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 548.03125,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 548.03125,
+        "width": 880,
+        "height": 408.03125
+      },
+      "caption": {
+        "top": 572.03125,
+        "bottom": 661.78125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 681.78125,
+        "bottom": 798.78125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 546.390625,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 546.390625,
+        "width": 880,
+        "height": 406.390625
+      },
+      "caption": {
+        "top": 570.390625,
+        "bottom": 660.140625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 680.140625,
+        "bottom": 797.140625,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 546.25,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 546.25,
+        "width": 880,
+        "height": 406.25
+      },
+      "caption": {
+        "top": 570.25,
+        "bottom": 660,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 680,
+        "bottom": 797,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "caption": {
+        "top": 1233.28125,
+        "bottom": 1323.03125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 1343.03125,
+        "bottom": 1460.03125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 541.5,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 541.453125,
+        "width": 880,
+        "height": 401.453125
+      },
+      "caption": {
+        "top": 565.453125,
+        "bottom": 655.203125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 675.203125,
+        "bottom": 792.203125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 536,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 535.4375,
+        "width": 880,
+        "height": 395.4375
+      },
+      "caption": {
+        "top": 559.4375,
+        "bottom": 649.1875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 669.1875,
+        "bottom": 786.1875,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 548.03125,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 548.03125,
+        "width": 880,
+        "height": 408.03125
+      },
+      "caption": {
+        "top": 572.03125,
+        "bottom": 661.78125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 681.78125,
+        "bottom": 798.78125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 546.390625,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 546.390625,
+        "width": 880,
+        "height": 406.390625
+      },
+      "caption": {
+        "top": 570.390625,
+        "bottom": 660.140625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 680.140625,
+        "bottom": 797.140625,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 546.25,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 546.25,
+        "width": 880,
+        "height": 406.25
+      },
+      "caption": {
+        "top": 570.25,
+        "bottom": 660,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 680,
+        "bottom": 797,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "caption": {
+        "top": 1233.28125,
+        "bottom": 1323.03125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 1343.03125,
+        "bottom": 1460.03125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 541.5,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 541.453125,
+        "width": 880,
+        "height": 401.453125
+      },
+      "caption": {
+        "top": 565.453125,
+        "bottom": 655.203125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 675.203125,
+        "bottom": 792.203125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 536,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 535.4375,
+        "width": 880,
+        "height": 395.4375
+      },
+      "caption": {
+        "top": 559.4375,
+        "bottom": 649.1875,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 669.1875,
+        "bottom": 786.1875,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 150.609375,
+        "bottom": 558.640625,
+        "width": 880,
+        "height": 408.03125
+      },
+      "frame": {
+        "top": 150.609375,
+        "bottom": 558.640625,
+        "width": 880,
+        "height": 408.03125
+      },
+      "caption": {
+        "top": 582.640625,
+        "bottom": 672.390625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 692.390625,
+        "bottom": 809.390625,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 151.421875,
+        "bottom": 557.8125,
+        "width": 880,
+        "height": 406.390625
+      },
+      "frame": {
+        "top": 151.421875,
+        "bottom": 557.8125,
+        "width": 880,
+        "height": 406.390625
+      },
+      "caption": {
+        "top": 581.8125,
+        "bottom": 671.5625,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 691.5625,
+        "bottom": 808.5625,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 151.5,
+        "bottom": 557.75,
+        "width": 880,
+        "height": 406.25
+      },
+      "frame": {
+        "top": 151.5,
+        "bottom": 557.75,
+        "width": 880,
+        "height": 406.25
+      },
+      "caption": {
+        "top": 581.75,
+        "bottom": 671.5,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 691.5,
+        "bottom": 808.5,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 1209.28125,
+        "width": 880,
+        "height": 1069.28125
+      },
+      "caption": {
+        "top": 1233.28125,
+        "bottom": 1323.03125,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 1343.03125,
+        "bottom": 1460.03125,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 153.890625,
+        "bottom": 555.390625,
+        "width": 880,
+        "height": 401.5
+      },
+      "frame": {
+        "top": 153.890625,
+        "bottom": 555.34375,
+        "width": 880,
+        "height": 401.453125
+      },
+      "caption": {
+        "top": 579.34375,
+        "bottom": 669.09375,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 689.09375,
+        "bottom": 806.09375,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 401
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1363,
+      "height": 936,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 156.90625,
+        "bottom": 552.90625,
+        "width": 880,
+        "height": 396
+      },
+      "frame": {
+        "top": 156.90625,
+        "bottom": 552.34375,
+        "width": 880,
+        "height": 395.4375
+      },
+      "caption": {
+        "top": 576.34375,
+        "bottom": 666.09375,
+        "width": 880,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 686.09375,
+        "bottom": 803.09375,
+        "width": 880,
+        "height": 117
+      },
+      "natural": {
+        "width": 879,
+        "height": 395
+      },
+      "selectors": {
+        "width": 890,
+        "scrollWidth": 890
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 241.9375,
+        "bottom": 555.296875,
+        "width": 675.828125,
+        "height": 313.359375
+      },
+      "frame": {
+        "top": 241.9375,
+        "bottom": 555.296875,
+        "width": 675.828125,
+        "height": 313.359375
+      },
+      "caption": {
+        "top": 579.296875,
+        "bottom": 669.046875,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 689.046875,
+        "bottom": 806.046875,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 242.5625,
+        "bottom": 554.671875,
+        "width": 675.828125,
+        "height": 312.109375
+      },
+      "frame": {
+        "top": 242.5625,
+        "bottom": 554.671875,
+        "width": 675.828125,
+        "height": 312.109375
+      },
+      "caption": {
+        "top": 578.671875,
+        "bottom": 668.421875,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 688.421875,
+        "bottom": 805.421875,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 242.625,
+        "bottom": 554.625,
+        "width": 675.828125,
+        "height": 312
+      },
+      "frame": {
+        "top": 242.625,
+        "bottom": 554.625,
+        "width": 675.828125,
+        "height": 312
+      },
+      "caption": {
+        "top": 578.625,
+        "bottom": 668.375,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 688.375,
+        "bottom": 805.375,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 140,
+        "bottom": 961.1875,
+        "width": 675.828125,
+        "height": 821.1875
+      },
+      "frame": {
+        "top": 140,
+        "bottom": 961.1875,
+        "width": 675.828125,
+        "height": 821.1875
+      },
+      "caption": {
+        "top": 985.1875,
+        "bottom": 1074.9375,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 1094.9375,
+        "bottom": 1211.9375,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 244.4375,
+        "bottom": 552.78125,
+        "width": 675.828125,
+        "height": 308.34375
+      },
+      "frame": {
+        "top": 244.4375,
+        "bottom": 552.8125,
+        "width": 675.828125,
+        "height": 308.375
+      },
+      "caption": {
+        "top": 576.8125,
+        "bottom": 666.5625,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 686.5625,
+        "bottom": 803.5625,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 675,
+        "height": 308
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 246.4375,
+        "bottom": 550.546875,
+        "width": 675.828125,
+        "height": 304.109375
+      },
+      "frame": {
+        "top": 246.4375,
+        "bottom": 550.796875,
+        "width": 675.828125,
+        "height": 304.359375
+      },
+      "caption": {
+        "top": 574.796875,
+        "bottom": 664.546875,
+        "width": 675.828125,
+        "height": 89.75
+      },
+      "controls": {
+        "top": 684.546875,
+        "bottom": 801.546875,
+        "width": 675.828125,
+        "height": 117
+      },
+      "natural": {
+        "width": 675,
+        "height": 304
+      },
+      "selectors": {
+        "width": 686,
+        "scrollWidth": 686
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 238.96875,
+        "bottom": 398.09375,
+        "width": 343.1875,
+        "height": 159.125
+      },
+      "frame": {
+        "top": 238.96875,
+        "bottom": 398.09375,
+        "width": 343.1875,
+        "height": 159.125
+      },
+      "caption": {
+        "top": 422.09375,
+        "bottom": 487.03125,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 507.03125,
+        "bottom": 728.03125,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 239.28125,
+        "bottom": 397.765625,
+        "width": 343.1875,
+        "height": 158.484375
+      },
+      "frame": {
+        "top": 239.28125,
+        "bottom": 397.765625,
+        "width": 343.1875,
+        "height": 158.484375
+      },
+      "caption": {
+        "top": 421.765625,
+        "bottom": 486.703125,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 506.703125,
+        "bottom": 727.703125,
+        "width": 343.1875,
+        "height": 221
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 209.3125,
+        "bottom": 367.734375,
+        "width": 343.1875,
+        "height": 158.421875
+      },
+      "frame": {
+        "top": 209.3125,
+        "bottom": 367.734375,
+        "width": 343.1875,
+        "height": 158.421875
+      },
+      "caption": {
+        "top": 391.734375,
+        "bottom": 456.671875,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 476.671875,
+        "bottom": 757.671875,
+        "width": 343.1875,
+        "height": 281
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 165,
+        "bottom": 582,
+        "width": 343.1875,
+        "height": 417
+      },
+      "frame": {
+        "top": 165,
+        "bottom": 582,
+        "width": 343.1875,
+        "height": 417
+      },
+      "caption": {
+        "top": 606,
+        "bottom": 670.9375,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 690.9375,
+        "bottom": 971.9375,
+        "width": 343.1875,
+        "height": 281
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 240.484375,
+        "bottom": 397.0625,
+        "width": 343.1875,
+        "height": 156.578125
+      },
+      "frame": {
+        "top": 240.484375,
+        "bottom": 396.5625,
+        "width": 343.1875,
+        "height": 156.078125
+      },
+      "caption": {
+        "top": 420.5625,
+        "bottom": 485.5,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 505.5,
+        "bottom": 670.5,
+        "width": 343.1875,
+        "height": 165
+      },
+      "natural": {
+        "width": 343,
+        "height": 156
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 241.484375,
+        "bottom": 395.90625,
+        "width": 343.1875,
+        "height": 154.421875
+      },
+      "frame": {
+        "top": 241.484375,
+        "bottom": 395.5625,
+        "width": 343.1875,
+        "height": 154.078125
+      },
+      "caption": {
+        "top": 419.5625,
+        "bottom": 484.5,
+        "width": 343.1875,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 504.5,
+        "bottom": 669.5,
+        "width": 343.1875,
+        "height": 165
+      },
+      "natural": {
+        "width": 343,
+        "height": 154
+      },
+      "selectors": {
+        "width": 343,
+        "scrollWidth": 343
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 0,
+      "label": "Resume library and upload",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 253.25,
+        "bottom": 383.8125,
+        "width": 281.59375,
+        "height": 130.5625
+      },
+      "frame": {
+        "top": 253.25,
+        "bottom": 383.8125,
+        "width": 281.59375,
+        "height": 130.5625
+      },
+      "caption": {
+        "top": 407.8125,
+        "bottom": 472.75,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.75,
+        "bottom": 713.75,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1900,
+        "height": 881
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "jobpilot",
+      "selection": 1,
+      "label": "Discover jobs",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 253.515625,
+        "bottom": 383.546875,
+        "width": 281.59375,
+        "height": 130.03125
+      },
+      "frame": {
+        "top": 253.515625,
+        "bottom": 383.546875,
+        "width": 281.59375,
+        "height": 130.03125
+      },
+      "caption": {
+        "top": 407.546875,
+        "bottom": 472.484375,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 492.484375,
+        "bottom": 713.484375,
+        "width": 281.59375,
+        "height": 221
+      },
+      "natural": {
+        "width": 1899,
+        "height": 877
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 0,
+      "label": "Construction portfolio overview",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 223.53125,
+        "bottom": 353.53125,
+        "width": 281.59375,
+        "height": 130
+      },
+      "frame": {
+        "top": 223.53125,
+        "bottom": 353.53125,
+        "width": 281.59375,
+        "height": 130
+      },
+      "caption": {
+        "top": 377.53125,
+        "bottom": 442.46875,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 462.46875,
+        "bottom": 743.46875,
+        "width": 281.59375,
+        "height": 281
+      },
+      "natural": {
+        "width": 1904,
+        "height": 879
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "cedar",
+      "selection": 1,
+      "label": "Project details and operations",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 165,
+        "bottom": 507.15625,
+        "width": 281.59375,
+        "height": 342.15625
+      },
+      "frame": {
+        "top": 165,
+        "bottom": 507.15625,
+        "width": 281.59375,
+        "height": 342.15625
+      },
+      "caption": {
+        "top": 531.15625,
+        "bottom": 596.09375,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 616.09375,
+        "bottom": 897.09375,
+        "width": 281.59375,
+        "height": 281
+      },
+      "natural": {
+        "width": 1920,
+        "height": 2333
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 0,
+      "label": "Friends directory",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 254.390625,
+        "bottom": 382.859375,
+        "width": 281.59375,
+        "height": 128.46875
+      },
+      "frame": {
+        "top": 254.390625,
+        "bottom": 382.65625,
+        "width": 281.59375,
+        "height": 128.265625
+      },
+      "caption": {
+        "top": 406.65625,
+        "bottom": 471.59375,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 491.59375,
+        "bottom": 656.59375,
+        "width": 281.59375,
+        "height": 165
+      },
+      "natural": {
+        "width": 281,
+        "height": 128
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "kind": "lobby",
+      "selection": 1,
+      "label": "Audio room and chat",
+      "mode": "reduced",
+      "renderer": "reduced",
+      "gpu": null,
+      "image": {
+        "top": 255.390625,
+        "bottom": 382.09375,
+        "width": 281.59375,
+        "height": 126.703125
+      },
+      "frame": {
+        "top": 255.390625,
+        "bottom": 381.65625,
+        "width": 281.59375,
+        "height": 126.265625
+      },
+      "caption": {
+        "top": 405.65625,
+        "bottom": 470.59375,
+        "width": 281.59375,
+        "height": 64.9375
+      },
+      "controls": {
+        "top": 490.59375,
+        "bottom": 655.59375,
+        "width": 281.59375,
+        "height": 165
+      },
+      "natural": {
+        "width": 281,
+        "height": 126
+      },
+      "selectors": {
+        "width": 282,
+        "scrollWidth": 282
+      },
+      "horizontalOverflow": false,
+      "errors": [],
+      "writes": []
+    }
+  ]
+}
