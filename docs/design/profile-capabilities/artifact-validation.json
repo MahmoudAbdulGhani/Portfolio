@@ -1,0 +1,246 @@
+{
+  "images": 40,
+  "allScreenshotsLinked": true,
+  "decodedImages": [
+    {
+      "path": "reduced/1440-additional.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 75639
+    },
+    {
+      "path": "reduced/1440-complete.jpg",
+      "width": 1440,
+      "height": 2615,
+      "bytes": 279311
+    },
+    {
+      "path": "reduced/1440-evidence.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 85609
+    },
+    {
+      "path": "reduced/1440-inventory.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 148942
+    },
+    {
+      "path": "reduced/320-additional.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 44132
+    },
+    {
+      "path": "reduced/320-complete.jpg",
+      "width": 320,
+      "height": 4051,
+      "bytes": 217706
+    },
+    {
+      "path": "reduced/320-evidence.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 51159
+    },
+    {
+      "path": "reduced/320-inventory.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 47316
+    },
+    {
+      "path": "reduced/390-additional.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 50266
+    },
+    {
+      "path": "reduced/390-complete.jpg",
+      "width": 390,
+      "height": 3663,
+      "bytes": 217468
+    },
+    {
+      "path": "reduced/390-evidence.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 57724
+    },
+    {
+      "path": "reduced/390-inventory.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 51470
+    },
+    {
+      "path": "reduced/768-additional.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 75051
+    },
+    {
+      "path": "reduced/768-complete.jpg",
+      "width": 768,
+      "height": 2974,
+      "bytes": 234340
+    },
+    {
+      "path": "reduced/768-evidence.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 79342
+    },
+    {
+      "path": "reduced/768-inventory.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 105294
+    },
+    {
+      "path": "before/1440-complete.jpg",
+      "width": 1440,
+      "height": 5241,
+      "bytes": 310302
+    },
+    {
+      "path": "before/1440-inventory.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 98695
+    },
+    {
+      "path": "before/320-complete.jpg",
+      "width": 320,
+      "height": 7093,
+      "bytes": 230931
+    },
+    {
+      "path": "before/320-inventory.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 35614
+    },
+    {
+      "path": "before/390-complete.jpg",
+      "width": 390,
+      "height": 7005,
+      "bytes": 234521
+    },
+    {
+      "path": "before/390-inventory.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 36579
+    },
+    {
+      "path": "before/768-complete.jpg",
+      "width": 768,
+      "height": 6516,
+      "bytes": 264214
+    },
+    {
+      "path": "before/768-inventory.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 59513
+    },
+    {
+      "path": "after/1440-additional.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 75802
+    },
+    {
+      "path": "after/1440-complete.jpg",
+      "width": 1440,
+      "height": 2615,
+      "bytes": 279311
+    },
+    {
+      "path": "after/1440-evidence.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 85609
+    },
+    {
+      "path": "after/1440-inventory.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 148942
+    },
+    {
+      "path": "after/320-additional.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 44132
+    },
+    {
+      "path": "after/320-complete.jpg",
+      "width": 320,
+      "height": 4051,
+      "bytes": 217706
+    },
+    {
+      "path": "after/320-evidence.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 51159
+    },
+    {
+      "path": "after/320-inventory.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 47316
+    },
+    {
+      "path": "after/390-additional.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 50266
+    },
+    {
+      "path": "after/390-complete.jpg",
+      "width": 390,
+      "height": 3663,
+      "bytes": 217468
+    },
+    {
+      "path": "after/390-evidence.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 57724
+    },
+    {
+      "path": "after/390-inventory.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 51470
+    },
+    {
+      "path": "after/768-additional.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 75051
+    },
+    {
+      "path": "after/768-complete.jpg",
+      "width": 768,
+      "height": 2974,
+      "bytes": 234340
+    },
+    {
+      "path": "after/768-evidence.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 79342
+    },
+    {
+      "path": "after/768-inventory.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 105294
+    }
+  ]
+}

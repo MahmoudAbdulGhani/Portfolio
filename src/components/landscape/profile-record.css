@@ -32,20 +32,28 @@
 .landscape .profile-page .training-record { margin-top: 0; }
 .landscape .profile-page .training-record > div { border-top: 0; border-bottom: 1px solid var(--line); padding: 24px 0; }
 .landscape .profile-page .training-record h3 { font-size: 20px; line-height: 26px; letter-spacing: -.02em; margin: 8px 0; font-weight: 500; }
-.landscape .profile-page .capability-evidence-note { font-size: 15px; line-height: 25px; max-width: 66ch; margin: 22px 0 0; }
-.landscape .profile-page .capability-record > div { padding: 24px 0; }
-.landscape .profile-page .capability-record h2 { display: flex; gap: 16px; align-items: baseline; font-size: 22px; line-height: 28px; margin-bottom: 18px; font-weight: 500; }
-.landscape .profile-page .capability-summary { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 24px; padding: 0; list-style: none; }
-.landscape .profile-page .capability-record li { min-width: 0; font-size: 15px; line-height: 25px; margin-block: 0 16px; }
-.landscape .profile-page .capability-record .capability-summary li { margin: 0; font-size: 15px; }
-.landscape .profile-page .competency-detail { font-size: 14px; line-height: 24px; }
-.landscape .profile-page .capability-record li > .profile-evidence-link { display: flex; gap: 8px; align-items: baseline; font-size: 14px; line-height: 24px; max-width: 100%; min-height: 44px; margin-top: 4px; }
-.landscape .profile-page .profile-evidence-link > span { min-width: 0; }
+.landscape .profile-page .capability-category { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.landscape .profile-page .capability-record h2 { display: flex; gap: 16px; align-items: baseline; font-size: 18px; line-height: 26px; margin: 0 0 10px; font-weight: 500; }
+.landscape .profile-page .capability-summary { display: block; padding: 0; margin: 0; list-style: none; }
+.landscape .profile-page .capability-record .capability-summary li { display: inline; margin: 0; font-size: 15px; line-height: 25px; overflow-wrap: anywhere; }
+.landscape .profile-page .capability-summary li:not(:last-child)::after { content: ''; display: inline-block; height: 12px; width: 1px; background: var(--line); margin: 0 10px; vertical-align: baseline; }
+.landscape .profile-page .capability-record .competency-detail { font-size: inherit; line-height: inherit; }
+.landscape .profile-page .profile-engineering-evidence { padding-top: 28px; }
+.landscape .profile-page .profile-engineering-evidence > h2 { font-size: 22px; line-height: 28px; }
+.landscape .profile-page .capability-evidence-note { font-size: 15px; line-height: 25px; max-width: 66ch; margin: 0 0 20px; }
+.landscape .profile-page .profile-evidence-row { display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.landscape .profile-page .profile-evidence-row h3 { font-size: 18px; line-height: 26px; font-weight: 500; margin: 0 0 2px; }
+.landscape .profile-page .profile-evidence-row p, .landscape .profile-page .profile-evidence-associations { font-size: 15px; line-height: 25px; margin: 8px 0; max-width: 66ch; }
+.landscape .profile-page .profile-evidence-associations { color: #4d5249; }
+.landscape .profile-page .profile-engineering-evidence .profile-evidence-link { display: flex; gap: 8px; align-items: baseline; font-size: 15px; line-height: 25px; min-height: 44px; max-width: 100%; width: fit-content; margin-top: 4px; }
 .landscape .profile-page .profile-evidence-link svg { flex-shrink: 0; }
 .landscape .profile-page .profile-evidence-scope { display: block; font-size: 12px; line-height: 20px; color: #4d5249; }
-.landscape .profile-page .profile-evidence-boundary { display: block; text-decoration: underline; text-underline-offset: 4px; }
+.landscape .profile-page .profile-additional-evidence { border-block: 1px solid var(--line); }
+.landscape .profile-page .profile-additional-evidence > summary { font-size: 18px; line-height: 26px; padding: 16px 0; }
+.landscape .profile-page .profile-additional-evidence .disclosure-label { grid-template-columns: minmax(0,1fr) 28px; }
+.landscape .profile-page .profile-additional-evidence ul { list-style: none; padding: 0; margin: 0 0 8px; }
+.landscape .profile-page .profile-additional-evidence li { font-size: 15px; line-height: 25px; margin: 0; padding: 12px 0; border-top: 1px solid var(--line); }
 .landscape .profile-page .profile-contact { min-height: 44px; font-size: 14px; }
-@media (max-width: 1050px) { .landscape .profile-page .capability-summary { grid-template-columns: minmax(0,1fr); } }
 @media (max-width: 719px) {
   .landscape .profile-page .profile-portrait { margin-bottom: 28px; }
   .landscape .profile-page .portrait-caption .eyebrow { font-size: 12px; line-height: 20px; letter-spacing: .04em; overflow-wrap: anywhere; }

@@ -65,7 +65,7 @@ test('Profile shares date/status corrections and removes duplicate and unsupport
   await expect(page.locator('.capability-record')).not.toContainText('verified');
 });
 
-test('Capabilities has one location per competency across categories and Skills, with evidence at that location', async ({ page }) => {
+test('Capabilities has one inventory location per competency and one grouped reference preserving its associations', async ({ page }) => {
   await page.route('**/api/profile', route => route.fulfill({ json: { name: 'Test Owner', title: 'Developer', experience: [], socials: [] } }));
   await page.route('**/api/technologies', route => route.fulfill({ json: [
     { name: 'HTML & CSS', category: 'languages' }, { name: 'MySQL / MariaDB', category: 'databases' }, { name: 'Git & GitHub', category: 'ops' },
@@ -81,8 +81,14 @@ test('Capabilities has one location per competency across categories and Skills,
     for (const key of ['html', 'css', 'mysql', 'mariadb', 'git', 'github', 'argon2', 'ai api integration']) {
       const row = page.locator(`[data-competency="${key}"]`);
       await expect(row).toHaveCount(1);
-      await expect(row.getByRole('link')).toHaveAttribute('href', '/projects/documented');
+      await expect(row.getByRole('link')).toHaveCount(0);
     }
+    const summary = page.locator('.profile-additional-evidence summary');
+    await summary.press('Enter');
+    const evidence = page.locator('[data-evidence-project="documented"]');
+    await expect(evidence.getByRole('link')).toHaveAttribute('href', '/projects/documented');
+    await expect(page.locator('.capability-record a')).toHaveCount(1);
+    for (const name of ['HTML', 'CSS', 'MySQL', 'MariaDB', 'Git', 'GitHub', 'Argon2', 'AI API Integration']) await expect(evidence.locator('.profile-evidence-associations')).toContainText(name);
     await expect(page.locator('[data-competency="html"]')).toContainText('HTML5');
     await expect(page.locator('[data-competency="css"]')).toContainText('CSS3');
     await expect(page.locator('[data-competency="argon2"]')).toContainText('Password hashing');

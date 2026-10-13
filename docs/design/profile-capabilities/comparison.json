@@ -1,0 +1,54 @@
+[
+  {
+    "width": 1440,
+    "viewportHeight": 900,
+    "competencies": 71,
+    "beforeHeight": 4525,
+    "afterCollapsedHeight": 1508,
+    "afterExpandedHeight": 1921,
+    "beforeLinks": 34,
+    "afterLinks": 6,
+    "beforeJobPilotLinks": 18,
+    "afterJobPilotLinks": 1,
+    "inventoryAndAssociationsPreserved": true
+  },
+  {
+    "width": 768,
+    "viewportHeight": 1024,
+    "competencies": 71,
+    "beforeHeight": 5791,
+    "afterCollapsedHeight": 1858,
+    "afterExpandedHeight": 2271,
+    "beforeLinks": 34,
+    "afterLinks": 6,
+    "beforeJobPilotLinks": 18,
+    "afterJobPilotLinks": 1,
+    "inventoryAndAssociationsPreserved": true
+  },
+  {
+    "width": 390,
+    "viewportHeight": 844,
+    "competencies": 71,
+    "beforeHeight": 5791,
+    "afterCollapsedHeight": 2033,
+    "afterExpandedHeight": 2471,
+    "beforeLinks": 34,
+    "afterLinks": 6,
+    "beforeJobPilotLinks": 18,
+    "afterJobPilotLinks": 1,
+    "inventoryAndAssociationsPreserved": true
+  },
+  {
+    "width": 320,
+    "viewportHeight": 844,
+    "competencies": 71,
+    "beforeHeight": 5816,
+    "afterCollapsedHeight": 2333,
+    "afterExpandedHeight": 2796,
+    "beforeLinks": 34,
+    "afterLinks": 6,
+    "beforeJobPilotLinks": 18,
+    "afterJobPilotLinks": 1,
+    "inventoryAndAssociationsPreserved": true
+  }
+]

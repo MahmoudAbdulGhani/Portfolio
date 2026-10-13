@@ -35,8 +35,9 @@ test('dates and uncertainty stay visible after collapsing; training does not tur
 });
 test('three contribution-supported references reach the actual engineering sections with explicit team scope',async({page})=>{
  for(const [key,slug,title,team]of [['ai api integration','jobpilot-ai','Reviewed AI changes',false],['django','construction-project-management-accounting-system','Financial calculation and interpretation',true],['supabase','lobby','Guest membership and call access',true]] as const){
-  await page.goto('/profile');await page.getByRole('tab',{name:'Capabilities'}).click();const row=page.locator(`[data-competency="${key}"]`),link=row.getByRole('link');
-  await expect(link).toHaveAttribute('href',`/projects/${slug}#engineering`);await expect(link).toContainText(title);await expect(link).toContainText(team?'Team-project evidence':'Project evidence');await link.focus();await page.keyboard.press('Enter');
+  await page.goto('/profile');await page.getByRole('tab',{name:'Capabilities'}).click();const row=page.locator(`[data-evidence-project="${slug}"]`),link=row.getByRole('link');
+  await expect(page.locator(`[data-competency="${key}"]`)).toHaveCount(1);
+  await expect(link).toHaveAttribute('href',`/projects/${slug}#engineering`);await expect(link).toContainText(title);await expect(row.locator('.profile-evidence-scope')).toHaveText(team?'Team-project evidence':'Project evidence');await link.focus();await page.keyboard.press('Enter');
   await expect(page).toHaveURL(new RegExp(`/projects/${slug}#engineering$`));await expect(page.locator('#engineering')).toBeInViewport();
   await expect(page.getByRole('region',{name:slug==='jobpilot-ai'?'The profile save boundary':slug==='lobby'?'Lobby connection and access':'Cedar calculation and interpretation'})).toBeVisible();
  }
