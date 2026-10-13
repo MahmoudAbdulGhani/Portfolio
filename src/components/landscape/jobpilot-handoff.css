@@ -1,0 +1,18 @@
+.landscape .selection-project-number {
+  display: block;
+  width: max-content;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font: 12px/1.6 var(--mono);
+}
+.landscape .case-project-number { display: inline-block; }
+.landscape [data-reader-handoff="running"] :is(.case-heading h1, .case-project-number, .case-figure .screenshot-frame) {
+  will-change: transform;
+}
+/* Moving artwork stays beneath live navigation and reading surfaces. These
+   real controls remain clickable even when a transition is interrupted. */
+.landscape [data-reader-handoff="running"] :is(.case-back, .case-heading, .case-media-nav) {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+}

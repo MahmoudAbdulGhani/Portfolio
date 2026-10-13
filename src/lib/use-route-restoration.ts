@@ -8,19 +8,32 @@ export function useRouteRestoration() {
   useEffect(() => {
     const previous = history.scrollRestoration;
     history.scrollRestoration = 'manual';
-    const save = () => {
-      if (restoring.current) return;
+    let popFocusFrame = 0;
+    const save = (event: Event) => {
+      if (restoring.current && event.type === 'scroll') return;
       const main = document.querySelector<HTMLElement>('.landscape-route > main');
       positions.current.set(entry.current, { x: scrollX, y: scrollY, main: main ? { x: main.scrollLeft, y: main.scrollTop } : undefined });
+    };
+    const pop = (event: PopStateEvent) => {
+      save(event);
+      cancelAnimationFrame(popFocusFrame);
+      if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
+      // Rapid Back may cancel the reader before React commits it, leaving the
+      // same preview mounted. Its mount effects cannot restore focus then.
+      popFocusFrame = requestAnimationFrame(() => {
+        if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
+        document.querySelector<HTMLElement>('.stage.has-profile-boundary .open-case')?.focus({preventScroll:true});
+      });
     };
     document.addEventListener('scroll', save, { passive: true, capture: true });
     // Capture before the route replaces a tall document and clamps scrollY.
     document.addEventListener('click', save, true);
-    window.addEventListener('popstate', save);
+    window.addEventListener('popstate', pop);
     return () => {
       document.removeEventListener('scroll', save, true);
       document.removeEventListener('click', save, true);
-      window.removeEventListener('popstate', save);
+      window.removeEventListener('popstate', pop);
+      cancelAnimationFrame(popFocusFrame);
       history.scrollRestoration = previous;
     };
   }, []);
@@ -30,7 +43,10 @@ export function useRouteRestoration() {
     const focusNeeded = changedPage && location.pathname !== '/' && Boolean(document.querySelector('.landscape-route'));
     pathname.current = location.pathname;
     entry.current = location.key;
-    const position = navigation === 'POP' ? positions.current.get(location.key) : undefined;
+    // Explicit Collection returns reuse this owner if their history entry is
+    // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
+    const position = navigation === 'POP' ? positions.current.get(location.key) : location.state?.routeRestore;
+    const returningJobPilot = location.pathname === '/' && new URLSearchParams(location.search).get('project') === 'jobpilot-ai' && Boolean(position);
     let cancelled = false, frame = 0, focused = false, deadline = 0;
     restoring.current = true;
     const observer = new MutationObserver(restore);
@@ -40,7 +56,7 @@ export function useRouteRestoration() {
       if (focusNeeded && main && !focused) {
         main.focus({ preventScroll: true }); focused = true;
       }
-      if (location.hash) {
+      if (location.hash && !returningJobPilot) {
         const target = document.getElementById(location.hash.slice(1));
         if (!target) return;
         observer.disconnect();
@@ -65,5 +81,5 @@ export function useRouteRestoration() {
     observer.observe(document.getElementById('root') ?? document.body, { childList: true, subtree: true });
     restore();
     return () => { cancelled = true; observer.disconnect(); cancelAnimationFrame(frame); clearTimeout(deadline); restoring.current = false; };
-  }, [location.key, location.pathname, location.hash, navigation]);
+  }, [location.key, location.pathname, location.search, location.hash, location.state?.routeRestore, navigation]);
 }

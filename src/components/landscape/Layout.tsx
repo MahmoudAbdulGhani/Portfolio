@@ -1,4 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
+import { JobPilotJourneyContext, type JobPilotJourney } from './jobpilot-journey';
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { useProfile, useProjects } from "../../lib/hooks";
@@ -26,6 +27,7 @@ const links = [
 ] as const;
 
 export function LandscapeLayout() {
+  const [journeys] = useState(() => new Map<string, JobPilotJourney>());
   const { data: profile } = useProfile();
   const { data: projects } = useProjects();
   const location = useLocation();
@@ -36,7 +38,7 @@ export function LandscapeLayout() {
     location.pathname === "/" &&
     new URLSearchParams(location.search).has("project");
   return (
-    <div className="landscape">
+    <JobPilotJourneyContext.Provider value={journeys}><div className="landscape">
       <div
         className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}`}
       >
@@ -105,6 +107,6 @@ export function LandscapeLayout() {
           </Suspense>
         </footer>
       </div>
-    </div>
+    </div></JobPilotJourneyContext.Provider>
   );
 }

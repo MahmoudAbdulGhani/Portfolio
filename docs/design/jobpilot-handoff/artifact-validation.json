@@ -1,0 +1,1150 @@
+{
+  "environment": "Chrome decoded metadata and midpoint playback, not physical-device playback.",
+  "images": [
+    {
+      "file": "reduced/1024-1024-0-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 123774
+    },
+    {
+      "file": "reduced/1024-1024-0-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 87054
+    },
+    {
+      "file": "reduced/1024-1024-0-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 56769
+    },
+    {
+      "file": "reduced/1024-1024-0-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 76655
+    },
+    {
+      "file": "reduced/1024-1024-1-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 127809
+    },
+    {
+      "file": "reduced/1024-1024-1-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 86738
+    },
+    {
+      "file": "reduced/1024-1024-1-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 55977
+    },
+    {
+      "file": "reduced/1024-1024-1-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 80699
+    },
+    {
+      "file": "reduced/1440-650-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 137977
+    },
+    {
+      "file": "reduced/1440-650-0-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 63379
+    },
+    {
+      "file": "reduced/1440-650-0-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 54361
+    },
+    {
+      "file": "reduced/1440-650-0-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 56554
+    },
+    {
+      "file": "reduced/1440-650-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 141854
+    },
+    {
+      "file": "reduced/1440-650-1-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 67940
+    },
+    {
+      "file": "reduced/1440-650-1-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 52917
+    },
+    {
+      "file": "reduced/1440-650-1-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59228
+    },
+    {
+      "file": "reduced/1440-900-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 137719
+    },
+    {
+      "file": "reduced/1440-900-0-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 82126
+    },
+    {
+      "file": "reduced/1440-900-0-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 60635
+    },
+    {
+      "file": "reduced/1440-900-0-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 78445
+    },
+    {
+      "file": "reduced/1440-900-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 142408
+    },
+    {
+      "file": "reduced/1440-900-1-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83967
+    },
+    {
+      "file": "reduced/1440-900-1-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 59587
+    },
+    {
+      "file": "reduced/1440-900-1-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83032
+    },
+    {
+      "file": "reduced/320-844-0-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76238
+    },
+    {
+      "file": "reduced/320-844-0-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37672
+    },
+    {
+      "file": "reduced/320-844-0-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39120
+    },
+    {
+      "file": "reduced/320-844-0-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 29064
+    },
+    {
+      "file": "reduced/320-844-1-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76489
+    },
+    {
+      "file": "reduced/320-844-1-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36320
+    },
+    {
+      "file": "reduced/320-844-1-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38204
+    },
+    {
+      "file": "reduced/320-844-1-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 29323
+    },
+    {
+      "file": "reduced/390-844-0-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 81181
+    },
+    {
+      "file": "reduced/390-844-0-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43238
+    },
+    {
+      "file": "reduced/390-844-0-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 41516
+    },
+    {
+      "file": "reduced/390-844-0-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 33773
+    },
+    {
+      "file": "reduced/390-844-1-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 81286
+    },
+    {
+      "file": "reduced/390-844-1-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40211
+    },
+    {
+      "file": "reduced/390-844-1-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39857
+    },
+    {
+      "file": "reduced/390-844-1-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 33858
+    },
+    {
+      "file": "reduced/768-1024-0-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 107165
+    },
+    {
+      "file": "reduced/768-1024-0-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69745
+    },
+    {
+      "file": "reduced/768-1024-0-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69874
+    },
+    {
+      "file": "reduced/768-1024-0-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 59912
+    },
+    {
+      "file": "reduced/768-1024-1-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 108895
+    },
+    {
+      "file": "reduced/768-1024-1-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69102
+    },
+    {
+      "file": "reduced/768-1024-1-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 50623
+    },
+    {
+      "file": "reduced/768-1024-1-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 61685
+    },
+    {
+      "file": "fallback/1024-1024-0-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 123796
+    },
+    {
+      "file": "fallback/1024-1024-0-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 87055
+    },
+    {
+      "file": "fallback/1024-1024-0-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 80733
+    },
+    {
+      "file": "fallback/1024-1024-0-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 47103
+    },
+    {
+      "file": "fallback/1024-1024-1-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 127850
+    },
+    {
+      "file": "fallback/1024-1024-1-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 86726
+    },
+    {
+      "file": "fallback/1024-1024-1-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 84055
+    },
+    {
+      "file": "fallback/1024-1024-1-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 47560
+    },
+    {
+      "file": "fallback/1440-650-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 138057
+    },
+    {
+      "file": "fallback/1440-650-0-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 63363
+    },
+    {
+      "file": "fallback/1440-650-0-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61131
+    },
+    {
+      "file": "fallback/1440-650-0-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 47268
+    },
+    {
+      "file": "fallback/1440-650-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 141830
+    },
+    {
+      "file": "fallback/1440-650-1-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 67943
+    },
+    {
+      "file": "fallback/1440-650-1-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 58931
+    },
+    {
+      "file": "fallback/1440-650-1-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 47536
+    },
+    {
+      "file": "fallback/1440-900-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 137802
+    },
+    {
+      "file": "fallback/1440-900-0-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 82126
+    },
+    {
+      "file": "fallback/1440-900-0-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83873
+    },
+    {
+      "file": "fallback/1440-900-0-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 51588
+    },
+    {
+      "file": "fallback/1440-900-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 142408
+    },
+    {
+      "file": "fallback/1440-900-1-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83993
+    },
+    {
+      "file": "fallback/1440-900-1-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 86525
+    },
+    {
+      "file": "fallback/1440-900-1-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 49014
+    },
+    {
+      "file": "fallback/320-844-0-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76250
+    },
+    {
+      "file": "fallback/320-844-0-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37763
+    },
+    {
+      "file": "fallback/320-844-0-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39120
+    },
+    {
+      "file": "fallback/320-844-0-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 24146
+    },
+    {
+      "file": "fallback/320-844-1-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76489
+    },
+    {
+      "file": "fallback/320-844-1-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36431
+    },
+    {
+      "file": "fallback/320-844-1-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38204
+    },
+    {
+      "file": "fallback/320-844-1-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 23624
+    },
+    {
+      "file": "fallback/390-844-0-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 80955
+    },
+    {
+      "file": "fallback/390-844-0-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43238
+    },
+    {
+      "file": "fallback/390-844-0-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 41516
+    },
+    {
+      "file": "fallback/390-844-0-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 26561
+    },
+    {
+      "file": "fallback/390-844-1-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 80982
+    },
+    {
+      "file": "fallback/390-844-1-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40211
+    },
+    {
+      "file": "fallback/390-844-1-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39857
+    },
+    {
+      "file": "fallback/390-844-1-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 25947
+    },
+    {
+      "file": "fallback/768-1024-0-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 107229
+    },
+    {
+      "file": "fallback/768-1024-0-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69745
+    },
+    {
+      "file": "fallback/768-1024-0-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69874
+    },
+    {
+      "file": "fallback/768-1024-0-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 40388
+    },
+    {
+      "file": "fallback/768-1024-1-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 108911
+    },
+    {
+      "file": "fallback/768-1024-1-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69102
+    },
+    {
+      "file": "fallback/768-1024-1-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 68180
+    },
+    {
+      "file": "fallback/768-1024-1-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 39100
+    },
+    {
+      "file": "before/1024-1024-0-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 123581
+    },
+    {
+      "file": "before/1024-1024-0-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 52317
+    },
+    {
+      "file": "before/1024-1024-0-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 73859
+    },
+    {
+      "file": "before/1024-1024-1-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 125320
+    },
+    {
+      "file": "before/1024-1024-1-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 52317
+    },
+    {
+      "file": "before/1024-1024-1-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 73859
+    },
+    {
+      "file": "before/1440-650-0-preview.jpg",
+      "width": 1440,
+      "height": 1554,
+      "bytes": 137823
+    },
+    {
+      "file": "before/1440-650-0-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 51255
+    },
+    {
+      "file": "before/1440-650-0-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59954
+    },
+    {
+      "file": "before/1440-650-1-preview.jpg",
+      "width": 1440,
+      "height": 1552,
+      "bytes": 137945
+    },
+    {
+      "file": "before/1440-650-1-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 50954
+    },
+    {
+      "file": "before/1440-650-1-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 59967
+    },
+    {
+      "file": "before/1440-900-0-preview.jpg",
+      "width": 1440,
+      "height": 1554,
+      "bytes": 137158
+    },
+    {
+      "file": "before/1440-900-0-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 53619
+    },
+    {
+      "file": "before/1440-900-0-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 77471
+    },
+    {
+      "file": "before/1440-900-1-preview.jpg",
+      "width": 1440,
+      "height": 1552,
+      "bytes": 137971
+    },
+    {
+      "file": "before/1440-900-1-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 53619
+    },
+    {
+      "file": "before/1440-900-1-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 77479
+    },
+    {
+      "file": "before/320-844-0-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76557
+    },
+    {
+      "file": "before/320-844-0-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38222
+    },
+    {
+      "file": "before/320-844-0-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 28197
+    },
+    {
+      "file": "before/320-844-1-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 74839
+    },
+    {
+      "file": "before/320-844-1-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38196
+    },
+    {
+      "file": "before/320-844-1-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 28197
+    },
+    {
+      "file": "before/390-844-0-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 80913
+    },
+    {
+      "file": "before/390-844-0-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39401
+    },
+    {
+      "file": "before/390-844-0-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 31838
+    },
+    {
+      "file": "before/390-844-1-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 78859
+    },
+    {
+      "file": "before/390-844-1-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39386
+    },
+    {
+      "file": "before/390-844-1-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 31838
+    },
+    {
+      "file": "before/768-1024-0-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 107259
+    },
+    {
+      "file": "before/768-1024-0-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 49080
+    },
+    {
+      "file": "before/768-1024-0-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 58162
+    },
+    {
+      "file": "before/768-1024-1-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 107539
+    },
+    {
+      "file": "before/768-1024-1-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 49080
+    },
+    {
+      "file": "before/768-1024-1-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 58163
+    },
+    {
+      "file": "after/1024-1024-0-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 123774
+    },
+    {
+      "file": "after/1024-1024-0-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 87054
+    },
+    {
+      "file": "after/1024-1024-0-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 80766
+    },
+    {
+      "file": "after/1024-1024-0-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 50122
+    },
+    {
+      "file": "after/1024-1024-1-preview.jpg",
+      "width": 1024,
+      "height": 1663,
+      "bytes": 127809
+    },
+    {
+      "file": "after/1024-1024-1-reader-image.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 86738
+    },
+    {
+      "file": "after/1024-1024-1-reader.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 84070
+    },
+    {
+      "file": "after/1024-1024-1-return.jpg",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 47580
+    },
+    {
+      "file": "after/1440-650-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 137977
+    },
+    {
+      "file": "after/1440-650-0-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 63379
+    },
+    {
+      "file": "after/1440-650-0-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 61131
+    },
+    {
+      "file": "after/1440-650-0-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 47121
+    },
+    {
+      "file": "after/1440-650-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 141854
+    },
+    {
+      "file": "after/1440-650-1-reader-image.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 67941
+    },
+    {
+      "file": "after/1440-650-1-reader.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 58931
+    },
+    {
+      "file": "after/1440-650-1-return.jpg",
+      "width": 1440,
+      "height": 650,
+      "bytes": 45968
+    },
+    {
+      "file": "after/1440-900-0-preview.jpg",
+      "width": 1440,
+      "height": 1585,
+      "bytes": 137719
+    },
+    {
+      "file": "after/1440-900-0-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 82126
+    },
+    {
+      "file": "after/1440-900-0-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83873
+    },
+    {
+      "file": "after/1440-900-0-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 73087
+    },
+    {
+      "file": "after/1440-900-1-preview.jpg",
+      "width": 1440,
+      "height": 1583,
+      "bytes": 142408
+    },
+    {
+      "file": "after/1440-900-1-reader-image.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83967
+    },
+    {
+      "file": "after/1440-900-1-reader.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 86534
+    },
+    {
+      "file": "after/1440-900-1-return.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 82800
+    },
+    {
+      "file": "after/1440-900-pose-190.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 59391
+    },
+    {
+      "file": "after/1440-900-pose-300.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 76812
+    },
+    {
+      "file": "after/1440-900-pose-450.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 83873
+    },
+    {
+      "file": "after/1440-900-pose-80.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 40820
+    },
+    {
+      "file": "after/320-844-0-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76234
+    },
+    {
+      "file": "after/320-844-0-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 37763
+    },
+    {
+      "file": "after/320-844-0-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 39120
+    },
+    {
+      "file": "after/320-844-0-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 24146
+    },
+    {
+      "file": "after/320-844-1-preview.jpg",
+      "width": 320,
+      "height": 2129,
+      "bytes": 76489
+    },
+    {
+      "file": "after/320-844-1-reader-image.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 36431
+    },
+    {
+      "file": "after/320-844-1-reader.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 38204
+    },
+    {
+      "file": "after/320-844-1-return.jpg",
+      "width": 320,
+      "height": 844,
+      "bytes": 23624
+    },
+    {
+      "file": "after/390-844-0-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 80916
+    },
+    {
+      "file": "after/390-844-0-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 43238
+    },
+    {
+      "file": "after/390-844-0-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 41516
+    },
+    {
+      "file": "after/390-844-0-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 25792
+    },
+    {
+      "file": "after/390-844-1-preview.jpg",
+      "width": 390,
+      "height": 1974,
+      "bytes": 81012
+    },
+    {
+      "file": "after/390-844-1-reader-image.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 40211
+    },
+    {
+      "file": "after/390-844-1-reader.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 39857
+    },
+    {
+      "file": "after/390-844-1-return.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 27926
+    },
+    {
+      "file": "after/390-844-pose-190.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 23756
+    },
+    {
+      "file": "after/390-844-pose-300.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 38096
+    },
+    {
+      "file": "after/390-844-pose-450.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 41516
+    },
+    {
+      "file": "after/390-844-pose-80.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 23249
+    },
+    {
+      "file": "after/768-1024-0-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 107165
+    },
+    {
+      "file": "after/768-1024-0-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69745
+    },
+    {
+      "file": "after/768-1024-0-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69874
+    },
+    {
+      "file": "after/768-1024-0-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 42306
+    },
+    {
+      "file": "after/768-1024-1-preview.jpg",
+      "width": 768,
+      "height": 1714,
+      "bytes": 108895
+    },
+    {
+      "file": "after/768-1024-1-reader-image.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 69102
+    },
+    {
+      "file": "after/768-1024-1-reader.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 68180
+    },
+    {
+      "file": "after/768-1024-1-return.jpg",
+      "width": 768,
+      "height": 1024,
+      "bytes": 39099
+    }
+  ],
+  "htmlMediaReferences": 238,
+  "videos": [
+    {
+      "file": "after/1440-open-return.webm",
+      "duration": 11.4,
+      "width": 1440,
+      "height": 900,
+      "error": null
+    },
+    {
+      "file": "after/390-open-return.webm",
+      "duration": 6.68,
+      "width": 390,
+      "height": 844,
+      "error": null
+    }
+  ]
+}
