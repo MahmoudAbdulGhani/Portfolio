@@ -1,0 +1,229 @@
+{
+  "run": 38402775160,
+  "commit": "87dab71a60caa68e0d4c3cdbb40d2d4117743e50",
+  "notes": "Assets complete quickly. All three assertions fail before demo/handoff; third post-timeout snapshot is already settled. Driver warning is an observation, not proof of a GPU-specific cause.",
+  "attempts": [
+    {
+      "attempt": "profile-boundary-rapid-res-d0d7e-iculation-and-restore-focus-chromium",
+      "console": [
+        {
+          "time": 13354.754,
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "time": 13364.659,
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "time": 13651.62,
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        },
+        {
+          "time": 20013.652,
+          "type": "warning",
+          "text": "[.WebGL-0x29ec00134a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        }
+      ],
+      "snapshots": [
+        {
+          "time": 14062.841,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 14095.661,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 20027.176,
+          "state": ": '-1', 'class': 'stage is-expanded has-profile-boundary', 'data-selection-state': 'opening', 'data-motion-phase': 'opening', 'data-content-state': 'ready', 'data-motion-renderer': 'webgl', 'aria-label': 'Proje",
+          "surface": " sample data.'], ['DIV', {'class': 'selection-image-frame'}, ['DIV', {'class': 'product-surface', 'data-image-ready': 'true', 'style': 'opacity: 0; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);'}, ['SPAN', {'class': 'project-image-handoff is-natural "
+        }
+      ],
+      "assets": [
+        {
+          "time": 13867.192,
+          "duration": 9.731,
+          "path": "http://127.0.0.1:5173/landscape/jobpilot-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 13867.54,
+          "duration": 9.954,
+          "path": "http://127.0.0.1:5173/landscape/lobby-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 13867.84,
+          "duration": 9.868,
+          "path": "http://127.0.0.1:5173/landscape/archive-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 14079.453,
+          "duration": 17.973,
+          "path": "http://127.0.0.1:5173/src/components/landscape/motion-rig.ts",
+          "status": 200
+        },
+        {
+          "time": 14137.426,
+          "duration": 33.707,
+          "path": "https://screens.example.test/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "attempt": "profile-boundary-rapid-res-d0d7e-iculation-and-restore-focus-chromium-retry1",
+      "console": [
+        {
+          "time": 21992.353,
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "time": 22046.436,
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "time": 22371.274,
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        },
+        {
+          "time": 27912.835,
+          "type": "warning",
+          "text": "[.WebGL-0x365401349000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        }
+      ],
+      "snapshots": [
+        {
+          "time": 22776.127,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 22823.7,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 27922.091,
+          "state": ": '-1', 'class': 'stage is-expanded has-profile-boundary', 'data-selection-state': 'opening', 'data-motion-phase': 'opening', 'data-content-state': 'ready', 'data-motion-renderer': 'webgl', 'aria-label': 'Proje",
+          "surface": " sample data.'], ['DIV', {'class': 'selection-image-frame'}, ['DIV', {'class': 'product-surface', 'data-image-ready': 'true', 'style': 'opacity: 0; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);'}, ['SPAN', {'class': 'project-image-handoff is-natural "
+        }
+      ],
+      "assets": [
+        {
+          "time": 22591.179,
+          "duration": 10.542,
+          "path": "http://127.0.0.1:5173/landscape/jobpilot-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 22592.519,
+          "duration": 13.876999999999999,
+          "path": "http://127.0.0.1:5173/landscape/lobby-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 22592.789,
+          "duration": 14.11,
+          "path": "http://127.0.0.1:5173/landscape/archive-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 22788.142,
+          "duration": 13.471,
+          "path": "http://127.0.0.1:5173/src/components/landscape/motion-rig.ts",
+          "status": 200
+        },
+        {
+          "time": 22865.899,
+          "duration": 38.953,
+          "path": "https://screens.example.test/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "attempt": "profile-boundary-rapid-res-d0d7e-iculation-and-restore-focus-chromium-retry2",
+      "console": [
+        {
+          "time": 29629.158,
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "time": 29738.37,
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "time": 29974.88,
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        },
+        {
+          "time": 34949.442,
+          "type": "warning",
+          "text": "[.WebGL-0x2f6c0013fc00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        }
+      ],
+      "snapshots": [
+        {
+          "time": 30399.536,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 30437.903,
+          "state": "{'id': 'main-content', 'tabindex': '-1', 'class': 'stage', 'data-selection-state': 'idle', 'data-motion-phase': 'idle', 'data-content-state': 'ready', 'data-motion-renderer': 'loading', 'aria-label': 'Project c",
+          "surface": ""
+        },
+        {
+          "time": 35443.489,
+          "state": ": '-1', 'class': 'stage is-expanded has-profile-boundary', 'data-selection-state': 'settled', 'data-motion-phase': 'active', 'data-content-state': 'ready', 'data-motion-renderer': 'webgl', 'aria-label': 'Projec",
+          "surface": " sample data.'], ['DIV', {'class': 'selection-image-frame'}, ['DIV', {'class': 'product-surface', 'data-image-ready': 'true', 'style': 'opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);'}, ['SPAN', {'class': 'project-image-handoff is-natural "
+        }
+      ],
+      "assets": [
+        {
+          "time": 30151.881,
+          "duration": 8.379,
+          "path": "http://127.0.0.1:5173/landscape/jobpilot-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 30152.312,
+          "duration": 10.369,
+          "path": "http://127.0.0.1:5173/landscape/lobby-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 30152.57,
+          "duration": 10.045,
+          "path": "http://127.0.0.1:5173/landscape/archive-sculpture.webp",
+          "status": 200
+        },
+        {
+          "time": 30408.79,
+          "duration": 8.797,
+          "path": "http://127.0.0.1:5173/src/components/landscape/motion-rig.ts",
+          "status": 200
+        },
+        {
+          "time": 30462.912,
+          "duration": 29.755000000000003,
+          "path": "https://screens.example.test/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

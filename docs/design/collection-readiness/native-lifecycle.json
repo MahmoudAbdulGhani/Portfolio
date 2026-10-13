@@ -1,0 +1,15 @@
+{
+  "method": "Chromium CDP Page.setWebLifecycleState frozen/active, no document.hidden override; browser automation, not physical-device testing.",
+  "before": {
+    "state": "visible",
+    "hidden": false
+  },
+  "after": {
+    "state": "visible",
+    "hidden": false,
+    "events": [],
+    "phase": "active",
+    "renderer": "fallback",
+    "canvases": 0
+  }
+}

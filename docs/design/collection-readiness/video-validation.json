@@ -1,0 +1,61 @@
+{
+  "screenshotsFullyDecoded": 142,
+  "videos": [
+    {
+      "path": "before/1440-delayed-ready.webm",
+      "duration": 8.56,
+      "width": 1440,
+      "height": 900,
+      "midpointRange": 229
+    },
+    {
+      "path": "before/390-delayed-ready.webm",
+      "duration": 9.28,
+      "width": 390,
+      "height": 844,
+      "midpointRange": 230
+    },
+    {
+      "path": "after/1440-delayed-ready.webm",
+      "duration": 8.48,
+      "width": 1440,
+      "height": 900,
+      "midpointRange": 248
+    },
+    {
+      "path": "after/390-delayed-ready.webm",
+      "duration": 8.68,
+      "width": 390,
+      "height": 844,
+      "midpointRange": 247
+    },
+    {
+      "path": "before-cold-paint/1440-cold-paint.webm",
+      "duration": 9.16,
+      "width": 1440,
+      "height": 900,
+      "midpointRange": 224
+    },
+    {
+      "path": "before-cold-paint/390-cold-paint.webm",
+      "duration": 8.32,
+      "width": 390,
+      "height": 844,
+      "midpointRange": 228
+    },
+    {
+      "path": "after-cold-paint/1440-cold-paint.webm",
+      "duration": 7.32,
+      "width": 1440,
+      "height": 900,
+      "midpointRange": 253
+    },
+    {
+      "path": "after-cold-paint/390-cold-paint.webm",
+      "duration": 8.68,
+      "width": 390,
+      "height": 844,
+      "midpointRange": 231
+    }
+  ]
+}

@@ -1,4 +1,7 @@
 export const collectionTiming = { articulation: 0.82, handoff: 0.24, opening: 0.98, returning: 0.56 } as const;
+// Optional imagery/engine initialization gets a bounded opportunity to join
+// the opening. Expiry retires that work and uses the photographic composition.
+export const collectionReadinessDeadline = 2_500;
 export type CollectionPhase = 'idle' | 'selecting' | 'opening' | 'active' | 'closing';
 export type RigRenderer = 'loading' | 'webgl' | 'fallback' | 'reduced' | 'photographic';
 
@@ -15,7 +18,14 @@ export function createCollectionMotion(selected: boolean, reduced: boolean, rest
   return {
     snapshot: () => state,
     subscribe: (notify: () => void) => { listeners.add(notify); return () => { listeners.delete(notify); }; },
-    rendererReady: (renderer: 'webgl' | 'fallback') => { if (state.allowGPU) update({ ...state, renderer }); },
+    rendererReady: (renderer: 'webgl' | 'fallback') => {
+      if (state.allowGPU && state.phase !== 'closing') update({ ...state, renderer });
+    },
+    fallback: () => {
+      if (state.phase !== 'selecting' && state.phase !== 'opening') return false;
+      update({ ...state, phase: 'active', renderer: 'fallback', allowGPU: false });
+      return true;
+    },
     restore: () => {
       if (state.phase !== 'active' || state.allowGPU) update({ ...state, phase: 'active', renderer: 'photographic', allowGPU: false });
     },

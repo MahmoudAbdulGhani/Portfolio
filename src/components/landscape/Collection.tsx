@@ -21,7 +21,7 @@ import { CedarBoundary } from './CedarBoundary';
 import { LobbyBoundary } from './LobbyBoundary';
 import { warmRig } from "./rig-loader";
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './finite-motion';
-import { collectionTiming, createCollectionMotion } from './collection-motion';
+import { collectionReadinessDeadline, collectionTiming, createCollectionMotion } from './collection-motion';
 import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preference';
 import type { RigKind } from "./rig-models";
 import type { Project } from "../../types";
@@ -178,6 +178,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   const animation = useRef<gsap.core.Timeline | null>(null);
   const originalTransforms = useRef(new Map<HTMLElement, { x: number; y: number; scale: number }>());
   const [motion] = useState(() => createCollectionMotion(Boolean(selected), prefersReducedMotion(), restored));
+  const [readinessDeadline] = useState(() => performance.now() + collectionReadinessDeadline);
   const state = useSyncExternalStore(motion.subscribe, motion.snapshot, motion.snapshot);
   const reduced = state.reduced;
   const kind = selected?.kind;
@@ -194,11 +195,58 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   // or restart the selection's finite opening clock.
   const previewReady = !screens.length || decoded.size > 0;
   const eligible = ready && previewReady && (state.renderer !== 'loading' || !state.allowGPU);
-  const markDecoded = (src: string) => setDecoded(previous => new Set(previous).add(src));
+  const markDecoded = (src: string) => setDecoded(previous => previous.has(src) ? previous : new Set(previous).add(src));
+  const previewLoaded = (image: HTMLImageElement) => {
+    const src = screens[chapter]?.src;
+    if (!src) return;
+    const candidate = image.currentSrc || image.src;
+    const current = () => image.isConnected && (image.currentSrc || image.src) === candidate;
+    void image.decode().then(() => {
+      if (!current()) return;
+      setFailedPreview(previous => previous === src ? null : previous);
+      markDecoded(src);
+    }).catch(() => {
+      if (!current()) return;
+      setFailedPreview(src);
+      markDecoded(src);
+    });
+  };
+  const recoverOpening = useCallback(() => {
+    const phase = motion.snapshot().phase;
+    if (phase !== 'selecting' && phase !== 'opening') return;
+    stopFiniteMotion(animation.current);
+    // This retires the renderer, not just the pending label. The layout effect
+    // below applies the final photographic pose; late assets can paint there.
+    motion.fallback();
+  }, [motion]);
   const readyRig = useCallback((renderer: 'webgl' | 'fallback') => {
+    const phase = motion.snapshot().phase;
+    // A synchronous initialization can outlive its timer. Reject its late
+    // notification before starting another opening clock on an obsolete rig.
+    if (phase === 'selecting' && performance.now() >= readinessDeadline) {
+      recoverOpening();
+      return;
+    }
     motion.rendererReady(renderer);
     if (renderer === 'fallback' && motion.snapshot().phase === 'opening') finishFiniteMotion(animation.current);
-  }, [motion]);
+  }, [motion, readinessDeadline, recoverOpening]);
+
+  useEffect(() => {
+    if (!kind) return;
+    const pending = () => {
+      if (motion.snapshot().phase === 'selecting') recoverOpening();
+    };
+    const deadline = window.setTimeout(pending, Math.max(0, readinessDeadline - performance.now()));
+    const visibility = () => {
+      // Hidden pages cannot promise painted animation frames. Retire the
+      // pending opening so returning to the tab has usable photographic content.
+      if (document.hidden) recoverOpening();
+      else if (performance.now() >= readinessDeadline) pending();
+    };
+    document.addEventListener('visibilitychange', visibility);
+    visibility();
+    return () => { clearTimeout(deadline); document.removeEventListener('visibilitychange', visibility); };
+  }, [kind, motion, readinessDeadline, recoverOpening]);
 
   useLayoutEffect(() => {
     if (!selected || !restored) return;
@@ -312,8 +360,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
     if (motion.snapshot().phase === 'active') {
       gsap.set(objects.filter(item => item !== object), { opacity: 0.12 });
+      if (motion.snapshot().renderer === 'fallback') gsap.set(object, { opacity: 0.12 });
       gsap.set(object.querySelector('.object-core'), { opacity: 0 });
       gsap.set(scope.querySelector('.product-surface'), { opacity: 1, scale: 1, y: 0 });
+      const rig = scope.querySelector('.motion-rig');
+      if (rig) gsap.set(rig, { opacity: 0 });
       return;
     }
     if (!eligible || !motion.open()) return;
@@ -334,7 +385,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     }, scope);
     const timeline = animation.current;
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
-  }, [eligible, kind, reduced, motion]);
+  }, [eligible, kind, reduced, motion, state.renderer]);
 
   const caseLink = selected && <Link className="solid-action open-case" to={`/projects/${selected.slug}`}
     state={{ collection: selected.kind === 'jobpilot' ? `/${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(selected.kind === 'jobpilot' ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
@@ -443,10 +494,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       )}
       {selected && (
         <>
-          {previewReady && state.allowGPU && !reduced && (
+          {((previewReady && state.allowGPU) || state.renderer === 'fallback') && !reduced && (
             <MotionRig
               kind={selected.kind}
               reduced={reduced}
+              disabled={!state.allowGPU}
               onReady={readyRig}
             />
           )}
@@ -480,23 +532,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                     dimensions={screenGeometry(screens[chapter])}
                     priority
                     retainPrevious
-                    onReadyImage={(image) => {
-                      const src = screens[chapter].src;
-                      void image
-                        .decode()
-                        .then(() => {
-                          if (!image.isConnected) return;
-                          setFailedPreview((previous) =>
-                            previous === src ? null : previous,
-                          );
-                          markDecoded(src);
-                        })
-                        .catch(() => {
-                          if (!image.isConnected) return;
-                          setFailedPreview(src);
-                          markDecoded(src);
-                        });
-                    }}
+                    onReadyImage={previewLoaded}
+                    // A responsive candidate can change without replacing the
+                    // retained element. Each load owns its own decode signal.
+                    onLoad={event => previewLoaded(event.currentTarget)}
                     onError={() => {
                       setFailedPreview(screens[chapter].src);
                       markDecoded(screens[chapter].src);

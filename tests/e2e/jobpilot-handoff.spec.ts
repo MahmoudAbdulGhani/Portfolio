@@ -97,7 +97,9 @@ test('navigation is immediate while the selected image and renderer are unavaila
   await setup(page);
   let release!:()=>void; const wait=new Promise<void>(resolve=>{release=resolve;});
   await page.route(sourceRequest('710055a0-a275-4e6a-991d-4aaa23c6e549.png'),async route=>{await wait; await route.abort();});
-  await page.goto('/?project=jobpilot-ai');
+  // An intentionally held eager image can delay Firefox's window load event.
+  // Verify navigation from the DOM while that asset is still pending.
+  await page.goto('/?project=jobpilot-ai', {waitUntil:'domcontentloaded'});
   await expect(page.locator('.stage')).toHaveAttribute('data-motion-phase','selecting');
   await open(page).click();
   await expect(page).toHaveURL('/projects/jobpilot-ai');

@@ -1,0 +1,409 @@
+{
+  "phase": "after",
+  "mode": "fallback",
+  "baseline": "87dab71",
+  "condition": "fallback opening and both selected-image journeys with actual assets.",
+  "environment": "Windows Chrome, browser-emulated sizes; no physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 546.25,
+        "caption": 570.25,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 1209.28125,
+        "caption": 1233.28125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 541.5,
+        "caption": 565.453125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 536,
+        "caption": 559.4375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "started": 1410.9000000022352,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 2521.400000002235,
+          "state": "opening",
+          "renderer": "fallback"
+        },
+        {
+          "at": 3437.800000000745,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "fallback",
+      "gpu": [],
+      "returnedRenderer": "fallback",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 217.25,
+        "caption": 241.25,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 880.28125,
+        "caption": 904.28125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 217.5,
+        "caption": 241.453125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 212,
+        "caption": 235.4375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "started": 842.6999999992549,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1467.1000000014901,
+          "state": "opening",
+          "renderer": "fallback"
+        },
+        {
+          "at": 2391.60000000149,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "fallback",
+      "gpu": [],
+      "returnedRenderer": "fallback",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 554.625,
+        "caption": 578.625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 961.1875,
+        "caption": 985.1875,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 552.78125,
+        "caption": 576.8125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 550.546875,
+        "caption": 574.796875,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "started": 676.1999999992549,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1332.5,
+          "state": "opening",
+          "renderer": "fallback"
+        },
+        {
+          "at": 2260.199999999255,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 539.703125,
+        "captionTop": 563.703125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "fallback",
+      "gpu": [],
+      "returnedRenderer": "fallback",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 367.734375,
+        "caption": 391.734375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 582,
+        "caption": 606,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 397.0625,
+        "caption": 420.5625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 395.90625,
+        "caption": 419.5625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "started": 684.4000000022352,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1302.9000000022352,
+          "state": "opening",
+          "renderer": "fallback"
+        },
+        {
+          "at": 2228.2000000029802,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 382.5,
+        "captionTop": 406.5,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "fallback",
+      "gpu": [],
+      "returnedRenderer": "fallback",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 353.53125,
+        "caption": 377.53125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 507.15625,
+        "caption": 531.15625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 382.859375,
+        "caption": 406.65625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 382.09375,
+        "caption": 405.65625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "started": 662.3999999985099,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1051.5,
+          "state": "opening",
+          "renderer": "fallback"
+        },
+        {
+          "at": 1976.699999999255,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 368.21875,
+        "captionTop": 392.21875,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "fallback",
+      "gpu": [],
+      "returnedRenderer": "fallback",
+      "errors": []
+    }
+  ]
+}

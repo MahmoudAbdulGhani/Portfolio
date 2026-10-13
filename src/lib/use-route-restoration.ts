@@ -5,24 +5,33 @@ export function useRouteRestoration() {
   const location = useLocation(), navigation = useNavigationType();
   const positions = useRef(new Map<string, { x: number; y: number; main?: { x: number; y: number } }>());
   const entry = useRef(location.key), pathname = useRef(location.pathname), restoring = useRef(false);
+  const address = useRef(location.pathname + location.search + location.hash);
   useEffect(() => {
     const previous = history.scrollRestoration;
     history.scrollRestoration = 'manual';
     let popFocusFrame = 0;
     const save = (event: Event) => {
-      if (restoring.current && event.type === 'scroll') return;
+      // History can move before React retires the old document. Its clamped
+      // scroll must not overwrite the intentional click's source position.
+      if (event.type === 'scroll' && (restoring.current || window.location.pathname + window.location.search + window.location.hash !== address.current)) return;
       const main = document.querySelector<HTMLElement>('.landscape-route > main');
       positions.current.set(entry.current, { x: scrollX, y: scrollY, main: main ? { x: main.scrollLeft, y: main.scrollTop } : undefined });
     };
     const pop = (event: PopStateEvent) => {
       save(event);
       cancelAnimationFrame(popFocusFrame);
-      if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
-      // Rapid Back may cancel the reader before React commits it, leaving the
-      // same preview mounted. Its mount effects cannot restore focus then.
+      const preview = window.location.pathname === '/' && new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai';
+      const reader = window.location.pathname === '/projects/jobpilot-ai';
+      if (!preview && !reader) return;
+      const destination = window.location.pathname + window.location.search + window.location.hash;
+      // Rapid Back can cancel the destination before React commits it. The
+      // still-mounted JobPilot preview/reader cannot rely on a mount effect.
       popFocusFrame = requestAnimationFrame(() => {
-        if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
-        document.querySelector<HTMLElement>('.stage.has-profile-boundary .open-case')?.focus({preventScroll:true});
+        if (window.location.pathname + window.location.search + window.location.hash !== destination) return;
+        document.querySelector<HTMLElement>(preview ? '.stage.has-profile-boundary .open-case' : '.project-reader#main-content')?.focus({preventScroll:true});
+        // A cancelled navigation also leaves the same reader mounted at its
+        // previous scroll. Native Back still gives an engineering hash priority.
+        if (reader && window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView({block:'start',behavior:'instant'});
       });
     };
     document.addEventListener('scroll', save, { passive: true, capture: true });
@@ -43,6 +52,7 @@ export function useRouteRestoration() {
     const focusNeeded = changedPage && location.pathname !== '/' && Boolean(document.querySelector('.landscape-route'));
     pathname.current = location.pathname;
     entry.current = location.key;
+    address.current = location.pathname + location.search + location.hash;
     // Explicit Collection returns reuse this owner if their history entry is
     // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
     const position = navigation === 'POP' ? positions.current.get(location.key) : location.state?.routeRestore;
