@@ -15,6 +15,7 @@ import { useProjects } from "../../lib/hooks";
 import { detailScreens, screenGeometry } from "../../lib/project-detail-screens";
 import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
+import { CaseGallery } from '../CaseGallery';
 import { MotionRig } from "./MotionRig";
 import { ProfileBoundary } from './ProfileBoundary';
 import { CedarBoundary } from './CedarBoundary';
@@ -190,6 +191,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   });
   const [decoded, setDecoded] = useState<Set<string>>(() => new Set());
   const [failedPreview, setFailedPreview] = useState<string | null>(null);
+  const [inspection, setInspection] = useState<{ index: number; trigger: HTMLButtonElement } | null>(null);
   const [hasPreview, setHasPreview] = useState(false);
   const hasPreviewRef = useRef(false);
   useLayoutEffect(() => { hasPreviewRef.current = hasPreview; }, [hasPreview]);
@@ -522,8 +524,12 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                 </p>
               )}
               {screens[chapter] && (
-                <div
+                <button
+                  type="button"
                   className="product-surface"
+                  aria-label={`Enlarge ${selected.displayTitle}: ${screens[chapter].label}`}
+                  disabled={!decoded.has(screens[chapter].src) || failedPreview === screens[chapter].src || state.phase === 'closing'}
+                  onClick={event => setInspection({ index: chapter, trigger: event.currentTarget })}
                   data-image-ready={
                     decoded.has(screens[chapter].src) &&
                     failedPreview !== screens[chapter].src
@@ -543,9 +549,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                       markDecoded(screens[chapter].src);
                     }}
                   />
-                </div>
+                </button>
               )}
             </div>
+            {screens[chapter] && <span className="screenshot-inspect-cue">Tap to inspect</span>}
             <section
               className="selection-detail"
               aria-label="Selected project"
@@ -602,6 +609,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
           }}><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}
           {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
           {selected.kind === 'lobby' && <div className="collection-lobby-boundary"><LobbyBoundary headingLevel={2} headingId="lobby-engineering" suspended={state.phase === 'closing'} /></div>}
+          {inspection && <CaseGallery screens={screens} projectName={selected.displayTitle} initialIndex={inspection.index} returnFocusTo={inspection.trigger} onClose={() => setInspection(null)} />}
         </>
       )}
     </main>

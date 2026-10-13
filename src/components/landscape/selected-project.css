@@ -50,7 +50,13 @@
   background: transparent;
   box-shadow: none;
   transform-origin: center;
+  display: block;
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
 }
+.landscape .product-surface:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.landscape .product-surface:disabled { cursor: default; }
 .landscape .is-expanded .product-surface picture {
   display: block;
   width: 100%;
@@ -70,7 +76,8 @@
 }
 .landscape .is-expanded .product-surface .project-image-previous img { visibility: visible; }
 .landscape .is-expanded .selection-preview-status {
-  position: relative;
+  position: absolute;
+  inset: 12px 12px auto;
   z-index: 9;
   margin: 0 0 12px;
   padding: 10px 12px;

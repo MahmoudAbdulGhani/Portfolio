@@ -120,3 +120,12 @@ test('inspection requests only the selected remote original and switching resets
  await dialog.getByRole('button',{name:'Close gallery',exact:true}).focus();await page.keyboard.press('Tab');expect(await page.evaluate(()=>Boolean(document.activeElement?.closest('dialog')))).toBe(true);
  await page.keyboard.press('Escape');await expect(page.locator('.media-enlarge')).toBeFocused();
 });
+
+test('Collection screenshot inspection returns focus without consuming the selection Escape or JobPilot handoff context',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/?project=jobpilot-ai');
+ const image=page.locator('.product-surface');await expect(image).toBeEnabled();await image.focus();await page.keyboard.press('Enter');
+ await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('Escape');await expect(image).toBeFocused();
+ await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
+ await page.locator('.chapter-switch button').nth(1).click();await expect(image).toBeEnabled();await page.locator('.open-case').click();await page.goBack();
+ await expect(page.locator('.chapter-switch button').nth(1)).toHaveAttribute('aria-pressed','true');await expect(page.locator('.open-case')).toBeFocused();
+});
