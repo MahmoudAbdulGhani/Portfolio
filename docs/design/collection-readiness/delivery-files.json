@@ -179,6 +179,8 @@
     "src/components/landscape/motion-rig.ts",
     "src/lib/use-route-restoration.ts",
     "tests/collection-motion.test.mjs",
-    "tests/e2e/collection-readiness.spec.ts"
+    "tests/e2e/collection-readiness.spec.ts",
+    "tests/e2e/jobpilot-handoff.spec.ts",
+    "docs/design/collection-readiness/navigation-validation.json"
   ]
 }

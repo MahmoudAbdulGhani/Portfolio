@@ -281,3 +281,38 @@ test('a superseded decode cannot mark the loaded replacement of a connected imag
   await expect(page.getByText('Preview unavailable. Open the case study for project details.')).toHaveCount(0);
   await expect(stage(page)).toHaveAttribute('data-selection-state','settled');
 });
+
+test('scroll from a retiring preview cannot overwrite its captured return position after history moves',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('/?project=jobpilot-ai');
+  await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');
+  const open=page.locator('.open-case');
+  await open.scrollIntoViewIfNeeded();
+  // Tall tablet viewports already contain the action; establish an intentional
+  // nonzero source position so an outgoing clamp can be distinguished.
+  await page.evaluate(()=>scrollTo(0,80));
+  await open.evaluate(link=>link.addEventListener('click',()=>{
+    (window as unknown as {returnSourcePosition:number}).returnSourcePosition=scrollY;
+  },{capture:true,once:true}));
+  await page.evaluate(()=>{
+    document.addEventListener('click',()=>{
+      if(location.pathname!=='/projects/jobpilot-ai'||!document.querySelector('.stage'))return;
+      // React has not retired the preview, but history belongs to the reader.
+      // Simulate its outgoing document's clamp, before a new route commits.
+      scrollTo(0,0);
+      document.dispatchEvent(new Event('scroll'));
+      (window as unknown as {retiringScrollDelivered:boolean}).retiringScrollDelivered=true;
+    },{once:true});
+  });
+  await open.click();
+  const position=await page.evaluate(()=>(window as unknown as {returnSourcePosition:number}).returnSourcePosition);
+  expect(position).toBeGreaterThan(0);
+  await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
+  expect(await page.evaluate(()=>(window as unknown as {retiringScrollDelivered:boolean}).retiringScrollDelivered)).toBe(true);
+  await page.locator('.case-back').click();
+  await expect(page.locator('.open-case')).toBeFocused();
+  await expect.poll(()=>page.evaluate(saved=>{
+    const root=document.scrollingElement!;
+    return Math.abs(scrollY-Math.min(saved,root.scrollHeight-root.clientHeight));
+  },position)).toBeLessThan(0.5);
+});

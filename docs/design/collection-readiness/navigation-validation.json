@@ -1,0 +1,39 @@
+{
+  "priorDocumentationCI": {
+    "commit": "05d81744c9c0b23febe480c3dd3a319486450551",
+    "run": 38428199057,
+    "runNumber": 93,
+    "jobs": 12,
+    "conclusion": "success"
+  },
+  "retiringPreview": {
+    "capturedClickY": 327,
+    "afterHistoryMovedWhilePreviewMountedY": 309,
+    "returnedY": 270,
+    "guard": "Scroll signals must match the committed route-entry address; intentional clicks/pop remain captured."
+  },
+  "validation": {
+    "firefoxImageTwoRepeated": {
+      "runs": 10,
+      "failures": 0,
+      "retries": 0
+    },
+    "firefoxWebkitHandoff": {
+      "runs": 18,
+      "failures": 0,
+      "retries": 0
+    },
+    "chromiumHandoff": {
+      "runs": 27,
+      "failures": 0,
+      "retries": 0
+    },
+    "forcedRetiringScroll": {
+      "runs": 3,
+      "failures": 0,
+      "retries": 0
+    }
+  },
+  "pendingImageFixture": "Only page.goto waitUntil changes to domcontentloaded, because the held eager image can delay window.load. All assertions/deadlines remain.",
+  "finalHeadChecks": "https://github.com/MahmoudAbdulGhani/Portfolio/pull/31/checks"
+}

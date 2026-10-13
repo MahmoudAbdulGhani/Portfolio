@@ -5,12 +5,15 @@ export function useRouteRestoration() {
   const location = useLocation(), navigation = useNavigationType();
   const positions = useRef(new Map<string, { x: number; y: number; main?: { x: number; y: number } }>());
   const entry = useRef(location.key), pathname = useRef(location.pathname), restoring = useRef(false);
+  const address = useRef(location.pathname + location.search + location.hash);
   useEffect(() => {
     const previous = history.scrollRestoration;
     history.scrollRestoration = 'manual';
     let popFocusFrame = 0;
     const save = (event: Event) => {
-      if (restoring.current && event.type === 'scroll') return;
+      // History can move before React retires the old document. Its clamped
+      // scroll must not overwrite the intentional click's source position.
+      if (event.type === 'scroll' && (restoring.current || window.location.pathname + window.location.search + window.location.hash !== address.current)) return;
       const main = document.querySelector<HTMLElement>('.landscape-route > main');
       positions.current.set(entry.current, { x: scrollX, y: scrollY, main: main ? { x: main.scrollLeft, y: main.scrollTop } : undefined });
     };
@@ -49,6 +52,7 @@ export function useRouteRestoration() {
     const focusNeeded = changedPage && location.pathname !== '/' && Boolean(document.querySelector('.landscape-route'));
     pathname.current = location.pathname;
     entry.current = location.key;
+    address.current = location.pathname + location.search + location.hash;
     // Explicit Collection returns reuse this owner if their history entry is
     // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
     const position = navigation === 'POP' ? positions.current.get(location.key) : location.state?.routeRestore;
