@@ -1,0 +1,419 @@
+{
+  "phase": "after",
+  "mode": "normal",
+  "baseline": "87dab71",
+  "condition": "normal opening and both selected-image journeys with actual assets.",
+  "environment": "Windows Chrome, browser-emulated sizes; no physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 546.25,
+        "caption": 570.25,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 1209.28125,
+        "caption": 1233.28125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 541.5,
+        "caption": 565.453125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 536,
+        "caption": 559.4375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "started": 1444.8999999985099,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 3091.800000000745,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 4073.5,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "webgl",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "returnedRenderer": "webgl",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 217.25,
+        "caption": 241.25,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 880.28125,
+        "caption": 904.28125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 217.5,
+        "caption": 241.453125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 212,
+        "caption": 235.4375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "started": 1154.5999999977648,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1939.7999999970198,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 2923.599999997765,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "webgl",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "returnedRenderer": "webgl",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 554.625,
+        "caption": 578.625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 961.1875,
+        "caption": 985.1875,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 552.78125,
+        "caption": 576.8125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 550.546875,
+        "caption": 574.796875,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "started": 805.7999999970198,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1633,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 2626.599999997765,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 539.703125,
+        "captionTop": 563.703125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "webgl",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "returnedRenderer": "webgl",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 367.734375,
+        "caption": 391.734375,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 582,
+        "caption": 606,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 397.0625,
+        "caption": 420.5625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 395.90625,
+        "caption": 419.5625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "started": 1660.9000000022352,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 2966.300000000745,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 3950.10000000149,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 382.5,
+        "captionTop": 406.5,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "webgl",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "returnedRenderer": "webgl",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 0,
+      "bounds": {
+        "image": 353.53125,
+        "caption": 377.53125,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Cedar Construction",
+      "index": 1,
+      "bounds": {
+        "image": 507.15625,
+        "caption": 531.15625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Lobby",
+      "index": 0,
+      "bounds": {
+        "image": 382.859375,
+        "caption": 406.65625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "project": "Lobby",
+      "index": 1,
+      "bounds": {
+        "image": 382.09375,
+        "caption": 405.65625,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "started": 651.3000000007451,
+      "stateAtObservation": "settled",
+      "states": [
+        {
+          "at": 1524.800000000745,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 2508.400000002235,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 368.21875,
+        "captionTop": 392.21875,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "openingRenderer": "webgl",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "returnedRenderer": "webgl",
+      "errors": []
+    }
+  ]
+}

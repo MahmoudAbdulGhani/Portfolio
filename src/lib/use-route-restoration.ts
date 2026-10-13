@@ -17,12 +17,18 @@ export function useRouteRestoration() {
     const pop = (event: PopStateEvent) => {
       save(event);
       cancelAnimationFrame(popFocusFrame);
-      if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
-      // Rapid Back may cancel the reader before React commits it, leaving the
-      // same preview mounted. Its mount effects cannot restore focus then.
+      const preview = window.location.pathname === '/' && new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai';
+      const reader = window.location.pathname === '/projects/jobpilot-ai';
+      if (!preview && !reader) return;
+      const destination = window.location.pathname + window.location.search + window.location.hash;
+      // Rapid Back can cancel the destination before React commits it. The
+      // still-mounted JobPilot preview/reader cannot rely on a mount effect.
       popFocusFrame = requestAnimationFrame(() => {
-        if (window.location.pathname !== '/' || new URLSearchParams(window.location.search).get('project') !== 'jobpilot-ai') return;
-        document.querySelector<HTMLElement>('.stage.has-profile-boundary .open-case')?.focus({preventScroll:true});
+        if (window.location.pathname + window.location.search + window.location.hash !== destination) return;
+        document.querySelector<HTMLElement>(preview ? '.stage.has-profile-boundary .open-case' : '.project-reader#main-content')?.focus({preventScroll:true});
+        // A cancelled navigation also leaves the same reader mounted at its
+        // previous scroll. Native Back still gives an engineering hash priority.
+        if (reader && window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView({block:'start',behavior:'instant'});
       });
     };
     document.addEventListener('scroll', save, { passive: true, capture: true });

@@ -21,6 +21,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     for (const cleanup of release.reverse()) cleanup();
   };
   const fallback = () => {
+    if (disposed) return;
     host.dataset.renderer = 'fallback';
     host.style.opacity = '0';
     dispose();
@@ -86,6 +87,10 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
 
     const start = new THREE.Vector3(), destination = new THREE.Vector3();
     const alignment = { progress: 0 };
+    // Initialization/resize can measure without painting. The selection must
+    // own its elapsed opening clock before the first expensive scene paint,
+    // rather than waiting for a cold paint and then starting a fresh clock.
+    let posed = false;
     const originalBounds = new THREE.Box3().setFromObject(group);
     const originalSize = originalBounds.getSize(new THREE.Vector3());
     const originalCenter = originalBounds.getCenter(new THREE.Vector3());
@@ -107,10 +112,11 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       ray.ray.intersectPlane(plane, target);
     };
     const render = () => {
-      if (disposed || document.hidden) return;
+      if (disposed || document.hidden || !posed) return;
       assembly.position.copy(start).lerp(destination, alignment.progress);
       assembly.scale.setScalar(THREE.MathUtils.lerp(startScale, targetScale, alignment.progress));
-      renderer.render(scene, camera);
+      try { renderer.render(scene, camera); }
+      catch { fallback(); }
     };
     const size = () => {
       if (disposed || !host.clientWidth || !host.clientHeight) return;
@@ -137,6 +143,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       render();
     };
     size();
+    if (disposed) return dispose;
     const timeline = gsap.timeline({ paused: true, onUpdate: render });
     release.push(() => timeline.kill());
     const duration = collectionTiming.articulation;
@@ -152,6 +159,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     const seek = (event: Event) => {
       if (disposed) return;
       const { progress, closing } = (event as CustomEvent<{ progress: number; closing: boolean }>).detail;
+      posed = true;
       timeline.totalTime(Math.max(0, Math.min(1, progress)) * duration, false);
       host.dataset.state = closing ? 'closing' : progress >= 1 ? 'settled' : 'opening';
     };

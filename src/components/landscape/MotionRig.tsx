@@ -5,16 +5,18 @@ import type { RigKind } from "./rig-models";
 export function MotionRig({
   kind,
   reduced,
+  disabled = false,
   onReady,
 }: {
   kind: RigKind;
   reduced: boolean;
+  disabled?: boolean;
   onReady: (renderer: 'webgl' | 'fallback') => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || disabled) return;
     let cancelled = false;
     let firstFrame = 0, paintFrame = 0;
     let dispose: (() => void) | undefined;
@@ -27,8 +29,10 @@ export function MotionRig({
     };
     warmRig()
       .then(({ mountRig }) => {
+        if (cancelled) return;
         // Let selection acknowledgement paint before cold GPU initialization.
         firstFrame = requestAnimationFrame(() => {
+          if (cancelled) return;
           paintFrame = requestAnimationFrame(() => {
             if (!cancelled && host.current) {
               try { dispose = mountRig(host.current, kind, ready); }
@@ -44,11 +48,12 @@ export function MotionRig({
       cancelAnimationFrame(paintFrame);
       dispose?.();
     };
-  }, [kind, reduced, onReady]);
+  }, [kind, reduced, disabled, onReady]);
   return reduced ? null : (
     <div
       ref={host}
-      className={`motion-rig rig-${state}`}
+      className={`motion-rig rig-${disabled ? 'fallback' : state}`}
+      data-renderer={disabled ? 'fallback' : undefined}
       data-rig={kind}
       aria-hidden="true"
     />

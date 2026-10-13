@@ -1,0 +1,1456 @@
+{
+  "temporaryInstrumentationRemoved": true,
+  "timings": [
+    {
+      "mode": "normal",
+      "state": "settled",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "errors": [],
+      "events": [
+        {
+          "at": 627.0999999977648,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 629.5999999977648,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 682.5999999977648,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 684.0999999977648,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 739.1999999992549,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 740.5,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 750.6999999992549,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 752.3000000007451,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 804,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 808.0999999977648,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 813.3000000007451,
+          "event": "finite-cancel"
+        },
+        {
+          "at": 815.3000000007451,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 816.5999999977648,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 819.3999999985099,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 821.6999999992549,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1001.0999999977648,
+          "event": "finite-finish-before",
+          "to": 0.18
+        },
+        {
+          "at": 1001.3999999985099,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 2278.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2280.89999999851,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2586,
+          "event": "rig-render",
+          "elapsed": 236
+        },
+        {
+          "at": 2824.5,
+          "event": "rig-ready",
+          "renderer": "webgl",
+          "phase": "selecting"
+        },
+        {
+          "at": 2825.599999997765,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2828.099999997765,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2836,
+          "event": "opening-effect",
+          "eligible": true,
+          "phase": "selecting"
+        },
+        {
+          "at": 2838,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.98
+        },
+        {
+          "at": 2839.39999999851,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2841.099999997765,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2849.5,
+          "event": "rig-render",
+          "elapsed": 2.599999997764826
+        },
+        {
+          "at": 2855.800000000745,
+          "event": "rig-render",
+          "elapsed": 1
+        },
+        {
+          "at": 2875.699999999255,
+          "event": "rig-render",
+          "elapsed": 2.300000000745058
+        },
+        {
+          "at": 2894.39999999851,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 2912.599999997765,
+          "event": "rig-render",
+          "elapsed": 1.1000000014901161
+        },
+        {
+          "at": 2933.89999999851,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 2951,
+          "event": "rig-render",
+          "elapsed": 1.3999999985098839
+        },
+        {
+          "at": 2974.599999997765,
+          "event": "rig-render",
+          "elapsed": 1.1000000014901161
+        },
+        {
+          "at": 2993.300000000745,
+          "event": "rig-render",
+          "elapsed": 1.3999999985098839
+        },
+        {
+          "at": 3016.800000000745,
+          "event": "rig-render",
+          "elapsed": 1
+        },
+        {
+          "at": 3039.099999997765,
+          "event": "rig-render",
+          "elapsed": 1.2000000029802322
+        },
+        {
+          "at": 3057.89999999851,
+          "event": "rig-render",
+          "elapsed": 1
+        },
+        {
+          "at": 3076.800000000745,
+          "event": "rig-render",
+          "elapsed": 1.2999999970197678
+        },
+        {
+          "at": 3095.89999999851,
+          "event": "rig-render",
+          "elapsed": 1.4000000022351742
+        },
+        {
+          "at": 3117.800000000745,
+          "event": "rig-render",
+          "elapsed": 1.5999999977648258
+        },
+        {
+          "at": 3136.39999999851,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 3155,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 3173.5,
+          "event": "rig-render",
+          "elapsed": 1
+        },
+        {
+          "at": 3193.800000000745,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 3212.39999999851,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 3231,
+          "event": "rig-render",
+          "elapsed": 0.8999999985098839
+        },
+        {
+          "at": 3253,
+          "event": "rig-render",
+          "elapsed": 0.8000000007450581
+        },
+        {
+          "at": 3271.599999997765,
+          "event": "rig-render",
+          "elapsed": 0.6000000014901161
+        },
+        {
+          "at": 3295.199999999255,
+          "event": "rig-render",
+          "elapsed": 0.6000000014901161
+        },
+        {
+          "at": 3313.89999999851,
+          "event": "rig-render",
+          "elapsed": 0.8000000007450581
+        },
+        {
+          "at": 3337.699999999255,
+          "event": "rig-render",
+          "elapsed": 0.8000000007450581
+        },
+        {
+          "at": 3356.5,
+          "event": "rig-render",
+          "elapsed": 0.8000000007450581
+        },
+        {
+          "at": 3375.099999997765,
+          "event": "rig-render",
+          "elapsed": 0.6000000014901161
+        },
+        {
+          "at": 3393.699999999255,
+          "event": "rig-render",
+          "elapsed": 0.6000000014901161
+        },
+        {
+          "at": 3413.89999999851,
+          "event": "rig-render",
+          "elapsed": 0.6999999992549419
+        },
+        {
+          "at": 3432.5,
+          "event": "rig-render",
+          "elapsed": 0.5999999977648258
+        },
+        {
+          "at": 3455.89999999851,
+          "event": "rig-render",
+          "elapsed": 0.6999999992549419
+        },
+        {
+          "at": 3474.199999999255,
+          "event": "rig-render",
+          "elapsed": 0.6000000014901161
+        },
+        {
+          "at": 3492.800000000745,
+          "event": "rig-render",
+          "elapsed": 0.6999999992549419
+        },
+        {
+          "at": 3514.800000000745,
+          "event": "rig-render",
+          "elapsed": 0.8999999985098839
+        },
+        {
+          "at": 3534.39999999851,
+          "event": "rig-render",
+          "elapsed": 0.9000000022351742
+        },
+        {
+          "at": 3557.300000000745,
+          "event": "rig-render",
+          "elapsed": 0.5999999977648258
+        },
+        {
+          "at": 3576,
+          "event": "rig-render",
+          "elapsed": 0.6999999992549419
+        },
+        {
+          "at": 3599.699999999255,
+          "event": "rig-render",
+          "elapsed": 0.8000000007450581
+        },
+        {
+          "at": 3618.300000000745,
+          "event": "rig-render",
+          "elapsed": 0.6999999992549419
+        },
+        {
+          "at": 3637.099999997765,
+          "event": "rig-render",
+          "elapsed": 0.7000000029802322
+        },
+        {
+          "at": 3655.599999997765,
+          "event": "rig-render",
+          "elapsed": 0.7000000029802322
+        },
+        {
+          "at": 3675.89999999851,
+          "event": "rig-render",
+          "elapsed": 0.9000000022351742
+        },
+        {
+          "at": 3819.099999997765,
+          "event": "finite-finish-before",
+          "to": 0.98
+        },
+        {
+          "at": 3819.5,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 3819.699999999255,
+          "event": "activate"
+        },
+        {
+          "at": 3820.599999997765,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3822.800000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        }
+      ],
+      "condition": "Actual Intel UHD / ANGLE D3D11, normal motion with original screenshots."
+    },
+    {
+      "mode": "software",
+      "state": "settled",
+      "gpu": [
+        "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      ],
+      "errors": [],
+      "events": [
+        {
+          "at": 2423.400000002235,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2442.60000000149,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2907.900000002235,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2909.300000000745,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 3176,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 3205.10000000149,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 3550.10000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3566.60000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3817.7000000029802,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 3853.5,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 3992.900000002235,
+          "event": "finite-cancel"
+        },
+        {
+          "at": 4009.300000000745,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 4022.400000002235,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 4104.5,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 4115.60000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 4245.10000000149,
+          "event": "finite-finish-before",
+          "to": 0.18
+        },
+        {
+          "at": 4247.5,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 4346.800000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 4356.400000002235,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5246,
+          "event": "rig-render",
+          "elapsed": 601.9000000022352
+        },
+        {
+          "at": 5851.10000000149,
+          "event": "rig-ready",
+          "renderer": "webgl",
+          "phase": "selecting"
+        },
+        {
+          "at": 5852.5,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5855.20000000298,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5899,
+          "event": "opening-effect",
+          "eligible": true,
+          "phase": "selecting"
+        },
+        {
+          "at": 5907,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.98
+        },
+        {
+          "at": 5911.900000002235,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5916.400000002235,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5933.60000000149,
+          "event": "rig-render",
+          "elapsed": 1.6000000014901161
+        },
+        {
+          "at": 5954.400000002235,
+          "event": "rig-render",
+          "elapsed": 9.300000000745058
+        },
+        {
+          "at": 6671.20000000298,
+          "event": "rig-render",
+          "elapsed": 1.5999999977648258
+        },
+        {
+          "at": 6843.20000000298,
+          "event": "rig-render",
+          "elapsed": 2
+        },
+        {
+          "at": 6943.5,
+          "event": "finite-finish-before",
+          "to": 0.98
+        },
+        {
+          "at": 6953.60000000149,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 6954.300000000745,
+          "event": "activate"
+        },
+        {
+          "at": 6967.900000002235,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 7009.10000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        }
+      ],
+      "condition": "Explicit SwiftShader and CPU throttling 6; browser emulation."
+    },
+    {
+      "mode": "slow-frames",
+      "state": "settled",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "errors": [],
+      "events": [
+        {
+          "at": 1169.6000000014901,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 1172,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 1471.800000000745,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 1473.199999999255,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2232.800000000745,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2234.199999999255,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 2489.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 2491.10000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3152.800000000745,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 3156.199999999255,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 3398.699999999255,
+          "event": "finite-finish-before",
+          "to": 0.18
+        },
+        {
+          "at": 3400,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 3414.300000000745,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 3415.800000000745,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 3657.60000000149,
+          "event": "finite-finish-before",
+          "to": 0.18
+        },
+        {
+          "at": 3657.89999999851,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 3661.89999999851,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3663.60000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3797.5,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 3799.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 4923.199999999255,
+          "event": "rig-render",
+          "elapsed": 245.80000000074506
+        },
+        {
+          "at": 5171.300000000745,
+          "event": "rig-ready",
+          "renderer": "webgl",
+          "phase": "selecting"
+        },
+        {
+          "at": 5172.10000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5174.10000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5181.10000000149,
+          "event": "opening-effect",
+          "eligible": true,
+          "phase": "selecting"
+        },
+        {
+          "at": 5183.300000000745,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.98
+        },
+        {
+          "at": 5184.60000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5186.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 5194.300000000745,
+          "event": "rig-render",
+          "elapsed": 2.300000000745058
+        },
+        {
+          "at": 5440,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 5687.5,
+          "event": "rig-render",
+          "elapsed": 1.1000000014901161
+        },
+        {
+          "at": 5930.60000000149,
+          "event": "rig-render",
+          "elapsed": 1.0999999977648258
+        },
+        {
+          "at": 6173.300000000745,
+          "event": "finite-finish-before",
+          "to": 0.98
+        },
+        {
+          "at": 6173.5,
+          "event": "rig-render",
+          "elapsed": 1.1000000014901161
+        },
+        {
+          "at": 6174.89999999851,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 6174.89999999851,
+          "event": "activate"
+        },
+        {
+          "at": 6175.60000000149,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 6177.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        }
+      ],
+      "condition": "Controlled 120ms delays around RAF callbacks."
+    },
+    {
+      "mode": "slow-rig",
+      "state": "opening",
+      "gpu": [
+        "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      ],
+      "errors": [],
+      "events": [
+        {
+          "at": 443.30000000074506,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 445.6000000014901,
+          "event": "scene-render",
+          "ready": false,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 492.5,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 493.80000000074506,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 604.3000000007451,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 605.6000000014901,
+          "event": "scene-render",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "idle",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": false
+        },
+        {
+          "at": 620.9000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 622.9000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": false,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 673.6999999992549,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 677.4000000022352,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 694.4000000022352,
+          "event": "finite-cancel"
+        },
+        {
+          "at": 696,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.18
+        },
+        {
+          "at": 697.1999999992549,
+          "event": "opening-effect",
+          "eligible": false,
+          "phase": "selecting"
+        },
+        {
+          "at": 733.9000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 735.4000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": false,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 879.8000000007451,
+          "event": "finite-finish-before",
+          "to": 0.18
+        },
+        {
+          "at": 880.1000000014901,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 1230.699999999255,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1232.699999999255,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": false,
+          "phase": "selecting",
+          "renderer": "loading",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1529.699999999255,
+          "event": "rig-render",
+          "elapsed": 237.5
+        },
+        {
+          "at": 1769.6000000014901,
+          "event": "rig-ready",
+          "renderer": "webgl",
+          "phase": "selecting"
+        },
+        {
+          "at": 1770.4000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1772.4000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "selecting",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1779.699999999255,
+          "event": "opening-effect",
+          "eligible": true,
+          "phase": "selecting"
+        },
+        {
+          "at": 1781.9000000022352,
+          "event": "finite-start",
+          "from": 0,
+          "to": 0.98
+        },
+        {
+          "at": 1783.300000000745,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1784.9000000022352,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "opening",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 1793.9000000022352,
+          "event": "rig-render",
+          "elapsed": 5202.099999997765
+        },
+        {
+          "at": 7001.300000000745,
+          "event": "finite-finish-before",
+          "to": 0.98
+        },
+        {
+          "at": 7003,
+          "event": "rig-render",
+          "elapsed": 1.199999999254942
+        },
+        {
+          "at": 7005,
+          "event": "finite-finish-after"
+        },
+        {
+          "at": 7005.10000000149,
+          "event": "activate"
+        },
+        {
+          "at": 7006,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        },
+        {
+          "at": 7008,
+          "event": "scene-render",
+          "kind": "jobpilot",
+          "ready": true,
+          "previewReady": true,
+          "eligible": true,
+          "phase": "active",
+          "renderer": "webgl",
+          "reduced": false,
+          "allowGPU": true
+        }
+      ],
+      "condition": "Controlled four 1300ms synchronous draw delays; not a hardware observation."
+    }
+  ]
+}

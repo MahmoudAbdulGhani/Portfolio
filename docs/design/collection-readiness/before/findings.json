@@ -1,0 +1,66 @@
+{
+  "phase": "before",
+  "baseline": "87dab71",
+  "condition": "Controlled 4200ms delay of the initialization notification. Actual images and hardware WebGL; this is a browser fixture, not proof of the CI driver cause.",
+  "environment": "Windows Chrome, browser-emulated sizes; no physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "started": 862.9000000022352,
+      "stateAt5100ms": "loading",
+      "states": [
+        {
+          "at": 6223.300000000745,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 7211.70000000298,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "started": 589.1000000014901,
+      "stateAt5100ms": "opening",
+      "states": [
+        {
+          "at": 5341.60000000149,
+          "state": "opening",
+          "renderer": "webgl"
+        },
+        {
+          "at": 6328.800000000745,
+          "state": "settled",
+          "renderer": "webgl"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 382.5,
+        "captionTop": 406.5,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    }
+  ]
+}

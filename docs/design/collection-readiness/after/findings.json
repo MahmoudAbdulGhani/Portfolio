@@ -1,0 +1,128 @@
+{
+  "phase": "after",
+  "baseline": "87dab71",
+  "condition": "Controlled 4200ms delay of the initialization notification. Actual images and hardware WebGL; this is a browser fixture, not proof of the CI driver cause.",
+  "environment": "Windows Chrome, browser-emulated sizes; no physical devices.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "started": 763.4000000022352,
+      "stateAt5100ms": "settled",
+      "states": [
+        {
+          "at": 3350.60000000149,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "started": 562.5999999977648,
+      "stateAt5100ms": "settled",
+      "states": [
+        {
+          "at": 3069.599999997765,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 548.03125,
+        "captionTop": 572.03125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "started": 515.5,
+      "stateAt5100ms": "settled",
+      "states": [
+        {
+          "at": 3051.2000000029802,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 539.703125,
+        "captionTop": 563.703125,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "started": 557.6000000014901,
+      "stateAt5100ms": "settled",
+      "states": [
+        {
+          "at": 3068.5,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 382.5,
+        "captionTop": 406.5,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "started": 527.8999999985099,
+      "stateAt5100ms": "settled",
+      "states": [
+        {
+          "at": 3064.800000000745,
+          "state": "settled",
+          "renderer": "fallback"
+        }
+      ],
+      "geometry": {
+        "natural": [
+          1900,
+          881
+        ],
+        "imageBottom": 368.21875,
+        "captionTop": 392.21875,
+        "overflow": false,
+        "opacity": "1"
+      },
+      "errors": []
+    }
+  ]
+}

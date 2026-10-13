@@ -1,0 +1,57 @@
+{
+  "phase": "after",
+  "baseline": "87dab71",
+  "condition": "The first default-framebuffer scene draw is withheld until 4400ms after the intentional selection click, identically before/after. Original actual images and a warm module import, hardware WebGL. Controlled CPU blocking fixture, not a physical GPU performance measurement.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "clickedAt": 862.4000000022352,
+      "assertionPassed": true,
+      "observed": "settled",
+      "assertionDeadlineMs": 5000,
+      "elapsed": 6480,
+      "renderer": "webgl",
+      "timings": [
+        {
+          "event": "paint-start",
+          "at": 2082.800000000745,
+          "phase": "opening"
+        },
+        {
+          "event": "paint-end",
+          "at": 5225
+        },
+        {
+          "event": "settled",
+          "at": 5320.400000002235
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "clickedAt": 1968.5,
+      "assertionPassed": true,
+      "observed": "settled",
+      "assertionDeadlineMs": 5000,
+      "elapsed": 6282,
+      "renderer": "webgl",
+      "timings": [
+        {
+          "event": "paint-start",
+          "at": 3592.10000000149,
+          "phase": "opening"
+        },
+        {
+          "event": "paint-end",
+          "at": 6317.60000000149
+        },
+        {
+          "event": "settled",
+          "at": 6352.20000000298
+        }
+      ]
+    }
+  ]
+}
