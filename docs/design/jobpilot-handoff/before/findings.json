@@ -1,0 +1,308 @@
+{
+  "phase": "before",
+  "mode": "normal",
+  "baseline": "a3a4b2e8247e0fce5cab6089c9771932e7bdbdbe",
+  "environment": "Windows Chrome; real published media with frozen public GET data. Responsive sizes and unavailable-WebGL are browser emulation, not physical-device tests.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 1180,
+        "height": 547.140625,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 1180,
+        "height": 547.140625,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 399,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 1180,
+        "height": 547.140625,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 650,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 398,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 1180,
+        "height": 547.140625,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1024,
+      "height": 1024,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 901.125,
+        "height": 417.828125,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1024,
+      "height": 1024,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 901.125,
+        "height": 417.828125,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 675.84375,
+        "height": 313.375,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          1180,
+          547
+        ],
+        "width": 675.84375,
+        "height": 313.375,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          358,
+          166
+        ],
+        "width": 358,
+        "height": 165.984375,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          358,
+          166
+        ],
+        "width": 358,
+        "height": 165.984375,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "index": 0,
+      "label": "Resume library and upload",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          288,
+          133
+        ],
+        "width": 288,
+        "height": 133.53125,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "index": 1,
+      "label": "Discover jobs",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "scroll": 0,
+      "returnedScroll": 0,
+      "returned": 0,
+      "focus": true,
+      "reader": {
+        "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "natural": [
+          288,
+          133
+        ],
+        "width": 288,
+        "height": 133.53125,
+        "captionGap": 16,
+        "overflow": false
+      },
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

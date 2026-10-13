@@ -1,5 +1,5 @@
-import { useCallback, useState, type CSSProperties } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useCallback, useContext, useRef, useState, type CSSProperties } from "react";
+import { Link, useLocation, useNavigate, useNavigationType, useParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useProject, useProjects } from "../../lib/hooks";
 import { detailScreens } from "../../lib/project-detail-screens";
@@ -13,30 +13,41 @@ import { CaseNarrative } from "./CaseNarrative";
 import { CaseDisclosure } from "./CaseDisclosure";
 import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
+import { JobPilotJourneyContext, ordinaryActivation } from './jobpilot-journey';
+import { useJobPilotHandoff } from './use-jobpilot-handoff';
+import './jobpilot-handoff.css';
 import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenColumnWidth, screenGeometry, screenOriginalSource, screenSizes, type DetailScreen } from "../../lib/project-detail-screens";
 
 export function ProjectReader() {
   const { slug = "" } = useParams();
   const location = useLocation();
+  const navigate = useNavigate(), navigation = useNavigationType();
+  const journeys = useContext(JobPilotJourneyContext);
+  const from = location.state as { collection?: string; jobpilotJourney?: { key: string; screen: string } } | null;
+  const collectionUrl = from?.collection?.startsWith('/?') && new URLSearchParams(from.collection.slice(2).split('#')[0]).get('project') === slug
+    ? from.collection : slug === 'jobpilot-ai' && from?.jobpilotJourney ? '/?project=jobpilot-ai' : undefined;
+  const journey = slug === 'jobpilot-ai' ? journeys.get(from?.jobpilotJourney?.key ?? '') : undefined;
+  const root = useRef<HTMLElement>(null);
   const record = useProject(slug),
     projects = useProjects();
-  const [chapterRecord, setChapterRecord] = useState({ slug, index: 0 }),
+  const [chapterRecord, setChapterRecord] = useState<{slug: string; index: number; source?: string}>({ slug, index: 0, source: slug === 'jobpilot-ai' ? from?.jobpilotJourney?.screen : undefined }),
     [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number } | null>(null);
   const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
   const [readyRecord, setReadyRecord] = useState<{ slug: string; src: string } | null>(null);
   const imageReady = useCallback((src: string) => setReadyRecord(previous => previous?.slug === slug && previous.src === src ? previous : { slug, src }), [slug]);
   const zoom = zoomRecord?.slug === slug ? zoomRecord.index : null;
   const setZoom = (index: number | null) => setZoomRecord(index === null ? null : { slug, index });
-  const setChapter = (index: number) => setChapterRecord({ slug, index });
+  const setChapter = (index: number) => setChapterRecord({ slug, index, source: undefined });
   const [galleryTrigger, setGalleryTrigger] = useState<HTMLButtonElement | null>(null);
   const openGallery = (index: number, trigger: HTMLButtonElement) => {
     setGalleryTrigger(trigger);
     setZoomRecord({ slug, index });
   };
   const project = record.data;
+  useJobPilotHandoff(root, journey, location.key, Boolean(project && !record.isLoading && !record.isError), navigation !== 'POP', chapterRecord.source ?? String(chapter));
   if (record.isLoading || record.isError || !project)
     return (
-      <main className="page-surface">
+        <main className="page-surface" id="main-content" tabIndex={-1} ref={root}>
         <PublicDataState
           loading={record.isLoading}
           error={record.isError}
@@ -63,7 +74,8 @@ export function ProjectReader() {
   const stack = nonempty(project.stack);
   const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
   const overview = project.overview?.trim() || project.description?.trim();
-  const activeIndex = chapter < screens.length ? chapter : 0;
+  const carriedIndex = screens.findIndex(screen => screen.src === chapterRecord.source);
+  const activeIndex = carriedIndex >= 0 ? carriedIndex : chapter < screens.length ? chapter : 0;
   const current = screens[activeIndex];
   const displayedIndex = readyRecord?.slug === slug ? screens.findIndex(screen => screen.src === readyRecord.src) : -1;
   const displayed = screens[displayedIndex] ?? current;
@@ -76,12 +88,12 @@ export function ProjectReader() {
     all.length > 1
       ? all[(all.findIndex((item) => item.slug === slug) + 1) % all.length]
       : undefined;
-  const from = location.state as { collection?: string } | null;
   return (
     <main
       id="main-content"
       tabIndex={-1}
       className="page-surface project-reader"
+      ref={root}
     >
       <PageMeta
         title={displayName}
@@ -93,17 +105,27 @@ export function ProjectReader() {
         <Link
           className="case-back text-link"
           to={
-            from?.collection?.startsWith("/?project=")
-              ? from.collection
+            collectionUrl
+              ? collectionUrl
               : "/projects"
           }
+          state={slug === 'jobpilot-ai' && from?.jobpilotJourney ? {
+            ...journey?.routeState, jobpilotReturn: from.jobpilotJourney.key,
+            jobpilotScreen: from.jobpilotJourney.screen,
+            routeRestore: journey?.position ?? { x: 0, y: 0 },
+          } : undefined}
+          replace={Boolean(slug === 'jobpilot-ai' && from?.jobpilotJourney)}
+          onClick={event => {
+            if (!journey || !ordinaryActivation(event) || journey.historyIndex < 0 || history.state?.idx !== journey.historyIndex + 1) return;
+            event.preventDefault(); navigate(-1);
+          }}
         >
           <FiArrowLeft />
           {from?.collection ? "Collection" : "All projects"}
         </Link>
         <header className="case-heading">
           <div>
-            <span className="eyebrow">CASE STUDY / {project.type}</span>
+            <span className="eyebrow">{slug === 'jobpilot-ai' && <><span className="case-project-number">01</span> / </>}CASE STUDY / {project.type}</span>
             <h1 className="view-heading">{displayName}</h1>
             {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
             {(role || teamSize) && <p className="case-role">
@@ -151,7 +173,7 @@ export function ProjectReader() {
         {current && (
           <>
             <CaseMediaNav screens={screens} index={activeIndex} select={setChapter} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
-            <figure className="case-figure">
+            <figure className="case-figure" data-source={current.src}>
               <ScreenshotFrame src={current.src} alt={`${displayName}: ${current.label}`} label={`${displayName} screenshot`}
                 ratio={`${geometry?.width ?? 16} / ${geometry?.height ?? 10}`}
                 buttonClassName="case-image" priority

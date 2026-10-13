@@ -1,8 +1,8 @@
-import { useId, useLayoutEffect, useReducer, useRef } from 'react';
+import { useEffect, useId, useLayoutEffect, useReducer, useRef } from 'react';
 import { gsap } from 'gsap';
 import { caseStudies } from '../../../shared/case-study-runtime';
 import { useMotionPreference } from '../../lib/use-motion-preference';
-import { boundaryReducer, initialBoundary, proposedLocation, type BoundaryPhase } from './profile-boundary-state';
+import { boundaryReducer, initialBoundary, proposedLocation, type BoundaryPhase, type BoundaryState } from './profile-boundary-state';
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { CaseDisclosure } from './CaseDisclosure';
 import './profile-boundary.css';
@@ -53,8 +53,9 @@ function BoundarySculpture({ phase, reduced, suspended }: { phase: BoundaryPhase
   </div>;
 }
 
-export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string }) {
-  const [state, dispatch] = useReducer(boundaryReducer, undefined, initialBoundary);
+export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId, initialState, onStateChange, disclosureOpen = false }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string; initialState?: BoundaryState; onStateChange?: (state: BoundaryState) => void; disclosureOpen?: boolean }) {
+  const [state, dispatch] = useReducer(boundaryReducer, initialState, saved => saved ? { ...saved, announcement: '' } : initialBoundary());
+  useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference();
   const text = useRef<HTMLParagraphElement>(null);
   const stale = state.phase === 'review' && state.reviewed?.revision !== state.revision;
@@ -108,7 +109,7 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
       </div>
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
-    <CaseDisclosure className="boundary-disclosure" title="How this maps to the implementation">
+    <CaseDisclosure className="boundary-disclosure" title="How this maps to the implementation" defaultOpen={disclosureOpen}>
       <p>One ivory plate holds the proposal apart; alignment represents acceptance. Its small turn uses the original photograph, as an artistic metaphor. Fictional values live only in this page’s memory. It does not edit a real JobPilot profile.</p>
       <p>The documented service keeps current and proposed profiles separate during review. Apply checks the reviewed profile revision and confirmed CV freshness under row locks, then saves accepted values and their provenance together. A changed profile requires another review; changed CV text requires fresh suggestions. Repeating an identical accepted request returns its existing result without applying it twice.</p>
       <p>This sample models only the profile revision check. It does not simulate CV changes, row locks, provenance storage or network retries. Private source was inspected at revision {study.revision.slice(0,7)}; live saves and concurrency were not tested.</p>
