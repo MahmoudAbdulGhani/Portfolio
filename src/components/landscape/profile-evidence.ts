@@ -10,6 +10,12 @@ const boundaries = {
   supabase: { slug: 'lobby', number: '02', label: 'Guest membership and call access', supports: (text: string) => /guest|invitation/i.test(text) && /Supabase/i.test(text) },
 } as const;
 const numbers: Record<string,string> = { 'jobpilot-ai': '01', lobby: '02', 'construction-project-management-accounting-system': '03' };
+// Copy reused from the accepted demonstrations, with their source limits in the readers.
+const explanations: Record<string,string> = {
+  'jobpilot-ai': 'Suggestions become saved information only after review.',
+  'construction-project-management-accounting-system': 'The explanation reads the calculated figures. It cannot change them.',
+  lobby: 'An invitation offers a connection. Joining the room and entering its call are separate checks.',
+};
 export function profileCapabilityEvidence(group: Pick<CapabilityGroup,'key'|'evidence'>, projects: Project[]) {
   const boundary = boundaries[group.key as keyof typeof boundaries];
   const supported = boundary && projects.find(project => project.slug === boundary.slug && project.published && project.showOnPortfolio !== false
@@ -25,4 +31,21 @@ export function profileCapabilityEvidence(group: Pick<CapabilityGroup,'key'|'evi
       boundary: supported && reference.slug === supported.slug ? boundary.label : undefined,
     };
   });
+}
+
+type ProfileEvidenceRow = ReturnType<typeof profileCapabilityEvidence>[number] & { competencies: string[]; explanation?: string };
+export function groupedProfileEvidence(groups: CapabilityGroup[], projects: Project[]) {
+  const references = new Map<string, ProfileEvidenceRow>();
+  for (const group of groups) for (const reference of profileCapabilityEvidence(group, projects)) {
+    const row = references.get(reference.slug) ?? { ...reference, competencies: [] };
+    if (!row.competencies.includes(group.name)) row.competencies.push(group.name);
+    if (reference.boundary) { row.boundary = reference.boundary; row.explanation = explanations[reference.slug]; }
+    references.set(reference.slug, row);
+  }
+  const primary = ['jobpilot-ai', 'construction-project-management-accounting-system', 'lobby']
+    .map(slug => references.get(slug)).filter((row): row is ProfileEvidenceRow => Boolean(row?.boundary));
+  return {
+    primary,
+    additional: [...references.values()].filter(row => !primary.includes(row)),
+  };
 }

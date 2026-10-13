@@ -1,0 +1,5091 @@
+{
+  "phase": "after",
+  "baseline": "983c8b781a219fe11cde92deed1d030dcde37bd6",
+  "environment": "Windows Chrome, actual current public GET records and original portrait. Phone/tablet and reduced motion are browser emulation, not physical-device testing. Complete screenshots extend camera height.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "reduced": true,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 1508,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "references": [
+        {
+          "slug": "jobpilot-ai",
+          "href": "/projects/jobpilot-ai#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework."
+        },
+        {
+          "slug": "lobby",
+          "href": "/projects/lobby#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Tailwind CSS, Supabase."
+        },
+        {
+          "slug": "unihub",
+          "href": "/projects/unihub#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Express.js, Node.js."
+        },
+        {
+          "slug": "gamezone-arena",
+          "href": "/projects/gamezone-arena#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: MongoDB, Stripe, JWT."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: Vite, Postman, Argon2, Framer Motion."
+        }
+      ],
+      "expanded": {
+        "panelHeight": 1921,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "UniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "GameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "User Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "destinations": [
+        {
+          "href": "/projects/jobpilot-ai#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document."
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments."
+        },
+        {
+          "href": "/projects/lobby#engineering",
+          "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n→\n2\nJoin\n→\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings."
+        },
+        {
+          "href": "/projects/unihub#engineering",
+          "heading": "ENGINEERING DECISIONS\nConnect the portal to student-specific records.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nRole checks, then enrollment checks\nA student screen needs a server-side boundary as well as navigation.\nPrint the existing transcript view\nThe downloadable record must stay connected to the on-screen data."
+        },
+        {
+          "href": "/projects/gamezone-arena#engineering",
+          "heading": "ENGINEERING DECISIONS\nCheck the slot and keep payment state explicit.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCheck overlap on the server\nAvailability shown in the browser can change before submission.\nKeep cash approval separate\nA cash selection does not mean money has been received."
+        },
+        {
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep account rules in the server.\nAssign the public role server-side\nPublic registration must not choose administrative access.\nReload users after token validation\nA still-valid token may refer to a deleted or changed account."
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reduced": true,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 1858,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "references": [
+        {
+          "slug": "jobpilot-ai",
+          "href": "/projects/jobpilot-ai#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework."
+        },
+        {
+          "slug": "lobby",
+          "href": "/projects/lobby#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Tailwind CSS, Supabase."
+        },
+        {
+          "slug": "unihub",
+          "href": "/projects/unihub#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Express.js, Node.js."
+        },
+        {
+          "slug": "gamezone-arena",
+          "href": "/projects/gamezone-arena#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: MongoDB, Stripe, JWT."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: Vite, Postman, Argon2, Framer Motion."
+        }
+      ],
+      "expanded": {
+        "panelHeight": 2271,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "UniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "GameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "User Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "destinations": [
+        {
+          "href": "/projects/jobpilot-ai#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document."
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments."
+        },
+        {
+          "href": "/projects/lobby#engineering",
+          "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n→\n2\nJoin\n→\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings."
+        },
+        {
+          "href": "/projects/unihub#engineering",
+          "heading": "ENGINEERING DECISIONS\nConnect the portal to student-specific records.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nRole checks, then enrollment checks\nA student screen needs a server-side boundary as well as navigation.\nPrint the existing transcript view\nThe downloadable record must stay connected to the on-screen data."
+        },
+        {
+          "href": "/projects/gamezone-arena#engineering",
+          "heading": "ENGINEERING DECISIONS\nCheck the slot and keep payment state explicit.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCheck overlap on the server\nAvailability shown in the browser can change before submission.\nKeep cash approval separate\nA cash selection does not mean money has been received."
+        },
+        {
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep account rules in the server.\nAssign the public role server-side\nPublic registration must not choose administrative access.\nReload users after token validation\nA still-valid token may refer to a deleted or changed account."
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": true,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 2033,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "references": [
+        {
+          "slug": "jobpilot-ai",
+          "href": "/projects/jobpilot-ai#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework."
+        },
+        {
+          "slug": "lobby",
+          "href": "/projects/lobby#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Tailwind CSS, Supabase."
+        },
+        {
+          "slug": "unihub",
+          "href": "/projects/unihub#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Express.js, Node.js."
+        },
+        {
+          "slug": "gamezone-arena",
+          "href": "/projects/gamezone-arena#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: MongoDB, Stripe, JWT."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: Vite, Postman, Argon2, Framer Motion."
+        }
+      ],
+      "expanded": {
+        "panelHeight": 2471,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "UniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "GameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "User Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "destinations": [
+        {
+          "href": "/projects/jobpilot-ai#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n→\n2\nReview\n→\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document."
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n→\n2\nInterpret\n→\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments."
+        },
+        {
+          "href": "/projects/lobby#engineering",
+          "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n→\n2\nJoin\n→\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings."
+        },
+        {
+          "href": "/projects/unihub#engineering",
+          "heading": "ENGINEERING DECISIONS\nConnect the portal to student-specific records.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nRole checks, then enrollment checks\nA student screen needs a server-side boundary as well as navigation.\nPrint the existing transcript view\nThe downloadable record must stay connected to the on-screen data."
+        },
+        {
+          "href": "/projects/gamezone-arena#engineering",
+          "heading": "ENGINEERING DECISIONS\nCheck the slot and keep payment state explicit.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCheck overlap on the server\nAvailability shown in the browser can change before submission.\nKeep cash approval separate\nA cash selection does not mean money has been received."
+        },
+        {
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep account rules in the server.\nAssign the public role server-side\nPublic registration must not choose administrative access.\nReload users after token validation\nA still-valid token may refer to a deleted or changed account."
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "reduced": true,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 2333,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "references": [
+        {
+          "slug": "jobpilot-ai",
+          "href": "/projects/jobpilot-ai#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework."
+        },
+        {
+          "slug": "lobby",
+          "href": "/projects/lobby#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Tailwind CSS, Supabase."
+        },
+        {
+          "slug": "unihub",
+          "href": "/projects/unihub#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: Express.js, Node.js."
+        },
+        {
+          "slug": "gamezone-arena",
+          "href": "/projects/gamezone-arena#engineering",
+          "scope": "Team-project evidence",
+          "associations": "Related capabilities: MongoDB, Stripe, JWT."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "scope": "Project evidence",
+          "associations": "Related capabilities: Vite, Postman, Argon2, Framer Motion."
+        }
+      ],
+      "expanded": {
+        "panelHeight": 2796,
+        "links": [
+          {
+            "label": "Reviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Financial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Guest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "UniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "GameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "User Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      },
+      "destinations": [
+        {
+          "href": "/projects/jobpilot-ai#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep AI proposals separate from accepted facts.\nThe profile save boundary\n\nEngineering demonstration — sample data.\n\n1\nPropose\n2\nReview\n3\nAccepted\nIvory plate · proposed change\nAligned · no proposal yet\n\nSuggestions become saved information only after review.\n\nFictional candidate · confirmed sample CV: “Location: Tripoli”.\n\nProposed change\nNone yet\nStart with a proposal\nSaved information\nBeirut\nLocation · revision 1\n\nThe ivory plate represents the proposed value, separate from saved information.\n\nPropose a change\nReset\n\nHow this maps to the implementation\nReview before a profile write\nManual edits and AI suggestions can overlap, or become stale.\nPersist long-running generation\nA provider request can outlast the browser or fail after it returns.\nApprove the version that is exported\nAn editable draft is not an approved application document."
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nPut financial rules at the shared boundary.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCalculated facts support the interpretation.\n\nEngineering demonstration — fictional data.\n\n1\nInspect\n2\nInterpret\n3\nRecalculate\n\nFictional project · amounts in USD. Inspect the calculation, then reveal its explanation.\n\nContract value\nUSD 100,000.00\nInvoiced actual cost\nUSD 40,000.00\n\nUSD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.\n\nAverage phase progress\n0% · no progress reported\n25%\n50%\n75%\n100%\nPercent complete · 0–100%\nCalculated total-cost estimate\nUSD 80,000.00\n\nUSD 40,000 ÷ 0.50 progress = USD 80,000.00\n\nEstimated margin: 20.00% · (contract − estimate) ÷ contract.\n\nTrend-based estimate, not a prediction.\n\nSample interpretation\n\nPrewritten sample · reveal with Interpret\n\nThe explanation reads the calculated figures. It cannot change them.\n\nInterpret the figures\nReset\n1\n2\n1 Cross-beam\nCalculated facts\n2 Diagonal\nAwaiting interpretation\n\nConnected beams: a foundation of facts supports the explanation.\n\nSource basis and demonstration limits\nOne gate for ledger posting\nOperational modules must not bypass the accounting rules.\nDerive balances from allocations\nAn editable balance can drift away from recorded payments."
+        },
+        {
+          "href": "/projects/lobby#engineering",
+          "heading": "ENGINEERING DECISIONS\nShare contracts; separate the communication paths.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nA connection becomes access only when the rules allow it.\n\nEngineering demonstration — fictional participants.\n\n1\nInspect\n2\nJoin\n3\nTry access\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nFictional participant\nMira · invited\nRowan · blocked from this room\nSample condition selector · both have an invitation.\n1 Participant\nMira · session ready\n2 Room\nStudio room · active\nRoom relationship\nInvited · not a member\nCurrent call permission\nNot allowed · membership required\nInspect the connection\n\nMira has an invitation. A shared code alone is not active membership.\n\nRoom contents stay unchanged throughout this demonstration.\n\nTry to enter the call\nJoin with the invitation\nReset\n\nLocal sample only. Joining models membership; call access models the first permission check, with available capacity assumed.\n\n1\n2\n1 Pale ribbon\nMira · offered connection\n2 Dark ribbon\nStudio room · access boundary\n\nConnection awaits the checks\n\nSource basis and demonstration limits\nValidate the same room contract\nFrontend and backend can otherwise disagree about room settings."
+        },
+        {
+          "href": "/projects/unihub#engineering",
+          "heading": "ENGINEERING DECISIONS\nConnect the portal to student-specific records.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nRole checks, then enrollment checks\nA student screen needs a server-side boundary as well as navigation.\nPrint the existing transcript view\nThe downloadable record must stay connected to the on-screen data."
+        },
+        {
+          "href": "/projects/gamezone-arena#engineering",
+          "heading": "ENGINEERING DECISIONS\nCheck the slot and keep payment state explicit.\n\nThese decisions describe the team’s implementation. Individual contributions are listed separately above.\n\nCheck overlap on the server\nAvailability shown in the browser can change before submission.\nKeep cash approval separate\nA cash selection does not mean money has been received."
+        },
+        {
+          "href": "/projects/full-stack-user-management-system#engineering",
+          "heading": "ENGINEERING DECISIONS\nKeep account rules in the server.\nAssign the public role server-side\nPublic registration must not choose administrative access.\nReload users after token validation\nA still-valid token may refer to a deleted or changed account."
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,8 @@ try {
    await expect(page.locator('.experience-record details')).toHaveCount(4);
    const entries=await page.locator('.experience-record details').evaluateAll(es=>es.map(e=>{const bounds=e.getBoundingClientRect(),indicator=e.querySelector('.disclosure-indicator').getBoundingClientRect();return{width:e.clientWidth,scrollWidth:e.scrollWidth,bounds:bounds.width,indicatorBeyondEntry:indicator.right-bounds.right,textBeyondEntry:Math.max(...[...e.querySelectorAll('.record-copy,.record-detail p')].map(x=>x.getBoundingClientRect().right-bounds.right))};}));
    await page.getByRole('tab',{name:'Capabilities'}).click();
-   const link=page.locator(`[data-competency="${key}"] .profile-evidence-link`);
+   const slug=key==='ai api integration'?'jobpilot-ai':key==='django'?'construction-project-management-accounting-system':'lobby';
+   const link=page.locator(`[data-evidence-project="${slug}"] .profile-evidence-link`);
    const label=await link.innerText(),href=await link.getAttribute('href');
    await link.focus();await page.keyboard.press('Enter');
    await expect(page.locator('#engineering')).toBeInViewport();

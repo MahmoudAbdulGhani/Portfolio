@@ -17,7 +17,7 @@ import { CaseDisclosure } from './CaseDisclosure';
 import { ProfileEntry } from './ProfileEntry';
 import { evidenceUrl } from "../../lib/assistant-response";
 import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
-import { profileCapabilityEvidence } from './profile-evidence';
+import { ProfileCapabilities } from './ProfileCapabilities';
 import './profile-record.css';
 
 const tabs = ['Experience', 'Education & training', 'Capabilities'];
@@ -203,27 +203,7 @@ export function ProfilePage() {
               }}
               label="capabilities"
             />
-            <p className="capability-evidence-note">Project references connect these capabilities to documented work. Team-project evidence describes the shared implementation.</p>
-            {["languages", "frameworks", "databases", "ops", "skills"]
-              .filter(category => capabilities.some(item => item.category === category))
-              .map((category, index) => (
-                <div key={category}>
-                  <h2><span className="record-number">{String(index + 1).padStart(2,'0')}</span>{category === "ops" ? "Operations" : category === 'skills' ? 'Practices' : category}</h2>
-                  <ul className={category === 'skills' ? undefined : 'capability-summary'}>
-                    {capabilities.filter(item => item.category === category).map(item => (
-                      <li key={item.key} data-competency={item.key}>
-                        <span>
-                          {item.name}
-                          {item.details.length > 0 && <span className="competency-detail"> — {item.details.join(', ')}</span>}
-                        </span>
-                        {profileCapabilityEvidence(item, projects.data ?? []).map(project => <Link key={project.slug} className="text-link profile-evidence-link" to={project.href}>
-                          <span><span className="profile-evidence-scope">{project.scope}</span><span>{project.number && `${project.number} `}{project.name}{project.boundary && <span className="profile-evidence-boundary">{project.boundary}</span>}</span></span><FiArrowUpRight aria-hidden="true" />
-                        </Link>)}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <ProfileCapabilities capabilities={capabilities} projects={projects.data ?? []} />
           </div>
         <Link className="text-link profile-contact" to="/contact">
           Let’s build something useful

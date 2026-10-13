@@ -1,0 +1,3155 @@
+{
+  "phase": "before",
+  "baseline": "983c8b781a219fe11cde92deed1d030dcde37bd6",
+  "environment": "Windows Chrome, actual current public GET records and original portrait. Phone/tablet and reduced motion are browser emulation, not physical-device testing. Complete screenshots extend camera height.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 4525,
+        "links": [
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 5791,
+        "links": [
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 5791,
+        "links": [
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "writes": [],
+      "collapsed": {
+        "panelHeight": 5816,
+        "links": [
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction\nFinancial calculation and interpretation",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n03 Cedar Construction",
+            "href": "/projects/construction-project-management-accounting-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\n02 Lobby\nGuest membership and call access",
+            "href": "/projects/lobby#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nUniHub",
+            "href": "/projects/unihub#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Team-project evidence\nGameZone Arena",
+            "href": "/projects/gamezone-arena#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\nUser Management",
+            "href": "/projects/full-stack-user-management-system#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI",
+            "href": "/projects/jobpilot-ai#engineering"
+          },
+          {
+            "label": "Project evidence\n01 JobPilot AI\nReviewed AI changes",
+            "href": "/projects/jobpilot-ai#engineering"
+          }
+        ],
+        "competencies": [
+          {
+            "key": "javascript",
+            "text": "JavaScript",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "typescript",
+            "text": "TypeScript",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "php",
+            "text": "PHP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "python",
+            "text": "Python",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "html",
+            "text": "HTML — HTML5",
+            "detail": " — HTML5",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "css",
+            "text": "CSS — CSS3",
+            "detail": " — CSS3",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sql",
+            "text": "SQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django",
+            "text": "Django",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "fastapi",
+            "text": "FastAPI",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "django rest framework",
+            "text": "Django REST Framework",
+            "detail": "",
+            "evidence": [
+              "/projects/construction-project-management-accounting-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "react",
+            "text": "React",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "next.js",
+            "text": "Next.js",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "angular",
+            "text": "Angular",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "express.js",
+            "text": "Express.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nestjs",
+            "text": "NestJS",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tailwind css",
+            "text": "Tailwind CSS",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "bootstrap",
+            "text": "Bootstrap",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongodb",
+            "text": "MongoDB",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postgresql",
+            "text": "PostgreSQL",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mysql",
+            "text": "MySQL",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mariadb",
+            "text": "MariaDB",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "supabase",
+            "text": "Supabase",
+            "detail": "",
+            "evidence": [
+              "/projects/lobby#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "git",
+            "text": "Git",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github",
+            "text": "GitHub",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "node.js",
+            "text": "Node.js",
+            "detail": "",
+            "evidence": [
+              "/projects/unihub#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "docker",
+            "text": "Docker",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "stripe",
+            "text": "Stripe",
+            "detail": "",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vercel",
+            "text": "Vercel",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "render",
+            "text": "Render",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "nodemailer / smtp",
+            "text": "Nodemailer / SMTP",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "livekit cloud",
+            "text": "LiveKit Cloud",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jwt",
+            "text": "JWT — Authentication",
+            "detail": " — Authentication",
+            "evidence": [
+              "/projects/gamezone-arena#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zod",
+            "text": "Zod",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pnpm workspaces",
+            "text": "pnpm Workspaces",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vite",
+            "text": "Vite",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "openapi / swagger",
+            "text": "OpenAPI / Swagger",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "postman",
+            "text": "Postman",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pydantic",
+            "text": "Pydantic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "pytest",
+            "text": "pytest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "playwright",
+            "text": "Playwright",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "structured outputs & json schema",
+            "text": "Structured Outputs & JSON Schema",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "csrf protection",
+            "text": "CSRF Protection",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "argon2",
+            "text": "Argon2 — Password hashing",
+            "detail": " — Password hashing",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "zustand",
+            "text": "Zustand",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "tanstack query",
+            "text": "TanStack Query",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "responsive design",
+            "text": "Responsive Design",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "framer motion",
+            "text": "Framer Motion",
+            "detail": "",
+            "evidence": [
+              "/projects/full-stack-user-management-system#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "restful apis",
+            "text": "RESTful APIs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "mongoose",
+            "text": "Mongoose",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "sqlalchemy",
+            "text": "SQLAlchemy",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "alembic",
+            "text": "Alembic",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "authentication & authorization",
+            "text": "Authentication & Authorization",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rbac",
+            "text": "RBAC",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "secure cookies",
+            "text": "Secure Cookies",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "otp verification",
+            "text": "OTP Verification",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "jest",
+            "text": "Jest",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "vitest",
+            "text": "Vitest",
+            "detail": "",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "unit & integration testing",
+            "text": "Unit & Integration Testing",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "llms",
+            "text": "LLMs",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "rag",
+            "text": "RAG",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "prompt engineering",
+            "text": "Prompt Engineering",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ai api integration",
+            "text": "AI API Integration — OpenAI",
+            "detail": " — OpenAI",
+            "evidence": [
+              "/projects/jobpilot-ai#engineering"
+            ],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "solid",
+            "text": "SOLID",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "github actions",
+            "text": "GitHub Actions",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "design patterns",
+            "text": "Design Patterns",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ci/cd",
+            "text": "CI/CD",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "scalable systems",
+            "text": "Scalable Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "real-time systems",
+            "text": "Real-time Systems",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "clean architecture",
+            "text": "Clean Architecture",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "ssr",
+            "text": "SSR",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          },
+          {
+            "key": "seo",
+            "text": "SEO",
+            "detail": "",
+            "evidence": [],
+            "size": 15,
+            "line": 25
+          }
+        ],
+        "overflow": false
+      }
+    }
+  ]
+}

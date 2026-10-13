@@ -1,3 +1,45 @@
+# Profile Capabilities: inventory and evidence — 13 October 2026
+
+Inspected current HEAD `983c8b781a219fe11cde92deed1d030dcde37bd6`, fetched origin, verified ancestry and remote descendants, working tree, repository/RTK instructions and this record. The accepted Profile branch and origin agreed; no newer descendant was present. Work is isolated on `refine/profile-capabilities`, stacked above draft PR #27 / `refine/profile-record`. The user's untracked handoff remains unchanged and excluded.
+
+[Before/after screenshot review](docs/design/profile-capabilities/review.html) · [same-viewport measurements and preservation checks](docs/design/profile-capabilities/comparison.json) · [decoded screenshot inventory](docs/design/profile-capabilities/artifact-validation.json) · [changed files](docs/design/profile-capabilities/delivery-files.json).
+
+The measured baseline reproduced exactly at 1440×900: **71 distinct competencies, 34 evidence links, 18 JobPilot links and 4,525px of panel height**. Links beneath individual technologies created 34 repeated references to six unique destinations. Capabilities now presents the existing five categories as readable wrapping text lists with fine separators and restrained spacing. Names and specific details remain attached at 15px/25px. MySQL/MariaDB and Git/GitHub remain distinct. The shared normalization and deduplication rules are unchanged.
+
+Engineering evidence follows the inventory in three editorial rows: **01 JobPilot AI / Reviewed AI changes**, **03 Cedar Construction / Financial calculation and interpretation**, and **02 Lobby / Guest membership and call access**. Each has its existing number/name, one short factual explanation, a descriptive link and grouped competency associations. Cedar and Lobby remain explicitly **team-project evidence**. Explanations reuse the accepted demonstrations verbatim: JobPilot's review-before-save sentence, Cedar's read-only calculated-figures explanation, and Lobby's separate invitation/join/call checks. The existing contribution gates and repository matching still control preferred engineering associations; unsupported records retain their original reference. These are project references with stated contribution scope, not proof of ownership of every listed technology. Source qualifications remain in the accepted reader disclosures.
+
+UniHub, GameZone Arena and the Full-Stack User Management System remain available once each in **Additional project evidence**, with their existing scope and grouped related capabilities. The disclosure reuses `CaseDisclosure`; keyboard Enter/Space, visible focus, rapid toggles, tab state retention and reduced-motion completion remain supported. All six original engineering destinations are reachable. No new card styling, artwork, animation library, motion delay or horizontal navigation is added.
+
+| Same reviewed viewport | Before panel | After, collapsed | After, expanded | Evidence destinations |
+| --- | ---: | ---: | ---: | ---: |
+| 1440×900 | 4,525px | 1,508px | 1,921px | 34 → 6 |
+| 768×1024 | 5,791px | 1,858px | 2,271px | 34 → 6 |
+| 390×844 | 5,791px | 2,033px | 2,471px | 34 → 6 |
+| 320×844 | 5,816px | 2,333px | 2,796px | 34 → 6 |
+
+JobPilot appears once instead of 18 times. Counts include the three disclosure references present in the DOM; three editorial links are initially visible and all six are visible after expansion. The expanded measurements include every additional reference and association. Reduction is supporting evidence for improved hierarchy, not a reason to omit information. The comparison script checks all 71 original keys, names and details, every original competency/project association and the six unique destinations against the baseline at each width, including reduced motion.
+
+Before editing, captured the current published public GET records at all four widths. Final review uses those same frozen records and the original portrait, with normal and reduced motion. **40 decoded JPEGs** include before/after inventory views, the three engineering rows, expanded additional references, visible keyboard focus and complete-record captures. Every screenshot is linked in the HTML review. Complete captures extend camera height to paint the entire inner scrolling record; viewport captures retain the stated dimensions. No page/document overflow, browser errors or API writes occurred. The 24 actual evidence-navigation checks per final motion mode reach the intended engineering sections using keyboard Enter.
+
+| Validation | Result and scope |
+| --- | --- |
+| Typecheck, lint, production build, whitespace | Passed. Existing 503.95kB motion-rig chunk advisory remains. |
+| Content/source integrity | All 22 tests passed, including shared Profile/CV/assistant learning evidence, source attribution and new unique-project grouping/association checks. |
+| Affected Chrome checks | All 60 cases passed across desktop/tablet/mobile configurations: content integrity, Profile record and the six new Capabilities cases. All 18 new cases passed again after the final disclosure-width correction. |
+| Firefox / WebKit | All 30 Profile/Capabilities cases passed after the local disclosure geometry correction, including keyboard focus, reduced motion, association retention and all six destinations. |
+| Actual content review | 320, 390, 768 and 1440px; normal/reduced motion, collapsed/expanded references, unchanged inventory and associations, no horizontal overflow. |
+| Final head CI | Terminal workflow results and any retries are recorded on the stacked draft PR; no workflow deadline or existing test threshold is changed. |
+
+WebKit initially rounded the rotated disclosure indicator's 0.14px visual overhang into one extra panel pixel. Reserving a 28px indicator column locally removes that overhang; no clipping or global disclosure change is used. The first test run also checked scope inside the former combined link and used programmatic focus after a mouse click to assert keyboard-only focus styling. The assertions now check the explicit row scope and navigate with real keyboard keys. The capture report reads additional associations after expanding their disclosure, rather than treating a closed element's empty `innerText` as missing data. No inventory or accessibility requirement was relaxed.
+
+Only Capabilities presentation and its verification changed. Portrait, introduction, Experience, Education & training, completion uncertainty, professional/CV controls, navigation and accepted Profile motion are unchanged. Shared content normalization, CV/assistant behavior, engineering interactions, Collection image flow, gallery covers and case-study assets are not edited. No live CMS patch, database change, production Contact submission, merge or manual deployment occurs.
+
+Review environment: Windows Chrome with actual public records; tablet/phone sizes and reduced motion are **browser emulation**, not physical-device tests. Firefox/WebKit are browser automation. Remaining gaps: physical iOS/Android and authenticated hosted-preview visual review. Existing preview-to-reader focus/timing gaps remain outside this focused change. Projects, AI Job Match, Contact, the preview-to-reader handoff and real-device closeout remain future tasks.
+
+Runnable local route: `http://127.0.0.1:5185/profile`; [local review](http://127.0.0.1:5185/docs/design/profile-capabilities/review.html). Use `npm run preview:content` then `npm run dev:motion -- --host 127.0.0.1 --port 5185` if the ignored GET snapshot/server is absent. `scripts/review-profile-capabilities.mjs` defaults to the immutable production build served at 5190; `PLAYWRIGHT_BASE_URL` can select another local preview. `scripts/report-profile-capabilities.mjs` regenerates the review and validates inventories, associations and artifact links.
+
+This stops after the focused Capabilities refinement. The inventory is easier to scan and the evidence reads as six project references instead of repeated technology-level links, while retaining the complete information and accepted visual direction.
+
 # Profile working record — 12 October 2026
 
 Inspected actual HEAD `bc957ee65f2e85ce8a07eafedc15475d10666e28`, fetched origin, ancestry, working tree, repository/RTK instructions and this record. The accepted PR #26 baseline was current, with no newer branch work replaced. Implementation is isolated on `refine/profile-record`, stacked above `refine/lobby-engineering`. The user's untracked handoff remains unchanged and excluded.
