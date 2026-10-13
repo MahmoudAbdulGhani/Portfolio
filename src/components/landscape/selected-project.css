@@ -70,13 +70,14 @@
 }
 .landscape .is-expanded .product-surface .project-image-previous img { visibility: visible; }
 .landscape .is-expanded .selection-preview-status {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  padding: 24px;
-  color: var(--muted);
-  font: 12px/1.6 var(--mono);
+  position: relative;
+  z-index: 9;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border-left: 2px solid var(--line);
+  color: var(--ink);
+  font: 14px/1.6 Manrope, sans-serif;
 }
 .landscape .is-expanded .selection-image-frame:has(.project-image-handoff[data-image-state="failed"] .project-image-previous) .selection-preview-status {
   /* Keep the failure explanation above a retained complete image, in flow. */

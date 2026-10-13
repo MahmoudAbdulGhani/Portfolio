@@ -24,12 +24,13 @@ for (const width of [320, 390, 430, 768, 1024, 1440]) for (const project of case
       await expect(page.locator('.case-heading')).toBeVisible();
       await expect(page.locator('.workflow-detail-label')).toHaveCount(0);
       for (const figure of await page.locator('.workflow-frames figure').all()) {
-        const intro = figure.locator('figcaption'), details = figure.locator('.workflow-details'), full = figure.getByRole('button', { name: 'View full screen', exact: true });
+        const intro = figure.locator('figcaption'), details = figure.locator('.workflow-details'), full = figure.getByRole('button', { name: /^Enlarge / });
         expect(await intro.evaluate(el => Boolean(el.compareDocumentPosition(el.nextElementSibling!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
         await expect(intro.locator('h3')).not.toHaveText('');
         await expect(intro.locator('p')).not.toHaveText('');
-        expect(await details.evaluate(el => Boolean(el.compareDocumentPosition(el.nextElementSibling!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
-        expect((await full.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+        // The complete screenshot is now the inspection action; a duplicate
+        // full-screen button no longer separates it from the next step.
+        await expect(figure.getByRole('button', { name: 'View full screen', exact: true })).toHaveCount(0);
         await expect(details.locator('.screenshot-frame')).toHaveCount(1);
         for (const frame of await details.locator('.screenshot-frame').all()) {
           await frame.scrollIntoViewIfNeeded();
@@ -213,7 +214,7 @@ for (const width of [320, 390, 430, 768, 1024, 1440]) test(`User Management expo
     for (const [index, figure] of (await figures.all()).entries()) {
       await figure.scrollIntoViewIfNeeded();
       await expect(figure.locator('.screenshot-frame')).toHaveAttribute('data-image-state', 'ready');
-      const trigger = figure.getByRole('button', { name: 'View full screen', exact: true });
+      const trigger = figure.getByRole('button', { name: /^Enlarge / });
       await trigger.click();
       await expect(page.getByRole('dialog').locator('h2')).toHaveText(labels[index]);
       await page.keyboard.press('Escape');

@@ -1,0 +1,23 @@
+/* The same complete images and hierarchy, with less unrelated space on phones. */
+@media (max-width: 719px) {
+  .landscape .site-header { height: 106px; padding: 12px 5% 6px; }
+  .landscape .site-header nav { margin-top: 6px; }
+  .landscape .identity { min-height: 38px; }
+  .landscape .stage-footer { height: calc(58px + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom); }
+  .landscape .landscape-route { height: calc(100% - 164px - env(safe-area-inset-bottom)); }
+  .landscape .portfolio.is-selected .landscape-route > .stage.is-expanded { min-height: calc(100svh - 164px); padding-block: 24px; }
+  .landscape .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { grid-template-rows: auto auto; }
+  .landscape .is-expanded .selection-detail { margin-top: 20px; gap: 16px; }
+  .landscape .stage.has-profile-boundary .selection-frame { margin-top: 12px; }
+  .landscape .page-surface.project-reader { padding-block: 16px max(48px, env(safe-area-inset-bottom)); scroll-padding-block: 16px 24px; }
+  .landscape .case-heading { margin-block: 12px 20px; gap: 12px; }
+  .landscape .case-heading .case-purpose { margin-bottom: 12px; }
+  .landscape .case-heading .case-role { margin-top: 12px; }
+  .landscape .case-media-nav { margin-block: 16px; padding-block: 8px; }
+  .landscape .case-narrative { margin-top: 36px; }
+  .landscape .workflow-frames { margin-top: 20px; }
+  .landscape .workflow-frames figure, .landscape .workflow-details { gap: 12px; }
+  .landscape .workflow-frames figcaption p { margin-top: 8px; }
+  .landscape .profile-boundary .boundary-review-basis { min-height: 0; }
+  .landscape .boundary-progress { flex-wrap: wrap; row-gap: 10px; }
+}

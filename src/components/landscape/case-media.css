@@ -42,6 +42,10 @@
 .landscape .case-figure .screenshot-frame { max-width: var(--frame-max-width); margin-inline: auto; }
 .landscape .case-figure .image-caption { max-width: 80ch; margin: 16px 0 0; font: 14px/1.7 Manrope, sans-serif; color: var(--muted); }
 .landscape .case-full-screen { min-height: 48px; margin-top: 8px; }
+.landscape .screenshot-inspect-cue { display: none; font-size: 12px; line-height: 1.6; color: var(--muted); }
+@media (hover: none), (max-width: 768px) {
+  .landscape .screenshot-inspect-cue { display: block; margin-top: 8px; }
+}
 @media (max-width: 720px) {
   .landscape .case-media-nav { grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
   .landscape .case-media-title { grid-column: 1 / -1; justify-content: space-between; }
