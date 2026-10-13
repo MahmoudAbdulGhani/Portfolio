@@ -310,7 +310,7 @@ test("Contact keeps fields and submit above a reduced visual viewport and restor
   await expect(page.locator(".portfolio")).not.toHaveClass(/is-contact/);
 });
 
-test("Contact retains the accepted desktop grid and form dimensions", async ({
+test("Contact retains the desktop grid with shared padding and comfortable controls", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1363, height: 936 });
@@ -332,8 +332,8 @@ test("Contact retains the accepted desktop grid and form dimensions", async ({
   });
   expect(desktop).toEqual({
     areas: '"intro form" "details form"',
-    padding: "28px",
-    inputHeight: 40,
+    padding: "24px",
+    inputHeight: 48,
     paired: true,
     footerPosition: "relative",
   });

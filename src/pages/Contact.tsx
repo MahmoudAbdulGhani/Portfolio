@@ -3,6 +3,7 @@ import { ContactSection } from "../sections/ContactSection";
 import { useSiteSection } from "../lib/hooks";
 import { useContactViewport } from "../lib/use-contact-viewport";
 import "./contact.css";
+import './supporting-pages.css';
 
 export function Contact() {
   const page = useContactViewport();
@@ -24,7 +25,7 @@ export function Contact() {
         ref={page}
         id="main-content"
         tabIndex={-1}
-        className="public-page landscape-contact"
+        className="public-page landscape-contact supporting-page"
       >
         <ContactSection />
       </main>

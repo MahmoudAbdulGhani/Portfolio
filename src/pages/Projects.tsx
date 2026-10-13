@@ -8,6 +8,8 @@ import { PublicDataState } from "../components/PublicDataState";
 import { ProjectPreview } from "../components/ProjectPreview";
 import { galleryCovers } from "../generated/gallery-covers";
 import { galleryTitle } from "../lib/gallery-presentation";
+import { projectNumber } from '../lib/project-evidence';
+import './supporting-pages.css';
 
 export function Projects() {
   const projects = useProjects();
@@ -24,7 +26,7 @@ export function Projects() {
           .includes(query.toLowerCase()),
     ) ?? [];
   return (
-    <main id="main-content" tabIndex={-1} className="page-surface index-page">
+    <main id="main-content" tabIndex={-1} className="page-surface index-page supporting-page">
       <PageMeta
         title={section?.heading || "Projects"}
         description={section?.description ?? undefined}
@@ -76,7 +78,7 @@ export function Projects() {
         {visible.length} projects
       </p>
       <div className={mode === "Index" ? "project-index" : "project-gallery"}>
-        {visible.map((project, index) => {
+        {visible.map((project) => {
           const screen = detailScreens(project)[0];
           const cover = galleryCovers[project.slug];
           const preview = cover?.src ?? screen?.src;
@@ -98,17 +100,17 @@ export function Projects() {
               )}
               <div className="work-caption">
                 <span className="eyebrow">
-                  {String(index + 1).padStart(2, "0")}
+                  {projectNumber(project.slug)}
                 </span>
                 <div>
                   <h2>{galleryTitle(project)}</h2>
                   <p>{project.type}</p>
                 </div>
-                <FiArrowUpRight />
               </div>
               <p className="work-stack">
                 {project.stack.slice(0, 3).join(" · ")}
               </p>
+              <span className="work-open">Open case study<FiArrowUpRight aria-hidden="true" /></span>
             </Link>
           );
         })}

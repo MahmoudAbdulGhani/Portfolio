@@ -1,10 +1,14 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiAlertCircle, FiArrowRight, FiCheck, FiCopy, FiDownload, FiRefreshCw, FiSearch, FiZap, FiLoader, FiFileText, FiBarChart2, FiFolder, FiAlertTriangle } from "react-icons/fi";
+import { FiAlertCircle, FiArrowRight, FiCheck, FiCopy, FiDownload, FiRefreshCw, FiZap, FiLoader } from "react-icons/fi";
 import { API_BASE, ApiError } from "../lib/api";
 import { PageMeta } from "../components/PageMeta";
-import { useSiteSection } from "../lib/hooks";
-import { projectDisplayName } from '../../shared/content-integrity';
+import { useProjects, useSiteSection } from "../lib/hooks";
+import { resolveMatchProjects } from '../lib/project-evidence';
+import { galleryCovers } from '../generated/gallery-covers';
+import { ResponsiveProjectImage } from '../components/ResponsiveProjectImage';
+import { PublicDataState } from '../components/PublicDataState';
+import './supporting-pages.css';
 
 const MAX_LENGTH = 8_000;
 const MIN_LENGTH = 80;
@@ -24,25 +28,14 @@ type MatchResult = {
 // Route continuity stays in memory; never persist the signed CV token to disk.
 let matchMemory: { description: string; result?: MatchResult; token: string } = { description: '', token: '' };
 
-function matchBadge(level: MatchResult["matchLevel"]) {
-  const tones: Record<MatchResult["matchLevel"], string> = {
-    "Strong Match": "border-ok/30 bg-ok/10 text-ok",
-    "Moderate Match": "border-gold/30 bg-gold/10 text-gold",
-    "Partial Match": "border-accent/30 bg-accent/10 text-accent",
-    "Limited Match": "border-danger/25 bg-danger/8 text-danger",
-  };
-  return tones[level];
-}
-
-function ListSection({ title, items, tone = "default" }: { title: string; items: string[]; tone?: "default" | "good" | "gap" }) {
+function ListSection({ title, items }: { title: string; items: string[] }) {
   if (!items.length) return null;
-  const dot = tone === "good" ? "bg-ok" : tone === "gap" ? "bg-gold" : "bg-accent";
-  return <section className="border-t border-line pt-6"><h2 className="tech-label">{title}</h2><ul className="mt-3 space-y-2.5">{items.map((item, index) => <li key={`${item}-${index}`} className="flex gap-3 text-sm leading-relaxed text-muted"><span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${dot}`} aria-hidden />{item}</li>)}</ul></section>;
+  return <section className="ai-report-section"><h3>{title}</h3><ul>{items.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul></section>;
 }
 
-function formatMatchReport(result: MatchResult) {
+function formatMatchReport(result: MatchResult, references: ReturnType<typeof resolveMatchProjects>) {
   const section = (title: string, items: string[]) => items.length ? `\n${title}\n${items.map((item) => `- ${item}`).join("\n")}` : "";
-  const projects = result.relevantProjects.map((project) => `- ${projectDisplayName(project)}: ${project.evidence} (${project.portfolioUrl})`);
+  const projects = references.map(project => `- ${project.name}: ${project.evidence} (${project.href})`);
 
   return [
     "PORTFOLIO JOB MATCH REPORT",
@@ -59,9 +52,11 @@ function formatMatchReport(result: MatchResult) {
 
 export function JobMatch() {
   const { data: section } = useSiteSection("jobMatch");
+  const projects = useProjects();
   const [jobDescription, setJobDescription] = useState(matchMemory.description);
   const [result, setResult] = useState<MatchResult | undefined>(matchMemory.result);
   const [error, setError] = useState("");
+  const [inputInvalid, setInputInvalid] = useState(false);
   const [loading, setLoading] = useState(false);
   const [summaryCopied, setSummaryCopied] = useState(false);
   const [cvToken, setCvToken] = useState(matchMemory.token);
@@ -83,15 +78,14 @@ export function JobMatch() {
     return () => timers.forEach((timer) => clearTimeout(timer));
   }, [loading]);
 
-  const submit = async (event: FormEvent) => {
-    event.preventDefault();
+  const submit = async () => {
     const value = jobDescription.trim();
-    const invalid = (message: string) => { setError(message); document.getElementById("job-description")?.focus(); };
+    const invalid = (message: string) => { setError(message); setInputInvalid(true); document.getElementById("job-description")?.focus(); };
     if (!value) return invalid("Please paste a job description.");
     if (value.length < MIN_LENGTH) return invalid(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
     if (value.length > MAX_LENGTH) return invalid(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
     if (submitting.current) return;
-    submitting.current = true; setLoading(true); setError(""); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
+    submitting.current = true; setLoading(true); setError(""); setInputInvalid(false); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
     const controller = new AbortController();
     activeRequest.current = controller;
     const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
@@ -143,7 +137,7 @@ export function JobMatch() {
     } finally { clearTimeout(timeout); submitting.current = false; setLoading(false); setLoadingMessage("Comparing portfolio evidence…"); }
   };
 
-  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); setSummaryCopied(false); setCvToken(""); };
+  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); setInputInvalid(false); setSummaryCopied(false); setCvToken(""); };
 
   const copySummary = async () => {
     if (!result) return;
@@ -158,7 +152,7 @@ export function JobMatch() {
 
   const exportReport = () => {
     if (!result) return;
-    const blob = new Blob([formatMatchReport(result)], { type: "text/plain;charset=utf-8" });
+    const blob = new Blob([formatMatchReport(result, resolveMatchProjects(result.relevantProjects, projects.data ?? []))], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -200,33 +194,67 @@ export function JobMatch() {
   };
 
   const descriptionError = error || (jobDescription.length > MAX_LENGTH ? `Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.` : "");
+  const projectEvidence = result ? resolveMatchProjects(result.relevantProjects, projects.data ?? []) : [];
 
   return <>
     <PageMeta title={typeof section?.content.seoTitle === "string" ? section.content.seoTitle : section?.heading ?? ""} description={typeof section?.content.seoDescription === "string" ? section.content.seoDescription : section?.description ?? undefined} />
-    <main id="main-content" tabIndex={-1} className="public-page ai-page">
+    <main id="main-content" tabIndex={-1} className="public-page ai-page supporting-page">
       <section className="public-container">
-          <div className="ai-intro">
-            <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>
-            <h1>{section?.heading?.startsWith("AI") ? section.heading : `AI ${section?.heading || "Job Match"}`}</h1>
-            <p className="public-display-accent">{typeof section?.content.displaySubtitle === "string" ? section.content.displaySubtitle : "See the fit. Understand the gaps."}</p>
-            <p className="ai-description">{section?.description || "Paste a job description to compare the role with my portfolio evidence."}</p>
-          </div>
-          <div className="ai-workbench">
-            <form onSubmit={submit} className="ai-form">
-              <div className="flex items-start gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent"><FiSearch /></span><div><h2 className="font-display text-lg font-bold text-ink">Job description</h2><p className="mt-1 text-sm text-muted">Include responsibilities, required skills, and experience level.</p></div></div>
-              <label htmlFor="job-description" className="sr-only">Job description</label>
-              <textarea id="job-description" className={`textarea bg-surface-2 border-line-strong mt-6 min-h-72 resize-y ${descriptionError ? "textarea-error" : ""}`} value={jobDescription} maxLength={MAX_LENGTH + 1} disabled={loading} onChange={(event) => { setJobDescription(event.target.value); if (error) setError(""); }} placeholder="Paste the job description here (minimum 80 characters)…" aria-describedby={descriptionError ? "job-help job-error" : "job-help"} aria-invalid={Boolean(descriptionError)} />
-              <div id="job-help" className="mt-2 flex justify-between gap-4 text-xs text-faint"><span>Minimum {MIN_LENGTH} characters</span><span className={jobDescription.length > MAX_LENGTH ? "text-danger" : ""}>{jobDescription.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}</span></div>
-              {descriptionError && <div id="job-error" role="alert" className="inline-state-enter mt-4 flex gap-2.5 rounded-lg border border-danger/25 bg-danger/8 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" />{descriptionError}</div>}
-              <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between"><button type="button" className="btn-ghost" onClick={clear} disabled={loading || (!jobDescription && !result)}><FiRefreshCw />Clear</button><button type="submit" className="btn-primary btn-lg" disabled={loading || jobDescription.length > MAX_LENGTH}>{loading ? <><FiLoader className="animate-spin" aria-hidden />Analyzing role…</> : <><FiZap />Check My Fit</>}</button></div>
-            </form>
-
-            <div className="ai-result" aria-live="polite" aria-busy={loading}>
-              {loading && <div className="ai-loading ai-state-enter" role="status"><div><FiLoader className="animate-spin" aria-hidden /><strong>{loadingMessage}</strong></div><p>Reviewing public skills, projects, experience, education, and certifications.</p></div>}
-              {!loading && !result && <div className="ai-idle ai-state-enter"><FiFileText aria-hidden /><h2>A clear, evidence-based comparison</h2><p>You’ll see supported strengths, relevant portfolio evidence, partial matches, and requirements that aren’t demonstrated.</p><ul className="ai-evidence"><li><FiBarChart2 aria-hidden /><div><strong>Supported strengths</strong><p>Understand where the role matches demonstrated skills.</p></div></li><li><FiFolder aria-hidden /><div><strong>Relevant project evidence</strong><p>Open the case studies behind the comparison.</p></div></li><li><FiAlertTriangle aria-hidden /><div><strong>Gaps made clear</strong><p>See partial matches and requirements that aren’t demonstrated.</p></div></li></ul></div>}
-              {result && <article className="card ai-report ai-state-enter overflow-hidden"><header className="border-b border-line bg-surface-2/60 p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><span className="tech-label">Match Report</span><span className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-semibold ${matchBadge(result.matchLevel)}`}>{result.matchLevel}</span></div><p className="mt-4 text-sm leading-relaxed text-ink">{result.overallMatch}</p><div className="mt-5 flex flex-wrap gap-2"><button type="button" className="btn-outline btn-sm" onClick={copySummary}>{summaryCopied ? <FiCheck /> : <FiCopy />}{summaryCopied ? "Summary Copied" : "Copy Executive Summary"}</button><button type="button" className="btn-ghost btn-sm" onClick={exportReport}><FiDownload />Export Report</button>{cvToken && <button type="button" className="btn-primary btn-sm" onClick={downloadTailoredCv} disabled={downloadingCv}><FiDownload />{downloadingCv ? "Generating CV…" : "Download Tailored CV"}</button>}</div></header><div className="space-y-6 p-5 sm:p-7"><ListSection title="Strong Matches" items={result.strongMatches} tone="good" /><ListSection title="Relevant Experience" items={result.relevantExperience} />{result.relevantProjects.length > 0 && <section className="border-t border-line pt-6"><h2 className="tech-label">Relevant Projects</h2><div className="mt-3 space-y-3">{result.relevantProjects.map((project) => <Link key={project.slug} to={project.portfolioUrl} className="group block rounded-xl border border-line bg-surface-2/60 p-4 transition-colors hover:border-accent/40"><span className="flex items-center justify-between gap-3 font-semibold text-ink group-hover:text-accent">{projectDisplayName(project)}<FiArrowRight className="shrink-0" /></span><span className="mt-1.5 block text-sm leading-relaxed text-muted">{project.evidence}</span></Link>)}</div></section>}<ListSection title="Partial Matches" items={result.partialMatches} /><ListSection title="Gaps / Not Demonstrated" items={result.gaps} tone="gap" /><section className="border-t border-line pt-6"><h2 className="tech-label">Recruiter Summary</h2><p className="mt-3 rounded-xl border border-line bg-surface-2 p-4 text-sm leading-relaxed text-muted">{result.recruiterSummary}</p></section></div></article>}
+        <header className="ai-intro">
+          <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>
+          <h1>{section?.heading?.startsWith("AI") ? section.heading : `AI ${section?.heading || "Job Match"}`}</h1>
+          <p className="public-display-accent">{typeof section?.content.displaySubtitle === "string" ? section.content.displaySubtitle : "See the fit. Understand the gaps."}</p>
+          <p className="ai-description">{section?.description || "Paste a job description to compare the role with my portfolio evidence."}</p>
+        </header>
+        <p className="sr-only match-announcement" role="status" aria-live="polite" aria-atomic="true">{loading ? loadingMessage : downloadingCv ? 'Preparing the tailored CV…' : result ? summaryCopied ? 'Executive summary copied.' : 'Report ready. Read the strengths, gaps and project evidence.' : ''}</p>
+        <div className="ai-workbench">
+          <form onSubmit={(event: FormEvent) => { event.preventDefault(); void submit(); }} className="ai-form">
+            <div className="ai-input-heading"><h2>Job description</h2><p>Include responsibilities, required skills, and experience level.</p></div>
+            <label htmlFor="job-description" className="sr-only">Job description</label>
+            <textarea id="job-description" className={`textarea mt-6 resize-y ${descriptionError ? 'textarea-error' : ''}`} value={jobDescription} maxLength={MAX_LENGTH + 1} disabled={loading} onChange={event => { setJobDescription(event.target.value); setInputInvalid(false); if (error) setError(''); }} placeholder="Paste the job description here (minimum 80 characters)…" aria-describedby={descriptionError ? 'job-help job-error' : 'job-help'} aria-invalid={inputInvalid || jobDescription.length > MAX_LENGTH} />
+            <div id="job-help" className="mt-2 flex justify-between gap-4"><span>Minimum {MIN_LENGTH} characters</span><span>{jobDescription.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}</span></div>
+            {descriptionError && <div id="job-error" role="alert" className="inline-state-enter mt-4 flex gap-2.5 border border-danger/25 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" aria-hidden="true" /><span>{descriptionError}</span></div>}
+            {error && !inputInvalid && !result && <button type="button" className="btn-outline mt-4" onClick={() => void submit()} disabled={loading}>Try again<FiRefreshCw aria-hidden="true" /></button>}
+            <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+              <button type="button" className="btn-ghost" onClick={clear} disabled={loading || (!jobDescription && !result)}><FiRefreshCw aria-hidden="true" />Clear</button>
+              <button type="submit" className="btn-primary btn-lg" disabled={loading || jobDescription.length > MAX_LENGTH}>{loading ? <><FiLoader className="animate-spin" aria-hidden="true" />Analyzing role…</> : <><FiZap aria-hidden="true" />Check My Fit</>}</button>
             </div>
-          </div>
+          </form>
+          <section className="ai-result" aria-label="Role comparison" aria-busy={loading}>
+            {loading && <div className="ai-loading ai-state-enter"><div><FiLoader className="animate-spin" aria-hidden="true" /><strong>{loadingMessage}</strong></div><p>Reviewing public skills, projects, experience, education, and certifications.</p></div>}
+            {!loading && !result && <div className="ai-idle ai-state-enter"><h2>An evidence-based comparison</h2><p>Supported strengths, partial matches and requirements that are not demonstrated remain separate.</p><ul className="ai-evidence"><li><strong>Supported strengths</strong><p>Compare the role with documented skills and contribution records.</p></li><li><strong>Gaps or unverified requirements</strong><p>Keep partial evidence and missing requirements visible.</p></li><li><strong>Supporting project evidence</strong><p>Read the case studies and their contribution scope.</p></li></ul></div>}
+            {result && <article className="ai-report ai-state-enter">
+              <header className="ai-report-header"><h2>Evidence comparison</h2><p className="ai-report-meta">Comparison: {result.matchLevel}</p><p>{result.overallMatch}</p>
+                <div className="ai-report-actions">
+                  <button type="button" className="btn-outline" onClick={copySummary}>{summaryCopied ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}{summaryCopied ? 'Summary Copied' : 'Copy Executive Summary'}</button>
+                  <button type="button" className="btn-ghost" onClick={exportReport}><FiDownload aria-hidden="true" />Export Report</button>
+                  {cvToken && <button type="button" className="btn-primary" onClick={downloadTailoredCv} disabled={downloadingCv}><FiDownload aria-hidden="true" />{downloadingCv ? 'Generating CV…' : 'Download Tailored CV'}</button>}
+                </div>
+              </header>
+              <div>
+                <ListSection title="Supported strengths" items={result.strongMatches} />
+                <ListSection title="Gaps or unverified requirements" items={result.gaps} />
+                <ListSection title="Related or partial evidence" items={result.partialMatches} />
+                <ListSection title="Experience and training" items={result.relevantExperience} />
+                {result.relevantProjects.length > 0 && <section className="ai-report-section"><h3>Supporting project evidence</h3>
+                  <PublicDataState loading={projects.isLoading} error={projects.isError} onRetry={() => void projects.refetch()} label="project evidence" />
+                  {!projects.isLoading && !projects.isError && !projectEvidence.length && <p>No current project reference is available for this report.</p>}
+                  {projectEvidence.map(reference => {
+                    const cover = galleryCovers[reference.slug];
+                    return <article className="match-project-evidence" key={reference.slug} data-evidence-project={reference.slug}>
+                      <Link className="match-project-link" to={reference.href}>
+                        {cover ? <span className="match-project-cover"><ResponsiveProjectImage src={cover.src} sources={cover.sources} alt="" fit="frame" sizes="88px" /></span> : <span aria-hidden="true" />}
+                        <span><span className="match-project-name">{reference.number && <span className="record-number">{reference.number} </span>}{reference.name}</span><span className="match-project-scope">{reference.scope}</span></span><FiArrowRight aria-hidden="true" />
+                      </Link>
+                      <p>{reference.evidence}</p>
+                    </article>;
+                  })}
+                </section>}
+                <section className="ai-report-section"><h3>Recruiter summary</h3><p>{result.recruiterSummary}</p></section>
+              </div>
+            </article>}
+          </section>
+        </div>
       </section>
     </main>
   </>;
