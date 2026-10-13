@@ -196,9 +196,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   const hasPreviewRef = useRef(false);
   useLayoutEffect(() => { hasPreviewRef.current = hasPreview; }, [hasPreview]);
   const screens = selected ? detailScreens(selected.project) : [];
-  // Imagery owns visibility, not the sculpture's finite opening clock. A slow
-  // request leaves an honestly labelled, stable sculpture in the reserved frame.
-  const eligible = ready && (state.renderer !== 'loading' || !state.allowGPU);
+  // Keep GPU work behind a completed image attempt. Slow requests retain the
+  // photograph; the bounded owner can recover without waiting on that request.
+  const previewReady = !screens.length || decoded.size > 0;
+  const eligible = ready && previewReady && (state.renderer !== 'loading' || !state.allowGPU);
   const activePreview = state.phase === 'active' ? hasPreview : null;
   const markDecoded = (src: string) => setDecoded(previous => previous.has(src) ? previous : new Set(previous).add(src));
   const previewLoaded = () => {
@@ -227,6 +228,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     motion.rendererReady(renderer);
     if (renderer === 'fallback' && motion.snapshot().phase === 'opening') finishFiniteMotion(animation.current);
   }, [motion, readinessDeadline, recoverOpening]);
+  useEffect(() => {
+    // Import independently of network/decode, but create no canvas or scene
+    // until its screenshot attempt finishes. MotionRig owns cancellation.
+    if (kind && state.allowGPU) void warmRig().catch(() => {});
+  }, [kind, state.allowGPU]);
 
   useEffect(() => {
     if (!kind) return;
@@ -501,7 +507,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       )}
       {selected && (
         <>
-          {(state.allowGPU || state.renderer === 'fallback') && !reduced && (
+          {((previewReady && state.allowGPU) || state.renderer === 'fallback') && !reduced && (
             <MotionRig
               kind={selected.kind}
               reduced={reduced}
@@ -551,8 +557,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                   />
                 </button>
               )}
+              {screens[chapter] && <span className="screenshot-inspect-cue">Tap to inspect</span>}
             </div>
-            {screens[chapter] && <span className="screenshot-inspect-cue">Tap to inspect</span>}
             <section
               className="selection-detail"
               aria-label="Selected project"

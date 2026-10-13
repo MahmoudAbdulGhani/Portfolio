@@ -57,6 +57,8 @@
 }
 .landscape .product-surface:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .landscape .product-surface:disabled { cursor: default; }
+.landscape .selection-image-frame > .screenshot-inspect-cue { position: absolute; top: calc(100% + 4px); margin: 0; line-height: 16px; }
+.landscape .stage:is([data-preview-state="loading"], [data-preview-state="failed"]) .selection-detail { background: var(--paper); }
 .landscape .is-expanded .product-surface picture {
   display: block;
   width: 100%;

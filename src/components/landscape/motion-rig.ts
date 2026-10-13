@@ -137,22 +137,27 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
         host.style.height = `${bottom - top}px`;
       }
       const width = host.clientWidth, height = host.clientHeight;
+      const fullWidth = host.parentElement!.clientWidth, fullHeight = host.parentElement!.clientHeight;
       renderer.setPixelRatio(Math.min(devicePixelRatio, width < 720 ? 1.25 : 1.5));
       renderer.setSize(width, height, false);
-      camera.aspect = width / height;
+      // Crop the drawing surface, not the accepted camera projection. Keeping
+      // its full-stage field preserves perspective, material lighting and the
+      // existing start/destination geometry while drawing fewer pixels.
+      camera.aspect = fullWidth / fullHeight;
       camera.position.z = Math.max(10, 6.8 / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect));
+      camera.setViewOffset(fullWidth, fullHeight, 0, host.getBoundingClientRect().top - parent.top, width, height);
       camera.updateProjectionMatrix(); camera.updateMatrixWorld();
       const viewHeight = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       if (art) {
         const photo = art.getBoundingClientRect(), subject = artworkBounds[kind];
-        startScale = Math.min(photo.width * subject.width / height * viewHeight / originalSize.x,
-          photo.height * subject.height / height * viewHeight / originalSize.y);
+        startScale = Math.min(photo.width * subject.width / fullHeight * viewHeight / originalSize.x,
+          photo.height * subject.height / fullHeight * viewHeight / originalSize.y);
         pointAt(photo.left + photo.width * (subject.x + subject.width / 2), photo.top + photo.height * (subject.y + subject.height / 2), start);
         start.addScaledVector(originalCenter, -startScale);
       }
       if (frame) {
         const image = frame.getBoundingClientRect();
-        targetScale = Math.min(image.width / height * viewHeight / openedSize.x, image.height / height * viewHeight / openedSize.y) * 0.96;
+        targetScale = Math.min(image.width / fullHeight * viewHeight / openedSize.x, image.height / fullHeight * viewHeight / openedSize.y) * 0.96;
         pointAt(image.left + image.width / 2, image.top + image.height / 2, destination);
         destination.addScaledVector(openedCenter, -targetScale);
       }
