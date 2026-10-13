@@ -1,0 +1,7 @@
+{
+  "status": "provider-error",
+  "realAnswerVerified": false,
+  "durationMs": 5462,
+  "basis": "Separate direct SDK streaming attempt using the existing matcher/learning/project instructions and a normalized frozen public GET snapshot. The provider failed before returning a structured answer. No application endpoint, rate-limit database write, CMS mutation or Contact submission was made.",
+  "uiEvidence": "Loading, streaming, completed, failure, retry and CV-download screenshots use clearly labelled deterministic sample fixtures, not a successful real-provider assessment."
+}

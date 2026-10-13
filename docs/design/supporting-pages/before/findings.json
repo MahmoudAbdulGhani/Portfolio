@@ -1,0 +1,1027 @@
+{
+  "phase": "before",
+  "baseline": "366ce64369c2851854c130771336b6bf2e6dcae0",
+  "environment": "Actual public GET records and all eight accepted local covers. Windows Chrome; tablet/phone and reduced motion are browser emulation. Contact and AI responses are intercepted sample fixtures, not real delivery/provider evidence. Complete captures extend camera height.",
+  "findings": [
+    {
+      "width": 1440,
+      "height": 900,
+      "reduced": false,
+      "errors": [],
+      "mockWrites": [
+        "/api/job-match/tailored-cv",
+        "/api/messages",
+        "/api/messages"
+      ],
+      "states": [
+        {
+          "name": "projects-gallery",
+          "height": 2534,
+          "overflow": false
+        },
+        {
+          "name": "projects-index",
+          "height": 1241,
+          "overflow": false
+        },
+        {
+          "name": "match-empty",
+          "height": 924,
+          "overflow": false
+        },
+        {
+          "name": "match-loading",
+          "height": 924,
+          "overflow": false
+        },
+        {
+          "name": "match-streaming",
+          "height": 924,
+          "overflow": false
+        },
+        {
+          "name": "match-completed",
+          "height": 1739,
+          "overflow": false
+        },
+        {
+          "name": "match-error",
+          "height": 989,
+          "overflow": false
+        },
+        {
+          "name": "match-retry",
+          "height": 1739,
+          "overflow": false
+        },
+        {
+          "name": "contact-empty",
+          "height": 1022,
+          "overflow": false
+        },
+        {
+          "name": "contact-validation",
+          "height": 1037,
+          "overflow": false
+        },
+        {
+          "name": "contact-failure",
+          "height": 1045,
+          "overflow": false
+        },
+        {
+          "name": "contact-pending",
+          "height": 1022,
+          "overflow": false
+        },
+        {
+          "name": "contact-success",
+          "height": 1022,
+          "overflow": false
+        }
+      ],
+      "covers": [
+        {
+          "href": "/projects/jobpilot-ai",
+          "title": "JobPilot AI",
+          "type": "AI-powered job-search and application platform",
+          "number": "01",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/lobby",
+          "title": "Lobby",
+          "type": "Real-time communication platform",
+          "number": "02",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/gamezone-arena",
+          "title": "GameZone Arena",
+          "type": "Gaming arena reservation",
+          "number": "03",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system",
+          "title": "Cedar Construction",
+          "type": "Full-Stack Web Application",
+          "number": "04",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/unihub",
+          "title": "UniHub",
+          "type": "University management system",
+          "number": "05",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/full-stack-user-management-system",
+          "title": "User Management",
+          "type": "Full-Stack Web Application",
+          "number": "06",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/medicare-hub",
+          "title": "Medicare Hub",
+          "type": "Clinic management system",
+          "number": "07",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        },
+        {
+          "href": "/projects/home-services",
+          "title": "Home Services",
+          "type": "Responsive web application",
+          "number": "08",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            604,
+            378
+          ],
+          "frame": [
+            613.609375,
+            383.5
+          ]
+        }
+      ],
+      "cv": {
+        "filename": "tailored-portfolio-cv.pdf",
+        "failure": null
+      }
+    },
+    {
+      "width": 1024,
+      "height": 1024,
+      "reduced": false,
+      "errors": [],
+      "mockWrites": [
+        "/api/job-match/tailored-cv",
+        "/api/messages",
+        "/api/messages"
+      ],
+      "states": [
+        {
+          "name": "projects-gallery",
+          "height": 2077,
+          "overflow": false
+        },
+        {
+          "name": "projects-index",
+          "height": 1241,
+          "overflow": false
+        },
+        {
+          "name": "match-empty",
+          "height": 929,
+          "overflow": false
+        },
+        {
+          "name": "match-loading",
+          "height": 929,
+          "overflow": false
+        },
+        {
+          "name": "match-streaming",
+          "height": 929,
+          "overflow": false
+        },
+        {
+          "name": "match-completed",
+          "height": 1994,
+          "overflow": false
+        },
+        {
+          "name": "match-error",
+          "height": 994,
+          "overflow": false
+        },
+        {
+          "name": "match-retry",
+          "height": 1994,
+          "overflow": false
+        },
+        {
+          "name": "contact-empty",
+          "height": 1063,
+          "overflow": false
+        },
+        {
+          "name": "contact-validation",
+          "height": 1063,
+          "overflow": false
+        },
+        {
+          "name": "contact-failure",
+          "height": 1067,
+          "overflow": false
+        },
+        {
+          "name": "contact-pending",
+          "height": 1063,
+          "overflow": false
+        },
+        {
+          "name": "contact-success",
+          "height": 1063,
+          "overflow": false
+        }
+      ],
+      "covers": [
+        {
+          "href": "/projects/jobpilot-ai",
+          "title": "JobPilot AI",
+          "type": "AI-powered job-search and application platform",
+          "number": "01",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/lobby",
+          "title": "Lobby",
+          "type": "Real-time communication platform",
+          "number": "02",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/gamezone-arena",
+          "title": "GameZone Arena",
+          "type": "Gaming arena reservation",
+          "number": "03",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system",
+          "title": "Cedar Construction",
+          "type": "Full-Stack Web Application",
+          "number": "04",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/unihub",
+          "title": "UniHub",
+          "type": "University management system",
+          "number": "05",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/full-stack-user-management-system",
+          "title": "User Management",
+          "type": "Full-Stack Web Application",
+          "number": "06",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/medicare-hub",
+          "title": "Medicare Hub",
+          "type": "Clinic management system",
+          "number": "07",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        },
+        {
+          "href": "/projects/home-services",
+          "title": "Home Services",
+          "type": "Responsive web application",
+          "number": "08",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            430,
+            268
+          ],
+          "frame": [
+            430.5625,
+            269.09375
+          ]
+        }
+      ],
+      "cv": {
+        "filename": "tailored-portfolio-cv.pdf",
+        "failure": null
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reduced": false,
+      "errors": [],
+      "mockWrites": [
+        "/api/job-match/tailored-cv",
+        "/api/messages",
+        "/api/messages"
+      ],
+      "states": [
+        {
+          "name": "projects-gallery",
+          "height": 1818,
+          "overflow": false
+        },
+        {
+          "name": "projects-index",
+          "height": 1241,
+          "overflow": false
+        },
+        {
+          "name": "match-empty",
+          "height": 969,
+          "overflow": false
+        },
+        {
+          "name": "match-loading",
+          "height": 923,
+          "overflow": false
+        },
+        {
+          "name": "match-streaming",
+          "height": 923,
+          "overflow": false
+        },
+        {
+          "name": "match-completed",
+          "height": 2152,
+          "overflow": true
+        },
+        {
+          "name": "match-error",
+          "height": 1010,
+          "overflow": false
+        },
+        {
+          "name": "match-retry",
+          "height": 2152,
+          "overflow": true
+        },
+        {
+          "name": "contact-empty",
+          "height": 1144,
+          "overflow": false
+        },
+        {
+          "name": "contact-validation",
+          "height": 1149,
+          "overflow": false
+        },
+        {
+          "name": "contact-failure",
+          "height": 1161,
+          "overflow": false
+        },
+        {
+          "name": "contact-pending",
+          "height": 1144,
+          "overflow": false
+        },
+        {
+          "name": "contact-success",
+          "height": 1144,
+          "overflow": false
+        }
+      ],
+      "covers": [
+        {
+          "href": "/projects/jobpilot-ai",
+          "title": "JobPilot AI",
+          "type": "AI-powered job-search and application platform",
+          "number": "01",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/lobby",
+          "title": "Lobby",
+          "type": "Real-time communication platform",
+          "number": "02",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/gamezone-arena",
+          "title": "GameZone Arena",
+          "type": "Gaming arena reservation",
+          "number": "03",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system",
+          "title": "Cedar Construction",
+          "type": "Full-Stack Web Application",
+          "number": "04",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/unihub",
+          "title": "UniHub",
+          "type": "University management system",
+          "number": "05",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/full-stack-user-management-system",
+          "title": "User Management",
+          "type": "Full-Stack Web Application",
+          "number": "06",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/medicare-hub",
+          "title": "Medicare Hub",
+          "type": "Clinic management system",
+          "number": "07",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        },
+        {
+          "href": "/projects/home-services",
+          "title": "Home Services",
+          "type": "Responsive web application",
+          "number": "08",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            322,
+            201
+          ],
+          "frame": [
+            317.921875,
+            198.6875
+          ]
+        }
+      ],
+      "cv": {
+        "filename": "tailored-portfolio-cv.pdf",
+        "failure": null
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "mockWrites": [
+        "/api/job-match/tailored-cv",
+        "/api/messages",
+        "/api/messages"
+      ],
+      "states": [
+        {
+          "name": "projects-gallery",
+          "height": 3212,
+          "overflow": false
+        },
+        {
+          "name": "projects-index",
+          "height": 1424,
+          "overflow": false
+        },
+        {
+          "name": "match-empty",
+          "height": 1545,
+          "overflow": false
+        },
+        {
+          "name": "match-loading",
+          "height": 1163,
+          "overflow": false
+        },
+        {
+          "name": "match-streaming",
+          "height": 1163,
+          "overflow": false
+        },
+        {
+          "name": "match-completed",
+          "height": 2778,
+          "overflow": false
+        },
+        {
+          "name": "match-error",
+          "height": 1632,
+          "overflow": false
+        },
+        {
+          "name": "match-retry",
+          "height": 2778,
+          "overflow": false
+        },
+        {
+          "name": "contact-empty",
+          "height": 1862,
+          "overflow": false
+        },
+        {
+          "name": "contact-validation",
+          "height": 1925,
+          "overflow": false
+        },
+        {
+          "name": "contact-failure",
+          "height": 1912,
+          "overflow": false
+        },
+        {
+          "name": "contact-pending",
+          "height": 1862,
+          "overflow": false
+        },
+        {
+          "name": "contact-success",
+          "height": 1422,
+          "overflow": false
+        }
+      ],
+      "covers": [
+        {
+          "href": "/projects/jobpilot-ai",
+          "title": "JobPilot AI",
+          "type": "AI-powered job-search and application platform",
+          "number": "01",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/lobby",
+          "title": "Lobby",
+          "type": "Real-time communication platform",
+          "number": "02",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/gamezone-arena",
+          "title": "GameZone Arena",
+          "type": "Gaming arena reservation",
+          "number": "03",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system",
+          "title": "Cedar Construction",
+          "type": "Full-Stack Web Application",
+          "number": "04",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/unihub",
+          "title": "UniHub",
+          "type": "University management system",
+          "number": "05",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/full-stack-user-management-system",
+          "title": "User Management",
+          "type": "Full-Stack Web Application",
+          "number": "06",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/medicare-hub",
+          "title": "Medicare Hub",
+          "type": "Clinic management system",
+          "number": "07",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        },
+        {
+          "href": "/projects/home-services",
+          "title": "Home Services",
+          "type": "Responsive web application",
+          "number": "08",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            351,
+            219
+          ],
+          "frame": [
+            343.21875,
+            214.5
+          ]
+        }
+      ],
+      "cv": {
+        "filename": "tailored-portfolio-cv.pdf",
+        "failure": null
+      }
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "reduced": false,
+      "errors": [],
+      "mockWrites": [
+        "/api/job-match/tailored-cv",
+        "/api/messages",
+        "/api/messages"
+      ],
+      "states": [
+        {
+          "name": "projects-gallery",
+          "height": 2947,
+          "overflow": false
+        },
+        {
+          "name": "projects-index",
+          "height": 1468,
+          "overflow": false
+        },
+        {
+          "name": "match-empty",
+          "height": 1646,
+          "overflow": false
+        },
+        {
+          "name": "match-loading",
+          "height": 1222,
+          "overflow": false
+        },
+        {
+          "name": "match-streaming",
+          "height": 1222,
+          "overflow": false
+        },
+        {
+          "name": "match-completed",
+          "height": 2813,
+          "overflow": true
+        },
+        {
+          "name": "match-error",
+          "height": 1734,
+          "overflow": false
+        },
+        {
+          "name": "match-retry",
+          "height": 2813,
+          "overflow": true
+        },
+        {
+          "name": "contact-empty",
+          "height": 1938,
+          "overflow": false
+        },
+        {
+          "name": "contact-validation",
+          "height": 2001,
+          "overflow": false
+        },
+        {
+          "name": "contact-failure",
+          "height": 2013,
+          "overflow": false
+        },
+        {
+          "name": "contact-pending",
+          "height": 1938,
+          "overflow": false
+        },
+        {
+          "name": "contact-success",
+          "height": 1446,
+          "overflow": false
+        }
+      ],
+      "covers": [
+        {
+          "href": "/projects/jobpilot-ai",
+          "title": "JobPilot AI",
+          "type": "AI-powered job-search and application platform",
+          "number": "01",
+          "src": "/projects/gallery-covers/jobpilot-ai.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/lobby",
+          "title": "Lobby",
+          "type": "Real-time communication platform",
+          "number": "02",
+          "src": "/projects/gallery-covers/lobby.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/gamezone-arena",
+          "title": "GameZone Arena",
+          "type": "Gaming arena reservation",
+          "number": "03",
+          "src": "/projects/gallery-covers/gamezone-arena.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/construction-project-management-accounting-system",
+          "title": "Cedar Construction",
+          "type": "Full-Stack Web Application",
+          "number": "04",
+          "src": "/projects/gallery-covers/construction-project-management-accounting-system.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/unihub",
+          "title": "UniHub",
+          "type": "University management system",
+          "number": "05",
+          "src": "/projects/gallery-covers/unihub.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/full-stack-user-management-system",
+          "title": "User Management",
+          "type": "Full-Stack Web Application",
+          "number": "06",
+          "src": "/projects/gallery-covers/full-stack-user-management-system.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/medicare-hub",
+          "title": "Medicare Hub",
+          "type": "Clinic management system",
+          "number": "07",
+          "src": "/projects/gallery-covers/medicare-hub.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        },
+        {
+          "href": "/projects/home-services",
+          "title": "Home Services",
+          "type": "Responsive web application",
+          "number": "08",
+          "src": "/projects/gallery-covers/home-services.webp",
+          "natural": [
+            288,
+            180
+          ],
+          "frame": [
+            281.625,
+            176.015625
+          ]
+        }
+      ],
+      "cv": {
+        "filename": "tailored-portfolio-cv.pdf",
+        "failure": null
+      }
+    }
+  ]
+}
