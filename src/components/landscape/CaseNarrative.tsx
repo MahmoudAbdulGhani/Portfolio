@@ -56,7 +56,6 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
                 style={{ '--frame-max-width': `${screenColumnWidth(step.screen)}px` } as CSSProperties}
                 className="workflow-image" enlarge={trigger => openGallery(step.index, trigger)} sizes={screenSizes(step.screen)} />
             </div>
-            <button className="text-link workflow-full-screen" onClick={event => openGallery(step.index, event.currentTarget)}>View full screen<FiArrowUpRight /></button>
           </figure>)}
         </div>
       </section>}

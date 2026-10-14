@@ -1,0 +1,122 @@
+[
+  {
+    "mode": "normal",
+    "width": 320,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 401.21875,
+    "caption": 425.21875
+  },
+  {
+    "mode": "normal",
+    "width": 390,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 415.5,
+    "caption": 439.5
+  },
+  {
+    "mode": "normal",
+    "width": 430,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 423.65625,
+    "caption": 447.65625
+  },
+  {
+    "mode": "normal",
+    "width": 768,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 495.703125,
+    "caption": 519.703125
+  },
+  {
+    "mode": "normal",
+    "width": 1440,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 548.03125,
+    "caption": 572.03125
+  },
+  {
+    "mode": "reduced",
+    "width": 320,
+    "renderer": "reduced",
+    "overflow": false,
+    "frame": 401.21875,
+    "caption": 425.21875
+  },
+  {
+    "mode": "reduced",
+    "width": 390,
+    "renderer": "reduced",
+    "overflow": false,
+    "frame": 415.5,
+    "caption": 439.5
+  },
+  {
+    "mode": "reduced",
+    "width": 430,
+    "renderer": "reduced",
+    "overflow": false,
+    "frame": 423.65625,
+    "caption": 447.65625
+  },
+  {
+    "mode": "reduced",
+    "width": 768,
+    "renderer": "reduced",
+    "overflow": false,
+    "frame": 495.703125,
+    "caption": 519.703125
+  },
+  {
+    "mode": "reduced",
+    "width": 1440,
+    "renderer": "reduced",
+    "overflow": false,
+    "frame": 548.03125,
+    "caption": 572.03125
+  },
+  {
+    "mode": "fallback",
+    "width": 320,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 401.21875,
+    "caption": 425.21875
+  },
+  {
+    "mode": "fallback",
+    "width": 390,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 415.5,
+    "caption": 439.5
+  },
+  {
+    "mode": "fallback",
+    "width": 430,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 423.65625,
+    "caption": 447.65625
+  },
+  {
+    "mode": "fallback",
+    "width": 768,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 495.703125,
+    "caption": 519.703125
+  },
+  {
+    "mode": "fallback",
+    "width": 1440,
+    "renderer": "fallback",
+    "overflow": false,
+    "frame": 548.03125,
+    "caption": 572.03125
+  }
+]

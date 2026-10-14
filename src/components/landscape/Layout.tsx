@@ -12,6 +12,7 @@ import "../../landscape.css";
 import "../../landscape-integration.css";
 import './composition.css';
 import './motion-language.css';
+import './mobile-reading.css';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({

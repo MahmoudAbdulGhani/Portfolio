@@ -1,0 +1,2792 @@
+{
+  "date": "2026-10-14",
+  "images": 340,
+  "videos": [
+    {
+      "file": "before/390-opening-inspection.webm",
+      "duration": 7.76,
+      "width": 390,
+      "height": 844,
+      "midpointDecoded": true,
+      "variance": 1670.1012912325998
+    },
+    {
+      "file": "before/1440-opening-inspection.webm",
+      "duration": 8,
+      "width": 1440,
+      "height": 900,
+      "midpointDecoded": true,
+      "variance": 450.8678671253972
+    },
+    {
+      "file": "after/390-opening-inspection.webm",
+      "duration": 7.84,
+      "width": 390,
+      "height": 844,
+      "midpointDecoded": true,
+      "variance": 1875.4521477750804
+    },
+    {
+      "file": "after/1440-opening-inspection.webm",
+      "duration": 8.08,
+      "width": 1440,
+      "height": 900,
+      "midpointDecoded": true,
+      "variance": 3241.602078590116
+    }
+  ],
+  "files": [
+    {
+      "file": "before/1440-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 98546,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 100927,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 70149,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 99170,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 48652,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 83397,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-fit.jpg",
+      "bytes": 60092,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-inspect.jpg",
+      "bytes": 60764,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 29994,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 59785,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 50978,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-reader.jpg",
+      "bytes": 56886,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-gamezone-arena-fit.jpg",
+      "bytes": 76171,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-gamezone-arena-inspect.jpg",
+      "bytes": 74985,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-gamezone-arena-reader.jpg",
+      "bytes": 76532,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-home-services-fit.jpg",
+      "bytes": 47526,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-home-services-inspect.jpg",
+      "bytes": 99929,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-home-services-reader.jpg",
+      "bytes": 42674,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-jobpilot-ai-fit.jpg",
+      "bytes": 85224,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-jobpilot-ai-inspect.jpg",
+      "bytes": 89034,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-jobpilot-ai-reader.jpg",
+      "bytes": 73540,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-lobby-fit.jpg",
+      "bytes": 82696,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-lobby-inspect.jpg",
+      "bytes": 81467,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-lobby-reader.jpg",
+      "bytes": 69971,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-medicare-hub-fit.jpg",
+      "bytes": 68331,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-medicare-hub-inspect.jpg",
+      "bytes": 49184,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-medicare-hub-reader.jpg",
+      "bytes": 70045,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-opening-inspection.webm",
+      "bytes": 912335
+    },
+    {
+      "file": "before/1440-pending.jpg",
+      "bytes": 44108,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-unihub-fit.jpg",
+      "bytes": 92041,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-unihub-inspect.jpg",
+      "bytes": 84657,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/1440-unihub-reader.jpg",
+      "bytes": 78079,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 29079,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 39946,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 34148,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 39195,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 43435,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 40434,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-fit.jpg",
+      "bytes": 20093,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-inspect.jpg",
+      "bytes": 18827,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 29246,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 25630,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 40320,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-reader.jpg",
+      "bytes": 36180,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-gamezone-arena-fit.jpg",
+      "bytes": 32719,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-gamezone-arena-inspect.jpg",
+      "bytes": 27380,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-gamezone-arena-reader.jpg",
+      "bytes": 33239,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-home-services-fit.jpg",
+      "bytes": 34823,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-home-services-inspect.jpg",
+      "bytes": 40901,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-home-services-reader.jpg",
+      "bytes": 37173,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-jobpilot-ai-fit.jpg",
+      "bytes": 22373,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-jobpilot-ai-inspect.jpg",
+      "bytes": 32760,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-jobpilot-ai-reader.jpg",
+      "bytes": 37042,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-lobby-fit.jpg",
+      "bytes": 22143,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-lobby-inspect.jpg",
+      "bytes": 36701,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-lobby-reader.jpg",
+      "bytes": 35630,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-medicare-hub-fit.jpg",
+      "bytes": 26907,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-medicare-hub-inspect.jpg",
+      "bytes": 21444,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-medicare-hub-reader.jpg",
+      "bytes": 36122,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-unihub-fit.jpg",
+      "bytes": 26365,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-unihub-inspect.jpg",
+      "bytes": 34469,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/320-unihub-reader.jpg",
+      "bytes": 37860,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 34216,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 44570,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 41600,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 43568,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 48487,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 44822,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-fit.jpg",
+      "bytes": 22619,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-inspect.jpg",
+      "bytes": 21061,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 35169,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 28552,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 44125,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-reader.jpg",
+      "bytes": 38942,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-gamezone-arena-fit.jpg",
+      "bytes": 38658,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-gamezone-arena-inspect.jpg",
+      "bytes": 30562,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-gamezone-arena-reader.jpg",
+      "bytes": 37578,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-home-services-fit.jpg",
+      "bytes": 36398,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-home-services-inspect.jpg",
+      "bytes": 49548,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-home-services-reader.jpg",
+      "bytes": 41930,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-jobpilot-ai-fit.jpg",
+      "bytes": 26402,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-jobpilot-ai-inspect.jpg",
+      "bytes": 37025,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-jobpilot-ai-reader.jpg",
+      "bytes": 39498,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-lobby-fit.jpg",
+      "bytes": 26056,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-lobby-inspect.jpg",
+      "bytes": 41902,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-lobby-reader.jpg",
+      "bytes": 38619,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-medicare-hub-fit.jpg",
+      "bytes": 31019,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-medicare-hub-inspect.jpg",
+      "bytes": 27549,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-medicare-hub-reader.jpg",
+      "bytes": 38999,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-opening-inspection.webm",
+      "bytes": 524934
+    },
+    {
+      "file": "before/390-pending.jpg",
+      "bytes": 24306,
+      "width": 390,
+      "height": 844,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-unihub-fit.jpg",
+      "bytes": 31065,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-unihub-inspect.jpg",
+      "bytes": 36977,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/390-unihub-reader.jpg",
+      "bytes": 40460,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 36890,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 47517,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 46052,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 46528,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 49787,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 45958,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-fit.jpg",
+      "bytes": 23895,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-inspect.jpg",
+      "bytes": 22911,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 38287,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 30767,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 42997,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-reader.jpg",
+      "bytes": 39511,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-gamezone-arena-fit.jpg",
+      "bytes": 41665,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-gamezone-arena-inspect.jpg",
+      "bytes": 32085,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-gamezone-arena-reader.jpg",
+      "bytes": 40473,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-home-services-fit.jpg",
+      "bytes": 37149,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-home-services-inspect.jpg",
+      "bytes": 52825,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-home-services-reader.jpg",
+      "bytes": 45547,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-jobpilot-ai-fit.jpg",
+      "bytes": 29042,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-jobpilot-ai-inspect.jpg",
+      "bytes": 41166,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-jobpilot-ai-reader.jpg",
+      "bytes": 41120,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-lobby-fit.jpg",
+      "bytes": 27676,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-lobby-inspect.jpg",
+      "bytes": 44239,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-lobby-reader.jpg",
+      "bytes": 40610,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-medicare-hub-fit.jpg",
+      "bytes": 33602,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-medicare-hub-inspect.jpg",
+      "bytes": 30281,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-medicare-hub-reader.jpg",
+      "bytes": 40845,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-unihub-fit.jpg",
+      "bytes": 33118,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-unihub-inspect.jpg",
+      "bytes": 38336,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/430-unihub-reader.jpg",
+      "bytes": 41910,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 58208,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 74144,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 63015,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 71119,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 52862,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 65020,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-fit.jpg",
+      "bytes": 34716,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-inspect.jpg",
+      "bytes": 34677,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 24049,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 47409,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 54604,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-reader.jpg",
+      "bytes": 53484,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-gamezone-arena-fit.jpg",
+      "bytes": 61563,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-gamezone-arena-inspect.jpg",
+      "bytes": 43795,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-gamezone-arena-reader.jpg",
+      "bytes": 53638,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-home-services-fit.jpg",
+      "bytes": 40885,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-home-services-inspect.jpg",
+      "bytes": 60454,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-home-services-reader.jpg",
+      "bytes": 32731,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-jobpilot-ai-fit.jpg",
+      "bytes": 51321,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-jobpilot-ai-inspect.jpg",
+      "bytes": 74952,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-jobpilot-ai-reader.jpg",
+      "bytes": 55795,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-lobby-fit.jpg",
+      "bytes": 49219,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-lobby-inspect.jpg",
+      "bytes": 62195,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-lobby-reader.jpg",
+      "bytes": 52999,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-medicare-hub-fit.jpg",
+      "bytes": 52414,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-medicare-hub-inspect.jpg",
+      "bytes": 39344,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-medicare-hub-reader.jpg",
+      "bytes": 46889,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-unihub-fit.jpg",
+      "bytes": 54718,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-unihub-inspect.jpg",
+      "bytes": 64370,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/768-unihub-reader.jpg",
+      "bytes": 56623,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "before/findings.json",
+      "bytes": 5154
+    },
+    {
+      "file": "before/portrait-findings.json",
+      "bytes": 1518
+    },
+    {
+      "file": "after/1440-boundary-accepted.jpg",
+      "bytes": 73821,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-boundary-rest.jpg",
+      "bytes": 77908,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-boundary-stale.jpg",
+      "bytes": 85844,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-collection-fallback.jpg",
+      "bytes": 126541,
+      "width": 1440,
+      "height": 1585,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-collection-normal.jpg",
+      "bytes": 126562,
+      "width": 1440,
+      "height": 1585,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-collection-reduced.jpg",
+      "bytes": 126524,
+      "width": 1440,
+      "height": 1585,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 101165,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 102938,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 69943,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 98362,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 91875,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 83397,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-fit.jpg",
+      "bytes": 63202,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-inspect.jpg",
+      "bytes": 64415,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 51427,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 60733,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 50978,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-full-stack-user-management-system-reader.jpg",
+      "bytes": 56886,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-gamezone-arena-fit.jpg",
+      "bytes": 79898,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-gamezone-arena-inspect.jpg",
+      "bytes": 75696,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-gamezone-arena-reader.jpg",
+      "bytes": 75635,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-home-services-fit.jpg",
+      "bytes": 48307,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-home-services-inspect.jpg",
+      "bytes": 101262,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-home-services-reader.jpg",
+      "bytes": 89353,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-jobpilot-ai-fit.jpg",
+      "bytes": 89643,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-jobpilot-ai-inspect.jpg",
+      "bytes": 91546,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-jobpilot-ai-reader.jpg",
+      "bytes": 73540,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-lobby-fit.jpg",
+      "bytes": 85210,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-lobby-inspect.jpg",
+      "bytes": 84230,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-lobby-reader.jpg",
+      "bytes": 69971,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-medicare-hub-fit.jpg",
+      "bytes": 69751,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-medicare-hub-inspect.jpg",
+      "bytes": 51075,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-medicare-hub-reader.jpg",
+      "bytes": 70045,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-opening-inspection.webm",
+      "bytes": 945723
+    },
+    {
+      "file": "after/1440-pending.jpg",
+      "bytes": 71818,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-unihub-fit.jpg",
+      "bytes": 92814,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-unihub-inspect.jpg",
+      "bytes": 88235,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/1440-unihub-reader.jpg",
+      "bytes": 78079,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-boundary-accepted.jpg",
+      "bytes": 32412,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-boundary-rest.jpg",
+      "bytes": 36637,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-boundary-stale.jpg",
+      "bytes": 38629,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-collection-fallback.jpg",
+      "bytes": 72186,
+      "width": 320,
+      "height": 2202,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-collection-normal.jpg",
+      "bytes": 72186,
+      "width": 320,
+      "height": 2202,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-collection-reduced.jpg",
+      "bytes": 72174,
+      "width": 320,
+      "height": 2202,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 31530,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 41668,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 36674,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 40981,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 44747,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 41702,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-fit.jpg",
+      "bytes": 22873,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-inspect.jpg",
+      "bytes": 21586,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 31439,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 26460,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 39475,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-full-stack-user-management-system-reader.jpg",
+      "bytes": 36450,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-gamezone-arena-fit.jpg",
+      "bytes": 35228,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-gamezone-arena-inspect.jpg",
+      "bytes": 29759,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-gamezone-arena-reader.jpg",
+      "bytes": 33861,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-home-services-fit.jpg",
+      "bytes": 33740,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-home-services-inspect.jpg",
+      "bytes": 39963,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-home-services-reader.jpg",
+      "bytes": 36580,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-jobpilot-ai-fit.jpg",
+      "bytes": 25111,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-jobpilot-ai-inspect.jpg",
+      "bytes": 33303,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-jobpilot-ai-reader.jpg",
+      "bytes": 37193,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-lobby-fit.jpg",
+      "bytes": 24716,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-lobby-inspect.jpg",
+      "bytes": 39298,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-lobby-reader.jpg",
+      "bytes": 36290,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-medicare-hub-fit.jpg",
+      "bytes": 29333,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-medicare-hub-inspect.jpg",
+      "bytes": 23833,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-medicare-hub-reader.jpg",
+      "bytes": 35451,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-unihub-fit.jpg",
+      "bytes": 28681,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-unihub-inspect.jpg",
+      "bytes": 36342,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/320-unihub-reader.jpg",
+      "bytes": 37604,
+      "width": 320,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-boundary-accepted.jpg",
+      "bytes": 36043,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-boundary-rest.jpg",
+      "bytes": 40460,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-boundary-stale.jpg",
+      "bytes": 42930,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-collection-fallback.jpg",
+      "bytes": 75322,
+      "width": 390,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-collection-normal.jpg",
+      "bytes": 75322,
+      "width": 390,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-collection-reduced.jpg",
+      "bytes": 75322,
+      "width": 390,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 36475,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 46060,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 44271,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 45174,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 49411,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 45301,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-fit.jpg",
+      "bytes": 25483,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-inspect.jpg",
+      "bytes": 23856,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 37198,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 30353,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 43729,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-full-stack-user-management-system-reader.jpg",
+      "bytes": 39304,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-gamezone-arena-fit.jpg",
+      "bytes": 41001,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-gamezone-arena-inspect.jpg",
+      "bytes": 33232,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-gamezone-arena-reader.jpg",
+      "bytes": 38118,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-home-services-fit.jpg",
+      "bytes": 35942,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-home-services-inspect.jpg",
+      "bytes": 48321,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-home-services-reader.jpg",
+      "bytes": 42981,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-jobpilot-ai-fit.jpg",
+      "bytes": 29579,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-jobpilot-ai-inspect.jpg",
+      "bytes": 37284,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-jobpilot-ai-reader.jpg",
+      "bytes": 39673,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-lobby-fit.jpg",
+      "bytes": 28379,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-lobby-inspect.jpg",
+      "bytes": 44371,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-lobby-reader.jpg",
+      "bytes": 39332,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-medicare-hub-fit.jpg",
+      "bytes": 33924,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-medicare-hub-inspect.jpg",
+      "bytes": 30032,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-medicare-hub-reader.jpg",
+      "bytes": 39064,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-opening-inspection.webm",
+      "bytes": 551591
+    },
+    {
+      "file": "after/390-pending.jpg",
+      "bytes": 27785,
+      "width": 390,
+      "height": 844,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-unihub-fit.jpg",
+      "bytes": 33596,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-unihub-inspect.jpg",
+      "bytes": 38809,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/390-unihub-reader.jpg",
+      "bytes": 41107,
+      "width": 390,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-boundary-accepted.jpg",
+      "bytes": 36729,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-boundary-rest.jpg",
+      "bytes": 41067,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-boundary-stale.jpg",
+      "bytes": 43581,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-collection-fallback.jpg",
+      "bytes": 77114,
+      "width": 430,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-collection-normal.jpg",
+      "bytes": 77114,
+      "width": 430,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-collection-reduced.jpg",
+      "bytes": 77114,
+      "width": 430,
+      "height": 2047,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 39536,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 49136,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 48200,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 48119,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 49121,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 46534,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-fit.jpg",
+      "bytes": 26966,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-inspect.jpg",
+      "bytes": 25886,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 39393,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 32718,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 44294,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-full-stack-user-management-system-reader.jpg",
+      "bytes": 40110,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-gamezone-arena-fit.jpg",
+      "bytes": 44217,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-gamezone-arena-inspect.jpg",
+      "bytes": 35047,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-gamezone-arena-reader.jpg",
+      "bytes": 39786,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-home-services-fit.jpg",
+      "bytes": 36862,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-home-services-inspect.jpg",
+      "bytes": 51577,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-home-services-reader.jpg",
+      "bytes": 43862,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-jobpilot-ai-fit.jpg",
+      "bytes": 32010,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-jobpilot-ai-inspect.jpg",
+      "bytes": 41580,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-jobpilot-ai-reader.jpg",
+      "bytes": 41542,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-lobby-fit.jpg",
+      "bytes": 30958,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-lobby-inspect.jpg",
+      "bytes": 46818,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-lobby-reader.jpg",
+      "bytes": 40052,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-medicare-hub-fit.jpg",
+      "bytes": 36020,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-medicare-hub-inspect.jpg",
+      "bytes": 32988,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-medicare-hub-reader.jpg",
+      "bytes": 41805,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-unihub-fit.jpg",
+      "bytes": 35939,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-unihub-inspect.jpg",
+      "bytes": 40380,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/430-unihub-reader.jpg",
+      "bytes": 41989,
+      "width": 430,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-boundary-accepted.jpg",
+      "bytes": 58372,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-boundary-rest.jpg",
+      "bytes": 62104,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-boundary-stale.jpg",
+      "bytes": 64987,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-collection-fallback.jpg",
+      "bytes": 98452,
+      "width": 768,
+      "height": 1626,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-collection-normal.jpg",
+      "bytes": 98452,
+      "width": 768,
+      "height": 1626,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-collection-reduced.jpg",
+      "bytes": 98429,
+      "width": 768,
+      "height": 1626,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-fit.jpg",
+      "bytes": 61472,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-inspect.jpg",
+      "bytes": 71954,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-portrait-fit.jpg",
+      "bytes": 58479,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-portrait-inspect.jpg",
+      "bytes": 69147,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-portrait-reader.jpg",
+      "bytes": 65289,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-construction-project-management-accounting-system-reader.jpg",
+      "bytes": 64924,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-fit.jpg",
+      "bytes": 37749,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-inspect.jpg",
+      "bytes": 36454,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-portrait-fit.jpg",
+      "bytes": 42545,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-portrait-inspect.jpg",
+      "bytes": 46947,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-portrait-reader.jpg",
+      "bytes": 53706,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-full-stack-user-management-system-reader.jpg",
+      "bytes": 53393,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-gamezone-arena-fit.jpg",
+      "bytes": 57002,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-gamezone-arena-inspect.jpg",
+      "bytes": 45444,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-gamezone-arena-reader.jpg",
+      "bytes": 54285,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-home-services-fit.jpg",
+      "bytes": 40246,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-home-services-inspect.jpg",
+      "bytes": 57626,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-home-services-reader.jpg",
+      "bytes": 65933,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-jobpilot-ai-fit.jpg",
+      "bytes": 52810,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-jobpilot-ai-inspect.jpg",
+      "bytes": 70962,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-jobpilot-ai-reader.jpg",
+      "bytes": 56208,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-lobby-fit.jpg",
+      "bytes": 50443,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-lobby-inspect.jpg",
+      "bytes": 63143,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-lobby-reader.jpg",
+      "bytes": 52794,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-medicare-hub-fit.jpg",
+      "bytes": 54962,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-medicare-hub-inspect.jpg",
+      "bytes": 42437,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-medicare-hub-reader.jpg",
+      "bytes": 46971,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-unihub-fit.jpg",
+      "bytes": 57343,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-unihub-inspect.jpg",
+      "bytes": 63795,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/768-unihub-reader.jpg",
+      "bytes": 57506,
+      "width": 768,
+      "height": 936,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "after/findings.json",
+      "bytes": 5154
+    },
+    {
+      "file": "after/selection-findings.json",
+      "bytes": 2232
+    },
+    {
+      "file": "./before-1440-collection.jpg",
+      "bytes": 133001,
+      "width": 1440,
+      "height": 1585,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "./before-1440-reader.jpg",
+      "bytes": 81642,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "./before-1440-viewer.jpg",
+      "bytes": 89325,
+      "width": 1440,
+      "height": 900,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "./before-390-collection.jpg",
+      "bytes": 78312,
+      "width": 390,
+      "height": 1974,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "./before-390-reader.jpg",
+      "bytes": 40249,
+      "width": 390,
+      "height": 844,
+      "decoded": true,
+      "nonblank": true
+    },
+    {
+      "file": "./before-390-viewer.jpg",
+      "bytes": 26931,
+      "width": 390,
+      "height": 844,
+      "decoded": true,
+      "nonblank": true
+    }
+  ]
+}

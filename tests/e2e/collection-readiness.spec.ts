@@ -275,8 +275,11 @@ test('a superseded decode cannot mark the loaded replacement of a connected imag
     };
   });
   await page.goto('/?project=jobpilot-ai');
-  await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','ready');
+  // Readiness now follows decoding. Replace the held first candidate before
+  // awaiting readiness; every original final assertion/deadline stays intact.
+  await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','loading');
   await page.evaluate(()=>(window as unknown as {replaceCandidate:()=>void}).replaceCandidate());
+  await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','ready');
   await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');
   await expect(page.getByText('Preview unavailable. Open the case study for project details.')).toHaveCount(0);
   await expect(stage(page)).toHaveAttribute('data-selection-state','settled');

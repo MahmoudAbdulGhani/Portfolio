@@ -15,6 +15,7 @@ import { useProjects } from "../../lib/hooks";
 import { detailScreens, screenGeometry } from "../../lib/project-detail-screens";
 import { PublicDataState } from "../PublicDataState";
 import { ResponsiveProjectImage } from "../ResponsiveProjectImage";
+import { CaseGallery } from '../CaseGallery';
 import { MotionRig } from "./MotionRig";
 import { ProfileBoundary } from './ProfileBoundary';
 import { CedarBoundary } from './CedarBoundary';
@@ -176,6 +177,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   }, [rememberPreview]);
   const root = useRef<HTMLElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null);
+  const openingProgress = useRef(0);
   const originalTransforms = useRef(new Map<HTMLElement, { x: number; y: number; scale: number }>());
   const [motion] = useState(() => createCollectionMotion(Boolean(selected), prefersReducedMotion(), restored));
   const [readinessDeadline] = useState(() => performance.now() + collectionReadinessDeadline);
@@ -189,27 +191,23 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   });
   const [decoded, setDecoded] = useState<Set<string>>(() => new Set());
   const [failedPreview, setFailedPreview] = useState<string | null>(null);
+  const [inspection, setInspection] = useState<{ index: number; trigger: HTMLButtonElement } | null>(null);
+  const [hasPreview, setHasPreview] = useState(false);
+  const hasPreviewRef = useRef(false);
+  useLayoutEffect(() => { hasPreviewRef.current = hasPreview; }, [hasPreview]);
   const screens = selected ? detailScreens(selected.project) : [];
-  // Selection can change before the first request finishes. Any completed
-  // preview attempt makes the handoff eligible; chapter changes cannot cancel
-  // or restart the selection's finite opening clock.
+  // Keep GPU work behind a completed image attempt. Slow requests retain the
+  // photograph; the bounded owner can recover without waiting on that request.
   const previewReady = !screens.length || decoded.size > 0;
   const eligible = ready && previewReady && (state.renderer !== 'loading' || !state.allowGPU);
+  const activePreview = state.phase === 'active' ? hasPreview : null;
   const markDecoded = (src: string) => setDecoded(previous => previous.has(src) ? previous : new Set(previous).add(src));
-  const previewLoaded = (image: HTMLImageElement) => {
+  const previewLoaded = () => {
     const src = screens[chapter]?.src;
     if (!src) return;
-    const candidate = image.currentSrc || image.src;
-    const current = () => image.isConnected && (image.currentSrc || image.src) === candidate;
-    void image.decode().then(() => {
-      if (!current()) return;
-      setFailedPreview(previous => previous === src ? null : previous);
-      markDecoded(src);
-    }).catch(() => {
-      if (!current()) return;
-      setFailedPreview(src);
-      markDecoded(src);
-    });
+    setFailedPreview(previous => previous === src ? null : previous);
+    setHasPreview(true);
+    markDecoded(src);
   };
   const recoverOpening = useCallback(() => {
     const phase = motion.snapshot().phase;
@@ -230,6 +228,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     motion.rendererReady(renderer);
     if (renderer === 'fallback' && motion.snapshot().phase === 'opening') finishFiniteMotion(animation.current);
   }, [motion, readinessDeadline, recoverOpening]);
+  useEffect(() => {
+    // Import independently of network/decode, but create no canvas or scene
+    // until its screenshot attempt finishes. MotionRig owns cancellation.
+    if (kind && state.allowGPU) void warmRig().catch(() => {});
+  }, [kind, state.allowGPU]);
 
   useEffect(() => {
     if (!kind) return;
@@ -319,7 +322,6 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     if (!selected || !motion.close()) return;
     const scope = root.current;
     if (!scope) { restore(); return; }
-    const previous = animation.current?.time() ?? 0;
     stopFiniteMotion(animation.current);
     if (motion.snapshot().reduced) { restore(); return; }
     const mesh = scope.querySelector<HTMLElement>('.motion-rig');
@@ -327,7 +329,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
     const object = scope.querySelector<HTMLElement>('.' + selected.kind + '-object')!;
     const duration = collectionTiming.returning;
-    const progress = Math.min(1, previous / collectionTiming.articulation);
+    const progress = openingProgress.current;
     const timeline = gsap.timeline({ paused: true, onUpdate: () => {
       if (gpu) mesh.dispatchEvent(new CustomEvent('rig-frame', { detail: { progress: progress * (1 - timeline.time() / duration), closing: true } }));
     } });
@@ -359,13 +361,20 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     const object = scope.querySelector<HTMLElement>('.' + kind + '-object')!;
     const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
     if (motion.snapshot().phase === 'active') {
+      const preview = activePreview ?? false;
       gsap.set(objects.filter(item => item !== object), { opacity: 0.12 });
-      if (motion.snapshot().renderer === 'fallback') gsap.set(object, { opacity: 0.12 });
-      gsap.set(object.querySelector('.object-core'), { opacity: 0 });
+      // A recovered opening can precede a slow network/decode. Keep the real
+      // photograph until a decoded screenshot can crossfade over it.
+      const ctx = gsap.context(() => {
+        gsap.to(object, { opacity: preview ? 0.12 : 1, duration: reduced ? 0 : collectionTiming.handoff });
+        if (motion.snapshot().renderer === 'webgl') gsap.set(object.querySelector('.object-core'), { opacity: 0 });
+        else gsap.to(object.querySelector('.object-core'), { opacity: preview ? 0 : 1, duration: reduced ? 0 : collectionTiming.handoff });
+        const rig = scope.querySelector('.motion-rig');
+        if (rig && !preview && motion.snapshot().renderer === 'webgl') gsap.set(rig, { opacity: 1 });
+        else if (rig) gsap.to(rig, { opacity: 0, duration: reduced ? 0 : collectionTiming.handoff });
+      }, scope);
       gsap.set(scope.querySelector('.product-surface'), { opacity: 1, scale: 1, y: 0 });
-      const rig = scope.querySelector('.motion-rig');
-      if (rig) gsap.set(rig, { opacity: 0 });
-      return;
+      return () => ctx.kill(false);
     }
     if (!eligible || !motion.open()) return;
     const mesh = scope.querySelector<HTMLElement>('.motion-rig');
@@ -373,19 +382,22 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     const ctx = gsap.context(() => {
       const duration = reduced ? 0.01 : collectionTiming.articulation;
       const timeline = gsap.timeline({ paused: true, onUpdate: () => {
+        openingProgress.current = Math.min(1, timeline.time() / collectionTiming.articulation);
         if (gpu) mesh.dispatchEvent(new CustomEvent('rig-frame', { detail: { progress: Math.min(1, timeline.time() / collectionTiming.articulation), closing: false } }));
       } });
       animation.current = timeline;
       timeline.to(objects.filter(item => item !== object), { opacity: 0.12, duration: reduced ? 0.01 : 0.16 }, 0)
         .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.68)
         .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : 0.68);
-      if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: 0, duration: 0.2 }, 0.78);
+      if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: () => hasPreviewRef.current ? 0 : 1, duration: 0.2 }, 0.78);
       else timeline.to(object, { opacity: 0.12, duration, ease: 'power2.inOut' }, 0);
       playFiniteMotion(timeline, { complete: () => motion.activate() });
     }, scope);
     const timeline = animation.current;
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
-  }, [eligible, kind, reduced, motion, state.renderer]);
+  // An image arriving mid-articulation must not cancel its owning clock.
+  // Only an active selection crossfades its held artwork into the new image.
+  }, [eligible, kind, reduced, motion, state.renderer, activePreview]);
 
   const caseLink = selected && <Link className="solid-action open-case" to={`/projects/${selected.slug}`}
     state={{ collection: selected.kind === 'jobpilot' ? `/${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(selected.kind === 'jobpilot' ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
@@ -414,6 +426,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       data-selection-state={state.phase === 'active' ? 'settled' : state.phase === 'selecting' ? 'loading' : state.phase}
       data-motion-phase={state.phase}
       data-content-state="ready"
+      data-preview-state={failedPreview === screens[chapter]?.src ? 'failed' : decoded.has(screens[chapter]?.src) ? 'ready' : 'loading'}
       data-motion-renderer={state.renderer}
       ref={root}
       aria-label="Project collection"
@@ -505,9 +518,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
           <div className="selection-frame">
             {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
             <div className="selection-image-frame" style={!screens[chapter] ? { aspectRatio: 2.15 } : undefined}>
-              {screens[chapter] && !decoded.has(screens[chapter].src) && (
+              {screens[chapter] && (!decoded.has(screens[chapter].src) || (state.phase === 'selecting' && failedPreview !== screens[chapter].src)) && (
                 <p className="selection-preview-status" role="status">
-                  Loading project preview…
+                  {decoded.has(screens[chapter].src) ? 'Preparing project preview…' : 'Loading project preview…'}
                 </p>
               )}
               {(!screens[chapter] ||
@@ -517,8 +530,12 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                 </p>
               )}
               {screens[chapter] && (
-                <div
+                <button
+                  type="button"
                   className="product-surface"
+                  aria-label={`Enlarge ${selected.displayTitle}: ${screens[chapter].label}`}
+                  disabled={!decoded.has(screens[chapter].src) || failedPreview === screens[chapter].src || state.phase === 'closing'}
+                  onClick={event => setInspection({ index: chapter, trigger: event.currentTarget })}
                   data-image-ready={
                     decoded.has(screens[chapter].src) &&
                     failedPreview !== screens[chapter].src
@@ -533,16 +550,14 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                     priority
                     retainPrevious
                     onReadyImage={previewLoaded}
-                    // A responsive candidate can change without replacing the
-                    // retained element. Each load owns its own decode signal.
-                    onLoad={event => previewLoaded(event.currentTarget)}
                     onError={() => {
                       setFailedPreview(screens[chapter].src);
                       markDecoded(screens[chapter].src);
                     }}
                   />
-                </div>
+                </button>
               )}
+              {screens[chapter] && decoded.has(screens[chapter].src) && failedPreview !== screens[chapter].src && <span className="screenshot-inspect-cue">Tap to inspect</span>}
             </div>
             <section
               className="selection-detail"
@@ -600,6 +615,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
           }}><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}
           {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
           {selected.kind === 'lobby' && <div className="collection-lobby-boundary"><LobbyBoundary headingLevel={2} headingId="lobby-engineering" suspended={state.phase === 'closing'} /></div>}
+          {inspection && <CaseGallery screens={screens} projectName={selected.displayTitle} initialIndex={inspection.index} returnFocusTo={inspection.trigger} onClose={() => setInspection(null)} />}
         </>
       )}
     </main>

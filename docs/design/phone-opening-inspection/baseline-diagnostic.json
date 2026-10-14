@@ -1,0 +1,70 @@
+[
+  {
+    "width": 390,
+    "initial": {
+      "trace": {
+        "decodes": [
+          {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+            "at": 3566.6999999999534,
+            "parent": "project-image-current"
+          },
+          {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+            "at": 3566.7999999998137,
+            "parent": "project-image-current"
+          }
+        ],
+        "sizes": [],
+        "draws": 1499
+      },
+      "stage": "settled",
+      "canvas": [
+        {
+          "width": 390,
+          "height": 1791,
+          "css": [
+            390,
+            1791
+          ],
+          "opacity": "0"
+        }
+      ]
+    },
+    "drawsAfterVisibility": 1499
+  },
+  {
+    "width": 1440,
+    "initial": {
+      "trace": {
+        "decodes": [
+          {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+            "at": 1588.1000000000931,
+            "parent": "project-image-current"
+          },
+          {
+            "src": "https://yetqhjdgbemjxanxqlqf.supabase.co/storage/v1/object/public/portfolio-images/projects/jobpilot-ai/710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+            "at": 1588.1999999999534,
+            "parent": "project-image-current"
+          }
+        ],
+        "sizes": [],
+        "draws": 351
+      },
+      "stage": "settled",
+      "canvas": [
+        {
+          "width": 1440,
+          "height": 1425,
+          "css": [
+            1440,
+            1425
+          ],
+          "opacity": "0"
+        }
+      ]
+    },
+    "drawsAfterVisibility": 351
+  }
+]

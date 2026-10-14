@@ -6,6 +6,7 @@ import "./case-gallery.css";
 import { gsap } from 'gsap';
 import { finishFiniteMotion, playFiniteMotion, stopFiniteMotion } from './landscape/finite-motion';
 import { prefersReducedMotion, useMotionPreference } from '../lib/use-motion-preference';
+import { useImageInspection } from '../lib/use-image-inspection';
 
 export function CaseGallery({
   screens,
@@ -26,8 +27,6 @@ export function CaseGallery({
   const [selectedSource, setSelectedSource] = useState(screens[initialIndex]?.src ?? screens[0]?.src);
   const index = Math.max(0, screens.findIndex(screen => screen.src === selectedSource));
   const setIndex = (next: number) => setSelectedSource(screens[next]?.src);
-  const [fit, setFit] = useState<'fit' | 'width' | 'actual'>('fit');
-  const actual = fit === 'actual';
   const [retry, setRetry] = useState<{ src: string; attempt: number } | null>(null);
   const [failed, setFailed] = useState<string | null>(null);
   const close = useRef<HTMLButtonElement>(null);
@@ -38,6 +37,9 @@ export function CaseGallery({
   const reduced = useMotionPreference();
   const screen = screens[index];
   const geometry = screenGeometry(screen);
+  const inspection = useImageInspection(imageRegion, screen.src, geometry);
+  const fit = inspection.mode, setFit = inspection.setMode;
+  const actual = fit === 'actual' || fit === 'zoom';
   useLayoutEffect(() => {
     const modal = dialog.current;
     const trigger =
@@ -95,8 +97,6 @@ export function CaseGallery({
     dialog.current
       ?.querySelector<HTMLElement>('[aria-current="true"]')
       ?.scrollIntoView({ block: "nearest", inline: "nearest" });
-    const region = dialog.current?.querySelector('.case-inspector-image');
-    region?.scrollTo(0, 0);
     caption.current?.scrollTo(0, 0);
   }, [index, fit]);
   const step = (delta: number) =>
@@ -158,16 +158,18 @@ export function CaseGallery({
             <p className="public-eyebrow">{projectName}</p>
             <h2>{screen.label}</h2>
             {notice && <p className="case-inspector-notice">{notice}</p>}
+            <p className="case-inspector-gesture-hint">Pinch to zoom; drag to pan. Fit resets the view.</p>
           </div>
           <div className="case-inspector-tools">
-            {(['fit', 'width', 'actual'] as const).map(mode => <button key={mode} type="button" onClick={() => setFit(mode)} aria-pressed={fit === mode}>{mode === 'fit' ? 'Fit' : mode === 'width' ? 'Fit width' : 'Actual size'}</button>)}
+            <div className="case-inspector-modes">{(['fit', 'width', 'actual'] as const).map(mode => <button key={mode} type="button" onClick={() => setFit(mode)} aria-pressed={fit === mode}>{mode === 'fit' ? 'Fit' : mode === 'width' ? 'Fit width' : 'Actual size'}</button>)}</div>
+            <div className="case-inspector-zoom"><button type="button" aria-label="Zoom out" onClick={() => inspection.zoomAt(1 / 1.5)}>−</button><button type="button" aria-label="Zoom in" onClick={() => inspection.zoomAt(1.5)}>+</button><span role="status" className="inspection-zoom-status">{fit === 'zoom' ? `${Math.round(inspection.factor * 100)}%` : fit === 'fit' ? 'Overview' : fit === 'actual' ? '100%' : 'Fit width'}</span></div>
             <button
               ref={close}
               type="button"
               onClick={requestClose}
               aria-label="Close gallery"
             >
-              <FiX size={22} />
+              <FiX size={18} /><span>Close</span>
             </button>
           </div>
         </header>
@@ -178,11 +180,18 @@ export function CaseGallery({
           role="region"
           tabIndex={0}
           aria-label={`${screen.label}. ${fit === 'fit' ? 'Complete image fitted to the viewer.' : 'Scroll to inspect the full screenshot.'}`}
+          {...inspection.gestures}
+          onKeyDown={event => {
+            if (event.ctrlKey || event.metaKey) return;
+            if (event.key === '+' || event.key === '=') { event.preventDefault(); inspection.zoomAt(1.5); }
+            if (event.key === '-') { event.preventDefault(); inspection.zoomAt(1 / 1.5); }
+            if (event.key === '0') { event.preventDefault(); setFit('fit'); }
+          }}
         >
           {failed === screen.src ? (
             <div className="case-shot-error" role="status"><p>This image is unavailable.</p><button type="button" onClick={() => { imageRegion.current?.focus(); setRetry(previous => ({ src: screen.src, attempt: previous?.src === screen.src ? previous.attempt + 1 : 1 })); setFailed(null); }}>Retry original image</button><p>You can also select another screen below.</p></div>
           ) : (
-            <ResponsiveProjectImage
+            <div className="case-inspection-canvas" style={fit === 'zoom' ? { width: geometry.width * inspection.factor, height: geometry.height * inspection.factor } : undefined}><ResponsiveProjectImage
               key={`${screen.src}:${retry?.src === screen.src ? retry.attempt : 0}`}
               src={screen.src}
               sources={screenAsset(screen.src)}
@@ -196,7 +205,7 @@ export function CaseGallery({
               fit={fit === 'fit' ? 'frame' : 'natural'}
               original={actual || retry?.src === screen.src}
               onError={() => setFailed(screen.src)}
-            />
+            /></div>
           )}
         </div>
         {screens.length > 1 && (
@@ -209,7 +218,9 @@ export function CaseGallery({
                 aria-current={position === index ? "true" : undefined}
                 onClick={() => setIndex(position)}
               >
-                <ResponsiveProjectImage src={item.src} sources={screenAsset(item.src)} alt="" sizes="100px" />
+                {/* Remote originals without a thumbnail variant stay on demand.
+                    The numbered, named selector remains accessible. */}
+                {screenAsset(item.src) && <ResponsiveProjectImage src={item.src} sources={screenAsset(item.src)} alt="" sizes="100px" />}
                 <span>{String(position + 1).padStart(2, "0")}</span>
               </button>
             ))}

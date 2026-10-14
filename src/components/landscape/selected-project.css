@@ -50,7 +50,16 @@
   background: transparent;
   box-shadow: none;
   transform-origin: center;
+  display: block;
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
 }
+.landscape .product-surface:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.landscape .product-surface[data-image-ready="true"]:focus-visible { opacity: 1 !important; }
+.landscape .product-surface:disabled { cursor: default; }
+.landscape .selection-image-frame > .screenshot-inspect-cue { position: absolute; top: calc(100% + 4px); margin: 0; line-height: 16px; }
+.landscape .stage:is([data-preview-state="loading"], [data-preview-state="failed"]) .selection-detail { background: var(--paper); }
 .landscape .is-expanded .product-surface picture {
   display: block;
   width: 100%;
@@ -71,12 +80,14 @@
 .landscape .is-expanded .product-surface .project-image-previous img { visibility: visible; }
 .landscape .is-expanded .selection-preview-status {
   position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  padding: 24px;
-  color: var(--muted);
-  font: 12px/1.6 var(--mono);
+  inset: 12px 12px auto;
+  z-index: 9;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border-left: 2px solid var(--line);
+  color: var(--ink);
+  font: 14px/1.6 Manrope, sans-serif;
 }
 .landscape .is-expanded .selection-image-frame:has(.project-image-handoff[data-image-state="failed"] .project-image-previous) .selection-preview-status {
   /* Keep the failure explanation above a retained complete image, in flow. */

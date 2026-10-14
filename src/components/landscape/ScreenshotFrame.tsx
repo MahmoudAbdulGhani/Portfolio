@@ -3,6 +3,7 @@ import { ResponsiveProjectImage } from '../ResponsiveProjectImage';
 import './case-media.css';
 import { useMotionPreference } from '../../lib/use-motion-preference';
 import { screenAsset } from '../../lib/project-detail-screens';
+import { decodeProjectImage } from '../../lib/decode-project-image';
 
 type Props = {
   src: string; alt: string; label: string; ratio: string; className?: string; buttonClassName?: string;
@@ -29,6 +30,15 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
   const [status, setStatus] = useState<'loading' | 'ready' | 'failed'>('loading');
   const [old, setOld] = useState(previous);
   const reduced = useMotionPreference();
+  const active = useRef(true);
+  useEffect(() => { active.current = true; return () => { active.current = false; }; }, []);
+  const ready = useCallback(() => {
+    const node = image.current;
+    if (!node?.naturalWidth) return;
+    const candidate = node.currentSrc || node.src;
+    const current = () => active.current && node.isConnected && (node.currentSrc || node.src) === candidate;
+    void decodeProjectImage(node).then(() => { if (current()) setStatus('ready'); }).catch(() => { if (current()) setStatus('failed'); });
+  }, []);
 
   useEffect(() => {
     if (eligible) return;
@@ -45,13 +55,10 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
   useEffect(() => {
     if (!eligible || status !== 'loading') return;
     // A cached image may finish before React receives its load event.
-    if (image.current?.complete && image.current.naturalWidth > 0) {
-      const ready = setTimeout(() => setStatus('ready'), 0);
-      return () => clearTimeout(ready);
-    }
+    const cached = image.current?.complete && image.current.naturalWidth > 0 ? setTimeout(ready, 0) : undefined;
     const deadline = setTimeout(() => setStatus('failed'), 15_000);
-    return () => clearTimeout(deadline);
-  }, [eligible, status]);
+    return () => { clearTimeout(cached); clearTimeout(deadline); };
+  }, [eligible, status, ready]);
   useEffect(() => {
     const node = image.current;
     if (status !== 'ready' || !node?.naturalWidth) return;
@@ -64,9 +71,8 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
     const handoff = setTimeout(() => setOld(null), reduced ? 0 : 220);
     return () => clearTimeout(handoff);
   }, [old, status, reduced]);
-  const ready = () => setStatus('ready');
   const failed = () => setStatus('failed');
-  return <div ref={frame} className={`screenshot-frame ${className}${old ? ' has-previous-image' : ''}`} data-image-state={status} style={{ aspectRatio: ratio, '--source-ratio': ratio, ...style } as CSSProperties}>
+  return <><div ref={frame} className={`screenshot-frame ${className}${old ? ' has-previous-image' : ''}`} data-image-state={status} style={{ aspectRatio: ratio, '--source-ratio': ratio, ...style } as CSSProperties}>
     {old && <span className="screenshot-previous" aria-hidden="true"><img src={old.url} alt="" style={{ objectFit: old.fit as CSSProperties['objectFit'], objectPosition: old.position }} /></span>}
     <button type="button" className={`screenshot-button ${buttonClassName}`} aria-label={`Enlarge ${label}`} disabled={status === 'failed'} onClick={event => enlarge(event.currentTarget)}>
       {/* Defer URLs until the visibility gate opens, then start immediately.
@@ -75,5 +81,5 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
     </button>
     {status === 'loading' && <span className="screenshot-status" aria-hidden="true">Loading image…</span>}
     {status === 'failed' && <div className="screenshot-status screenshot-error" role="status"><p>This image is unavailable.</p><button type="button" className="text-link" onClick={() => { frame.current?.closest<HTMLElement>('.project-reader')?.focus({ preventScroll: true }); retry(); }}>Retry image</button><span>You can also choose another image.</span></div>}
-  </div>;
+  </div><span className="screenshot-inspect-cue" style={{ visibility: status === 'ready' ? 'visible' : 'hidden' }}>Tap to inspect</span></>;
 }

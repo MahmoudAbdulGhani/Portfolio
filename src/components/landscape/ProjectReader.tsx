@@ -181,7 +181,6 @@ export function ProjectReader() {
                 sizes={screenSizes(current)}
                 onImageReady={imageReady} enlarge={trigger => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, trigger)} />
               <figcaption className="image-caption">{study ? caseStudyImageCaption(study, screenOriginalSource(displayed.src), displayed.label) : displayed.label}</figcaption>
-              <button className="text-link case-full-screen" onClick={event => openGallery(displayedIndex >= 0 ? displayedIndex : activeIndex, event.currentTarget)}>View full screen<FiArrowUpRight /></button>
             </figure>
           </>
         )}
@@ -272,7 +271,6 @@ export function ProjectReader() {
               <figcaption><h3>{screen.label}</h3><p>{imageExplanation(screen)}</p></figcaption>
               <ScreenshotFrame src={screen.src} alt={`${displayName}: ${screen.label}`} label={screen.label} ratio={`${screenGeometry(screen).width} / ${screenGeometry(screen).height}`}
                 sizes={screenSizes(screen)} style={{ '--frame-max-width': `${screenColumnWidth(screen)}px` } as CSSProperties} enlarge={trigger => openGallery(index, trigger)} />
-              <button className="text-link" onClick={event => openGallery(index, event.currentTarget)}>View full screen<FiArrowUpRight /></button>
             </figure>)}</div>
           </section>
         </CaseDisclosure> : (
@@ -286,7 +284,6 @@ export function ProjectReader() {
                   <figcaption><h3>{screen.label}</h3><p>{imageExplanation(screen)}</p></figcaption>
                   <ScreenshotFrame src={screen.src} alt={`${displayName}: ${screen.label}`} label={screen.label} ratio={`${screenGeometry(screen).width} / ${screenGeometry(screen).height}`}
                     sizes={screenSizes(screen)} style={{ '--frame-max-width': `${screenColumnWidth(screen)}px` } as CSSProperties} enlarge={trigger => openGallery(index, trigger)} />
-                  <button className="text-link" onClick={event => openGallery(index, event.currentTarget)}>View full screen<FiArrowUpRight /></button>
                 </figure>
               ))}
             </div>

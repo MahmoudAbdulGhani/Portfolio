@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-14",
+  "typecheck": "pass",
+  "lint": "pass",
+  "build": "pass; existing 500kB advisory",
+  "node_checks": {
+    "passed": 51,
+    "failed": 0
+  },
+  "local_browser": {
+    "readiness": 14,
+    "affected": 59,
+    "inspection_after_cue_change": 8,
+    "repeated_cold_opening": 10,
+    "repeated_profile_reset_opening": 10,
+    "final_batch_failures": 0,
+    "retries": 0
+  },
+  "earlier_failures": "Local controlled cold/late-init tests missed unchanged deadlines on Windows native WebGL and SwiftShader; removed shader experiment was slower. Fresh-server final batches passed. See design-qa.md and cold-trace.json.",
+  "media": "59 local Chromium cases passed earlier; final CI checks Chromium/tablet/mobile, Firefox and WebKit",
+  "ci": "Final-head result is verified after commit; live checks: https://github.com/MahmoudAbdulGhani/Portfolio/pull/32/checks",
+  "physical_android": "pending; model/browser unknown"
+}

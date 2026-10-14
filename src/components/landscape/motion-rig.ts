@@ -91,6 +91,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     // own its elapsed opening clock before the first expensive scene paint,
     // rather than waiting for a cold paint and then starting a fresh clock.
     let posed = false;
+    let moving = false, needsMeasure = false;
     const originalBounds = new THREE.Box3().setFromObject(group);
     const originalSize = originalBounds.getSize(new THREE.Vector3());
     const originalCenter = originalBounds.getCenter(new THREE.Vector3());
@@ -112,7 +113,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       ray.ray.intersectPlane(plane, target);
     };
     const render = () => {
-      if (disposed || document.hidden || !posed) return;
+      if (disposed || document.hidden || !posed || !moving) return;
       assembly.position.copy(start).lerp(destination, alignment.progress);
       assembly.scale.setScalar(THREE.MathUtils.lerp(startScale, targetScale, alignment.progress));
       try { renderer.render(scene, camera); }
@@ -120,23 +121,43 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     };
     const size = () => {
       if (disposed || !host.clientWidth || !host.clientHeight) return;
+      // The engineering panel is not part of the drawing surface. Reserve the
+      // union of the existing closed subject and screenshot destination, using
+      // the same camera fit/centres as before and space for the ground shadow.
+      const parent = host.parentElement!.getBoundingClientRect();
+      const photo = art?.getBoundingClientRect(), image = frame?.getBoundingClientRect();
+      if (photo && image) {
+        const subject = artworkBounds[kind];
+        const closedHeight = Math.min(photo.width * subject.width / originalSize.x, photo.height * subject.height / originalSize.y) * originalSize.y;
+        const centre = photo.top + photo.height * (subject.y + subject.height / 2);
+        const top = Math.min(image.top, centre - closedHeight / 2) - 64;
+        const bottom = Math.max(image.bottom, centre + closedHeight / 2) + 64;
+        host.style.top = `${top - parent.top}px`;
+        host.style.bottom = 'auto';
+        host.style.height = `${bottom - top}px`;
+      }
       const width = host.clientWidth, height = host.clientHeight;
+      const fullWidth = host.parentElement!.clientWidth, fullHeight = host.parentElement!.clientHeight;
       renderer.setPixelRatio(Math.min(devicePixelRatio, width < 720 ? 1.25 : 1.5));
       renderer.setSize(width, height, false);
-      camera.aspect = width / height;
+      // Crop the drawing surface, not the accepted camera projection. Keeping
+      // its full-stage field preserves perspective, material lighting and the
+      // existing start/destination geometry while drawing fewer pixels.
+      camera.aspect = fullWidth / fullHeight;
       camera.position.z = Math.max(10, 6.8 / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect));
+      camera.setViewOffset(fullWidth, fullHeight, 0, host.getBoundingClientRect().top - parent.top, width, height);
       camera.updateProjectionMatrix(); camera.updateMatrixWorld();
       const viewHeight = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       if (art) {
         const photo = art.getBoundingClientRect(), subject = artworkBounds[kind];
-        startScale = Math.min(photo.width * subject.width / height * viewHeight / originalSize.x,
-          photo.height * subject.height / height * viewHeight / originalSize.y);
+        startScale = Math.min(photo.width * subject.width / fullHeight * viewHeight / originalSize.x,
+          photo.height * subject.height / fullHeight * viewHeight / originalSize.y);
         pointAt(photo.left + photo.width * (subject.x + subject.width / 2), photo.top + photo.height * (subject.y + subject.height / 2), start);
         start.addScaledVector(originalCenter, -startScale);
       }
       if (frame) {
         const image = frame.getBoundingClientRect();
-        targetScale = Math.min(image.width / height * viewHeight / openedSize.x, image.height / height * viewHeight / openedSize.y) * 0.96;
+        targetScale = Math.min(image.width / fullHeight * viewHeight / openedSize.x, image.height / fullHeight * viewHeight / openedSize.y) * 0.96;
         pointAt(image.left + image.width / 2, image.top + image.height / 2, destination);
         destination.addScaledVector(openedCenter, -targetScale);
       }
@@ -159,13 +180,21 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     const seek = (event: Event) => {
       if (disposed) return;
       const { progress, closing } = (event as CustomEvent<{ progress: number; closing: boolean }>).detail;
+      moving = true;
+      if (needsMeasure) { needsMeasure = false; size(); }
       posed = true;
       timeline.totalTime(Math.max(0, Math.min(1, progress)) * duration, false);
       host.dataset.state = closing ? 'closing' : progress >= 1 ? 'settled' : 'opening';
+      moving = progress > 0 && progress < 1;
     };
     const visibility = () => { if (!document.hidden) render(); };
     const lost = (event: Event) => { event.preventDefault(); fallback(); };
-    const observer = new ResizeObserver(size);
+    const observer = new ResizeObserver(() => {
+      // A hidden, settled rig only measures again when reverse motion needs it.
+      // Resize/visibility must not perform invisible scene paints or allocations.
+      if (moving || !posed) size();
+      else needsMeasure = true;
+    });
     observer.observe(host);
     if (frame?.parentElement) observer.observe(frame.parentElement);
     host.addEventListener('rig-frame', seek);

@@ -1,0 +1,34 @@
+[
+  {
+    "width": 390,
+    "decodes": 1,
+    "draws": 1540,
+    "renderer": "webgl",
+    "canvas": {
+      "width": 390,
+      "height": 671,
+      "css": [
+        390,
+        671
+      ],
+      "hardware": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "drawsAfterReflow": 1540
+  },
+  {
+    "width": 1440,
+    "decodes": 1,
+    "draws": 1991,
+    "renderer": "webgl",
+    "canvas": {
+      "width": 1440,
+      "height": 1145,
+      "css": [
+        1440,
+        1145
+      ],
+      "hardware": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "drawsAfterReflow": 1991
+  }
+]

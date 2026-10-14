@@ -1,0 +1,25 @@
+{
+  "implementation_and_tests": [
+    "design-qa.md",
+    "scripts/review-phone-inspection.mjs",
+    "src/components/CaseGallery.tsx",
+    "src/components/ResponsiveProjectImage.tsx",
+    "src/components/case-gallery.css",
+    "src/components/landscape/CaseNarrative.tsx",
+    "src/components/landscape/Collection.tsx",
+    "src/components/landscape/Layout.tsx",
+    "src/components/landscape/ProjectReader.tsx",
+    "src/components/landscape/ScreenshotFrame.tsx",
+    "src/components/landscape/case-media.css",
+    "src/components/landscape/mobile-reading.css",
+    "src/components/landscape/motion-rig.ts",
+    "src/components/landscape/selected-project.css",
+    "src/lib/decode-project-image.ts",
+    "src/lib/use-image-inspection.ts",
+    "tests/e2e/collection-readiness.spec.ts",
+    "tests/e2e/mobile-case-media.spec.ts",
+    "tests/e2e/phone-inspection.spec.ts"
+  ],
+  "review_evidence": "docs/design/phone-opening-inspection/; see artifact-validation.json for individual captures",
+  "preserved_untracked": "Codex_Engineered_Landscape_Handoff.md"
+}

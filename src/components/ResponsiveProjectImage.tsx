@@ -2,6 +2,7 @@ import { projectImages, type ProjectImageAsset } from "../generated/project-imag
 import { useCallback, useEffect, useImperativeHandle, useRef, useState, type ReactEventHandler, type Ref } from 'react';
 import { useMotionPreference } from '../lib/use-motion-preference';
 import './responsive-project-image.css';
+import { decodeProjectImage } from '../lib/decode-project-image';
 
 type Dimensions = { width: number; height: number };
 type Props = { src: string; alt: string; className?: string; sizes: string; priority?: boolean; loading?: 'eager' | 'lazy'; imageRef?: Ref<HTMLImageElement>; fit?: 'natural' | 'frame'; dimensions?: Dimensions; sources?: ProjectImageAsset; original?: boolean; retainPrevious?: boolean; onReadyImage?: (image: HTMLImageElement) => void; onLoad?: ReactEventHandler<HTMLImageElement>; onError?: ReactEventHandler<HTMLImageElement> };
@@ -30,7 +31,7 @@ function RetainedProjectImage(props: Props) {
 }
 
 function ImageHandoffAttempt({ previous, remember, onReadyImage, onLoad, onError, imageRef, ...props }: Props & { previous: Snapshot | null; remember: (snapshot: Snapshot) => void }) {
-  const image = useRef<HTMLImageElement>(null), active = useRef(true), finished = useRef(false);
+  const image = useRef<HTMLImageElement>(null), active = useRef(true), notified = useRef<string | null>(null);
   const [old, setOld] = useState(previous);
   const [status, setStatus] = useState<'loading' | 'ready' | 'failed'>('loading');
   const [measured, setMeasured] = useState<Dimensions | null>(null);
@@ -38,12 +39,17 @@ function ImageHandoffAttempt({ previous, remember, onReadyImage, onLoad, onError
   useImperativeHandle(imageRef, () => image.current!);
   const ready = useCallback(() => {
     const node = image.current;
-    if (!active.current || finished.current || !node?.naturalWidth) return;
-    finished.current = true;
-    setMeasured({ width: node.naturalWidth, height: node.naturalHeight });
-    setStatus('ready');
-    remember({ src: props.src, url: node.currentSrc || node.src, width: node.naturalWidth, height: node.naturalHeight });
-    onReadyImage?.(node);
+    if (!active.current || !node?.naturalWidth) return;
+    const candidate = node.currentSrc || node.src;
+    const current = () => active.current && node.isConnected && (node.currentSrc || node.src) === candidate;
+    void decodeProjectImage(node).then(() => {
+      if (!current() || notified.current === candidate) return;
+      notified.current = candidate;
+      setMeasured({ width: node.naturalWidth, height: node.naturalHeight });
+      setStatus('ready');
+      remember({ src: props.src, url: candidate, width: node.naturalWidth, height: node.naturalHeight });
+      onReadyImage?.(node);
+    }).catch(() => { if (current()) node.dispatchEvent(new Event('error')); });
   }, [props.src, remember, onReadyImage]);
   useEffect(() => { active.current = true; return () => { active.current = false; }; }, []);
   useEffect(() => {
@@ -68,7 +74,7 @@ function ImageHandoffAttempt({ previous, remember, onReadyImage, onLoad, onError
     <span className="project-image-current">
       <ProjectImagePicture {...props} imageRef={image} onLoad={event => { ready(); onLoad?.(event); }} onError={event => {
         if (!active.current) return;
-        finished.current = true; setStatus('failed'); onError?.(event);
+        setStatus('failed'); onError?.(event);
       }} />
     </span>
   </span>;
