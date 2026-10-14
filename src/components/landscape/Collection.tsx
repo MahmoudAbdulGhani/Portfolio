@@ -518,9 +518,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
           <div className="selection-frame">
             {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
             <div className="selection-image-frame" style={!screens[chapter] ? { aspectRatio: 2.15 } : undefined}>
-              {screens[chapter] && !decoded.has(screens[chapter].src) && (
+              {screens[chapter] && (!decoded.has(screens[chapter].src) || (state.phase === 'selecting' && failedPreview !== screens[chapter].src)) && (
                 <p className="selection-preview-status" role="status">
-                  Loading project preview…
+                  {decoded.has(screens[chapter].src) ? 'Preparing project preview…' : 'Loading project preview…'}
                 </p>
               )}
               {(!screens[chapter] ||
@@ -557,7 +557,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                   />
                 </button>
               )}
-              {screens[chapter] && <span className="screenshot-inspect-cue">Tap to inspect</span>}
+              {screens[chapter] && decoded.has(screens[chapter].src) && failedPreview !== screens[chapter].src && <span className="screenshot-inspect-cue">Tap to inspect</span>}
             </div>
             <section
               className="selection-detail"

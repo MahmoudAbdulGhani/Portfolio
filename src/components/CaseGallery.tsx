@@ -182,6 +182,7 @@ export function CaseGallery({
           aria-label={`${screen.label}. ${fit === 'fit' ? 'Complete image fitted to the viewer.' : 'Scroll to inspect the full screenshot.'}`}
           {...inspection.gestures}
           onKeyDown={event => {
+            if (event.ctrlKey || event.metaKey) return;
             if (event.key === '+' || event.key === '=') { event.preventDefault(); inspection.zoomAt(1.5); }
             if (event.key === '-') { event.preventDefault(); inspection.zoomAt(1 / 1.5); }
             if (event.key === '0') { event.preventDefault(); setFit('fit'); }

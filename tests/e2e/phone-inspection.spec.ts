@@ -14,6 +14,7 @@ test('slow first image leaves usable identity, loading feedback and a stable art
  await page.route('https://screens.example.test/**710055a0*',async r=>{await pending;await r.fulfill({contentType:'image/png',body:await caseImage(r.request().url())});});
  await page.goto('/?project=jobpilot-ai',{waitUntil:'domcontentloaded'});
  await expect(page.locator('.selection-caption h1')).toHaveText('JobPilot AI');await expect(page.locator('.open-case')).toBeFocused();
+ await expect(page.locator('.screenshot-inspect-cue')).toHaveCount(0);
  await expect(page.getByText('Loading project preview…')).toBeVisible();
  await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
  const artwork=await page.evaluate(()=>{
@@ -22,6 +23,7 @@ test('slow first image leaves usable identity, loading feedback and a stable art
  });expect(artwork).toBeGreaterThan(0.9);
  release();await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');await expect(page.getByText('Loading project preview…')).toHaveCount(0);
  await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','ready');
+ await expect(page.locator('.screenshot-inspect-cue')).toHaveCount(1);
 });
 
 test('one decode per candidate owns visibility; a pending decode cannot hide the held sculpture',async({page})=>{
@@ -50,7 +52,9 @@ test('settled invisible WebGL does not paint for engineering reflow or visibilit
  await page.evaluate(()=>{document.querySelector('.collection-boundary')!.setAttribute('style','padding-bottom:300px');document.dispatchEvent(new Event('visibilitychange'));});
  await page.waitForTimeout(200);
  expect(await page.evaluate(()=>(window as unknown as {phoneDraws:number}).phoneDraws)).toBe(before);
- const height=await page.locator('.motion-rig').evaluate(el=>el.clientHeight),stageHeight=await page.locator('.stage').evaluate(el=>el.clientHeight);expect(height).toBeLessThan(stageHeight);
+ if(await page.locator('.motion-rig canvas').count()){
+  const height=await page.locator('.motion-rig').evaluate(el=>el.clientHeight),stageHeight=await page.locator('.stage').evaluate(el=>el.clientHeight);expect(height).toBeLessThan(stageHeight);
+ }else await expect(page.locator('.stage')).toHaveAttribute('data-motion-renderer','fallback');
 });
 
 test('slow frames and an interrupted pending image cannot revive an obsolete JobPilot selection',async({page})=>{

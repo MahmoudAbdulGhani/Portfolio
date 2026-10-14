@@ -1,0 +1,164 @@
+[
+  {
+    "base": "http://127.0.0.1:5187",
+    "passed": true,
+    "events": [
+      {
+        "name": "resource",
+        "at": 1509.1000000005588,
+        "file": "MotionRig.tsx",
+        "start": 1351.800000000745,
+        "end": 1474.5
+      },
+      {
+        "name": "phase",
+        "at": 2578.600000000559,
+        "phase": "selecting",
+        "renderer": "loading"
+      },
+      {
+        "name": "resource",
+        "at": 2954.100000000559,
+        "file": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "start": 2580.2000000001863,
+        "end": 2676.600000000559
+      },
+      {
+        "name": "decode-start",
+        "at": 2956.7000000001863
+      },
+      {
+        "name": "decode-start",
+        "at": 2956.800000000745
+      },
+      {
+        "name": "decode-end",
+        "at": 2995.2000000001863
+      },
+      {
+        "name": "decode-end",
+        "at": 2996.100000000559
+      },
+      {
+        "name": "resource",
+        "at": 3190.100000000559,
+        "file": "motion-rig.ts",
+        "start": 3031,
+        "end": 3159.100000000559
+      },
+      {
+        "name": "context-start",
+        "at": 4069.300000000745
+      },
+      {
+        "name": "context-end",
+        "at": 4084.800000000745
+      },
+      {
+        "name": "phase",
+        "at": 4945.5,
+        "phase": "active",
+        "renderer": "fallback"
+      }
+    ]
+  },
+  {
+    "base": "http://127.0.0.1:5185",
+    "passed": false,
+    "events": [
+      {
+        "name": "resource",
+        "at": 729.8999999994412,
+        "file": "MotionRig.tsx?t=1791926578050",
+        "start": 602.7999999998137,
+        "end": 702.1999999992549
+      },
+      {
+        "name": "phase",
+        "at": 1673.8999999994412,
+        "phase": "selecting",
+        "renderer": "loading"
+      },
+      {
+        "name": "resource",
+        "at": 1926.2999999998137,
+        "file": "motion-rig.ts?t=1791926578050",
+        "start": 1667.5,
+        "end": 1737.699999999255
+      },
+      {
+        "name": "resource",
+        "at": 1926.3999999994412,
+        "file": "710055a0-a275-4e6a-991d-4aaa23c6e549.png",
+        "start": 1674.8999999994412,
+        "end": 1770.3999999994412
+      },
+      {
+        "name": "decode-start",
+        "at": 1928.199999999255
+      },
+      {
+        "name": "decode-end",
+        "at": 1975.8999999994412
+      },
+      {
+        "name": "context-start",
+        "at": 2931.0999999996275
+      },
+      {
+        "name": "context-end",
+        "at": 2944.899999999441
+      },
+      {
+        "name": "phase",
+        "at": 3395.0999999996275,
+        "phase": "opening",
+        "renderer": "webgl"
+      },
+      {
+        "name": "render-start",
+        "at": 3422.199999999255
+      },
+      {
+        "name": "native-cost",
+        "at": 4586.199999999255,
+        "call": "getShaderInfoLog",
+        "duration": 238.5
+      },
+      {
+        "name": "native-cost",
+        "at": 4792.399999999441,
+        "call": "getProgramParameter",
+        "parameter": 35714,
+        "duration": 204
+      },
+      {
+        "name": "first-paint-start",
+        "at": 5303.799999999814,
+        "phase": "opening"
+      },
+      {
+        "name": "first-paint-end",
+        "at": 6403.799999999814
+      },
+      {
+        "name": "render-end",
+        "at": 6563.0999999996275
+      },
+      {
+        "name": "render-start",
+        "at": 6600.699999999255
+      },
+      {
+        "name": "render-end",
+        "at": 6604.299999999814
+      },
+      {
+        "name": "phase",
+        "at": 6646.0999999996275,
+        "phase": "active",
+        "renderer": "webgl"
+      }
+    ]
+  }
+]

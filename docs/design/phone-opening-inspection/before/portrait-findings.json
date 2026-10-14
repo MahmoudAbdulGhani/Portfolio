@@ -1,0 +1,72 @@
+[
+  {
+    "width": 320,
+    "project": "construction-project-management-accounting-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 132.953125
+  },
+  {
+    "width": 320,
+    "project": "full-stack-user-management-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 131.546875
+  },
+  {
+    "width": 390,
+    "project": "construction-project-management-accounting-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 165.265625
+  },
+  {
+    "width": 390,
+    "project": "full-stack-user-management-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 163.515625
+  },
+  {
+    "width": 430,
+    "project": "construction-project-management-accounting-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 183.734375
+  },
+  {
+    "width": 430,
+    "project": "full-stack-user-management-system",
+    "header": 125,
+    "overflow": false,
+    "frame": 181.78125
+  },
+  {
+    "width": 768,
+    "project": "construction-project-management-accounting-system",
+    "header": 92,
+    "overflow": false,
+    "frame": 312
+  },
+  {
+    "width": 768,
+    "project": "full-stack-user-management-system",
+    "header": 92,
+    "overflow": false,
+    "frame": 308.703125
+  },
+  {
+    "width": 1440,
+    "project": "construction-project-management-accounting-system",
+    "header": 92,
+    "overflow": false,
+    "frame": 544.75
+  },
+  {
+    "width": 1440,
+    "project": "full-stack-user-management-system",
+    "header": 92,
+    "overflow": false,
+    "frame": 538.984375
+  }
+]

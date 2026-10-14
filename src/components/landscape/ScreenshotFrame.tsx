@@ -81,5 +81,5 @@ function ScreenshotAttempt({ src, alt, label, ratio, className = '', buttonClass
     </button>
     {status === 'loading' && <span className="screenshot-status" aria-hidden="true">Loading image…</span>}
     {status === 'failed' && <div className="screenshot-status screenshot-error" role="status"><p>This image is unavailable.</p><button type="button" className="text-link" onClick={() => { frame.current?.closest<HTMLElement>('.project-reader')?.focus({ preventScroll: true }); retry(); }}>Retry image</button><span>You can also choose another image.</span></div>}
-  </div><span className="screenshot-inspect-cue">Tap to inspect</span></>;
+  </div><span className="screenshot-inspect-cue" style={{ visibility: status === 'ready' ? 'visible' : 'hidden' }}>Tap to inspect</span></>;
 }
