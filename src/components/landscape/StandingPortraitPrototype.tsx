@@ -3,7 +3,7 @@ import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preferen
 import { ProfilePortrait } from './ProfilePortrait';
 import './standing-portrait-prototype.css';
 
-// Explicit review builds only. Original photograph RGB, extracted alpha; no
+// Explicit review builds only. Original photograph + documented tone curve; no
 // generated likeness, video controls or continuing movement.
 export function StandingPortraitPrototype({ name, photo }: { name: string; photo?: string | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
@@ -21,13 +21,12 @@ export function StandingPortraitPrototype({ name, photo }: { name: string; photo
         <span className="standing-portrait-status" role="status">Standing portrait unavailable. Current portrait shown.</span>
       </> : <>
         <div className="standing-portrait-figure" data-entrance={entrance} onAnimationEnd={() => setEntrance(false)}>
-          <span className="standing-portrait-shadow" aria-hidden="true" />
           <img
             className="standing-portrait-image"
-            src="/review-assets/profile-standing-original.webp"
-            width={326}
-            height={1027}
-            alt={`${name}, standing with hands together`}
+            src="/review-assets/profile-original-hands.webp"
+            width={960}
+            height={1696}
+            alt={`${name}, photographed from hair to below both hands, wearing a striped shirt and backpack`}
             fetchPriority="high"
             decoding="async"
             onLoad={() => { setState('ready'); setEntrance(!prefersReducedMotion()); }}

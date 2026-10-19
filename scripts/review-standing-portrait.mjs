@@ -2,7 +2,7 @@ import { chromium, expect } from '@playwright/test';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 
-const output = 'docs/design/profile-portrait-hosted-review';
+const output = 'docs/design/profile-portrait-original-refinement';
 const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:5194';
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chrome' });
@@ -44,7 +44,7 @@ try {
         // pixels so a 0.013px rounding difference cannot imply distortion.
         expect(Math.abs(metrics.image.width - metrics.image.height * metrics.image.naturalWidth / metrics.image.naturalHeight)).toBeLessThanOrEqual(1 / 64);
         if (width < 720) {
-          expect(metrics.portraitHeight).toBe(width < 360 ? 300 : 336);
+          expect(metrics.portraitHeight).toBe(width < 360 ? 240 : 272);
           expect(metrics.introductionTop).toBeLessThan(width < 360 ? 580 : 520);
         }
         const cv = page.getByRole('button', { name: 'Download CV', exact: true });
@@ -80,7 +80,7 @@ try {
     const pendingPage = await browser.newPage({ viewport: { width, height }, reducedMotion: 'reduce' });
     let release;
     const held = new Promise(resolve => { release = resolve; });
-    await pendingPage.route('**/review-assets/profile-standing-original.webp', async route => { await held; await route.continue(); });
+    await pendingPage.route('**/review-assets/profile-original-hands.webp', async route => { await held; await route.continue(); });
     await pendingPage.goto(`${base}/review/profile-portrait`, { waitUntil: 'domcontentloaded' });
     const stage = pendingPage.locator('.standing-portrait-stage');
     await expect(stage).toHaveAttribute('data-state', 'loading');
@@ -92,7 +92,7 @@ try {
     await expect(stage).toHaveAttribute('data-state', 'ready');
     const after = await geometry();
     expect(after).toEqual(before);
-    await pendingPage.route('**/review-assets/profile-standing-original.webp', route => route.abort());
+    await pendingPage.route('**/review-assets/profile-original-hands.webp', route => route.abort());
     await pendingPage.reload();
     await expect(stage).toHaveAttribute('data-state', 'error');
     await expect(stage.locator('.portrait-panel img')).toHaveAttribute('src', /portrait-striped-finished/);
@@ -113,7 +113,7 @@ try {
   }
 } finally { await browser.close(); }
 await writeFile(`${output}/validation.json`, JSON.stringify({
-  baseline: 'fe6ec7382075b51d2a4b51263eb5a7a6095b11ce',
+  baseline: '160cfda7c579477de33d20fa6b1371c1194b087b',
   environment: 'Compiled portrait-review build; local read-only frozen public content and CV; Windows Chrome. Phone/tablet dimensions are browser emulation, not physical device testing.', findings,
 }, null, 2) + '\n');
 console.log('Portrait screenshots, comparisons, keyboard CV and record parity checks passed.');

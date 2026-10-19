@@ -4,7 +4,7 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import json
 
 root = Path(__file__).resolve().parent.parent
-folder = root / 'docs/design/profile-portrait-hosted-review'
+folder = root / 'docs/design/profile-portrait-original-refinement'
 output = folder / 'portrait-review.zip'
 hosted_file = folder / 'hosted-verification.json'
 hosted = json.loads(hosted_file.read_text(encoding='utf-8')) if hosted_file.exists() else {}
@@ -19,20 +19,21 @@ entries = {'index.html': html.encode('utf-8'), 'design-qa.md': (root / 'design-q
            'README.txt': (
                'Open index.html to review the matched desktop and phone screenshots offline.\n'
                'This is a static comparison package, not a video or a running application.\n'
-               'Use the new draft PR based on prototype/profile-standing-portrait for the exact Vercel Preview URL.\n'
-               f'Review branch URL: {hosted.get("branchPreview", "See draft PR #34")}\n'
-               f'First verified Preview: {hosted.get("preview", "See draft PR #34")}\n'
+               'Use the refinement draft PR stacked above #34 for the exact Vercel Preview URL.\n'
+               f'Review branch URL: {hosted.get("branchPreview", "See the refinement draft PR")}\n'
+               f'First verified Preview: {hosted.get("preview", "See the refinement draft PR")}\n'
                'Interactive path: /review/profile-portrait\n'
                'Hosted comparison: /review/portrait-comparison/index.html\n'
                'Sign in with an authorized Vercel account if deployment protection requires it.\n'
                'The production domain and /profile retain the accepted portrait.\n'
-               'The source crop is 326x1027 pixels. Enlarging its display adds no authentic detail.\n'
+               'Master: untouched 1000689121.jpg. Edited crop: 960x1696; tone curve + alpha only.\n'
+               'Backpack retained; convincing clothing-only retouching remains outstanding.\n'
                'Speaking/gesturing production remains outstanding; see video-production.md.\n'
            ).encode('utf-8')}
 for file in folder.iterdir():
     if file.is_file() and file.suffix in ['.jpg', '.png', '.json', '.md']:
         entries[file.name] = file.read_bytes()
-for file in (root / 'public/review-assets').glob('profile-standing-original.*'):
+for file in (root / 'public/review-assets').glob('profile-original-hands.*'):
     entries[f'review-assets/{file.name}'] = file.read_bytes()
 with ZipFile(output, 'w') as archive:
     for name, content in sorted(entries.items()):
