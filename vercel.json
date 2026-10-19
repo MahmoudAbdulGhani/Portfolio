@@ -10,6 +10,14 @@
   },
   "headers": [
     {
+      "source": "/review/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/review-assets/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
       "source": "/admin",
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     },

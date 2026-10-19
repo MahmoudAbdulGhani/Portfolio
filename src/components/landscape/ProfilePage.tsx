@@ -55,6 +55,7 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
   return (
     <main id="main-content" tabIndex={-1} className={`page-surface profile-page${portraitPrototype ? ' profile-standing-prototype' : ''}`}>
       <PageMeta
+        noIndex={portraitPrototype}
         title={`Profile — ${person.name}`}
         description={person.professionalSummary ?? person.bio}
       />

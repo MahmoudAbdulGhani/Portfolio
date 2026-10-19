@@ -1,0 +1,71 @@
+{
+  "baseline": "fe6ec7382075b51d2a4b51263eb5a7a6095b11ce",
+  "base_branch": "prototype/profile-standing-portrait",
+  "branch": "prototype/profile-portrait-hosted-review",
+  "files": [
+    ".github/workflows/ci.yml",
+    "design-qa.md",
+    "docs/design/profile-portrait-hosted-review/alpha-mask.png",
+    "docs/design/profile-portrait-hosted-review/capabilities-1440.jpg",
+    "docs/design/profile-portrait-hosted-review/capabilities-320.jpg",
+    "docs/design/profile-portrait-hosted-review/capabilities-390.jpg",
+    "docs/design/profile-portrait-hosted-review/capabilities-768.jpg",
+    "docs/design/profile-portrait-hosted-review/changed-files.json",
+    "docs/design/profile-portrait-hosted-review/comparison-1440.jpg",
+    "docs/design/profile-portrait-hosted-review/comparison-390.jpg",
+    "docs/design/profile-portrait-hosted-review/comparison.html",
+    "docs/design/profile-portrait-hosted-review/current-1440.jpg",
+    "docs/design/profile-portrait-hosted-review/current-320.jpg",
+    "docs/design/profile-portrait-hosted-review/current-390.jpg",
+    "docs/design/profile-portrait-hosted-review/current-768.jpg",
+    "docs/design/profile-portrait-hosted-review/edges-contact-sheet.png",
+    "docs/design/profile-portrait-hosted-review/fallback-390.jpg",
+    "docs/design/profile-portrait-hosted-review/hosted-verification.json",
+    "docs/design/profile-portrait-hosted-review/likeness-inspection.png",
+    "docs/design/profile-portrait-hosted-review/loading-390.jpg",
+    "docs/design/profile-portrait-hosted-review/portrait-review.zip",
+    "docs/design/profile-portrait-hosted-review/processing.json",
+    "docs/design/profile-portrait-hosted-review/production-state.json",
+    "docs/design/profile-portrait-hosted-review/proposed-1440.jpg",
+    "docs/design/profile-portrait-hosted-review/proposed-320.jpg",
+    "docs/design/profile-portrait-hosted-review/proposed-390.jpg",
+    "docs/design/profile-portrait-hosted-review/proposed-768.jpg",
+    "docs/design/profile-portrait-hosted-review/validation.json",
+    "docs/design/profile-portrait-hosted-review/video-production.md",
+    "package.json",
+    "playwright.portrait-review.config.ts",
+    "scripts/assert-portrait-production-build.mjs",
+    "scripts/package-portrait-review.py",
+    "scripts/profile-portrait-review-build.mjs",
+    "scripts/review-standing-portrait.mjs",
+    "src/App.tsx",
+    "src/components/landscape/ProfilePage.tsx",
+    "src/components/landscape/StandingPortraitPrototype.tsx",
+    "src/components/landscape/standing-portrait-prototype.css",
+    "tests/e2e/profile-standing-portrait.spec.ts",
+    "tests/portrait-build/compiled-comparison.spec.ts",
+    "tests/profile-portrait-review-build.test.mjs",
+    "vercel.json",
+    "vite.config.js",
+    "vite.motion-preview.config.js"
+  ],
+  "original_asset_sha256": {
+    "public/review-assets/profile-standing-original.png": "cbf7179eaa5eaad727edf85bd438f693ab2b25f92a5834f6157ce5a3285bad0e",
+    "public/review-assets/profile-standing-original.webp": "8a238974f44107dd214206e542891be161c6e2f47ea224e6fb59c650e384dcc2"
+  },
+  "compiled_routes": [
+    "/review/profile-portrait",
+    "/review/portrait-comparison/index.html"
+  ],
+  "validation": {
+    "compiled_browser_checks": 33,
+    "retries": 0,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "normal_build_excludes_review": true
+  }
+}

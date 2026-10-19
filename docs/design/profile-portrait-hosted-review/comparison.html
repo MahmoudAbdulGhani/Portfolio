@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Profile portrait prototype comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; color: #252b26; background: #f3f0e9; font: 15px/1.6 system-ui, sans-serif; }
+    main { max-width: 1800px; margin: auto; }
+    h1 { font-size: 28px; line-height: 1.2; }
+    h2 { margin-top: 36px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #625538; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    .edges { background: #fff; }
+  </style>
+</head>
+<body><main>
+  <h1>Profile portrait prototype</h1>
+  <p>Static portrait review: original photographic pixels, a larger complete figure and a single brief entrance. The production Profile remains unchanged. Speaking and gestures are still outstanding.</p>
+  <p><a href="/profile">Current Profile</a> · <a href="/review/profile-portrait">Interactive review prototype</a> · <a href="portrait-review.zip" download>Download comparison package</a></p>
+  <p>This page belongs to the named Vercel Preview build, not the production domain. Preview authentication still applies. Noindex controls indexing; it does not restrict access.</p>
+  <h2>390px — current / proposed</h2>
+  <img src="comparison-390.jpg" width="804" height="906" alt="Current and proposed Profile compositions side by side, each captured at a 390px viewport">
+  <h2>1440px — current / proposed</h2>
+  <img src="comparison-1440.jpg" width="2904" height="962" alt="Current and proposed Profile compositions side by side, each captured at a 1440px viewport">
+  <h2>Alpha inspection — cream / white / dark</h2>
+  <img class="edges" src="edges-contact-sheet.png" alt="Original-photo cutout inspected on cream, white and dark backgrounds">
+  <h2>Likeness — original / extracted (enlarged for inspection)</h2>
+  <img src="likeness-inspection.png" width="600" height="450" style="max-width:600px" alt="Original and extracted face with identical photographic pixels, enlarged for edge inspection">
+  <p><a href="/review-assets/profile-standing-original.png" download>Extracted PNG</a> · <a href="/review-assets/profile-standing-original.webp" download>Lossless WebP</a> · <a href="validation.json">Browser validation</a></p>
+  <p><a href="loading-390.jpg">Loading state</a> · <a href="fallback-390.jpg">Image failure fallback</a> · <a href="changed-files.json">Changed files</a></p>
+  <p>The 326×1027 crop limits face detail. Enlarging its display does not recover original detail. See <a href="design-qa.md">design-qa.md</a> and <a href="video-production.md">video production requirements and options</a>.</p>
+</main></body></html>

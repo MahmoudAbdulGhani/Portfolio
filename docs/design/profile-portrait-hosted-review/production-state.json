@@ -1,0 +1,22 @@
+{
+  "domain": "https://mahmoud-portfolio-omega.vercel.app",
+  "deployedCommit": "fe6ec7382075b51d2a4b51263eb5a7a6095b11ce",
+  "records": [
+    {
+      "route": "/profile",
+      "httpStatus": 200,
+      "title": "Profile — Mahmoud Hussein Abdul Ghani",
+      "standing": 0,
+      "accepted": 1,
+      "text": "MAHMOUD HUSSEIN ABDUL GHANI\nTripoli, Lebanon\nArabic: Native | English: Professional Working Proficiency\nGitHub\nLinkedIn\nInstagram\nWhatsApp\nDownload CV\nPROFILE / WORKING RECORD\nFull-Stack Software Engi"
+    },
+    {
+      "route": "/review/profile-portrait",
+      "httpStatus": 200,
+      "title": "Page not found",
+      "standing": 0,
+      "accepted": 0,
+      "text": "404\nThis page wandered off.\n\nThe link may be broken, or the page may have moved. Head back home to see the full portfolio.\n\nBack home\nView projects"
+    }
+  ]
+}

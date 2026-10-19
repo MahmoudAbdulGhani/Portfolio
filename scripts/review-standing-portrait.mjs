@@ -2,8 +2,8 @@ import { chromium, expect } from '@playwright/test';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 
-const output = 'docs/design/profile-standing-portrait';
-const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:5190';
+const output = 'docs/design/profile-portrait-hosted-review';
+const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:5194';
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chrome' });
 const findings = [];
@@ -44,8 +44,8 @@ try {
         // pixels so a 0.013px rounding difference cannot imply distortion.
         expect(Math.abs(metrics.image.width - metrics.image.height * metrics.image.naturalWidth / metrics.image.naturalHeight)).toBeLessThanOrEqual(1 / 64);
         if (width < 720) {
-          expect(metrics.portraitHeight).toBeLessThanOrEqual(204);
-          expect(metrics.introductionTop).toBeLessThan(500);
+          expect(metrics.portraitHeight).toBe(width < 360 ? 300 : 336);
+          expect(metrics.introductionTop).toBeLessThan(width < 360 ? 580 : 520);
         }
         const cv = page.getByRole('button', { name: 'Download CV', exact: true });
         if (width < 720) {
@@ -113,7 +113,7 @@ try {
   }
 } finally { await browser.close(); }
 await writeFile(`${output}/validation.json`, JSON.stringify({
-  baseline: '90428751cec6ed500e4347b63465dc29936155a5',
-  environment: 'Local read-only frozen public content and CV; Windows Chrome. Phone/tablet dimensions are browser emulation, not physical device testing.', findings,
+  baseline: 'fe6ec7382075b51d2a4b51263eb5a7a6095b11ce',
+  environment: 'Compiled portrait-review build; local read-only frozen public content and CV; Windows Chrome. Phone/tablet dimensions are browser emulation, not physical device testing.', findings,
 }, null, 2) + '\n');
 console.log('Portrait screenshots, comparisons, keyboard CV and record parity checks passed.');

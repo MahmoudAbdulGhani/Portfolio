@@ -1,0 +1,46 @@
+{
+  "preview": "https://mahmoud-portfolio-bljw2ctks-mahmoud-abdul-ghani-s-projects.vercel.app",
+  "branchPreview": "https://mahmoud-portfolio-git-pro-ded3c7-mahmoud-abdul-ghani-s-projects.vercel.app",
+  "accessConclusion": "Vercel SSO authentication precedes the application. Anonymous checks cannot inspect authenticated content. No bypass or protection change was used. Compiled routes and comparison content were verified locally.",
+  "sourceCommit": "e5b5d76e75f748cc96005651c0adecf7eabe4d4f",
+  "deploymentEnvironment": "Preview",
+  "deploymentStatus": "success",
+  "protectionChanged": false,
+  "checks": [
+    {
+      "route": "/review/profile-portrait",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/index.html",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/build.json",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/portrait-review.zip",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/profile",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    }
+  ]
+}

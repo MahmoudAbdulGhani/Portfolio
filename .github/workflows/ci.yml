@@ -99,7 +99,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
-    needs: [checks, smoke-engines, profile-boundary]
+    needs: [checks, smoke-engines, profile-boundary, portrait-review-build]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -109,6 +109,7 @@ jobs:
           test "${{ needs.checks.result }}" = 'success'
           test "${{ needs['smoke-engines'].result }}" = 'success'
           test "${{ needs['profile-boundary'].result }}" = 'success'
+          test "${{ needs['portrait-review-build'].result }}" = 'success'
   smoke-engines:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -157,6 +158,34 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: profile-boundary-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+  portrait-review-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Verify review opt-in and Production exclusion
+        run: |
+          node --test tests/profile-portrait-review-build.test.mjs
+          npm run build
+          node scripts/assert-portrait-production-build.mjs
+      - name: Verify compiled portrait and comparison
+        run: npm run test:e2e -- --config=playwright.portrait-review.config.ts --project=chromium --workers=1
+      - name: Retain compiled review failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portrait-review-build-failure
           path: test-results/
           if-no-files-found: ignore
           retention-days: 7
