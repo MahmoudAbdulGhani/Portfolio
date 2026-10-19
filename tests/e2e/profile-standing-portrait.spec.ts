@@ -75,6 +75,9 @@ for (const width of [320, 390, 768, 1440]) test(`loading, decode and error fallb
   await expect(stage).toHaveAttribute('data-state', 'error');
   await expect(stage.locator('.portrait-panel img')).toHaveAttribute('src', /portrait-striped-finished/);
   await expect(page.getByRole('status')).toContainText('Current portrait shown');
+  const fallbackImage = await stage.locator('.portrait-panel').boundingBox();
+  const fallbackStatus = await page.getByRole('status').boundingBox();
+  expect(fallbackStatus!.y).toBeGreaterThanOrEqual(fallbackImage!.y + fallbackImage!.height);
   await page.evaluate(() => document.fonts.ready);
   expect(await stage.boundingBox()).toEqual(before.stage);
   expect(await page.locator('.profile-record').boundingBox()).toEqual(before.record);

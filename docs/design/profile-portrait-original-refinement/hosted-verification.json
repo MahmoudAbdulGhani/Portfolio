@@ -1,0 +1,44 @@
+{
+  "preview": "https://mahmoud-portfolio-ijtoq8zna-mahmoud-abdul-ghani-s-projects.vercel.app",
+  "sourceCommit": "b1b001d2b5b0cfb4690b9649d082ae8ee425398c",
+  "deploymentEnvironment": "Preview",
+  "deploymentStatus": "success",
+  "protectionChanged": false,
+  "checks": [
+    {
+      "route": "/review/profile-portrait",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/index.html",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/build.json",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/review/portrait-comparison/portrait-review.zip",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    },
+    {
+      "route": "/profile",
+      "status": 302,
+      "contentType": "text/plain",
+      "robots": "noindex",
+      "redirect": "https://vercel.com/sso-api"
+    }
+  ]
+}

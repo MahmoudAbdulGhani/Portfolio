@@ -42,8 +42,8 @@
 }
 
 .landscape .profile-standing-prototype .standing-portrait-stage[data-state="loading"] .standing-portrait-figure { visibility: hidden; }
-.landscape .profile-standing-prototype .standing-portrait-status { position: absolute; bottom: 16px; font-size: 12px; text-align: center; }
-.landscape .profile-standing-prototype .standing-portrait-stage[data-state="error"] .portrait-panel { width: 100%; height: 100%; background: transparent; }
+.landscape .profile-standing-prototype .standing-portrait-status { position: absolute; bottom: 0; inset-inline: 0; padding: 4px; font-size: 12px; line-height: 1.4; text-align: center; }
+.landscape .profile-standing-prototype .standing-portrait-stage[data-state="error"] .portrait-panel { width: 100%; height: calc(100% - 64px); margin-bottom: 64px; padding: 0; aspect-ratio: auto; background: transparent; }
 .landscape .profile-standing-prototype .standing-portrait-stage[data-state="error"] img { height: 100%; object-fit: contain; }
 
 @media (prefers-reduced-motion: no-preference) {

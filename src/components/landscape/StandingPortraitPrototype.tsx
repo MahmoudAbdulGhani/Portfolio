@@ -18,7 +18,7 @@ export function StandingPortraitPrototype({ name, photo }: { name: string; photo
     <div className="standing-portrait-stage" data-state={state} aria-busy={state === 'loading'}>
       {state === 'error' ? <>
         <ProfilePortrait name={name} photo={photo} />
-        <span className="standing-portrait-status" role="status">Standing portrait unavailable. Current portrait shown.</span>
+        <span className="standing-portrait-status" role="status">Review portrait unavailable. Current portrait shown.</span>
       </> : <>
         <div className="standing-portrait-figure" data-entrance={entrance} onAnimationEnd={() => setEntrance(false)}>
           <img
