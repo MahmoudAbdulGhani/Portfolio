@@ -8,6 +8,7 @@
     "dev:client": "vite",
     "dev:server": "npm --prefix server run dev",
     "build": "vite build",
+    "build:portrait-review": "vite build --mode portrait-review",
     "postinstall": "prisma generate --schema=server/prisma/schema.prisma",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",

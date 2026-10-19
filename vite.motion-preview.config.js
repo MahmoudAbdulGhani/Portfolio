@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
-import config from './vite.config.js';
+import baseConfig from './vite.config.js';
 import { reviewFixtures } from './scripts/review-fixtures.mjs';
+const config = baseConfig({ mode: 'development', command: 'serve' });
 
 // Explicit review mode: public CMS snapshot only; no requests reach production.
 config.server.allowedHosts = ['terminal.local'];

@@ -28,7 +28,12 @@ for (const width of [320, 390, 768, 1440]) {
     expect(Math.abs(metrics.width - metrics.height * metrics.nativeRatio)).toBeLessThanOrEqual(1 / 64);
     expect(metrics.overflow).toBe(false);
     expect(metrics.animationCount).toBe(0);
-    if (width < 720) expect(metrics.top).toBeLessThan(500);
+    if (width < 720) {
+      expect(metrics.height).toBe(width < 360 ? 300 : 336);
+      expect(metrics.top).toBeLessThan(width < 360 ? 580 : 520);
+    } else expect(metrics.height).toBe(620);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+    await expect(page.locator('header nav a[href^="/review/"]')).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Download CV', exact: true })).toBeVisible();
     if (width < 720) {
       const portraitBox = await stage.boundingBox();

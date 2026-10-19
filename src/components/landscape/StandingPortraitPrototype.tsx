@@ -3,7 +3,7 @@ import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preferen
 import { ProfilePortrait } from './ProfilePortrait';
 import './standing-portrait-prototype.css';
 
-// Development review only. Original photograph RGB, extracted alpha; no
+// Explicit review builds only. Original photograph RGB, extracted alpha; no
 // generated likeness, video controls or continuing movement.
 export function StandingPortraitPrototype({ name, photo }: { name: string; photo?: string | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
