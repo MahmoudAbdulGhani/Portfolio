@@ -24,7 +24,7 @@
     810
   ],
   "tone_curve": "round(255 * (channel / 255) ** 0.92)",
-  "alpha_cleanup": "One native-pixel minimum erosion; black/white points 25/230; soft alpha; registered opaque sleeve interior extended to two pixels inside inferred outline",
+  "alpha_cleanup": "One native-pixel minimum erosion; black/white points 25/230; soft alpha; registered opaque sleeve interior and removal of scenery in both arm/strap openings",
   "registered_cleanup": {
     "sourceSize": [
       1536,
@@ -212,7 +212,145 @@
         1000
       ]
     ],
-    "note": "Source-registered interior repair of pale sleeve alpha, not RGB reconstruction. Preserve the exterior inferred alpha and the arm/torso opening."
+    "backgroundOpenings": [
+      [
+        [
+          428,
+          1300
+        ],
+        [
+          430,
+          1310
+        ],
+        [
+          431,
+          1325
+        ],
+        [
+          432,
+          1345
+        ],
+        [
+          434,
+          1365
+        ],
+        [
+          436,
+          1385
+        ],
+        [
+          439,
+          1404
+        ],
+        [
+          436,
+          1417
+        ],
+        [
+          431,
+          1431
+        ],
+        [
+          427,
+          1445
+        ],
+        [
+          423,
+          1462
+        ],
+        [
+          420,
+          1477
+        ],
+        [
+          418,
+          1488
+        ],
+        [
+          418,
+          1470
+        ],
+        [
+          419,
+          1450
+        ],
+        [
+          421,
+          1428
+        ],
+        [
+          422,
+          1408
+        ],
+        [
+          424,
+          1385
+        ],
+        [
+          425,
+          1360
+        ],
+        [
+          426,
+          1334
+        ],
+        [
+          427,
+          1313
+        ]
+      ],
+      [
+        [
+          955,
+          1288
+        ],
+        [
+          956,
+          1298
+        ],
+        [
+          955,
+          1306
+        ],
+        [
+          953,
+          1315
+        ],
+        [
+          949,
+          1325
+        ],
+        [
+          944,
+          1337
+        ],
+        [
+          942,
+          1332
+        ],
+        [
+          940,
+          1318
+        ],
+        [
+          938,
+          1309
+        ],
+        [
+          938,
+          1306
+        ],
+        [
+          946,
+          1299
+        ],
+        [
+          951,
+          1292
+        ]
+      ]
+    ],
+    "note": "Source-registered alpha repair only: opaque pale sleeve and transparent scenery openings beside both backpack straps. Exterior inferred alpha, original shirt pixels, strap hardware and natural posture are preserved."
   },
   "backpack": "Retained. No convincing clothing-only reconstruction available in this deterministic matting workflow.",
   "face_or_clothing_generation": false,

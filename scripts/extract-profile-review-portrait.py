@@ -54,6 +54,16 @@ for y in range(850, 1854):
         alpha[y, 210 + int(outline[0]) + 2:210 + int(filled[-1]) + 1] = 255
 mask = Image.fromarray(alpha)
 mask = ImageChops.lighter(mask, fill)
+# Pale paving inside the narrow arm/strap gaps is not clothing. Register its
+# outline separately; supersampling retains soft edges, one-pixel expansion
+# removes the mixed scenery edge. Backpack/strap pixels remain foreground.
+openings = Image.new("L", (original.width * 4, original.height * 4), 255)
+for polygon in cleanup["backgroundOpenings"]:
+    ImageDraw.Draw(openings).polygon([(x * 4, y * 4) for x, y in polygon], fill=0)
+openings = openings.resize(original.size, Image.Resampling.LANCZOS).filter(ImageFilter.MinFilter(3))
+mask = ImageChops.darker(mask, openings)
+assert mask.getpixel((430, 1370)) == 0
+assert mask.getpixel((948, 1312)) == 0
 # Native-resolution crop ends on jeans below BOTH hands, not through fingers.
 crop = (210, 330, 1170, 2026)
 mask = mask.crop(crop)
@@ -74,6 +84,18 @@ for label, color in [("cream", "#ecebe3"), ("white", "#ffffff"), ("dark", "#171b
     bg = Image.new("RGBA", edited.size, color)
     bg.alpha_composite(edited)
     bg.convert("RGB").save(args.output / f"edges-{label}.png")
+detail = Image.new("RGB", (720, 840), "#ecebe3")
+draw = ImageDraw.Draw(detail)
+for row, box in enumerate([(400, 1220, 540, 1560), (880, 1100, 1040, 1480)]):
+    draw.text((8, row * 420 + 4), f"{'Left' if row == 0 else 'Right'} arm/strap opening: native pixels", fill="#252b26")
+    for column, label in enumerate(["original", "cream", "white", "dark"]):
+        draw.text((column * 180 + 8, row * 420 + 22), label, fill="#252b26")
+        if label == "original":
+            region = original.crop(box)
+        else:
+            region = Image.open(args.output / f"edges-{label}.png").crop((box[0]-crop[0], box[1]-crop[1], box[2]-crop[0], box[3]-crop[1]))
+        detail.paste(region, (column * 180 + 8, row * 420 + 40))
+detail.save(args.output / "arm-openings-inspection.png")
 # Equal native-scale crops share the exact same source rectangle.
 face = (550, 330, 905, 810)
 face_original = original.crop(face)
@@ -100,7 +122,7 @@ edges.save(args.output / "edges-contact-sheet.png")
     "model_md5": "fc16ebd8b0c10d971d3513d564d01e29",
     "crop": crop, "output_size": edited.size, "face_comparison_source_rect": face,
     "tone_curve": "round(255 * (channel / 255) ** 0.92)",
-    "alpha_cleanup": "One native-pixel minimum erosion; black/white points 25/230; soft alpha; registered opaque sleeve interior extended to two pixels inside inferred outline",
+    "alpha_cleanup": "One native-pixel minimum erosion; black/white points 25/230; soft alpha; registered opaque sleeve interior and removal of scenery in both arm/strap openings",
     "registered_cleanup": cleanup,
     "backpack": "Retained. No convincing clothing-only reconstruction available in this deterministic matting workflow.",
     "face_or_clothing_generation": False, "sharpening_or_upscaling": False,
