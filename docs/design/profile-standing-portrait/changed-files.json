@@ -1,0 +1,66 @@
+{
+  "baseline": "90428751cec6ed500e4347b63465dc29936155a5",
+  "branch": "prototype/profile-standing-portrait",
+  "base_branch": "fix/phone-opening-inspection",
+  "completed": "2026-10-19",
+  "files": [
+    "design-qa.md",
+    "docs/design/profile-standing-portrait/alpha-mask.png",
+    "docs/design/profile-standing-portrait/capabilities-1440.jpg",
+    "docs/design/profile-standing-portrait/capabilities-320.jpg",
+    "docs/design/profile-standing-portrait/capabilities-390.jpg",
+    "docs/design/profile-standing-portrait/capabilities-768.jpg",
+    "docs/design/profile-standing-portrait/changed-files.json",
+    "docs/design/profile-standing-portrait/comparison-1440.jpg",
+    "docs/design/profile-standing-portrait/comparison-390.jpg",
+    "docs/design/profile-standing-portrait/comparison.html",
+    "docs/design/profile-standing-portrait/current-1440.jpg",
+    "docs/design/profile-standing-portrait/current-320.jpg",
+    "docs/design/profile-standing-portrait/current-390.jpg",
+    "docs/design/profile-standing-portrait/current-768.jpg",
+    "docs/design/profile-standing-portrait/edges-contact-sheet.png",
+    "docs/design/profile-standing-portrait/fallback-390.jpg",
+    "docs/design/profile-standing-portrait/likeness-inspection.png",
+    "docs/design/profile-standing-portrait/loading-390.jpg",
+    "docs/design/profile-standing-portrait/processing.json",
+    "docs/design/profile-standing-portrait/proposed-1440.jpg",
+    "docs/design/profile-standing-portrait/proposed-320.jpg",
+    "docs/design/profile-standing-portrait/proposed-390.jpg",
+    "docs/design/profile-standing-portrait/proposed-768.jpg",
+    "docs/design/profile-standing-portrait/validation.json",
+    "public/review-assets/profile-standing-original.png",
+    "public/review-assets/profile-standing-original.webp",
+    "scripts/extract-standing-portrait.py",
+    "scripts/review-standing-portrait.mjs",
+    "scripts/standing-portrait-alpha-cleanup.json",
+    "src/App.tsx",
+    "src/components/landscape/ProfilePage.tsx",
+    "src/components/landscape/StandingPortraitPrototype.tsx",
+    "src/components/landscape/standing-portrait-prototype.css",
+    "tests/e2e/profile-standing-portrait.spec.ts"
+  ],
+  "assets": {
+    "profile-standing-original.png": {
+      "bytes": 486756,
+      "sha256": "cbf7179eaa5eaad727edf85bd438f693ab2b25f92a5834f6157ce5a3285bad0e"
+    },
+    "profile-standing-original.webp": {
+      "bytes": 297658,
+      "sha256": "8a238974f44107dd214206e542891be161c6e2f47ea224e6fb59c650e384dcc2"
+    }
+  },
+  "validation": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "unit_checks": 46,
+    "affected_browser_checks": 52,
+    "browser_retries": 0,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ]
+  }
+}

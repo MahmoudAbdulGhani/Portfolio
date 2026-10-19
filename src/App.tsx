@@ -108,6 +108,7 @@ export function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/profile" element={<ProfilePage />} />
+            {import.meta.env.DEV && <Route path="/review/profile-portrait" element={<ProfilePage portraitPrototype />} />}
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/job-match" element={<JobMatch />} />

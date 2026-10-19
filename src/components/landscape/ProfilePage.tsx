@@ -13,6 +13,7 @@ import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
 import { ProfilePortrait } from "./ProfilePortrait";
+import { StandingPortraitPrototype } from './StandingPortraitPrototype';
 import { CaseDisclosure } from './CaseDisclosure';
 import { ProfileEntry } from './ProfileEntry';
 import { evidenceUrl } from "../../lib/assistant-response";
@@ -22,7 +23,7 @@ import './profile-record.css';
 
 const tabs = ['Experience', 'Education & training', 'Capabilities'];
 
-export function ProfilePage() {
+export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?: boolean }) {
   const profile = useProfile(),
     education = useEducation(),
     certifications = useCertifications(),
@@ -39,6 +40,7 @@ export function ProfilePage() {
   };
   const person = profile.data;
   const capabilities = capabilityGroups(technologies.data, skills.data, projects.data);
+  const Entry = portraitPrototype ? 'div' : ProfileEntry;
   if (profile.isLoading || profile.isError || !person)
     return (
       <main className="page-surface">
@@ -51,13 +53,13 @@ export function ProfilePage() {
       </main>
     );
   return (
-    <main id="main-content" tabIndex={-1} className="page-surface profile-page">
+    <main id="main-content" tabIndex={-1} className={`page-surface profile-page${portraitPrototype ? ' profile-standing-prototype' : ''}`}>
       <PageMeta
         title={`Profile — ${person.name}`}
         description={person.professionalSummary ?? person.bio}
       />
-      <ProfileEntry className="profile-portrait">
-        <ProfilePortrait name={person.name} photo={person.photo} />
+      <Entry className="profile-portrait">
+        {portraitPrototype ? <StandingPortraitPrototype name={person.name} photo={person.photo} /> : <ProfilePortrait name={person.name} photo={person.photo} />}
         <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
           <span>
@@ -90,8 +92,8 @@ export function ProfilePage() {
             "/api/cv.pdf"
           }
         />
-      </ProfileEntry>
-      <ProfileEntry className="profile-record">
+      </Entry>
+      <Entry className="profile-record">
         <span className="eyebrow">PROFILE / WORKING RECORD</span>
         <h1 className="view-heading">{person.title}</h1>
         <p className="profile-intro">
@@ -209,7 +211,7 @@ export function ProfilePage() {
           Let’s build something useful
           <FiArrowUpRight />
         </Link>
-      </ProfileEntry>
+      </Entry>
     </main>
   );
 }
