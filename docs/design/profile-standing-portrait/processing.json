@@ -1,0 +1,133 @@
+{
+  "source_sha256": "d5449cfc03fcb2c76ba12c3c3d9ecbb7ea130e081e046e3f687304d261b0180a",
+  "original_size": [
+    1071,
+    1428
+  ],
+  "model": "ISNet general-use, CPU ONNX",
+  "alpha_bounds": [
+    339,
+    409,
+    649,
+    1421
+  ],
+  "output_size": [
+    326,
+    1027
+  ],
+  "rgb": "Original JPEG pixels; only alpha and crop changed",
+  "crop": [
+    331,
+    401,
+    657,
+    1428
+  ],
+  "rgb_exact_match": true,
+  "webp_rgba_exact_match": true,
+  "alpha_cleanup": {
+    "sourceSize": [
+      1071,
+      1428
+    ],
+    "roi": [
+      338,
+      400,
+      660,
+      1428
+    ],
+    "leftBoundary": [
+      [
+        400,
+        568
+      ],
+      [
+        378,
+        580
+      ],
+      [
+        365,
+        594
+      ],
+      [
+        356,
+        609
+      ],
+      [
+        352,
+        627
+      ],
+      [
+        350,
+        646
+      ],
+      [
+        348,
+        664
+      ],
+      [
+        347,
+        680
+      ],
+      [
+        342,
+        699
+      ],
+      [
+        341,
+        714
+      ],
+      [
+        342,
+        730
+      ],
+      [
+        344,
+        746
+      ],
+      [
+        347,
+        761
+      ],
+      [
+        352,
+        774
+      ],
+      [
+        364,
+        781
+      ],
+      [
+        374,
+        786
+      ],
+      [
+        371,
+        800
+      ],
+      [
+        366,
+        813
+      ],
+      [
+        364,
+        831
+      ],
+      [
+        359,
+        852
+      ],
+      [
+        356,
+        880
+      ],
+      [
+        356,
+        891
+      ]
+    ],
+    "floorStartsAtY": 1421,
+    "alphaBlackPoint": 35,
+    "alphaWhitePoint": 225,
+    "note": "Original-pixel coordinates. The traced left sleeve/waist boundary excludes the railing loops and foliage wrongly retained by segmentation. This cleanup is specific to the supplied source and must not be applied to another photograph."
+  }
+}
