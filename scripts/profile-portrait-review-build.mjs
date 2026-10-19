@@ -2,14 +2,16 @@ import { readFileSync } from 'node:fs';
 import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-export const portraitReviewBranch = 'prototype/profile-portrait-hosted-review';
+export const portraitReviewBranch = 'prototype/profile-portrait-original-refinement';
+const portraitReviewBranches = [portraitReviewBranch, 'prototype/profile-portrait-hosted-review'];
+const comparisonDirectory = 'docs/design/profile-portrait-original-refinement';
 
 // Deliberately fail closed on Vercel Production. Local builds opt in by mode;
-// Git integration enables only this named branch in the Preview environment.
+// Git integration enables only the explicit review branches in Preview.
 export function isPortraitReviewBuild(mode, env = process.env) {
   if (env.VERCEL_ENV === 'production') return false;
   return mode === 'portrait-review' ||
-    (env.VERCEL_ENV === 'preview' && env.VERCEL_GIT_COMMIT_REF === portraitReviewBranch);
+    (env.VERCEL_ENV === 'preview' && portraitReviewBranches.includes(env.VERCEL_GIT_COMMIT_REF));
 }
 
 export function portraitReviewArtifacts(enabled) {
@@ -21,7 +23,7 @@ export function portraitReviewArtifacts(enabled) {
       if (!enabled) return;
       const destination = path.join(output, 'review/portrait-comparison');
       await mkdir(destination, { recursive: true });
-      await cp('docs/design/profile-portrait-hosted-review', destination, { recursive: true });
+      await cp(comparisonDirectory, destination, { recursive: true });
       await cp('design-qa.md', path.join(destination, 'design-qa.md'));
       const html = await readFile(path.join(destination, 'comparison.html'), 'utf8');
       await writeFile(path.join(destination, 'index.html'), html);
@@ -37,7 +39,7 @@ export function portraitReviewArtifacts(enabled) {
       server.middlewares.use('/review/portrait-comparison', (req, res, next) => {
         const requested = (req.url ?? '/').split('?')[0];
         const file = requested === '/' || requested === '/index.html' ? 'comparison.html' : requested.slice(1);
-        const folder = path.resolve('docs/design/profile-portrait-hosted-review');
+        const folder = path.resolve(comparisonDirectory);
         const target = path.resolve(folder, file);
         if (!target.startsWith(folder + path.sep)) return next();
         try {

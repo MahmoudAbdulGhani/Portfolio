@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Profile portrait prototype comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; color: #252b26; background: #ecebe3; font: 15px/1.6 system-ui, sans-serif; }
+    main { max-width: 1800px; margin: auto; }
+    h1 { font-size: 28px; line-height: 1.2; }
+    h2 { margin-top: 36px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #625538; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+  </style>
+</head>
+<body><main>
+  <h1>Profile portrait prototype</h1>
+  <p>Static portrait review: the confirmed original 1000689121.jpg, extracted from hair to below both hands, with a mild shadow lift. The face, posture, watch and hands are photographic. The production Profile remains unchanged. Speaking and gestures are still outstanding.</p>
+  <p><a href="/profile">Current Profile</a> · <a href="/review/profile-portrait">Interactive review prototype</a> · <a href="portrait-review.zip" download>Download comparison package</a></p>
+  <p>Use the refinement Vercel Preview linked in the draft PR above #34. Preview authentication still applies. Noindex controls indexing; it does not restrict access.</p>
+  <h2>390px — current / proposed</h2>
+  <img src="comparison-390.jpg" width="804" height="906" alt="Current and proposed Profile compositions side by side, each captured at a 390px viewport">
+  <h2>1440px — current / proposed</h2>
+  <img src="comparison-1440.jpg" width="2904" height="962" alt="Current and proposed Profile compositions side by side, each captured at a 1440px viewport">
+  <h2>Alpha inspection — actual cream / white / charcoal</h2>
+  <img src="edges-contact-sheet.png" width="1440" height="888" alt="Original photograph cutout inspected against cream, white and charcoal; backpack retained">
+  <p>Native-scale edge checks: <a href="edges-cream.png">cream</a> · <a href="edges-white.png">white</a> · <a href="edges-dark.png">charcoal</a>. Pale sleeve opacity was repaired in the alpha only. Hair, ears, natural shoulders, sleeves, arm openings, hands and jeans remain intact. Fine edge detail is limited by the compressed photograph.</p>
+  <img src="arm-openings-inspection.png" width="720" height="840" style="max-width:720px" alt="Native-scale details of both arm openings, original and extracted on cream, white and charcoal; paving is removed while backpack straps and shirt edges remain">
+  <h2>Likeness — original / edited, at equal native scale</h2>
+  <img src="likeness-inspection.png" width="734" height="520" style="max-width:734px" alt="Original and edited face crops at the same native scale; only a mild tone curve and background transparency differ">
+  <p>No face generation, beautification, sharpening, upscaling or posture changes. The backpack and straps remain: this workflow cannot convincingly reconstruct the covered striped shirt. Clothing-only retouching is a separate remaining requirement.</p>
+  <p><a href="1000689121.jpg" download>Untouched original</a> · <a href="/review-assets/profile-original-hands.png" download>PNG master</a> · <a href="/review-assets/profile-original-hands.webp" download>Lossless WebP</a> · <a href="processing.json">Processing record</a></p>
+  <p><a href="current-320.jpg">Current 320px</a> · <a href="proposed-320.jpg">Proposed 320px</a> · <a href="current-768.jpg">Current 768px</a> · <a href="proposed-768.jpg">Proposed 768px</a> · <a href="validation.json">Browser validation</a></p>
+  <p><a href="loading-390.jpg">Loading state</a> · <a href="fallback-390.jpg">Image failure fallback</a> · <a href="changed-files.json">Changed files</a> · <a href="design-qa.md">Design QA</a> · <a href="video-production.md">Future video requirements</a></p>
+  <p>The 960×1696 crop uses existing source detail; enlarging it creates no additional authentic detail. This is a static prototype, with one 600ms entrance and static reduced motion. Promoting a deployment does not adopt this portrait: the default /profile remains unchanged and Production builds disable review routes.</p>
+</main></body></html>

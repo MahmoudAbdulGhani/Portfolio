@@ -18,6 +18,7 @@ for (const width of [320, 390, 768, 1440]) {
     await page.goto('/review/profile-portrait');
     const stage = page.locator('.standing-portrait-stage');
     await expect(stage).toHaveAttribute('data-state', 'ready');
+    await expect(stage.locator('img')).toHaveAttribute('src', '/review-assets/profile-original-hands.webp');
     const metrics = await page.locator('.standing-portrait-image').evaluate(el => {
       const img = el as HTMLImageElement, rect = img.getBoundingClientRect();
       const main = document.querySelector('.profile-page')!;
@@ -29,9 +30,9 @@ for (const width of [320, 390, 768, 1440]) {
     expect(metrics.overflow).toBe(false);
     expect(metrics.animationCount).toBe(0);
     if (width < 720) {
-      expect(metrics.height).toBe(width < 360 ? 300 : 336);
+      expect((await stage.boundingBox())!.height).toBe(width < 360 ? 240 : 272);
       expect(metrics.top).toBeLessThan(width < 360 ? 580 : 520);
-    } else expect(metrics.height).toBe(620);
+    } else expect((await stage.boundingBox())!.height).toBe(width < 1051 ? 424 : 520);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
     await expect(page.locator('header nav a[href^="/review/"]')).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Download CV', exact: true })).toBeVisible();
@@ -58,7 +59,7 @@ for (const width of [320, 390, 768, 1440]) test(`loading, decode and error fallb
   await page.emulateMedia({ reducedMotion: 'reduce' });
   let release!: () => void;
   const held = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/review-assets/profile-standing-original.webp', async route => { await held; await route.continue(); });
+  await page.route('**/review-assets/profile-original-hands.webp', async route => { await held; await route.continue(); });
   await page.goto('/review/profile-portrait', { waitUntil: 'domcontentloaded' });
   const stage = page.locator('.standing-portrait-stage');
   await expect(stage).toHaveAttribute('aria-busy', 'true');
@@ -69,11 +70,14 @@ for (const width of [320, 390, 768, 1440]) test(`loading, decode and error fallb
   await expect(stage).toHaveAttribute('data-state', 'ready');
   expect(await stage.boundingBox()).toEqual(before.stage);
   expect(await page.locator('.profile-record').boundingBox()).toEqual(before.record);
-  await page.route('**/review-assets/profile-standing-original.webp', route => route.abort());
+  await page.route('**/review-assets/profile-original-hands.webp', route => route.abort());
   await page.reload();
   await expect(stage).toHaveAttribute('data-state', 'error');
   await expect(stage.locator('.portrait-panel img')).toHaveAttribute('src', /portrait-striped-finished/);
   await expect(page.getByRole('status')).toContainText('Current portrait shown');
+  const fallbackImage = await stage.locator('.portrait-panel').boundingBox();
+  const fallbackStatus = await page.getByRole('status').boundingBox();
+  expect(fallbackStatus!.y).toBeGreaterThanOrEqual(fallbackImage!.y + fallbackImage!.height);
   await page.evaluate(() => document.fonts.ready);
   expect(await stage.boundingBox()).toEqual(before.stage);
   expect(await page.locator('.profile-record').boundingBox()).toEqual(before.record);
