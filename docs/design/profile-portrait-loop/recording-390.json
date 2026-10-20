@@ -1,0 +1,92 @@
+{
+  "width": 390,
+  "height": 900,
+  "seconds": 30.524499893188477,
+  "frames": 120,
+  "speechOffset": 15.617987871170044,
+  "events": [
+    {
+      "event": "playing",
+      "at": 1.1647999286651611,
+      "time": 0.007062,
+      "muted": true,
+      "speech": false
+    },
+    {
+      "event": "pause",
+      "at": 13.471099853515625,
+      "time": 12.008,
+      "muted": true,
+      "speech": false
+    },
+    {
+      "event": "ended",
+      "at": 13.472800016403198,
+      "time": 12.008,
+      "muted": true,
+      "speech": false
+    },
+    {
+      "event": "playing",
+      "at": 14.042399883270264,
+      "time": 0.000739,
+      "muted": true,
+      "speech": false
+    },
+    {
+      "event": "pause",
+      "at": 15.574399709701538,
+      "time": 0,
+      "muted": true,
+      "speech": true
+    },
+    {
+      "event": "playing",
+      "at": 15.619199752807617,
+      "time": 0.001212,
+      "muted": true,
+      "speech": true
+    },
+    {
+      "event": "pause",
+      "at": 27.823099851608276,
+      "time": 12.008,
+      "muted": false,
+      "speech": true
+    },
+    {
+      "event": "ended",
+      "at": 27.82419991493225,
+      "time": 12.008,
+      "muted": true,
+      "speech": true
+    },
+    {
+      "event": "playing",
+      "at": 28.376499891281128,
+      "time": 0.000478,
+      "muted": true,
+      "speech": false
+    }
+  ],
+  "bridges": [
+    {
+      "image": "1",
+      "media": "0",
+      "atEpochSeconds": 1792518196.0955
+    },
+    {
+      "image": "1",
+      "media": "0",
+      "atEpochSeconds": 1792518210.3275998
+    }
+  ],
+  "requests": [
+    "mahmoud-introduction-480.webm"
+  ],
+  "errors": [],
+  "writes": [],
+  "sameVideoElement": true,
+  "capture": "Browser screenshot samples with measured wall-clock durations, encoded at 25fps; not a 25fps hardware screen capture.",
+  "audio": "Approved source Opus muxed at measured speech origin; not system audio capture."
+}

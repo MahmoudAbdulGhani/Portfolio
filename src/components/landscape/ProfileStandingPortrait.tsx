@@ -1,4 +1,4 @@
-import { useEffect, useState, type RefObject } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preference';
 import { ProfilePortrait } from './ProfilePortrait';
 import './profile-standing-portrait.css';
@@ -8,9 +8,16 @@ import './profile-standing-portrait.css';
 export function ProfileStandingPortrait({ name, photo, mediaHost }: { name: string; photo?: string | null; mediaHost?: RefObject<HTMLDivElement | null> }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [entrance, setEntrance] = useState(false);
+  const figure = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const media = matchMedia(motionQuery);
-    const cancel = () => { if (media.matches) setEntrance(false); };
+    const cancel = (event: MediaQueryListEvent) => {
+      if (!event.matches) return;
+      // Cancel immediately: a rapid preference flip must not replay the entrance
+      // while React is still batching the matching state update.
+      figure.current?.setAttribute('data-entrance', 'false');
+      setEntrance(false);
+    };
     media.addEventListener('change', cancel);
     return () => media.removeEventListener('change', cancel);
   }, []);
@@ -20,7 +27,7 @@ export function ProfileStandingPortrait({ name, photo, mediaHost }: { name: stri
         <ProfilePortrait name={name} photo={photo} />
         <span className="standing-portrait-status" role="status">Portrait unavailable. Previous portrait shown.</span>
       </> : <>
-        <div className="standing-portrait-figure" data-entrance={entrance} onAnimationEnd={() => setEntrance(false)}>
+        <div ref={figure} className="standing-portrait-figure" data-entrance={entrance} onAnimationEnd={() => setEntrance(false)}>
           <img
             className="standing-portrait-image"
             src="/review-assets/profile-original-hands.webp"
