@@ -38,6 +38,60 @@ async function event(page:Page,name:string,time?:number,index=-1){await page.eva
 },{name,time,index});}
 async function calls(page:Page){return page.evaluate(()=>(window as unknown as {portraitMedia:unknown[]}).portraitMedia.length);}
 
+test('arrival, speech restart and cycle boundaries never composite two facial poses',async({page})=>{
+  test.setTimeout(35_000);
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await page.addInitScript(()=>{
+    const inspection={samples:0,overlaps:[] as number[][],gaps:0};
+    Object.assign(window,{portraitComposites:inspection});
+    const sample=()=>{
+      const stage=document.querySelector('.standing-portrait-stage[data-state="ready"]');
+      const still=stage?.querySelector('.standing-portrait-image');
+      const media=stage?.querySelector('.standing-portrait-media');
+      if(still&&media){
+        const a=Number(getComputedStyle(still).opacity),b=Number(getComputedStyle(media).opacity);
+        inspection.samples++;
+        if(a>0.01&&b>0.01)inspection.overlaps.push([a,b]);
+        if(a<0.01&&b<0.01)inspection.gaps++;
+      }
+      requestAnimationFrame(sample);
+    };
+    requestAnimationFrame(sample);
+  });
+  await open(page);await expect(ui(page)).toHaveAttribute('data-playback','looping');
+  await hear(page).click();await expect(ui(page)).toHaveAttribute('data-playback','speaking');
+  await expect(hear(page)).toBeVisible({timeout:15_000});
+  await expect(ui(page)).toHaveAttribute('data-playback','looping');
+  await pause(page).click();await resume(page).click();
+  await expect(ui(page)).toHaveAttribute('data-playback','looping');
+  const result=await page.evaluate(()=>(window as unknown as {portraitComposites:{samples:number;overlaps:number[][];gaps:number}}).portraitComposites);
+  expect(result.samples).toBeGreaterThan(60);
+  expect(result.overlaps).toEqual([]);
+  expect(result.gaps).toBe(0);
+});
+
+for(const width of [320,390,430])test(`explicit hearing reveals complete captions above the footer at ${width}px`,async({page})=>{
+  await page.setViewportSize({width,height:640});await page.emulateMedia({reducedMotion:'no-preference'});
+  await open(page);await expect(ui(page)).toHaveAttribute('data-playback','looping');
+  await hear(page).click();await expect(ui(page)).toHaveAttribute('data-playback','speaking');
+  await expect(ui(page).locator('.portrait-playback-captions')).toContainText('full-stack developer');
+  const bounds=await page.evaluate(()=>{
+    const main=document.querySelector('main')!.getBoundingClientRect();
+    const caption=document.querySelector('.portrait-playback-captions')!.getBoundingClientRect();
+    const footer=document.querySelector('.stage-footer')!.getBoundingClientRect();
+    const stage=document.querySelector('.standing-portrait-stage')!.getBoundingClientRect();
+    return {top:caption.top,bottom:caption.bottom,mainTop:main.top,mainBottom:main.bottom,footerTop:footer.top,stageTop:stage.top,stageBottom:stage.bottom,windowScroll:scrollY};
+  });
+  expect(bounds.top).toBeGreaterThanOrEqual(bounds.mainTop);
+  expect(bounds.bottom).toBeLessThanOrEqual(Math.min(bounds.mainBottom,bounds.footerTop));
+  expect(bounds.stageBottom).toBeGreaterThan(bounds.mainTop);
+  expect(bounds.stageTop).toBeGreaterThanOrEqual(bounds.mainTop);
+  expect(bounds.windowScroll).toBe(0);
+  const scroll=await page.locator('main').evaluate(e=>e.scrollTop);
+  await expect(ui(page).locator('.portrait-playback-captions')).toContainText('back-end systems',{timeout:10_000});
+  expect(await page.locator('main').evaluate(e=>e.scrollTop)).toBe(scroll);
+});
+
 for(const width of [320,390,430,768,1440])test(`visible real portrait automatically loads only its selected muted encode at ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:1024});await page.emulateMedia({reducedMotion:'no-preference'});
   const requests:string[]=[];page.on('request',r=>{if(r.url().includes('/media/profile/'))requests.push(r.url());});

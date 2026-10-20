@@ -41,7 +41,7 @@ export function LandscapeLayout() {
   return (
     <JobPilotJourneyContext.Provider value={journeys}><div className="landscape">
       <div
-        className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}`}
+        className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >
         <a
           className="skip-link"

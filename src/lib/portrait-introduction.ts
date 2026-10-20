@@ -179,15 +179,12 @@ export class PortraitIntroduction {
   }
   private restartThroughStill(owner: Owner) {
     this.cancel(); this.desired = false; this.still(); const token = this.token;
-    // Wait for the actual 180ms opacity transition, including delayed renders,
-    // then hold the accepted still 140ms. No reversed frames or source reload.
-    void Promise.allSettled(this.host.getAnimations().map(animation => animation.finished)).then(() => {
-      if (!this.current(owner) || this.token !== token || !this.canLoop) return;
-      this.bridge = setTimeout(() => {
-        this.bridge = undefined;
-        if (this.current(owner) && this.token === token && this.canLoop) void this.start(owner, false, true);
-      }, 140);
-    });
+    // The CSS handoff is exclusive: never blend different facial poses.
+    // Retain the still until the next decoded frame; no source reload.
+    this.bridge = setTimeout(() => {
+      this.bridge = undefined;
+      if (this.current(owner) && this.token === token && this.canLoop) void this.start(owner, false, true);
+    }, 140);
   }
   toggleAnimation() {
     if (this.env.reduced || this.videoFailed) return;
