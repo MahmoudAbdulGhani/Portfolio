@@ -7,6 +7,7 @@ import './profile-introduction.css';
 export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement | null> }) {
   const [playback, setPlayback] = useState(initialPlayback);
   const controller = useRef<PortraitIntroduction | null>(null);
+  const captions = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
     if (!host.current) return;
     const current = new PortraitIntroduction(host.current, setPlayback); controller.current = current;
@@ -28,10 +29,41 @@ export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement |
       window.removeEventListener('pagehide', exited); window.removeEventListener('pageshow', sync);
     };
   }, [host]);
+  const hear = () => {
+    if (!playback.speech) {
+      // Profile owns a scroll surface above the footer. Reveal the already
+      // reserved caption space on an explicit hearing action, once, without
+      // moving focus or following each cue. Never scroll the outer document.
+      const main = captions.current?.closest('main');
+      if (main && captions.current) {
+        const viewport = main.getBoundingClientRect();
+        const caption = captions.current.getBoundingClientRect();
+        const portrait = host.current?.closest('.standing-portrait-stage')?.getBoundingClientRect();
+        const bottom = Math.min(viewport.bottom, window.innerHeight);
+        let delta = Math.max(0, caption.bottom + 6 - bottom);
+        // Keyboard/browser focus can have scrolled the controls to the centre,
+        // hiding the face. Bring the full figure back when the group fits.
+        if (portrait) {
+          const groupHeight = caption.bottom - portrait.top;
+          const available = bottom - viewport.top;
+          if (groupHeight <= available) {
+            const inset = Math.min(6, (available - groupHeight) / 2);
+            if (portrait.top - delta < viewport.top + inset) delta = portrait.top - viewport.top - inset;
+          } else if (portrait.top < viewport.top) {
+            // A very short viewport cannot hold the whole group. Keep captions
+            // visible while restoring as much of the figure as space allows.
+            delta = caption.bottom + 6 - bottom;
+          }
+        }
+        if (delta !== 0) main.scrollTo({ top: main.scrollTop + delta, behavior: 'instant' });
+      }
+    }
+    controller.current?.hear();
+  };
   const paused = playback.manualPause || playback.state === 'blocked';
   return <section className="portrait-introduction" aria-label="Mahmoud’s introduction" data-playback={playback.state}>
     <div className="portrait-playback-controls">
-      <button type="button" aria-label={playback.speech ? 'Mute introduction' : 'Hear introduction'} onClick={() => controller.current?.hear()}>
+      <button type="button" aria-label={playback.speech ? 'Mute introduction' : 'Hear introduction'} onClick={hear}>
         {playback.speech ? <FiVolumeX aria-hidden="true" /> : <FiVolume2 aria-hidden="true" />}<span>{playback.speech ? 'Mute introduction' : 'Hear introduction'}</span>
       </button>
       <button type="button" aria-label={paused ? 'Resume animation' : 'Pause animation'} aria-disabled={playback.animationUnavailable} onClick={() => controller.current?.toggleAnimation()}>
@@ -39,7 +71,7 @@ export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement |
       </button>
     </div>
     <div className="portrait-playback-details">
-      <p className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear introduction or read the transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear introduction.' : playback.caption}</p>
+      <p ref={captions} className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear introduction or read the transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear introduction.' : playback.caption}</p>
       <span className="sr-only" role="status">{playback.message}</span>
       <details className="portrait-transcript"><summary>Read introduction transcript</summary><p>{introductionTranscript}</p></details>
     </div>

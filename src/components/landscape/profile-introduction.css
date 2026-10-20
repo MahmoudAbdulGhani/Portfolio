@@ -22,12 +22,20 @@
 .landscape .standing-portrait-video[data-alpha="verified"] { visibility: visible; }
 .landscape .standing-portrait-stage[data-video-visible="true"] .standing-portrait-media { opacity: 1; }
 .landscape .standing-portrait-stage[data-video-visible="true"] .standing-portrait-image { opacity: 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .landscape .standing-portrait-media, .landscape .standing-portrait-image { transition: opacity 180ms ease-out; }
-}
+/* These are different facial poses. A dissolve superimposes two mouths/eyes.
+   Switch the decoded video and accepted still together in a single paint;
+   keep the separate, single portrait entrance animation unchanged. */
+.landscape .standing-portrait-media, .landscape .standing-portrait-image { transition: none; }
 @media (max-width: 719px) {
+  /* Profile already has its own scroll surface. The inherited 760px minimum
+     creates a second page scrollbar and places the footer outside short phones. */
+  .landscape .portfolio.is-profile { min-height: 0; }
+  .landscape .portrait-playback-captions { min-height: 44px; line-height: 22px; }
   .landscape .profile-standing-portrait .portrait-playback-controls { grid-row: 3; }
   .landscape .profile-standing-portrait .portrait-playback-details { grid-row: 4; }
+}
+@media (max-width: 719px) and (max-height: 700px) {
+  .landscape .portfolio.is-profile .profile-page.profile-standing-portrait .profile-portrait { row-gap: 4px; }
 }
 @media (max-width: 389px) {
   .landscape .profile-standing-portrait .portrait-playback-controls { grid-row: 4; }
