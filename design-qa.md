@@ -1,3 +1,43 @@
+## Profile portrait mobile hierarchy correction — 2026-10-20
+
+Started from PR #36 / `f4851863056b2dd3ebc4528c4f935434acabd176`; inspected the local tree, remote branch and open draft stack. Both heads matched. New branch `prototype/profile-portrait-mobile-hierarchy` is stacked above `prototype/profile-portrait-mobile-composition`. The untracked `Codex_Engineered_Landscape_Handoff.md` is preserved and excluded.
+
+[Before/after comparison](docs/design/profile-portrait-mobile-hierarchy/comparison.html) · [390px initial](docs/design/profile-portrait-mobile-hierarchy/comparison-390.jpg) · [320px initial](docs/design/profile-portrait-mobile-hierarchy/comparison-320.jpg) · [390px introduction](docs/design/profile-portrait-mobile-hierarchy/comparison-introduction-390.jpg) · [320px records](docs/design/profile-portrait-mobile-hierarchy/comparison-records-320.jpg) · [measurements](docs/design/profile-portrait-mobile-hierarchy/after.json) · [offline ZIP](docs/design/profile-portrait-mobile-hierarchy/portrait-review.zip).
+
+### Order, geometry and visual findings
+
+Within the existing max-width 719px breakpoint, the review DOM now contains the existing working-record label and single professional H1, name/portrait/location/CV, existing introduction, languages/social links, then existing record tabs/panels. Shared content is rendered once at its appropriate position; CSS does not mask a conflicting reading order. A native media-query subscription chooses the correct layout on the first client render and updates on resize. The portrait instance and selected record survive breakpoint changes. The normal `/profile` markup and tablet/desktop review structure are preserved.
+
+At 390/430px, location and CV are a single group aligned 24px above the figure's bottom, both within its lower half. At 320px the group moves beneath the centered figure; its available width accommodates the existing location and CV without compression. Body text stays 16px/25px, metadata 14px/24px, heading 32px/1.16, and mobile interactive targets at least 44px. The name retains its 12px/20px typography. Spacing is 20px between the main mobile groups, with 8–12px inside identity/action groups. Neither portrait nor type is shrunk to force a complete first screen.
+
+| Viewport | Portrait width × natural height | H1 top, PR #36 → correction | Intro paragraph top, PR #36 → correction |
+| --- | --- | --- | --- |
+| 320 × 844 | 180 × 318px | 736.30 → 163px | 832.52 → 675.22px |
+| 390 × 844 | 190 × 335.66px | 701.95 → 163px | 798.17 → 640.88px |
+| 430 × 932 | 200 × 353.33px | 695.63 → 163px | 791.84 → 658.55px |
+| 768 × 1024 | 240 × 424px | 148 → 148px | 207.11 → 207.11px |
+| 1440 × 900 | 294.33 × 519.97px | 148 → 148px | 223.36 → 223.36px |
+
+These are actual H1/paragraph bounds, not the containing record's top reported in some earlier notes. The full heading is now visible before the figure on each phone. The introduction starts about 133–157px earlier; it remains naturally scrollable at 320/390px rather than hiding content or reducing type. Both hands and natural proportions are complete. Face size is unchanged from the approved enlarged portrait. Initial, introduction-scrolled and record-scrolled captures are provided at all three phone widths. The scrolled record comparisons retain identical text, disclosures and evidence destinations.
+
+The footer sits outside the main scroll container. The review's mobile scroll padding (20px top/24px bottom) and end padding (at least 48px, including safe-area allowance) let focused CV, tabs and the final contact link scroll completely above it. Keyboard regressions check actual focus rectangles against both the main viewport and footer, including at the document end. No shared footer or unrelated page changed.
+
+### Preservation and verification
+
+- Image files and processing are untouched: PNG SHA-256 `5fc9eae59bcff7677bbd549c9dfb58f17aef2110d16e10178adaabde94114c91`; WebP `48398672854c525626ebc289321890a3896ad0f78d348c0d0b5a3c821d3faba6`. Same 960×1696 transparent asset, original likeness, hands, watch and retained backpack. No image generation, retouching, sharpening or dependency changes.
+- Compiled before/after captures compare asset hashes, introduction, all record text and evidence links. Default `/profile` is pixel-identical at all five widths; review at 768/1440px is also pixel-identical. No horizontal overflow, duplicate heading, or application exceptions/non-GET/HEAD requests were observed. Existing 600ms opacity/12px entrance and immediate reduced-motion cancellation are retained.
+- Loading, decode and failure reserve identical heading, intro, portrait, identity, CV, socials and record rectangles at all five widths. Failure uses the existing accepted portrait and separate readable status. Keyboard Enter downloads the same valid 31,205-byte existing PDF at every width using the unchanged component and validation flow. Arrow/Home/End tab behavior and disclosures remain intact.
+- Focused regression coverage verifies visual **and DOM** order, single content instances, grouped lower-half action placement, below-figure placement at 320px, touch targets, footer clearance, stable geometry and breakpoint transitions. Typecheck, lint, ordinary/review builds, Production exclusion, 28 portrait/build-policy/matte/integrity unit checks, 42 compiled review browser cases and 22 existing Profile/records/Capabilities cases pass locally; browser retries are disabled. The offline ZIP passes integrity checks and all nine embedded comparisons decode from a file URL. Final-head CI and hosted access results are recorded on the stacked draft PR.
+- An intermediate browser run caught the moved name inheriting 24px line height; restored the original 20px rule. A parallel existing-Profile run passed its assertions but timed out during one context teardown; its original trace is retained locally and the unchanged suite passed 22/22 when rerun alone. A concurrent lint attempt encountered a regenerating Playwright-report file; final lint passes with generated `playwright-report/**` and `test-results/**` excluded. No source exclusions, test deadlines, retries or assertions were relaxed.
+
+### Preview, offline review and limits
+
+Use the **new hierarchy draft PR's Git-triggered Vercel Preview**, with interactive path `/review/profile-portrait` and comparison `/review/portrait-comparison/index.html`. The exact immutable Preview URL, deployment/access result and final CI link are recorded on that PR after the commit. The explicit review flag allows this branch in Preview and fails closed in Production. Review routes remain out of navigation/sitemaps and noindex; noindex is not access protection. Promoting a deployment cannot adopt this composition on `/profile`, which retains the accepted production portrait. No merge or manual deployment occurs.
+
+Previous Previews required authorized Vercel sign-in. Protection is not changed or bypassed. Anonymous access, when redirected to Vercel SSO, cannot verify protected hosted content/CV; the delivery and PR disclose that result. The compiled local routes and comparison are checked independently. The downloadable ZIP contains the static comparisons, measurements, asset copies and this QA record; extract and open `index.html` without Vercel sign-in. It is a screenshot review, not a running app or speaking avatar.
+
+Visual inspection and interaction checks use Windows Chrome desktop/viewport/touch emulation with frozen read-only public GET/CV fixtures. No physical Android/iOS, physical safe-area or screen-reader test is claimed. Visual acceptance remains pending. Speaking/gesturing video, Android-freeze diagnosis, live data and unrelated portfolio changes remain separate. No image regeneration, video controls, provider changes, merge, manual deployment or live write.
+
 # Android opening investigation and shared mobile inspection — 14 October 2026
 
 Started from actual HEAD/origin `6b4b845e6ce10a73660fc3c89c285d473ea7d5d4` on `fix/collection-readiness`, preserving its readiness correction and the user's untracked handoff document. Work is isolated on `fix/phone-opening-inspection`, stacked above draft #31. [Draft PR #32](https://github.com/MahmoudAbdulGhani/Portfolio/pull/32). All eleven supplied phone images were inspected before edits. They show eventual layout, not elapsed freeze duration. The user identified Android only; model, browser/version and remote device diagnostics remain unavailable.

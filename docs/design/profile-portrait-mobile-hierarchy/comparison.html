@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Profile portrait prototype comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; color: #252b26; background: #ecebe3; font: 15px/1.6 system-ui, sans-serif; }
+    main { max-width: 1800px; margin: auto; }
+    h1 { font-size: 28px; line-height: 1.2; }
+    h2 { margin-top: 36px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #625538; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    .phone { max-width: 884px; }
+  </style>
+</head>
+<body><main>
+  <h1>Profile portrait prototype</h1>
+  <p>Mobile hierarchy correction against draft PR #36, commit <code>f4851863056b2dd3ebc4528c4f935434acabd176</code>. Left is PR #36; right is the correction. Both sides show the review route with the same faithful portrait and public content. Production <code>/profile</code> remains unchanged.</p>
+  <p><a href="/review/profile-portrait">Interactive review prototype</a> · <a href="/profile">Current production-style Profile</a> · <a href="portrait-review.zip" download>Download comparison package</a></p>
+  <p>Use this draft PR's Vercel Preview for review. Authorized sign-in may be required; deployment protection is unchanged. Noindex controls indexing and is not access protection.</p>
+  <p>The mobile reading order is professional heading, name/portrait/location/CV, introduction, languages/social links, then records. The image remains 180/190/200px wide at 320/390/430px. Location and CV sit together near the figure's lower half at 390/430px and below it at 320px.</p>
+  <h2>390px — initial viewport</h2>
+  <img class="phone" src="comparison-390.jpg" width="804" height="906" alt="Before and after at 390 pixels: the professional heading moves before the portrait and location/CV move together beside its lower half">
+  <h2>390px — scrolled introduction</h2>
+  <img class="phone" src="comparison-introduction-390.jpg" width="804" height="906" alt="Before and after scrolled to the introduction at 390 pixels; the corrected introduction comes before languages and social links">
+  <h2>390px — transition to records</h2>
+  <img class="phone" src="comparison-records-390.jpg" width="804" height="906" alt="Before and after scrolled to Profile tabs and existing records at 390 pixels">
+  <h2>320px — initial viewport</h2>
+  <img class="phone" src="comparison-320.jpg" width="664" height="906" alt="Before and after at 320 pixels: heading first, complete portrait at the approved width, location and CV below">
+  <h2>320px — scrolled introduction</h2>
+  <img class="phone" src="comparison-introduction-320.jpg" width="664" height="906" alt="Before and after introduction transition at 320 pixels with readable type and full-width secondary information below the introduction">
+  <h2>320px — transition to records</h2>
+  <img class="phone" src="comparison-records-320.jpg" width="664" height="906" alt="Before and after Profile record tabs and content at 320 pixels, scrollable above the fixed footer">
+  <h2>430px — initial viewport</h2>
+  <img class="phone" src="comparison-430.jpg" width="884" height="994" alt="Before and after at 430 pixels with the same 200-pixel portrait, professional heading first and location/CV alongside the lower half">
+  <p><a href="comparison-introduction-430.jpg">430px introduction transition</a> · <a href="comparison-records-430.jpg">430px record transition</a></p>
+  <h2>768px — preserved tablet composition</h2>
+  <img src="comparison-768.jpg" width="1560" height="1086" alt="Pixel-identical tablet composition before and after the mobile hierarchy correction">
+  <h2>1440px — preserved desktop composition</h2>
+  <img src="comparison-1440.jpg" width="2904" height="962" alt="Pixel-identical desktop composition before and after the mobile hierarchy correction">
+  <p>The approved PNG/WebP and processing are unchanged, with natural proportions and both hands complete. Backpack retained. Speaking/gesturing video remains separate; no playback controls are added.</p>
+  <p><a href="before.json">PR #36 baseline measurements</a> · <a href="after.json">Final measurements and behavior checks</a> · <a href="design-qa.md">Design QA</a> · <a href="changed-files.json">Changed files</a></p>
+  <p><a href="loading-320.jpg">320px loading</a> · <a href="fallback-320.jpg">320px failure fallback</a> · <a href="loading-390.jpg">390px loading</a> · <a href="fallback-390.jpg">390px failure fallback</a> · <a href="loading-430.jpg">430px loading</a> · <a href="fallback-430.jpg">430px failure fallback</a></p>
+  <p>Captures use Windows Chrome emulation with frozen read-only public data, not physical-device testing. Protected hosted content requires separate authenticated review.</p>
+</main></body></html>
