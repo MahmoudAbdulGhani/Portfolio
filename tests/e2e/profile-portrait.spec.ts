@@ -64,7 +64,7 @@ test('a supplied CMS photo remains the unmodified fallback after a failed approv
   await expect(image).toHaveAttribute('src','/landscape/portrait-striped-cutout.webp');
   expect(await image.getAttribute('srcset')).toBeNull();
   await expect(image).toHaveCSS('mask-image','none');
-  await expect(page.getByRole('status')).toHaveText('Portrait unavailable. Previous portrait shown.');
+  await expect(page.locator('.standing-portrait-stage').getByRole('status')).toHaveText('Portrait unavailable. Previous portrait shown.');
 });
 
 test('very wide Profile screens preserve the approved bounded stage without upscaling',async({page})=>{

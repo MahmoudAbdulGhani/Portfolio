@@ -93,7 +93,7 @@ for (const width of [320, 390, 430, 768, 1440]) {
     });
     expect(await fullyAboveFooter()).toBe(true);
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'GitHub', exact: true })).toBeFocused();
+    await expect(page.getByRole('button', { name: 'Listen to introduction', exact: true })).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(cv).toBeFocused();
     await page.getByRole('tab', { name: 'Experience', exact: true }).focus();
@@ -143,7 +143,7 @@ for (const width of [320, 390, 430, 768, 1440]) test(`loading, decode and error 
   await page.goto('/profile', { waitUntil: 'domcontentloaded' });
   const stage = page.locator('.standing-portrait-stage');
   await expect(stage).toHaveAttribute('aria-busy', 'true');
-  await expect(page.getByRole('status')).toHaveText('Loading portrait…');
+  await expect(stage.getByRole('status')).toHaveText('Loading portrait…');
   await page.evaluate(() => document.fonts.ready);
   const geometry = async () => Promise.all(['h1', '.profile-intro', '.standing-portrait-stage', '.profile-record', '.portrait-caption .eyebrow', '.portrait-location', '.portrait-languages', '.profile-standing-portrait .inline-flex', '.profile-standing-portrait .panel-links'].map(selector => page.locator(selector).boundingBox()));
   const before = await geometry();
@@ -154,9 +154,9 @@ for (const width of [320, 390, 430, 768, 1440]) test(`loading, decode and error 
   await page.reload();
   await expect(stage).toHaveAttribute('data-state', 'error');
   await expect(stage.locator('.portrait-panel img')).toHaveAttribute('src', /portrait-striped-finished/);
-  await expect(page.getByRole('status')).toContainText('Previous portrait shown');
+  await expect(stage.getByRole('status')).toContainText('Previous portrait shown');
   const fallbackImage = await stage.locator('.portrait-panel').boundingBox();
-  const fallbackStatus = await page.getByRole('status').boundingBox();
+  const fallbackStatus = await stage.getByRole('status').boundingBox();
   expect(fallbackStatus!.y).toBeGreaterThanOrEqual(fallbackImage!.y + fallbackImage!.height);
   await page.evaluate(() => document.fonts.ready);
   expect(await geometry()).toEqual(before);

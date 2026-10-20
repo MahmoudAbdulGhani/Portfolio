@@ -1,0 +1,31 @@
+{
+  "source": "User supplied take 2; copied without transcoding or retouching",
+  "baseCommit": "c86d1824ce1568085d07c6c7f69a7382bb7904d6",
+  "poster": {
+    "path": "/review-assets/profile-original-hands.webp",
+    "sha256": "48398672854c525626ebc289321890a3896ad0f78d348c0d0b5a3c821d3faba6",
+    "unchanged": true
+  },
+  "files": [
+    {
+      "path": "public/media/profile/mahmoud-introduction-480.webm",
+      "bytes": 1523283,
+      "sha256": "343efe0a20731c7acd8056b5ec35ab80510c9dd0d03629b3720d83dd7d808f6d"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction-720.webm",
+      "bytes": 2654346,
+      "sha256": "f15deb5ec861c231b555989975464ece43581a71241101f6a173dc08e6bc6b18"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction.en.vtt",
+      "bytes": 222,
+      "sha256": "30416c551129cced422e17e780704fb971fba539382990e9a1300a9ac05531c8"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction.mp3",
+      "bytes": 289197,
+      "sha256": "41225f959543f2ffe7f0ab10c46846ef772110efe7ad1fa47e5826a22f864a6a"
+    }
+  ]
+}

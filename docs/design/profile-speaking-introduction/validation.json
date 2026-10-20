@@ -1,0 +1,189 @@
+{
+  "build": "normal production build",
+  "browser": "Windows Chrome emulation; frozen read-only GET/CV fixtures",
+  "findings": [
+    {
+      "width": 320,
+      "stage": {
+        "x": 70,
+        "y": 285.21875,
+        "width": 180,
+        "height": 318
+      },
+      "content": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+      "firstCaption": "Hi, I am Mahmoud, a full-stack developer.",
+      "middleCaption": "I build clear interfaces and dependable back-end systems.",
+      "finalCaption": "Explore my projects, or download my CV.",
+      "network": {
+        "beforeActivation": 0,
+        "requested": [
+          "mahmoud-introduction-480.webm"
+        ],
+        "resources": [
+          {
+            "file": "mahmoud-introduction-480.webm",
+            "bytes": 1523283,
+            "transferred": 1523583
+          }
+        ]
+      },
+      "completePlayback": true,
+      "overflow": false,
+      "cv": {
+        "bytes": 31205,
+        "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a",
+        "keyboard": true
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "stage": {
+        "x": 23.390625,
+        "y": 285.21875,
+        "width": 190,
+        "height": 335.65625
+      },
+      "content": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+      "firstCaption": "Hi, I am Mahmoud, a full-stack developer.",
+      "decodedAlpha": [
+        0,
+        0
+      ],
+      "middleCaption": "I build clear interfaces and dependable back-end systems.",
+      "finalCaption": "Explore my projects, or download my CV.",
+      "network": {
+        "beforeActivation": 0,
+        "requested": [
+          "mahmoud-introduction-480.webm"
+        ],
+        "resources": [
+          {
+            "file": "mahmoud-introduction-480.webm",
+            "bytes": 1523283,
+            "transferred": 1523583
+          }
+        ]
+      },
+      "completePlayback": true,
+      "overflow": false,
+      "cv": {
+        "bytes": 31205,
+        "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a",
+        "keyboard": true
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 430,
+      "stage": {
+        "x": 25.796875,
+        "y": 285.21875,
+        "width": 200,
+        "height": 353.328125
+      },
+      "content": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+      "firstCaption": "Hi, I am Mahmoud, a full-stack developer.",
+      "middleCaption": "I build clear interfaces and dependable back-end systems.",
+      "finalCaption": "Explore my projects, or download my CV.",
+      "network": {
+        "beforeActivation": 0,
+        "requested": [
+          "mahmoud-introduction-480.webm"
+        ],
+        "resources": [
+          {
+            "file": "mahmoud-introduction-480.webm",
+            "bytes": 1523283,
+            "transferred": 1523583
+          }
+        ]
+      },
+      "completePlayback": true,
+      "overflow": false,
+      "cv": {
+        "bytes": 31205,
+        "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a",
+        "keyboard": true
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "stage": {
+        "x": 46.078125,
+        "y": 117,
+        "width": 240,
+        "height": 424
+      },
+      "content": "PROFILE / WORKING RECORD\nFull-Stack Software Engineer\n\nI build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n\nExperience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+      "firstCaption": "Hi, I am Mahmoud, a full-stack developer.",
+      "middleCaption": "I build clear interfaces and dependable back-end systems.",
+      "finalCaption": "Explore my projects, or download my CV.",
+      "network": {
+        "beforeActivation": 0,
+        "requested": [
+          "mahmoud-introduction-720.webm"
+        ],
+        "resources": [
+          {
+            "file": "mahmoud-introduction-720.webm",
+            "bytes": 2654346,
+            "transferred": 2654646
+          }
+        ]
+      },
+      "completePlayback": true,
+      "overflow": false,
+      "cv": {
+        "bytes": 31205,
+        "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a",
+        "keyboard": true
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "stage": {
+        "x": 86.390625,
+        "y": 117,
+        "width": 300,
+        "height": 520
+      },
+      "content": "PROFILE / WORKING RECORD\nFull-Stack Software Engineer\n\nI build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n\nExperience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+      "firstCaption": "Hi, I am Mahmoud, a full-stack developer.",
+      "decodedAlpha": [
+        2,
+        0
+      ],
+      "middleCaption": "I build clear interfaces and dependable back-end systems.",
+      "finalCaption": "Explore my projects, or download my CV.",
+      "network": {
+        "beforeActivation": 0,
+        "requested": [
+          "mahmoud-introduction-720.webm"
+        ],
+        "resources": [
+          {
+            "file": "mahmoud-introduction-720.webm",
+            "bytes": 2654346,
+            "transferred": 2654646
+          }
+        ]
+      },
+      "completePlayback": true,
+      "overflow": false,
+      "cv": {
+        "bytes": 31205,
+        "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a",
+        "keyboard": true
+      },
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

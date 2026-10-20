@@ -13,6 +13,7 @@ import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
 import { ProfileStandingPortrait } from './ProfileStandingPortrait';
+import { ProfileIntroduction } from './ProfileIntroduction';
 import { CaseDisclosure } from './CaseDisclosure';
 import { evidenceUrl } from "../../lib/assistant-response";
 import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
@@ -30,6 +31,7 @@ const subscribeViewport = (notify: () => void) => {
 };
 
 export function ProfilePage({ review = false }: { review?: boolean }) {
+  const portraitMedia = useRef<HTMLDivElement>(null);
   const mobileLayout = useSyncExternalStore(subscribeViewport,
     () => window.matchMedia(mobileQuery).matches, () => false);
   const profile = useProfile(),
@@ -84,7 +86,7 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
       {mobileLayout && <div className="profile-mobile-heading">{heading}</div>}
       <div className="profile-portrait">
         {mobileLayout && <div className="portrait-caption"><span className="eyebrow">{person.name}</span></div>}
-        <ProfileStandingPortrait key="standing" name={person.name} photo={person.photo} />
+        <ProfileStandingPortrait key="standing" name={person.name} photo={person.photo} mediaHost={portraitMedia} />
         {!mobileLayout && <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
           <span>
@@ -97,6 +99,7 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
           <span className="portrait-location">{person.location}</span>
           {cvDownload}
         </div> : cvDownload}
+        <ProfileIntroduction key="introduction" host={portraitMedia} />
         {!mobileLayout && socialLinks}
       </div>
       {mobileLayout && <>
