@@ -330,26 +330,28 @@ test('reader Back restores the previous reading position and hash links still re
   await expect(page.locator('#main-content')).toBeFocused();
 });
 
-test('Profile groups enter once and preference changes finish without replay', async ({ page }) => {
-  await page.clock.install();
+test('Profile records stay static while the single portrait entrance respects preference changes', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/profile');
   const record = page.locator('.profile-record');
+  const figure = page.locator('.standing-portrait-figure');
   const pose = () => record.evaluate(el => ({ opacity:getComputedStyle(el).opacity, y:new DOMMatrixReadOnly(getComputedStyle(el).transform).m42 }));
   await expect(record).toBeVisible();
+  await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state','ready');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
   await page.emulateMedia({ reducedMotion:'no-preference' });
-  await page.clock.runFor(320);
+  await expect(figure).toHaveCSS('animation-name','none');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Projects',exact:true}).click();
-  await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 1_000));
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Profile',exact:true}).evaluate(el => (el as HTMLAnchorElement).click());
   await expect(record).toBeAttached();
-  await page.clock.runFor(100);
-  expect((await pose()).y).toBeGreaterThan(0);
+  await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state','ready');
+  expect(await pose()).toEqual({ opacity:'1', y:0 });
+  await expect(figure).toHaveCSS('animation-duration','0.6s');
   await page.emulateMedia({ reducedMotion:'reduce' });
   await expect.poll(pose).toEqual({ opacity:'1', y:0 });
+  await expect(figure).toHaveCSS('animation-name','none');
   await page.emulateMedia({ reducedMotion:'no-preference' });
-  await page.clock.runFor(320);
+  await expect(figure).toHaveCSS('animation-name','none');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
 });

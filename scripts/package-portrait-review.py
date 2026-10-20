@@ -2,15 +2,18 @@
 from pathlib import Path
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import json
+import sys
 
 root = Path(__file__).resolve().parent.parent
-folder = root / 'docs/design/profile-portrait-mobile-hierarchy'
+folder = root / (sys.argv[1] if len(sys.argv) > 1 else 'docs/design/profile-portrait-mobile-hierarchy')
+adoption = folder.name == 'profile-portrait-adoption'
 output = folder / 'portrait-review.zip'
 hosted_file = folder / 'hosted-verification.json'
 hosted = json.loads(hosted_file.read_text(encoding='utf-8')) if hosted_file.exists() else {}
 html = (folder / 'comparison.html').read_text(encoding='utf-8')
 html = html.replace('href="/review-assets/', 'href="review-assets/')
-html = html.replace('href="/profile"', 'href="https://mahmoud-portfolio-omega.vercel.app/profile"')
+html = (html.replace('<a href="/profile">Adopted Profile</a>', '<span>Adopted Profile: open /profile on the adoption draft PR’s Vercel Preview</span>') if adoption else
+        html.replace('href="/profile"', 'href="https://mahmoud-portfolio-omega.vercel.app/profile"'))
 html = html.replace('<a href="/review/profile-portrait">Interactive review prototype</a>',
                     '<span>Interactive prototype: use the Vercel Preview URL in the draft PR</span>')
 html = html.replace('<a href="portrait-review.zip" download>Download comparison package</a>',
@@ -30,6 +33,20 @@ entries = {'index.html': html.encode('utf-8'), 'design-qa.md': (root / 'design-q
                'The existing 960x1696 portrait and processing are unchanged.\n'
                'Backpack retained. Speaking/gesturing production remains separate.\n'
            ).encode('utf-8')}
+if adoption:
+    entries['README.txt'] = (
+        'Extract this package and open index.html. No server or Vercel sign-in is needed.\n'
+        'Before: normal /profile at PR #37, commit 5db900a204c5f475f6906bd28d05913227f8a8f5.\n'
+        'After: the approved PR #37 composition adopted into the normal /profile route.\n'
+        'Use /profile on the adoption draft PR Preview for interaction checks.\n'
+        'The exact Preview URL and deployment commit are recorded on that draft PR.\n'
+        'Authorized Vercel sign-in may be required; deployment protection is unchanged.\n'
+        'No promotion, merge or manual deployment was performed.\n'
+        'Normal builds contain the approved portrait but exclude review routes/comparison assets.\n'
+        'The approved PNG/WebP and original processing are unchanged; backpack retained.\n'
+        'Speaking/gesturing video remains unfinished and separate.\n'
+        'Windows Chrome emulation, not physical-device verification.\n'
+    ).encode('utf-8')
 for file in folder.iterdir():
     if file.is_file() and file.suffix in ['.jpg', '.png', '.json', '.md']:
         entries[file.name] = file.read_bytes()

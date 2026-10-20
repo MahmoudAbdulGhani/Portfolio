@@ -179,6 +179,8 @@ jobs:
           node --test tests/profile-portrait-review-build.test.mjs
           npm run build
           node scripts/assert-portrait-production-build.mjs
+      - name: Verify adopted Profile in the normal production build
+        run: npm run test:e2e -- --config=playwright.profile-production.config.ts --project=chromium --workers=1
       - name: Verify compiled portrait and comparison
         run: npm run test:e2e -- --config=playwright.portrait-review.config.ts --project=chromium --workers=1
       - name: Retain compiled review failure evidence

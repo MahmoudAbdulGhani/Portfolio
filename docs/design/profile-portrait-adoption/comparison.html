@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Profile portrait adoption comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; color: #252b26; background: #ecebe3; font: 15px/1.6 system-ui, sans-serif; }
+    main { max-width: 1800px; margin: auto; }
+    h1 { font-size: 28px; line-height: 1.2; }
+    h2 { margin-top: 36px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #625538; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    .phone { max-width: 884px; }
+  </style>
+</head>
+<body><main>
+  <h1>Profile portrait adoption</h1>
+  <p>Left: previous normal-build <code>/profile</code> at PR #37. Right: the adopted normal-build <code>/profile</code>. The main content matches the approved PR #37 review composition, commit <code>5db900a204c5f475f6906bd28d05913227f8a8f5</code>, pixel for pixel at all five widths and all provided phone scroll positions. The header now correctly marks Profile as the active navigation item.</p>
+  <p><a href="/profile">Adopted Profile</a> · <a href="portrait-review.zip" download>Download comparison package</a></p>
+  <p>Open <code>/profile</code> on this adoption draft PR's Git-triggered Vercel Preview. It is a normal production build: no review flag or query parameter. Authorized Vercel sign-in may be required; deployment protection is unchanged. The production domain changes only after an authorized promotion of this adoption commit, which this task does not perform.</p>
+  <h2>390px — previous / adopted Profile</h2>
+  <img class="phone" src="comparison-390.jpg" width="804" height="906" alt="Previous rectangular Profile portrait and adopted transparent portrait at 390 pixels, professional heading first and location/CV beside the lower figure">
+  <h2>390px — introduction and social links</h2>
+  <img class="phone" src="comparison-introduction-390.jpg" width="804" height="906" alt="Previous and adopted introduction transitions at 390 pixels, with languages and social links now following the introduction">
+  <h2>390px — record tabs and content</h2>
+  <img class="phone" src="comparison-records-390.jpg" width="804" height="906" alt="Preserved record tabs, content and uncertainty wording at 390 pixels">
+  <h2>320px — previous / adopted Profile</h2>
+  <img class="phone" src="comparison-320.jpg" width="664" height="906" alt="Previous and adopted Profile at 320 pixels, with the complete 180-pixel portrait and location/CV beneath it">
+  <p><a href="comparison-introduction-320.jpg">320px introduction/social transition</a> · <a href="comparison-records-320.jpg">320px record transition</a></p>
+  <h2>430px — previous / adopted Profile</h2>
+  <img class="phone" src="comparison-430.jpg" width="884" height="994" alt="Previous and adopted Profile at 430 pixels with the approved 200-pixel portrait and lower-figure action group">
+  <p><a href="comparison-introduction-430.jpg">430px introduction/social transition</a> · <a href="comparison-records-430.jpg">430px record transition</a></p>
+  <h2>768px — adopted tablet composition</h2>
+  <img src="comparison-768.jpg" width="1560" height="1086" alt="Previous rectangular portrait and adopted transparent tablet composition, matching the approved PR 37 review">
+  <h2>1440px — adopted desktop composition</h2>
+  <img src="comparison-1440.jpg" width="2904" height="962" alt="Previous rectangular portrait and adopted transparent desktop composition, matching the approved PR 37 review">
+  <p>The approved PNG/WebP bytes and processing are unchanged. Complete hands, natural proportions, original likeness, restrained brightening and backpack are retained. Only one portrait loads on success; the previous portrait is requested on failure. Speaking/gesturing video remains unfinished and separate. No playback controls.</p>
+  <p><a href="before.json">Previous normal-build measurements</a> · <a href="after.json">Adoption measurements and approved-pixel checks</a> · <a href="design-qa.md">Design QA and promotion checklist</a> · <a href="changed-files.json">Changed files</a></p>
+  <p><a href="loading-320.jpg">320px loading</a> · <a href="fallback-320.jpg">320px failure fallback</a> · <a href="loading-390.jpg">390px loading</a> · <a href="fallback-390.jpg">390px failure fallback</a> · <a href="loading-430.jpg">430px loading</a> · <a href="fallback-430.jpg">430px failure fallback</a></p>
+  <p>Windows Chrome viewport/touch emulation with frozen read-only public data and the existing CV; no physical-device verification. Protected hosted content requires authorized access. This static comparison is supplied separately because normal builds exclude review routes and their comparison bundle.</p>
+</main></body></html>

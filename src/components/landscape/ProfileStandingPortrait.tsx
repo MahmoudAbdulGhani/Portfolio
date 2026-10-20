@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preference';
 import { ProfilePortrait } from './ProfilePortrait';
-import './standing-portrait-prototype.css';
+import './profile-standing-portrait.css';
 
-// Explicit review builds only. Original photograph + documented tone curve; no
-// generated likeness, video controls or continuing movement.
-export function StandingPortraitPrototype({ name, photo }: { name: string; photo?: string | null }) {
+// Approved original-photo cutout and documented tone curve. The previous
+// portrait is requested only after a failed load, within the reserved stage.
+export function ProfileStandingPortrait({ name, photo }: { name: string; photo?: string | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [entrance, setEntrance] = useState(false);
   useEffect(() => {
@@ -18,7 +18,7 @@ export function StandingPortraitPrototype({ name, photo }: { name: string; photo
     <div className="standing-portrait-stage" data-state={state} aria-busy={state === 'loading'}>
       {state === 'error' ? <>
         <ProfilePortrait name={name} photo={photo} />
-        <span className="standing-portrait-status" role="status">Review portrait unavailable. Current portrait shown.</span>
+        <span className="standing-portrait-status" role="status">Portrait unavailable. Previous portrait shown.</span>
       </> : <>
         <div className="standing-portrait-figure" data-entrance={entrance} onAnimationEnd={() => setEntrance(false)}>
           <img
