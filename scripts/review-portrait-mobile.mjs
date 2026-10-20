@@ -5,7 +5,7 @@ import sharp from 'sharp';
 
 const baseline = process.argv.includes('--before');
 const phase = baseline ? 'before' : 'after';
-const folder = 'docs/design/profile-portrait-mobile-composition';
+const folder = 'docs/design/profile-portrait-mobile-hierarchy';
 const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:5194';
 const widths = [[320, 844], [390, 844], [430, 932], [768, 1024], [1440, 900]];
 await mkdir(folder, { recursive: true });
@@ -38,11 +38,12 @@ try {
         image: { ...rect('.standing-portrait-image'), naturalWidth: image.naturalWidth, naturalHeight: image.naturalHeight },
         stage: rect('.standing-portrait-stage'), record: rect('.profile-record'),
         name: rect('.portrait-caption .eyebrow'), location: rect('.portrait-location'), languages: rect('.portrait-languages'),
-        cv: rect('.profile-portrait > .inline-flex'), socials: rect('.profile-portrait .panel-links'),
+        cv: rect('.profile-standing-prototype .inline-flex'), socials: rect('.profile-standing-prototype .panel-links'),
+        heading: rect('h1'), introduction: rect('.profile-intro'), tabs: rect('.record-tabs'),
         intro: document.querySelector('.profile-intro').textContent,
-        records: document.querySelector('.profile-record').textContent,
+        records: [...document.querySelectorAll('[role=tablist], [role=tabpanel], .profile-contact')].map(el => el.textContent),
         links: [...document.querySelectorAll('.profile-record a')].map(el => el.getAttribute('href')),
-        identity: document.querySelector('.portrait-caption').textContent,
+        identity: ['.portrait-caption .eyebrow', '.portrait-location', '.portrait-languages'].map(selector => document.querySelector(selector).textContent),
       };
     });
     expect(metrics.overflow).toBe(false);
@@ -50,12 +51,22 @@ try {
     const screenshot = await page.screenshot({ path: `${folder}/${phase}-${width}.jpg`, quality: 90 });
     const pixels = await sharp(screenshot).raw().toBuffer();
     metrics.screenshotPixelHash = hash(pixels);
+    if (width < 720) {
+      for (const [label, selector] of [['introduction', '.profile-intro'], ['records', '.record-tabs']]) {
+        await page.locator(selector).evaluate(el => {
+          const main = document.querySelector('main');
+          main.scrollTop += el.getBoundingClientRect().top - main.getBoundingClientRect().top - 20;
+        });
+        await page.screenshot({ path: `${folder}/${phase}-${label}-${width}.jpg`, quality: 90 });
+      }
+      await page.locator('main').evaluate(el => { el.scrollTop = 0; });
+    }
     if (!baseline) {
       const old = prior.findings.find(row => row.width === width);
       expect(metrics.intro).toBe(old.metrics.intro);
-      expect(metrics.records).toBe(old.metrics.records);
+      expect(metrics.records).toEqual(old.metrics.records);
       expect(metrics.links).toEqual(old.metrics.links);
-      expect(metrics.identity).toBe(old.metrics.identity);
+      expect(metrics.identity).toEqual(old.metrics.identity);
       if (width >= 720) expect(metrics.screenshotPixelHash, `desktop/tablet unchanged at ${width}`).toBe(old.metrics.screenshotPixelHash);
       if (width >= 390 && width <= 430) {
         expect(metrics.image.width).toBeGreaterThanOrEqual(180);
@@ -110,11 +121,13 @@ try {
     findings.push({ width, height, metrics, defaultProfileHash, errors, writes });
   }
   if (!baseline) for (const [width, height] of widths) {
-    const labels = Buffer.from(`<svg width="${width * 2 + 24}" height="62"><rect width="100%" height="100%" fill="#ecebe3"/><g font-family="Arial" font-size="18" fill="#252b26"><text x="12" y="38">PR #35 · ${width}px</text><text x="${width + 36}" y="38">Mobile refinement · ${width}px</text></g></svg>`);
+    for (const suffix of ['', ...(width < 720 ? ['-introduction', '-records'] : [])]) {
+    const labels = Buffer.from(`<svg width="${width * 2 + 24}" height="62"><rect width="100%" height="100%" fill="#ecebe3"/><g font-family="Arial" font-size="18" fill="#252b26"><text x="12" y="38">PR #36 · ${width}px</text><text x="${width + 36}" y="38">Hierarchy correction · ${width}px</text></g></svg>`);
     await sharp({ create: { width: width * 2 + 24, height: height + 62, channels: 3, background: '#ecebe3' } })
-      .composite([{ input: labels, top: 0, left: 0 }, { input: `${folder}/before-${width}.jpg`, top: 62, left: 0 }, { input: `${folder}/after-${width}.jpg`, top: 62, left: width + 24 }])
-      .jpeg({ quality: 92 }).toFile(`${folder}/comparison-${width}.jpg`);
+      .composite([{ input: labels, top: 0, left: 0 }, { input: `${folder}/before${suffix}-${width}.jpg`, top: 62, left: 0 }, { input: `${folder}/after${suffix}-${width}.jpg`, top: 62, left: width + 24 }])
+      .jpeg({ quality: 92 }).toFile(`${folder}/comparison${suffix}-${width}.jpg`);
+    }
   }
 } finally { await browser.close(); }
-await writeFile(`${folder}/${phase}.json`, JSON.stringify({ baseline: '376584bbc8297b2e0afaa8a80a36d69df3591af2', environment: 'Compiled review; frozen read-only public GET fixtures and existing CV. Windows Chrome emulation, not physical-device testing.', assets, findings }, null, 2) + '\n');
-console.log(`${phase}: five widths captured; ${baseline ? 'PR #35 baseline saved' : 'assets/default/desktop preserved; keyboard CV and stable loading/failure verified'}.`);
+await writeFile(`${folder}/${phase}.json`, JSON.stringify({ baseline: 'f4851863056b2dd3ebc4528c4f935434acabd176', environment: 'Compiled review; frozen read-only public GET fixtures and existing CV. Windows Chrome emulation, not physical-device testing.', assets, findings }, null, 2) + '\n');
+console.log(`${phase}: five widths captured; ${baseline ? 'PR #36 baseline saved' : 'assets/default/desktop preserved; keyboard CV and stable loading/failure verified'}.`);

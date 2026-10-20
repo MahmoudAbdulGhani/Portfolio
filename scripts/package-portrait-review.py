@@ -4,7 +4,7 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import json
 
 root = Path(__file__).resolve().parent.parent
-folder = root / 'docs/design/profile-portrait-mobile-composition'
+folder = root / 'docs/design/profile-portrait-mobile-hierarchy'
 output = folder / 'portrait-review.zip'
 hosted_file = folder / 'hosted-verification.json'
 hosted = json.loads(hosted_file.read_text(encoding='utf-8')) if hosted_file.exists() else {}
@@ -19,14 +19,14 @@ entries = {'index.html': html.encode('utf-8'), 'design-qa.md': (root / 'design-q
            'README.txt': (
                'Open index.html to review the matched desktop and phone screenshots offline.\n'
                'This is a static comparison package, not a video or a running application.\n'
-               'Use the mobile composition draft PR stacked above #35 for the exact Vercel Preview URL.\n'
+               'Use the mobile hierarchy draft PR stacked above #36 for the exact Vercel Preview URL.\n'
                f'Review branch URL: {hosted.get("branchPreview", "See the refinement draft PR")}\n'
                f'First verified Preview: {hosted.get("preview", "See the refinement draft PR")}\n'
                'Interactive path: /review/profile-portrait\n'
                'Hosted comparison: /review/portrait-comparison/index.html\n'
                'Sign in with an authorized Vercel account if deployment protection requires it.\n'
                'The production domain and /profile retain the accepted portrait.\n'
-               'Before: PR #35, commit 376584bbc8297b2e0afaa8a80a36d69df3591af2.\n'
+               'Before: PR #36, commit f4851863056b2dd3ebc4528c4f935434acabd176.\n'
                'The existing 960x1696 portrait and processing are unchanged.\n'
                'Backpack retained. Speaking/gesturing production remains separate.\n'
            ).encode('utf-8')}

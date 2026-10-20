@@ -55,30 +55,38 @@
 }
 
 @media (max-width: 719px) {
+  .landscape .profile-page.profile-standing-prototype {
+    padding-bottom: max(48px, env(safe-area-inset-bottom));
+    scroll-padding-block: 20px 24px;
+  }
+  .landscape .profile-standing-prototype .profile-review-heading .eyebrow { font-size: 12px; line-height: 20px; letter-spacing: .04em; }
+  .landscape .profile-standing-prototype .profile-review-heading .view-heading { font-size: 32px; line-height: 1.16; margin: 12px 0 20px; max-width: 24ch; }
   .landscape .profile-page.profile-standing-prototype .profile-portrait {
     --mobile-portrait-width: clamp(180px, calc(50vw - 5px), 200px);
     grid-template-columns: var(--mobile-portrait-width) minmax(0, 1fr);
-    grid-template-rows: auto min-content 1fr auto auto;
+    grid-template-rows: auto auto;
     gap: 8px 16px;
+    margin-bottom: 20px;
   }
-  .landscape .profile-page.profile-standing-prototype .portrait-caption,
-  .landscape .profile-page.profile-standing-prototype .portrait-caption > span:last-child { display: contents; }
-  .landscape .profile-page.profile-standing-prototype .portrait-caption .eyebrow { grid-column: 1 / -1; grid-row: 1; }
+  .landscape .profile-page.profile-standing-prototype .portrait-caption { display: contents; }
+  .landscape .profile-page.profile-standing-prototype .portrait-caption .eyebrow { grid-column: 1 / -1; grid-row: 1; margin-top: 0; font-size: 12px; line-height: 20px; }
   .landscape .profile-page.profile-standing-prototype .portrait-details-break { display: none; }
   .landscape .profile-page.profile-standing-prototype .standing-portrait-stage {
     width: var(--mobile-portrait-width);
     height: auto;
     aspect-ratio: 960 / 1696;
     grid-column: 1;
-    grid-row: 2 / 4;
+    grid-row: 2;
   }
   .landscape .profile-page.profile-standing-prototype .standing-portrait-figure { width: 100%; }
-  .landscape .profile-page.profile-standing-prototype .portrait-location { grid-column: 2; grid-row: 2; }
-  .landscape .profile-page.profile-standing-prototype .profile-portrait > .inline-flex { grid-column: 2; grid-row: 3; align-self: start; }
-  .landscape .profile-page.profile-standing-prototype .portrait-languages { grid-column: 1 / -1; grid-row: 4; }
-  .landscape .profile-page.profile-standing-prototype .profile-portrait .panel-links { grid-column: 1 / -1; grid-row: 5; gap: 0 16px; }
-  .landscape .profile-page.profile-standing-prototype .profile-portrait .panel-links a { font-size: 14px; min-height: 44px; }
-  .landscape .profile-page.profile-standing-prototype .profile-portrait > .inline-flex button { min-height: 44px; padding-inline: 10px; font-size: 14px; white-space: normal; }
+  .landscape .profile-standing-prototype .portrait-actions { grid-column: 2; grid-row: 2; align-self: end; padding-bottom: 24px; display: grid; gap: 12px; min-width: 0; }
+  .landscape .profile-standing-prototype .portrait-location,
+  .landscape .profile-standing-prototype .portrait-languages { font-size: 14px; line-height: 24px; }
+  .landscape .profile-standing-prototype .portrait-actions button { min-height: 44px; padding-inline: 10px; font-size: 14px; white-space: normal; }
+  .landscape .profile-standing-prototype .profile-review-details { margin-top: 20px; }
+  .landscape .profile-standing-prototype .portrait-languages { display: block; }
+  .landscape .profile-standing-prototype .profile-review-details .panel-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; margin-top: 8px; }
+  .landscape .profile-standing-prototype .profile-review-details .panel-links a { min-height: 44px; }
 }
 
 @media (min-width: 720px) and (max-width: 1050px) {
@@ -87,8 +95,7 @@
 }
 
 @media (max-width: 389px) {
-  .landscape .profile-page.profile-standing-prototype .profile-portrait { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: repeat(5, auto); }
+  .landscape .profile-page.profile-standing-prototype .profile-portrait { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, auto); }
   .landscape .profile-page.profile-standing-prototype .standing-portrait-stage { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
-  .landscape .profile-page.profile-standing-prototype .portrait-location { grid-column: 1; grid-row: 3; align-self: center; }
-  .landscape .profile-page.profile-standing-prototype .profile-portrait > .inline-flex { grid-column: 2; grid-row: 3; }
+  .landscape .profile-standing-prototype .portrait-actions { grid-column: 1; grid-row: 3; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding-bottom: 0; }
 }

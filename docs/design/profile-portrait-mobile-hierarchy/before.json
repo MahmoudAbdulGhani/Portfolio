@@ -1,0 +1,515 @@
+{
+  "baseline": "f4851863056b2dd3ebc4528c4f935434acabd176",
+  "environment": "Compiled review; frozen read-only public GET fixtures and existing CV. Windows Chrome emulation, not physical-device testing.",
+  "assets": {
+    "png": "5fc9eae59bcff7677bbd549c9dfb58f17aef2110d16e10178adaabde94114c91",
+    "webp": "48398672854c525626ebc289321890a3896ad0f78d348c0d0b5a3c821d3faba6"
+  },
+  "findings": [
+    {
+      "width": 320,
+      "height": 844,
+      "metrics": {
+        "overflow": false,
+        "image": {
+          "x": 70,
+          "y": 159,
+          "width": 180,
+          "height": 318,
+          "naturalWidth": 960,
+          "naturalHeight": 1696
+        },
+        "stage": {
+          "x": 70,
+          "y": 159,
+          "width": 180,
+          "height": 318
+        },
+        "record": {
+          "x": 19.1875,
+          "y": 709,
+          "width": 281.625,
+          "height": 1443.515625
+        },
+        "name": {
+          "x": 19.1875,
+          "y": 131,
+          "width": 281.625,
+          "height": 20
+        },
+        "location": {
+          "x": 19.1875,
+          "y": 495,
+          "width": 135.546875,
+          "height": 24
+        },
+        "languages": {
+          "x": 19.1875,
+          "y": 537,
+          "width": 281.625,
+          "height": 48
+        },
+        "cv": {
+          "x": 170.734375,
+          "y": 485,
+          "width": 130.078125,
+          "height": 44
+        },
+        "socials": {
+          "x": 19.1875,
+          "y": 593,
+          "width": 281.625,
+          "height": 88
+        },
+        "heading": {
+          "x": 19.1875,
+          "y": 736.296875,
+          "width": 281.625,
+          "height": 74.21875
+        },
+        "introduction": {
+          "x": 19.1875,
+          "y": 832.515625,
+          "width": 281.625,
+          "height": 150
+        },
+        "tabs": {
+          "x": 19.1875,
+          "y": 1004.515625,
+          "width": 281.625,
+          "height": 101
+        },
+        "intro": "I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.",
+        "records": [
+          "ExperienceEducation & trainingCapabilities",
+          "01Full-Stack Developer InternThe Digital Hub, UNRWA, Beirut, HybridJun 2026 – Sep 2026Program completion is not verified by the available records.Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.Beirut, Hybrid02QA InternOigetitMay 2026 – Aug 2026Tested application flows, documented bugs, and used logs to help identify and reproduce failures.03Backend DeveloperIshtari Group, Tripoli, OnsiteDec 2025 – Jan 2026Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.Tripoli, Lebanon04Web Development TrainerKfW & EU Graduate Support Program · FALA AssociationApr 2025 – Jun 2025Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "01 / EducationBachelor of Science in Computer ScienceLebanese International University (LIU)Oct 2022 – Jun 2025Completion is not independently verified by the available records.01 / TrainingAngular Independent StudySelf-directed learningSep 2025Completion and certification are not verified by the available records.02 / TrainingAWS re/Start Bootcamp – Cloud Computing & DevOps FundamentalsAmazon Web ServicesJul 2025 – Oct 2025Cloud computing and DevOps fundamentals training.Completion and certification are not verified by the available records.03 / TrainingFull-Stack Web Developmentyoubee.ai4-month programPractical full-stack web development training.Completion and certification are not verified by the available records.",
+          "01languagesJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL02frameworksDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap03databasesMongoDBPostgreSQLMySQLMariaDBSupabase04OperationsGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman05PracticesPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEOEngineering evidenceProject references describe documented work and its contribution scope.01JobPilot AIProject evidenceSuggestions become saved information only after review.Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.Reviewed AI changes03Cedar ConstructionTeam-project evidenceThe explanation reads the calculated figures. It cannot change them.Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.Financial calculation and interpretation02LobbyTeam-project evidenceAn invitation offers a connection. Joining the room and entering its call are separate checks.Related capabilities: Tailwind CSS, Supabase.Guest membership and call accessAdditional project evidenceTeam-project evidenceUniHubRelated capabilities: Express.js, Node.js.Team-project evidenceGameZone ArenaRelated capabilities: MongoDB, Stripe, JWT.Project evidenceUser ManagementRelated capabilities: Vite, Postman, Argon2, Framer Motion.",
+          "Let’s build something useful"
+        ],
+        "links": [
+          "/projects/jobpilot-ai#engineering",
+          "/projects/construction-project-management-accounting-system#engineering",
+          "/projects/lobby#engineering",
+          "/projects/unihub#engineering",
+          "/projects/gamezone-arena#engineering",
+          "/projects/full-stack-user-management-system#engineering",
+          "/contact"
+        ],
+        "identity": [
+          "Mahmoud Hussein Abdul Ghani",
+          "Tripoli, Lebanon",
+          "Arabic: Native | English: Professional Working Proficiency"
+        ],
+        "screenshotPixelHash": "a5bc27cdb6192c277b1c20a42449605fca53302f6bcfc1f1d4ce7047aabee39e"
+      },
+      "defaultProfileHash": "49df5c2c58d71155d58b7c0441a5587b581f7c380dd882dfc5407d5bb1cdb26a",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "metrics": {
+        "overflow": false,
+        "image": {
+          "x": 23.390625,
+          "y": 159,
+          "width": 190,
+          "height": 335.65625,
+          "naturalWidth": 960,
+          "naturalHeight": 1696
+        },
+        "stage": {
+          "x": 23.390625,
+          "y": 159,
+          "width": 190,
+          "height": 335.65625
+        },
+        "record": {
+          "x": 23.390625,
+          "y": 674.65625,
+          "width": 343.21875,
+          "height": 1240.515625
+        },
+        "name": {
+          "x": 23.390625,
+          "y": 131,
+          "width": 343.21875,
+          "height": 20
+        },
+        "location": {
+          "x": 229.390625,
+          "y": 159,
+          "width": 137.21875,
+          "height": 24
+        },
+        "languages": {
+          "x": 23.390625,
+          "y": 502.65625,
+          "width": 343.21875,
+          "height": 48
+        },
+        "cv": {
+          "x": 229.390625,
+          "y": 191,
+          "width": 137.21875,
+          "height": 44
+        },
+        "socials": {
+          "x": 23.390625,
+          "y": 558.65625,
+          "width": 343.21875,
+          "height": 88
+        },
+        "heading": {
+          "x": 23.390625,
+          "y": 701.953125,
+          "width": 343.21875,
+          "height": 74.21875
+        },
+        "introduction": {
+          "x": 23.390625,
+          "y": 798.171875,
+          "width": 343.21875,
+          "height": 150
+        },
+        "tabs": {
+          "x": 23.390625,
+          "y": 970.171875,
+          "width": 343.21875,
+          "height": 49
+        },
+        "intro": "I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.",
+        "records": [
+          "ExperienceEducation & trainingCapabilities",
+          "01Full-Stack Developer InternThe Digital Hub, UNRWA, Beirut, HybridJun 2026 – Sep 2026Program completion is not verified by the available records.Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.Beirut, Hybrid02QA InternOigetitMay 2026 – Aug 2026Tested application flows, documented bugs, and used logs to help identify and reproduce failures.03Backend DeveloperIshtari Group, Tripoli, OnsiteDec 2025 – Jan 2026Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.Tripoli, Lebanon04Web Development TrainerKfW & EU Graduate Support Program · FALA AssociationApr 2025 – Jun 2025Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "01 / EducationBachelor of Science in Computer ScienceLebanese International University (LIU)Oct 2022 – Jun 2025Completion is not independently verified by the available records.01 / TrainingAngular Independent StudySelf-directed learningSep 2025Completion and certification are not verified by the available records.02 / TrainingAWS re/Start Bootcamp – Cloud Computing & DevOps FundamentalsAmazon Web ServicesJul 2025 – Oct 2025Cloud computing and DevOps fundamentals training.Completion and certification are not verified by the available records.03 / TrainingFull-Stack Web Developmentyoubee.ai4-month programPractical full-stack web development training.Completion and certification are not verified by the available records.",
+          "01languagesJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL02frameworksDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap03databasesMongoDBPostgreSQLMySQLMariaDBSupabase04OperationsGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman05PracticesPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEOEngineering evidenceProject references describe documented work and its contribution scope.01JobPilot AIProject evidenceSuggestions become saved information only after review.Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.Reviewed AI changes03Cedar ConstructionTeam-project evidenceThe explanation reads the calculated figures. It cannot change them.Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.Financial calculation and interpretation02LobbyTeam-project evidenceAn invitation offers a connection. Joining the room and entering its call are separate checks.Related capabilities: Tailwind CSS, Supabase.Guest membership and call accessAdditional project evidenceTeam-project evidenceUniHubRelated capabilities: Express.js, Node.js.Team-project evidenceGameZone ArenaRelated capabilities: MongoDB, Stripe, JWT.Project evidenceUser ManagementRelated capabilities: Vite, Postman, Argon2, Framer Motion.",
+          "Let’s build something useful"
+        ],
+        "links": [
+          "/projects/jobpilot-ai#engineering",
+          "/projects/construction-project-management-accounting-system#engineering",
+          "/projects/lobby#engineering",
+          "/projects/unihub#engineering",
+          "/projects/gamezone-arena#engineering",
+          "/projects/full-stack-user-management-system#engineering",
+          "/contact"
+        ],
+        "identity": [
+          "Mahmoud Hussein Abdul Ghani",
+          "Tripoli, Lebanon",
+          "Arabic: Native | English: Professional Working Proficiency"
+        ],
+        "screenshotPixelHash": "2355d0a1624bba344247746c5bd67cacd6fa872811d92a3ebda795f307824e87"
+      },
+      "defaultProfileHash": "3aecdbab6587785dd4a467054f551ff7d2d72befb5d00ca477cc982238a6fa61",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "metrics": {
+        "overflow": false,
+        "image": {
+          "x": 25.796875,
+          "y": 159,
+          "width": 200,
+          "height": 353.328125,
+          "naturalWidth": 960,
+          "naturalHeight": 1696
+        },
+        "stage": {
+          "x": 25.796875,
+          "y": 159,
+          "width": 200,
+          "height": 353.328125
+        },
+        "record": {
+          "x": 25.796875,
+          "y": 668.328125,
+          "width": 378.40625,
+          "height": 1215.515625
+        },
+        "name": {
+          "x": 25.796875,
+          "y": 131,
+          "width": 378.40625,
+          "height": 20
+        },
+        "location": {
+          "x": 241.796875,
+          "y": 159,
+          "width": 162.40625,
+          "height": 24
+        },
+        "languages": {
+          "x": 25.796875,
+          "y": 520.328125,
+          "width": 378.40625,
+          "height": 24
+        },
+        "cv": {
+          "x": 241.796875,
+          "y": 191,
+          "width": 162.40625,
+          "height": 44
+        },
+        "socials": {
+          "x": 25.796875,
+          "y": 552.328125,
+          "width": 378.40625,
+          "height": 88
+        },
+        "heading": {
+          "x": 25.796875,
+          "y": 695.625,
+          "width": 378.40625,
+          "height": 74.21875
+        },
+        "introduction": {
+          "x": 25.796875,
+          "y": 791.84375,
+          "width": 378.40625,
+          "height": 125
+        },
+        "tabs": {
+          "x": 25.796875,
+          "y": 938.84375,
+          "width": 378.40625,
+          "height": 49
+        },
+        "intro": "I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.",
+        "records": [
+          "ExperienceEducation & trainingCapabilities",
+          "01Full-Stack Developer InternThe Digital Hub, UNRWA, Beirut, HybridJun 2026 – Sep 2026Program completion is not verified by the available records.Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.Beirut, Hybrid02QA InternOigetitMay 2026 – Aug 2026Tested application flows, documented bugs, and used logs to help identify and reproduce failures.03Backend DeveloperIshtari Group, Tripoli, OnsiteDec 2025 – Jan 2026Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.Tripoli, Lebanon04Web Development TrainerKfW & EU Graduate Support Program · FALA AssociationApr 2025 – Jun 2025Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "01 / EducationBachelor of Science in Computer ScienceLebanese International University (LIU)Oct 2022 – Jun 2025Completion is not independently verified by the available records.01 / TrainingAngular Independent StudySelf-directed learningSep 2025Completion and certification are not verified by the available records.02 / TrainingAWS re/Start Bootcamp – Cloud Computing & DevOps FundamentalsAmazon Web ServicesJul 2025 – Oct 2025Cloud computing and DevOps fundamentals training.Completion and certification are not verified by the available records.03 / TrainingFull-Stack Web Developmentyoubee.ai4-month programPractical full-stack web development training.Completion and certification are not verified by the available records.",
+          "01languagesJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL02frameworksDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap03databasesMongoDBPostgreSQLMySQLMariaDBSupabase04OperationsGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman05PracticesPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEOEngineering evidenceProject references describe documented work and its contribution scope.01JobPilot AIProject evidenceSuggestions become saved information only after review.Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.Reviewed AI changes03Cedar ConstructionTeam-project evidenceThe explanation reads the calculated figures. It cannot change them.Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.Financial calculation and interpretation02LobbyTeam-project evidenceAn invitation offers a connection. Joining the room and entering its call are separate checks.Related capabilities: Tailwind CSS, Supabase.Guest membership and call accessAdditional project evidenceTeam-project evidenceUniHubRelated capabilities: Express.js, Node.js.Team-project evidenceGameZone ArenaRelated capabilities: MongoDB, Stripe, JWT.Project evidenceUser ManagementRelated capabilities: Vite, Postman, Argon2, Framer Motion.",
+          "Let’s build something useful"
+        ],
+        "links": [
+          "/projects/jobpilot-ai#engineering",
+          "/projects/construction-project-management-accounting-system#engineering",
+          "/projects/lobby#engineering",
+          "/projects/unihub#engineering",
+          "/projects/gamezone-arena#engineering",
+          "/projects/full-stack-user-management-system#engineering",
+          "/contact"
+        ],
+        "identity": [
+          "Mahmoud Hussein Abdul Ghani",
+          "Tripoli, Lebanon",
+          "Arabic: Native | English: Professional Working Proficiency"
+        ],
+        "screenshotPixelHash": "67a808c71c88852ba7b9b3eae32dbcd8b64a1caf3f442ba3feb75bec60fa95d6"
+      },
+      "defaultProfileHash": "c03d3089c3f612e77ea465aafacdeceab23e196da42af535356f4245e1eba0c8",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "metrics": {
+        "overflow": false,
+        "image": {
+          "x": 46.078125,
+          "y": 117,
+          "width": 240,
+          "height": 424,
+          "naturalWidth": 960,
+          "naturalHeight": 1696
+        },
+        "stage": {
+          "x": 46.078125,
+          "y": 117,
+          "width": 240,
+          "height": 424
+        },
+        "record": {
+          "x": 318.078125,
+          "y": 117,
+          "width": 403.84375,
+          "height": 1162.109375
+        },
+        "name": {
+          "x": 46.078125,
+          "y": 609,
+          "width": 240,
+          "height": 20
+        },
+        "location": {
+          "x": 46.078125,
+          "y": 639,
+          "width": 101.859375,
+          "height": 19
+        },
+        "languages": {
+          "x": 46.078125,
+          "y": 663,
+          "width": 232.015625,
+          "height": 43
+        },
+        "cv": {
+          "x": 46.078125,
+          "y": 553,
+          "width": 240,
+          "height": 40
+        },
+        "socials": {
+          "x": 46.078125,
+          "y": 721,
+          "width": 240,
+          "height": 88
+        },
+        "heading": {
+          "x": 318.078125,
+          "y": 148,
+          "width": 403.84375,
+          "height": 37.109375
+        },
+        "introduction": {
+          "x": 318.078125,
+          "y": 207.109375,
+          "width": 403.84375,
+          "height": 100
+        },
+        "tabs": {
+          "x": 318.078125,
+          "y": 335.109375,
+          "width": 403.84375,
+          "height": 49
+        },
+        "intro": "I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.",
+        "records": [
+          "ExperienceEducation & trainingCapabilities",
+          "01Full-Stack Developer InternThe Digital Hub, UNRWA, Beirut, HybridJun 2026 – Sep 2026Program completion is not verified by the available records.Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.Beirut, Hybrid02QA InternOigetitMay 2026 – Aug 2026Tested application flows, documented bugs, and used logs to help identify and reproduce failures.03Backend DeveloperIshtari Group, Tripoli, OnsiteDec 2025 – Jan 2026Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.Tripoli, Lebanon04Web Development TrainerKfW & EU Graduate Support Program · FALA AssociationApr 2025 – Jun 2025Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "01 / EducationBachelor of Science in Computer ScienceLebanese International University (LIU)Oct 2022 – Jun 2025Completion is not independently verified by the available records.01 / TrainingAngular Independent StudySelf-directed learningSep 2025Completion and certification are not verified by the available records.02 / TrainingAWS re/Start Bootcamp – Cloud Computing & DevOps FundamentalsAmazon Web ServicesJul 2025 – Oct 2025Cloud computing and DevOps fundamentals training.Completion and certification are not verified by the available records.03 / TrainingFull-Stack Web Developmentyoubee.ai4-month programPractical full-stack web development training.Completion and certification are not verified by the available records.",
+          "01languagesJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL02frameworksDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap03databasesMongoDBPostgreSQLMySQLMariaDBSupabase04OperationsGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman05PracticesPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEOEngineering evidenceProject references describe documented work and its contribution scope.01JobPilot AIProject evidenceSuggestions become saved information only after review.Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.Reviewed AI changes03Cedar ConstructionTeam-project evidenceThe explanation reads the calculated figures. It cannot change them.Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.Financial calculation and interpretation02LobbyTeam-project evidenceAn invitation offers a connection. Joining the room and entering its call are separate checks.Related capabilities: Tailwind CSS, Supabase.Guest membership and call accessAdditional project evidenceTeam-project evidenceUniHubRelated capabilities: Express.js, Node.js.Team-project evidenceGameZone ArenaRelated capabilities: MongoDB, Stripe, JWT.Project evidenceUser ManagementRelated capabilities: Vite, Postman, Argon2, Framer Motion.",
+          "Let’s build something useful"
+        ],
+        "links": [
+          "/projects/jobpilot-ai#engineering",
+          "/projects/construction-project-management-accounting-system#engineering",
+          "/projects/lobby#engineering",
+          "/projects/unihub#engineering",
+          "/projects/gamezone-arena#engineering",
+          "/projects/full-stack-user-management-system#engineering",
+          "/contact"
+        ],
+        "identity": [
+          "Mahmoud Hussein Abdul Ghani",
+          "Tripoli, Lebanon",
+          "Arabic: Native | English: Professional Working Proficiency"
+        ],
+        "screenshotPixelHash": "a68f22e39717aa8788d90e20212752410bc69ee52d6d68cecf8abb690a486554"
+      },
+      "defaultProfileHash": "e403975deff90a0aac8f8077806c7e6b16c148ffa70578b5de6980b1b47d56c4",
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "metrics": {
+        "overflow": false,
+        "image": {
+          "x": 89.21875,
+          "y": 117.03125,
+          "width": 294.328125,
+          "height": 519.96875,
+          "naturalWidth": 960,
+          "naturalHeight": 1696
+        },
+        "stage": {
+          "x": 86.390625,
+          "y": 117,
+          "width": 300,
+          "height": 520
+        },
+        "record": {
+          "x": 450.390625,
+          "y": 117,
+          "width": 903.21875,
+          "height": 1030.359375
+        },
+        "name": {
+          "x": 86.390625,
+          "y": 705,
+          "width": 300,
+          "height": 20
+        },
+        "location": {
+          "x": 86.390625,
+          "y": 735,
+          "width": 101.859375,
+          "height": 19
+        },
+        "languages": {
+          "x": 86.390625,
+          "y": 759,
+          "width": 287.203125,
+          "height": 43
+        },
+        "cv": {
+          "x": 86.390625,
+          "y": 649,
+          "width": 300,
+          "height": 40
+        },
+        "socials": {
+          "x": 86.390625,
+          "y": 817,
+          "width": 300,
+          "height": 88
+        },
+        "heading": {
+          "x": 450.390625,
+          "y": 148,
+          "width": 712.078125,
+          "height": 53.359375
+        },
+        "introduction": {
+          "x": 450.390625,
+          "y": 223.359375,
+          "width": 644.15625,
+          "height": 75
+        },
+        "tabs": {
+          "x": 450.390625,
+          "y": 326.359375,
+          "width": 903.21875,
+          "height": 49
+        },
+        "intro": "I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.",
+        "records": [
+          "ExperienceEducation & trainingCapabilities",
+          "01Full-Stack Developer InternThe Digital Hub, UNRWA, Beirut, HybridJun 2026 – Sep 2026Program completion is not verified by the available records.Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.Beirut, Hybrid02QA InternOigetitMay 2026 – Aug 2026Tested application flows, documented bugs, and used logs to help identify and reproduce failures.03Backend DeveloperIshtari Group, Tripoli, OnsiteDec 2025 – Jan 2026Developed PHP MVC modules for production administration systems, including search, filtering, pagination, reporting, and AJAX-driven interfaces. Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting.Tripoli, Lebanon04Web Development TrainerKfW & EU Graduate Support Program · FALA AssociationApr 2025 – Jun 2025Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.",
+          "01 / EducationBachelor of Science in Computer ScienceLebanese International University (LIU)Oct 2022 – Jun 2025Completion is not independently verified by the available records.01 / TrainingAngular Independent StudySelf-directed learningSep 2025Completion and certification are not verified by the available records.02 / TrainingAWS re/Start Bootcamp – Cloud Computing & DevOps FundamentalsAmazon Web ServicesJul 2025 – Oct 2025Cloud computing and DevOps fundamentals training.Completion and certification are not verified by the available records.03 / TrainingFull-Stack Web Developmentyoubee.ai4-month programPractical full-stack web development training.Completion and certification are not verified by the available records.",
+          "01languagesJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL02frameworksDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap03databasesMongoDBPostgreSQLMySQLMariaDBSupabase04OperationsGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman05PracticesPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEOEngineering evidenceProject references describe documented work and its contribution scope.01JobPilot AIProject evidenceSuggestions become saved information only after review.Related capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.Reviewed AI changes03Cedar ConstructionTeam-project evidenceThe explanation reads the calculated figures. It cannot change them.Related capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.Financial calculation and interpretation02LobbyTeam-project evidenceAn invitation offers a connection. Joining the room and entering its call are separate checks.Related capabilities: Tailwind CSS, Supabase.Guest membership and call accessAdditional project evidenceTeam-project evidenceUniHubRelated capabilities: Express.js, Node.js.Team-project evidenceGameZone ArenaRelated capabilities: MongoDB, Stripe, JWT.Project evidenceUser ManagementRelated capabilities: Vite, Postman, Argon2, Framer Motion.",
+          "Let’s build something useful"
+        ],
+        "links": [
+          "/projects/jobpilot-ai#engineering",
+          "/projects/construction-project-management-accounting-system#engineering",
+          "/projects/lobby#engineering",
+          "/projects/unihub#engineering",
+          "/projects/gamezone-arena#engineering",
+          "/projects/full-stack-user-management-system#engineering",
+          "/contact"
+        ],
+        "identity": [
+          "Mahmoud Hussein Abdul Ghani",
+          "Tripoli, Lebanon",
+          "Arabic: Native | English: Professional Working Proficiency"
+        ],
+        "screenshotPixelHash": "1181acc7f378d62840198343b178890f0adb0643a747e5b13a649b50632398b0"
+      },
+      "defaultProfileHash": "8cc39bfeaf07444c0d7e5d1ef08d96b01be38b79478ef6c1dad1a61103be2c36",
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

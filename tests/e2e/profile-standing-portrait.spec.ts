@@ -33,19 +33,31 @@ for (const width of [320, 390, 430, 768, 1440]) {
     if (width < 720) {
       expect(metrics.width).toBeGreaterThanOrEqual(180);
       expect(metrics.width).toBeLessThanOrEqual(200);
-      expect(metrics.top).toBeLessThan(780);
       const portrait = await page.locator('.profile-portrait').boundingBox();
       const name = await page.locator('.portrait-caption .eyebrow').boundingBox();
       const languages = await page.locator('.portrait-languages').boundingBox();
-      const links = await page.locator('.profile-portrait .panel-links').boundingBox();
+      const links = await page.locator('.profile-review-details .panel-links').boundingBox();
+      const heading = await page.getByRole('heading', { level: 1 }).boundingBox();
+      const introduction = await page.locator('.profile-intro').boundingBox();
+      const tabs = await page.getByRole('tablist').boundingBox();
       const stageBox = await stage.boundingBox();
+      await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+      await expect(page.locator('.profile-intro')).toHaveCount(1);
+      expect(heading!.y + heading!.height).toBeLessThanOrEqual(name!.y);
       expect(name!.y + name!.height).toBeLessThanOrEqual(stageBox!.y);
       expect(name!.height).toBe(20);
       expect(Math.abs(name!.width - portrait!.width)).toBeLessThanOrEqual(1 / 64);
       expect(Math.abs(languages!.width - portrait!.width)).toBeLessThanOrEqual(1 / 64);
-      expect(languages!.y).toBeGreaterThanOrEqual(stageBox!.y + stageBox!.height);
+      expect(introduction!.y).toBeGreaterThanOrEqual(stageBox!.y + stageBox!.height);
+      expect(languages!.y).toBeGreaterThanOrEqual(introduction!.y + introduction!.height);
       expect(links!.y).toBeGreaterThanOrEqual(languages!.y + languages!.height);
-      for (const link of await page.locator('.profile-portrait .panel-links a').all()) expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+      expect(tabs!.y).toBeGreaterThanOrEqual(links!.y + links!.height);
+      // A visual CSS reorder alone would leave assistive reading order wrong.
+      expect(await page.locator('main').evaluate(main => {
+        const nodes = ['.profile-review-heading .eyebrow', 'h1', '.portrait-caption .eyebrow', '.standing-portrait-stage', '.portrait-location', '.portrait-actions button', '.profile-intro', '.portrait-languages', '.panel-links', '.record-tabs'].map(selector => main.querySelector(selector)!);
+        return nodes.every((node, i) => !i || Boolean(nodes[i - 1].compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING));
+      })).toBe(true);
+      for (const link of await page.locator('.profile-review-details .panel-links a').all()) expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44);
     } else expect((await stage.boundingBox())!.height).toBe(width < 1051 ? 424 : 520);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
     await expect(page.locator('header nav a[href^="/review/"]')).toHaveCount(0);
@@ -63,9 +75,17 @@ for (const width of [320, 390, 430, 768, 1440]) {
       } else {
         expect(cvBox!.x).toBeGreaterThanOrEqual(portraitBox!.x + portraitBox!.width);
         expect(locationBox!.x).toBeGreaterThanOrEqual(portraitBox!.x + portraitBox!.width);
+        expect(locationBox!.y).toBeGreaterThanOrEqual(portraitBox!.y + portraitBox!.height / 2);
+        expect(cvBox!.y).toBeGreaterThanOrEqual(locationBox!.y + locationBox!.height);
+        expect(cvBox!.y + cvBox!.height).toBeLessThanOrEqual(portraitBox!.y + portraitBox!.height);
       }
     }
     await cv.focus();
+    const fullyAboveFooter = async () => page.evaluate(() => {
+      const rect = document.activeElement!.getBoundingClientRect(), main = document.querySelector('main')!.getBoundingClientRect();
+      return rect.top >= main.top && rect.bottom <= Math.min(main.bottom, document.querySelector('footer')!.getBoundingClientRect().top);
+    });
+    expect(await fullyAboveFooter()).toBe(true);
     await page.keyboard.press('Tab');
     await expect(page.getByRole('link', { name: 'GitHub', exact: true })).toBeFocused();
     await page.keyboard.press('Shift+Tab');
@@ -74,6 +94,9 @@ for (const width of [320, 390, 430, 768, 1440]) {
     await page.keyboard.press('End');
     await expect(page.getByRole('tab', { name: 'Capabilities', exact: true })).toBeFocused();
     await expect(page.getByRole('tab', { name: 'Capabilities', exact: true })).toHaveAttribute('aria-selected', 'true');
+    expect(await fullyAboveFooter()).toBe(true);
+    await page.getByRole('link', { name: 'Let’s build something useful' }).focus();
+    expect(await fullyAboveFooter()).toBe(true);
   });
 }
 
@@ -81,6 +104,25 @@ test('default Profile still uses its accepted portrait', async ({ page }) => {
   await page.goto('/profile');
   await expect(page.locator('.portrait-panel img')).toHaveAttribute('src', /portrait-striped-finished/);
   await expect(page.locator('.standing-portrait-stage')).toHaveCount(0);
+});
+
+test('crossing the review breakpoint moves single content elements and retains the portrait and selected record', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/review/profile-portrait');
+  await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state', 'ready');
+  const portrait = await page.locator('.standing-portrait-stage').elementHandle();
+  await page.getByRole('tab', { name: 'Capabilities', exact: true }).click();
+  for (const width of [768, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    await expect(page.locator('.profile-review-heading')).toHaveCount(width < 720 ? 1 : 0);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+    await expect(page.locator('.profile-intro')).toHaveCount(1);
+    await expect(page.locator('.portrait-languages')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Download CV', exact: true })).toHaveCount(1);
+    await expect(page.getByRole('tab', { name: 'Capabilities', exact: true })).toHaveAttribute('aria-selected', 'true');
+    expect(await portrait!.evaluate(el => el === document.querySelector('.standing-portrait-stage'))).toBe(true);
+  }
 });
 
 for (const width of [320, 390, 430, 768, 1440]) test(`loading, decode and error fallback preserve geometry at ${width}px`, async ({ page }) => {
@@ -94,7 +136,7 @@ for (const width of [320, 390, 430, 768, 1440]) test(`loading, decode and error 
   await expect(stage).toHaveAttribute('aria-busy', 'true');
   await expect(page.getByRole('status')).toHaveText('Loading portrait…');
   await page.evaluate(() => document.fonts.ready);
-  const geometry = async () => Promise.all(['.standing-portrait-stage', '.profile-record', '.portrait-caption .eyebrow', '.portrait-location', '.portrait-languages', '.profile-portrait > .inline-flex', '.profile-portrait .panel-links'].map(selector => page.locator(selector).boundingBox()));
+  const geometry = async () => Promise.all(['h1', '.profile-intro', '.standing-portrait-stage', '.profile-record', '.portrait-caption .eyebrow', '.portrait-location', '.portrait-languages', '.profile-standing-prototype .inline-flex', '.profile-standing-prototype .panel-links'].map(selector => page.locator(selector).boundingBox()));
   const before = await geometry();
   release();
   await expect(stage).toHaveAttribute('data-state', 'ready');
