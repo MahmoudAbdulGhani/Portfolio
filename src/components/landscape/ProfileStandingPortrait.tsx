@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type RefObject } from 'react';
 import { motionQuery, prefersReducedMotion } from '../../lib/use-motion-preference';
 import { ProfilePortrait } from './ProfilePortrait';
 import './profile-standing-portrait.css';
 
 // Approved original-photo cutout and documented tone curve. The previous
 // portrait is requested only after a failed load, within the reserved stage.
-export function ProfileStandingPortrait({ name, photo }: { name: string; photo?: string | null }) {
+export function ProfileStandingPortrait({ name, photo, mediaHost }: { name: string; photo?: string | null; mediaHost?: RefObject<HTMLDivElement | null> }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [entrance, setEntrance] = useState(false);
   useEffect(() => {
@@ -35,6 +35,7 @@ export function ProfileStandingPortrait({ name, photo }: { name: string; photo?:
         </div>
         {state === 'loading' && <span className="standing-portrait-status" role="status">Loading portrait…</span>}
       </>}
+      <div className="standing-portrait-media" ref={mediaHost} />
     </div>
   );
 }

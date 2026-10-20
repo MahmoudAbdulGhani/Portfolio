@@ -5,7 +5,7 @@ import base from './playwright.config';
 export default defineConfig({
   ...base,
   testDir:'./tests',
-  testMatch:['**/profile-standing-portrait.spec.ts','**/profile-portrait.spec.ts','**/profile-record.spec.ts','**/profile-capabilities.spec.ts','**/normal-profile.spec.ts'],
+  testMatch:['**/profile-standing-portrait.spec.ts','**/profile-portrait.spec.ts','**/profile-record.spec.ts','**/profile-capabilities.spec.ts','**/normal-profile.spec.ts','**/profile-introduction.spec.ts'],
   use:{...base.use,baseURL:'http://127.0.0.1:5194'},
   projects:base.projects,
   webServer:{

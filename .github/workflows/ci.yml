@@ -177,6 +177,7 @@ jobs:
       - name: Verify review opt-in and Production exclusion
         run: |
           node --test tests/profile-portrait-review-build.test.mjs
+          node --test tests/profile-introduction-assets.test.mjs
           npm run build
           node scripts/assert-portrait-production-build.mjs
       - name: Verify adopted Profile in the normal production build

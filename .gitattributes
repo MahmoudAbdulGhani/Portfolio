@@ -1,0 +1,3 @@
+# Preserve the delivered caption bytes on Windows and Linux alike.
+/public/media/profile/mahmoud-introduction.en.vtt -text
+/src/lib/profile-introduction.en.vtt -text
