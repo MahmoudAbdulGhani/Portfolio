@@ -331,6 +331,18 @@ test('reader Back restores the previous reading position and hash links still re
 });
 
 test('Profile records stay static while the single portrait entrance respects preference changes', async ({ page }) => {
+  // Capture the actual entrance while it exists. Inspecting computed duration
+  // after navigation/decoding can arrive after the 600ms animation has ended.
+  await page.addInitScript(() => {
+    const entrances: Array<{ name: string; duration: string }> = [];
+    Object.assign(window, { profileEntrances: entrances });
+    document.addEventListener('animationstart', event => {
+      if (event.target instanceof Element && event.target.matches('.standing-portrait-figure')) {
+        entrances.push({ name: event.animationName, duration: getComputedStyle(event.target).animationDuration });
+      }
+    });
+  });
+  const entrances = () => page.evaluate(() => (window as unknown as { profileEntrances: Array<{ name: string; duration: string }> }).profileEntrances);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/profile');
   const record = page.locator('.profile-record');
@@ -338,6 +350,7 @@ test('Profile records stay static while the single portrait entrance respects pr
   const pose = () => record.evaluate(el => ({ opacity:getComputedStyle(el).opacity, y:new DOMMatrixReadOnly(getComputedStyle(el).transform).m42 }));
   await expect(record).toBeVisible();
   await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state','ready');
+  expect(await entrances()).toEqual([]);
   expect(await pose()).toEqual({ opacity:'1', y:0 });
   await page.emulateMedia({ reducedMotion:'no-preference' });
   await expect(figure).toHaveCSS('animation-name','none');
@@ -347,11 +360,12 @@ test('Profile records stay static while the single portrait entrance respects pr
   await expect(record).toBeAttached();
   await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state','ready');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
-  await expect(figure).toHaveCSS('animation-duration','0.6s');
+  await expect.poll(entrances).toEqual([{ name: 'standing-portrait-entrance', duration: '0.6s' }]);
   await page.emulateMedia({ reducedMotion:'reduce' });
   await expect.poll(pose).toEqual({ opacity:'1', y:0 });
   await expect(figure).toHaveCSS('animation-name','none');
   await page.emulateMedia({ reducedMotion:'no-preference' });
   await expect(figure).toHaveCSS('animation-name','none');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
+  expect(await entrances()).toEqual([{ name: 'standing-portrait-entrance', duration: '0.6s' }]);
 });

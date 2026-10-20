@@ -45,5 +45,6 @@
   "tests/e2e/profile-introduction.spec.ts",
   "tests/e2e/profile-portrait.spec.ts",
   "tests/e2e/profile-standing-portrait.spec.ts",
+  "tests/e2e/signature-motion.spec.ts",
   "tests/profile-introduction-assets.test.mjs"
 ]
