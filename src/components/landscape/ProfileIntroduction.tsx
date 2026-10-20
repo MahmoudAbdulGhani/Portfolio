@@ -1,4 +1,5 @@
-import { useEffect, useId, useRef, useState, type RefObject } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
+import { FiPause, FiPlay, FiVolume2, FiVolumeX } from 'react-icons/fi';
 import { initialPlayback, introductionTranscript, PortraitIntroduction } from '../../lib/portrait-introduction';
 import { motionQuery } from '../../lib/use-motion-preference';
 import './profile-introduction.css';
@@ -6,47 +7,41 @@ import './profile-introduction.css';
 export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement | null> }) {
   const [playback, setPlayback] = useState(initialPlayback);
   const controller = useRef<PortraitIntroduction | null>(null);
-  const id = useId();
   useEffect(() => {
     if (!host.current) return;
-    const current = new PortraitIntroduction(host.current, setPlayback);
-    controller.current = current;
-    const preference = matchMedia(motionQuery);
-    const changed = () => current.reducedMotion(preference.matches);
-    changed(); preference.addEventListener('change', changed);
-    const hidden = () => { if (document.hidden) current.pause('Paused while the page is hidden. Resume when you are ready.'); };
-    const exited = () => current.stop();
-    document.addEventListener('visibilitychange', hidden);
-    window.addEventListener('pagehide', exited);
-    const observer = new IntersectionObserver(entries => {
-      if (!entries[0].isIntersecting) current.pause('Paused while the portrait is offscreen. Resume when you are ready.');
-    });
-    const stage = host.current.closest('.standing-portrait-stage')!;
+    const current = new PortraitIntroduction(host.current, setPlayback); controller.current = current;
+    const preference = matchMedia(motionQuery), stage = host.current.closest('.standing-portrait-stage')!;
+    let visible = false;
+    const sync = () => current.environment({ visible, active: !document.hidden, reduced: preference.matches,
+      ready: stage.getAttribute('data-state') === 'ready' && stage.querySelector('.standing-portrait-figure')?.getAttribute('data-entrance') === 'false',
+      imageFailed: stage.getAttribute('data-state') === 'error' });
+    const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting && entries[0].intersectionRatio > 0; sync(); });
     observer.observe(stage);
-    const imageState = new MutationObserver(() => {
-      if (stage.getAttribute('data-state') === 'error') current.selectAudio('Portrait unavailable. The previous portrait and audio remain available.');
-    });
-    imageState.observe(stage, { attributes: true, attributeFilter: ['data-state'] });
-    if (stage.getAttribute('data-state') === 'error') current.selectAudio();
+    const imageState = new MutationObserver(sync);
+    imageState.observe(stage, { subtree: true, attributes: true, attributeFilter: ['data-state', 'data-entrance'] });
+    const exited = () => current.environment({ visible: false, active: false, reduced: preference.matches, ready: false, imageFailed: false });
+    preference.addEventListener('change', sync); document.addEventListener('visibilitychange', sync);
+    window.addEventListener('pagehide', exited); window.addEventListener('pageshow', sync); sync();
     return () => {
-      current.dispose(); controller.current = null;
-      observer.disconnect(); imageState.disconnect();
-      preference.removeEventListener('change', changed);
-      document.removeEventListener('visibilitychange', hidden);
-      window.removeEventListener('pagehide', exited);
+      current.dispose(); controller.current = null; observer.disconnect(); imageState.disconnect();
+      preference.removeEventListener('change', sync); document.removeEventListener('visibilitychange', sync);
+      window.removeEventListener('pagehide', exited); window.removeEventListener('pageshow', sync);
     };
   }, [host]);
-  const { state, audioOnly } = playback;
-  const label = state === 'playing' ? 'Pause introduction' : state === 'paused' ? 'Resume introduction' : state === 'loading' ? 'Loading introduction…' : state === 'ended' ? 'Replay introduction' : audioOnly ? 'Listen to introduction' : 'Meet Mahmoud · 12 sec';
-  return <section className="portrait-introduction" aria-label="Mahmoud’s introduction" data-playback={state}>
+  const paused = playback.manualPause || playback.state === 'blocked';
+  return <section className="portrait-introduction" aria-label="Mahmoud’s introduction" data-playback={playback.state}>
     <div className="portrait-playback-controls">
-      <button type="button" aria-describedby={`${id}-sound`} aria-disabled={state === 'loading'} onClick={() => void controller.current?.play()}>{label}</button>
-      <button type="button" onClick={() => controller.current?.stop()}>Stop</button>
-      <button type="button" aria-pressed={audioOnly} onClick={() => controller.current?.selectAudio()}>Listen instead</button>
+      <button type="button" aria-label={playback.speech ? 'Mute introduction' : 'Hear introduction'} onClick={() => controller.current?.hear()}>
+        {playback.speech ? <FiVolumeX aria-hidden="true" /> : <FiVolume2 aria-hidden="true" />}<span>{playback.speech ? 'Mute introduction' : 'Hear introduction'}</span>
+      </button>
+      <button type="button" aria-label={paused ? 'Resume animation' : 'Pause animation'} aria-disabled={playback.animationUnavailable} onClick={() => controller.current?.toggleAnimation()}>
+        {paused ? <FiPlay aria-hidden="true" /> : <FiPause aria-hidden="true" />}<span>{paused ? 'Resume' : 'Pause'}</span>
+      </button>
     </div>
-    <p id={`${id}-sound`} className="portrait-playback-note">With sound · {audioOnly ? 'still portrait + audio' : 'video or audio'}</p>
-    <p className="portrait-playback-captions" aria-live="off">{state === 'error' ? 'Playback unavailable. Retry, listen instead or read the transcript.' : playback.caption}</p>
-    <span className="sr-only" role="status">{playback.message}</span>
-    <details className="portrait-transcript"><summary>Read introduction transcript</summary><p>{introductionTranscript}</p></details>
+    <div className="portrait-playback-details">
+      <p className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear introduction or read the transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear introduction.' : playback.caption}</p>
+      <span className="sr-only" role="status">{playback.message}</span>
+      <details className="portrait-transcript"><summary>Read introduction transcript</summary><p>{introductionTranscript}</p></details>
+    </div>
   </section>;
 }

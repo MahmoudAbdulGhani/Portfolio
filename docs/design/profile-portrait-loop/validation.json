@@ -1,0 +1,82 @@
+[
+  {
+    "width": 320,
+    "stage": {
+      "x": 70,
+      "y": 285.21875,
+      "width": 180,
+      "height": 318
+    },
+    "errors": [],
+    "writes": [],
+    "overflow": false,
+    "cv": {
+      "bytes": 31205,
+      "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a"
+    }
+  },
+  {
+    "width": 390,
+    "stage": {
+      "x": 23.390625,
+      "y": 285.21875,
+      "width": 190,
+      "height": 335.65625
+    },
+    "errors": [],
+    "writes": [],
+    "overflow": false,
+    "cv": {
+      "bytes": 31205,
+      "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a"
+    }
+  },
+  {
+    "width": 430,
+    "stage": {
+      "x": 25.796875,
+      "y": 285.21875,
+      "width": 200,
+      "height": 353.328125
+    },
+    "errors": [],
+    "writes": [],
+    "overflow": false,
+    "cv": {
+      "bytes": 31205,
+      "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a"
+    }
+  },
+  {
+    "width": 768,
+    "stage": {
+      "x": 46.078125,
+      "y": 117,
+      "width": 240,
+      "height": 424
+    },
+    "errors": [],
+    "writes": [],
+    "overflow": false,
+    "cv": {
+      "bytes": 31205,
+      "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a"
+    }
+  },
+  {
+    "width": 1440,
+    "stage": {
+      "x": 86.390625,
+      "y": 117,
+      "width": 300,
+      "height": 520
+    },
+    "errors": [],
+    "writes": [],
+    "overflow": false,
+    "cv": {
+      "bytes": 31205,
+      "sha256": "ab0cb56f309799838a77d344a11c4b8ea3c2145008ae6deaeea65a8121964c8a"
+    }
+  }
+]

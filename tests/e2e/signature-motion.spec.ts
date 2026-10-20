@@ -367,6 +367,9 @@ test('Profile records stay static while the single portrait entrance respects pr
   await page.emulateMedia({ reducedMotion:'reduce' });
   await expect.poll(pose).toEqual({ opacity:'1', y:0 });
   await expect(figure).toHaveCSS('animation-name','none');
+  // CSS stops at once; wait for the queued preference cancellation to commit
+  // before emulating a second settings change. Keep the single-entrance count.
+  await expect(figure).toHaveAttribute('data-entrance','false');
   await page.emulateMedia({ reducedMotion:'no-preference' });
   await expect(figure).toHaveCSS('animation-name','none');
   expect(await pose()).toEqual({ opacity:'1', y:0 });

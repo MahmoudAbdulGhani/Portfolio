@@ -1,38 +1,35 @@
-.landscape .profile-standing-portrait .portrait-introduction {
-  grid-column: 1 / -1;
-  min-width: 0;
-  border-top: 1px solid var(--line);
-  padding-top: 8px;
+.landscape .profile-standing-portrait .portrait-introduction { display: contents; }
+.landscape .portrait-playback-controls {
+  grid-column: 1 / -1; grid-row: 3;
+  display: flex; flex-wrap: wrap; justify-content: end; gap: 4px 8px; min-width: 0;
 }
-.landscape .portrait-playback-controls { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-.landscape .portrait-playback-controls button:first-child { flex-basis: 100%; }
 .landscape .portrait-playback-controls button,
 .landscape .portrait-transcript summary {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 8px 0;
-  font: inherit;
-  font-size: 14px;
-  line-height: 24px;
-  color: inherit;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  text-align: left;
+  min-height: 44px; min-width: 44px; padding: 8px 4px;
+  font: inherit; font-size: 12px; line-height: 24px; color: inherit;
+  background: transparent; border: 0; cursor: pointer; text-align: left;
 }
-.landscape .portrait-playback-controls button[aria-disabled="true"] { cursor: progress; }
+.landscape .portrait-playback-controls button { display: inline-flex; align-items: center; gap: 6px; }
+.landscape .portrait-playback-controls svg { width: 16px; height: 16px; flex: none; }
+.landscape .portrait-playback-controls button[aria-disabled="true"] { opacity: .65; cursor: default; }
 .landscape .portrait-playback-controls button:focus-visible,
 .landscape .portrait-transcript summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.landscape .portrait-playback-note { font-size: 12px; line-height: 20px; margin: 0; }
-.landscape .portrait-playback-captions { font-size: 14px; line-height: 24px; min-height: 72px; margin: 8px 0 0; }
-.landscape .portrait-playback-error, .landscape .portrait-transcript p { font-size: 14px; line-height: 24px; margin: 0 0 8px; }
-.landscape .standing-portrait-media { position: absolute; inset: 0; pointer-events: none; }
+.landscape .portrait-playback-details { grid-column: 1 / -1; min-width: 0; }
+.landscape .portrait-playback-captions { font-size: 14px; line-height: 24px; min-height: 72px; margin: 0; }
+.landscape .portrait-transcript p { font-size: 14px; line-height: 24px; margin: 0 0 8px; }
+.landscape .standing-portrait-media { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
 .landscape .standing-portrait-video { display: block; width: 100%; height: 100%; object-fit: contain; visibility: hidden; }
-.landscape .standing-portrait-stage[data-speaking="true"] .standing-portrait-video { visibility: visible; }
-.landscape .standing-portrait-stage[data-speaking="true"] .standing-portrait-image { visibility: hidden; }
+.landscape .standing-portrait-video[data-alpha="verified"] { visibility: visible; }
+.landscape .standing-portrait-stage[data-video-visible="true"] .standing-portrait-media { opacity: 1; }
+.landscape .standing-portrait-stage[data-video-visible="true"] .standing-portrait-image { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .landscape .standing-portrait-media, .landscape .standing-portrait-image { transition: opacity 180ms ease-out; }
+}
 @media (max-width: 719px) {
-  .landscape .profile-standing-portrait .portrait-introduction { grid-row: 3; margin-top: 4px; }
+  .landscape .profile-standing-portrait .portrait-playback-controls { grid-row: 3; }
+  .landscape .profile-standing-portrait .portrait-playback-details { grid-row: 4; }
 }
 @media (max-width: 389px) {
-  .landscape .profile-standing-portrait .portrait-introduction { grid-row: 4; }
+  .landscape .profile-standing-portrait .portrait-playback-controls { grid-row: 4; }
+  .landscape .profile-standing-portrait .portrait-playback-details { grid-row: 5; }
 }
