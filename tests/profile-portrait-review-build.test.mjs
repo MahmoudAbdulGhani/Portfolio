@@ -9,6 +9,7 @@ test('portrait review requires local opt-in or the named Preview branch, and fai
   assert.equal(isPortraitReviewBuild('portrait-review', {}), true);
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: portraitReviewBranch }), true);
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-portrait-hosted-review' }), true);
+  assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-portrait-original-refinement' }), true);
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-standing-portrait' }), false);
   assert.equal(isPortraitReviewBuild('portrait-review', { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_REF: portraitReviewBranch }), false);
 });
