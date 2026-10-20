@@ -356,6 +356,9 @@ test('Profile records stay static while the single portrait entrance respects pr
   await expect(figure).toHaveCSS('animation-name','none');
   expect(await pose()).toEqual({ opacity:'1', y:0 });
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Projects',exact:true}).click();
+  // Let the lazy destination commit. Returning during its pending transition
+  // can legitimately retain Profile, so there is no new mount/entrance to test.
+  await expect(page.locator('.profile-page')).toHaveCount(0);
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Profile',exact:true}).evaluate(el => (el as HTMLAnchorElement).click());
   await expect(record).toBeAttached();
   await expect(page.locator('.standing-portrait-stage')).toHaveAttribute('data-state','ready');
