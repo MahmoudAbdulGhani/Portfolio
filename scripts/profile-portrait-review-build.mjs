@@ -4,7 +4,7 @@ import path from 'node:path';
 
 export const portraitReviewBranch = 'prototype/profile-portrait-mobile-hierarchy';
 const portraitReviewBranches = [portraitReviewBranch, 'prototype/profile-portrait-mobile-composition', 'prototype/profile-portrait-original-refinement', 'prototype/profile-portrait-hosted-review'];
-const comparisonDirectory = 'docs/design/profile-portrait-mobile-hierarchy';
+const comparisonDirectory = 'docs/design/profile-portrait-adoption';
 
 // Deliberately fail closed on Vercel Production. Local builds opt in by mode;
 // Git integration enables only the explicit review branches in Preview.

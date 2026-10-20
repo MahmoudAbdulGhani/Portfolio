@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { isPortraitReviewBuild, portraitReviewBranch } from '../scripts/profile-portrait-review-build.mjs';
 
@@ -12,10 +13,11 @@ test('portrait review requires local opt-in or the named Preview branch, and fai
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-portrait-original-refinement' }), true);
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-portrait-mobile-composition' }), true);
   assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'prototype/profile-standing-portrait' }), false);
+  assert.equal(isPortraitReviewBuild('production', { VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_REF: 'feat/profile-portrait-adoption' }), false, 'adoption Preview must exercise a normal production build');
   assert.equal(isPortraitReviewBuild('portrait-review', { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_REF: portraitReviewBranch }), false);
 });
 
-test('review matte clears both arm openings while preserving face, sleeve, watch and hands', async () => {
+test('approved matte clears both arm openings while preserving face, sleeve, watch and hands', async () => {
   const { crop } = JSON.parse(await readFile('docs/design/profile-portrait-original-refinement/processing.json', 'utf8'));
   const decoded = [];
   for (const format of ['png', 'webp']) {
@@ -26,4 +28,12 @@ test('review matte clears both arm openings while preserving face, sleeve, watch
     decoded.push(data);
   }
   assert.deepEqual(decoded[0], decoded[1], 'PNG and optimized lossless WebP retain the same RGBA pixels');
+});
+
+test('production portrait files retain the exact approved PR 37 bytes',async()=>{
+  const {assets}=JSON.parse(await readFile('docs/design/profile-portrait-mobile-hierarchy/after.json','utf8'));
+  for(const ext of ['png','webp']) {
+    const actual=createHash('sha256').update(await readFile(`public/review-assets/profile-original-hands.${ext}`)).digest('hex');
+    assert.equal(actual,assets[ext],`${ext}: approved original-photo extraction must not change during adoption`);
+  }
 });

@@ -12,28 +12,26 @@ import {
 import { PageMeta } from "../PageMeta";
 import { PublicDataState } from "../PublicDataState";
 import { CvDownloadButton } from "../CvDownloadButton";
-import { ProfilePortrait } from "./ProfilePortrait";
-import { StandingPortraitPrototype } from './StandingPortraitPrototype';
+import { ProfileStandingPortrait } from './ProfileStandingPortrait';
 import { CaseDisclosure } from './CaseDisclosure';
-import { ProfileEntry } from './ProfileEntry';
 import { evidenceUrl } from "../../lib/assistant-response";
 import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
 import { ProfileCapabilities } from './ProfileCapabilities';
 import './profile-record.css';
 
 const tabs = ['Experience', 'Education & training', 'Capabilities'];
-// Match the review stylesheet on the first client render and on resize. Moving
+// Match the Profile stylesheet on the first client render and on resize. Moving
 // these single elements in the DOM keeps reading/focus order equal to the layout.
-const mobileReviewQuery = '(max-width: 719px)';
-const subscribeReviewViewport = (notify: () => void) => {
-  const media = window.matchMedia(mobileReviewQuery);
+const mobileQuery = '(max-width: 719px)';
+const subscribeViewport = (notify: () => void) => {
+  const media = window.matchMedia(mobileQuery);
   media.addEventListener('change', notify);
   return () => media.removeEventListener('change', notify);
 };
 
-export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?: boolean }) {
-  const mobileReview = useSyncExternalStore(subscribeReviewViewport,
-    () => portraitPrototype && window.matchMedia(mobileReviewQuery).matches, () => false);
+export function ProfilePage({ review = false }: { review?: boolean }) {
+  const mobileLayout = useSyncExternalStore(subscribeViewport,
+    () => window.matchMedia(mobileQuery).matches, () => false);
   const profile = useProfile(),
     education = useEducation(),
     certifications = useCertifications(),
@@ -50,7 +48,6 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
   };
   const person = profile.data;
   const capabilities = capabilityGroups(technologies.data, skills.data, projects.data);
-  const Entry = portraitPrototype ? 'div' : ProfileEntry;
   if (profile.isLoading || profile.isError || !person)
     return (
       <main className="page-surface">
@@ -78,42 +75,39 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
       </a>)}
   </div>;
   return (
-    <main id="main-content" tabIndex={-1} className={`page-surface profile-page${portraitPrototype ? ' profile-standing-prototype' : ''}`}>
+    <main id="main-content" tabIndex={-1} className="page-surface profile-page profile-standing-portrait">
       <PageMeta
-        noIndex={portraitPrototype}
+        noIndex={review}
         title={`Profile — ${person.name}`}
         description={person.professionalSummary ?? person.bio}
       />
-      {mobileReview && <div className="profile-review-heading">{heading}</div>}
-      <Entry className="profile-portrait">
-        {mobileReview && <div className="portrait-caption"><span className="eyebrow">{person.name}</span></div>}
-        {portraitPrototype ? <StandingPortraitPrototype key="standing" name={person.name} photo={person.photo} /> : <ProfilePortrait name={person.name} photo={person.photo} />}
-        {!mobileReview && <div className="portrait-caption">
+      {mobileLayout && <div className="profile-mobile-heading">{heading}</div>}
+      <div className="profile-portrait">
+        {mobileLayout && <div className="portrait-caption"><span className="eyebrow">{person.name}</span></div>}
+        <ProfileStandingPortrait key="standing" name={person.name} photo={person.photo} />
+        {!mobileLayout && <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
           <span>
-            {portraitPrototype ? <>
-              <span className="portrait-location">{person.location}</span>
-              <br className="portrait-details-break" />
-              <span className="portrait-languages">{person.languages}</span>
-            </> : <>{person.location}<br />{person.languages}</>}
+            <span className="portrait-location">{person.location}</span>
+            <br className="portrait-details-break" />
+            <span className="portrait-languages">{person.languages}</span>
           </span>
         </div>}
-        {mobileReview ? <div className="portrait-actions">
+        {mobileLayout ? <div className="portrait-actions">
           <span className="portrait-location">{person.location}</span>
           {cvDownload}
-        </div> : portraitPrototype && cvDownload}
-        {!mobileReview && socialLinks}
-        {!portraitPrototype && cvDownload}
-      </Entry>
-      {mobileReview && <>
+        </div> : cvDownload}
+        {!mobileLayout && socialLinks}
+      </div>
+      {mobileLayout && <>
         {introduction}
-        <div className="profile-review-details">
+        <div className="profile-details">
           <span className="portrait-languages">{person.languages}</span>
           {socialLinks}
         </div>
       </>}
-      <Entry className="profile-record">
-        {!mobileReview && <>{heading}{introduction}</>}
+      <div className="profile-record">
+        {!mobileLayout && <>{heading}{introduction}</>}
         <div className="record-tabs" role="tablist" aria-label="Profile records">
           {tabs.map(
             (label, index) => (
@@ -226,7 +220,7 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
           Let’s build something useful
           <FiArrowUpRight />
         </Link>
-      </Entry>
+      </div>
     </main>
   );
 }
