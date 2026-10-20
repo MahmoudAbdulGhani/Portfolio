@@ -2,9 +2,9 @@ import { readFileSync } from 'node:fs';
 import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-export const portraitReviewBranch = 'prototype/profile-portrait-original-refinement';
-const portraitReviewBranches = [portraitReviewBranch, 'prototype/profile-portrait-hosted-review'];
-const comparisonDirectory = 'docs/design/profile-portrait-original-refinement';
+export const portraitReviewBranch = 'prototype/profile-portrait-mobile-composition';
+const portraitReviewBranches = [portraitReviewBranch, 'prototype/profile-portrait-original-refinement', 'prototype/profile-portrait-hosted-review'];
+const comparisonDirectory = 'docs/design/profile-portrait-mobile-composition';
 
 // Deliberately fail closed on Vercel Production. Local builds opt in by mode;
 // Git integration enables only the explicit review branches in Preview.

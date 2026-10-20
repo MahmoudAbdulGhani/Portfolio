@@ -52,6 +52,7 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
         />
       </main>
     );
+  const cvDownload = <CvDownloadButton url={(person.resumeUrl && evidenceUrl(person.resumeUrl)?.href) || "/api/cv.pdf"} />;
   return (
     <main id="main-content" tabIndex={-1} className={`page-surface profile-page${portraitPrototype ? ' profile-standing-prototype' : ''}`}>
       <PageMeta
@@ -64,11 +65,14 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
         <div className="portrait-caption">
           <span className="eyebrow">{person.name}</span>
           <span>
-            {person.location}
-            <br />
-            {person.languages}
+            {portraitPrototype ? <>
+              <span className="portrait-location">{person.location}</span>
+              <br className="portrait-details-break" />
+              <span className="portrait-languages">{person.languages}</span>
+            </> : <>{person.location}<br />{person.languages}</>}
           </span>
         </div>
+        {portraitPrototype && cvDownload}
         <div className="panel-links">
           {person.socials
             .filter(
@@ -87,12 +91,7 @@ export function ProfilePage({ portraitPrototype = false }: { portraitPrototype?:
               </a>
             ))}
         </div>
-        <CvDownloadButton
-          url={
-            (person.resumeUrl && evidenceUrl(person.resumeUrl)?.href) ||
-            "/api/cv.pdf"
-          }
-        />
+        {!portraitPrototype && cvDownload}
       </Entry>
       <Entry className="profile-record">
         <span className="eyebrow">PROFILE / WORKING RECORD</span>
