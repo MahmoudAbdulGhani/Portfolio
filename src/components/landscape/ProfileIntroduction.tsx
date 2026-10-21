@@ -64,16 +64,16 @@ export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement |
   return <section className="portrait-introduction" aria-label="Mahmoud’s introduction" data-playback={playback.state}>
     <div className="portrait-playback-controls">
       <button type="button" aria-label={playback.speech ? 'Mute introduction' : 'Hear introduction'} onClick={hear}>
-        {playback.speech ? <FiVolumeX aria-hidden="true" /> : <FiVolume2 aria-hidden="true" />}<span>{playback.speech ? 'Mute introduction' : 'Hear introduction'}</span>
+        {playback.speech ? <FiVolumeX aria-hidden="true" /> : <FiVolume2 aria-hidden="true" />}<span>{playback.speech ? 'Mute' : 'Hear intro'}</span>
       </button>
       <button type="button" aria-label={paused ? 'Resume animation' : 'Pause animation'} aria-disabled={playback.animationUnavailable} onClick={() => controller.current?.toggleAnimation()}>
         {paused ? <FiPlay aria-hidden="true" /> : <FiPause aria-hidden="true" />}<span>{paused ? 'Resume' : 'Pause'}</span>
       </button>
     </div>
     <div className="portrait-playback-details">
-      <p ref={captions} className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear introduction or read the transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear introduction.' : playback.caption}</p>
+      <p ref={captions} className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear intro or read transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear intro.' : playback.caption}</p>
       <span className="sr-only" role="status">{playback.message}</span>
-      <details className="portrait-transcript"><summary>Read introduction transcript</summary><p>{introductionTranscript}</p></details>
+      <details className="portrait-transcript"><summary aria-label="Read introduction transcript">Transcript</summary><p>{introductionTranscript}</p></details>
     </div>
   </section>;
 }

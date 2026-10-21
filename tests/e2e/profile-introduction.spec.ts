@@ -24,8 +24,8 @@ async function fakeMedia(page:Page,opaque=false){await page.addInitScript(({opaq
   Object.defineProperty(HTMLMediaElement.prototype,'currentTime',{configurable:true,get(){return flag(this).time;},set(time){flag(this).time=time;}});
   Object.defineProperty(HTMLMediaElement.prototype,'readyState',{configurable:true,get:()=>4});
   for(const [key,value]of Object.entries({videoWidth:480,videoHeight:848}))Object.defineProperty(HTMLVideoElement.prototype,key,{configurable:true,get:()=>value});
-  HTMLVideoElement.prototype.requestVideoFrameCallback=function(callback){queueMicrotask(()=>callback(0,{} as VideoFrameCallbackMetadata));return 1;};
-  HTMLVideoElement.prototype.cancelVideoFrameCallback=function(){};
+  HTMLVideoElement.prototype.requestVideoFrameCallback=function(callback){return requestAnimationFrame(now=>callback(now,{mediaTime:this.currentTime} as VideoFrameCallbackMetadata));};
+  HTMLVideoElement.prototype.cancelVideoFrameCallback=function(id){cancelAnimationFrame(id);};
   CanvasRenderingContext2D.prototype.drawImage=function(){};
   CanvasRenderingContext2D.prototype.getImageData=function(){return{data:new Uint8ClampedArray(64).fill(opaque?255:0)}as ImageData;};
 },{opaque});}
@@ -70,8 +70,8 @@ test('arrival, speech restart and cycle boundaries never composite two facial po
   expect(result.gaps).toBe(0);
 });
 
-for(const width of [320,390,430])test(`explicit hearing reveals complete captions above the footer at ${width}px`,async({page})=>{
-  await page.setViewportSize({width,height:640});await page.emulateMedia({reducedMotion:'no-preference'});
+for(const [width,height] of [[320,640],[390,640],[430,640],[768,720],[1280,720],[1440,900]])test(`explicit hearing reveals the full portrait and captions at ${width}x${height}`,async({page})=>{
+  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'no-preference'});
   await open(page);await expect(ui(page)).toHaveAttribute('data-playback','looping');
   await hear(page).click();await expect(ui(page)).toHaveAttribute('data-playback','speaking');
   await expect(ui(page).locator('.portrait-playback-captions')).toContainText('full-stack developer');
@@ -127,10 +127,10 @@ test('three real consecutive cycles reuse one muted element; speech completes on
   await page.emulateMedia({reducedMotion:'no-preference'});await open(page);
   await expect(ui(page)).toHaveAttribute('data-playback','looping');
   const video=await page.locator('video').elementHandle();
-  await video!.evaluate(v=>{const review={portraitEnds:0,bridges:[] as string[][]};Object.assign(window,{loopReview:review});v.addEventListener('ended',()=>{review.portraitEnds++;void Promise.allSettled(document.querySelector('.standing-portrait-media')!.getAnimations().map(a=>a.finished)).then(()=>review.bridges.push(['.standing-portrait-image','.standing-portrait-media'].map(s=>getComputedStyle(document.querySelector(s)!).opacity)));});});
+  await video!.evaluate(v=>{const review={portraitEnds:0,bridges:[] as string[][]};Object.assign(window,{loopReview:review});let previous=v.currentTime;const sample=()=>{if(previous-v.currentTime>5){review.portraitEnds++;review.bridges.push(['.standing-portrait-image','.standing-portrait-media'].map(s=>getComputedStyle(document.querySelector(s)!).opacity));}previous=v.currentTime;if(review.portraitEnds<3)requestAnimationFrame(sample);};requestAnimationFrame(sample);});
   const liveMessage=await ui(page).getByRole('status').innerText();
   await page.waitForFunction(()=>{const review=(window as unknown as {loopReview:{portraitEnds:number;bridges:string[][]}}).loopReview;const video=document.querySelector('video')!;return review.portraitEnds>=3&&review.bridges.length>=3&&!video.paused&&video.currentTime<1;},undefined,{timeout:40_000});
-  expect(await page.evaluate(()=>(window as unknown as {loopReview:{bridges:string[][]}}).loopReview.bridges)).toEqual([['1','0'],['1','0'],['1','0']]);
+  expect(await page.evaluate(()=>(window as unknown as {loopReview:{bridges:string[][]}}).loopReview.bridges)).toEqual([['0','1'],['0','1'],['0','1']]);
   await expect(ui(page)).toHaveAttribute('data-playback','looping');
   await expect(page.locator('video')).toHaveJSProperty('muted',true);
   expect(await video!.evaluate(v=>v===document.querySelector('video'))).toBe(true);

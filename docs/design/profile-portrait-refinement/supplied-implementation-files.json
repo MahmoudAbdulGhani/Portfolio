@@ -1,0 +1,19 @@
+{
+  "base": "2b62f15f3f31d444f23a4750d9f124043be5ce92",
+  "local_commit": "8aed1704814dfa4ed85275401489fc3c51a3492b",
+  "remote_published": false,
+  "files": [
+    ".github/workflows/ci.yml",
+    "public/media/profile/mahmoud-introduction-480.webm",
+    "public/media/profile/mahmoud-introduction-720.webm",
+    "scripts/refine-profile-introduction.py",
+    "src/components/landscape/ProfileIntroduction.tsx",
+    "src/components/landscape/profile-introduction.css",
+    "src/lib/portrait-introduction.ts",
+    "tests/e2e/profile-introduction.spec.ts",
+    "tests/portrait-playback.test.mjs",
+    "tests/profile-introduction-assets.test.mjs"
+  ],
+  "patch_applied_to_isolated_base_index": true,
+  "resulting_blobs_match_local_commit": true
+}

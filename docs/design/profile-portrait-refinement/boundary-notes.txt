@@ -1,0 +1,1 @@
+Native face frames: final row before the silent 11.60s cut and first row from 0.20s, 40ms increments. Browser sheets sample the last audited cut, then the recording continues through the complete spoken take and muted return. The source pose cut remains visible; no seamless-loop or anatomical-repair claim.

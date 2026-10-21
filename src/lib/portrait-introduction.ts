@@ -1,6 +1,9 @@
 import captions from './profile-introduction.en.vtt?raw';
 
 const root = '/media/profile/mahmoud-introduction';
+// Editorial cut points for the silent repeat only. The spoken introduction
+// always starts at zero and plays through its natural end, including “CV”.
+export const portraitLoop = { start: 0.20, end: 11.60 } as const;
 export const introductionCues = [...captions.matchAll(/(\d\d):(\d\d\.\d+) --> (\d\d):(\d\d\.\d+)\r?\n([\s\S]*?)(?=\r?\n\r?\n|$)/g)].map(cue => ({
   start: Number(cue[1]) * 60 + Number(cue[2]), end: Number(cue[3]) * 60 + Number(cue[4]), text: cue[5].trim().replace(/\s+/g, ' '),
 }));
@@ -10,7 +13,7 @@ export type PlaybackSnapshot = {
   speech: boolean; manualPause: boolean; animationUnavailable: boolean; caption: string; message: string;
 };
 export const initialPlayback: PlaybackSnapshot = { state: 'idle', speech: false, manualPause: false, animationUnavailable: false, caption: '', message: '' };
-type Owner = { media: HTMLMediaElement; abort: AbortController; alpha: boolean; frame?: number };
+type Owner = { media: HTMLMediaElement; abort: AbortController; alpha: boolean; buffering: boolean; frame?: number };
 type Environment = { visible: boolean; active: boolean; reduced: boolean; ready: boolean; imageFailed: boolean };
 
 // Reuse the same video across visual cycles and spoken takes. Each command
@@ -27,7 +30,6 @@ export class PortraitIntroduction {
   private videoFailed = false;
   private disposed = false;
   private deadline?: ReturnType<typeof setTimeout>;
-  private bridge?: ReturnType<typeof setTimeout>;
   constructor(private host: HTMLElement, private publish: (snapshot: PlaybackSnapshot) => void) {}
   private update(patch: Partial<PlaybackSnapshot>) {
     if (this.disposed) return;
@@ -38,7 +40,7 @@ export class PortraitIntroduction {
   private current(owner: Owner) { return !this.disposed && this.owner === owner; }
   private still() { this.host.parentElement?.removeAttribute('data-video-visible'); }
   private cancel() {
-    this.token++; clearTimeout(this.deadline); clearTimeout(this.bridge); this.bridge = undefined;
+    this.token++; clearTimeout(this.deadline);
     for (const owner of [this.video, this.audio]) {
       if (owner?.frame !== undefined && owner.media instanceof HTMLVideoElement) {
         owner.media.cancelVideoFrameCallback(owner.frame); owner.frame = undefined;
@@ -106,24 +108,39 @@ export class PortraitIntroduction {
     const owner = this.attach(document.createElement('audio')); this.audio = owner; owner.media.src = `${root}.mp3`; return owner;
   }
   private attach(media: HTMLMediaElement): Owner {
-    const owner: Owner = { media, abort: new AbortController(), alpha: false };
+    const owner: Owner = { media, abort: new AbortController(), alpha: false, buffering: false };
     media.preload = 'none'; media.setAttribute('aria-hidden', 'true');
     const listen = (name: string, callback: () => void) => media.addEventListener(name, () => { if (this.current(owner)) callback(); }, { signal: owner.abort.signal });
     listen('playing', () => {
       if (!this.desired || !this.present) { media.muted = true; media.pause(); return; }
+      owner.buffering = false;
       if (media instanceof HTMLVideoElement) this.frame(owner, this.token);
       else { clearTimeout(this.deadline); this.update({ state: 'speaking', message: 'Playing introduction with sound.' }); }
     });
-    listen('waiting', () => { if (this.desired) { this.update({ state: 'loading' }); this.watch(owner, this.token); } });
+    listen('waiting', () => {
+      if (!this.desired) return;
+      owner.buffering = true;
+      if (owner.frame !== undefined && media instanceof HTMLVideoElement) {
+        media.cancelVideoFrameCallback(owner.frame); owner.frame = undefined;
+      }
+      this.update({ state: 'loading' }); this.watch(owner, this.token);
+    });
     listen('pause', () => {
       if (this.desired && media.paused && !media.ended) { this.cancel(); this.pauseMedia(); this.update({ state: 'paused', manualPause: true, speech: false, caption: '', message: 'Animation paused.' }); }
     });
-    listen('timeupdate', () => { if (this.snapshot.speech) this.update({ caption: introductionCues.find(cue => media.currentTime >= cue.start && media.currentTime < cue.end)?.text ?? '' }); });
+    listen('timeupdate', () => {
+      if (this.snapshot.speech) {
+        const caption = introductionCues.find(cue => media.currentTime >= cue.start && media.currentTime < cue.end)?.text ?? '';
+        if (caption !== this.snapshot.caption) this.update({ caption });
+      } else if (owner === this.video && typeof (media as HTMLVideoElement).requestVideoFrameCallback !== 'function') {
+        this.checkLoop(owner);
+      }
+    });
     listen('ended', () => {
       if (!this.desired || !media.ended) return;
       const spoke = this.snapshot.speech; media.muted = true;
       this.update({ speech: false, caption: '', ...(spoke ? { message: this.canLoop ? 'Introduction finished. Animation continues without sound.' : 'Introduction finished.' } : {}) });
-      if (owner === this.video && this.canLoop) this.restartThroughStill(owner);
+      if (owner === this.video && this.canLoop) this.restartLoop(owner);
       else { this.desired = false; this.still(); this.update({ state: 'idle' }); this.reconcile(); }
     });
     listen('error', () => {
@@ -135,8 +152,9 @@ export class PortraitIntroduction {
   private frame(owner: Owner, token: number) {
     const video = owner.media as HTMLVideoElement;
     const reveal = () => {
+      if (!this.current(owner) || this.token !== token || !this.desired || !this.present || this.env.reduced || owner.buffering) return;
       owner.frame = undefined;
-      if (!this.current(owner) || this.token !== token || !this.desired || !this.present || this.env.reduced) return;
+      if (this.checkLoop(owner)) return;
       try {
         if (!owner.alpha) {
           const canvas = document.createElement('canvas'); canvas.width = canvas.height = 4;
@@ -151,17 +169,26 @@ export class PortraitIntroduction {
         }
         video.muted = !this.snapshot.speech;
         this.host.parentElement?.setAttribute('data-video-visible', 'true'); clearTimeout(this.deadline);
-        this.update({ state: this.snapshot.speech ? 'speaking' : 'looping', ...(this.snapshot.speech ? { message: 'Playing introduction with sound.' } : {}) });
+        const state = this.snapshot.speech ? 'speaking' : 'looping';
+        if (this.snapshot.state !== state) this.update({ state, ...(this.snapshot.speech ? { message: 'Playing introduction with sound.' } : {}) });
+        // One callback per presented video frame, with no React update unless
+        // state changes. This keeps the silent cut precise without a wall clock.
+        if (typeof video.requestVideoFrameCallback === 'function') owner.frame = video.requestVideoFrameCallback(reveal);
       } catch { this.unavailable('Transparent animation unavailable. Hear introduction uses audio.'); }
     };
     if (owner.frame !== undefined) video.cancelVideoFrameCallback(owner.frame);
     if (typeof video.requestVideoFrameCallback === 'function') owner.frame = video.requestVideoFrameCallback(reveal);
     else if (video.readyState >= 2) reveal();
   }
-  private async start(owner: Owner, speech: boolean, restart: boolean) {
+  private async start(owner: Owner, speech: boolean, restart: boolean, retainFrame = false) {
     this.cancel(); this.pauseMedia(); this.owner = owner;
     const token = this.token;
-    if (restart) { this.still(); owner.media.currentTime = 0; }
+    if (restart) {
+      if (!retainFrame) this.still();
+      owner.media.currentTime = speech ? 0 : portraitLoop.start;
+    } else if (owner === this.video && !speech && (owner.media.currentTime < portraitLoop.start || owner.media.currentTime >= portraitLoop.end)) {
+      owner.media.currentTime = portraitLoop.start;
+    }
     owner.media.muted = owner === this.video || !speech; owner.media.playbackRate = 1; this.desired = true;
     this.update({ state: 'loading', speech, caption: '', ...(speech ? { message: 'Loading introduction with sound.' } : {}) }); this.watch(owner, token);
     try {
@@ -177,14 +204,16 @@ export class PortraitIntroduction {
       else this.audioUnavailable('Audio unavailable. Hear introduction to retry, or read the transcript.');
     }
   }
-  private restartThroughStill(owner: Owner) {
-    this.cancel(); this.desired = false; this.still(); const token = this.token;
-    // The CSS handoff is exclusive: never blend different facial poses.
-    // Retain the still until the next decoded frame; no source reload.
-    this.bridge = setTimeout(() => {
-      this.bridge = undefined;
-      if (this.current(owner) && this.token === token && this.canLoop) void this.start(owner, false, true);
-    }, 140);
+  private checkLoop(owner: Owner) {
+    if (this.current(owner) && this.desired && !this.snapshot.speech && this.canLoop && !owner.media.seeking && owner.media.currentTime >= portraitLoop.end) {
+      this.restartLoop(owner); return true;
+    }
+    return false;
+  }
+  private restartLoop(owner: Owner) {
+    // Retain the last decoded video frame during the seek. Do not insert a
+    // third photographic pose or blend faces. The source cut remains a cut.
+    if (this.current(owner) && this.canLoop) void this.start(owner, false, true, true);
   }
   toggleAnimation() {
     if (this.env.reduced || this.videoFailed) return;
@@ -196,12 +225,14 @@ export class PortraitIntroduction {
   hear() {
     if (!this.present || this.disposed) return;
     if (this.snapshot.speech) {
-      this.cancel(); this.pauseMedia(); this.still(); this.update({ speech: false, caption: '', state: 'idle', message: 'Introduction muted.' }); this.reconcile(); return;
+      this.cancel(); this.pauseMedia();
+      if (this.owner !== this.video) this.still();
+      this.update({ speech: false, caption: '', state: 'idle', message: 'Introduction muted.' }); this.reconcile(); return;
     }
     const audioOnly = this.env.reduced || this.videoFailed || this.snapshot.manualPause;
     this.blocked = false;
     const owner = audioOnly ? this.audio ?? this.makeAudio() : this.video ?? this.makeVideo();
-    if (owner) void this.start(owner, true, true);
+    if (owner) void this.start(owner, true, true, owner === this.video);
     // Synchronous unsupported-codec discovery can fall back in this same user
     // gesture; failure of decoded alpha leaves Hear available for a fresh tap.
     else if (this.videoFailed) void this.start(this.audio ?? this.makeAudio(), true, true);
