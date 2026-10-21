@@ -1,0 +1,79 @@
+{
+  "patch_blobs": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "blob": "a39e5310d42cb122c98281e7b9371326a0f9e008"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction-480.webm",
+      "blob": "7fadbba03c517b57b86dcdbe3572edc94c67e5e8"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction-720.webm",
+      "blob": "5bc30b0e4b3a7514b3034429ba777de42da058f6"
+    },
+    {
+      "path": "scripts/refine-profile-introduction.py",
+      "blob": "068a38afdc59c5dc885c61f7a22c8d08fdf05b45"
+    },
+    {
+      "path": "src/components/landscape/ProfileIntroduction.tsx",
+      "blob": "61300becbbdc4b6c9077b8a958f9499ba5fcff43"
+    },
+    {
+      "path": "src/components/landscape/profile-introduction.css",
+      "blob": "be32d348cb9e2f72e7efdc2006e82e03f66420ce"
+    },
+    {
+      "path": "src/lib/portrait-introduction.ts",
+      "blob": "0846d38987b6441497ea610277ca06ff8d6b5101"
+    },
+    {
+      "path": "tests/e2e/profile-introduction.spec.ts",
+      "blob": "2c595f39f1c6e1e8c700110f3d833fc435f4c725"
+    },
+    {
+      "path": "tests/portrait-playback.test.mjs",
+      "blob": "bc5af40139b871aeac45624f5c7e2d0bb5258d9a"
+    },
+    {
+      "path": "tests/profile-introduction-assets.test.mjs",
+      "blob": "85798193100082a1a6b1a5524d7e358132d4473f"
+    }
+  ],
+  "audio": [
+    {
+      "file": "mahmoud-introduction-720.webm",
+      "origin": "PR41",
+      "pcm_bytes": 2301952,
+      "pcm_sha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e"
+    },
+    {
+      "file": "mahmoud-introduction-480.webm",
+      "origin": "approved refinement",
+      "pcm_bytes": 2301952,
+      "pcm_sha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e"
+    },
+    {
+      "file": "mahmoud-introduction-720.webm",
+      "origin": "approved refinement",
+      "pcm_bytes": 2301952,
+      "pcm_sha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e"
+    }
+  ],
+  "media": [
+    {
+      "file": "mahmoud-introduction-480.webm",
+      "bytes": 2703633,
+      "sha256": "41ef037004110db063d855915a0a78da7cc4f8a0ae51a743c43727a2b658cf49",
+      "decoded_frames": 300
+    },
+    {
+      "file": "mahmoud-introduction-720.webm",
+      "bytes": 5051086,
+      "sha256": "f29880da2d56148ffd8cc74d2707481359dc93a90f8870bc1d10c23dcd9de5af",
+      "decoded_frames": 300
+    }
+  ],
+  "processing": "Package report retained as supplied; existing master was not reprocessed."
+}

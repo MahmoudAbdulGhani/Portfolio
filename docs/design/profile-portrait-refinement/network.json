@@ -1,0 +1,353 @@
+[
+  {
+    "width": 390,
+    "kbps": 1500,
+    "latencyMs": 150,
+    "scope": "Media-only throttling after cached UI/still/fonts; not whole-page/CDN or physical network performance.",
+    "first": {
+      "seconds": 1.693,
+      "state": "looping"
+    },
+    "selected": [
+      "mahmoud-introduction-480.webm"
+    ],
+    "events": [
+      {
+        "state": "looping",
+        "time": 0.266255,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 1.290177,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 2.301993,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 3.309876,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 4.31084,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 4.943882,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 5.944384,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 5.953595,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 6.663709,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 7.673648,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 8.678954,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 9.156638,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 9.156638,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 10.063305,
+        "muted": true
+      }
+    ],
+    "state": "looping",
+    "stillOpacity": "0"
+  },
+  {
+    "width": 1440,
+    "kbps": 1500,
+    "latencyMs": 150,
+    "scope": "Media-only throttling after cached UI/still/fonts; not whole-page/CDN or physical network performance.",
+    "first": {
+      "seconds": 2.223,
+      "state": "looping"
+    },
+    "selected": [
+      "mahmoud-introduction-720.webm"
+    ],
+    "events": [
+      {
+        "state": "looping",
+        "time": 0.270651,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 0.875507,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.47364,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.47364,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 2.075141,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 3.08264,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.473795,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.473795,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.473795,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.473795,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 4.403439,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 5.417445,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 5.953593,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 5.953593,
+        "muted": true
+      }
+    ],
+    "state": "loading",
+    "stillOpacity": "0"
+  },
+  {
+    "width": 1440,
+    "kbps": 400,
+    "latencyMs": 150,
+    "scope": "Media-only throttling after cached UI/still/fonts; not whole-page/CDN or physical network performance.",
+    "first": {
+      "seconds": 6.06,
+      "state": "looping"
+    },
+    "selected": [
+      "mahmoud-introduction-720.webm"
+    ],
+    "events": [
+      {
+        "state": "looping",
+        "time": 0.247768,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.421299,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.421299,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 0.904578,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.913627,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.913627,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.913627,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 0.913627,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 1.186619,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 1.87385,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 2.419748,
+        "muted": true
+      },
+      {
+        "state": "looping",
+        "time": 3.435659,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      },
+      {
+        "state": "loading",
+        "time": 3.633616,
+        "muted": true
+      }
+    ],
+    "state": "loading",
+    "stillOpacity": "0"
+  }
+]

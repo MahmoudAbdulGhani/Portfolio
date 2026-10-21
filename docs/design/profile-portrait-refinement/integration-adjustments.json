@@ -1,0 +1,13 @@
+{
+  "base": "2b62f15f3f31d444f23a4750d9f124043be5ce92",
+  "unpublished_package_commit": "8aed1704814dfa4ed85275401489fc3c51a3492b",
+  "applied_from": "implementation.patch",
+  "initial_ten_blobs_match": true,
+  "adjustments": [
+    "Cancel and guard continuous video-frame work during buffering; resume only on playing.",
+    "Do not clear a newer callback handle from a stale generation.",
+    "Add buffering regression and exact pending-frame ownership assertions."
+  ],
+  "existing_assertions_weakened": false,
+  "existing_deadlines_increased": false
+}

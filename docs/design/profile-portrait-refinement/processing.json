@@ -1,0 +1,19 @@
+{
+  "source_sha256": "e536e2cf43d6d4ee91a67b275355af539d1c73eab1f17247b8a7885a8a5b136a",
+  "audio_container_sha256": "f15deb5ec861c231b555989975464ece43581a71241101f6a173dc08e6bc6b18",
+  "frames": 300,
+  "frame_rate": 25,
+  "edge_pixels_adjusted": 95549,
+  "interior_pixels_changed_before_encode": 0,
+  "alpha_unchanged_before_encode": true,
+  "outputs": {
+    "mahmoud-introduction-480.webm": {
+      "bytes": 2703633,
+      "sha256": "41ef037004110db063d855915a0a78da7cc4f8a0ae51a743c43727a2b658cf49"
+    },
+    "mahmoud-introduction-720.webm": {
+      "bytes": 5051086,
+      "sha256": "f29880da2d56148ffd8cc74d2707481359dc93a90f8870bc1d10c23dcd9de5af"
+    }
+  }
+}

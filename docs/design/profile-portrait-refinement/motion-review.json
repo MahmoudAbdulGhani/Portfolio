@@ -1,0 +1,22 @@
+{
+  "method": "Consecutive native 25fps decoded frames, crop x230 y0 260x300, 50% display scale. Full-figure composites at 5.20s. No interpolated frames or enhancements.",
+  "runs": [
+    {
+      "start": 0.2,
+      "count": 16
+    },
+    {
+      "start": 1.8,
+      "count": 16
+    },
+    {
+      "start": 5,
+      "count": 16
+    },
+    {
+      "start": 11.08,
+      "count": 16
+    }
+  ],
+  "limitation": "Temporal samples support frame-by-frame motion inspection; generated facial anatomy and subjective audio/lip sync are not certified."
+}
