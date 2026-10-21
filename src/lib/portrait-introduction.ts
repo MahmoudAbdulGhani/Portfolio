@@ -13,7 +13,7 @@ export type PlaybackSnapshot = {
   speech: boolean; manualPause: boolean; animationUnavailable: boolean; caption: string; message: string;
 };
 export const initialPlayback: PlaybackSnapshot = { state: 'idle', speech: false, manualPause: false, animationUnavailable: false, caption: '', message: '' };
-type Owner = { media: HTMLMediaElement; abort: AbortController; alpha: boolean; buffering: boolean; frame?: number };
+type Owner = { media: HTMLMediaElement; abort: AbortController; alpha: boolean; buffering: boolean; bufferEnd: number; resumeToken?: number; frame?: number };
 type Environment = { visible: boolean; active: boolean; reduced: boolean; ready: boolean; imageFailed: boolean };
 
 // Reuse the same video across visual cycles and spoken takes. Each command
@@ -42,6 +42,7 @@ export class PortraitIntroduction {
   private cancel() {
     this.token++; clearTimeout(this.deadline);
     for (const owner of [this.video, this.audio]) {
+      if (owner) owner.resumeToken = undefined;
       if (owner?.frame !== undefined && owner.media instanceof HTMLVideoElement) {
         owner.media.cancelVideoFrameCallback(owner.frame); owner.frame = undefined;
       }
@@ -102,31 +103,50 @@ export class PortraitIntroduction {
     }
     video.playsInline = true; video.muted = true; video.defaultMuted = true; video.className = 'standing-portrait-video';
     const owner = this.attach(video); this.video = owner;
+    // This element exists only after eligible visibility. Let the selected file
+    // buffer while the still remains visible; never preload both resolutions.
+    video.preload = 'auto';
     video.src = `${root}-${matchMedia('(max-width: 719px)').matches ? 480 : 720}.webm`; return owner;
   }
   private makeAudio() {
     const owner = this.attach(document.createElement('audio')); this.audio = owner; owner.media.src = `${root}.mp3`; return owner;
   }
   private attach(media: HTMLMediaElement): Owner {
-    const owner: Owner = { media, abort: new AbortController(), alpha: false, buffering: false };
+    const owner: Owner = { media, abort: new AbortController(), alpha: false, buffering: false, bufferEnd: 0 };
     media.preload = 'none'; media.setAttribute('aria-hidden', 'true');
     const listen = (name: string, callback: () => void) => media.addEventListener(name, () => { if (this.current(owner)) callback(); }, { signal: owner.abort.signal });
     listen('playing', () => {
       if (!this.desired || !this.present) { media.muted = true; media.pause(); return; }
-      owner.buffering = false;
+      if (owner.buffering && media instanceof HTMLVideoElement && media.readyState < 4) { media.pause(); return; }
+      owner.buffering = false; owner.resumeToken = undefined;
       if (media instanceof HTMLVideoElement) this.frame(owner, this.token);
       else { clearTimeout(this.deadline); this.update({ state: 'speaking', message: 'Playing introduction with sound.' }); }
     });
     listen('waiting', () => {
       if (!this.desired) return;
       owner.buffering = true;
-      if (owner.frame !== undefined && media instanceof HTMLVideoElement) {
-        media.cancelVideoFrameCallback(owner.frame); owner.frame = undefined;
+      if (media instanceof HTMLVideoElement) {
+        // Pausing to refill can reject an in-flight play promise. Invalidate
+        // that attempt before the owned pause; it is not a media failure.
+        this.cancel(); owner.resumeToken = this.token; media.pause();
       }
-      this.update({ state: 'loading' }); this.watch(owner, this.token);
+      if (this.snapshot.state !== 'loading') this.update({ state: 'loading' });
+      this.watch(owner, this.token);
     });
+    listen('progress', () => {
+      // A slow download is not a failed load. Only genuinely advancing data
+      // refreshes the existing 15s inactivity watchdog; repeated events do not.
+      const end = media.buffered.length ? media.buffered.end(media.buffered.length - 1) : 0;
+      if (end > owner.bufferEnd) {
+        owner.bufferEnd = end;
+        if (this.desired && this.snapshot.state === 'loading') this.watch(owner, this.token);
+      }
+      this.recover(owner);
+    });
+    listen('canplaythrough', () => this.recover(owner));
+    listen('seeked', () => this.recover(owner));
     listen('pause', () => {
-      if (this.desired && media.paused && !media.ended) { this.cancel(); this.pauseMedia(); this.update({ state: 'paused', manualPause: true, speech: false, caption: '', message: 'Animation paused.' }); }
+      if (this.desired && media.paused && !media.ended && !(media instanceof HTMLVideoElement && owner.buffering)) { this.cancel(); this.pauseMedia(); this.update({ state: 'paused', manualPause: true, speech: false, caption: '', message: 'Animation paused.' }); }
     });
     listen('timeupdate', () => {
       if (this.snapshot.speech) {
@@ -180,7 +200,7 @@ export class PortraitIntroduction {
     if (typeof video.requestVideoFrameCallback === 'function') owner.frame = video.requestVideoFrameCallback(reveal);
     else if (video.readyState >= 2) reveal();
   }
-  private async start(owner: Owner, speech: boolean, restart: boolean, retainFrame = false) {
+  private start(owner: Owner, speech: boolean, restart: boolean, retainFrame = false) {
     this.cancel(); this.pauseMedia(); this.owner = owner;
     const token = this.token;
     if (restart) {
@@ -191,6 +211,18 @@ export class PortraitIntroduction {
     }
     owner.media.muted = owner === this.video || !speech; owner.media.playbackRate = 1; this.desired = true;
     this.update({ state: 'loading', speech, caption: '', ...(speech ? { message: 'Loading introduction with sound.' } : {}) }); this.watch(owner, token);
+    owner.buffering = owner === this.video && !speech && owner.media.readyState < 4;
+    if (owner.buffering) owner.resumeToken = token;
+    else void this.play(owner, token);
+  }
+  private recover(owner: Owner) {
+    if (!this.current(owner) || !this.desired || !this.present || owner.resumeToken !== this.token || owner.media.readyState < 4) return;
+    // Native HAVE_ENOUGH_DATA estimates a runway through the remaining take.
+    // Resume once per command, rather than on every progress/playing event.
+    owner.resumeToken = undefined;
+    void this.play(owner, this.token);
+  }
+  private async play(owner: Owner, token: number) {
     try {
       await owner.media.play();
       // A stale promise must not pause a newer command on the reused element.

@@ -1,0 +1,824 @@
+[
+  {
+    "width": 320,
+    "height": 640,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 70,
+        "y": 281.21875,
+        "width": 180,
+        "height": 318,
+        "bottom": 599.21875
+      },
+      ".standing-portrait-figure": {
+        "x": 70,
+        "y": 281.21875,
+        "width": 180,
+        "height": 318,
+        "bottom": 599.21875
+      },
+      ".portrait-playback-controls": {
+        "x": 19.1875,
+        "y": 651.21875,
+        "width": 281.625,
+        "height": 49,
+        "bottom": 700.21875
+      },
+      ".portrait-playback-captions": {
+        "x": 19.1875,
+        "y": 704.21875,
+        "width": 281.625,
+        "height": 44,
+        "bottom": 748.21875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 320,
+        "height": 476,
+        "bottom": 582
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 582,
+        "width": 320,
+        "height": 58,
+        "bottom": 640
+      },
+      ".profile-intro": {
+        "x": 19.1875,
+        "y": 812.21875,
+        "width": 281.625,
+        "height": 150,
+        "bottom": 962.21875
+      },
+      ".record-tabs": {
+        "x": 19.1875,
+        "y": 1148.21875,
+        "width": 281.625,
+        "height": 101,
+        "bottom": 1249.21875
+      }
+    },
+    "recordText": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 70,
+        "y": 110.21875,
+        "width": 180,
+        "height": 318,
+        "bottom": 428.21875
+      },
+      ".standing-portrait-figure": {
+        "x": 70,
+        "y": 110.21875,
+        "width": 180,
+        "height": 318,
+        "bottom": 428.21875
+      },
+      ".portrait-playback-controls": {
+        "x": 19.1875,
+        "y": 480.21875,
+        "width": 281.625,
+        "height": 49,
+        "bottom": 529.21875
+      },
+      ".portrait-playback-captions": {
+        "x": 19.1875,
+        "y": 533.21875,
+        "width": 281.625,
+        "height": 44,
+        "bottom": 577.21875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 320,
+        "height": 476,
+        "bottom": 582
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 582,
+        "width": 320,
+        "height": 58,
+        "bottom": 640
+      },
+      ".profile-intro": {
+        "x": 19.1875,
+        "y": 641.21875,
+        "width": 281.625,
+        "height": 150,
+        "bottom": 791.21875
+      },
+      ".record-tabs": {
+        "x": 19.1875,
+        "y": 977.21875,
+        "width": 281.625,
+        "height": 101,
+        "bottom": 1078.21875
+      }
+    },
+    "errors": [],
+    "writes": []
+  },
+  {
+    "width": 390,
+    "height": 640,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 23.390625,
+        "y": 281.21875,
+        "width": 190,
+        "height": 335.65625,
+        "bottom": 616.875
+      },
+      ".standing-portrait-figure": {
+        "x": 23.390625,
+        "y": 281.21875,
+        "width": 190,
+        "height": 335.65625,
+        "bottom": 616.875
+      },
+      ".portrait-playback-controls": {
+        "x": 23.390625,
+        "y": 620.875,
+        "width": 343.21875,
+        "height": 49,
+        "bottom": 669.875
+      },
+      ".portrait-playback-captions": {
+        "x": 23.390625,
+        "y": 673.875,
+        "width": 343.21875,
+        "height": 44,
+        "bottom": 717.875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 390,
+        "height": 476,
+        "bottom": 582
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 582,
+        "width": 390,
+        "height": 58,
+        "bottom": 640
+      },
+      ".profile-intro": {
+        "x": 23.390625,
+        "y": 781.875,
+        "width": 343.21875,
+        "height": 150,
+        "bottom": 931.875
+      },
+      ".record-tabs": {
+        "x": 23.390625,
+        "y": 1117.875,
+        "width": 343.21875,
+        "height": 49,
+        "bottom": 1166.875
+      }
+    },
+    "recordText": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 23.390625,
+        "y": 112.21875,
+        "width": 190,
+        "height": 335.65625,
+        "bottom": 447.875
+      },
+      ".standing-portrait-figure": {
+        "x": 23.390625,
+        "y": 112.21875,
+        "width": 190,
+        "height": 335.65625,
+        "bottom": 447.875
+      },
+      ".portrait-playback-controls": {
+        "x": 23.390625,
+        "y": 451.875,
+        "width": 343.21875,
+        "height": 49,
+        "bottom": 500.875
+      },
+      ".portrait-playback-captions": {
+        "x": 23.390625,
+        "y": 504.875,
+        "width": 343.21875,
+        "height": 44,
+        "bottom": 548.875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 390,
+        "height": 476,
+        "bottom": 582
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 582,
+        "width": 390,
+        "height": 58,
+        "bottom": 640
+      },
+      ".profile-intro": {
+        "x": 23.390625,
+        "y": 612.875,
+        "width": 343.21875,
+        "height": 150,
+        "bottom": 762.875
+      },
+      ".record-tabs": {
+        "x": 23.390625,
+        "y": 948.875,
+        "width": 343.21875,
+        "height": 49,
+        "bottom": 997.875
+      }
+    },
+    "errors": [],
+    "writes": []
+  },
+  {
+    "width": 430,
+    "height": 844,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 25.796875,
+        "y": 285.21875,
+        "width": 200,
+        "height": 353.328125,
+        "bottom": 638.546875
+      },
+      ".standing-portrait-figure": {
+        "x": 25.796875,
+        "y": 285.21875,
+        "width": 200,
+        "height": 353.328125,
+        "bottom": 638.546875
+      },
+      ".portrait-playback-controls": {
+        "x": 25.796875,
+        "y": 646.546875,
+        "width": 378.40625,
+        "height": 49,
+        "bottom": 695.546875
+      },
+      ".portrait-playback-captions": {
+        "x": 25.796875,
+        "y": 703.546875,
+        "width": 378.40625,
+        "height": 44,
+        "bottom": 747.546875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 430,
+        "height": 680,
+        "bottom": 786
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 786,
+        "width": 430,
+        "height": 58,
+        "bottom": 844
+      },
+      ".profile-intro": {
+        "x": 25.796875,
+        "y": 811.546875,
+        "width": 378.40625,
+        "height": 125,
+        "bottom": 936.546875
+      },
+      ".record-tabs": {
+        "x": 25.796875,
+        "y": 1098.546875,
+        "width": 378.40625,
+        "height": 49,
+        "bottom": 1147.546875
+      }
+    },
+    "recordText": "Experience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 25.796875,
+        "y": 285.21875,
+        "width": 200,
+        "height": 353.328125,
+        "bottom": 638.546875
+      },
+      ".standing-portrait-figure": {
+        "x": 25.796875,
+        "y": 285.21875,
+        "width": 200,
+        "height": 353.328125,
+        "bottom": 638.546875
+      },
+      ".portrait-playback-controls": {
+        "x": 25.796875,
+        "y": 646.546875,
+        "width": 378.40625,
+        "height": 49,
+        "bottom": 695.546875
+      },
+      ".portrait-playback-captions": {
+        "x": 25.796875,
+        "y": 703.546875,
+        "width": 378.40625,
+        "height": 44,
+        "bottom": 747.546875
+      },
+      "main": {
+        "x": 0,
+        "y": 106,
+        "width": 430,
+        "height": 680,
+        "bottom": 786
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 106,
+        "bottom": 106
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 786,
+        "width": 430,
+        "height": 58,
+        "bottom": 844
+      },
+      ".profile-intro": {
+        "x": 25.796875,
+        "y": 811.546875,
+        "width": 378.40625,
+        "height": 125,
+        "bottom": 936.546875
+      },
+      ".record-tabs": {
+        "x": 25.796875,
+        "y": 1098.546875,
+        "width": 378.40625,
+        "height": 49,
+        "bottom": 1147.546875
+      }
+    },
+    "errors": [],
+    "writes": []
+  },
+  {
+    "width": 768,
+    "height": 900,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 46.078125,
+        "y": 117,
+        "width": 240,
+        "height": 424,
+        "bottom": 541
+      },
+      ".standing-portrait-figure": {
+        "x": 46.078125,
+        "y": 117.03125,
+        "width": 239.984375,
+        "height": 423.96875,
+        "bottom": 541
+      },
+      ".portrait-playback-controls": {
+        "x": 46.078125,
+        "y": 605,
+        "width": 240,
+        "height": 49,
+        "bottom": 654
+      },
+      ".portrait-playback-captions": {
+        "x": 46.078125,
+        "y": 666,
+        "width": 240,
+        "height": 44,
+        "bottom": 710
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 768,
+        "height": 740,
+        "bottom": 832
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 832,
+        "width": 768,
+        "height": 68,
+        "bottom": 900
+      },
+      ".profile-intro": {
+        "x": 318.078125,
+        "y": 207.109375,
+        "width": 403.84375,
+        "height": 100,
+        "bottom": 307.109375
+      },
+      ".record-tabs": {
+        "x": 318.078125,
+        "y": 335.109375,
+        "width": 403.84375,
+        "height": 49,
+        "bottom": 384.109375
+      }
+    },
+    "recordText": "PROFILE / WORKING RECORD\nFull-Stack Software Engineer\n\nI build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n\nExperience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 46.078125,
+        "y": 117,
+        "width": 240,
+        "height": 424,
+        "bottom": 541
+      },
+      ".standing-portrait-figure": {
+        "x": 46.078125,
+        "y": 117.03125,
+        "width": 239.984375,
+        "height": 423.96875,
+        "bottom": 541
+      },
+      ".portrait-playback-controls": {
+        "x": 46.078125,
+        "y": 605,
+        "width": 240,
+        "height": 49,
+        "bottom": 654
+      },
+      ".portrait-playback-captions": {
+        "x": 46.078125,
+        "y": 666,
+        "width": 240,
+        "height": 44,
+        "bottom": 710
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 768,
+        "height": 740,
+        "bottom": 832
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 832,
+        "width": 768,
+        "height": 68,
+        "bottom": 900
+      },
+      ".profile-intro": {
+        "x": 318.078125,
+        "y": 207.109375,
+        "width": 403.84375,
+        "height": 100,
+        "bottom": 307.109375
+      },
+      ".record-tabs": {
+        "x": 318.078125,
+        "y": 335.109375,
+        "width": 403.84375,
+        "height": 49,
+        "bottom": 384.109375
+      }
+    },
+    "errors": [],
+    "writes": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 86.390625,
+        "y": 117,
+        "width": 300,
+        "height": 520,
+        "bottom": 637
+      },
+      ".standing-portrait-figure": {
+        "x": 89.21875,
+        "y": 117.03125,
+        "width": 294.328125,
+        "height": 519.96875,
+        "bottom": 637
+      },
+      ".portrait-playback-controls": {
+        "x": 86.390625,
+        "y": 701,
+        "width": 300,
+        "height": 49,
+        "bottom": 750
+      },
+      ".portrait-playback-captions": {
+        "x": 86.390625,
+        "y": 762,
+        "width": 300,
+        "height": 44,
+        "bottom": 806
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 740,
+        "bottom": 832
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 832,
+        "width": 1440,
+        "height": 68,
+        "bottom": 900
+      },
+      ".profile-intro": {
+        "x": 450.390625,
+        "y": 223.359375,
+        "width": 644.15625,
+        "height": 75,
+        "bottom": 298.359375
+      },
+      ".record-tabs": {
+        "x": 450.390625,
+        "y": 326.359375,
+        "width": 903.21875,
+        "height": 49,
+        "bottom": 375.359375
+      }
+    },
+    "recordText": "PROFILE / WORKING RECORD\nFull-Stack Software Engineer\n\nI build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n\nExperience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 86.390625,
+        "y": 117,
+        "width": 300,
+        "height": 520,
+        "bottom": 637
+      },
+      ".standing-portrait-figure": {
+        "x": 89.21875,
+        "y": 117.03125,
+        "width": 294.328125,
+        "height": 519.96875,
+        "bottom": 637
+      },
+      ".portrait-playback-controls": {
+        "x": 86.390625,
+        "y": 701,
+        "width": 300,
+        "height": 49,
+        "bottom": 750
+      },
+      ".portrait-playback-captions": {
+        "x": 86.390625,
+        "y": 762,
+        "width": 300,
+        "height": 44,
+        "bottom": 806
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 740,
+        "bottom": 832
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 832,
+        "width": 1440,
+        "height": 68,
+        "bottom": 900
+      },
+      ".profile-intro": {
+        "x": 450.390625,
+        "y": 223.359375,
+        "width": 644.15625,
+        "height": 75,
+        "bottom": 298.359375
+      },
+      ".record-tabs": {
+        "x": 450.390625,
+        "y": 326.359375,
+        "width": 903.21875,
+        "height": 49,
+        "bottom": 375.359375
+      }
+    },
+    "errors": [],
+    "writes": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "arrival": {
+      ".standing-portrait-stage": {
+        "x": 76.796875,
+        "y": 117,
+        "width": 300,
+        "height": 370,
+        "bottom": 487
+      },
+      ".standing-portrait-figure": {
+        "x": 122.078125,
+        "y": 117.03125,
+        "width": 209.421875,
+        "height": 369.96875,
+        "bottom": 487
+      },
+      ".portrait-playback-controls": {
+        "x": 76.796875,
+        "y": 551,
+        "width": 300,
+        "height": 49,
+        "bottom": 600
+      },
+      ".portrait-playback-captions": {
+        "x": 76.796875,
+        "y": 612,
+        "width": 300,
+        "height": 44,
+        "bottom": 656
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 1280,
+        "height": 560,
+        "bottom": 652
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 652,
+        "width": 1280,
+        "height": 68,
+        "bottom": 720
+      },
+      ".profile-intro": {
+        "x": 434.390625,
+        "y": 217.5,
+        "width": 644.15625,
+        "height": 75,
+        "bottom": 292.5
+      },
+      ".record-tabs": {
+        "x": 434.390625,
+        "y": 320.5,
+        "width": 768.8125,
+        "height": 49,
+        "bottom": 369.5
+      }
+    },
+    "recordText": "PROFILE / WORKING RECORD\nFull-Stack Software Engineer\n\nI build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n\nExperience\nEducation & training\nCapabilities\n01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\nLet’s build something useful",
+    "speech": {
+      ".standing-portrait-stage": {
+        "x": 76.796875,
+        "y": 107,
+        "width": 300,
+        "height": 370,
+        "bottom": 477
+      },
+      ".standing-portrait-figure": {
+        "x": 122.078125,
+        "y": 107.03125,
+        "width": 209.421875,
+        "height": 369.96875,
+        "bottom": 477
+      },
+      ".portrait-playback-controls": {
+        "x": 76.796875,
+        "y": 541,
+        "width": 300,
+        "height": 49,
+        "bottom": 590
+      },
+      ".portrait-playback-captions": {
+        "x": 76.796875,
+        "y": 602,
+        "width": 300,
+        "height": 44,
+        "bottom": 646
+      },
+      "main": {
+        "x": 0,
+        "y": 92,
+        "width": 1280,
+        "height": 560,
+        "bottom": 652
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 92,
+        "bottom": 92
+      },
+      ".stage-footer": {
+        "x": 0,
+        "y": 652,
+        "width": 1280,
+        "height": 68,
+        "bottom": 720
+      },
+      ".profile-intro": {
+        "x": 434.390625,
+        "y": 207.5,
+        "width": 644.15625,
+        "height": 75,
+        "bottom": 282.5
+      },
+      ".record-tabs": {
+        "x": 434.390625,
+        "y": 310.5,
+        "width": 768.8125,
+        "height": 49,
+        "bottom": 359.5
+      }
+    },
+    "errors": [],
+    "writes": []
+  }
+]

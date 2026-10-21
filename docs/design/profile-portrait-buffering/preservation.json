@@ -1,0 +1,50 @@
+{
+  "base": "767db8207fcaa0bc973bc65f9dbe519ba2e7afab",
+  "files": [
+    {
+      "path": "src/components/landscape/ProfileIntroduction.tsx",
+      "unchanged": true,
+      "bytes": 5467,
+      "sha256": "56971e084039a8f30e32870ea811daedea0ecb23837e7876741bd5e427dd4566"
+    },
+    {
+      "path": "src/components/landscape/profile-introduction.css",
+      "unchanged": true,
+      "bytes": 4000,
+      "sha256": "c1d85a9518f59a2fe955ffbb010b9d4a36c1a6b285c875260d01f9631670cda8"
+    },
+    {
+      "path": "src/lib/profile-introduction.en.vtt",
+      "unchanged": true,
+      "bytes": 222,
+      "sha256": "30416c551129cced422e17e780704fb971fba539382990e9a1300a9ac05531c8"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction-480.webm",
+      "unchanged": true,
+      "bytes": 2703633,
+      "sha256": "41ef037004110db063d855915a0a78da7cc4f8a0ae51a743c43727a2b658cf49"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction-720.webm",
+      "unchanged": true,
+      "bytes": 5051086,
+      "sha256": "f29880da2d56148ffd8cc74d2707481359dc93a90f8870bc1d10c23dcd9de5af"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction.mp3",
+      "unchanged": true,
+      "bytes": 289197,
+      "sha256": "41225f959543f2ffe7f0ab10c46846ef772110efe7ad1fa47e5826a22f864a6a"
+    },
+    {
+      "path": "public/media/profile/mahmoud-introduction.en.vtt",
+      "unchanged": true,
+      "bytes": 222,
+      "sha256": "30416c551129cced422e17e780704fb971fba539382990e9a1300a9ac05531c8"
+    }
+  ],
+  "productChanges": [
+    "src/lib/portrait-introduction.ts"
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "width": 1280,
+  "height": 720,
+  "requests": [
+    "mahmoud-introduction-720.webm"
+  ],
+  "errors": [],
+  "writes": [],
+  "loops": 10,
+  "samples": 6942,
+  "flashes": 0,
+  "overlaps": 0,
+  "gaps": 0,
+  "maxPendingFrames": 1,
+  "pendingFrames": 1,
+  "scheduledFrames": 3217,
+  "canceledFrames": 2,
+  "presentedFrames": 3214,
+  "cuts": [
+    {
+      "at": 1792600822.2456,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600833.785,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600845.358,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600856.9819002,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600868.5219002,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600880.1796,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600891.77,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600903.3245,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600914.8643,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "at": 1792600926.4378,
+      "time": 0.2,
+      "still": 0,
+      "video": 1
+    }
+  ],
+  "events": [
+    {
+      "event": "playing",
+      "at": 1792600810.7788,
+      "time": 0.200739,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600822.2594001,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600822.3151999,
+      "time": 0.200718,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600833.7925,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600833.853,
+      "time": 0.200336,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600845.3654,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600845.433,
+      "time": 0.200413,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600856.9915,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600857.0756001,
+      "time": 0.200288,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600868.5296001,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600868.6066,
+      "time": 0.201622,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600880.1898,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600880.2713,
+      "time": 0.200377,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600891.7779002,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600891.8608,
+      "time": 0.200322,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600903.3323,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600903.4062,
+      "time": 0.200664,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600914.8725,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600914.9452,
+      "time": 0.200296,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600926.4493,
+      "time": 0.2,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600926.5271,
+      "time": 0.200713,
+      "speech": false,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600927.4046001,
+      "time": 0,
+      "speech": true,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600927.4076002,
+      "time": 0,
+      "speech": true,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600927.4386,
+      "time": 0.000306,
+      "speech": true,
+      "muted": true
+    },
+    {
+      "event": "pause",
+      "at": 1792600939.5182,
+      "time": 12.008,
+      "speech": true,
+      "muted": false
+    },
+    {
+      "event": "ended",
+      "at": 1792600939.5189002,
+      "time": 0.2,
+      "speech": true,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792600939.5825,
+      "time": 0.200356,
+      "speech": false,
+      "muted": true
+    }
+  ],
+  "speechOrigin": 1792600927.4382942,
+  "alpha": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "pendingAfterExit": 0,
+  "recording": {
+    "seconds": 26.499500036239624,
+    "frames": 301,
+    "speechOffset": 12.536794185638428,
+    "firstFrameEpoch": 1792600914.9015,
+    "capture": "Sampled browser screenshots at measured wall-clock timing; encoded 25fps is not hardware capture rate.",
+    "audio": "Approved audio muxed at measured speech origin; not system audio or an independent audition."
+  }
+}
