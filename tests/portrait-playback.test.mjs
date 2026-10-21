@@ -10,13 +10,14 @@ const source = readFileSync('src/lib/portrait-introduction.ts', 'utf8').replace(
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { PortraitIntroduction } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
 
-function fixture(t) {
+function fixture(t, readyState = 4) {
   const saved = Object.fromEntries(['document', 'HTMLVideoElement', 'matchMedia'].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
   class Media extends EventTarget {
-    currentTime = 0; paused = true; ended = false; muted = true; seeking = false; readyState = 4; dataset = {};
+    currentTime = 0; paused = true; ended = false; muted = true; seeking = false; readyState = readyState; dataset = {}; plays = 0; bufferEnd = 0;
+    get buffered() { return { length: this.bufferEnd ? 1 : 0, end: () => this.bufferEnd }; }
     setAttribute() {} removeAttribute() {} remove() {} load() {}
     pause() { this.paused = true; queueMicrotask(() => this.dispatchEvent(new Event('pause'))); }
-    async play() { this.paused = false; this.ended = false; this.dispatchEvent(new Event('playing')); }
+    async play() { this.plays++; this.paused = false; this.ended = false; this.dispatchEvent(new Event('playing')); }
   }
   class Video extends Media {
     videoWidth = 480; videoHeight = 848; frames = new Map(); sequence = 0;
@@ -109,4 +110,70 @@ test('buffering cancels frame work; a late decoded frame cannot clear loading be
   video.dispatchEvent(new Event('playing')); video.present(.28);
   assert.equal(states.at(-1).state, 'looping');
   assert.equal(video.frames.size, 1);
+});
+
+test('silent startup waits for native enough-data readiness without a fixed delay or a second element', t => {
+  const { video, media, states, attributes } = fixture(t, 3);
+  assert.equal(video.preload, 'auto'); assert.equal(video.plays, 0);
+  assert.equal(states.at(-1).state, 'loading'); assert.equal(attributes.has('data-video-visible'), false);
+  video.dispatchEvent(new Event('canplaythrough')); assert.equal(video.plays, 0);
+  video.readyState = 4; video.dispatchEvent(new Event('canplaythrough'));
+  video.dispatchEvent(new Event('canplaythrough')); video.dispatchEvent(new Event('progress'));
+  video.present(.24);
+  assert.equal(video.plays, 1); assert.equal(media.length, 1);
+  assert.equal(states.at(-1).state, 'looping'); assert.equal(video.muted, true);
+});
+
+test('advancing buffered data keeps a slow load alive; repeated progress without new data still times out in 15 seconds', t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const { video, states } = fixture(t, 3);
+  t.mock.timers.tick(14_000); video.bufferEnd = 1; video.dispatchEvent(new Event('progress'));
+  t.mock.timers.tick(14_000); video.bufferEnd = 2; video.dispatchEvent(new Event('progress'));
+  assert.equal(states.at(-1).state, 'loading');
+  t.mock.timers.tick(14_000); video.dispatchEvent(new Event('progress'));
+  t.mock.timers.tick(1_000); assert.equal(states.at(-1).state, 'error');
+  assert.equal(video.plays, 0);
+});
+
+test('buffer recovery holds the decoded layer until enough data, and Mute invalidates pending speech', t => {
+  const { controller, video, states, attributes } = fixture(t);
+  video.present(.24); controller.hear(); video.present(1);
+  video.readyState = 3; video.dispatchEvent(new Event('waiting'));
+  assert.equal(video.paused, true); assert.equal(video.frames.size, 0);
+  assert.equal(attributes.get('data-video-visible'), 'true');
+  const plays = video.plays;
+  video.dispatchEvent(new Event('canplaythrough')); assert.equal(video.plays, plays);
+  controller.hear(); // Explicit Mute while the spoken take is buffering.
+  video.readyState = 4; video.dispatchEvent(new Event('canplaythrough')); video.present(1.04);
+  assert.equal(video.muted, true); assert.equal(states.at(-1).speech, false);
+  assert.equal(states.at(-1).state, 'looping'); assert.equal(states.at(-1).caption, '');
+});
+
+test('Pause, offscreen and navigation cancel a queued buffer recovery', t => {
+  const { controller, video, states, environment } = fixture(t, 3);
+  controller.toggleAnimation(); video.readyState = 4; video.dispatchEvent(new Event('canplaythrough'));
+  assert.equal(video.plays, 0); assert.equal(states.at(-1).manualPause, true);
+  controller.toggleAnimation(); video.present(.24);
+  video.readyState = 3; video.dispatchEvent(new Event('waiting'));
+  controller.environment({ ...environment, visible: false });
+  const plays = video.plays;
+  video.readyState = 4; video.bufferEnd = 12; video.dispatchEvent(new Event('progress')); video.dispatchEvent(new Event('canplaythrough'));
+  assert.equal(video.plays, plays); assert.equal(video.muted, true);
+  controller.dispose(); video.dispatchEvent(new Event('canplaythrough'));
+  assert.equal(video.plays, plays); assert.equal(video.frames.size, 0);
+});
+
+test('an owned refill pause cannot turn the interrupted play promise into a media error', async t => {
+  const { controller, video, states } = fixture(t);
+  video.present(.24); await Promise.resolve();
+  const play = video.play;
+  video.play = function () {
+    this.paused = false;
+    return new Promise((resolve, reject) => this.addEventListener('pause', () => reject(new DOMException('Refill pause', 'AbortError')), { once: true }));
+  };
+  controller.hear(); video.readyState = 3; video.dispatchEvent(new Event('waiting'));
+  await Promise.resolve(); await Promise.resolve();
+  assert.equal(states.at(-1).state, 'loading'); assert.equal(states.at(-1).speech, true);
+  video.play = play; video.readyState = 4; video.dispatchEvent(new Event('canplaythrough')); video.present(.04);
+  assert.equal(states.at(-1).state, 'speaking'); assert.equal(video.muted, false);
 });

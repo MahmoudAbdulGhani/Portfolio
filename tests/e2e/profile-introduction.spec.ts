@@ -32,6 +32,7 @@ async function fakeMedia(page:Page,opaque=false){await page.addInitScript(({opaq
 async function event(page:Page,name:string,time?:number,index=-1){await page.evaluate(({name,time,index})=>{
   const w=window as unknown as {portraitMedia:{media:HTMLMediaElement;resolve:()=>void}[];portraitFlags:(m:HTMLMediaElement)=>{ended:boolean;paused:boolean;time:number}};
   const entry=w.portraitMedia[index<0?w.portraitMedia.length-1:index];
+  if(name==='playing')w.portraitFlags(entry.media).paused=false;
   if(time!==undefined)entry.media.currentTime=time;
   if(name==='ended'){w.portraitFlags(entry.media).ended=true;w.portraitFlags(entry.media).paused=true;}
   entry.media.dispatchEvent(new Event(name));entry.resolve();
@@ -259,6 +260,35 @@ test('buffering watchdog is canceled by pause; failed/slow playback never retrie
   await event(page,'playing');await expect(ui(page)).toHaveAttribute('data-playback','looping');
   await event(page,'waiting');await page.clock.fastForward(15_001);await expect(ui(page)).toHaveAttribute('data-playback','error');
   await hidden(page,true);await hidden(page,false);expect(await calls(page)).toBe(2);
+});
+
+test('native readiness gates silent startup and refill, while advancing data refreshes only the 15s inactivity deadline',async({page})=>{
+  await fakeMedia(page);
+  await page.addInitScript(()=>{
+    const buffer={ready:3,end:0};Object.assign(window,{refillBuffer:buffer});
+    Object.defineProperty(HTMLMediaElement.prototype,'readyState',{configurable:true,get:()=>buffer.ready});
+    Object.defineProperty(HTMLMediaElement.prototype,'buffered',{configurable:true,get:()=>({length:buffer.end?1:0,end:()=>buffer.end})});
+  });
+  await page.emulateMedia({reducedMotion:'reduce'});await open(page);await page.clock.install();
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await expect(page.locator('video')).toHaveCount(1);expect(await calls(page)).toBe(0);
+  await expect(ui(page)).toHaveAttribute('data-playback','loading');
+  await expect(page.locator('.standing-portrait-image')).toHaveCSS('opacity','1');
+  await page.clock.fastForward(14_000);
+  await page.evaluate(()=>{const b=(window as unknown as {refillBuffer:{ready:number;end:number}}).refillBuffer;b.end=2;document.querySelector('video')!.dispatchEvent(new Event('progress'));});
+  await page.clock.fastForward(14_000);await expect(ui(page)).toHaveAttribute('data-playback','loading');
+  await page.evaluate(()=>{(window as unknown as {refillBuffer:{ready:number}}).refillBuffer.ready=4;document.querySelector('video')!.dispatchEvent(new Event('canplaythrough'));});
+  await expect.poll(()=>calls(page)).toBe(1);await event(page,'playing');
+  await expect(ui(page)).toHaveAttribute('data-playback','looping');
+  await page.evaluate(()=>{(window as unknown as {refillBuffer:{ready:number}}).refillBuffer.ready=3;document.querySelector('video')!.dispatchEvent(new Event('waiting'));});
+  await expect(ui(page)).toHaveAttribute('data-playback','loading');
+  await expect(page.locator('video')).toHaveJSProperty('paused',true);
+  await expect(page.locator('.standing-portrait-image')).toHaveCSS('opacity','0');
+  await page.clock.fastForward(14_000);
+  await page.locator('video').evaluate(v=>v.dispatchEvent(new Event('progress'))); // Same range: no refresh.
+  await page.clock.fastForward(1_001);await expect(ui(page)).toHaveAttribute('data-playback','error');
+  await expect(page.locator('.standing-portrait-image')).toHaveCSS('opacity','1');
+  await expect(hear(page)).toBeEnabled();await expect(page.locator('video')).toHaveCount(0);
 });
 
 test('late promises/events after mute, reduced motion or unmount cannot revive audible playback',async({page})=>{

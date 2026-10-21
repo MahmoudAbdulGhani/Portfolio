@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "label": "Original delivered 720",
+      "path": ".motion-preview/buffering-original-delivered-720.webm",
+      "sha256": "f15deb5ec861c231b555989975464ece43581a71241101f6a173dc08e6bc6b18"
+    },
+    {
+      "label": "Approved 720",
+      "path": "public/media/profile/mahmoud-introduction-720.webm",
+      "sha256": "f29880da2d56148ffd8cc74d2707481359dc93a90f8870bc1d10c23dcd9de5af"
+    },
+    {
+      "label": "Approved 480",
+      "path": "public/media/profile/mahmoud-introduction-480.webm",
+      "sha256": "41ef037004110db063d855915a0a78da7cc4f8a0ae51a743c43727a2b658cf49"
+    }
+  ],
+  "times": [
+    0.44,
+    0.56,
+    5.12,
+    5.16,
+    5.2,
+    5.24
+  ],
+  "method": "Native decoded source frames. 480 output scaled for coordinate comparison only; no detail restoration. Boundary figures are 210px rendered-width references. Original delivered 720 is extracted unchanged from the earlier user ZIP. Pre-encode e536e2cf master is not supplied here; source-versus-generation attribution remains limited."
+}
