@@ -53,12 +53,13 @@ test('Profile shares date/status corrections and removes duplicate and unsupport
   await page.goto('/profile');
   await expect(page.locator('.experience-record .record-organization')).toHaveText(['The Digital Hub', 'Oigetit', 'Ishtari']);
   await expect(page.locator('.experience-record .record-date')).toHaveText(['Jun 2026 – Sep 2026', 'May 2026 – Aug 2026', 'Dec 2025 – Jan 2026']);
-  await expect(page.locator('.record-detail').first()).toContainText('Participated in');
-  await expect(page.locator('.experience-record .learning-status').first()).toContainText('Program completion is not verified');
+  await expect(page.locator('.record-detail').first()).toContainText('Completed a full-stack software engineering and AI program.');
+  await expect(page.locator('.experience-record')).not.toContainText('not verified');
   await page.getByRole('tab', { name: 'Education & training', exact: true }).click();
   await expect(page.locator('.training-record')).toContainText('Jul 2025 – Oct 2025');
   await expect(page.locator('.training-record')).not.toContainText('expected');
-  await expect(page.locator('.training-record')).toContainText('Completion and certification are not verified');
+  await expect(page.locator('.training-record')).toContainText('Cloud training.');
+  await expect(page.locator('.training-record')).not.toContainText('not verified');
   await expect(page.getByRole('link', { name: 'Program information' })).toBeVisible();
   await page.getByRole('tab', { name: 'Capabilities', exact: true }).click();
   await expect(page.locator('.capability-record li')).toHaveText(['JavaScript', 'pytest', 'SOLID']);

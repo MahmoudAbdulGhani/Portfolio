@@ -54,7 +54,10 @@ test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, owners
       assert.match(instruction, /use exclusively caseStudy.authorship.documentedPersonalWork/);
       const prompt = request.contents[0].parts[0].text;
       const context = JSON.parse(prompt.split('\n')[1]);
-      for (const record of [...context.certifications, ...context.education, context.profile.experience[0]]) {
+      assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'owner-confirmed');
+      assert.equal(context.profile.experience[0].learningEvidence.certification.status, 'unverified');
+      assert.match(instruction, /owner-confirmed completion status supports stating/);
+      for (const record of [...context.certifications, ...context.education]) {
         assert.equal(record.learningEvidence.completion.status, 'unverified');
         assert.equal(record.learningEvidence.certification.status, 'unverified');
       }

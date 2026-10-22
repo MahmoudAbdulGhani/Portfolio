@@ -1,0 +1,70 @@
+{
+  "phase": "before",
+  "base": "https://mahmoud-portfolio-omega.vercel.app",
+  "method": "Chrome viewport emulation, frozen unmodified public GET responses from 22 Oct 2026, reduced motion. Complete captures extend camera height at the stated width; viewport images retain 900px height. No physical-device test, mutation or production deploy.",
+  "findings": [
+    {
+      "width": 320,
+      "errors": [],
+      "tabs": [
+        {
+          "label": "Experience",
+          "text": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025",
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "text": "01 / Education\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nOct 2022 – Jun 2025\n\nCompletion is not independently verified by the available records.\n\n01 / Training\nAngular Independent Study\n\nSelf-directed learning\n\nSep 2025\n\nCompletion and certification are not verified by the available records.\n\n02 / Training\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services\n\nJul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\n03 / Training\nFull-Stack Web Development\n\nyoubee.ai\n\n4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "text": "01\nLanguages\nJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL\n02\nFrameworks\nDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap\n03\nDatabases\nMongoDBPostgreSQLMySQLMariaDBSupabase\n04\nOperations\nGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman\n05\nPractices\nPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEO\nEngineering Evidence\n\nProject references describe documented work and its contribution scope.\n\n01\nJobPilot AI\nProject evidence\n\nSuggestions become saved information only after review.\n\nRelated capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.\n\nReviewed AI changes\n03\nCedar Construction\nTeam-project evidence\n\nThe explanation reads the calculated figures. It cannot change them.\n\nRelated capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.\n\nFinancial calculation and interpretation\n02\nLobby\nTeam-project evidence\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nRelated capabilities: Tailwind CSS, Supabase.\n\nGuest membership and call access\nAdditional project evidence",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "errors": [],
+      "tabs": [
+        {
+          "label": "Experience",
+          "text": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025",
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "text": "01 / Education\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nOct 2022 – Jun 2025\n\nCompletion is not independently verified by the available records.\n\n01 / Training\nAngular Independent Study\n\nSelf-directed learning\n\nSep 2025\n\nCompletion and certification are not verified by the available records.\n\n02 / Training\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services\n\nJul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\n03 / Training\nFull-Stack Web Development\n\nyoubee.ai\n\n4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "text": "01\nLanguages\nJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL\n02\nFrameworks\nDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap\n03\nDatabases\nMongoDBPostgreSQLMySQLMariaDBSupabase\n04\nOperations\nGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman\n05\nPractices\nPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEO\nEngineering Evidence\n\nProject references describe documented work and its contribution scope.\n\n01\nJobPilot AI\nProject evidence\n\nSuggestions become saved information only after review.\n\nRelated capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.\n\nReviewed AI changes\n03\nCedar Construction\nTeam-project evidence\n\nThe explanation reads the calculated figures. It cannot change them.\n\nRelated capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.\n\nFinancial calculation and interpretation\n02\nLobby\nTeam-project evidence\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nRelated capabilities: Tailwind CSS, Supabase.\n\nGuest membership and call access\nAdditional project evidence",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "errors": [],
+      "tabs": [
+        {
+          "label": "Experience",
+          "text": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\nProgram completion is not verified by the available records.\n\nParticipated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid\n02\nQA Intern\nOigetit\nMay 2026 – Aug 2026\n03\nBackend Developer\nIshtari Group, Tripoli, Onsite\nDec 2025 – Jan 2026\n04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025",
+          "overflow": false
+        },
+        {
+          "label": "Education & training",
+          "text": "01 / Education\nBachelor of Science in Computer Science\n\nLebanese International University (LIU)\n\nOct 2022 – Jun 2025\n\nCompletion is not independently verified by the available records.\n\n01 / Training\nAngular Independent Study\n\nSelf-directed learning\n\nSep 2025\n\nCompletion and certification are not verified by the available records.\n\n02 / Training\nAWS re/Start Bootcamp – Cloud Computing & DevOps Fundamentals\n\nAmazon Web Services\n\nJul 2025 – Oct 2025\n\nCloud computing and DevOps fundamentals training.\n\nCompletion and certification are not verified by the available records.\n\n03 / Training\nFull-Stack Web Development\n\nyoubee.ai\n\n4-month program\n\nPractical full-stack web development training.\n\nCompletion and certification are not verified by the available records.",
+          "overflow": false
+        },
+        {
+          "label": "Capabilities",
+          "text": "01\nLanguages\nJavaScriptTypeScriptPHPPythonHTML — HTML5CSS — CSS3SQL\n02\nFrameworks\nDjangoFastAPIDjango REST FrameworkReactNext.jsAngularExpress.jsNestJSTailwind CSSBootstrap\n03\nDatabases\nMongoDBPostgreSQLMySQLMariaDBSupabase\n04\nOperations\nGitGitHubNode.jsDockerStripeVercelRenderNodemailer / SMTPLiveKit CloudJWT — AuthenticationZodpnpm WorkspacesViteOpenAPI / SwaggerPostman\n05\nPractices\nPydanticpytestPlaywrightStructured Outputs & JSON SchemaCSRF ProtectionArgon2 — Password hashingZustandTanStack QueryResponsive DesignFramer MotionRESTful APIsMongooseSQLAlchemyAlembicAuthentication & AuthorizationRBACSecure CookiesOTP VerificationJestVitestUnit & Integration TestingLLMsRAGPrompt EngineeringAI API Integration — OpenAISOLIDGitHub ActionsDesign PatternsCI/CDScalable SystemsReal-time SystemsClean ArchitectureSSRSEO\nEngineering Evidence\n\nProject references describe documented work and its contribution scope.\n\n01\nJobPilot AI\nProject evidence\n\nSuggestions become saved information only after review.\n\nRelated capabilities: TypeScript, Python, FastAPI, React, Next.js, PostgreSQL, Git, GitHub, Docker, Vercel, Render, Pydantic, pytest, Playwright, SQLAlchemy, Alembic, Vitest, AI API Integration.\n\nReviewed AI changes\n03\nCedar Construction\nTeam-project evidence\n\nThe explanation reads the calculated figures. It cannot change them.\n\nRelated capabilities: JavaScript, Django, HTML, CSS, Django REST Framework.\n\nFinancial calculation and interpretation\n02\nLobby\nTeam-project evidence\n\nAn invitation offers a connection. Joining the room and entering its call are separate checks.\n\nRelated capabilities: Tailwind CSS, Supabase.\n\nGuest membership and call access\nAdditional project evidence",
+          "overflow": false
+        }
+      ]
+    }
+  ]
+}

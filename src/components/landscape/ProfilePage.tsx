@@ -139,7 +139,6 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
                       <strong>{item.role || item.milestone}</strong>
                       <span className="record-organization">{item.company || item.facility}</span>
                       {item.meta && <span className="record-date">{item.meta}</span>}
-                      {item.learningEvidence?.completion.status === 'unverified' && <span className="learning-status">Program completion is not verified by the available records.</span>}
                     </span>
                     <FiPlus className="disclosure-indicator" aria-hidden="true" />
                   </>}>
@@ -176,7 +175,6 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
                   <p className="record-organization">{item.school}</p>
                   {item.period && <p className="record-date">{item.period}</p>}
                   {item.details && <p>{item.details}</p>}
-                  {item.learningEvidence?.completion.status === 'unverified' && <p className="learning-status">Completion is not independently verified by the available records.</p>}
                 </section>
               ))}
             <div className="training-record">
@@ -191,7 +189,6 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
                     {item.issuer && <p className="record-organization">{item.issuer}</p>}
                     {period && <p className="record-date">{period}</p>}
                     {item.description && <p>{item.description}</p>}
-                    <p className="learning-status">Completion and certification are not verified by the available records.</p>
                     {item.url && (
                       <a
                         href={item.url}
