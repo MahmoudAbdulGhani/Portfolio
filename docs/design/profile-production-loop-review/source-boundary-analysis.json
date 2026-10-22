@@ -1,0 +1,154 @@
+[
+  {
+    "size": 480,
+    "width": 480,
+    "height": 848,
+    "decodedFrames": 300,
+    "pcmBytes": 2301952,
+    "pcmSha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e",
+    "pairs": [
+      {
+        "from": 294,
+        "to": 295,
+        "faceMeanAbsoluteRGB": 1.3226304018291373,
+        "bodyMeanAbsoluteRGB": 0.000049969740982813
+      },
+      {
+        "from": 295,
+        "to": 296,
+        "faceMeanAbsoluteRGB": 1.9516740239683468,
+        "bodyMeanAbsoluteRGB": 0.009688755749213272
+      },
+      {
+        "from": 296,
+        "to": 297,
+        "faceMeanAbsoluteRGB": 1.7248731697919846,
+        "bodyMeanAbsoluteRGB": 0.0018809428709755517
+      },
+      {
+        "from": 297,
+        "to": 298,
+        "faceMeanAbsoluteRGB": 1.8092613602128929,
+        "bodyMeanAbsoluteRGB": 0.0006709271362866134
+      },
+      {
+        "from": 298,
+        "to": 299,
+        "faceMeanAbsoluteRGB": 2.8200186984870967,
+        "bodyMeanAbsoluteRGB": 0.0017622367465504735
+      },
+      {
+        "from": 299,
+        "to": 0,
+        "faceMeanAbsoluteRGB": 19.644034560290805,
+        "bodyMeanAbsoluteRGB": 1.2242603546356903
+      },
+      {
+        "from": 0,
+        "to": 1,
+        "faceMeanAbsoluteRGB": 1.1751605247468462,
+        "bodyMeanAbsoluteRGB": 0.08142123577826182
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "faceMeanAbsoluteRGB": 1.901794035987385,
+        "bodyMeanAbsoluteRGB": 0.014857467925441781
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "faceMeanAbsoluteRGB": 2.167241336935911,
+        "bodyMeanAbsoluteRGB": 0.034253528201404024
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "faceMeanAbsoluteRGB": 3.6614442509982674,
+        "bodyMeanAbsoluteRGB": 0.006948232873396274
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "faceMeanAbsoluteRGB": 1.3677403728756388,
+        "bodyMeanAbsoluteRGB": 0.00895982812878238
+      }
+    ]
+  },
+  {
+    "size": 720,
+    "width": 720,
+    "height": 1272,
+    "decodedFrames": 300,
+    "pcmBytes": 2301952,
+    "pcmSha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e",
+    "pairs": [
+      {
+        "from": 294,
+        "to": 295,
+        "faceMeanAbsoluteRGB": 1.3900772831179051,
+        "bodyMeanAbsoluteRGB": 0.0036164688427299703
+      },
+      {
+        "from": 295,
+        "to": 296,
+        "faceMeanAbsoluteRGB": 1.8769079942384144,
+        "bodyMeanAbsoluteRGB": 0.0065014928380408114
+      },
+      {
+        "from": 296,
+        "to": 297,
+        "faceMeanAbsoluteRGB": 1.8479725488080587,
+        "bodyMeanAbsoluteRGB": 0.002014208090093934
+      },
+      {
+        "from": 297,
+        "to": 298,
+        "faceMeanAbsoluteRGB": 1.8705942870977013,
+        "bodyMeanAbsoluteRGB": 0.0010896855719977848
+      },
+      {
+        "from": 298,
+        "to": 299,
+        "faceMeanAbsoluteRGB": 2.8568194385340204,
+        "bodyMeanAbsoluteRGB": 0.016003099888158373
+      },
+      {
+        "from": 299,
+        "to": 0,
+        "faceMeanAbsoluteRGB": 19.786229650589238,
+        "bodyMeanAbsoluteRGB": 0.9413344334326939
+      },
+      {
+        "from": 0,
+        "to": 1,
+        "faceMeanAbsoluteRGB": 1.232603561706885,
+        "bodyMeanAbsoluteRGB": 0.08385451751862395
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "faceMeanAbsoluteRGB": 1.9914252208820227,
+        "bodyMeanAbsoluteRGB": 0.005635978097140604
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "faceMeanAbsoluteRGB": 2.298664712798747,
+        "bodyMeanAbsoluteRGB": 0.005529090139187888
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "faceMeanAbsoluteRGB": 3.7326793415780584,
+        "bodyMeanAbsoluteRGB": 0.016413541457906376
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "faceMeanAbsoluteRGB": 1.3577397361061223,
+        "bodyMeanAbsoluteRGB": 0.00187726134524587
+      }
+    ]
+  }
+]

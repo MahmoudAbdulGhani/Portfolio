@@ -1,0 +1,69 @@
+{
+  "method": "Exploratory remote-load observation up to 30s; earlier five-second probe remained loading, retained as a finding, not a changed regression deadline.",
+  "loading": [
+    {
+      "ms": 1518,
+      "stage": "loading"
+    },
+    {
+      "ms": 1773,
+      "stage": "loading"
+    },
+    {
+      "ms": 2029,
+      "stage": "loading"
+    },
+    {
+      "ms": 2298,
+      "stage": "loading"
+    },
+    {
+      "ms": 2559,
+      "stage": "loading"
+    },
+    {
+      "ms": 2814,
+      "stage": "loading"
+    },
+    {
+      "ms": 3069,
+      "stage": "loading"
+    },
+    {
+      "ms": 3330,
+      "stage": "loading"
+    },
+    {
+      "ms": 3593,
+      "stage": "loading"
+    },
+    {
+      "ms": 3847,
+      "stage": "loading"
+    },
+    {
+      "ms": 4104,
+      "stage": "loading"
+    },
+    {
+      "ms": 4357,
+      "stage": "loading"
+    },
+    {
+      "ms": 4615,
+      "stage": "loading"
+    },
+    {
+      "ms": 4871,
+      "stage": "loading"
+    },
+    {
+      "ms": 5136,
+      "stage": "loading"
+    },
+    {
+      "ms": 5396,
+      "stage": "ready"
+    }
+  ]
+}

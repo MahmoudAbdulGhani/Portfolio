@@ -1,0 +1,162 @@
+[
+  {
+    "case": "Actual production with browser reduced-motion preference, explicit native MP3, completes once and stays paused",
+    "before": {
+      ".standing-portrait-stage": {
+        "width": 190,
+        "height": 336,
+        "top": 179
+      },
+      ".portrait-playback-controls": {
+        "width": 343,
+        "height": 49,
+        "top": 523
+      },
+      ".portrait-playback-details": {
+        "width": 343,
+        "height": 88,
+        "top": 580
+      },
+      ".profile-intro": {
+        "width": 343,
+        "height": 150,
+        "top": 688
+      },
+      ".record-tabs": {
+        "width": 343,
+        "height": 49,
+        "top": 1024
+      }
+    },
+    "after": {
+      ".standing-portrait-stage": {
+        "width": 190,
+        "height": 336,
+        "top": 179
+      },
+      ".portrait-playback-controls": {
+        "width": 343,
+        "height": 49,
+        "top": 523
+      },
+      ".portrait-playback-details": {
+        "width": 343,
+        "height": 88,
+        "top": 580
+      },
+      ".profile-intro": {
+        "width": 343,
+        "height": 150,
+        "top": 688
+      },
+      ".record-tabs": {
+        "width": 343,
+        "height": 49,
+        "top": 1024
+      }
+    },
+    "audio": {
+      "src": "https://mahmoud-portfolio-omega.vercel.app/media/profile/mahmoud-introduction.mp3",
+      "loop": false,
+      "paused": true,
+      "time": 11.98,
+      "duration": 11.98
+    },
+    "videoCount": 0
+  },
+  {
+    "case": "Production page with CLIENT-INDUCED WebM request failure, not an observed production outage; working still/explicit MP3/transcript fallback",
+    "before": {
+      ".standing-portrait-stage": {
+        "width": 190,
+        "height": 336,
+        "top": 179
+      },
+      ".portrait-playback-controls": {
+        "width": 343,
+        "height": 49,
+        "top": 523
+      },
+      ".portrait-playback-details": {
+        "width": 343,
+        "height": 88,
+        "top": 580
+      },
+      ".profile-intro": {
+        "width": 343,
+        "height": 150,
+        "top": 688
+      },
+      ".record-tabs": {
+        "width": 343,
+        "height": 49,
+        "top": 1024
+      }
+    },
+    "audio": "/media/profile/mahmoud-introduction.mp3"
+  },
+  {
+    "case": "Production page; CDP-EMULATED 400kbps/150ms media loading after UI/still load, NOT a physical network test; request interception disables HTTP cache",
+    "firstPlaybackMs": 2369,
+    "before": {
+      ".standing-portrait-stage": {
+        "width": 190,
+        "height": 336,
+        "top": 179
+      },
+      ".portrait-playback-controls": {
+        "width": 343,
+        "height": 49,
+        "top": 523
+      },
+      ".portrait-playback-details": {
+        "width": 343,
+        "height": 88,
+        "top": 580
+      },
+      ".profile-intro": {
+        "width": 343,
+        "height": 150,
+        "top": 688
+      },
+      ".record-tabs": {
+        "width": 343,
+        "height": 49,
+        "top": 1024
+      }
+    },
+    "after": {
+      ".standing-portrait-stage": {
+        "width": 190,
+        "height": 336,
+        "top": 179
+      },
+      ".portrait-playback-controls": {
+        "width": 343,
+        "height": 49,
+        "top": 523
+      },
+      ".portrait-playback-details": {
+        "width": 343,
+        "height": 88,
+        "top": 580
+      },
+      ".profile-intro": {
+        "width": 343,
+        "height": 150,
+        "top": 688
+      },
+      ".record-tabs": {
+        "width": 343,
+        "height": 49,
+        "top": 1024
+      }
+    },
+    "media": {
+      "src": "https://mahmoud-portfolio-omega.vercel.app/media/profile/mahmoud-introduction-480.webm",
+      "ready": 4,
+      "time": 0.156234,
+      "alpha": "verified"
+    }
+  }
+]

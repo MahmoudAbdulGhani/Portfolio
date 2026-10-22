@@ -1,0 +1,56 @@
+{
+  "method": "Temporal crops of actual silent production browser-compositor recordings; recording-time labels are not source media timestamps. Inspection crops only, no runtime media edit.",
+  "times": [
+    11.8,
+    11.88,
+    11.96,
+    12.04,
+    12.12,
+    12.2,
+    12.28,
+    12.36,
+    12.44,
+    12.52,
+    12.6,
+    12.68
+  ],
+  "loading": [
+    {
+      "file": "loading-failure-1792691344129.json",
+      "first": {
+        "ms": 1479,
+        "stage": "loading"
+      },
+      "last": {
+        "ms": 4840,
+        "stage": "ready"
+      },
+      "method": "Exploratory remote-load observation up to 30s; earlier five-second probe remained loading, retained as a finding, not a changed regression deadline."
+    },
+    {
+      "file": "loading-reduced-1792691326173.json",
+      "first": {
+        "ms": 1596,
+        "stage": "loading"
+      },
+      "last": {
+        "ms": 4985,
+        "stage": "ready"
+      },
+      "method": "Exploratory remote-load observation up to 30s; earlier five-second probe remained loading, retained as a finding, not a changed regression deadline."
+    },
+    {
+      "file": "loading-reduced-1792691350727.json",
+      "first": {
+        "ms": 1518,
+        "stage": "loading"
+      },
+      "last": {
+        "ms": 5396,
+        "stage": "ready"
+      },
+      "method": "Exploratory remote-load observation up to 30s; earlier five-second probe remained loading, retained as a finding, not a changed regression deadline."
+    }
+  ],
+  "rejectedProbe": "An initial single-frame probe without continuous compositor capture was still loading at its first observation and yielded an empty portrait screenshot. Rejected as a normal arrival capture; accepted flow evidence uses compositor-driven screenshots after verified video presentation. Startup/paint behavior on physical devices remains unverified."
+}

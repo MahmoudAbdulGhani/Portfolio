@@ -1,0 +1,214 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "autoplay": [
+      {
+        "at": 11265.399999999907,
+        "time": 0,
+        "muted": false,
+        "phase": "auto",
+        "result": "NotAllowedError",
+        "userActive": false,
+        "everActive": false
+      },
+      {
+        "at": 11266.09999999986,
+        "time": 0,
+        "muted": true,
+        "phase": "auto",
+        "result": "resolved",
+        "userActive": false,
+        "everActive": false
+      }
+    ],
+    "wraps": 10,
+    "frames": 3001,
+    "renderSamples": 7263,
+    "blankTiles": 0,
+    "opaqueCorners": 0,
+    "flashes": 0,
+    "overlaps": 0,
+    "gaps": 0,
+    "pendingMax": 1,
+    "listeners": [
+      {
+        "id": 1,
+        "type": "VIDEO",
+        "added": 9,
+        "active": 9
+      }
+    ],
+    "medianOrdinaryFrameIntervalMs": 33.399999999999636,
+    "nativeWrapIntervalsMs": [
+      83.20000000000073,
+      83.29999999999563,
+      83.20000000000437,
+      83.09999999999854,
+      83.29999999998836,
+      100,
+      83.19999999999709,
+      83.19999999999709,
+      83.40000000000873,
+      116.60000000000582
+    ],
+    "nativePlayed": [
+      [
+        0,
+        12.008
+      ]
+    ],
+    "lastSpeechCaptions": [
+      {
+        "text": "Explore my projects, or download my CV.",
+        "time": 8.793245,
+        "muted": false,
+        "phase": "speech"
+      },
+      {
+        "text": "Explore my projects, or download my CV.",
+        "time": 8.784035,
+        "muted": false,
+        "phase": "speech"
+      }
+    ],
+    "offscreen": {
+      "bottom": -1919.125,
+      "mainTop": 106,
+      "paused": true,
+      "muted": true
+    },
+    "background": {
+      "hidden": false,
+      "paused": false,
+      "muted": true
+    },
+    "cleanup": {
+      "pending": 0,
+      "listeners": [
+        {
+          "id": 1,
+          "type": "VIDEO",
+          "added": 9,
+          "active": 0
+        }
+      ]
+    },
+    "cv": {
+      "bytes": 31205,
+      "sha256": "1138f95541a486481de81ad4def3f41d226550f85120b5597a0a36a53fa7f8ce"
+    },
+    "errors": [],
+    "recording": {
+      "frames": 462,
+      "seconds": 37.34625697135925,
+      "method": "Native Chrome compositor screencast, timestamped variable frame cadence; SILENT, no source audio mux. Not hardware/audio synchronization evidence."
+    }
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "autoplay": [
+      {
+        "at": 9660,
+        "time": 0,
+        "muted": false,
+        "phase": "auto",
+        "result": "NotAllowedError",
+        "userActive": false,
+        "everActive": false
+      },
+      {
+        "at": 9660.699999999953,
+        "time": 0,
+        "muted": true,
+        "phase": "auto",
+        "result": "resolved",
+        "userActive": false,
+        "everActive": false
+      }
+    ],
+    "wraps": 10,
+    "frames": 2998,
+    "renderSamples": 7264,
+    "blankTiles": 0,
+    "opaqueCorners": 0,
+    "flashes": 0,
+    "overlaps": 0,
+    "gaps": 0,
+    "pendingMax": 1,
+    "listeners": [
+      {
+        "id": 1,
+        "type": "VIDEO",
+        "added": 9,
+        "active": 9
+      }
+    ],
+    "medianOrdinaryFrameIntervalMs": 33.39999999999782,
+    "nativeWrapIntervalsMs": [
+      83.19999999999709,
+      99.89999999999418,
+      99.79999999999563,
+      99.90000000000146,
+      83.19999999999709,
+      99.90000000000873,
+      83.19999999999709,
+      99.80000000000291,
+      83.19999999999709,
+      116.30000000000291
+    ],
+    "nativePlayed": [
+      [
+        0,
+        12.008
+      ]
+    ],
+    "lastSpeechCaptions": [
+      {
+        "text": "Explore my projects, or download my CV.",
+        "time": 8.772391,
+        "muted": false,
+        "phase": "speech"
+      },
+      {
+        "text": "Explore my projects, or download my CV.",
+        "time": 8.774348,
+        "muted": false,
+        "phase": "speech"
+      }
+    ],
+    "offscreen": {
+      "bottom": -503,
+      "mainTop": 92,
+      "paused": true,
+      "muted": true
+    },
+    "background": {
+      "hidden": false,
+      "paused": false,
+      "muted": true
+    },
+    "cleanup": {
+      "pending": 0,
+      "listeners": [
+        {
+          "id": 1,
+          "type": "VIDEO",
+          "added": 9,
+          "active": 0
+        }
+      ]
+    },
+    "cv": {
+      "bytes": 31205,
+      "sha256": "7f035e4218e218f6ae02950d50ae699aadbf7cb166ba7ed9517d2d2dbd4dc75c"
+    },
+    "errors": [],
+    "recording": {
+      "frames": 457,
+      "seconds": 37.67177414894104,
+      "method": "Native Chrome compositor screencast, timestamped variable frame cadence; SILENT, no source audio mux. Not hardware/audio synchronization evidence."
+    }
+  }
+]

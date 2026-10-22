@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-22T17:37:42.449Z",
+  "base": "https://mahmoud-portfolio-omega.vercel.app",
+  "assets": [
+    {
+      "size": 480,
+      "status": 200,
+      "bytes": 510176,
+      "sha256": "be05f8501d8f902e5f79c2d543437dbe5f76c618889550bf9b0357c5ee6f6be9",
+      "matchesApproved": true,
+      "contentType": "video/webm"
+    },
+    {
+      "size": 720,
+      "status": 200,
+      "bytes": 818600,
+      "sha256": "bcc8c7da11828be2800d472c9cc04ce66d2d19ab08dd3e6bdf5144a320685f23",
+      "matchesApproved": true,
+      "contentType": "video/webm"
+    }
+  ],
+  "browser": {
+    "status": 200,
+    "url": "https://mahmoud-portfolio-omega.vercel.app/profile",
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "state": "speaking",
+    "controls": "Mute\nPause",
+    "snapshot": "- main:\n  - img \"Mahmoud Hussein Abdul Ghani, photographed from hair to below both hands, wearing a striped shirt and backpack\"\n  - text: \"Mahmoud Hussein Abdul Ghani Tripoli, Lebanon Arabic: Native | English: Professional Working Proficiency\"\n  - button \"Download CV\"\n  - region \"Mahmoud’s introduction\":\n    - button \"Mute introduction\": Mute\n    - button \"Pause introduction\": Pause\n    - paragraph\n    - status\n    - group: Transcript\n  - link \"GitHub\":\n    - /url: https://github.com/MahmoudAbdulGhani\n    - text: GitHub\n    - img\n  - link \"LinkedIn\":\n    - /url: https://linkedin.com/in/MahmoudAbdulGhani\n    - text: LinkedIn\n    - img\n  - link \"Instagram\":\n    - /url: https://www.instagram.com/mahmoud_abdulghani2\n    - text: Instagram\n    - img\n  - link \"WhatsApp\":\n    - /url: https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.\n    - text: WhatsApp\n    - img\n  - text: PROFILE / WORKING RECORD\n  - heading \"Full-Stack Software Engineer\" [level=1]\n  - paragraph: I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.\n  - tablist \"Profile records\":\n    - tab \"Experience\" [selected]\n    - tab \"Education & training\"\n    - tab \"Capabilities\"\n  - tabpanel \"Experience\":\n    - group:\n      - text: \"01\"\n      - strong: Full-Stack Developer Intern\n      - text: The Digital Hub, UNRWA, Beirut, Hybrid Jun 2026 – Sep 2026 Program completion is not verified by the available records.\n      - paragraph: Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n      - text: Beirut, Hybrid\n    - group:\n      - text: \"02\"\n      - strong: QA Intern\n      - text: Oigetit May 2026 – Aug 2026\n    - group:\n      - text: \"03\"\n      - strong: Backend Developer\n      - text: Ishtari Group, Tripoli, Onsite Dec 2025 – Jan 2026\n    - group:\n      - text: \"04\"\n      - strong: Web Development Trainer\n      - text: KfW & EU Graduate Support Program · FALA Association Apr 2025 – Jun 2025\n  - link \"Let’s build something useful\":\n    - /url: /contact\n    - text: Let’s build something useful\n    - img",
+    "writesPrevented": [],
+    "video": {
+      "src": "https://mahmoud-portfolio-omega.vercel.app/media/profile/mahmoud-introduction-720.webm",
+      "loop": true,
+      "muted": false,
+      "time": 0.078812,
+      "duration": 12.008,
+      "paused": false,
+      "alpha": "verified"
+    }
+  }
+}

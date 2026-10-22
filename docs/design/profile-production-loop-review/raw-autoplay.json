@@ -1,0 +1,22 @@
+{
+  "calls": [
+    {
+      "muted": false,
+      "time": 0,
+      "result": "NotAllowedError",
+      "gesture": false,
+      "everActive": false
+    },
+    {
+      "muted": true,
+      "time": 0,
+      "result": "resolved",
+      "gesture": false,
+      "everActive": false
+    }
+  ],
+  "active": false,
+  "everActive": false,
+  "state": "loading",
+  "muted": true
+}
