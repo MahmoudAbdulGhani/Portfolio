@@ -20,7 +20,7 @@ function fixture(t, readyState = 4, options = {}) {
     get buffered() { return { length: this.bufferEnd ? 1 : 0, start: () => 0, end: () => this.bufferEnd }; }
     setAttribute() {} removeAttribute() {} remove() {} load() {}
     pause() { const playing = !this.paused; this.paused = true; if (playing) queueMicrotask(() => this.dispatchEvent(new Event('pause'))); }
-    async play() { this.plays++; if (options.blocked?.(this)) throw new DOMException('Policy', 'NotAllowedError'); this.paused = false; this.ended = false; this.dispatchEvent(new Event('playing')); }
+    async play() { this.plays++; if (options.blocked?.(this)) throw new DOMException('Policy', 'NotAllowedError'); this.paused = false; this.ended = false; if (options.pending) return new Promise(() => {}); this.dispatchEvent(new Event('playing')); }
   }
   class Video extends Media {
     videoWidth = 480; videoHeight = 848; frames = new Map(); sequence = 0;
@@ -233,4 +233,12 @@ test('cached native loop seeks retain the layer and do not manufacture a pause o
     assert.equal(video.paused, false); assert.equal(video.plays, 1); assert.equal(attributes.get('data-video-visible'), 'true');
     video.seeking = false; video.dispatchEvent(new Event('playing')); video.present(.04); assert.equal(video.frames.size, 1);
   }
+});
+
+test('Mute during a pending first play retains the unchanged inactivity watchdog without pausing it', t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const { controller, video, states } = fixture(t, 4, { pending: true });
+  controller.sound(); assert.equal(video.paused, false); assert.equal(video.muted, true);
+  t.mock.timers.tick(14_999); assert.equal(states.at(-1).state, 'loading');
+  t.mock.timers.tick(1); assert.equal(states.at(-1).state, 'error'); assert.equal(video.plays, 1);
 });

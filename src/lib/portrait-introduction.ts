@@ -286,7 +286,8 @@ export class PortraitIntroduction {
       if (this.snapshot.requiresPlay) this.playIntroduction();
       else if (this.owner && this.desired) this.start(this.owner, true);
     } else if (this.owner && this.desired) {
-      if (this.owner.buffering) { this.owner.resumeToken = this.token; this.watch(this.owner, this.token); }
+      if (this.snapshot.state === 'loading') this.watch(this.owner, this.token);
+      if (this.owner.buffering) this.owner.resumeToken = this.token;
       else if (this.owner === this.video && !this.owner.media.paused) this.frame(this.owner, this.token);
     }
   }
