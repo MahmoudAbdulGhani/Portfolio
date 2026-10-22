@@ -1,0 +1,47 @@
+{
+  "reference": "141bfddcbdf929d35fcb17ba96f352aefc2dfa8d normal build; asset equality is independently observed, not a Vercel deployment-SHA API assertion.",
+  "rows": [
+    {
+      "path": "/assets/index-BFdXo_d4.js",
+      "status": 200,
+      "sha256": "dba057078dfb0d8d15315b4f3a037620b4699aee7ea53f60a3dda3348915b577",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/rolldown-runtime-Cyuzqnbw.js",
+      "status": 200,
+      "sha256": "6f5330f281c713c1b765ec52977b36599538b8d52c5dd3ce94d211f5b0e7debf",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/icons-B3BNwJ4E.js",
+      "status": 200,
+      "sha256": "3887c8abfbf6f34e0d741c1c47c502cabf5578eac8782a82a48aaa5966c69972",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/motion-Cz-InHVW.js",
+      "status": 200,
+      "sha256": "7116278f67c10b61c36e131a075a8a5392dc80821a06c18cd2e3c9e0e7827b1f",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/react-vendor-Cosir9Uu.js",
+      "status": 200,
+      "sha256": "da4f7cf8fcf1814d6f59f06fce7f9f363ff4803d1aa4bd86465865acb3e31fb7",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/query-DJSNjXY5.js",
+      "status": 200,
+      "sha256": "6269273a68371084e84c24acb2d60b906eeaf55d5bf7132944095d8aa0c73bf9",
+      "matchesLocalNormalBuild": true
+    },
+    {
+      "path": "/assets/index-CfJ4jT8x.css",
+      "status": 200,
+      "sha256": "eff5cff6c46643b775e3cd79df9dbbc136101e4e4eccaf3e762b6317c66edcf8",
+      "matchesLocalNormalBuild": true
+    }
+  ]
+}

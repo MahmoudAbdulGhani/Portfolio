@@ -1,0 +1,13 @@
+{
+  "method": "Calibration only: Playwright DOM wait before first eligible playback. Not a no-gesture first-visit test.",
+  "calls": [
+    {
+      "muted": false,
+      "userActive": true,
+      "everActive": true,
+      "result": "resolved"
+    }
+  ],
+  "userActive": true,
+  "everActive": true
+}

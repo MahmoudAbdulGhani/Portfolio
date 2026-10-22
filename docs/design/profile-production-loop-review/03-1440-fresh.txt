@@ -1,0 +1,56 @@
+- main:
+  - img "Mahmoud Hussein Abdul Ghani, photographed from hair to below both hands, wearing a striped shirt and backpack"
+  - text: "Mahmoud Hussein Abdul Ghani Tripoli, Lebanon Arabic: Native | English: Professional Working Proficiency"
+  - button "Download CV"
+  - region "Mahmoud’s introduction":
+    - button "Enable sound"
+    - button "Pause introduction": Pause
+    - paragraph
+    - status: Sound autoplay was blocked. Enable sound to hear the introduction.
+    - group: Transcript
+  - link "GitHub":
+    - /url: https://github.com/MahmoudAbdulGhani
+    - text: GitHub
+    - img
+  - link "LinkedIn":
+    - /url: https://linkedin.com/in/MahmoudAbdulGhani
+    - text: LinkedIn
+    - img
+  - link "Instagram":
+    - /url: https://www.instagram.com/mahmoud_abdulghani2
+    - text: Instagram
+    - img
+  - link "WhatsApp":
+    - /url: https://wa.me/96176364340?text=Hello%20Mahmoud%2C%20I%20saw%20your%20portfolio.
+    - text: WhatsApp
+    - img
+  - text: PROFILE / WORKING RECORD
+  - heading "Full-Stack Software Engineer" [level=1]
+  - paragraph: I build web applications that connect clear interfaces with dependable backend workflows. My work includes individual and team projects involving authentication, data persistence and reviewed AI-assisted features.
+  - tablist "Profile records":
+    - tab "Experience" [selected]
+    - tab "Education & training"
+    - tab "Capabilities"
+  - tabpanel "Experience":
+    - group:
+      - text: "01"
+      - strong: Full-Stack Developer Intern
+      - text: The Digital Hub, UNRWA, Beirut, Hybrid Jun 2026 – Sep 2026 Program completion is not verified by the available records.
+      - paragraph: Participated in a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.
+      - text: Beirut, Hybrid
+    - group:
+      - text: "02"
+      - strong: QA Intern
+      - text: Oigetit May 2026 – Aug 2026
+    - group:
+      - text: "03"
+      - strong: Backend Developer
+      - text: Ishtari Group, Tripoli, Onsite Dec 2025 – Jan 2026
+    - group:
+      - text: "04"
+      - strong: Web Development Trainer
+      - text: KfW & EU Graduate Support Program · FALA Association Apr 2025 – Jun 2025
+  - link "Let’s build something useful":
+    - /url: /contact
+    - text: Let’s build something useful
+    - img
