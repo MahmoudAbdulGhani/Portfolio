@@ -10,11 +10,15 @@ test('dates use one format without interpreting durations or invalid dates as ti
   assert.equal(datePeriod('4-month program'), '4-month program');
 });
 
-test('Digital Hub status is neutral across descriptions and CV bullets; current roles sort first', () => {
+test('owner-confirmed Digital Hub completion survives stale CMS prose and CV bullets; current roles sort first', () => {
   const hub = { company: 'The Digital Hub, UNRWA', startDate: '2026-06', endDate: '2026-09', meta: 'Stale date', description: 'Completing an intensive full-stack software engineering and AI program.', details: 'Completed a full-stack software engineering and AI program.', cvBullets: ['Completed a full-stack software engineering and AI program.', 'Developed apps; Built APIs.'] };
   const normalized = normalizeExperience(hub);
   assert.equal(normalized.meta, 'Jun 2026 – Sep 2026');
-  for (const text of [normalized.description, normalized.details, ...normalized.cvBullets]) assert.doesNotMatch(text, /Completed|Completing|; Built/);
+  for (const text of [normalized.description, normalized.details, normalized.cvBullets[0]]) assert.match(text, /^Completed a full-stack/);
+  for (const text of normalized.cvBullets) assert.doesNotMatch(text, /Completing|; Built/);
+  assert.equal(normalized.learningEvidence.completion.status, 'owner-confirmed');
+  assert.equal(normalized.learningEvidence.certification.status, 'unverified');
+  assert.match(normalizeExperience({ ...hub, description: 'Participated in a full-stack software engineering and AI program.' }).description, /^Completed/);
   assert.deepEqual(normalizeExperience(normalized), normalized);
   const rows = [{ company: 'Ishtari', endDate: '2026-01' }, hub, { company: 'Oigetit', endDate: '2026-08' }, { company: 'Current', isCurrent: true }, { company: 'Undated' }];
   assert.deepEqual(sortExperience(rows).map(r => r.company), ['Current', hub.company, 'Oigetit', 'Ishtari', 'Undated']);
@@ -70,11 +74,83 @@ test('AI context consumes the same corrected record, evidence names and training
     assert.equal(context.certifications[0].recordKind, 'Training');
     assert.doesNotMatch(context.certifications[0].description, /expected/);
     assert.equal(context.profile.resumeUrl, '/api/cv.pdf');
-    assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'unverified');
+    assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'owner-confirmed');
     assert.equal(context.education[0].learningEvidence.completion.status, 'unverified');
     assert.equal(context.certifications[0].learningEvidence.completion.status, 'unverified');
     assert.equal(context.certifications[0].learningEvidence.certification.status, 'unverified');
     assert.equal(context.certifications[0].learningEvidence.dates, 'Jul 2025 – Oct 2025');
+  } finally {
+    for (const [model, key, fn] of originals) model[key] = fn;
+    await prisma.$disconnect();
+  }
+});
+
+test('only the confirmed LIU Computer Science degree gains graduation copy; other study remains factual', () => {
+  const degree = { degree: 'Bachelor of Science in Computer Science', school: 'Lebanese International University (LIU)', startDate: '2022-10', endDate: '2025-06', details: null };
+  const normalized = normalizeEducation(degree);
+  assert.equal(normalized.details, 'Graduated with a BSc in Computer Science.');
+  assert.equal(normalized.period, 'Oct 2022 – Jun 2025');
+  assert.equal(normalized.learningEvidence.completion.status, 'owner-confirmed');
+  assert.equal(normalized.learningEvidence.certification.status, 'unverified');
+  assert.deepEqual(normalizeEducation(normalized), normalized);
+  for (const other of [{ ...degree, school: 'Another university' }, { ...degree, degree: 'Master of Science in Computer Science' }, { ...degree, degree: 'Bachelor of Business' }]) {
+    const result = normalizeEducation(other);
+    assert.equal(result.learningEvidence.completion.status, 'unverified');
+    assert.equal(result.details, null);
+  }
+  assert.equal(degree.details, null, 'Presentation never mutates the CMS record');
+});
+
+test('self-directed Angular and unknown training never gain certification or completion claims', () => {
+  for (const title of ['Angular Independent Study', 'Angular Self-Learning Course']) {
+    const result = normalizeTraining({ title, issuer: 'Self-Learning Program', year: '09/2025' });
+    assert.equal(result.title, 'Angular Independent Study');
+    assert.equal(result.issuer, 'Self-directed learning');
+    assert.equal(result.description, 'Self-directed study of Angular.');
+    assert.equal(result.year, 'Sep 2025');
+    assert.equal(recordKind(result), 'Training');
+    assert.equal(result.learningEvidence.certification.status, 'unverified');
+    assert.deepEqual(normalizeTraining(result), result);
+  }
+  const raw = { title: 'Another training course', issuer: 'Recorded provider', year: '2024', description: 'Completed the course. API design topics. Completion and certification are not verified by the available records.', cvDescription: 'Certified developer. API design topics.' };
+  const result = normalizeTraining(raw);
+  assert.equal(result.description, 'API design topics.');
+  assert.equal(result.cvDescription, 'API design topics.');
+  assert.equal(result.learningEvidence.completion.status, 'unverified');
+  assert.deepEqual(result.learningEvidence.completion.recordedClaims, ['Completed the course. API design topics. Completion and certification are not verified by the available records.']);
+  assert.deepEqual(normalizeTraining(result), result);
+  assert.match(raw.description, /^Completed/, 'Original evidence remains unchanged');
+});
+
+test('both CV modes normalize stale catalog copy without losing explicit date overrides or writing data', async () => {
+  const { prisma } = await import('../server/src/lib/prisma.js');
+  const { initialModes, resolveCvData } = await import('../server/src/lib/cv-config.js');
+  const catalog = {
+    profile: { experience: [{ id: 'hub', company: 'The Digital Hub, UNRWA', description: 'Completing an intensive full-stack software engineering and AI program.', cvBullets: ['Participated in a full-stack software engineering and AI program.'], startDate: '2026-06', endDate: '2026-09' }], socials: [], languages: '' },
+    projects: [], skills: [], languages: [],
+    education: [{ id: 'degree', school: 'Lebanese International University', degree: 'Bachelor of Science in Computer Science', startDate: '2022-10', endDate: '2025-06' }],
+    certifications: [{ id: 'aws', title: 'AWS re/Start Bootcamp', issuer: 'AWS', year: 'July 2025 - Oct 2025', cvDescription: 'Cloud training; completion expected in 2026.' }],
+  };
+  const configuration = { ...initialModes(catalog) };
+  configuration.master.educationOverrides.degree = { displayDate: 'Oct 2022 – June 2025' };
+  const originals = [];
+  const replace = (model, key, fn) => { originals.push([model, key, model[key]]); model[key] = fn; };
+  replace(prisma.profile, 'findFirst', async () => structuredClone(catalog.profile));
+  for (const [model, key] of [['project', 'projects'], ['skill', 'skills'], ['education', 'education'], ['certification', 'certifications']]) replace(prisma[model], 'findMany', async () => structuredClone(catalog[key]));
+  replace(prisma.cvConfiguration, 'findUnique', async () => configuration);
+  replace(prisma.cvConfiguration, 'create', async () => assert.fail('No CV configuration write is authorized'));
+  try {
+    for (const mode of ['application', 'master']) {
+      const data = await resolveCvData(mode);
+      assert.match(data.profile.experience[0].details, /^Completed a full-stack/);
+      assert.match(data.profile.experience[0].cvBullets[0], /^Completed a full-stack/);
+      assert.equal(data.profile.experience[0].meta, 'Jun 2026 – Sep 2026');
+      assert.equal(data.education[0].details, 'Graduated with a BSc in Computer Science.');
+      assert.equal(data.education[0].period, mode === 'master' ? 'Oct 2022 – June 2025' : 'Oct 2022 – Jun 2025');
+      assert.equal(data.certifications[0].cvDescription, 'Cloud training.');
+      assert.equal(data.certifications[0].learningEvidence.completion.status, 'unverified');
+    }
+    assert.match(catalog.profile.experience[0].description, /^Completing/, 'Database catalog remains untouched');
   } finally {
     for (const [model, key, fn] of originals) model[key] = fn;
     await prisma.$disconnect();
@@ -92,6 +168,7 @@ test('past dates, degree names and listed credential metadata do not establish g
   assert.equal(training.learningEvidence.certification.status, 'unverified');
   assert.equal(training.learningEvidence.certification.recordedCredential.id, 'self-reported-id');
   assert.equal(learningEvidence({ year: '2030' }).completion.status, 'unverified');
+  assert.equal(learningEvidence({ company: 'The Digital Hub', role: 'Another training course' }).completion.status, 'unverified');
   assert.equal(normalizeExperience({ company: 'Employer', role: 'Backend Developer', endDate: '2024-12' }).learningEvidence, undefined);
   assert.equal(normalizeExperience({ company: 'Another academy', description: 'Participated in a training program.', endDate: '2024-12' }).learningEvidence.completion.status, 'unverified');
 });

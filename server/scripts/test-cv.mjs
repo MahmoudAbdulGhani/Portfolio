@@ -7,13 +7,22 @@ const data = await resolveCvData("application");
 assert.equal(data.profile.title, "Full-Stack Software Engineer");
 assert.equal(data.skills.every((skill) => (skill.status ?? "verified") === "verified"), true);
 assert.equal(data.certifications.some((item) => /digital hub|unrwa/i.test(`${item.title} ${item.issuer}`)), false);
-for (const item of [...data.education, ...data.certifications]) {
+for (const item of data.certifications) {
   assert.equal(item.learningEvidence.completion.status, 'unverified');
   assert.equal(item.learningEvidence.certification.status, 'unverified');
 }
+for (const item of data.education) {
+  const confirmedDegree = /Lebanese International University/.test(item.school) && /Computer Science/.test(item.degree);
+  assert.equal(item.learningEvidence.completion.status, confirmedDegree ? 'owner-confirmed' : 'unverified');
+  assert.equal(item.learningEvidence.certification.status, 'unverified');
+  if (confirmedDegree) assert.match(item.details, /Graduated with a BSc in Computer Science/);
+}
 for (const item of data.profile.experience.filter(item => item.learningEvidence)) {
-  assert.equal(item.learningEvidence.completion.status, 'unverified');
-  assert.doesNotMatch(`${item.description || ''} ${item.details || ''} ${(item.cvBullets || []).join(' ')}`, /\b(?:Completed|Completing) (?:an intensive|a) full-stack software engineering and AI program/i);
+  const confirmedHub = /digital hub/i.test(`${item.company || ''} ${item.facility || ''}`);
+  assert.equal(item.learningEvidence.completion.status, confirmedHub ? 'owner-confirmed' : 'unverified');
+  assert.equal(item.learningEvidence.certification.status, 'unverified');
+  if (confirmedHub) assert.match((item.cvBullets || []).join(' '), /Completed a full-stack software engineering and AI program/);
+  assert.doesNotMatch(`${item.description || ''} ${item.details || ''} ${(item.cvBullets || []).join(' ')}`, /Completing an intensive/);
 }
 
 const pdf = await generateCvPdfBuffer({ origin: "http://localhost:3001", mode: "application" });

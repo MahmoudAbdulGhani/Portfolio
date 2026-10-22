@@ -111,7 +111,7 @@ test('AI context shares the reviewed visible summary and limits while preserving
     }
     assert.deepEqual(context.currentProject.caseStudy, caseStudyFor(caseStudyProjects.find(p => p.slug === 'lobby')));
     assert.equal(context.certifications[0].learningEvidence.completion.status, 'unverified');
-    assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'unverified');
+    assert.equal(context.profile.experience[0].learningEvidence.completion.status, 'owner-confirmed');
     assert.equal(context.projects.find(p => p.slug === 'medicare-hub').myRole, '');
   } finally {
     for (const [model, key, fn] of originals) model[key] = fn;

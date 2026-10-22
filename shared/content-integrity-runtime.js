@@ -26,18 +26,32 @@ export function dateRange(start, end, current = false) {
     return [monthDate(start), current ? 'Present' : monthDate(end)].filter(Boolean).join(' – ');
 }
 const prose = (text) => text.replace(/; Built\b/g, '; built').replace(/; Deployed\b/g, '; deployed');
-// The current CMS lists records and credential metadata, but does not contain
-// independent completion or certification verification evidence.
+const digitalHubRecord = item => /\bdigital hub\b/i.test(`${item.company || ''} ${item.facility || ''}`);
+const liuComputerScience = item => /lebanese international university|^LIU$/i.test(item.school || '')
+    && /\b(?:bachelor|bsc)\b/i.test(item.degree || '') && /computer science/i.test(item.degree || '');
+// Owner-confirmed facts, 22 Oct 2026; see docs/content/profile-public-copy.md.
+// These identities do not establish an independently verified certificate.
+const confirmedCompletion = item => (digitalHubRecord(item)
+    && /\bfull[- ]stack\b/i.test(`${item.role || item.milestone || ''} ${item.description || item.details || ''} ${(item.cvBullets || []).join(' ')}`))
+    || liuComputerScience(item);
+const publicLearningText = (value, confirmed = false) => value == null ? value : value
+    .split(/(?<=[.!?;])\s+/)
+    .filter(part => !/\b(?:not (?:independently )?verified|unverified|available records)\b/i.test(part)
+        && (confirmed || !/\b(?:completed|completing|completion|graduated|earned|awarded|certified)\b/i.test(part)))
+    .join(' ').trim().replace(/;$/, '.');
+// Evidence metadata stays internal to the snapshot/normalizers, not Profile copy.
 export function learningEvidence(item) {
-    const claims = [item.description, item.details, item.cvDescription, ...(item.cvBullets ?? [])]
+    const claims = [...(item.learningEvidence?.completion.recordedClaims ?? []), item.description, item.details, item.cvDescription, ...(item.cvBullets ?? [])]
         .filter(value => typeof value === 'string' && /\b(?:completed|graduated|earned|awarded)\b/i.test(value));
     return {
         participation: 'listed in the portfolio',
         dates: dateRange(item.startDate, item.endDate, item.isCurrent)
             || datePeriod(item.period || item.year || item.meta),
         completion: {
-            status: 'unverified', recordedClaims: [...new Set(claims)],
-            basis: 'No completion evidence is supplied by the available records. Past dates do not establish completion or graduation.',
+            status: confirmedCompletion(item) ? 'owner-confirmed' : 'unverified', recordedClaims: [...new Set(claims)],
+            basis: confirmedCompletion(item)
+                ? 'The portfolio owner explicitly confirmed this degree or program completion on 22 October 2026; this is not independent certificate verification.'
+                : 'No completion evidence is supplied by the available records. Past dates do not establish completion or graduation.',
         },
         certification: {
             status: 'unverified',
@@ -49,13 +63,21 @@ export function learningEvidence(item) {
     };
 }
 export function normalizeEducation(item) {
-    const normalized = { ...item, period: dateRange(item.startDate, item.endDate) || datePeriod(item.period) };
-    return { ...normalized, learningEvidence: learningEvidence(normalized) };
+    const confirmed = liuComputerScience(item);
+    const details = publicLearningText(item.details, confirmed);
+    const normalized = { ...item, period: dateRange(item.startDate, item.endDate) || datePeriod(item.period),
+        ...(item.details != null && { details }),
+        ...(item.cvDescription != null && { cvDescription: publicLearningText(item.cvDescription, confirmed) }),
+        ...(confirmed && !/\bgraduated\b/i.test(details || '') && {
+            details: ['Graduated with a BSc in Computer Science.', details].filter(Boolean).join(' '),
+        }),
+    };
+    return { ...normalized, learningEvidence: learningEvidence({ ...normalized, learningEvidence: learningEvidence(item) }) };
 }
 export function normalizeExperience(item) {
-    const digitalHub = /digital hub/i.test(`${item.company || ''} ${item.facility || ''}`);
+    const digitalHub = digitalHubRecord(item);
     const text = (value) => value == null ? value : prose(digitalHub
-        ? value.replace(/\b(?:Completed|Completing) (?:an intensive|a) full-stack software engineering and AI program/gi, 'Participated in a full-stack software engineering and AI program')
+        ? publicLearningText(value, true).replace(/\b(?:Completed|Completing|Participated in) (?:an intensive|a) full-stack software engineering and AI program/gi, 'Completed a full-stack software engineering and AI program')
         : value);
     const normalized = { ...item, meta: dateRange(item.startDate, item.endDate, item.isCurrent) || datePeriod(item.meta),
         ...(item.description != null && { description: text(item.description) }),
@@ -135,14 +157,18 @@ export function recordKind(item) {
 }
 export function normalizeTraining(item) {
     const aws = /aws re\/start/i.test(item.title);
-    const text = (value) => aws && value
-        ? value.replace(/;?\s*completion expected in \d{4}\.?/gi, '').replace(/[;.]+$/, '') + '.' : value;
+    const angular = /^angular (?:independent study|self-learning course)$/i.test(item.title);
+    const text = value => publicLearningText(aws && value
+        ? value.replace(/;?\s*completion expected in \d{4}\.?/gi, '').replace(/[;.]+$/, '') + '.' : value);
     const normalized = { ...item, ...(item.year && { year: datePeriod(item.year) }),
+        ...(angular && { title: 'Angular Independent Study', issuer: 'Self-directed learning' }),
         ...(aws && item.year?.includes('2025') && { expectedDate: null }),
         ...(item.description != null && { description: text(item.description) }),
         ...(item.cvDescription != null && { cvDescription: text(item.cvDescription) }),
+        ...(angular && !text(item.description) && { description: 'Self-directed study of Angular.' }),
     };
-    return { ...normalized, learningEvidence: learningEvidence(normalized) };
+    return { ...normalized, learningEvidence: learningEvidence({ ...normalized,
+        description: item.description, cvDescription: item.cvDescription }) };
 }
 // The two highlighted team-project summaries use only their existing CMS
 // contribution statements. Product scope remains explicitly collaborative.
