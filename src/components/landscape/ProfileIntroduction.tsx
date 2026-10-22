@@ -29,8 +29,7 @@ export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement |
       window.removeEventListener('pagehide', exited); window.removeEventListener('pageshow', sync);
     };
   }, [host]);
-  const hear = () => {
-    if (!playback.speech) {
+  const revealCaptions = () => {
       // Profile owns a scroll surface above the footer. Reveal the already
       // reserved caption space on an explicit hearing action, once, without
       // moving focus or following each cue. Never scroll the outer document.
@@ -57,21 +56,20 @@ export function ProfileIntroduction({ host }: { host: RefObject<HTMLDivElement |
         }
         if (delta !== 0) main.scrollTo({ top: main.scrollTop + delta, behavior: 'instant' });
       }
-    }
-    controller.current?.hear();
   };
-  const paused = playback.manualPause || playback.state === 'blocked';
+  const sound = () => { if (playback.muted) revealCaptions(); controller.current?.sound(); };
+  const action = playback.manualPause ? 'Resume' : playback.requiresPlay ? 'Play introduction' : 'Pause';
   return <section className="portrait-introduction" aria-label="Mahmoud’s introduction" data-playback={playback.state}>
     <div className="portrait-playback-controls">
-      <button type="button" aria-label={playback.speech ? 'Mute introduction' : 'Hear introduction'} onClick={hear}>
-        {playback.speech ? <FiVolumeX aria-hidden="true" /> : <FiVolume2 aria-hidden="true" />}<span>{playback.speech ? 'Mute' : 'Hear intro'}</span>
+      <button type="button" aria-label={playback.muted ? 'Enable sound' : 'Mute introduction'} onClick={sound}>
+        {playback.muted ? <FiVolume2 aria-hidden="true" /> : <FiVolumeX aria-hidden="true" />}<span>{playback.muted ? 'Enable sound' : 'Mute'}</span>
       </button>
-      <button type="button" aria-label={paused ? 'Resume animation' : 'Pause animation'} aria-disabled={playback.animationUnavailable} onClick={() => controller.current?.toggleAnimation()}>
-        {paused ? <FiPlay aria-hidden="true" /> : <FiPause aria-hidden="true" />}<span>{paused ? 'Resume' : 'Pause'}</span>
+      <button type="button" aria-label={action === 'Play introduction' ? action : `${action} introduction`} onClick={() => { if (action !== 'Pause') revealCaptions(); controller.current?.toggleAnimation(); }}>
+        {action === 'Pause' ? <FiPause aria-hidden="true" /> : <FiPlay aria-hidden="true" />}<span>{action}</span>
       </button>
     </div>
     <div className="portrait-playback-details">
-      <p ref={captions} className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Hear intro or read transcript.' : playback.state === 'blocked' ? 'Animation blocked. Use Resume or Hear intro.' : playback.caption}</p>
+      <p ref={captions} className="portrait-playback-captions" aria-live="off">{playback.state === 'error' ? 'Animation unavailable. Play introduction or read transcript.' : playback.state === 'blocked' ? 'Playback blocked. Use Play introduction.' : playback.caption}</p>
       <span className="sr-only" role="status">{playback.message}</span>
       <details className="portrait-transcript"><summary aria-label="Read introduction transcript">Transcript</summary><p>{introductionTranscript}</p></details>
     </div>

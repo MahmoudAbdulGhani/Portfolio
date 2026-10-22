@@ -1,0 +1,8 @@
+{
+  "frames": 300,
+  "upper_region_y_0_329": "unchanged speaking footage",
+  "transition_y": "330\u2013399, premultiplied alpha crossfade",
+  "body_y_400_down": "fixed source frame 0",
+  "audio": "not modified",
+  "status": "experimental comparison, not adopted"
+}

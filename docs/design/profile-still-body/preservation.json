@@ -1,0 +1,72 @@
+[
+  {
+    "file": "src/components/landscape/ProfilePage.tsx",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "3e950bd6a151ee6f73f5fedd44a660f4d53793a04fc9bae54fb2ddaafba8b489"
+  },
+  {
+    "file": "src/components/landscape/profile-standing-portrait.css",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "db14e5b9433a0218badd734e4ac596edf7fcced3368158052c1c08b50cfee374"
+  },
+  {
+    "file": "src/components/landscape/profile-introduction.css",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "c1d85a9518f59a2fe955ffbb010b9d4a36c1a6b285c875260d01f9631670cda8"
+  },
+  {
+    "file": "src/components/landscape/ProfileStandingPortrait.tsx",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "9a5b8ea83095ad99e14874de8d25d57f42c8a7af6a4fe63e0e88024f9f615bb1"
+  },
+  {
+    "file": "src/components/landscape/ProfilePortrait.tsx",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "df2bbd237262b482d6e00196dfcadd2e748de08351c96b2e3e6f95a20f6a77a0"
+  },
+  {
+    "file": "src/lib/profile-introduction.en.vtt",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "30416c551129cced422e17e780704fb971fba539382990e9a1300a9ac05531c8"
+  },
+  {
+    "file": "public/media/profile/mahmoud-introduction.mp3",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": false,
+    "sha256": "41225f959543f2ffe7f0ab10c46846ef772110efe7ad1fa47e5826a22f864a6a"
+  },
+  {
+    "file": "public/media/profile/mahmoud-introduction.en.vtt",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": true,
+    "sha256": "30416c551129cced422e17e780704fb971fba539382990e9a1300a9ac05531c8"
+  },
+  {
+    "file": "public/review-assets/profile-original-hands.webp",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": false,
+    "sha256": "48398672854c525626ebc289321890a3896ad0f78d348c0d0b5a3c821d3faba6"
+  },
+  {
+    "file": "public/review-assets/profile-original-hands.png",
+    "baseline": "f992c7f2de462516f4a0f9e248991cf2ba0a1fd7",
+    "same": true,
+    "textLineEndingsNormalized": false,
+    "sha256": "5fc9eae59bcff7677bbd549c9dfb58f17aef2110d16e10178adaabde94114c91"
+  }
+]

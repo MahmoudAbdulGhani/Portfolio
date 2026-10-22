@@ -1,0 +1,27 @@
+{
+  "frames_checked": 300,
+  "face_rgba_changes_y_0_329_before_encoding": 0,
+  "body_rgba_variation_y_400_down_before_encoding": 0,
+  "neck_transition_y": [
+    330,
+    399
+  ],
+  "exports": [
+    {
+      "file": "Mahmoud_Still_Body_480.webm",
+      "width": 480,
+      "height": 848,
+      "bytes": 510176,
+      "sha256": "be05f8501d8f902e5f79c2d543437dbe5f76c618889550bf9b0357c5ee6f6be9",
+      "decoded_audio_sha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e"
+    },
+    {
+      "file": "Mahmoud_Still_Body_720.webm",
+      "width": 720,
+      "height": 1272,
+      "bytes": 818600,
+      "sha256": "bcc8c7da11828be2800d472c9cc04ce66d2d19ab08dd3e6bdf5144a320685f23",
+      "decoded_audio_sha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e"
+    }
+  ]
+}

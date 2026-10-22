@@ -1,0 +1,51 @@
+{
+  "images": [
+    {
+      "src": "comparison-320.jpg",
+      "ready": true
+    },
+    {
+      "src": "comparison-390.jpg",
+      "ready": true
+    },
+    {
+      "src": "comparison-430.jpg",
+      "ready": true
+    },
+    {
+      "src": "comparison-768.jpg",
+      "ready": true
+    },
+    {
+      "src": "comparison-1440.jpg",
+      "ready": true
+    },
+    {
+      "src": "comparison-1280.jpg",
+      "ready": true
+    },
+    {
+      "src": "edges-3.12.jpg",
+      "ready": true
+    },
+    {
+      "src": "edges-8.88.jpg",
+      "ready": true
+    },
+    {
+      "src": "boundary.jpg",
+      "ready": true
+    }
+  ],
+  "video": [
+    {
+      "src": "playback-390.mp4",
+      "duration": 47.08
+    },
+    {
+      "src": "playback-1280.mp4",
+      "duration": 37.76
+    }
+  ],
+  "links": 21
+}

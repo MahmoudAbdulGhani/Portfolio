@@ -1,0 +1,16 @@
+{
+  "browser": "Cloud desktop Chrome",
+  "observed": [
+    "Both transparent versions readyState 4 with no reported media error",
+    "Before/after frame at 8.88 seconds inspected on charcoal at 300px display width",
+    "Final transparent take completed at 12.008 seconds at 190px display width on cream",
+    "Neck and collar inspected in extracted samples at 3.12, 8.88 and 11.96 seconds"
+  ],
+  "not_verified": [
+    "Physical mobile/Safari",
+    "Direct listening and subjective lip-sync",
+    "Perfectly seamless loop",
+    "Zero generated facial artifacts"
+  ],
+  "production_changes": false
+}
