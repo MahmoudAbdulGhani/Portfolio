@@ -1,0 +1,31 @@
+{
+  "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "review": {
+    "loops": 0,
+    "samples": 1,
+    "flashes": 0,
+    "overlaps": 0,
+    "gaps": 0,
+    "maximumCallbacks": 1,
+    "pending": 1,
+    "playCalls": [
+      {
+        "at": 1792663951.781,
+        "time": 0,
+        "muted": false
+      }
+    ],
+    "events": [
+      {
+        "event": "playing",
+        "at": 1792663951.781,
+        "time": 0,
+        "muted": false
+      }
+    ],
+    "boundaries": [],
+    "errors": []
+  },
+  "muted": false,
+  "policy": "Fresh Chrome context; default Playwright autoplay-permission argument removed; no play-promise mock or browser policy override."
+}

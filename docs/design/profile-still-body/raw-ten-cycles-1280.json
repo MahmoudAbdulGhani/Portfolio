@@ -1,0 +1,210 @@
+{
+  "loops": 10,
+  "samples": 7251,
+  "flashes": 0,
+  "overlaps": 0,
+  "gaps": 0,
+  "maximumCallbacks": 1,
+  "pending": 1,
+  "playCalls": [
+    {
+      "at": 1792664534.149,
+      "time": 0,
+      "muted": true
+    }
+  ],
+  "events": [
+    {
+      "event": "playing",
+      "at": 1792664534.152,
+      "time": 0.002219,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664546.232,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664546.252,
+      "time": 0.000385,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664558.313,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664558.335,
+      "time": 0.000203,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664570.396,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664570.418,
+      "time": 0.000256,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664582.479,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664582.499,
+      "time": 0.000261,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664594.56,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664594.581,
+      "time": 0.000254,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664606.641,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664606.661,
+      "time": 0.000267,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664618.722,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664618.742,
+      "time": 0.000297,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664630.802,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664630.823,
+      "time": 0.000493,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664642.883,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664642.904,
+      "time": 0.000273,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664654.972,
+      "time": 0,
+      "muted": true
+    }
+  ],
+  "boundaries": [
+    {
+      "time": 0,
+      "previous": 12.006207,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.996644,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 12.003371,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993021,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.999896,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 12.008,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 12.000754,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993046,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 12.002067,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 12.008,
+      "still": 0,
+      "video": 1
+    }
+  ],
+  "errors": [],
+  "nativeCoverage": {
+    "duration": 12.008,
+    "played": [
+      [
+        0,
+        12.008
+      ]
+    ]
+  }
+}

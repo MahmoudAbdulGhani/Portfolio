@@ -93,7 +93,7 @@ for (const width of [320, 390, 430, 768, 1440]) {
     });
     expect(await fullyAboveFooter()).toBe(true);
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('button', { name: 'Hear introduction', exact: true })).toBeFocused();
+    await expect(page.getByRole('button', { name: /^(Enable sound|Mute introduction)$/ })).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(cv).toBeFocused();
     await page.getByRole('tab', { name: 'Experience', exact: true }).focus();

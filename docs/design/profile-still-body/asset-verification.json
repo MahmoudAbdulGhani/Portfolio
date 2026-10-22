@@ -1,0 +1,88 @@
+[
+  {
+    "size": 480,
+    "bytes": 510176,
+    "sha256": "be05f8501d8f902e5f79c2d543437dbe5f76c618889550bf9b0357c5ee6f6be9",
+    "pcmSha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e",
+    "pcmBytes": 2301952,
+    "frames": 300
+  },
+  {
+    "size": 720,
+    "bytes": 818600,
+    "sha256": "bcc8c7da11828be2800d472c9cc04ce66d2d19ab08dd3e6bdf5144a320685f23",
+    "pcmSha256": "8a6a84c426fb7ce285b966d9e9abd450df28ddf3416b1f545df082275ce5a62e",
+    "pcmBytes": 2301952,
+    "frames": 300
+  },
+  {
+    "time": 0,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 0.04,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 0.32,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 3.12,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 8.88,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 11.64,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  },
+  {
+    "time": 11.96,
+    "width": 720,
+    "height": 1272,
+    "channels": 4,
+    "cornerAlpha": [
+      0,
+      0
+    ]
+  }
+]

@@ -1,0 +1,698 @@
+[
+  {
+    "case": "Actual Chrome policy, requested document-user-activation-required; not a play-promise mock. Report actual outcome, not assumed rejection.",
+    "calls": [
+      {
+        "muted": false,
+        "result": "resolved"
+      }
+    ]
+  },
+  {
+    "case": "400kbps +150ms CDP media-only; cached UI before throttling; cold/warm same context; actual decode",
+    "width": 390,
+    "selected": [
+      {
+        "url": "mahmoud-introduction-480.webm",
+        "status": 206,
+        "cache": false
+      },
+      {
+        "url": "mahmoud-introduction-480.webm",
+        "status": 206,
+        "cache": false
+      }
+    ],
+    "visits": [
+      {
+        "width": 390,
+        "visit": "cold",
+        "firstVerifiedMs": 2888,
+        "events": [
+          {
+            "name": "progress",
+            "at": 1201.5,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 1575.0999999996275,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 1928.5999999996275,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 2295.199999999255,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 2661.199999999255,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 3024.2999999988824,
+            "time": 0,
+            "ready": 1,
+            "buffered": 2.347
+          },
+          {
+            "name": "playing",
+            "at": 3069.0999999996275,
+            "time": 0.0015,
+            "ready": 4,
+            "buffered": 2.383
+          },
+          {
+            "name": "progress",
+            "at": 3380,
+            "time": 0.271744,
+            "ready": 4,
+            "buffered": 2.771
+          },
+          {
+            "name": "progress",
+            "at": 3738.5,
+            "time": 0.630222,
+            "ready": 4,
+            "buffered": 3.195
+          },
+          {
+            "name": "progress",
+            "at": 4098.699999999255,
+            "time": 0.990989,
+            "ready": 4,
+            "buffered": 3.618
+          },
+          {
+            "name": "progress",
+            "at": 4457.199999999255,
+            "time": 1.34795,
+            "ready": 4,
+            "buffered": 4.042
+          },
+          {
+            "name": "progress",
+            "at": 4820.299999998882,
+            "time": 1.711228,
+            "ready": 4,
+            "buffered": 4.43
+          },
+          {
+            "name": "progress",
+            "at": 5176.199999999255,
+            "time": 2.06822,
+            "ready": 4,
+            "buffered": 4.889
+          },
+          {
+            "name": "progress",
+            "at": 5535.699999999255,
+            "time": 2.42708,
+            "ready": 4,
+            "buffered": 5.278
+          },
+          {
+            "name": "progress",
+            "at": 5894.799999998882,
+            "time": 2.786139,
+            "ready": 4,
+            "buffered": 5.701
+          },
+          {
+            "name": "progress",
+            "at": 6254,
+            "time": 3.146113,
+            "ready": 4,
+            "buffered": 6.16
+          },
+          {
+            "name": "progress",
+            "at": 6614.5999999996275,
+            "time": 3.505147,
+            "ready": 4,
+            "buffered": 6.549
+          },
+          {
+            "name": "progress",
+            "at": 6972.699999999255,
+            "time": 3.864104,
+            "ready": 4,
+            "buffered": 7.008
+          },
+          {
+            "name": "progress",
+            "at": 7332.5,
+            "time": 4.224187,
+            "ready": 4,
+            "buffered": 7.431
+          },
+          {
+            "name": "progress",
+            "at": 7692,
+            "time": 4.583099,
+            "ready": 4,
+            "buffered": 7.855
+          },
+          {
+            "name": "progress",
+            "at": 8052.0999999996275,
+            "time": 4.943164,
+            "ready": 4,
+            "buffered": 8.279
+          },
+          {
+            "name": "progress",
+            "at": 8410.799999998882,
+            "time": 5.301626,
+            "ready": 4,
+            "buffered": 8.702
+          },
+          {
+            "name": "progress",
+            "at": 8771.5,
+            "time": 5.663164,
+            "ready": 4,
+            "buffered": 9.091
+          },
+          {
+            "name": "progress",
+            "at": 9130.599999999627,
+            "time": 6.022897,
+            "ready": 4,
+            "buffered": 9.514
+          },
+          {
+            "name": "progress",
+            "at": 9488.699999999255,
+            "time": 6.380128,
+            "ready": 4,
+            "buffered": 9.938
+          },
+          {
+            "name": "progress",
+            "at": 9848.299999998882,
+            "time": 6.739087,
+            "ready": 4,
+            "buffered": 10.362
+          },
+          {
+            "name": "progress",
+            "at": 10207.599999999627,
+            "time": 7.099134,
+            "ready": 4,
+            "buffered": 10.785
+          },
+          {
+            "name": "progress",
+            "at": 10567.199999999255,
+            "time": 7.459097,
+            "ready": 4,
+            "buffered": 11.209
+          },
+          {
+            "name": "progress",
+            "at": 10927,
+            "time": 7.818828,
+            "ready": 4,
+            "buffered": 11.633
+          },
+          {
+            "name": "progress",
+            "at": 11230.400000000373,
+            "time": 8.121582,
+            "ready": 4,
+            "buffered": 12.008
+          },
+          {
+            "name": "waiting",
+            "at": 15128.599999999627,
+            "time": 0,
+            "ready": 1,
+            "buffered": 12.008
+          },
+          {
+            "name": "playing",
+            "at": 15142.099999999627,
+            "time": 0.000273,
+            "ready": 4,
+            "buffered": 12.008
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "visit": "warm",
+        "firstVerifiedMs": 341,
+        "events": [
+          {
+            "name": "progress",
+            "at": 395.7000000011176,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "playing",
+            "at": 416.6000000014901,
+            "time": 0.000307,
+            "ready": 4,
+            "buffered": 12.008
+          },
+          {
+            "name": "waiting",
+            "at": 12476.60000000149,
+            "time": 0,
+            "ready": 1,
+            "buffered": 12.008
+          },
+          {
+            "name": "playing",
+            "at": 12487.900000000373,
+            "time": 0.000215,
+            "ready": 4,
+            "buffered": 12.008
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case": "400kbps +150ms CDP media-only; cached UI before throttling; cold/warm same context; actual decode",
+    "width": 1280,
+    "selected": [
+      {
+        "url": "mahmoud-introduction-720.webm",
+        "status": 206,
+        "cache": false
+      },
+      {
+        "url": "mahmoud-introduction-720.webm",
+        "status": 206,
+        "cache": false
+      }
+    ],
+    "visits": [
+      {
+        "width": 1280,
+        "visit": "cold",
+        "firstVerifiedMs": 4910,
+        "events": [
+          {
+            "name": "progress",
+            "at": 739.6999999992549,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 1100.3999999985099,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 1461.5,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 1825.8999999985099,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 2190.5,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 2553.199999999255,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 2914.39999999851,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "progress",
+            "at": 3277.2999999988824,
+            "time": 0,
+            "ready": 3,
+            "buffered": 1.969
+          },
+          {
+            "name": "progress",
+            "at": 3639,
+            "time": 0,
+            "ready": 3,
+            "buffered": 2.233
+          },
+          {
+            "name": "progress",
+            "at": 4016.0999999996275,
+            "time": 0,
+            "ready": 3,
+            "buffered": 2.519
+          },
+          {
+            "name": "progress",
+            "at": 4380.199999999255,
+            "time": 0,
+            "ready": 3,
+            "buffered": 2.805
+          },
+          {
+            "name": "progress",
+            "at": 4741.39999999851,
+            "time": 0,
+            "ready": 3,
+            "buffered": 3.047
+          },
+          {
+            "name": "playing",
+            "at": 4954.0999999996275,
+            "time": 0.001599,
+            "ready": 4,
+            "buffered": 3.223
+          },
+          {
+            "name": "progress",
+            "at": 5099.199999999255,
+            "time": 0.10516,
+            "ready": 4,
+            "buffered": 3.311
+          },
+          {
+            "name": "progress",
+            "at": 5459,
+            "time": 0.465145,
+            "ready": 4,
+            "buffered": 3.575
+          },
+          {
+            "name": "progress",
+            "at": 5819,
+            "time": 0.825134,
+            "ready": 4,
+            "buffered": 3.839
+          },
+          {
+            "name": "progress",
+            "at": 6177.39999999851,
+            "time": 1.184166,
+            "ready": 4,
+            "buffered": 4.103
+          },
+          {
+            "name": "progress",
+            "at": 6536.5,
+            "time": 1.543634,
+            "ready": 4,
+            "buffered": 4.367
+          },
+          {
+            "name": "progress",
+            "at": 6895.5,
+            "time": 1.902527,
+            "ready": 4,
+            "buffered": 4.631
+          },
+          {
+            "name": "progress",
+            "at": 7255,
+            "time": 2.26111,
+            "ready": 4,
+            "buffered": 4.895
+          },
+          {
+            "name": "progress",
+            "at": 7614.39999999851,
+            "time": 2.620429,
+            "ready": 4,
+            "buffered": 5.159
+          },
+          {
+            "name": "progress",
+            "at": 7973.5,
+            "time": 2.980144,
+            "ready": 4,
+            "buffered": 5.423
+          },
+          {
+            "name": "progress",
+            "at": 8333.5,
+            "time": 3.340132,
+            "ready": 4,
+            "buffered": 5.687
+          },
+          {
+            "name": "progress",
+            "at": 8693,
+            "time": 3.699392,
+            "ready": 4,
+            "buffered": 5.951
+          },
+          {
+            "name": "progress",
+            "at": 9052.599999999627,
+            "time": 4.059205,
+            "ready": 4,
+            "buffered": 6.216
+          },
+          {
+            "name": "progress",
+            "at": 9411.5,
+            "time": 4.418472,
+            "ready": 4,
+            "buffered": 6.48
+          },
+          {
+            "name": "progress",
+            "at": 9770.39999999851,
+            "time": 4.776648,
+            "ready": 4,
+            "buffered": 6.744
+          },
+          {
+            "name": "progress",
+            "at": 10130.39999999851,
+            "time": 5.13676,
+            "ready": 4,
+            "buffered": 7.008
+          },
+          {
+            "name": "progress",
+            "at": 10489.199999999255,
+            "time": 5.496686,
+            "ready": 4,
+            "buffered": 7.272
+          },
+          {
+            "name": "progress",
+            "at": 10848.799999998882,
+            "time": 5.855685,
+            "ready": 4,
+            "buffered": 7.536
+          },
+          {
+            "name": "progress",
+            "at": 11208.099999999627,
+            "time": 6.214447,
+            "ready": 4,
+            "buffered": 7.8
+          },
+          {
+            "name": "progress",
+            "at": 11567.89999999851,
+            "time": 6.574686,
+            "ready": 4,
+            "buffered": 8.064
+          },
+          {
+            "name": "progress",
+            "at": 11927.799999998882,
+            "time": 6.934252,
+            "ready": 4,
+            "buffered": 8.328
+          },
+          {
+            "name": "progress",
+            "at": 12286.099999999627,
+            "time": 7.292685,
+            "ready": 4,
+            "buffered": 8.592
+          },
+          {
+            "name": "progress",
+            "at": 12645.89999999851,
+            "time": 7.652645,
+            "ready": 4,
+            "buffered": 8.856
+          },
+          {
+            "name": "progress",
+            "at": 13005.099999999627,
+            "time": 8.01162,
+            "ready": 4,
+            "buffered": 9.12
+          },
+          {
+            "name": "progress",
+            "at": 13364.699999999255,
+            "time": 8.371595,
+            "ready": 4,
+            "buffered": 9.68
+          },
+          {
+            "name": "progress",
+            "at": 13724,
+            "time": 8.730617,
+            "ready": 4,
+            "buffered": 10.2
+          },
+          {
+            "name": "progress",
+            "at": 14083.5,
+            "time": 9.090764,
+            "ready": 4,
+            "buffered": 10.2
+          },
+          {
+            "name": "progress",
+            "at": 14443,
+            "time": 9.430196,
+            "ready": 4,
+            "buffered": 10.2
+          },
+          {
+            "name": "progress",
+            "at": 14802.599999999627,
+            "time": 9.790088,
+            "ready": 4,
+            "buffered": 10.44
+          },
+          {
+            "name": "progress",
+            "at": 15161.799999998882,
+            "time": 10.149144,
+            "ready": 4,
+            "buffered": 10.704
+          },
+          {
+            "name": "waiting",
+            "at": 15193.199999999255,
+            "time": 10.180187,
+            "ready": 2,
+            "buffered": 10.726
+          },
+          {
+            "name": "progress",
+            "at": 15521.39999999851,
+            "time": 10.180683,
+            "ready": 2,
+            "buffered": 10.968
+          },
+          {
+            "name": "progress",
+            "at": 15881.099999999627,
+            "time": 10.180683,
+            "ready": 2,
+            "buffered": 11.232
+          },
+          {
+            "name": "progress",
+            "at": 16239.799999998882,
+            "time": 10.180683,
+            "ready": 2,
+            "buffered": 11.496
+          },
+          {
+            "name": "playing",
+            "at": 16324,
+            "time": 10.180696,
+            "ready": 4,
+            "buffered": 11.54
+          },
+          {
+            "name": "progress",
+            "at": 16598.699999999255,
+            "time": 10.466975,
+            "ready": 4,
+            "buffered": 11.738
+          },
+          {
+            "name": "progress",
+            "at": 16941.299999998882,
+            "time": 10.808001,
+            "ready": 4,
+            "buffered": 12.008
+          },
+          {
+            "name": "waiting",
+            "at": 18145.199999999255,
+            "time": 0,
+            "ready": 1,
+            "buffered": 12.008
+          }
+        ]
+      },
+      {
+        "width": 1280,
+        "visit": "warm",
+        "firstVerifiedMs": 946,
+        "events": [
+          {
+            "name": "progress",
+            "at": 452.7000000011176,
+            "time": 0,
+            "ready": 0,
+            "buffered": 0
+          },
+          {
+            "name": "playing",
+            "at": 499.80000000074506,
+            "time": 0.000335,
+            "ready": 4,
+            "buffered": 12.008
+          },
+          {
+            "name": "waiting",
+            "at": 12581.10000000149,
+            "time": 0,
+            "ready": 1,
+            "buffered": 12.008
+          }
+        ]
+      }
+    ]
+  }
+]

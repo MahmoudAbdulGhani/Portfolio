@@ -1,0 +1,223 @@
+{
+  "width": 390,
+  "height": 844,
+  "requests": [
+    "mahmoud-introduction-480.webm",
+    "mahmoud-introduction-480.webm"
+  ],
+  "errors": [],
+  "loops": 10,
+  "samples": 7248,
+  "flashes": 0,
+  "overlaps": 0,
+  "gaps": 0,
+  "maximumCallbacks": 1,
+  "pending": 1,
+  "playCalls": [
+    {
+      "at": 1792664534.134,
+      "time": 0,
+      "muted": true
+    }
+  ],
+  "events": [
+    {
+      "event": "playing",
+      "at": 1792664534.135,
+      "time": 0.000455,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664546.216,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664546.228,
+      "time": 0.000491,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664558.329,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664558.341,
+      "time": 0.000259,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664570.403,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664570.414,
+      "time": 0.000291,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664582.477,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664582.489,
+      "time": 0.000272,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664594.55,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664594.563,
+      "time": 0.00022,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664606.623,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664606.636,
+      "time": 0.000188,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664618.697,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664618.708,
+      "time": 0.00026,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664630.769,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664630.781,
+      "time": 0.000244,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664642.841,
+      "time": 0,
+      "muted": true
+    },
+    {
+      "event": "playing",
+      "at": 1792664642.854,
+      "time": 0.00023,
+      "muted": true
+    },
+    {
+      "event": "waiting",
+      "at": 1792664654.915,
+      "time": 0,
+      "muted": true
+    }
+  ],
+  "boundaries": [
+    {
+      "time": 0,
+      "previous": 12.003256,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.997205,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.995323,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.995994,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.994176,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.992891,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993399,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993728,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993876,
+      "still": 0,
+      "video": 1
+    },
+    {
+      "time": 0,
+      "previous": 11.993938,
+      "still": 0,
+      "video": 1
+    }
+  ],
+  "nativeCoverage": {
+    "duration": 12.008,
+    "played": [
+      [
+        0,
+        12.008
+      ]
+    ]
+  },
+  "pendingAfterExit": 0,
+  "recording": {
+    "seconds": 47.08799982070923,
+    "frames": 146,
+    "voiceOffset": 11.757999897003174,
+    "method": "Timestamped browser screenshots, source audio muxed at measured explicit audible play origin. Not system audio capture or independent listening."
+  }
+}
