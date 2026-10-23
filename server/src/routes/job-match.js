@@ -145,6 +145,7 @@ router.post("/", async (req, res) => {
     const request = await beginJobMatchRequest(getClientIp(req), jobDescription);
     lease = request.lease;
     if (request.issue) {
+      console.warn('job_match_request_blocked', { requestId, kind: request.issue, retryAfter: request.retryAfter, elapsedMs: Date.now() - started });
       const messages = {
         active: 'Another comparison is still running. Please wait before trying again.',
         completed: 'A report for this job description was generated recently. Please wait before requesting another.',
