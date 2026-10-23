@@ -1,0 +1,1085 @@
+{
+  "method": "Windows desktop Chrome viewport emulation, normal compiled baseline PR47 and normal compiled candidate. Browser API forwarding to each real local Express implementation; same frozen public GET snapshot, in-memory Prisma/rate storage, deliberately held/failed/successful provider fixtures. Not production-provider or physical-device evidence.",
+  "findings": [
+    {
+      "phase": "before",
+      "width": 320,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "ffb38cbe-d3de-49e1-be72-6b8683fc3112",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "e01416e3-7524-4105-b9fb-7529b2ceabf1",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "This job description was just analyzed. Please wait before submitting it again."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": true,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "blocked-retry",
+          "overflow": false,
+          "error": "This job description was just analyzed. Please wait before submitting it again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 1
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "76290efd-e1a3-4894-9908-07f8e0fae5f8",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "7a51f44b-f983-40c1-992d-84c422dca2b0",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "This job description was just analyzed. Please wait before submitting it again."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": true,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "blocked-retry",
+          "overflow": false,
+          "error": "This job description was just analyzed. Please wait before submitting it again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 1
+    },
+    {
+      "phase": "before",
+      "width": 430,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "cc95e766-b103-4d15-ba8f-f3c08279e241",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "7a2cd795-b9a7-412a-ab0d-291227a4bfaa",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "This job description was just analyzed. Please wait before submitting it again."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": true,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "blocked-retry",
+          "overflow": false,
+          "error": "This job description was just analyzed. Please wait before submitting it again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 1
+    },
+    {
+      "phase": "before",
+      "width": 768,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "ccf29174-4264-4b05-97d0-49d866a49c0a",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "44206a73-ff78-4f63-97eb-75fd3131513c",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "This job description was just analyzed. Please wait before submitting it again."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": true,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 172.203125,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "blocked-retry",
+          "overflow": false,
+          "error": "This job description was just analyzed. Please wait before submitting it again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 1
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "bae22ce7-ec44-4daa-87a9-aee1b52c33ac",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "67901da2-4498-4110-98df-3ff5409a25d8",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "This job description was just analyzed. Please wait before submitting it again."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": true,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 172.203125,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "blocked-retry",
+          "overflow": false,
+          "error": "This job description was just analyzed. Please wait before submitting it again.",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 1
+    },
+    {
+      "phase": "after",
+      "width": 320,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "30981375-201f-4acf-aeed-86473d04eab2",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 200,
+          "requestId": "399844fd-51b7-4664-b14e-a2a272d78666",
+          "hasReport": true,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "23d4ff40-a43a-4546-95bd-57b2f2ced870",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "A report for this job description was generated recently. Please wait before requesting another."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Cancel comparison",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 30981375-201f-4acf-aeed-86473d04eab2",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "recovered-report",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "completed-cooldown",
+          "overflow": false,
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 23d4ff40-a43a-4546-95bd-57b2f2ced870",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": true,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": true,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 2
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "696a8c46-6398-4565-83f6-717c1539cd89",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 200,
+          "requestId": "1e28af5b-5015-48a4-afef-411f17414334",
+          "hasReport": true,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "d1c81b2e-cb7f-4fa7-b3b3-3de599924471",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "A report for this job description was generated recently. Please wait before requesting another."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Cancel comparison",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 696a8c46-6398-4565-83f6-717c1539cd89",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "recovered-report",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "completed-cooldown",
+          "overflow": false,
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: d1c81b2e-cb7f-4fa7-b3b3-3de599924471",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": true,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": true,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 2
+    },
+    {
+      "phase": "after",
+      "width": 430,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "1d4c82c5-61e1-41c6-8fe3-17fe172c13c9",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 200,
+          "requestId": "b55c9a95-9228-498e-8041-2b42d78d0f3f",
+          "hasReport": true,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "999e5852-5972-480f-8419-a7ab658197f1",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "A report for this job description was generated recently. Please wait before requesting another."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Cancel comparison",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 1d4c82c5-61e1-41c6-8fe3-17fe172c13c9",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "recovered-report",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "completed-cooldown",
+          "overflow": false,
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 999e5852-5972-480f-8419-a7ab658197f1",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": true,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": true,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 2
+    },
+    {
+      "phase": "after",
+      "width": 768,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "439ca900-4422-40d8-a198-354c470827fe",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 200,
+          "requestId": "9997efcb-cd21-4656-9d8f-3f7c3936ee5a",
+          "hasReport": true,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "1b9dc5ee-37df-4e20-b8a8-2a6c2efe533e",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "A report for this job description was generated recently. Please wait before requesting another."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Cancel comparison",
+              "disabled": false,
+              "width": 186.875,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 172.203125,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 439ca900-4422-40d8-a198-354c470827fe",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "recovered-report",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "completed-cooldown",
+          "overflow": false,
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 1b9dc5ee-37df-4e20-b8a8-2a6c2efe533e",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": true,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": true,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 2
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "requests": [
+        {
+          "httpStatus": 200,
+          "requestId": "1ef324f9-830c-4ab9-9009-5e885b80b956",
+          "hasReport": false,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 200,
+          "requestId": "142aa11d-89b2-4f4c-8beb-68349ad31f5a",
+          "hasReport": true,
+          "message": "Comparing portfolio evidence…"
+        },
+        {
+          "httpStatus": 429,
+          "requestId": "2a6ed58c-4a9f-4f35-a715-935fa9ee1623",
+          "retryAfter": "30",
+          "hasReport": false,
+          "message": "A report for this job description was generated recently. Please wait before requesting another."
+        }
+      ],
+      "errors": [],
+      "states": [
+        {
+          "state": "loading",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Cancel comparison",
+              "disabled": false,
+              "width": 186.875,
+              "height": 44
+            },
+            {
+              "text": "Analyzing role…",
+              "disabled": true,
+              "width": 172.203125,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "failure",
+          "overflow": false,
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 1ef324f9-830c-4ab9-9009-5e885b80b956",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": false,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "recovered-report",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
+          "state": "completed-cooldown",
+          "overflow": false,
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 2a6ed58c-4a9f-4f35-a715-935fa9ee1623",
+          "controls": [
+            {
+              "text": "Try again",
+              "disabled": true,
+              "width": 123.234375,
+              "height": 44
+            },
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": true,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        }
+      ],
+      "providerAttempts": 2
+    }
+  ]
+}

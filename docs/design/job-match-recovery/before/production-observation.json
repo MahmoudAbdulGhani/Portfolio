@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-23T16:07:59.258Z",
+  "method": "Actual public production Chrome UI, fresh isolated context, native POST/SSE, maximum one explicit retry. No provider mocks; no production log access. Tokens and report content excluded.",
+  "events": [
+    {
+      "observerBodyUnavailable": true
+    }
+  ],
+  "error": null,
+  "hasReport": 1,
+  "inputPreserved": true,
+  "instrumentationNote": "Chrome response-body retrieval failed in the observer. The application itself displayed a successful report; the observer entry is not evidence of an interrupted application request."
+}

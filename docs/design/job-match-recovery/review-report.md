@@ -1,0 +1,53 @@
+# Job Match failure and retry recovery
+
+23 October 2026. Stacked above PR #47 / `a8ef19258da990049c4a2b4b354d4110caf07c53`. No merge, manual deployment, production promotion, Contact submission or CMS/content editing. The handoff and accepted design, media/controller, grounding and CV implementation are unchanged.
+
+## Confirmed cause and limits of production diagnosis
+
+The previous route consumed `job-duplicate:<IP>:<description hash>` before portfolio lookup or the provider request. That persistent bucket was never retired after provider errors, invalid output, cancellation or context failure. It was a **30-second submission cooldown**, not evidence of an active request, completed analysis or cached report. The subsequent 429 used the misleading fixed message “This job description was just analyzed” and a hardcoded Retry-After. The client discarded retry timing, left Try again immediately enabled, and accepted a result without a final stream completion marker.
+
+The exact reported sequence is reproduced against the normal compiled PR #47 frontend and its real Express route with an explicitly simulated upstream 503: first SSE error, then duplicate 429, no report, only one provider attempt. It occurs at all five requested widths. This establishes the recovery defect without assuming why the original provider request failed.
+
+One fresh **actual public production** Chrome comparison succeeded; the intermittent first failure was not reproduced live. [Production observation](before/production-observation.json), [phone capture](before/production-first-390.jpg). No second production request was sent to force a failure. Chrome's response-body observer failed to retrieve the SSE body, while the UI itself displayed a successful report; the JSON preserves that instrumentation limitation. Production request logs and deployment-SHA metadata were unavailable. The cause of the historical initial unavailability remains unknown; this change does not claim to repair an upstream outage.
+
+## Corrected lifecycle
+
+| State | Server behavior | Visitor behavior |
+| --- | --- | --- |
+| Active | One persistent owned slot per IP; same/different-description concurrent work rejected as active (409) | Wait at least 2 seconds before another manual attempt; no automatic polling |
+| Failed/incomplete | Release owned slot; no completed marker | Preserve input, show actionable error/reference, permit manual retry if no real limit applies |
+| Successful report | Atomically commit completed marker and release slot | Same-description cooldown lasts 30 seconds from report generation; exact remaining wait shown |
+| Request rate limit | Retain existing `job:<IP>` four-attempt/60-second budget, including failures | Disable both submission actions until remaining wait expires |
+| Provider quota | Preserve one-minute retry policy and enforce its per-IP cooldown | Explain usage limit; countdown does not promise upstream recovery |
+| Cancellation/disconnect | Abort provider work and release slot; discard an owned undelivered completion marker | Cancel keeps description; route cleanup ignores stale status, report, token and finally callbacks |
+
+The existing RateLimitBucket schema is reused; no migration or live-state repair is required. Active claims use a unique-key upsert, an owner/time guard and a 120-second crash-recovery lease. Completion/release uses a transaction and guarded update to lock the owned row; rollback cannot leave a completed marker after a release failure. Expired/stale cleanup cannot remove or complete a replacement lease. Old duplicate keys are no longer consulted; the existing general rate-budget key remains in use. These are code and controlled storage-double checks, not a newly exercised live PostgreSQL concurrency benchmark. Unexpected storage failure fails closed with a short retry wait rather than calling the provider unprotected.
+
+Both JSON and SSE requests now share cancellation and lifecycle cleanup. The provider's 40-second deadline and client's 70-second deadline remain unchanged. There are no automatic provider retries. Existing bounded portfolio-context retry remains unchanged. Diagnostics contain only request ID, phase, category and elapsed time; no job text, prompt, token, credentials or raw visitor IP is added to logs.
+
+The client honors HTTP Retry-After (seconds/date) and SSE retry metadata, retains cooldown in route memory, and never retries on a timer. Try again and Check My Fit stay disabled during a known wait. The countdown is not repeatedly announced. The loading Clear control becomes Cancel comparison. A validated report and its CV token are committed together only after `done`. Partial/malformed/unclosed-error streams release controls; arbitrary UTF-8/CRLF splits remain valid. Abort/timeout ownership prevents old requests overwriting newer state. No layout stylesheet or report content was redesigned.
+
+## Before/after visual evidence
+
+[All 35 state captures and observations](browser-findings.json) compare the baseline and corrected normal compiled builds, with each actual local Express route, frozen public GET records and in-memory rate storage. Provider failures, held loading and successful reports in these captures are **fixtures**. They are Windows Chrome viewport/touch emulation at **320, 390, 430, 768 and 1440px**, not physical Android/iPhone tests. API forwarding buffers responses for these visual captures; separate HTTP regressions exercise actual SSE/disconnect behavior.
+
+- Phone recovery: [390 before blocked retry](before/390-blocked-retry.jpg), [390 recovered report](after/390-recovered-report.jpg), [390 accurate completed cooldown](after/390-completed-cooldown.jpg).
+- Narrow phone: [320 loading](after/320-loading.jpg), [failure](after/320-failure.jpg), [recovered report](after/320-recovered-report.jpg), [cooldown](after/320-completed-cooldown.jpg).
+- Desktop: [1440 before blocked retry](before/1440-blocked-retry.jpg), [failure](after/1440-failure.jpg), [recovered report](after/1440-recovered-report.jpg), [cooldown](after/1440-completed-cooldown.jpg).
+- Additional sizes: [430 recovery](after/430-recovered-report.jpg), [768 recovery](after/768-recovered-report.jpg). Every captured state retained the description, with no sampled horizontal overflow or page errors. Controls/report transitions remain scrollable; screenshots include the actually scrolled form/report region, not a claim that all mobile content fits the first screen.
+
+## Genuine provider and PDF verification
+
+[Real-provider observation](after/real-provider.json): one deliberately simulated 503 followed by **exactly one genuine configured Gemini request**, through the local Express route and the identical description. Genuine retry succeeded in **6,138ms**, left zero active slots and one completed marker, and returned a signed tailored-CV download, HTTP 200 / **32,636 bytes**. The harness uses fresh read-only public records and fail-closed in-memory Prisma/config/rate substitutes; no production provider request or live DB validation is claimed for this run. Signed tokens are excluded from evidence. This check preceded the final transaction hardening; final-state rollback/ownership behavior is covered by the focused HTTP/storage regressions.
+
+[Actual downloaded PDF](after/genuine-retry-tailored.pdf), [page 1 render](after/genuine-retry-tailored-page-1.png), [page 2](after/genuine-retry-tailored-page-2.png); SHA-256 `b1c3ac3f14510e7286cc9e80031ee9d1433fb097017f928928789794da0bfcbd`. Candidate summary uses source skills and contains no recruiter recommendation/certification caveat. Recorded Ishtari dates remain Dec 2025–Jan 2026, with no invented contract label or exact month count in the inspected answer/export. The report distinguishes missing independent AWS verification from training; AWS training remains in the PDF training section. Team contribution language remains. The favorable report is still generative assessment, not independent verification of every claim.
+
+[Current one-project PDF](after/one-project.pdf), [render](after/one-project-page-1.png): a static fixture, **9.8pt** project-to-skills gap, unchanged from accepted PR #47. [Standard application PDF](after/standard.pdf), [render](after/standard-page-1.png) remains one Letter page and passes the unchanged measured reference fixture. The genuine export has two pages because the frozen public source has an expanded skill catalog, preserving all source content rather than squeezing typography. [Bounds/text/hash review](after/pdf-review.json) complements visual inspection of rendered pages; it does not replace it. All inspected margins pass. CV implementation/configuration/fixtures were not edited.
+
+## Validation and final delivery
+
+Local typecheck, lint, normal build/production guard, **50 integrity cases**, **14 landscape/provider cases**, CV generation/reference and zero/one/three/long-project PDF regressions pass. Compiled browser checks pass with retries disabled: **22 desktop recovery/supporting-page cases**, **24 tablet/phone recovery cases**, plus the existing Job Match report/export/CV route-return case. Valid success fixtures now include the real server's `done` event; unrelated assertions remain intact. A temporary nested baseline worktree caused ESLint TSConfig discovery errors; moving that isolated worktree outside the repository resolved the tooling conflict without changing lint rules or assertions.
+
+The full existing CI workflow, including all six smoke shards, portrait build, accessibility/media engines, boundary, CV and verify, must finish successfully for the final head. Its exact SHA, terminal results, changed-file manifest and automatic Preview are recorded in the stacked draft PR delivery comment after completion. [Branch CI](https://github.com/MahmoudAbdulGhani/Portfolio/actions?query=branch%3Afix%2Fjob-match-retry-lifecycle). Pending jobs are not counted as passes; deadlines/coverage/assertions remain unchanged.
+
+Physical devices, spoken screen-reader checks, production logs, live PostgreSQL failure/concurrency tests and protected Preview access may remain unavailable. Browser emulation, mocked quota/failure conditions, public frontend observations and genuine local provider results are labelled separately above. A server cannot prove that a client displayed a report after a completed network write; disconnects observed before completion are cancelled and cleaned up, while finite successful-report cooldowns remain explicitly described. No unbounded retry, provider bypass, data edits, merge or promotion.

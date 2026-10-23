@@ -1,7 +1,8 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiAlertCircle, FiArrowRight, FiCheck, FiCopy, FiDownload, FiRefreshCw, FiZap, FiLoader } from "react-icons/fi";
-import { API_BASE, ApiError } from "../lib/api";
+import { API_BASE } from "../lib/api";
+import { compareJob, MatchRequestError, type MatchResult } from "../lib/job-match";
 import { PageMeta } from "../components/PageMeta";
 import { useProjects, useSiteSection } from "../lib/hooks";
 import { resolveMatchProjects } from '../lib/project-evidence';
@@ -14,20 +15,8 @@ const MAX_LENGTH = 8_000;
 const MIN_LENGTH = 80;
 const FRONTEND_TIMEOUT_MS = 70_000;
 
-type MatchResult = {
-  matchLevel: "Strong Match" | "Moderate Match" | "Partial Match" | "Limited Match";
-  overallMatch: string;
-  strongMatches: string[];
-  relevantExperience: string[];
-  relevantProjects: { slug: string; name: string; portfolioUrl: string; evidence: string }[];
-  partialMatches: string[];
-  gaps: string[];
-  recruiterSummary: string;
-  candidateSummary?: { text: string; source: 'record-grounded' | 'approved-profile' };
-};
-
 // Route continuity stays in memory; never persist the signed CV token to disk.
-let matchMemory: { description: string; result?: MatchResult; token: string } = { description: '', token: '' };
+let matchMemory: { description: string; result?: MatchResult; token: string; retryAt: number; error: string } = { description: '', token: '', retryAt: 0, error: '' };
 
 function ListSection({ title, items }: { title: string; items: string[] }) {
   if (!items.length) return null;
@@ -56,7 +45,11 @@ export function JobMatch() {
   const projects = useProjects();
   const [jobDescription, setJobDescription] = useState(matchMemory.description);
   const [result, setResult] = useState<MatchResult | undefined>(matchMemory.result);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(matchMemory.error);
+  const [retryAt, setRetryAt] = useState(matchMemory.retryAt);
+  const [now, setNow] = useState(Date.now);
+  const [requestId, setRequestId] = useState<string>();
+  const retrySeconds = Math.max(0, Math.ceil((retryAt - now) / 1000));
   const [inputInvalid, setInputInvalid] = useState(false);
   const [loading, setLoading] = useState(false);
   const [summaryCopied, setSummaryCopied] = useState(false);
@@ -65,8 +58,17 @@ export function JobMatch() {
   const [loadingMessage, setLoadingMessage] = useState("Comparing portfolio evidence…");
   const submitting = useRef(false);
   const activeRequest = useRef<AbortController | null>(null);
-  useEffect(() => { matchMemory = { description: jobDescription, result, token: cvToken }; }, [jobDescription, result, cvToken]);
-  useEffect(() => () => activeRequest.current?.abort(), []);
+  const activeTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => { matchMemory = { description: jobDescription, result, token: cvToken, retryAt, error }; }, [jobDescription, result, cvToken, retryAt, error]);
+  useEffect(() => () => { const current = activeRequest.current; activeRequest.current = null; current?.abort(); clearTimeout(activeTimeout.current); }, []);
+  useEffect(() => {
+    if (!retryAt) return;
+    const timer = window.setInterval(() => {
+      const time = Date.now(); setNow(time);
+      if (time >= retryAt) window.clearInterval(timer);
+    }, 250);
+    return () => window.clearInterval(timer);
+  }, [retryAt]);
 
   useEffect(() => {
     if (!loading) return;
@@ -85,60 +87,44 @@ export function JobMatch() {
     if (!value) return invalid("Please paste a job description.");
     if (value.length < MIN_LENGTH) return invalid(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
     if (value.length > MAX_LENGTH) return invalid(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
-    if (submitting.current) return;
-    submitting.current = true; setLoading(true); setError(""); setInputInvalid(false); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…");
+    if (submitting.current || Date.now() < retryAt) return;
+    submitting.current = true; setLoading(true); setError(""); setInputInvalid(false); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…"); setRequestId(undefined); setRetryAt(0);
     const controller = new AbortController();
     activeRequest.current = controller;
     const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
+    activeTimeout.current = timeout;
     try {
-      const response = await fetch(`${API_BASE}/job-match`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
-        body: JSON.stringify({ jobDescription: value, stream: true }),
-        signal: controller.signal,
+      const report = await compareJob(value, controller.signal, message => {
+        if (activeRequest.current === controller && !controller.signal.aborted) setLoadingMessage(message);
       });
-      if (!response.ok) {
-        const body = await response.json().catch(() => undefined);
-        throw new ApiError(response.status, body?.message || "The AI job matcher is temporarily unavailable.");
-      }
-      if (!response.body) throw new Error("No analysis stream was returned.");
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let streamedResult: MatchResult | undefined;
-      let streamError = "";
-      while (true) {
-        const { done, value: chunk } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(chunk, { stream: true });
-        const events = buffer.split("\n\n");
-        buffer = events.pop() || "";
-        for (const eventBlock of events) {
-          const eventName = eventBlock.split("\n").find((line) => line.startsWith("event:"))?.slice(6).trim();
-          const dataLine = eventBlock.split("\n").find((line) => line.startsWith("data:"));
-          if (!dataLine) continue;
-          const data = JSON.parse(dataLine.slice(5).trim()) as { message?: string; result?: MatchResult; cvToken?: string };
-          if (eventName === "status" && data.message) setLoadingMessage(data.message);
-          if (eventName === "result" && data.result) {
-            streamedResult = data.result;
-            setCvToken(data.cvToken || "");
-          }
-          if (eventName === "error") streamError = data.message || "The AI job matcher is temporarily unavailable.";
-        }
-      }
-      if (streamError) throw new ApiError(502, streamError);
-      if (!streamedResult) throw new Error("The match analysis returned no report. Please try again.");
-      setResult(streamedResult);
+      if (activeRequest.current !== controller || controller.signal.aborted) return;
+      setCvToken(report.cvToken); setResult(report.result);
     } catch (caught) {
-      if (caught instanceof Error && caught.name === "AbortError") {
-        setError("The AI job matcher took too long to respond. Please try again.");
+      if (activeRequest.current !== controller) return;
+      setCvToken('');
+      if (controller.signal.aborted) {
+        setError('The AI job matcher took too long to respond. Please try again.');
       } else {
-        setError(caught instanceof ApiError ? caught.message : "The AI job matcher is temporarily unavailable. Please try again.");
+        setError(caught instanceof MatchRequestError ? caught.message : 'The comparison was interrupted. Please try again.');
+        if (caught instanceof MatchRequestError) { setRetryAt(caught.retryAt); setNow(Date.now()); setRequestId(caught.requestId); }
       }
-    } finally { clearTimeout(timeout); submitting.current = false; setLoading(false); setLoadingMessage("Comparing portfolio evidence…"); }
+    } finally {
+      clearTimeout(timeout);
+      if (activeRequest.current === controller) {
+        activeTimeout.current = undefined;
+        activeRequest.current = null; submitting.current = false; setLoading(false); setLoadingMessage('Comparing portfolio evidence…');
+      }
+    }
   };
 
-  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); setInputInvalid(false); setSummaryCopied(false); setCvToken(""); };
+  const cancel = () => {
+    clearTimeout(activeTimeout.current); activeTimeout.current = undefined;
+    const current = activeRequest.current; activeRequest.current = null; current?.abort();
+    submitting.current = false; setLoading(false); setResult(undefined); setCvToken('');
+    setError('Comparison cancelled. You can try again.'); setRequestId(undefined);
+  };
+
+  const clear = () => { setJobDescription(""); setResult(undefined); setError(""); setInputInvalid(false); setSummaryCopied(false); setCvToken(""); setRequestId(undefined); };
 
   const copySummary = async () => {
     if (!result) return;
@@ -214,11 +200,12 @@ export function JobMatch() {
             <label htmlFor="job-description" className="sr-only">Job description</label>
             <textarea id="job-description" className={`textarea mt-6 resize-y ${descriptionError ? 'textarea-error' : ''}`} value={jobDescription} maxLength={MAX_LENGTH + 1} disabled={loading} onChange={event => { setJobDescription(event.target.value); setInputInvalid(false); if (error) setError(''); }} placeholder="Paste the job description here (minimum 80 characters)…" aria-describedby={descriptionError ? 'job-help job-error' : 'job-help'} aria-invalid={inputInvalid || jobDescription.length > MAX_LENGTH} />
             <div id="job-help" className="mt-2 flex justify-between gap-4"><span>Minimum {MIN_LENGTH} characters</span><span>{jobDescription.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}</span></div>
-            {descriptionError && <div id="job-error" role="alert" className="inline-state-enter mt-4 flex gap-2.5 border border-danger/25 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" aria-hidden="true" /><span>{descriptionError}</span></div>}
-            {error && !inputInvalid && !result && <button type="button" className="btn-outline mt-4" onClick={() => void submit()} disabled={loading}>Try again<FiRefreshCw aria-hidden="true" /></button>}
+            {descriptionError && <div id="job-error" role="alert" className="inline-state-enter mt-4 flex gap-2.5 border border-danger/25 p-3 text-sm leading-relaxed text-danger"><FiAlertCircle className="mt-0.5 shrink-0" aria-hidden="true" /><span>{descriptionError}{requestId && <span className="mt-2 block break-all text-xs">Reference: {requestId}</span>}</span></div>}
+            {retrySeconds > 0 && <p id="job-retry" className="mt-3 text-sm" role="timer" aria-live="off">Retry available in {retrySeconds}s. No request will be sent automatically.</p>}
+            {error && !inputInvalid && !result && <button type="button" className="btn-outline mt-4" onClick={() => void submit()} disabled={loading || retrySeconds > 0} aria-describedby={retrySeconds > 0 ? "job-retry" : undefined}>Try again<FiRefreshCw aria-hidden="true" /></button>}
             <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-              <button type="button" className="btn-ghost" onClick={clear} disabled={loading || (!jobDescription && !result)}><FiRefreshCw aria-hidden="true" />Clear</button>
-              <button type="submit" className="btn-primary btn-lg" disabled={loading || jobDescription.length > MAX_LENGTH}>{loading ? <><FiLoader className="animate-spin" aria-hidden="true" />Analyzing role…</> : <><FiZap aria-hidden="true" />Check My Fit</>}</button>
+              <button type="button" className="btn-ghost" onClick={loading ? cancel : clear} disabled={!loading && !jobDescription && !result}><FiRefreshCw aria-hidden="true" />{loading ? "Cancel comparison" : "Clear"}</button>
+              <button type="submit" className="btn-primary btn-lg" disabled={loading || retrySeconds > 0 || jobDescription.length > MAX_LENGTH} aria-describedby={retrySeconds > 0 ? "job-retry" : undefined}>{loading ? <><FiLoader className="animate-spin" aria-hidden="true" />Analyzing role…</> : <><FiZap aria-hidden="true" />Check My Fit</>}</button>
             </div>
           </form>
           <section className="ai-result" aria-label="Role comparison" aria-busy={loading}>

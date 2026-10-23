@@ -717,7 +717,7 @@ test("real Job Match contract retains report, evidence, export and token-gated C
   await page.route("**/api/job-match", (route) =>
     route.fulfill({
       contentType: "text/event-stream",
-      body: `event: result\ndata: ${JSON.stringify({ result, cvToken: "test-signed-token" })}\n\n`,
+      body: `event: result\ndata: ${JSON.stringify({ result, cvToken: "test-signed-token" })}\n\nevent: done\ndata: {}\n\n`,
     }),
   );
   await page.route("**/api/job-match/tailored-cv", (route) => {

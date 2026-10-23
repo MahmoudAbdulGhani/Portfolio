@@ -23,12 +23,16 @@ export async function generateWithGemini({
   userPrompt,
   maxOutputTokens = 1_000,
   responseMimeType,
+  signal,
 }) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new GeminiError("configuration");
   const model = process.env.GEMINI_MODEL || "gemini-3.5-flash";
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const abortFromCaller = () => controller.abort();
+  if (signal?.aborted) controller.abort();
+  else signal?.addEventListener('abort', abortFromCaller, { once: true });
   let response;
   try {
     try {
@@ -87,6 +91,7 @@ export async function generateWithGemini({
     return text;
   } finally {
     clearTimeout(timeout);
+    signal?.removeEventListener('abort', abortFromCaller);
   }
 }
 

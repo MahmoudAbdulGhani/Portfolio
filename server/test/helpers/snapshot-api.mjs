@@ -25,12 +25,32 @@ export function snapshotPrisma(content) {
         buckets.set(where.key, value);
         return value;
       },
-      deleteMany: async () => ({ count: 0 }),
+      updateMany: async ({ where, data }) => {
+        const row = buckets.get(where.key);
+        if (!row || row.count !== where.count || row.windowStart.getTime() !== where.windowStart.getTime()) return { count: 0 };
+        buckets.set(where.key, { ...row, ...data }); return { count: 1 };
+      },
+      deleteMany: async ({ where }) => {
+        let count = 0;
+        for (const [key, row] of buckets) {
+          if (where.key && key !== where.key) continue;
+          if (where.count !== undefined && row.count !== where.count) continue;
+          if (where.windowStart instanceof Date && row.windowStart.getTime() !== where.windowStart.getTime()) continue;
+          if (where.windowStart?.lte && row.windowStart > where.windowStart.lte) continue;
+          if (where.updatedAt) continue; // Test buckets have no historical updatedAt.
+          buckets.delete(key); count++;
+        }
+        return { count };
+      },
     },
-    $transaction: async callback => callback(prisma),
+    $transaction: async callback => {
+      const previous = structuredClone(buckets);
+      try { return await callback(prisma); }
+      catch (error) { buckets.clear(); for (const [key, row] of previous) buckets.set(key, row); throw error; }
+    },
     $disconnect: async () => {},
   };
-  return { prisma, readCount: () => reads };
+  return { prisma, buckets, readCount: () => reads };
 }
 
 export async function serve(app) {
