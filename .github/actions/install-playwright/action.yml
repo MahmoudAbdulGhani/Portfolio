@@ -1,0 +1,22 @@
+name: Install Playwright with Ubuntu archive
+description: Keep the same engines and dependencies without the slow Azure archive mirror observed in CI 117.
+inputs:
+  browsers:
+    description: Space-separated Playwright engine names
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Use the signed Ubuntu archive for browser dependencies
+      shell: bash
+      run: |
+        # Hosted images use mirror+file URIs in addition to direct sources.
+        for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources /etc/apt/apt-mirrors.txt /etc/apt/apt-mirrors-security.txt; do
+          if [ -f "$source" ]; then
+            sudo sed -i -E 's@https?://azure.archive.ubuntu.com/ubuntu/?@https://archive.ubuntu.com/ubuntu/@g' "$source"
+            awk '/archive.ubuntu.com\/ubuntu/ { print FILENAME ": " $0 }' "$source"
+          fi
+        done
+    - name: Install the requested engines and OS dependencies
+      shell: bash
+      run: npx playwright install --with-deps ${{ inputs.browsers }}

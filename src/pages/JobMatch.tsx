@@ -23,6 +23,7 @@ type MatchResult = {
   partialMatches: string[];
   gaps: string[];
   recruiterSummary: string;
+  candidateSummary?: { text: string; source: 'record-grounded' | 'approved-profile' };
 };
 
 // Route continuity stays in memory; never persist the signed CV token to disk.
@@ -125,7 +126,7 @@ export function JobMatch() {
           if (eventName === "error") streamError = data.message || "The AI job matcher is temporarily unavailable.";
         }
       }
-      if (streamError) throw new Error(streamError);
+      if (streamError) throw new ApiError(502, streamError);
       if (!streamedResult) throw new Error("The match analysis returned no report. Please try again.");
       setResult(streamedResult);
     } catch (caught) {

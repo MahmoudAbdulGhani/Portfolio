@@ -1,0 +1,29 @@
+{
+  "method": "Actual Playwright --list with the unchanged configurations and boundary exclusion, full suite versus 1/2 + 2/2. Listing/coverage proof, not test execution. fullyParallel remains false; worker/retry/deadline settings unchanged.",
+  "results": [
+    {
+      "project": "chromium",
+      "fullCount": 237,
+      "firstShard": 122,
+      "secondShard": 115,
+      "missing": 0,
+      "duplicates": 0
+    },
+    {
+      "project": "tablet-chromium",
+      "fullCount": 237,
+      "firstShard": 122,
+      "secondShard": 115,
+      "missing": 0,
+      "duplicates": 0
+    },
+    {
+      "project": "mobile-chromium",
+      "fullCount": 237,
+      "firstShard": 122,
+      "secondShard": 115,
+      "missing": 0,
+      "duplicates": 0
+    }
+  ]
+}

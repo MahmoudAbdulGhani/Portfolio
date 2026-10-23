@@ -16,7 +16,7 @@ import { ProfileStandingPortrait } from './ProfileStandingPortrait';
 import { ProfileIntroduction } from './ProfileIntroduction';
 import { CaseDisclosure } from './CaseDisclosure';
 import { evidenceUrl } from "../../lib/assistant-response";
-import { monthDate, recordKind, capabilityGroups } from "../../../shared/content-integrity";
+import { monthDate, recordKind, capabilityGroups, experienceLocation } from "../../../shared/content-integrity";
 import { ProfileCapabilities } from './ProfileCapabilities';
 import './profile-record.css';
 
@@ -151,7 +151,7 @@ export function ProfilePage({ review = false }: { review?: boolean }) {
                         ))}
                       </ul>
                     )}
-                    {item.location && <span className="record-location">{item.location}</span>}
+                    {experienceLocation(item) && <span className="record-location">{experienceLocation(item)}</span>}
                   </div>
                 </CaseDisclosure>
               ))}

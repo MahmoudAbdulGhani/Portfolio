@@ -15,10 +15,10 @@ export async function getPortfolioContext(projectSlug) {
     prisma.profile.findFirst({
       select: {
         name: true, shortName: true, title: true, tagline: true, bio: true,
-        location: true, languages: true, resumeUrl: true,
+        location: true, languages: true, resumeUrl: true, professionalSummary: true,
         experience: { where: { published: true },
           orderBy: { order: "asc" },
-          select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, description: true, details: true, bullets: true, cvBullets: true, meta: true },
+          select: { role: true, company: true, startDate: true, endDate: true, isCurrent: true, location: true, workArrangement: true, description: true, details: true, bullets: true, cvBullets: true, meta: true },
         },
         socials: { where: { published: true }, select: { label: true, url: true } },
       },

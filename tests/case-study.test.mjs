@@ -72,7 +72,11 @@ test('public editorial copy separates product scope from capture mechanics witho
   assert.match(caseStudies.lobby.limits.join(' '), /team delivery.*individual ownership/);
   assert.match(caseStudies['gamezone-arena'].leadCaption, /synthetic demonstration/);
   assert.match(caseStudies['gamezone-arena'].mediaNotes.join(' '), /intercepted synthetic.*No booking or payment.*not verified/);
-  assert.match(caseStudies['medicare-hub'].limits.join(' '), /authenticated workflow media.*remain unavailable/);
+  assert.match(caseStudies['medicare-hub'].limits.join(' '), /Authenticated scheduling and clinical records are not demonstrated/);
+  for (const slug of ['medicare-hub', 'home-services']) {
+    assert.doesNotMatch([caseStudies[slug].summary, ...caseStudies[slug].limits].join(' '), /personal (?:ownership|attribution).*undocumented/i);
+    assert.equal(caseStudyFor(caseStudyProjects.find(project => project.slug === slug)).authorship.status, 'personal attribution undocumented');
+  }
   assert.match(caseStudies['home-services'].limits.join(' '), /placeholder anchors.*backend.*not demonstrated/);
   assert.equal(caseStudies['home-services'].workflow[0].notice, 'Mobile navigation sidebar on the public demonstration page.');
 });

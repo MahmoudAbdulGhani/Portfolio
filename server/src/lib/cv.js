@@ -1,6 +1,8 @@
 import PDFDocument from "pdfkit";
 import { createRequire } from "node:module";
 import { resolveCvData } from "./cv-config.js";
+import { resolveCandidateCv, selectCandidateProjects } from './candidate-cv.js';
+import { capabilityParts } from '../../../shared/content-integrity-runtime.js';
 
 const require = createRequire(import.meta.url);
 const FONTS = {
@@ -649,6 +651,15 @@ function drawApplicationCv(doc, data, origin) {
   const { profile, projects, skills, education, certifications, languages, configuration } =
     data;
   const { left, textWidth, ink } = APPLICATION;
+  const flowing = data.tailored === true;
+  let pageOffset = 0;
+  const reserve = (y, height) => {
+    if (flowing && y - pageOffset + height > APPLICATION.page.height - 36) {
+      doc.addPage();
+      pageOffset = y - 36;
+    }
+  };
+  const pageY = y => y - pageOffset;
 
   const setFont = (face, size) => {
     doc.font(APPLICATION_FONTS[face]).fontSize(size);
@@ -656,6 +667,7 @@ function drawApplicationCv(doc, data, origin) {
 
   // Draw a single visual line at an absolute top coordinate.
   const line = (runs, y, options = {}) => {
+    reserve(y, Math.max(...runs.map(run => run.size)) + 3);
     const { x = left, width = textWidth, align, link } = options;
     const widthOf = (run) => {
       setFont(run.face ?? "regular", run.size);
@@ -671,7 +683,7 @@ function drawApplicationCv(doc, data, origin) {
       const w = widthOf(run);
       // Each run is positioned absolutely, so wrapping is disabled; the width
       // is required for PDFKit to place link annotations.
-      doc.fillColor(run.color ?? ink).text(run.text, cursor, y + (run.dy ?? 0), {
+      doc.fillColor(run.color ?? ink).text(run.text, cursor, pageY(y) + (run.dy ?? 0), {
         width: w + 1,
         lineBreak: false,
         ...(href ? { link: href } : {}),
@@ -686,7 +698,7 @@ function drawApplicationCv(doc, data, origin) {
     doc
       .rect(
         APPLICATION.ruleX0,
-        y,
+        pageY(y),
         APPLICATION.ruleX1 - APPLICATION.ruleX0,
         APPLICATION.ruleHeight,
       )
@@ -725,8 +737,9 @@ function drawApplicationCv(doc, data, origin) {
     if (!value_) return y;
     const lines = wrapLines(value_, width, face, size);
     lines.forEach((text, index) => {
+      reserve(y + index * leading, size + 3);
       setFont(face, size);
-      doc.fillColor(ink).text(text, x, y + index * leading, {
+      doc.fillColor(ink).text(text, x, pageY(y + index * leading), {
         width,
         lineBreak: false,
       });
@@ -795,24 +808,29 @@ function drawApplicationCv(doc, data, origin) {
     profile.professionalSummary ||
     "";
   const summaryBottom = paragraph(summary, 117.78, { leading: APPLICATION.bodyLeading });
-  // Keep the three-line reference unchanged. Longer provider summaries need
+  // Keep the three-line reference unchanged. Longer configured summaries need
   // the same inter-section space, rather than overlapping the fixed heading.
-  const summaryShift = Math.max(0, summaryBottom + 19.05 - 162.33);
+  const summaryShift = flowing ? summaryBottom + 19.05 - 162.33 : Math.max(0, summaryBottom + 19.05 - 162.33);
 
   // --- PROFESSIONAL EXPERIENCE ---
+  const experience = profile.experience.slice(0, 2);
+  reserve(162.33 + summaryShift, 44);
+  if (!flowing || experience.length) {
   line([{ text: "PROFESSIONAL EXPERIENCE", face: "bold", size: 11 }], 162.33 + summaryShift);
   sectionRule(179.55 + summaryShift);
+  }
 
   // Reference bullets sit on a 12.25pt rhythm: the glyph is drawn 1.53pt above
   // the text top, and each bullet block advances by its own line count.
   const bullet = (value, y, options = {}) => {
+    reserve(y, 14);
     const {
       leading = APPLICATION.bulletLeading,
       face = "regular",
       markerOffset = 1.53,
     } = options;
     setFont("regular", 11);
-    doc.fillColor(ink).text("\u2022", left, y - markerOffset, {
+    doc.fillColor(ink).text("\u2022", left, pageY(y) - markerOffset, {
       width: 8,
       lineBreak: false,
     });
@@ -825,8 +843,7 @@ function drawApplicationCv(doc, data, origin) {
     });
   };
 
-  const experience = profile.experience.slice(0, 2);
-  let cursor = 183.33;
+  let cursor = 183.33 + summaryShift;
   experience.forEach((item, index) => {
     const rawRole = item.role || item.milestone || "";
     const rawCompany = item.company || item.facility || "";
@@ -849,7 +866,8 @@ function drawApplicationCv(doc, data, origin) {
       ...(tailSize === 10 ? [{ text: ", ", face: "bold", size: 10, dy: 0.95 }] : []),
       ...(tail ? [{ text: tail, size: tailSize, dy: tailDy }] : []),
     ];
-    const titleY = (APPLICATION.experienceTitleY[index] ?? 183.33) + summaryShift;
+    const titleY = flowing ? cursor : (APPLICATION.experienceTitleY[index] ?? 183.33) + summaryShift;
+    reserve(titleY, 42);
     line(titleRuns, titleY);
     if (dateText) {
       // Right-aligned on the lower baseline, matching the reference's edge.
@@ -866,7 +884,7 @@ function drawApplicationCv(doc, data, origin) {
       : item.bullets?.length
         ? item.bullets
         : splitDetails(item.details);
-    let bulletCursor = (APPLICATION.experienceBulletY[index] ?? 201.31) + summaryShift;
+    let bulletCursor = flowing ? titleY + 17.98 : (APPLICATION.experienceBulletY[index] ?? 201.31) + summaryShift;
     bullets.forEach((value, bulletIndex) => {
       bulletCursor = bullet(value, bulletCursor, {
         // The reference hugs the marker to the text once the gaps tighten.
@@ -877,11 +895,17 @@ function drawApplicationCv(doc, data, origin) {
           bulletIndex < 2 ? APPLICATION.bulletGapWide : APPLICATION.bulletGap;
       }
     });
+    cursor = bulletCursor + 24;
   });
 
   // --- PROJECT EXPERIENCE ---
-  line([{ text: "PROJECT EXPERIENCE", face: "bold", size: 11 }], 358.4 + summaryShift);
-  sectionRule(375.87 + summaryShift);
+  const experienceBottom = experience.length ? cursor - 24 : summaryBottom;
+  const projectHeadingY = flowing ? experienceBottom + 21 : 358.4 + summaryShift;
+  if (!flowing || projects.length) {
+    reserve(projectHeadingY, 44);
+    line([{ text: "PROJECT EXPERIENCE", face: "bold", size: 11 }], projectHeadingY);
+    sectionRule(projectHeadingY + 17.47);
+  }
 
   const projectLinks = (project) =>
     [
@@ -892,7 +916,7 @@ function drawApplicationCv(doc, data, origin) {
   // Absolute title anchors from the reference; the description flows beneath
   // each one, so only the title positions are fixed.
   const projectTitleY = [379.4, 434.68, 475.93];
-  let projectBottom = 0;
+  let projectBottom = flowing ? experienceBottom : 0;
   for (const [index, project] of projects.slice(0, 3).entries()) {
     const nameStr = clean(project.name);
     const links =
@@ -907,7 +931,9 @@ function drawApplicationCv(doc, data, origin) {
       );
     // Retain the standard reference anchors; reordered tailored projects must
     // leave room for the preceding paragraph's real line count.
-    const titleY = Math.max((projectTitleY[index] ?? 379.4 + index * 55) + summaryShift, projectBottom + 14);
+    const titleY = flowing ? (index === 0 ? projectHeadingY + 21 : projectBottom + 18)
+      : Math.max((projectTitleY[index] ?? 379.4 + index * 55) + summaryShift, projectBottom + 14);
+    reserve(titleY, 42);
     line(runs, titleY);
 
     const description =
@@ -922,7 +948,8 @@ function drawApplicationCv(doc, data, origin) {
   }
 
   // --- TECHNICAL SKILLS ---
-  const projectShift = Math.max(summaryShift, projectBottom + 18 - 520.45);
+  const projectShift = flowing ? projectBottom + 22 - 520.45 : Math.max(summaryShift, projectBottom + 18 - 520.45);
+  reserve(520.45 + projectShift, 44);
   line([{ text: "TECHNICAL SKILLS", face: "bold", size: 11 }], 520.45 + projectShift);
   sectionRule(537.92 + projectShift);
 
@@ -930,6 +957,19 @@ function drawApplicationCv(doc, data, origin) {
   let skillY = 540.65 + projectShift;
   for (const group of skillGroups) {
     if (!group.names.length) continue;
+    if (flowing) {
+      const label = `${group.category}: `;
+      setFont('bold', 10);
+      const labelWidth = doc.widthOfString(label);
+      const wrapped = wrapLines(group.names.join(', '), textWidth - labelWidth, 'regular', 10);
+      reserve(skillY, Math.min(42, wrapped.length * 13.75 + 3));
+      wrapped.forEach((value, index) => {
+        line(index === 0 ? [{ text: label, face: 'bold', size: 10 }, { text: value, size: 10 }] : [{ text: value, size: 10 }], skillY,
+          index === 0 ? {} : { x: left + labelWidth, width: textWidth - labelWidth });
+        skillY += 13.75;
+      });
+      continue;
+    }
     line(
       [
         { text: `${group.category}: `, face: "bold", size: 10 },
@@ -941,8 +981,10 @@ function drawApplicationCv(doc, data, origin) {
   }
 
   // --- EDUCATION & CERTIFICATION ---
-  line([{ text: "EDUCATION & TRAINING", face: "bold", size: 11 }], 642.48 + projectShift);
-  sectionRule(659.95 + projectShift);
+  const educationShift = flowing ? skillY + 6 - 642.48 : projectShift;
+  reserve(642.48 + educationShift, 44);
+  line([{ text: "EDUCATION & TRAINING", face: "bold", size: 11 }], 642.48 + educationShift);
+  sectionRule(659.95 + educationShift);
 
   const edu = education[0] || {};
   const school = clean(edu.school).replace(/\s*\(LIU\)\s*$/, "");
@@ -953,9 +995,9 @@ function drawApplicationCv(doc, data, origin) {
       { text: `${school} `, face: "boldItalic", size: 10 },
       { text: "(LIU)", face: "italic", size: 10 },
     ],
-    662.7 + projectShift,
+    662.7 + educationShift,
   );
-  line([{ text: clean(edu.period), face: "bold", size: 9 }], 663.65 + projectShift, {
+  line([{ text: clean(edu.period), face: "bold", size: 9 }], 663.65 + educationShift, {
     x: left,
     width: 558.78 - left,
     align: "right",
@@ -973,7 +1015,8 @@ function drawApplicationCv(doc, data, origin) {
   shownCerts.slice(0, certsShown).forEach((cert, index) => {
     const title = clean(cert.title);
     const issuer = clean(cert.issuer);
-    const base = 677.46 + index * certStep + projectShift;
+    const base = 677.46 + index * certStep + educationShift;
+    reserve(base, 16);
     line(
       [
         { text: title, face: "bold", size: 10 },
@@ -1005,7 +1048,8 @@ function drawApplicationCv(doc, data, origin) {
     }
   });
   if (languageRuns.length) {
-    const languageTop = 696.25 + Math.max(0, certsShown - 1) * certStep + projectShift;
+    const languageTop = 696.25 + Math.max(0, certsShown - 1) * certStep + educationShift;
+    reserve(languageTop, 36);
     line([{ text: "LANGUAGES", face: "bold", size: 11 }], languageTop);
     sectionRule(languageTop + 17.475);
     line(languageRuns, languageTop + 20.2);
@@ -1019,27 +1063,15 @@ export async function generateCvPdfBuffer({
 } = {}) {
   const data = await resolveCvData(mode);
   if (tailor && mode === "application") {
-    const projectOrder = new Map(
-      (tailor.projectSlugs ?? []).map((slug, index) => [slug, index]),
-    );
-    const selectedProjects = data.projects
-      .filter((project) => projectOrder.has(project.slug))
-      .sort((a, b) => projectOrder.get(a.slug) - projectOrder.get(b.slug));
-    if (selectedProjects.length) data.projects = selectedProjects;
-
-    const evidence = (tailor.strongMatches ?? []).join(" ").toLowerCase();
+    const candidate = resolveCandidateCv(tailor.summaryPlan, data);
+    data.projects = selectCandidateProjects(data.projects, candidate, Array.isArray(tailor.projectSlugs) ? tailor.projectSlugs : []);
+    data.tailored = true;
     data.skills = [...data.skills].sort((a, b) => {
-      const aRelevant = evidence.includes(clean(a.name).toLowerCase()) ? 1 : 0;
-      const bRelevant = evidence.includes(clean(b.name).toLowerCase()) ? 1 : 0;
+      const relevant = item => capabilityParts(item.name).some(part => candidate.skillKeys.includes(part.key)) ? 1 : 0;
+      const aRelevant = relevant(a), bRelevant = relevant(b);
       return bRelevant - aRelevant;
     });
-    const tailoredSummary = clean(tailor.summary).slice(0, 650);
-    if (tailoredSummary) {
-      data.configuration = {
-        ...data.configuration,
-        professionalSummary: tailoredSummary,
-      };
-    }
+    data.configuration = { ...data.configuration, professionalSummary: candidate.text };
   }
   const {
     profile,

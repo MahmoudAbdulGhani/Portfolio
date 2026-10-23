@@ -31,60 +31,63 @@ export async function generateWithGemini({
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
   let response;
   try {
-    response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
-      {
-        method: "POST",
-        headers: {
-          "x-goog-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: systemInstruction }] },
-          contents: [{ role: "user", parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            maxOutputTokens,
-            thinkingConfig: { thinkingLevel: "minimal" },
-            ...(responseMimeType && { responseMimeType }),
+    try {
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+        {
+          method: "POST",
+          headers: {
+            "x-goog-api-key": apiKey,
+            "Content-Type": "application/json",
           },
-        }),
-        signal: controller.signal,
-      },
-    );
-  } catch (error) {
-    if (error?.name === "AbortError") throw new GeminiError("timeout");
-    throw new GeminiError("provider");
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: systemInstruction }] },
+            contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+            generationConfig: {
+              maxOutputTokens,
+              thinkingConfig: { thinkingLevel: "minimal" },
+              ...(responseMimeType && { responseMimeType }),
+            },
+          }),
+          signal: controller.signal,
+        },
+      );
+    } catch (error) {
+      if (error?.name === "AbortError") throw new GeminiError("timeout");
+      throw new GeminiError("provider");
+    }
+
+    if (!response.ok) {
+      let providerError;
+      try {
+        providerError = await response.json();
+      } catch {
+        providerError = undefined;
+      }
+      const status = providerError?.error?.status;
+      console.error("Gemini provider request failed", {
+        status: response.status,
+        requestId: response.headers.get("x-request-id"),
+      });
+      if (response.status === 429 || status === "RESOURCE_EXHAUSTED")
+        throw new GeminiError("quota");
+      if (response.status === 401 || response.status === 403)
+        throw new GeminiError("configuration");
+      throw new GeminiError("provider");
+    }
+
+    let text;
+    try {
+      text = extractText(await response.json());
+    } catch {
+      if (controller.signal.aborted) throw new GeminiError('timeout');
+      throw new GeminiError("empty");
+    }
+    if (!text) throw new GeminiError("empty");
+    return text;
   } finally {
     clearTimeout(timeout);
   }
-
-  if (!response.ok) {
-    let providerError;
-    try {
-      providerError = await response.json();
-    } catch {
-      providerError = undefined;
-    }
-    const status = providerError?.error?.status;
-    console.error("Gemini provider request failed", {
-      status: response.status,
-      requestId: response.headers.get("x-request-id"),
-    });
-    if (response.status === 429 || status === "RESOURCE_EXHAUSTED")
-      throw new GeminiError("quota");
-    if (response.status === 401 || response.status === 403)
-      throw new GeminiError("configuration");
-    throw new GeminiError("provider");
-  }
-
-  let text;
-  try {
-    text = extractText(await response.json());
-  } catch {
-    throw new GeminiError("empty");
-  }
-  if (!text) throw new GeminiError("empty");
-  return text;
 }
 
 export async function generateStreamWithGemini({
@@ -102,103 +105,107 @@ export async function generateStreamWithGemini({
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
-  if (signal) {
-    signal.addEventListener("abort", () => controller.abort());
-  }
+  const abortFromCaller = () => controller.abort();
+  if (signal?.aborted) controller.abort();
+  else signal?.addEventListener('abort', abortFromCaller, { once: true });
 
   let response;
   try {
-    response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:streamGenerateContent?alt=sse`,
-      {
-        method: "POST",
-        headers: {
-          "x-goog-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: systemInstruction }] },
-          contents: [{ role: "user", parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            maxOutputTokens,
-            thinkingConfig: { thinkingLevel: "minimal" },
-            ...(responseMimeType && { responseMimeType }),
-          },
-        }),
-        signal: controller.signal,
-      },
-    );
-  } catch (error) {
-    if (error?.name === "AbortError" && !signal?.aborted)
-      throw new GeminiError("timeout");
-    if (signal?.aborted) return "";
-    throw new GeminiError("provider");
-  } finally {
-    clearTimeout(timeout);
-  }
-
-  if (!response.ok) {
-    let providerError;
     try {
-      providerError = await response.json();
-    } catch {
-      providerError = undefined;
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:streamGenerateContent?alt=sse`,
+        {
+          method: "POST",
+          headers: {
+            "x-goog-api-key": apiKey,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: systemInstruction }] },
+            contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+            generationConfig: {
+              maxOutputTokens,
+              thinkingConfig: { thinkingLevel: "minimal" },
+              ...(responseMimeType && { responseMimeType }),
+            },
+          }),
+          signal: controller.signal,
+        },
+      );
+    } catch (error) {
+      if (error?.name === "AbortError" && !signal?.aborted)
+        throw new GeminiError("timeout");
+      if (signal?.aborted) return "";
+      throw new GeminiError("provider");
     }
-    const status = providerError?.error?.status;
-    console.error("Gemini stream request failed", {
-      status: response.status,
-      requestId: response.headers.get("x-request-id"),
-    });
-    if (response.status === 429 || status === "RESOURCE_EXHAUSTED")
-      throw new GeminiError("quota");
-    if (response.status === 401 || response.status === 403)
-      throw new GeminiError("configuration");
-    throw new GeminiError("provider");
-  }
 
-  if (!response.body) throw new GeminiError("empty");
+    if (!response.ok) {
+      let providerError;
+      try {
+        providerError = await response.json();
+      } catch {
+        providerError = undefined;
+      }
+      const status = providerError?.error?.status;
+      console.error("Gemini stream request failed", {
+        status: response.status,
+        requestId: response.headers.get("x-request-id"),
+      });
+      if (response.status === 429 || status === "RESOURCE_EXHAUSTED")
+        throw new GeminiError("quota");
+      if (response.status === 401 || response.status === 403)
+        throw new GeminiError("configuration");
+      throw new GeminiError("provider");
+    }
 
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder("utf-8");
-  let buffer = "";
-  let fullText = "";
+    if (!response.body) throw new GeminiError("empty");
 
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    let buffer = "";
+    let fullText = "";
 
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split("\n");
-      buffer = lines.pop() || "";
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
 
-      for (const line of lines) {
-        const trimmed = line.trim();
-        if (!trimmed || !trimmed.startsWith("data:")) continue;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
 
-        const jsonStr = trimmed.slice(5).trim();
-        if (!jsonStr || jsonStr === "[DONE]") continue;
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || !trimmed.startsWith("data:")) continue;
 
-        try {
-          const parsed = JSON.parse(jsonStr);
-          const chunkText = extractText(parsed, true);
-          if (chunkText) {
-            fullText += chunkText;
-            if (onChunk) {
-              onChunk(chunkText);
+          const jsonStr = trimmed.slice(5).trim();
+          if (!jsonStr || jsonStr === "[DONE]") continue;
+
+          try {
+            const parsed = JSON.parse(jsonStr);
+            const chunkText = extractText(parsed, true);
+            if (chunkText) {
+              fullText += chunkText;
+              if (onChunk) {
+                onChunk(chunkText);
+              }
             }
+          } catch {
+            // Ignore partial or non-JSON SSE lines
           }
-        } catch {
-          // Ignore partial or non-JSON SSE lines
         }
       }
+    } catch {
+      if (signal?.aborted) return fullText;
+      if (controller.signal.aborted) throw new GeminiError('timeout');
+      throw new GeminiError('provider');
     }
-  } catch (err) {
-    if (signal?.aborted) return fullText;
-    throw err;
-  }
 
-  return fullText;
+    return fullText;
+  } finally {
+    clearTimeout(timeout);
+    signal?.removeEventListener('abort', abortFromCaller);
+  }
 }
 
 export function sendGeminiError(res, error, subject = "assistant") {
