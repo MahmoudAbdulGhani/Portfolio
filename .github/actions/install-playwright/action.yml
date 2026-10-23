@@ -10,9 +10,11 @@ runs:
     - name: Use the signed Ubuntu archive for browser dependencies
       shell: bash
       run: |
-        for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources; do
+        # Hosted images use mirror+file URIs in addition to direct sources.
+        for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources /etc/apt/apt-mirrors.txt /etc/apt/apt-mirrors-security.txt; do
           if [ -f "$source" ]; then
             sudo sed -i -E 's@https?://azure.archive.ubuntu.com/ubuntu/?@https://archive.ubuntu.com/ubuntu/@g' "$source"
+            awk '/archive.ubuntu.com\/ubuntu/ { print FILENAME ": " $0 }' "$source"
           fi
         done
     - name: Install the requested engines and OS dependencies

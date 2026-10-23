@@ -42,3 +42,9 @@ Local checks: typecheck, lint, ordinary build, normal production guard, 39 integ
 ## Remaining limits and recommendation
 
 Physical Android/iPhone, hardware audio and production provider logs were unavailable. No changes to portrait playback or media are proposed. Hosted Preview access and exact final-head CI are reported on the draft PR; Vercel SSO, if required, is an access limitation, not a deployment failure. Do not weaken protection. Review the static PDF/screenshots independently if hosted access is restricted. Verify genuine assistant output later when the upstream provider is available. Keep assessment prose separate from candidate facts even when the model gives a favorable rating. No merge, manual deploy, promotion, Contact submission or live-data changes.
+
+### Final-head CI and hosted access tracking
+
+Automatic Preview at https://mahmoud-portfolio-git-fix-a6c27a-mahmoud-abdul-ghani-s-projects.vercel.app/profile returns HTTP 302 to Vercel SSO. Hosted UI/provider verification is blocked by sign-in; deployment protection remains unchanged. The exact final SHA and terminal CI status are recorded on [draft PR #47](https://github.com/MahmoudAbdulGhani/Portfolio/pull/47).
+
+The first candidate run (#118) exposed runner-specific mirror+file indirection: changing direct apt sources did not replace the active /etc/apt/apt-mirrors.txt Azure URL. Its successful tablet shard log verified that diagnosis; several other jobs remained in installation. The follow-up updates both known Ubuntu mirror-list files as well as direct sources and prints only the public Ubuntu archive lines for verification. The superseded run may be cancelled once the corrected head starts; it is not counted as a final-head pass. No assertion or deadline changes.
