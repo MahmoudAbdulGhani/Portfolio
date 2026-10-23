@@ -482,19 +482,19 @@
       "requests": [
         {
           "httpStatus": 200,
-          "requestId": "30981375-201f-4acf-aeed-86473d04eab2",
+          "requestId": "52da4548-b59f-4600-80eb-6402013a4e3c",
           "hasReport": false,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 200,
-          "requestId": "399844fd-51b7-4664-b14e-a2a272d78666",
+          "requestId": "ae038674-d2b1-4129-abeb-a72948a50fef",
           "hasReport": true,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 429,
-          "requestId": "23d4ff40-a43a-4546-95bd-57b2f2ced870",
+          "requestId": "37d71cf5-3584-45ee-99ba-b3e22de36777",
           "retryAfter": "30",
           "hasReport": false,
           "message": "A report for this job description was generated recently. Please wait before requesting another."
@@ -525,7 +525,7 @@
         {
           "state": "failure",
           "overflow": false,
-          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 30981375-201f-4acf-aeed-86473d04eab2",
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 52da4548-b59f-4600-80eb-6402013a4e3c",
           "controls": [
             {
               "text": "Try again",
@@ -569,9 +569,29 @@
           "inputPreserved": true
         },
         {
+          "state": "report-detail",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 243.625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 243.625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
           "state": "completed-cooldown",
           "overflow": false,
-          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 23d4ff40-a43a-4546-95bd-57b2f2ced870",
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 37d71cf5-3584-45ee-99ba-b3e22de36777",
           "controls": [
             {
               "text": "Try again",
@@ -603,19 +623,19 @@
       "requests": [
         {
           "httpStatus": 200,
-          "requestId": "696a8c46-6398-4565-83f6-717c1539cd89",
+          "requestId": "cef1513a-f975-4547-a545-37eb19b7e848",
           "hasReport": false,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 200,
-          "requestId": "1e28af5b-5015-48a4-afef-411f17414334",
+          "requestId": "e23ffd59-5ef0-45e3-a1c0-b18446a287a5",
           "hasReport": true,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 429,
-          "requestId": "d1c81b2e-cb7f-4fa7-b3b3-3de599924471",
+          "requestId": "b9da6587-d5e9-4d32-bb68-c6d7d223affb",
           "retryAfter": "30",
           "hasReport": false,
           "message": "A report for this job description was generated recently. Please wait before requesting another."
@@ -646,7 +666,7 @@
         {
           "state": "failure",
           "overflow": false,
-          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 696a8c46-6398-4565-83f6-717c1539cd89",
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: cef1513a-f975-4547-a545-37eb19b7e848",
           "controls": [
             {
               "text": "Try again",
@@ -690,9 +710,29 @@
           "inputPreserved": true
         },
         {
+          "state": "report-detail",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 305.21875,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
           "state": "completed-cooldown",
           "overflow": false,
-          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: d1c81b2e-cb7f-4fa7-b3b3-3de599924471",
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: b9da6587-d5e9-4d32-bb68-c6d7d223affb",
           "controls": [
             {
               "text": "Try again",
@@ -724,19 +764,19 @@
       "requests": [
         {
           "httpStatus": 200,
-          "requestId": "1d4c82c5-61e1-41c6-8fe3-17fe172c13c9",
+          "requestId": "2cdd1854-dc71-4b51-8cb5-f69ae1b61e3e",
           "hasReport": false,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 200,
-          "requestId": "b55c9a95-9228-498e-8041-2b42d78d0f3f",
+          "requestId": "46ba0c40-c885-400d-ba57-6b59984bd08f",
           "hasReport": true,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 429,
-          "requestId": "999e5852-5972-480f-8419-a7ab658197f1",
+          "requestId": "ff951e62-6e92-4cd1-b98f-cf6cded3ae74",
           "retryAfter": "30",
           "hasReport": false,
           "message": "A report for this job description was generated recently. Please wait before requesting another."
@@ -767,7 +807,7 @@
         {
           "state": "failure",
           "overflow": false,
-          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 1d4c82c5-61e1-41c6-8fe3-17fe172c13c9",
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 2cdd1854-dc71-4b51-8cb5-f69ae1b61e3e",
           "controls": [
             {
               "text": "Try again",
@@ -811,9 +851,29 @@
           "inputPreserved": true
         },
         {
+          "state": "report-detail",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 340.40625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
           "state": "completed-cooldown",
           "overflow": false,
-          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 999e5852-5972-480f-8419-a7ab658197f1",
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: ff951e62-6e92-4cd1-b98f-cf6cded3ae74",
           "controls": [
             {
               "text": "Try again",
@@ -845,19 +905,19 @@
       "requests": [
         {
           "httpStatus": 200,
-          "requestId": "439ca900-4422-40d8-a198-354c470827fe",
+          "requestId": "2f4281ee-9c8a-4f48-8a08-7b1d908cb51f",
           "hasReport": false,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 200,
-          "requestId": "9997efcb-cd21-4656-9d8f-3f7c3936ee5a",
+          "requestId": "9d1eb85a-adef-4927-894f-fd1e5a1845da",
           "hasReport": true,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 429,
-          "requestId": "1b9dc5ee-37df-4e20-b8a8-2a6c2efe533e",
+          "requestId": "08ac1f6e-df09-47d2-8db7-aab640aa9a6a",
           "retryAfter": "30",
           "hasReport": false,
           "message": "A report for this job description was generated recently. Please wait before requesting another."
@@ -888,7 +948,7 @@
         {
           "state": "failure",
           "overflow": false,
-          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 439ca900-4422-40d8-a198-354c470827fe",
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 2f4281ee-9c8a-4f48-8a08-7b1d908cb51f",
           "controls": [
             {
               "text": "Try again",
@@ -932,9 +992,29 @@
           "inputPreserved": true
         },
         {
+          "state": "report-detail",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
           "state": "completed-cooldown",
           "overflow": false,
-          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 1b9dc5ee-37df-4e20-b8a8-2a6c2efe533e",
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 08ac1f6e-df09-47d2-8db7-aab640aa9a6a",
           "controls": [
             {
               "text": "Try again",
@@ -966,19 +1046,19 @@
       "requests": [
         {
           "httpStatus": 200,
-          "requestId": "1ef324f9-830c-4ab9-9009-5e885b80b956",
+          "requestId": "2a560354-c3e6-49a2-a2a4-9986a407c567",
           "hasReport": false,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 200,
-          "requestId": "142aa11d-89b2-4f4c-8beb-68349ad31f5a",
+          "requestId": "63b5aee4-7082-4d58-b9d0-243cb5e83f91",
           "hasReport": true,
           "message": "Comparing portfolio evidence…"
         },
         {
           "httpStatus": 429,
-          "requestId": "2a6ed58c-4a9f-4f35-a715-935fa9ee1623",
+          "requestId": "c9c638bc-33bb-4a46-93ed-2b1cfae48ed5",
           "retryAfter": "30",
           "hasReport": false,
           "message": "A report for this job description was generated recently. Please wait before requesting another."
@@ -1009,7 +1089,7 @@
         {
           "state": "failure",
           "overflow": false,
-          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 1ef324f9-830c-4ab9-9009-5e885b80b956",
+          "error": "The AI job matcher is temporarily unavailable. Please try again.Reference: 2a560354-c3e6-49a2-a2a4-9986a407c567",
           "controls": [
             {
               "text": "Try again",
@@ -1053,9 +1133,29 @@
           "inputPreserved": true
         },
         {
+          "state": "report-detail",
+          "overflow": false,
+          "error": null,
+          "controls": [
+            {
+              "text": "Clear",
+              "disabled": false,
+              "width": 97.15625,
+              "height": 44
+            },
+            {
+              "text": "Check My Fit",
+              "disabled": false,
+              "width": 154.890625,
+              "height": 48
+            }
+          ],
+          "inputPreserved": true
+        },
+        {
           "state": "completed-cooldown",
           "overflow": false,
-          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: 2a6ed58c-4a9f-4f35-a715-935fa9ee1623",
+          "error": "A report for this job description was generated recently. Please wait before requesting another.Reference: c9c638bc-33bb-4a46-93ed-2b1cfae48ed5",
           "controls": [
             {
               "text": "Try again",

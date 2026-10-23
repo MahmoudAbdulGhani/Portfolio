@@ -25,6 +25,13 @@ for (const width of [320, 390, 430, 768, 1440]) test(`failure, timed retry and s
   await page.locator('.ai-form').evaluate(form => form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }))); expect(calls).toBe(2);
   await page.clock.fastForward(2_001); await expect(page.getByRole('button', { name: 'Try again', exact: true })).toBeEnabled(); expect(calls).toBe(2);
   await page.getByRole('button', { name: 'Try again', exact: true }).press('Enter'); await expect(page.locator('.ai-report')).toBeVisible(); expect(calls).toBe(3);
+  const download = page.getByRole('button', { name: 'Download Tailored CV' });
+  await download.focus(); await download.press('Tab'); await page.keyboard.press('Shift+Tab'); await expect(download).toBeFocused();
+  const target = await download.evaluate(button => {
+    const box = button.getBoundingClientRect();
+    return { top: box.top, bottom: box.bottom, height: box.height, headerBottom: document.querySelector('header')!.getBoundingClientRect().bottom, footerTop: document.querySelector('.stage-footer')!.getBoundingClientRect().top };
+  });
+  expect(target.height).toBeGreaterThanOrEqual(44); expect(target.top).toBeGreaterThanOrEqual(target.headerBottom); expect(target.bottom).toBeLessThanOrEqual(target.footerTop);
   await expect(page.locator('main h1')).toHaveCount(1); await expect(page.locator('#job-description')).toHaveValue(sampleDescription);
   expect(await page.locator('main').evaluate(el => el.scrollWidth > el.clientWidth || document.documentElement.scrollWidth > innerWidth)).toBe(false);
 });
@@ -114,7 +121,8 @@ test('leaving the route aborts work and an eventual stale response cannot become
   }, complete('Old route response.'));
   await page.goto('/job-match'); await page.locator('#job-description').fill(sampleDescription); await page.getByRole('button', { name: 'Check My Fit' }).click();
   await page.locator('header').getByRole('link', { name: 'Projects', exact: true }).click();
-  expect(await page.evaluate(() => (window as unknown as { wasAborted: boolean }).wasAborted)).toBe(true);
+  await expect(page.locator('.ai-form')).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => (window as unknown as { wasAborted: boolean }).wasAborted)).toBe(true);
   await page.evaluate(() => (window as unknown as { releaseOld: () => void }).releaseOld());
   await page.locator('header').getByRole('link', { name: 'AI Job Match', exact: true }).click();
   await expect(page.locator('#job-description')).toHaveValue(sampleDescription); await expect(page.locator('.ai-report')).toHaveCount(0); await expect(page.getByRole('button', { name: 'Check My Fit' })).toBeEnabled();
