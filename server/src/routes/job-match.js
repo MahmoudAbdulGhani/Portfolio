@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import { generateStreamWithGemini, generateWithGemini, GeminiError, sendGeminiError } from "../lib/gemini.js";
@@ -7,7 +7,8 @@ import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
 import { consumeRateLimit } from "../lib/rate-limit.js";
 import { jobMatchSchema, tailoredCvSchema } from "../lib/validation.js";
 import { getClientIp } from "../lib/client-ip.js";
-import { LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { candidateCvForJob } from '../lib/candidate-cv.js';
 
 const router = Router();
 export const MAX_JOB_DESCRIPTION_LENGTH = 8_000;
@@ -15,7 +16,7 @@ const MIN_JOB_DESCRIPTION_LENGTH = 80;
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 4;
 const DUPLICATE_WINDOW_MS = 30_000;
-const MATCHER_INSTRUCTION = `You are a rigorous recruiter-facing job matcher. Compare the job description only with the supplied public portfolio snapshot. Do not invent or assume skills, seniority, employment, duration, achievements, or credentials. A project is evidence of project work, never employment. Distinguish professional experience, education/training, certifications, and projects. Treat related exposure as a partial match, not a strong match. State missing requirements honestly and do not automatically praise the candidate. Never calculate or return a percentage. Return JSON only with exactly these fields: matchLevel (one of "Strong Match", "Moderate Match", "Partial Match", "Limited Match"), overallMatch (string), strongMatches (string[]), relevantExperience (string[]), relevantProjects ({slug:string,evidence:string}[]), partialMatches (string[]), gaps (string[]), recruiterSummary (string). Use only project slugs present in the snapshot. Keep each item concise and evidence-based.`;
+const MATCHER_INSTRUCTION = `You are a rigorous recruiter-facing job matcher. Compare the job description only with the supplied public portfolio snapshot. Do not invent or assume skills, seniority, employment, duration, achievements, or credentials. A project is evidence of project work, never employment. Distinguish professional experience, education/training, certifications, and projects. Treat related exposure as a partial match, not a strong match. State missing requirements honestly and do not automatically praise the candidate. Never calculate or return a percentage. Return JSON only with exactly these fields: matchLevel (one of "Strong Match", "Moderate Match", "Partial Match", "Limited Match"), overallMatch (string), strongMatches (string[]), relevantExperience ({kind:"experience"|"education"|"training",index:number}[]), relevantProjects ({slug:string,evidence:string}[]), partialMatches (string[]), gaps (string[]), recruiterSummary (string). relevantExperience must reference zero-based indices in profile.experience, education or certifications respectively, not freeform employment claims. Use only project slugs present in the snapshot. Keep each item concise and evidence-based. recruiterSummary is an assessment for the report, never candidate CV copy. The server separately constructs the factual candidate summary.`;
 
 function writeEvent(res, event, data) {
   res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
@@ -31,7 +32,10 @@ function streamErrorMessage(error) {
 
 function createCvToken(result) {
   if (!process.env.JWT_SECRET) return undefined;
-  return jwt.sign({ kind: "tailored-cv", result }, process.env.JWT_SECRET, {
+  return jwt.sign({ kind: "tailored-cv", cv: {
+    summaryPlan: result.candidateSummary.plan,
+    projectSlugs: result.relevantProjects.map(project => project.slug),
+  } }, process.env.JWT_SECRET, {
     algorithm: "HS256",
     issuer: "portfolio-job-match",
     expiresIn: "15m",
@@ -53,16 +57,17 @@ router.post("/tailored-cv", async (req, res, next) => {
     } catch {
       return res.status(400).json({ message: "Invalid or expired tailored CV request." });
     }
-    if (!payload || payload.kind !== "tailored-cv" || !payload.result) return res.status(400).json({ message: "Invalid tailored CV request." });
-    const result = payload.result;
+    if (!payload || payload.kind !== "tailored-cv" || (!payload.cv && !payload.result)) return res.status(400).json({ message: "Invalid tailored CV request." });
+    const legacyProjects = Array.isArray(payload.result?.relevantProjects) ? payload.result.relevantProjects.filter(project => typeof project?.slug === 'string').map(project => project.slug) : [];
     const origin = process.env.PUBLIC_SITE_URL || `${req.protocol}://${req.get("host")}`;
     const buffer = await generateCvPdfBuffer({
       origin,
       mode: "application",
       tailor: {
-        summary: result.recruiterSummary,
-        strongMatches: result.strongMatches,
-        projectSlugs: result.relevantProjects?.map((project) => project.slug),
+        summaryPlan: payload.cv?.summaryPlan,
+        // Old 15-minute tokens remain usable with the approved summary. Their
+        // recruiter prose is never read as CV copy, even for legacy downloads.
+        projectSlugs: payload.cv?.projectSlugs ?? legacyProjects,
       },
     });
     res.setHeader("Content-Type", "application/pdf");
@@ -81,7 +86,7 @@ async function checkRequest(ip, description) {
   return undefined;
 }
 
-function parseResult(text, context) {
+function parseResult(text, context, jobDescription) {
   const normalized = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
   const value = JSON.parse(normalized);
   const allowedLevels = new Set(["Strong Match", "Moderate Match", "Partial Match", "Limited Match"]);
@@ -90,24 +95,44 @@ function parseResult(text, context) {
   }
   const strings = (items) => Array.isArray(items) ? items.filter((item) => typeof item === "string" && item.trim()).slice(0, 12) : [];
   const projectsBySlug = new Map(context.projects.map((project) => [project.slug, project]));
+  const seenProjects = new Set();
   const relevantProjects = Array.isArray(value.relevantProjects) ? value.relevantProjects.flatMap((item) => {
     const project = item && projectsBySlug.get(item.slug);
-    if (!project) return [];
+    if (!project || seenProjects.has(project.slug)) return [];
+    seenProjects.add(project.slug);
     return [{ slug: project.slug, name: project.name, portfolioUrl: project.portfolioUrl, evidence: typeof item.evidence === "string" ? item.evidence : "Relevant portfolio project." }];
   }).slice(0, 6) : [];
+  const collections = { experience: context.profile.experience, education: context.education, training: context.certifications };
+  const seenExperience = new Set();
+  const relevantExperience = Array.isArray(value.relevantExperience) ? value.relevantExperience.flatMap(reference => {
+    const record = reference && Number.isInteger(reference.index) && collections[reference.kind]?.[reference.index];
+    const key = `${reference?.kind}:${reference?.index}`;
+    if (!record || seenExperience.has(key)) return [];
+    seenExperience.add(key);
+    return [[record.role || record.milestone || record.degree || record.title,
+      record.company || record.facility || record.school || record.issuer,
+      record.employmentEvidence?.dateRange || record.period || record.year].filter(Boolean).join(' · ')];
+  }).slice(0, 12) : [];
   return {
     matchLevel: value.matchLevel,
     overallMatch: value.overallMatch.trim(),
     strongMatches: strings(value.strongMatches),
-    relevantExperience: strings(value.relevantExperience),
+    relevantExperience,
     relevantProjects,
     partialMatches: strings(value.partialMatches),
     gaps: strings(value.gaps),
     recruiterSummary: value.recruiterSummary.trim(),
+    candidateSummary: candidateCvForJob(context, jobDescription),
   };
 }
 
 router.post("/", async (req, res, next) => {
+  const requestId = randomUUID();
+  const started = Date.now();
+  res.setHeader('X-Request-ID', requestId);
+  const diagnose = (error, phase) => console.error('job_match_failed', {
+    requestId, phase, kind: phase === 'portfolio' ? 'context' : error instanceof GeminiError ? error.kind : 'invalid-output', elapsedMs: Date.now() - started,
+  });
   try {
     const parsed = jobMatchSchema.safeParse(req.body ?? {});
     if (!parsed.success) return res.status(400).json({ message: `Job descriptions must contain ${MIN_JOB_DESCRIPTION_LENGTH}–${MAX_JOB_DESCRIPTION_LENGTH.toLocaleString()} characters.` });
@@ -123,6 +148,7 @@ router.post("/", async (req, res, next) => {
     let context;
     try { context = await getPortfolioContextWithRetry(); }
     catch (error) {
+      diagnose(error, 'portfolio');
       console.error("Job matcher portfolio context failed", { name: error instanceof Error ? error.name : "unknown error", code: error?.code });
       return res.status(503).json({ message: "Portfolio information is temporarily unavailable. Please try again." });
     }
@@ -138,11 +164,12 @@ router.post("/", async (req, res, next) => {
         res.flushHeaders();
         writeEvent(res, "status", { message: "Comparing portfolio evidence…" });
         const controller = new AbortController();
-        req.on("close", () => controller.abort());
+        const disconnected = () => { if (!res.writableEnded) controller.abort(); };
+        res.once("close", disconnected);
         let chunks = 0;
         try {
           const text = await generateStreamWithGemini({
-            systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION}`,
+            systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
             userPrompt,
             maxOutputTokens: 8_192,
             responseMimeType: "application/json",
@@ -154,30 +181,37 @@ router.post("/", async (req, res, next) => {
             },
           });
           if (controller.signal.aborted) return;
-          const result = parseResult(text, context);
+          const result = parseResult(text, context, jobDescription);
           writeEvent(res, "result", { result, cvToken: createCvToken(result) });
           writeEvent(res, "done", {});
         } catch (error) {
-          if (!controller.signal.aborted) writeEvent(res, "error", { message: streamErrorMessage(error) });
+          if (!controller.signal.aborted) {
+            diagnose(error, error instanceof GeminiError ? 'provider' : 'structured-output');
+            writeEvent(res, "error", { message: streamErrorMessage(error), requestId });
+          }
+        } finally {
+          res.removeListener('close', disconnected);
         }
         return res.end();
       }
 
       const text = await generateWithGemini({
-        systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION}`,
+        systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
         userPrompt,
         maxOutputTokens: 8_192,
         responseMimeType: "application/json",
       });
       let result;
-      try { result = parseResult(text, context); }
+      try { result = parseResult(text, context, jobDescription); }
       catch (error) {
+        diagnose(error, 'structured-output');
         console.error("Job matcher returned invalid structured output", { name: error instanceof Error ? error.name : "unknown error" });
         return res.status(502).json({ message: "The match analysis could not be formatted safely. Please try again." });
       }
       res.setHeader("Cache-Control", "no-store");
       return res.json({ result, cvToken: createCvToken(result) });
     } catch (error) {
+      diagnose(error, 'provider');
       if (sendGeminiError(res, error, "job matcher")) return;
       throw error;
     }

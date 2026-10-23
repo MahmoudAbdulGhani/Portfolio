@@ -1,0 +1,13 @@
+{
+  "phase": "before",
+  "date": "2026-10-23T14:43:07.085Z",
+  "method": "Genuine configured provider through current local Express routes, frozen fresh public GETs, in-memory Prisma/rate limits/config. No live DB reads/writes. Signed token excluded. Not a production response.",
+  "jobDescription": "Junior Full-Stack Developer. Build accessible React and TypeScript interfaces and Python REST APIs using FastAPI or Django. Work with PostgreSQL, authentication, automated tests and Git. Explain your individual contribution to team projects. Commercial production experience and an independently verified AWS certification are preferred, not mandatory.",
+  "matchMs": 3937,
+  "status": 502,
+  "message": "The AI job matcher is temporarily unavailable. Please try again.",
+  "assistant": {
+    "status": 502,
+    "message": "The AI assistant is temporarily unavailable. Please try again."
+  }
+}

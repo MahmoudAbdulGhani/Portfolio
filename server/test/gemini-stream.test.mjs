@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { generateStreamWithGemini, generateWithGemini } from "../src/lib/gemini.js";
+import { getEventListeners } from 'node:events';
 
 function payload(parts) {
   return { candidates: [{ content: { parts: parts.map(text => ({ text })) } }] };
@@ -46,4 +47,29 @@ test("stream retains UTF-8 and whitespace across arbitrary transport splits", as
 test("complete nonstream answer retains existing outer trimming", async t => {
   installProvider(t, new Response(JSON.stringify(payload(["  React ", "FastAPI  "]))));
   assert.equal(await generateWithGemini({ userPrompt: "test" }), "React \nFastAPI");
+});
+
+for (const streaming of [false, true]) test(`the unchanged 40s deadline includes a stalled ${streaming ? 'stream' : 'JSON'} body after headers`, { timeout: 2_000 }, async t => {
+  const oldFetch=globalThis.fetch,oldKey=process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY='test-only-provider-key';
+  globalThis.fetch=async(_url,options)=>new Response(new ReadableStream({start(controller){
+    options.signal.addEventListener('abort',()=>controller.error(new DOMException('Aborted','AbortError')),{once:true});
+  }}));
+  t.after(()=>{globalThis.fetch=oldFetch;if(oldKey===undefined)delete process.env.GEMINI_API_KEY;else process.env.GEMINI_API_KEY=oldKey;});
+  t.mock.timers.enable({apis:['setTimeout']});
+  const pending=streaming?generateStreamWithGemini({userPrompt:'fixture'}):generateWithGemini({userPrompt:'fixture'});
+  const rejected=assert.rejects(pending,error=>error.kind==='timeout');
+  let settled=false;pending.then(()=>{settled=true;},()=>{settled=true;});
+  await new Promise(setImmediate);t.mock.timers.tick(39_999);await Promise.resolve();assert.equal(settled,false);
+  t.mock.timers.tick(1);await rejected;
+});
+
+test('completed and cancelled streams remove their caller-abort listener',async t=>{
+  installProvider(t,new Response(`data: ${JSON.stringify(payload(['Recorded text']))}\n\n`));
+  const complete=new AbortController();await generateStreamWithGemini({userPrompt:'fixture',signal:complete.signal});
+  assert.equal(getEventListeners(complete.signal,'abort').length,0);
+  const cancel=new AbortController();
+  globalThis.fetch=async(_url,options)=>new Response(new ReadableStream({start(controller){options.signal.addEventListener('abort',()=>controller.error(new DOMException('Aborted','AbortError')),{once:true});}}));
+  const pending=generateStreamWithGemini({userPrompt:'fixture',signal:cancel.signal});await new Promise(setImmediate);cancel.abort();
+  assert.equal(await pending,'');assert.equal(getEventListeners(cancel.signal,'abort').length,0);
 });

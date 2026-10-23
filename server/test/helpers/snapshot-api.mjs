@@ -38,7 +38,19 @@ export async function serve(app) {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const port = server.address().port;
   return {
+    url: `http://127.0.0.1:${port}`,
     close: () => new Promise(resolve => server.close(resolve)),
+    postBinary(path, payload) {
+      return new Promise((resolve, reject) => {
+        const req = http.request({ hostname: '127.0.0.1', port, path, method: 'POST', headers: { 'Content-Type': 'application/json' } }, res => {
+          const chunks = [];
+          res.on('data', chunk => chunks.push(chunk));
+          res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));
+        });
+        req.on('error', reject);
+        req.end(JSON.stringify(payload));
+      });
+    },
     post(path, payload) {
       return new Promise((resolve, reject) => {
         const req = http.request({ hostname: '127.0.0.1', port, path, method: 'POST', headers: {

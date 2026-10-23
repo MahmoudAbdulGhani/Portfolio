@@ -16,6 +16,10 @@ type LearningRecord = { company?: string | null; facility?: string | null; role?
 export declare function learningEvidence(item: LearningRecord): LearningEvidence;
 export declare function normalizeEducation<T extends LearningRecord>(item: T): T & { learningEvidence: LearningEvidence };
 type ExperienceRecord = {
+    role?: string | null;
+    milestone?: string | null;
+    location?: string | null;
+    workArrangement?: string | null;
     company?: string | null;
     facility?: string | null;
     description?: string | null;
@@ -28,7 +32,9 @@ type ExperienceRecord = {
     isCurrent?: boolean;
     meta?: string | null;
 };
-export declare function normalizeExperience<T extends ExperienceRecord>(item: T): T & { learningEvidence?: LearningEvidence };
+export declare function experienceLocation(item: ExperienceRecord): string;
+export declare function employmentEvidence(item: ExperienceRecord): { role: string; employmentType: 'Internship' | null; workArrangement: string | null; dateRange: string; dateGranularity: 'month' | 'as recorded'; exactDuration: null; basis: string };
+export declare function normalizeExperience<T extends ExperienceRecord>(item: T): T & { learningEvidence?: LearningEvidence; employmentEvidence: ReturnType<typeof employmentEvidence> };
 export declare function sortExperience<T extends ExperienceRecord>(items: T[]): T[];
 export declare function skillKey(name: string): string;
 export declare function uniqueCapabilities<T extends {

@@ -1,0 +1,34 @@
+{
+  "method": "Controlled PDF layout/copy reproductions using the committed static catalog. Before renderer is exact PR46 cv.js with only local import paths adapted; same current catalog normalization, approved factual summary and selected project isolate the layout difference. Assessment-marker and long-body cases are synthetic regression inputs, not production/model responses.",
+  "baseline": "dc0c9ebac314a29a1b2fc95b50b086104dd025eb",
+  "files": [
+    {
+      "file": "before/one-project-layout.pdf",
+      "bytes": 29455
+    },
+    {
+      "file": "after/one-project-layout.pdf",
+      "bytes": 29459
+    },
+    {
+      "file": "before/assessment-summary-fixture.pdf",
+      "bytes": 29448
+    },
+    {
+      "file": "after/safe-summary-fallback.pdf",
+      "bytes": 29459
+    },
+    {
+      "file": "after/no-project-layout.pdf",
+      "bytes": 28449
+    },
+    {
+      "file": "after/three-project-layout.pdf",
+      "bytes": 31192
+    },
+    {
+      "file": "after/long-project-layout.pdf",
+      "bytes": 32097
+    }
+  ]
+}

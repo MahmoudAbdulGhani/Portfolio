@@ -41,7 +41,9 @@ jobs:
       - name: Verify original identities and authored media provenance
         run: node --test tests/case-media-assets.test.mjs
       - name: Install browser engines
-        run: npx playwright install --with-deps ${{ matrix.engine }}
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: ${{ matrix.engine }}
       - name: Verify all readers and viewer modes
         run: npm run test:e2e -- --config=playwright.media.config.ts --workers=1 ${{ matrix.projects }}
       - name: Retain media failure evidence
@@ -87,7 +89,9 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
       - name: Install additional browser engines
-        run: npx playwright install --with-deps firefox webkit
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: firefox webkit
       - name: Check accessibility interactions on Firefox and WebKit
         run: npm run test:e2e -- --config=playwright.cross-browser.config.ts --workers=1
       - name: Retain engine failure evidence
@@ -117,6 +121,7 @@ jobs:
       fail-fast: false
       matrix:
         project: [chromium, tablet-chromium, mobile-chromium]
+        shard: [1, 2]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -126,15 +131,18 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
       - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
       - name: Run existing smoke tests on one independent runner
-        # One worker per runner; retain all three original configurations.
-        run: npm run test:e2e -- --workers=1 --project=${{ matrix.project }} --grep-invert='profile-boundary.spec.ts'
+        # Keep every test in all three configurations. Split the growing suite
+        # across two runners instead of extending the 15-minute job deadline.
+        run: npm run test:e2e -- --workers=1 --project=${{ matrix.project }} --shard=${{ matrix.shard }}/2 --grep-invert='profile-boundary.spec.ts'
       - name: Retain browser failure evidence
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: browser-${{ matrix.project }}-failure-evidence
+          name: browser-${{ matrix.project }}-${{ matrix.shard }}-failure-evidence
           path: test-results/
           if-no-files-found: ignore
           retention-days: 7
@@ -150,7 +158,9 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
       - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
       - name: Verify JobPilot boundary and engineering navigation
         run: npm run test:e2e -- tests/e2e/profile-boundary.spec.ts --workers=1
       - name: Retain boundary failure evidence
@@ -173,7 +183,9 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
       - name: Install browser
-        run: npx playwright install --with-deps chromium
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
       - name: Verify review opt-in and Production exclusion
         run: |
           node --test tests/profile-portrait-review-build.test.mjs

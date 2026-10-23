@@ -1,0 +1,127 @@
+{
+  "phase": "before",
+  "base": "https://mahmoud-portfolio-omega.vercel.app",
+  "method": "Windows Chrome, 900px-high viewport emulation with reduced motion and the same frozen current public GETs. Before is actual public production frontend (deployment commit not asserted); after is normal compiled candidate. No physical-device test or write.",
+  "results": [
+    {
+      "width": 320,
+      "errors": [],
+      "pages": [
+        {
+          "route": "/profile",
+          "overflow": false,
+          "hub": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\n\nCompleted a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid",
+          "fala": "04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\n\nMentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures."
+        },
+        {
+          "route": "/projects/medicare-hub",
+          "overflow": false,
+          "purpose": "A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nAppointment and role-specific PHP pages are present in the inspected repository.\nPROJECT SCOPE\nScope and limitations.\nThe public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.\nClinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors."
+        },
+        {
+          "route": "/projects/home-services",
+          "overflow": false,
+          "purpose": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nA component-based landing page and mobile navigation, with supplied-design credit retained.\nPROJECT SCOPE\nScope and limitations.\nNavigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.\nPersonal attribution remains undocumented; no conversion, customer or performance results are claimed."
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "errors": [],
+      "pages": [
+        {
+          "route": "/profile",
+          "overflow": false,
+          "hub": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\n\nCompleted a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid",
+          "fala": "04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\n\nMentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures."
+        },
+        {
+          "route": "/projects/medicare-hub",
+          "overflow": false,
+          "purpose": "A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nAppointment and role-specific PHP pages are present in the inspected repository.\nPROJECT SCOPE\nScope and limitations.\nThe public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.\nClinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors."
+        },
+        {
+          "route": "/projects/home-services",
+          "overflow": false,
+          "purpose": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nA component-based landing page and mobile navigation, with supplied-design credit retained.\nPROJECT SCOPE\nScope and limitations.\nNavigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.\nPersonal attribution remains undocumented; no conversion, customer or performance results are claimed."
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "errors": [],
+      "pages": [
+        {
+          "route": "/profile",
+          "overflow": false,
+          "hub": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\n\nCompleted a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid",
+          "fala": "04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\n\nMentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures."
+        },
+        {
+          "route": "/projects/medicare-hub",
+          "overflow": false,
+          "purpose": "A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nAppointment and role-specific PHP pages are present in the inspected repository.\nPROJECT SCOPE\nScope and limitations.\nThe public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.\nClinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors."
+        },
+        {
+          "route": "/projects/home-services",
+          "overflow": false,
+          "purpose": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nA component-based landing page and mobile navigation, with supplied-design credit retained.\nPROJECT SCOPE\nScope and limitations.\nNavigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.\nPersonal attribution remains undocumented; no conversion, customer or performance results are claimed."
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "errors": [],
+      "pages": [
+        {
+          "route": "/profile",
+          "overflow": false,
+          "hub": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\n\nCompleted a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid",
+          "fala": "04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\n\nMentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures."
+        },
+        {
+          "route": "/projects/medicare-hub",
+          "overflow": false,
+          "purpose": "A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nAppointment and role-specific PHP pages are present in the inspected repository.\nPROJECT SCOPE\nScope and limitations.\nThe public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.\nClinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors."
+        },
+        {
+          "route": "/projects/home-services",
+          "overflow": false,
+          "purpose": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nA component-based landing page and mobile navigation, with supplied-design credit retained.\nPROJECT SCOPE\nScope and limitations.\nNavigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.\nPersonal attribution remains undocumented; no conversion, customer or performance results are claimed."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "errors": [],
+      "pages": [
+        {
+          "route": "/profile",
+          "overflow": false,
+          "hub": "01\nFull-Stack Developer Intern\nThe Digital Hub, UNRWA, Beirut, Hybrid\nJun 2026 – Sep 2026\n\nCompleted a full-stack software engineering and AI program focused on modern architecture and production-ready applications. Developing type-safe React and Next.js applications and REST APIs; implementing secure SQL and NoSQL data layers, testing, AI integrations, and documented deployments in Agile teams.\n\nBeirut, Hybrid",
+          "fala": "04\nWeb Development Trainer\nKfW & EU Graduate Support Program · FALA Association\nApr 2025 – Jun 2025\n\nMentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures."
+        },
+        {
+          "route": "/projects/medicare-hub",
+          "overflow": false,
+          "purpose": "A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nAppointment and role-specific PHP pages are present in the inspected repository.\nPROJECT SCOPE\nScope and limitations.\nThe public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.\nClinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors."
+        },
+        {
+          "route": "/projects/home-services",
+          "overflow": false,
+          "purpose": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service.",
+          "scope": "DELIVERED SCOPE\nWhat was built.\nA component-based landing page and mobile navigation, with supplied-design credit retained.\nPROJECT SCOPE\nScope and limitations.\nNavigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.\nPersonal attribution remains undocumented; no conversion, customer or performance results are claimed."
+        }
+      ]
+    }
+  ]
+}

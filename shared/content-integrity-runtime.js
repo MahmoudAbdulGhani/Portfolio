@@ -76,9 +76,22 @@ export function normalizeEducation(item) {
 }
 export function normalizeExperience(item) {
     const digitalHub = digitalHubRecord(item);
-    const text = (value) => value == null ? value : prose(digitalHub
-        ? publicLearningText(value, true).replace(/\b(?:Completed|Completing|Participated in) (?:an intensive|a) full-stack software engineering and AI program/gi, 'Completed a full-stack software engineering and AI program')
-        : value);
+    const fala = /\bFALA\b/i.test(`${item.company || ''} ${item.facility || ''}`);
+    const text = value => {
+        if (value == null) return value;
+        let copy = value;
+        if (digitalHub) {
+            copy = publicLearningText(copy, true)
+                .replace(/\b(?:Completed|Completing|Participated in) (?:an intensive|a) full-stack software engineering and AI program/gi, 'Completed a full-stack software engineering and AI program')
+                .replace(/\bDeveloping type-safe\b/g, 'Developed type-safe')
+                .replace(/; implementing secure SQL and NoSQL data layers/g, '; implemented secure SQL and NoSQL data layers');
+            if (item.location) copy = copy.split(/(?<=[.!?])\s+/).filter(sentence =>
+                sentence.replace(/^Location:\s*/i, '').replace(/\.$/, '').trim().toLowerCase() !== item.location.trim().toLowerCase()).join(' ');
+        }
+        if (fala) copy = copy.replace('Mentored developers on procedural engineering logic, component workflows, and industry-standard deployment structures.',
+            'Mentored developers in programming logic and component-based workflows, and guided learners through project structure and deployment practices.');
+        return prose(copy);
+    };
     const normalized = { ...item, meta: dateRange(item.startDate, item.endDate, item.isCurrent) || datePeriod(item.meta),
         ...(item.description != null && { description: text(item.description) }),
         ...(item.details != null && { details: text(item.details) }),
@@ -86,8 +99,29 @@ export function normalizeExperience(item) {
         ...(item.bullets && { bullets: nonempty(item.bullets).map(v => text(v)) }),
         ...(item.cvBullets && { cvBullets: nonempty(item.cvBullets).map(v => text(v)) }),
     };
+    const grounded = { ...normalized, employmentEvidence: employmentEvidence(normalized) };
     return digitalHub || /\b(?:bootcamp|training program)\b/i.test(`${item.description || ''} ${item.details || ''}`)
-        ? { ...normalized, learningEvidence: learningEvidence(normalized) } : normalized;
+        ? { ...grounded, learningEvidence: learningEvidence(normalized) } : grounded;
+}
+export function experienceLocation(item) {
+    const location = item.location?.trim() || '';
+    const organization = (item.company || item.facility || '').trim().toLowerCase();
+    return location && !organization.endsWith(`, ${location.toLowerCase()}`) ? location : '';
+}
+export function employmentEvidence(item) {
+    const role = item.role || item.milestone || '';
+    const dates = [item.startDate, item.endDate].filter(Boolean);
+    const range = dateRange(item.startDate, item.endDate, item.isCurrent) || datePeriod(item.meta);
+    const monthOnly = (dates.length > 0 && dates.every(value => /^\d{4}-\d{2}$/.test(value)))
+        || /^[A-Za-z]{3} \d{4} – [A-Za-z]{3} \d{4}$/.test(range);
+    return {
+        role, employmentType: /\bintern(?:ship)?\b/i.test(role) ? 'Internship' : null,
+        workArrangement: item.workArrangement || null,
+        dateRange: range,
+        dateGranularity: monthOnly ? 'month' : 'as recorded',
+        exactDuration: null,
+        basis: 'Role labels and recorded dates only. Month-level endpoints are not an exact duration. No unspecified employment type is inferred.',
+    };
 }
 export function sortExperience(items) {
     const time = (item) => {

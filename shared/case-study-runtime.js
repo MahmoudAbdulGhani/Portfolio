@@ -189,7 +189,7 @@ export const caseStudies = {
     },
     'medicare-hub': {
         repository: medicareRepo, revision: medicareRevision, sourceAccess: 'public', kind: 'compact',
-        summary: 'A PHP clinic-management project with appointment and role-specific pages. The source describes an appointment-confirmation path; personal ownership remains undocumented.',
+        summary: 'A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history.',
         problemHeading: 'An appointment needs a recorded confirmation.',
         problem: 'An appointment selection needs to become a recorded confirmation. Medicare’s PHP pages connect that action to the patient session and appointment history.',
         lead: ['/projects/phase3/medicare-homepage.webp'],
@@ -204,7 +204,7 @@ export const caseStudies = {
             { title: 'Confirm against the patient session', constraint: 'An appointment selection still needs a recorded scheduling action.', choice: 'The appointment page checks the patient session/role. Its confirmation handler uses the current patient ID to update the selected appointment and directs the user to history.', consequence: 'Selection and confirmation are distinct source-code steps; current database-backed scheduling remains unverified.', sources: ['appointment', 'confirmation'] },
         ],
         delivered: ['Appointment and role-specific PHP pages are present in the inspected repository.'],
-        limits: ['The public homepage and login are accessible, but genuine authenticated workflow media and documented personal contributions remain unavailable.', 'Clinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors.'],
+        limits: ['The public homepage and login are accessible. Authenticated scheduling and clinical records are not demonstrated by the supplied media.', 'Clinical operations, email recovery, production security and compliance remain unverified. The homepage does not demonstrate those behaviors.'],
         sources: [
             repoSource(medicareRepo, medicareRevision, 'appointment', 'Patient appointment page', 'APPointment.php'),
             repoSource(medicareRepo, medicareRevision, 'confirmation', 'Appointment confirmation handler', 'confirm-appointment.php'),
@@ -227,7 +227,7 @@ export const caseStudies = {
             { title: 'Sections and breakpoint-specific navigation', constraint: 'The supplied desktop design still needs a usable narrow layout.', choice: 'The page composes named React sections. The navigation switches from desktop links to a state-controlled mobile sidebar, while the hero uses breakpoint-specific structure.', consequence: 'Responsive implementation is distinct from authorship of the supplied visual design.', sources: ['composition', 'navigation'] },
         ],
         delivered: ['A component-based landing page and mobile navigation, with supplied-design credit retained.'],
-        limits: ['Navigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.', 'Personal attribution remains undocumented; no conversion, customer or performance results are claimed.'],
+        limits: ['Navigation labels use placeholder anchors. Booking, payments and an operational service backend are not demonstrated by this frontend.', 'No conversion, customer or performance results are claimed.'],
         sources: [
             repoSource(homeRepo, homeRevision, 'composition', 'Page section composition', 'src/App.jsx'),
             repoSource(homeRepo, homeRevision, 'navigation', 'Responsive navigation implementation', 'src/components/Navbar.jsx'),

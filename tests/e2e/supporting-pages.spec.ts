@@ -39,6 +39,17 @@ test('tailored CV rejects a non-PDF response and remains retryable without losin
  await page.route('**/api/job-match',r=>r.fulfill({contentType:'text/event-stream',body:`event: result\ndata: ${JSON.stringify({result:sampleMatch,cvToken:'sample-token'})}\n\n`}));await page.route('**/api/job-match/tailored-cv',r=>r.fulfill({contentType:'text/plain',body:'Invalid fixture PDF'}));await page.goto('/job-match');await page.locator('#job-description').fill(sampleDescription);await page.getByRole('button',{name:'Check My Fit'}).click();await page.getByRole('button',{name:'Download Tailored CV'}).click();await expect(page.locator('#job-error')).toContainText('not a PDF');await expect(page.locator('.ai-report')).toBeVisible();
  await page.route('**/api/job-match/tailored-cv',r=>r.fulfill({contentType:'application/pdf',body:'%PDF-1.4\nLocal fixture\n%%EOF'}));const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download Tailored CV'}).click();expect((await pending).suggestedFilename()).toBe('tailored-portfolio-cv.pdf');
 });
+
+test('stream failures keep the actionable server message and retry only after an explicit action',async({page})=>{
+ let requests=0;
+ await page.route('**/api/job-match',route=>{
+  requests++;
+  return route.fulfill({contentType:'text/event-stream',body:requests===1?'event: error\ndata: {"message":"The AI job matcher took too long to respond. Please try again."}\n\n':`event: result\ndata: ${JSON.stringify({result:sampleMatch,cvToken:'sample-token'})}\n\n`});
+ });
+ await page.goto('/job-match');await page.clock.install();await page.locator('#job-description').fill(sampleDescription);await page.getByRole('button',{name:'Check My Fit'}).click();
+ await expect(page.locator('#job-error')).toContainText('took too long to respond');await page.clock.fastForward(35_000);expect(requests).toBe(1);
+ await page.getByRole('button',{name:'Try again',exact:true}).click();await expect(page.locator('.ai-report')).toBeVisible();expect(requests).toBe(2);
+});
 test('Contact failure preserves all entered fields and successful retry/restarter preserve predictable focus',async({page})=>{
  await page.route('**/api/messages',r=>r.fulfill({status:503,json:{message:'Local delivery failure.'}}));await page.goto('/contact');await page.getByLabel('Name',{exact:true}).fill('Sample sender');await page.getByLabel('Email',{exact:true}).fill('sample@example.com');await page.getByLabel('Subject',{exact:false}).fill('Sample subject');await page.getByLabel('Message',{exact:true}).fill('Sample message; intercepted locally.');await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('.contact-form [role="alert"]')).toBeVisible();
  for(const [id,value]of [['name','Sample sender'],['email','sample@example.com'],['subject','Sample subject'],['message','Sample message; intercepted locally.']])await expect(page.locator(`#contact-${id}`)).toHaveValue(value);
