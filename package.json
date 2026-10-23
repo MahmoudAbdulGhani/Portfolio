@@ -18,7 +18,7 @@
     "test:e2e": "playwright test",
     "test:landscape": "node --test tests/assistant-response.test.mjs server/test/gemini-stream.test.mjs server/test/portfolio-links.test.mjs",
     "test:api-runtime": "node server/scripts/test-api-runtime.mjs",
-    "test:integrity": "node --test tests/content-integrity.test.mjs tests/profile-evidence.test.mjs tests/project-evidence.test.mjs tests/case-study.test.mjs server/test/learning-context-routes.test.mjs server/test/candidate-cv.test.mjs server/test/accuracy-routes.test.mjs",
+    "test:integrity": "node --test tests/content-integrity.test.mjs tests/profile-evidence.test.mjs tests/project-evidence.test.mjs tests/case-study.test.mjs server/test/learning-context-routes.test.mjs server/test/candidate-cv.test.mjs server/test/accuracy-routes.test.mjs server/test/job-match-recovery.test.mjs",
     "test:motion": "node --test tests/rig-geometry.test.mjs tests/collection-motion.test.mjs tests/profile-boundary.test.mjs tests/cedar-boundary.test.mjs tests/lobby-boundary.test.mjs",
     "test:gallery": "node --test tests/gallery-covers.test.mjs",
     "test:portrait": "node --test tests/profile-portrait.test.mjs",

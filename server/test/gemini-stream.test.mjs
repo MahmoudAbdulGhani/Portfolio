@@ -73,3 +73,21 @@ test('completed and cancelled streams remove their caller-abort listener',async 
   const pending=generateStreamWithGemini({userPrompt:'fixture',signal:cancel.signal});await new Promise(setImmediate);cancel.abort();
   assert.equal(await pending,'');assert.equal(getEventListeners(cancel.signal,'abort').length,0);
 });
+
+test('JSON generation also cancels native fetch and removes its caller-abort listener', async t => {
+  installProvider(t, new Response(JSON.stringify(payload(['Complete factual response']))));
+  const complete = new AbortController();
+  assert.equal(await generateWithGemini({ userPrompt: 'fixture', signal: complete.signal }), 'Complete factual response');
+  assert.equal(getEventListeners(complete.signal, 'abort').length, 0);
+  const cancel = new AbortController(); let nativeSignal;
+  globalThis.fetch = async (_url, options) => {
+    nativeSignal = options.signal;
+    return new Response(new ReadableStream({ start(controller) {
+      nativeSignal.addEventListener('abort', () => controller.error(new DOMException('Aborted', 'AbortError')), { once: true });
+    } }));
+  };
+  const pending = generateWithGemini({ userPrompt: 'fixture', signal: cancel.signal });
+  const rejected = assert.rejects(pending, error => error.name === 'GeminiError');
+  await new Promise(setImmediate); cancel.abort(); await rejected;
+  assert.equal(nativeSignal.aborted, true); assert.equal(getEventListeners(cancel.signal, 'abort').length, 0);
+});

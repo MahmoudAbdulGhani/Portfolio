@@ -1,7 +1,8 @@
-import { createHash, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-import { generateStreamWithGemini, generateWithGemini, GeminiError, sendGeminiError } from "../lib/gemini.js";
+import { generateStreamWithGemini, generateWithGemini, GeminiError } from "../lib/gemini.js";
+import { beginJobMatchRequest, retireJobMatchRequest, discardUndeliveredJobMatch } from '../lib/job-match-requests.js';
 import { generateCvPdfBuffer } from "../lib/cv.js";
 import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
 import { consumeRateLimit } from "../lib/rate-limit.js";
@@ -12,10 +13,6 @@ import { candidateCvForJob } from '../lib/candidate-cv.js';
 
 const router = Router();
 export const MAX_JOB_DESCRIPTION_LENGTH = 8_000;
-const MIN_JOB_DESCRIPTION_LENGTH = 80;
-const WINDOW_MS = 60_000;
-const MAX_REQUESTS = 4;
-const DUPLICATE_WINDOW_MS = 30_000;
 const MATCHER_INSTRUCTION = `You are a rigorous recruiter-facing job matcher. Compare the job description only with the supplied public portfolio snapshot. Do not invent or assume skills, seniority, employment, duration, achievements, or credentials. A project is evidence of project work, never employment. Distinguish professional experience, education/training, certifications, and projects. Treat related exposure as a partial match, not a strong match. State missing requirements honestly and do not automatically praise the candidate. Never calculate or return a percentage. Return JSON only with exactly these fields: matchLevel (one of "Strong Match", "Moderate Match", "Partial Match", "Limited Match"), overallMatch (string), strongMatches (string[]), relevantExperience ({kind:"experience"|"education"|"training",index:number}[]), relevantProjects ({slug:string,evidence:string}[]), partialMatches (string[]), gaps (string[]), recruiterSummary (string). relevantExperience must reference zero-based indices in profile.experience, education or certifications respectively, not freeform employment claims. Use only project slugs present in the snapshot. Keep each item concise and evidence-based. recruiterSummary is an assessment for the report, never candidate CV copy. The server separately constructs the factual candidate summary.`;
 
 function writeEvent(res, event, data) {
@@ -77,15 +74,6 @@ router.post("/tailored-cv", async (req, res, next) => {
     return res.send(buffer);
   } catch (error) { next(error); }
 });
-async function checkRequest(ip, description) {
-  const digest = createHash("sha256").update(description.toLowerCase().replace(/\s+/g, " ")).digest("hex");
-  const duplicate = await consumeRateLimit(`job-duplicate:${ip}:${digest}`, { limit: 1, windowMs: DUPLICATE_WINDOW_MS });
-  if (duplicate.limited) return "duplicate";
-  const rate = await consumeRateLimit(`job:${ip}`, { limit: MAX_REQUESTS, windowMs: WINDOW_MS });
-  if (rate.limited) return "rate";
-  return undefined;
-}
-
 function parseResult(text, context, jobDescription) {
   const normalized = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
   const value = JSON.parse(normalized);
@@ -126,96 +114,107 @@ function parseResult(text, context, jobDescription) {
   };
 }
 
-router.post("/", async (req, res, next) => {
+router.post("/", async (req, res) => {
   const requestId = randomUUID();
   const started = Date.now();
+  const controller = new AbortController();
+  let lease, result, retired = false, streaming = false, phase = 'request';
   res.setHeader('X-Request-ID', requestId);
-  const diagnose = (error, phase) => console.error('job_match_failed', {
-    requestId, phase, kind: phase === 'portfolio' ? 'context' : error instanceof GeminiError ? error.kind : 'invalid-output', elapsedMs: Date.now() - started,
-  });
+  res.setHeader('Cache-Control', 'no-store');
+  const diagnose = (kind, stage = phase) => console.error('job_match_failed', { requestId, phase: stage, kind, elapsedMs: Date.now() - started });
+  const disconnected = () => {
+    if (res.writableFinished) return;
+    controller.abort();
+    diagnose('cancelled');
+    if (retired && result && lease) void discardUndeliveredJobMatch(lease).catch(() => diagnose('cleanup', 'request-state'));
+  };
+  res.once('close', disconnected);
+  res.once('finish', () => res.removeListener('close', disconnected));
+  const failure = (status, code, message, retryAfter) => {
+    const payload = { message, code, requestId, ...(retryAfter ? { retryAfter } : {}) };
+    if (controller.signal.aborted || res.destroyed) return;
+    if (streaming) { writeEvent(res, 'error', { ...payload, status }); return res.end(); }
+    if (retryAfter) res.setHeader('Retry-After', String(retryAfter));
+    return res.status(status).json(payload);
+  };
   try {
     const parsed = jobMatchSchema.safeParse(req.body ?? {});
-    if (!parsed.success) return res.status(400).json({ message: `Job descriptions must contain ${MIN_JOB_DESCRIPTION_LENGTH}–${MAX_JOB_DESCRIPTION_LENGTH.toLocaleString()} characters.` });
+    if (!parsed.success) return failure(400, 'validation', 'Job descriptions must contain 80–8,000 characters.');
     const { jobDescription } = parsed.data;
-    const clientIp = getClientIp(req);
-    const requestIssue = await checkRequest(clientIp, jobDescription);
-    if (requestIssue) {
-      console.warn("[security] job_match_rate_limited", { ip: clientIp, reason: requestIssue });
-      res.setHeader("Retry-After", requestIssue === "duplicate" ? "30" : "60");
-      return res.status(429).json({ message: requestIssue === "duplicate" ? "This job description was just analyzed. Please wait before submitting it again." : "Too many match requests. Please wait a minute and try again." });
+    phase = 'request-state';
+    const request = await beginJobMatchRequest(getClientIp(req), jobDescription);
+    lease = request.lease;
+    if (request.issue) {
+      console.warn('job_match_request_blocked', { requestId, kind: request.issue, retryAfter: request.retryAfter, elapsedMs: Date.now() - started });
+      const messages = {
+        active: 'Another comparison is still running. Please wait before trying again.',
+        completed: 'A report for this job description was generated recently. Please wait before requesting another.',
+        rate: 'The comparison request limit has been reached. Please wait before trying again.',
+        'provider-quota': 'The AI provider usage limit was reached. Please wait before trying again; availability is not guaranteed when the wait ends.',
+      };
+      return failure(request.issue === 'active' ? 409 : 429, request.issue, messages[request.issue], request.retryAfter);
     }
-
-    let context;
-    try { context = await getPortfolioContextWithRetry(); }
-    catch (error) {
-      diagnose(error, 'portfolio');
-      console.error("Job matcher portfolio context failed", { name: error instanceof Error ? error.name : "unknown error", code: error?.code });
-      return res.status(503).json({ message: "Portfolio information is temporarily unavailable. Please try again." });
+    if (controller.signal.aborted) return;
+    phase = 'portfolio';
+    const context = await getPortfolioContextWithRetry();
+    if (controller.signal.aborted) return;
+    const userPrompt = 'PUBLIC PORTFOLIO SNAPSHOT\n' + JSON.stringify(context) + '\n\nJOB DESCRIPTION\n' + jobDescription;
+    const systemInstruction = [MATCHER_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION].join(' ');
+    streaming = parsed.data.stream === true && Boolean(req.accepts('text/event-stream'));
+    if (streaming) {
+      res.status(200);
+      res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+      res.setHeader('Connection', 'keep-alive');
+      res.setHeader('X-Accel-Buffering', 'no');
+      res.flushHeaders();
+      writeEvent(res, 'status', { message: 'Comparing portfolio evidence…', requestId });
     }
-
-    try {
-      const userPrompt = `PUBLIC PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nJOB DESCRIPTION\n${jobDescription}`;
-      const wantsStream = parsed.data.stream === true && req.accepts("text/event-stream");
-      if (wantsStream) {
-        res.status(200);
-        res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
-        res.setHeader("Connection", "keep-alive");
-        res.setHeader("X-Accel-Buffering", "no");
-        res.flushHeaders();
-        writeEvent(res, "status", { message: "Comparing portfolio evidence…" });
-        const controller = new AbortController();
-        const disconnected = () => { if (!res.writableEnded) controller.abort(); };
-        res.once("close", disconnected);
-        let chunks = 0;
-        try {
-          const text = await generateStreamWithGemini({
-            systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
-            userPrompt,
-            maxOutputTokens: 8_192,
-            responseMimeType: "application/json",
-            signal: controller.signal,
-            onChunk: () => {
-              chunks += 1;
-              if (chunks === 1) writeEvent(res, "status", { message: "Analyzing role requirements…" });
-              if (chunks === 4) writeEvent(res, "status", { message: "Building recruiter report…" });
-            },
-          });
-          if (controller.signal.aborted) return;
-          const result = parseResult(text, context, jobDescription);
-          writeEvent(res, "result", { result, cvToken: createCvToken(result) });
-          writeEvent(res, "done", {});
-        } catch (error) {
-          if (!controller.signal.aborted) {
-            diagnose(error, error instanceof GeminiError ? 'provider' : 'structured-output');
-            writeEvent(res, "error", { message: streamErrorMessage(error), requestId });
-          }
-        } finally {
-          res.removeListener('close', disconnected);
-        }
-        return res.end();
-      }
-
-      const text = await generateWithGemini({
-        systemInstruction: `${MATCHER_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
-        userPrompt,
-        maxOutputTokens: 8_192,
-        responseMimeType: "application/json",
-      });
-      let result;
-      try { result = parseResult(text, context, jobDescription); }
-      catch (error) {
-        diagnose(error, 'structured-output');
-        console.error("Job matcher returned invalid structured output", { name: error instanceof Error ? error.name : "unknown error" });
-        return res.status(502).json({ message: "The match analysis could not be formatted safely. Please try again." });
-      }
-      res.setHeader("Cache-Control", "no-store");
-      return res.json({ result, cvToken: createCvToken(result) });
-    } catch (error) {
-      diagnose(error, 'provider');
-      if (sendGeminiError(res, error, "job matcher")) return;
-      throw error;
+    phase = 'provider';
+    let chunks = 0;
+    const text = await (streaming ? generateStreamWithGemini : generateWithGemini)({
+      systemInstruction, userPrompt, maxOutputTokens: 8_192, responseMimeType: 'application/json', signal: controller.signal,
+      onChunk: () => {
+        if (controller.signal.aborted) return;
+        chunks += 1;
+        if (chunks === 1) writeEvent(res, 'status', { message: 'Analyzing role requirements…' });
+        if (chunks === 4) writeEvent(res, 'status', { message: 'Building recruiter report…' });
+      },
+    });
+    if (controller.signal.aborted) return;
+    phase = 'structured-output';
+    result = parseResult(text, context, jobDescription);
+    const payload = { result, cvToken: createCvToken(result) };
+    phase = 'request-state';
+    if (!await retireJobMatchRequest(lease, { completed: true })) throw new Error('Request lease expired');
+    retired = true;
+    if (controller.signal.aborted) { await discardUndeliveredJobMatch(lease); return; }
+    if (streaming) {
+      writeEvent(res, 'result', payload);
+      writeEvent(res, 'done', {});
+      return res.end();
     }
-  } catch (error) { next(error); }
+    return res.json(payload);
+  } catch (error) {
+    const code = controller.signal.aborted ? 'cancelled' : error instanceof GeminiError ? error.kind : phase === 'portfolio' ? 'context' : phase === 'structured-output' ? 'invalid-output' : 'request-state';
+    if (code !== 'cancelled') diagnose(code);
+    if (lease && !retired) {
+      try { await retireJobMatchRequest(lease, { providerLimited: code === 'quota' }); retired = true; }
+      catch { diagnose('cleanup', 'request-state'); }
+    }
+    if (controller.signal.aborted) return;
+    if (lease && !retired) return failure(503, 'request-state', 'The comparison failed and its request slot is still being released. Please wait before trying again.', 2);
+    if (error instanceof GeminiError) return failure(code === 'quota' ? 429 : code === 'timeout' ? 504 : code === 'configuration' ? 503 : 502,
+      code, streamErrorMessage(error), code === 'quota' ? 60 : undefined);
+    if (code === 'context') return failure(503, code, 'Portfolio information is temporarily unavailable. Please try again.');
+    if (code === 'invalid-output') return failure(502, code, 'The match analysis could not be formatted safely. Please try again.');
+    return failure(503, code, 'The comparison could not be started safely. Please try again.');
+  } finally {
+    if (lease && !retired) {
+      try { await retireJobMatchRequest(lease); }
+      catch { diagnose('cleanup', 'request-state'); }
+    }
+    if (controller.signal.aborted) res.removeListener('close', disconnected);
+  }
 });
 
 export default router;

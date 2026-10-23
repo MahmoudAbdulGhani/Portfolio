@@ -1,0 +1,65 @@
+{
+  "method": "Current rendered PDFs inspected with PyMuPDF bounds/text and PNG renders. Genuine retry export is an actual local signed HTTP download with a genuine provider answer; one-project and standard PDFs use the static catalog and are explicitly fixtures. Visual inspection recorded in review-report.md.",
+  "results": [
+    {
+      "file": "genuine-retry-tailored.pdf",
+      "sha256": "b1c3ac3f14510e7286cc9e80031ee9d1433fb097017f928928789794da0bfcbd",
+      "pages": [
+        {
+          "page": 1,
+          "width": 612.0,
+          "height": 792.0,
+          "left": 36.029998779296875,
+          "right": 573.7588500976562,
+          "top": 36.04998779296875,
+          "bottom": 725.8170166015625
+        },
+        {
+          "page": 2,
+          "width": 612.0,
+          "height": 792.0,
+          "left": 36.029998779296875,
+          "right": 561.741455078125,
+          "top": 36.0,
+          "bottom": 122.177001953125
+        }
+      ],
+      "projectToSkillsGapPt": null,
+      "text": "Mahmoud Hussein Abdul Ghani Full-Stack Software Engineer Tripoli, Lebanon \u2022 +961 76 364 340 \u2022 Mahmoud.Abdulghani@outlook.com \u2022 LinkedIn \u2022 GitHub \u2022 Portfolio PROFESSIONAL SUMMARY Full-stack software engineer building web applications. My portfolio includes work with React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. PROFESSIONAL EXPERIENCE Full-Stack Developer Intern \u2014 The Digital Hub, UNRWA, Beirut, Hybrid Jun 2026 \u2013 Sep 2026 \u2022 Completed a full-stack software engineering and AI program focused on modern architecture and production-ready applications. \u2022 Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django REST. \u2022 Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest. \u2022 Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and Render. \u2022 Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs. \u2022 Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code. Backend Developer \u2014 Ishtari Group, Tripoli, Onsite Dec 2025 \u2013 Jan 2026 \u2022 Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration interfaces. \u2022 Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting. PROJECT EXPERIENCE JobPilot AI | Live Demo \u2022 Built a privacy-conscious AI job-search platform with CV extraction, profile suggestions, saved jobs, job discovery, application tracking, consent controls, and review-before-apply workflows. (Tech: Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, SQLAlchemy, Alembic, Supabase, OpenAI API, Docker, Vercel, Render, Pytest, Vitest) Lobby | GitHub | Live Demo \u2022 Co-developed a real-time communication platform for persistent communities and temporary guest rooms. Contributed to authenticated and guest access, invitation links, validation, and Supabase-backed services. GameZone Arena | GitHub | Live Demo \u2022 Co-developed a gaming-arena reservation platform with live availability and conflict prevention. Contributed to frontend and backend integration across bookings, payments, rooms, devices, and users. TECHNICAL SKILLS Languages & Web: TypeScript, Python, HTML5, CSS3, JavaScript, PHP, SQL Frontend: React.js, Next.js, Zustand, TanStack Query, Angular, Tailwind CSS, Responsive Design, Vite, Framer Motion Backend & APIs: FastAPI, Django, Node.js, Express.js, Django REST Framework, NestJS, RESTful APIs Databases & ORM: PostgreSQL, MySQL, MongoDB, Mongoose, MariaDB, Supabase, SQLAlchemy, Alembic Auth & DevOps: Git, JWT, RBAC, Argon2, GitHub, CI/CD, Vercel, Render Backend: Pydantic Testing: pytest, Playwright, Unit & Integration Testing, Postman AI: Structured Outputs & JSON Schema, LLMs, RAG, Prompt Engineering, AI API Integration, AI API Integration \u2014 OpenAI Authentication & Security: CSRF Protection, Argon2 Password Hashing, Authentication & Authorization, Secure Cookies, OTP Verification, Zod Architecture & Testing: Jest, Vitest, SOLID, Design Patterns, Scalable Systems, Clean Architecture DevOps & Version Control: GitHub Actions, Docker Architecture: Real-time Systems EDUCATION & TRAINING Bachelor of Science in Computer Science \u2014 Lebanese International University (LIU) Oct 2022 \u2013 Jun 2025 AWS re/Start Bootcamp \u2013 Cloud Computing & DevOps Fundamentals \u2014 Amazon Web Services Jul 2025 \u2013 Oct 2025 LANGUAGES Arabic: Native | English: Professional Working Proficiency"
+    },
+    {
+      "file": "one-project.pdf",
+      "sha256": "06c755b89ab6e84b06e5d9e1ca0797767de753b4f3fdb7e713e04c320e73d67e",
+      "pages": [
+        {
+          "page": 1,
+          "width": 612.0,
+          "height": 792.0,
+          "left": 36.029998779296875,
+          "right": 571.7010498046875,
+          "top": 36.04998779296875,
+          "bottom": 661.3870239257812
+        }
+      ],
+      "projectToSkillsGapPt": 9.79296875,
+      "text": "Mahmoud Hussein Abdul Ghani Full-Stack Software Engineer Tripoli, Lebanon \u2022 +961 76 364 340 \u2022 Mahmoud.Abdulghani@outlook.com \u2022 LinkedIn \u2022 GitHub \u2022 Portfolio PROFESSIONAL SUMMARY Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and relational/NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks. Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI application features. PROFESSIONAL EXPERIENCE Full-Stack Developer Intern \u2014 The Digital Hub, UNRWA, Beirut, Hybrid Jun 2026 \u2013 Sep 2026 \u2022 Completed a full-stack software engineering and AI program focused on modern architecture and production-ready applications. \u2022 Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django REST. \u2022 Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest. \u2022 Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and Render. \u2022 Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs. \u2022 Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code. Backend Developer \u2014 Ishtari Group, Tripoli, Onsite Dec 2025 \u2013 Jan 2026 \u2022 Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration interfaces. \u2022 Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting. PROJECT EXPERIENCE JobPilot AI | Live Demo \u2022 Built a privacy-conscious AI job-search platform with CV extraction, profile suggestions, saved jobs, job discovery, application tracking, consent controls, and review-before-apply workflows. (Tech: Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, SQLAlchemy, Alembic, Supabase, OpenAI API, Docker, Vercel, Render, Pytest, Vitest) TECHNICAL SKILLS Languages & Web: TypeScript, JavaScript, Python, PHP, HTML5, CSS3, SQL Frontend: React.js, Next.js, Angular, Tailwind CSS, Zustand, TanStack Query, Vite, Framer Motion Backend & APIs: Node.js, Express.js, NestJS, FastAPI, Django, Django REST Framework, RESTful APIs Databases & ORM: PostgreSQL, MySQL, MariaDB, MongoDB, Mongoose, Supabase, SQLAlchemy, Alembic Auth & DevOps: JWT, RBAC, Argon2, Git, GitHub, CI/CD, Vercel, Render AI: LLMs, RAG, Prompt Engineering, AI API Integration Architecture & Testing: Clean Architecture, SOLID, Design Patterns, Scalable Systems, Pytest, Vitest, Jest EDUCATION & TRAINING Bachelor of Science in Computer Science \u2014 Lebanese International University (LIU) Oct 2022 \u2013 Jun 2025 AWS re/Start Bootcamp \u2013 Cloud Computing & DevOps Fundamentals \u2014 Amazon Web Services Jul 2025 \u2013 Oct 2025 LANGUAGES Arabic: Native | English: Professional Working Proficiency"
+    },
+    {
+      "file": "standard.pdf",
+      "sha256": "6b78a8bf819ff170797d712066c342a10d740a0f0bb7d0d4734397899905fb66",
+      "pages": [
+        {
+          "page": 1,
+          "width": 612.0,
+          "height": 792.0,
+          "left": 36.029998779296875,
+          "right": 571.7010498046875,
+          "top": 36.04998779296875,
+          "bottom": 728.6570434570312
+        }
+      ],
+      "projectToSkillsGapPt": null,
+      "text": "Mahmoud Hussein Abdul Ghani Full-Stack Software Engineer Tripoli, Lebanon \u2022 +961 76 364 340 \u2022 Mahmoud.Abdulghani@outlook.com \u2022 LinkedIn \u2022 GitHub \u2022 Portfolio PROFESSIONAL SUMMARY Full-stack software engineer building type-safe web applications, REST APIs, authentication systems, and relational/NoSQL data solutions using React, Next.js, TypeScript, Node.js, Express.js, and Python frameworks. Focused on maintainable architecture, secure integrations, testing, CI/CD, and practical AI application features. PROFESSIONAL EXPERIENCE Full-Stack Developer Intern \u2014 The Digital Hub, UNRWA, Beirut, Hybrid Jun 2026 \u2013 Sep 2026 \u2022 Completed a full-stack software engineering and AI program focused on modern architecture and production-ready applications. \u2022 Developed type-safe React and Next.js apps; built REST APIs using Node.js, Express.js, FastAPI, and Django REST. \u2022 Implemented MongoDB/Mongoose and SQL data layers, JWT authentication, RBAC, validation, and unit testing with Vitest. \u2022 Applied SOLID principles and clean architecture in Agile teams; deployed applications with Vercel and Render. \u2022 Integrated AI-powered features into full-stack web applications using LLMs, RAG and AI APIs. \u2022 Gained hands-on experience using AI coding agents effectively to accelerate development, debugging, refactoring, testing, and code review while maintaining code quality and understanding of the generated code. Backend Developer \u2014 Ishtari Group, Tripoli, Onsite Dec 2025 \u2013 Jan 2026 \u2022 Developed PHP MVC modules with search, filtering, pagination, reporting, and AJAX-driven administration interfaces. \u2022 Wrote MySQL and MariaDB queries for product, category, order, cost, price, and profit reporting. PROJECT EXPERIENCE JobPilot AI | Live Demo \u2022 Built a privacy-conscious AI job-search platform with CV extraction, profile suggestions, saved jobs, job discovery, application tracking, consent controls, and review-before-apply workflows. (Tech: Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, SQLAlchemy, Alembic, Supabase, OpenAI API, Docker, Vercel, Render, Pytest, Vitest) Lobby | GitHub | Live Demo \u2022 Co-developed a real-time communication platform for persistent communities and temporary guest rooms. Contributed to authenticated and guest access, invitation links, validation, and Supabase-backed services. GameZone Arena | GitHub | Live Demo \u2022 Co-developed a gaming-arena reservation platform with live availability and conflict prevention. Contributed to frontend and backend integration across bookings, payments, rooms, devices, and users. TECHNICAL SKILLS Languages & Web: TypeScript, JavaScript, Python, PHP, HTML5, CSS3, SQL Frontend: React.js, Next.js, Angular, Tailwind CSS, Zustand, TanStack Query, Vite, Framer Motion Backend & APIs: Node.js, Express.js, NestJS, FastAPI, Django, Django REST Framework, RESTful APIs Databases & ORM: PostgreSQL, MySQL, MariaDB, MongoDB, Mongoose, Supabase, SQLAlchemy, Alembic Auth & DevOps: JWT, RBAC, Argon2, Git, GitHub, CI/CD, Vercel, Render AI: LLMs, RAG, Prompt Engineering, AI API Integration Architecture & Testing: Clean Architecture, SOLID, Design Patterns, Scalable Systems, Pytest, Vitest, Jest EDUCATION & TRAINING Bachelor of Science in Computer Science \u2014 Lebanese International University (LIU) Oct 2022 \u2013 Jun 2025 AWS re/Start Bootcamp \u2013 Cloud Computing & DevOps Fundamentals \u2014 Amazon Web Services Jul 2025 \u2013 Oct 2025 LANGUAGES Arabic: Native | English: Professional Working Proficiency"
+    }
+  ]
+}
