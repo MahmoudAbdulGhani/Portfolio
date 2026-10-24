@@ -31,11 +31,11 @@ function formatMatchReport(result: MatchResult, references: ReturnType<typeof re
     "PORTFOLIO JOB MATCH REPORT",
     `Match level: ${result.matchLevel}`,
     `\nOverall match\n${result.overallMatch}`,
-    section("Strong matches", result.strongMatches),
-    section("Relevant experience", result.relevantExperience),
+    section("Relevant strengths", result.strongMatches),
+    section("Experience and training", result.relevantExperience),
     section("Relevant projects", projects),
-    section("Partial matches", result.partialMatches),
-    section("Gaps / not demonstrated", result.gaps),
+    section("Related experience", result.partialMatches),
+    section("Requirements to discuss", result.gaps),
     `\nRecruiter summary\n${result.recruiterSummary}`,
   ].filter(Boolean).join("\n");
 }
@@ -55,7 +55,7 @@ export function JobMatch() {
   const [summaryCopied, setSummaryCopied] = useState(false);
   const [cvToken, setCvToken] = useState(matchMemory.token);
   const [downloadingCv, setDownloadingCv] = useState(false);
-  const [loadingMessage, setLoadingMessage] = useState("Comparing portfolio evidence…");
+  const [loadingMessage, setLoadingMessage] = useState("Comparing skills and experience…");
   const submitting = useRef(false);
   const activeRequest = useRef<AbortController | null>(null);
   const activeTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -88,7 +88,7 @@ export function JobMatch() {
     if (value.length < MIN_LENGTH) return invalid(`Please provide at least ${MIN_LENGTH} characters for an accurate comparison.`);
     if (value.length > MAX_LENGTH) return invalid(`Job descriptions must be ${MAX_LENGTH.toLocaleString()} characters or fewer.`);
     if (submitting.current || Date.now() < retryAt) return;
-    submitting.current = true; setLoading(true); setError(""); setInputInvalid(false); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing portfolio evidence…"); setRequestId(undefined); setRetryAt(0);
+    submitting.current = true; setLoading(true); setError(""); setInputInvalid(false); setResult(undefined); setCvToken(""); setLoadingMessage("Comparing skills and experience…"); setRequestId(undefined); setRetryAt(0);
     const controller = new AbortController();
     activeRequest.current = controller;
     const timeout = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
@@ -112,7 +112,7 @@ export function JobMatch() {
       clearTimeout(timeout);
       if (activeRequest.current === controller) {
         activeTimeout.current = undefined;
-        activeRequest.current = null; submitting.current = false; setLoading(false); setLoadingMessage('Comparing portfolio evidence…');
+        activeRequest.current = null; submitting.current = false; setLoading(false); setLoadingMessage('Comparing skills and experience…');
       }
     }
   };
@@ -188,12 +188,12 @@ export function JobMatch() {
     <main id="main-content" tabIndex={-1} className="public-page ai-page supporting-page">
       <section className="public-container">
         <header className="ai-intro">
-          <p className="public-eyebrow">{section?.eyebrow || "AI-powered portfolio evidence"}</p>
+          <p className="public-eyebrow">{section?.eyebrow || "Skills & experience"}</p>
           <h1>{section?.heading?.startsWith("AI") ? section.heading : `AI ${section?.heading || "Job Match"}`}</h1>
           <p className="public-display-accent">{typeof section?.content.displaySubtitle === "string" ? section.content.displaySubtitle : "See the fit. Understand the gaps."}</p>
-          <p className="ai-description">{section?.description || "Paste a job description to compare the role with my portfolio evidence."}</p>
+          <p className="ai-description">{section?.description || "Paste a job description to explore how my skills and experience relate to the role."}</p>
         </header>
-        <p className="sr-only match-announcement" role="status" aria-live="polite" aria-atomic="true">{loading ? loadingMessage : downloadingCv ? 'Preparing the tailored CV…' : result ? summaryCopied ? 'Executive summary copied.' : 'Report ready. Read the strengths, gaps and project evidence.' : ''}</p>
+        <p className="sr-only match-announcement" role="status" aria-live="polite" aria-atomic="true">{loading ? loadingMessage : downloadingCv ? 'Preparing the tailored CV…' : result ? summaryCopied ? 'Executive summary copied.' : 'Report ready. Read the relevant strengths, requirements to discuss and projects.' : ''}</p>
         <div className="ai-workbench">
           <form onSubmit={(event: FormEvent) => { event.preventDefault(); void submit(); }} className="ai-form">
             <div className="ai-input-heading"><h2>Job description</h2><p>Include responsibilities, required skills, and experience level.</p></div>
@@ -210,9 +210,9 @@ export function JobMatch() {
           </form>
           <section className="ai-result" aria-label="Role comparison" aria-busy={loading}>
             {loading && <div className="ai-loading ai-state-enter"><div><FiLoader className="animate-spin" aria-hidden="true" /><strong>{loadingMessage}</strong></div><p>Reviewing public skills, projects, experience, education, and certifications.</p></div>}
-            {!loading && !result && <div className="ai-idle ai-state-enter"><h2>An evidence-based comparison</h2><p>Supported strengths, partial matches and requirements that are not demonstrated remain separate.</p><ul className="ai-evidence"><li><strong>Supported strengths</strong><p>Compare the role with documented skills and contribution records.</p></li><li><strong>Gaps or unverified requirements</strong><p>Keep partial evidence and missing requirements visible.</p></li><li><strong>Supporting project evidence</strong><p>Read the case studies and their contribution scope.</p></li></ul></div>}
+            {!loading && !result && <div className="ai-idle ai-state-enter"><h2>How your role matches my experience</h2><p>Explore relevant work, related experience and topics to discuss in an interview.</p><ul className="ai-evidence"><li><strong>Relevant strengths</strong><p>See where my skills and project work align with the role.</p></li><li><strong>Requirements to discuss</strong><p>Identify qualifications and experience to explore together.</p></li><li><strong>Relevant projects</strong><p>Explore the applications and my contribution to each.</p></li></ul></div>}
             {result && <article className="ai-report ai-state-enter">
-              <header className="ai-report-header"><h2>Evidence comparison</h2><p className="ai-report-meta">Comparison: {result.matchLevel}</p><p>{result.overallMatch}</p>
+              <header className="ai-report-header"><h2>Role comparison</h2><p className="ai-report-meta">Comparison: {result.matchLevel}</p><p>{result.overallMatch}</p>
                 <div className="ai-report-actions">
                   <button type="button" className="btn-outline" onClick={copySummary}>{summaryCopied ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}{summaryCopied ? 'Summary Copied' : 'Copy Executive Summary'}</button>
                   <button type="button" className="btn-ghost" onClick={exportReport}><FiDownload aria-hidden="true" />Export Report</button>
@@ -220,12 +220,12 @@ export function JobMatch() {
                 </div>
               </header>
               <div>
-                <ListSection title="Supported strengths" items={result.strongMatches} />
-                <ListSection title="Gaps or unverified requirements" items={result.gaps} />
-                <ListSection title="Related or partial evidence" items={result.partialMatches} />
+                <ListSection title="Relevant strengths" items={result.strongMatches} />
+                <ListSection title="Requirements to discuss" items={result.gaps} />
+                <ListSection title="Related experience" items={result.partialMatches} />
                 <ListSection title="Experience and training" items={result.relevantExperience} />
-                {result.relevantProjects.length > 0 && <section className="ai-report-section"><h3>Supporting project evidence</h3>
-                  <PublicDataState loading={projects.isLoading} error={projects.isError} onRetry={() => void projects.refetch()} label="project evidence" />
+                {result.relevantProjects.length > 0 && <section className="ai-report-section"><h3>Relevant projects</h3>
+                  <PublicDataState loading={projects.isLoading} error={projects.isError} onRetry={() => void projects.refetch()} label="projects" />
                   {!projects.isLoading && !projects.isError && !projectEvidence.length && <p>No current project reference is available for this report.</p>}
                   {projectEvidence.map(reference => {
                     const cover = galleryCovers[reference.slug];

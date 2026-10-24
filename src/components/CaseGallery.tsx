@@ -154,7 +154,7 @@ export function CaseGallery({
     >
       <div className="case-inspector-inner">
         <header>
-          <div ref={caption} className="case-inspector-caption" role="region" tabIndex={0} aria-label="Image title and evidence note">
+          <div ref={caption} className="case-inspector-caption" role="region" tabIndex={0} aria-label="Image description">
             <p className="public-eyebrow">{projectName}</p>
             <h2>{screen.label}</h2>
             {notice && <p className="case-inspector-notice">{notice}</p>}

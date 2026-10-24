@@ -37,7 +37,7 @@ test('every consolidated link reaches its engineering section once with scope an
   await page.goto('/profile');await page.getByRole('tab',{name:'Capabilities'}).click();const row=page.locator(`[data-evidence-project="${slug}"]`);
   if(!await row.isVisible())await page.locator('.profile-additional-evidence summary').press('Enter');
   await expect(row.getByRole('link')).toHaveCount(1);await expect(row.getByRole('link')).toHaveAttribute('href',`/projects/${slug}#engineering`);
-  if(['lobby','construction-project-management-accounting-system'].includes(slug))await expect(row).toContainText('Team-project evidence');
+  if(['lobby','construction-project-management-accounting-system'].includes(slug))await expect(row).toContainText('View team project');
   if(slug==='jobpilot-ai')await expect(row.locator('.record-number')).toHaveText('01');
   await row.getByRole('link').focus();await page.keyboard.press('Enter');await expect(page.locator('#engineering')).toBeInViewport();
  }

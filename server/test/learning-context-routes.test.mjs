@@ -39,7 +39,7 @@ test('actual assistant and Job Match JSON/SSE paths preserve uncertainty, owners
       const jobResponse = await api.post('/api/job-match', { jobDescription: `A recruiter needs a developer with documented full-stack training, verified qualifications and collaborative Angular experience. Variant ${stream}.`, stream });
       assert.equal(jobResponse.status, 200);
       assert.match(jobResponse.headers['cache-control'], /no-store/);
-      assert.match(jobResponse.body, stream ? /event: result/ : /Mocked report/);
+      assert.match(jobResponse.body, stream ? /event: result/ : /Explore the selected experience and projects/);
       content['/api/certifications'][0].year = '2025-07 - 2025-10';
     }
     assert.equal(requests.length, 4);

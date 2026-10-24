@@ -165,7 +165,7 @@ export function CommandPalette({ defaultOpen = false }: { defaultOpen?: boolean 
       {
         id: "nav-job-match",
         label: "AI Job Match",
-        description: "Scan a job description against portfolio evidence",
+        description: "Compare a job description with my skills and experience",
         category: "Navigation",
         icon: FiCpu,
         perform: () => {

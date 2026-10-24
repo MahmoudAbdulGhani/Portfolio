@@ -8,7 +8,8 @@ import { getPortfolioContextWithRetry } from "../lib/portfolio-context.js";
 import { consumeRateLimit } from "../lib/rate-limit.js";
 import { jobMatchSchema, tailoredCvSchema } from "../lib/validation.js";
 import { getClientIp } from "../lib/client-ip.js";
-import { LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { PUBLIC_COPY_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { publicMatchCopy } from '../lib/public-professional-copy.js';
 import { candidateCvForJob } from '../lib/candidate-cv.js';
 
 const router = Router();
@@ -101,16 +102,18 @@ function parseResult(text, context, jobDescription) {
       record.company || record.facility || record.school || record.issuer,
       record.employmentEvidence?.dateRange || record.period || record.year].filter(Boolean).join(' · ')];
   }).slice(0, 12) : [];
+  const candidate = candidateCvForJob(context, jobDescription);
+  const publicCopy = publicMatchCopy(context, jobDescription, candidate, { relevantExperience, partialMatches: strings(value.partialMatches), gaps: strings(value.gaps) });
   return {
     matchLevel: value.matchLevel,
-    overallMatch: value.overallMatch.trim(),
+    overallMatch: publicCopy.overallMatch,
     strongMatches: strings(value.strongMatches),
     relevantExperience,
     relevantProjects,
-    partialMatches: strings(value.partialMatches),
-    gaps: strings(value.gaps),
-    recruiterSummary: value.recruiterSummary.trim(),
-    candidateSummary: candidateCvForJob(context, jobDescription),
+    partialMatches: publicCopy.partialMatches,
+    gaps: publicCopy.gaps,
+    recruiterSummary: publicCopy.recruiterSummary,
+    candidateSummary: candidate,
   };
 }
 
@@ -159,7 +162,7 @@ router.post("/", async (req, res) => {
     const context = await getPortfolioContextWithRetry();
     if (controller.signal.aborted) return;
     const userPrompt = 'PUBLIC PORTFOLIO SNAPSHOT\n' + JSON.stringify(context) + '\n\nJOB DESCRIPTION\n' + jobDescription;
-    const systemInstruction = [MATCHER_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION].join(' ');
+    const systemInstruction = [MATCHER_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION, PUBLIC_COPY_INSTRUCTION].join(' ');
     streaming = parsed.data.stream === true && Boolean(req.accepts('text/event-stream'));
     if (streaming) {
       res.status(200);
@@ -167,7 +170,7 @@ router.post("/", async (req, res) => {
       res.setHeader('Connection', 'keep-alive');
       res.setHeader('X-Accel-Buffering', 'no');
       res.flushHeaders();
-      writeEvent(res, 'status', { message: 'Comparing portfolio evidence…', requestId });
+      writeEvent(res, 'status', { message: 'Comparing skills and experience…', requestId });
     }
     phase = 'provider';
     let chunks = 0;

@@ -54,7 +54,7 @@ export function EngineeringCaseStudy({ architecture = [], codeDiffs = [], benchm
     <section className="mt-14 space-y-10 sm:mt-16" aria-labelledby="engineering-evidence-title">
       <div>
         <span className="tech-label">Engineering case study</span>
-        <h2 id="engineering-evidence-title" className="mt-2 font-display text-2xl font-bold text-ink">Architecture, decisions, and evidence</h2>
+        <h2 id="engineering-evidence-title" className="mt-2 font-display text-2xl font-bold text-ink">Architecture and decisions</h2>
       </div>
 
       {nodes.length > 0 && (

@@ -37,6 +37,7 @@ const confirmedCompletion = item => (digitalHubRecord(item)
 const publicLearningText = (value, confirmed = false) => value == null ? value : value
     .split(/(?<=[.!?;])\s+/)
     .filter(part => !/\b(?:not (?:independently )?verified|unverified|available records)\b/i.test(part)
+        && !/^owner-confirmed[.:]?$/i.test(part.trim())
         && (confirmed || !/\b(?:completed|completing|completion|graduated|earned|awarded|certified)\b/i.test(part)))
     .join(' ').trim().replace(/;$/, '.');
 // Evidence metadata stays internal to the snapshot/normalizers, not Profile copy.
@@ -219,4 +220,24 @@ export function normalizeProjectCv(project) {
     // Preserve future reviewed CMS prose and explicit tailored overrides.
     return replacement && project.cvBullets?.[0]?.startsWith(legacyCollaborativeSummaries[project.slug])
         ? { ...project, cvBullets: [replacement, ...project.cvBullets.slice(1)] } : project;
+}
+
+// Exact legacy CMS prose, normalized on every public read. Future editorial
+// changes and the stored records remain untouched; this is not a word blacklist.
+export function normalizeSiteSection(section) {
+    const replacements = {
+        jobMatch: {
+            'Compare a job description with the saved portfolio skills, projects, experience, education, and certifications.': 'Explore how my skills, projects and experience relate to your role.',
+            "Compare a job description with the portfolio owner's verified skills, projects, experience, education, and certifications.": 'Compare your role with Mahmoud’s skills, projects and experience.',
+        },
+        certifications: {
+            'Completed learning programs shown separately from professional experience.': 'Courses, technical training and self-directed study.',
+        },
+    };
+    const map = replacements[section.key];
+    if (!map) return section;
+    const text = value => typeof value === 'string' ? map[value] || value : value;
+    return { ...section, description: text(section.description),
+        content: Object.fromEntries(Object.entries(section.content || {}).map(([key, value]) => [key, text(value)])),
+    };
 }

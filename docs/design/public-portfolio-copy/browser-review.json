@@ -1,0 +1,293 @@
+{
+  "method": "Windows desktop Chrome viewport emulation, normal compiled PR48 baseline versus current normal build, same fresh read-only public GET records. Report UI replays archived genuine before/current genuine after model responses; browser transport is intercepted, not a hosted provider test. Captures are 390x900 and 1440x900; regressions also cover 320, 430 and 768.",
+  "findings": [
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "job-idle",
+      "path": "before-390-job-idle.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "job-report",
+      "path": "before-390-job-report.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "education",
+      "path": "before-390-education.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "capabilities",
+      "path": "before-390-capabilities.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "medicare-hub",
+      "path": "before-390-medicare-hub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "label": "home-services",
+      "path": "before-390-home-services.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "job-idle",
+      "path": "before-1440-job-idle.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "job-report",
+      "path": "before-1440-job-report.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "education",
+      "path": "before-1440-education.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "capabilities",
+      "path": "before-1440-capabilities.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "jobpilot-ai",
+      "path": "before-1440-jobpilot-ai.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "lobby",
+      "path": "before-1440-lobby.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "gamezone-arena",
+      "path": "before-1440-gamezone-arena.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "construction-project-management-accounting-system",
+      "path": "before-1440-construction-project-management-accounting-system.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "unihub",
+      "path": "before-1440-unihub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "full-stack-user-management-system",
+      "path": "before-1440-full-stack-user-management-system.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "medicare-hub",
+      "path": "before-1440-medicare-hub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "label": "home-services",
+      "path": "before-1440-home-services.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "job-idle",
+      "path": "after-390-job-idle.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "job-report",
+      "path": "after-390-job-report.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "education",
+      "path": "after-390-education.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "capabilities",
+      "path": "after-390-capabilities.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "medicare-hub",
+      "path": "after-390-medicare-hub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "label": "home-services",
+      "path": "after-390-home-services.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "job-idle",
+      "path": "after-1440-job-idle.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "job-report",
+      "path": "after-1440-job-report.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "education",
+      "path": "after-1440-education.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "capabilities",
+      "path": "after-1440-capabilities.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "jobpilot-ai",
+      "path": "after-1440-jobpilot-ai.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "lobby",
+      "path": "after-1440-lobby.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "gamezone-arena",
+      "path": "after-1440-gamezone-arena.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "construction-project-management-accounting-system",
+      "path": "after-1440-construction-project-management-accounting-system.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "unihub",
+      "path": "after-1440-unihub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "full-stack-user-management-system",
+      "path": "after-1440-full-stack-user-management-system.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "medicare-hub",
+      "path": "after-1440-medicare-hub.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "label": "home-services",
+      "path": "after-1440-home-services.jpg",
+      "horizontalOverflow": false,
+      "errors": []
+    }
+  ]
+}

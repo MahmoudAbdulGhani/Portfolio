@@ -26,7 +26,7 @@ export function profileCapabilityEvidence(group: Pick<CapabilityGroup,'key'|'evi
     const engineering = Boolean(project && caseStudyFor(project));
     const team = Boolean(project && ((project.team?.length ?? 0) > 1 || (project.teamSize ?? 0) > 1 || /team|collaborat/i.test(`${project.myRole ?? ''} ${project.ownership ?? ''}`)));
     return { ...reference, href: `/projects/${reference.slug}${engineering ? '#engineering' : ''}`,
-      scope: team ? 'Team-project evidence' : 'Project evidence',
+      scope: team ? 'View team project' : 'View project',
       number: engineering ? numbers[reference.slug] : undefined,
       boundary: supported && reference.slug === supported.slug ? boundary.label : undefined,
     };

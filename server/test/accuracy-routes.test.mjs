@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import jwt from 'jsonwebtoken';
 import {snapshotPrisma,serve} from './helpers/snapshot-api.mjs';
+import {caseStudyProjects} from '../../tests/fixtures/case-study-projects.ts';
 
 test('real HTTP matcher/export contracts separate assessment, source facts and candidate copy', async t => {
   const key=crypto.randomBytes(32).toString('hex');
@@ -40,7 +41,9 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
     await t.test('JSON results ground experience references and sign only CV facts',async()=>{
       const response=await api.post('/api/job-match',{jobDescription:description});assert.equal(response.status,200);
       const body=JSON.parse(response.body);token=body.cvToken;
-      assert.equal(body.result.recruiterSummary,assessment);
+      assert.notEqual(body.result.recruiterSummary,assessment);
+      assert.match(body.result.recruiterSummary,/Relevant work includes React, TypeScript/);
+      assert.doesNotMatch(body.result.recruiterSummary,/verify credentials/);
       assert.notEqual(body.result.candidateSummary.text,assessment);
       assert.deepEqual(body.result.relevantExperience,['Full-Stack Developer Intern · The Digital Hub · Jun 2026 – Sep 2026','AWS re/Start Bootcamp · AWS · Jul 2025 – Oct 2025']);
       // Context sorts newest first; index zero must name that record, never a
@@ -83,7 +86,37 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
         assert.match(instruction,/Month-only dates.*do not establish exact elapsed days/);
         assert.match(instruction,/unspecified employment type must remain unspecified/);
         assert.match(instruction,/personal work only to documented myRole, ownership and contributions/);
+        assert.match(instruction,/not routine public copy/);
+        assert.match(instruction,/Requirements to discuss only/);
+        assert.match(instruction,/directly asks about a qualification/);
       }
+    });
+    await t.test('direct AWS qualification answers use fresh source facts on JSON and SSE without a model completion claim',async()=>{
+      const count=calls.length;
+      for(const stream of [false,true]){
+        const response=await api.post('/api/assistant',{question:`Does Mahmoud have AWS certification? Transport ${stream}.`,stream});
+        assert.equal(response.status,200);
+        assert.match(response.body,/AWS re\/Start training/);
+        assert.match(response.body,/An earned AWS vendor certification is not listed/);
+        assert.doesNotMatch(response.body,/completed|does not have|never earned|unverified/i);
+        assert.match(response.headers['cache-control'],/no-store/);
+        if(stream)assert.match(response.body,/"done":true/);
+      }
+      assert.equal(calls.length,count,'Known qualification prose must not be supplied by the evaluator');
+    });
+    await t.test('direct design-origin answers preserve the supplied kit and unknown creator without audit boilerplate',async()=>{
+      content['/api/projects'].push(structuredClone(caseStudyProjects.find(project=>project.slug==='home-services')));
+      const count=calls.length;
+      for(const stream of [false,true]){
+        const response=await api.post('/api/assistant',{question:`Who supplied the Home Services design? Transport ${stream}.`,projectSlug:'home-services',stream});
+        assert.equal(response.status,200);
+        assert.match(response.body,/supplied \[Figma UI kit\]/);
+        assert.match(response.body,/figma.com/);
+        assert.match(response.body,/original creator is not listed/);
+        assert.doesNotMatch(response.body,/available records|designed by Mahmoud/);
+        if(stream)assert.match(response.body,/"done":true/);
+      }
+      assert.equal(calls.length,count);
     });
   }finally{
     await api.close();delete globalThis.__portfolioPrisma;globalThis.fetch=oldFetch;

@@ -9,7 +9,8 @@ import { consumeRateLimit } from "../lib/rate-limit.js";
 import { assistantSchema } from "../lib/validation.js";
 import { createHash } from "node:crypto";
 import { getClientIp } from "../lib/client-ip.js";
-import { LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { PUBLIC_COPY_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
+import { qualificationAnswer, designCreditAnswer } from '../lib/public-professional-copy.js';
 
 const router = Router();
 const WINDOW_MS = 60_000;
@@ -87,6 +88,13 @@ router.post("/", async (req, res, next) => {
 
     const isStreaming =
       Boolean(stream) || req.headers.accept?.includes("text/event-stream");
+    const factualAnswer = qualificationAnswer(question, context) || designCreditAnswer(question, context);
+    if (factualAnswer) {
+      res.setHeader('Cache-Control', 'private, no-store');
+      if (!isStreaming) return res.json({ answer: factualAnswer });
+      res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+      return res.end(`data: ${JSON.stringify({ chunk: factualAnswer })}\n\ndata: ${JSON.stringify({ done: true })}\n\n`);
+    }
 
     if (isStreaming) {
       res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
@@ -96,7 +104,7 @@ router.post("/", async (req, res, next) => {
 
       try {
         await generateStreamWithGemini({
-          systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
+          systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION} ${PUBLIC_COPY_INSTRUCTION}`,
           userPrompt: `PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nVISITOR QUESTION\n${question}`,
           onChunk: (chunk) => {
             res.write(`data: ${JSON.stringify({ chunk })}\n\n`);
@@ -119,7 +127,7 @@ router.post("/", async (req, res, next) => {
 
     try {
       const answer = await generateWithGemini({
-        systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION}`,
+        systemInstruction: `${SYSTEM_INSTRUCTION} ${LEARNING_EVIDENCE_INSTRUCTION} ${PROJECT_EVIDENCE_INSTRUCTION} ${EMPLOYMENT_EVIDENCE_INSTRUCTION} ${PUBLIC_COPY_INSTRUCTION}`,
         userPrompt: `PORTFOLIO SNAPSHOT\n${JSON.stringify(context)}\n\nVISITOR QUESTION\n${question}`,
       });
       res.setHeader("Cache-Control", "no-store");
