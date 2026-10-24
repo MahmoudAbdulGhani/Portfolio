@@ -92,7 +92,8 @@ test('direct fragment and reader keep one demonstration and source/team attribut
   await expect(page.locator('.engineering-decisions summary').filter({hasText:'Calculate first, narrate second'})).toHaveCount(0);
   await region(page).locator('summary').click();
   await expect(region(page).locator('.disclosure-content')).toContainText('team’s implementation');
-  await expect(region(page).locator('.disclosure-content')).toContainText('does not implement this freshness workflow');
+  await expect(region(page).locator('.disclosure-content')).toContainText('fictional USD amounts and prewritten explanations');
+  await expect(region(page).locator('.disclosure-content')).toContainText('It makes no AI request or financial submission');
   await expect(region(page).getByRole('link',{name:'Calculation and narration'})).toHaveAttribute('href',/ab4aff541fb46b6c54831f16a4352657369c1063/);
   expect((await new AxeBuilder({page}).include('.cedar-boundary').analyze()).violations).toEqual([]);
 });

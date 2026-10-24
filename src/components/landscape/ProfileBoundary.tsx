@@ -112,7 +112,7 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
     <CaseDisclosure className="boundary-disclosure" title="How this maps to the implementation" defaultOpen={disclosureOpen}>
       <p>One ivory plate holds the proposal apart; alignment represents acceptance. Its small turn uses the original photograph, as an artistic metaphor. Fictional values live only in this page’s memory. It does not edit a real JobPilot profile.</p>
       <p>The documented service keeps current and proposed profiles separate during review. Apply checks the reviewed profile revision and confirmed CV freshness under row locks, then saves accepted values and their provenance together. A changed profile requires another review; changed CV text requires fresh suggestions. Repeating an identical accepted request returns its existing result without applying it twice.</p>
-      <p>This sample models only the profile revision check. It does not simulate CV changes, row locks, provenance storage or network retries. Private source was inspected at revision {study.revision.slice(0,7)}; live saves and concurrency were not tested.</p>
+      <p>This interactive example illustrates the profile revision check with sample data. It runs locally without saving a profile or contacting a backend.</p>
       <a className="text-link" href={study.sources[0].url} target="_blank" rel="noopener noreferrer">Profile review and apply service (access required)</a>
     </CaseDisclosure>
   </section>;

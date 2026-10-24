@@ -78,7 +78,7 @@ test('portrait Fit preserves the full image without upscaling; width and actual 
     const trigger = page.locator('.media-enlarge');
     await trigger.click();
     const dialog = page.getByRole('dialog'), region = dialog.locator('.case-inspector-image');
-    await dialog.getByRole('region', { name: 'Image title and evidence note', exact: true }).focus();
+    await dialog.getByRole('region', { name: 'Image description', exact: true }).focus();
     await page.keyboard.press('ArrowDown');
     const img = region.locator('.project-image-current img');
     await img.evaluate(node => (node as HTMLImageElement).decode());
@@ -185,7 +185,7 @@ for (const width of [320, 390, 430, 768, 1024, 1440]) test(`User Management expo
       await expect(page.locator('.case-media-title > span')).toHaveText(`${index + 1} / 2`);
       await expect(page.locator('.case-media-title strong')).toHaveText(label);
       await expect(page.locator('.case-figure .screenshot-frame')).toHaveAttribute('data-image-state', 'ready');
-      await expect(page.locator('.case-figure figcaption')).toContainText(index === 0 ? 'Public aggregate statistics, not an admin dashboard.' : label);
+      await expect(page.locator('.case-figure figcaption')).toContainText(index === 0 ? 'Public aggregate statistics, with sample account totals.' : label);
       const trigger = page.locator('.media-enlarge');
       await trigger.click();
       const dialog = page.getByRole('dialog');

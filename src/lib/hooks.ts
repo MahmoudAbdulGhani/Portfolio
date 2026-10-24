@@ -12,7 +12,7 @@ import type {
   SiteSection,
 } from "../types";
 import { api } from "./api";
-import { normalizeExperience, normalizeTraining, normalizeEducation, sortExperience, uniqueCapabilities } from '../../shared/content-integrity';
+import { normalizeSiteSection, normalizeExperience, normalizeTraining, normalizeEducation, sortExperience, uniqueCapabilities } from '../../shared/content-integrity';
 
 const getProfile = async () => {
   const profile = await api<Profile>("/profile");
@@ -80,7 +80,7 @@ export function useCertifications() {
 }
 
 export function useSiteContent() {
-  return useQuery({ queryKey: ["site-content"], queryFn: () => api<SiteSection[]>("/site-content") });
+  return useQuery({ queryKey: ["site-content"], queryFn: async () => (await api<SiteSection[]>("/site-content")).map(normalizeSiteSection) });
 }
 
 export function useSiteSection(key: string) {

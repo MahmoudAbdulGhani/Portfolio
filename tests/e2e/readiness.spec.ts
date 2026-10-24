@@ -33,11 +33,11 @@ test('streaming announcements stay separate from partial and historical answer t
   await page.goto('/profile');
   await page.getByRole('button',{name:'Ask Portfolio AI',exact:true}).click();
   const status=page.locator('.assistant-drawer > [role="status"]');
-  const send=async()=>{await page.locator('#assistant-question').fill('Fixture question about portfolio evidence.');await page.getByRole('button',{name:'Send question'}).click();await expect(status).toHaveText('Reading the portfolio evidence…');};
+  const send=async()=>{await page.locator('#assistant-question').fill('Fixture question about portfolio evidence.');await page.getByRole('button',{name:'Send question'}).click();await expect(status).toHaveText('Exploring the portfolio…');};
   await send();
   for(const chunk of ['First ','answer\n\n','with spaces.']) {
     await page.evaluate(value=>(window as unknown as {qaChunk:(s:string)=>void}).qaChunk(value),chunk);
-    await expect(status).toHaveText('Reading the portfolio evidence…');
+    await expect(status).toHaveText('Exploring the portfolio…');
   }
   await expect(page.locator('.assistant-messages')).not.toHaveAttribute('aria-live');
   await expect(page.locator('.assistant-messages [role="status"]')).toHaveCount(0);
@@ -78,7 +78,7 @@ test('inspector wraps forward and reverse focus without losing Escape or return 
   await expect(dialog).toBeVisible();
   await dialog.getByRole('button',{name:'Next screenshot',exact:true}).focus();
   await page.keyboard.press('Tab');
-  await expect(dialog.getByRole('region',{name:'Image title and evidence note',exact:true})).toBeFocused();
+  await expect(dialog.getByRole('region',{name:'Image description',exact:true})).toBeFocused();
   await page.keyboard.press('Shift+Tab');
   await expect(dialog.getByRole('button',{name:'Next screenshot',exact:true})).toBeFocused();
   await page.keyboard.press('ArrowRight');
@@ -96,7 +96,7 @@ test('assistant keeps the 55-second deadline and recovers through explicit retry
   await page.getByRole('button',{name:'Send question'}).click();
   const status=page.locator('.assistant-drawer > [role="status"]');
   await page.clock.fastForward(54_999);
-  await expect(status).toHaveText('Reading the portfolio evidence…');
+  await expect(status).toHaveText('Exploring the portfolio…');
   await page.clock.fastForward(1);
   await expect(status).toHaveText('The assistant took too long to respond. Please try again.');
   await page.route('**/api/assistant',r=>r.fulfill({json:{answer:'Successful fixture retry.'}}));

@@ -28,8 +28,8 @@ for(const width of [320,390,430,768,1440])test(`public copy survives reload with
   await page.reload();await expect(page.locator('.case-purpose')).not.toContainText(/ownership.*undocumented|attribution-review/i);
   await expect(page.locator('.story-scope')).not.toContainText(/personal (?:ownership|attribution).*undocumented/i);
   if(slug==='home-services'){
-   await expect(page.locator('.story-credit a')).toHaveAttribute('href',/figma.com/);await expect(page.locator('.story-scope')).toContainText('placeholder anchors');await expect(page.locator('.case-purpose')).toContainText('supplied Figma UI kit');
-  }else await expect(page.locator('.story-scope')).toContainText('Authenticated scheduling and clinical records are not demonstrated');
+   await expect(page.locator('.story-credit a')).toHaveAttribute('href',/figma.com/);await expect(page.locator('.story-scope')).toContainText('placeholder navigation anchors');await expect(page.locator('.case-purpose')).toContainText('supplied Figma UI kit');
+  }else await expect(page.locator('.story-scope')).toContainText('the diagram explains the patient appointment flow');
   expect(await page.locator('.project-reader').evaluate(e=>e.scrollWidth<=e.clientWidth&&document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await expect(page.getByRole('heading',{level:1})).toHaveCount(1);
  }

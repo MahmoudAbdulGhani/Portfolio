@@ -61,3 +61,4 @@ export declare function normalizeProjectCv<T extends {
     contributions?: string[];
 }>(project: T): T;
 export {};
+export declare function normalizeSiteSection<T extends { key: string; description?: string | null; content?: Record<string, unknown> }>(section: T): T;

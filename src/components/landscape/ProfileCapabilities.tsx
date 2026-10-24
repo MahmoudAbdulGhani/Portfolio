@@ -18,9 +18,9 @@ export function ProfileCapabilities({ capabilities, projects }: { capabilities: 
           </li>)}
         </ul>
       </div>)}
-    {(evidence.primary.length > 0 || evidence.additional.length > 0) && <section className="profile-engineering-evidence" aria-label="Project evidence">
-      <h2>Engineering evidence</h2>
-      <p className="capability-evidence-note">Project references describe documented work and its contribution scope.</p>
+    {(evidence.primary.length > 0 || evidence.additional.length > 0) && <section className="profile-engineering-evidence" aria-label="Relevant projects">
+      <h2>Skills in practice</h2>
+      <p className="capability-evidence-note">Explore how these skills come together in my project work.</p>
       {evidence.primary.map(project => <article className="profile-evidence-row" key={project.slug} data-evidence-project={project.slug}>
         <span className="record-number">{project.number}</span>
         <div>
@@ -31,7 +31,7 @@ export function ProfileCapabilities({ capabilities, projects }: { capabilities: 
           <Link className="text-link profile-evidence-link" to={project.href}>{project.boundary}<FiArrowUpRight aria-hidden="true" /></Link>
         </div>
       </article>)}
-      {evidence.additional.length > 0 && <CaseDisclosure className="profile-additional-evidence" title="Additional project evidence">
+      {evidence.additional.length > 0 && <CaseDisclosure className="profile-additional-evidence" title="More projects">
         <ul>
           {evidence.additional.map(project => <li key={project.slug} data-evidence-project={project.slug}>
             <span className="profile-evidence-scope">{project.scope}</span>

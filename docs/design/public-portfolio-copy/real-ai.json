@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-24T09:10:13.786Z",
+  "method": "Local Express HTTP responses with fresh read-only public records and fail-closed in-memory DB/config/rate storage. Ordinary summary is a genuine Gemini response. Direct AWS answers are source-based (no model). Match attempts and a clearly labelled initial genuine-response replay are separate; no production DB access.",
+  "answers": [
+    {
+      "question": "Summarize Mahmoud’s education, training and project experience for a recruiter.",
+      "status": 200,
+      "elapsedMs": 5286,
+      "answer": "### Candidate Overview\n**Mahmoud Hussein Abdul Ghani** is a Full-Stack Software Engineer based in Tripoli, Lebanon. He holds a Bachelor of Science in Computer Science and specializes in building type-safe web applications, REST APIs, and database solutions using React, Next.js, TypeScript, Node.js, Express.js, Python (FastAPI/Django), PostgreSQL, and MongoDB.\n\n---\n\n### Key Highlights\n\n#### Education & Training\n* **Lebanese International University (LIU)** | BS in Computer Science (Oct 2022 – Jun 2025)\n* **AWS re/Start Bootcamp** | Cloud Computing & DevOps Fundamentals (Jul 2025 – Oct 2025)\n* **youbee.ai** | Full-Stack Web Development Program (4-month program)\n* **Angular Independent Study** | Self-directed framework training (Sep 2025)\n\n#### Professional Experience\n* **Full-Stack Developer Intern** · *The Digital Hub, UNRWA* (Jun 2026 – Sep 2026)  \n  Completed an intensive software engineering program. Built type-safe React/Next.js apps, Node.js/Python REST APIs, SQL/NoSQL databases, Vitest unit tests, and integrated AI capabilities.\n* **QA Intern** · *Oigetit* (May 2026 – Aug 2026)  \n  Tested application workflows, documented reproducible bugs, and analyzed system logs.\n* **Backend Developer** · *Ishtari Group* (Dec 2025 – Jan 2026)  \n  Built PHP MVC backend modules and SQL queries for reporting, search, and pagination.\n* **Web Development Trainer** · *KfW & EU Support Program / FALA* (Apr 2025 – Jun 2025)  \n  Mentored developers in programming logic, component structure, and web deployment.\n\n#### Key Projects\n* [JobPilot AI](/projects/jobpilot-ai): Flagship career platform built with Next.js, FastAPI, PostgreSQL, and OpenAI.\n* [Cedar Construction](/projects/construction-project-management-accounting-system): Django/PostgreSQL management and accounting system deployed via Docker/Gunicorn on Render.\n* [Lobby](/projects/lobby): Real-time audio and chat platform built with Angular, NestJS, Supabase, and LiveKit.\n\nFor Mahmoud's full CV, visit his [Resume Link](/api/cv.pdf).",
+      "method": "Genuine configured Gemini response via local HTTP"
+    },
+    {
+      "question": "Does Mahmoud have AWS certification?",
+      "status": 200,
+      "elapsedMs": 6,
+      "answer": "The portfolio lists AWS re/Start training (Jul 2025 – Oct 2025). An earned AWS vendor certification is not listed.",
+      "method": "Source-based answer via local HTTP; no provider call"
+    },
+    {
+      "question": "Is Mahmoud’s AWS certification independently verified?",
+      "status": 200,
+      "elapsedMs": 4,
+      "answer": "The portfolio lists AWS re/Start training (Jul 2025 – Oct 2025). Independent verification of an AWS vendor certification is not provided here.",
+      "method": "Source-based answer via local HTTP; no provider call"
+    },
+    {
+      "question": "What does Home Services do and who supplied its design?",
+      "projectSlug": "home-services",
+      "status": 200,
+      "elapsedMs": 2273,
+      "answer": "[Home Services](/projects/home-services): A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service. Visual design: supplied [Figma UI kit](https://www.figma.com/proto/XG6hWGb51vw6XBhUuwMghG/Home-Services---Website---UI-Kit--Community-?node-id=806-5605). The original creator is not listed.",
+      "method": "Final source-based formatter output, unit/HTTP-contract covered; initial genuine model answer retained separately.",
+      "initialModelAnswer": "### Overview\n[Home Services](/projects/home-services) is a responsive landing page web application built with React, Vite, and Tailwind CSS. The project demonstrates component-based layout composition, breakpoint-specific structures (desktop, tablet, and mobile), and a state-controlled mobile navigation sidebar. Its functional scope is limited to frontend presentation and navigation rather than an operational booking or payment service.\n\n### Design Origin\n* **Design Source:** The visual design was implemented from a supplied **Figma UI kit**.\n* **Creator Credit:** The specific original designer or creator of the UI kit is **not identified by the available records**."
+    }
+  ],
+  "match": {
+    "status": 200,
+    "jobDescription": "Junior Full-Stack Developer. Build React and TypeScript interfaces and Python REST APIs using FastAPI or Django, PostgreSQL, authentication, automated tests and Git. Explain individual contribution to team projects. AWS certification is required. Commercial production experience is preferred.",
+    "error": "The AI job matcher is temporarily unavailable. Please try again."
+  },
+  "validationAttempts": [
+    {
+      "stage": "initial prompt-only",
+      "status": "genuine report; triggered subsequent guards for unsafe assessment/qualification prose"
+    },
+    {
+      "stage": "source guards",
+      "status": "formatting failure"
+    },
+    {
+      "stage": "source guards manual retry",
+      "status": "upstream 503; stopped without automatic retries"
+    },
+    {
+      "stage": "final manual provider attempt",
+      "status": "upstream 503; no further attempts"
+    }
+  ],
+  "matchReplay": {
+    "method": "Initial genuine report passed through the final server-owned public copy formatter, without a new provider response. Not a final-head successful provider request.",
+    "jobDescription": "Junior Full-Stack Developer. Build React and TypeScript interfaces and Python REST APIs using FastAPI or Django, PostgreSQL, authentication, automated tests and Git. Explain individual contribution to team projects. AWS certification is required. Commercial production experience is preferred.",
+    "result": {
+      "matchLevel": "Moderate Match",
+      "overallMatch": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Requirements to discuss are listed separately below.",
+      "strongMatches": [
+        "Full-stack web application development using React and TypeScript",
+        "Python REST API development using FastAPI and Django REST Framework",
+        "Relational database design and persistence with PostgreSQL and SQLAlchemy",
+        "Authentication systems, JWT implementation, and Role-Based Access Control (RBAC)",
+        "Automated testing with Pytest, Vitest, and Postman/Newman",
+        "Version control workflows with Git and GitHub"
+      ],
+      "relevantExperience": [
+        "Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026",
+        "Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026",
+        "Bachelor of Science in Computer Science · Lebanese International University (LIU) · Oct 2022 – Jun 2025"
+      ],
+      "relevantProjects": [
+        {
+          "slug": "jobpilot-ai",
+          "name": "JobPilot AI",
+          "portfolioUrl": "/projects/jobpilot-ai",
+          "evidence": "Built a full-stack web application using React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, Pytest, and Vitest."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "name": "Cedar Construction",
+          "portfolioUrl": "/projects/construction-project-management-accounting-system",
+          "evidence": "Developed a full-stack platform using Django, Django REST Framework, PostgreSQL, and Docker."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "name": "User Management",
+          "portfolioUrl": "/projects/full-stack-user-management-system",
+          "evidence": "Implemented an independent FastAPI and React application with PostgreSQL, JWT authentication, and automated Pytest testing."
+        }
+      ],
+      "partialMatches": [],
+      "gaps": [
+        "Commercial production experience (Recorded experience consists primarily of internships and a short backend role)",
+        "The role requests AWS certification; the portfolio lists AWS re/Start training."
+      ],
+      "recruiterSummary": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Relevant background: Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026; Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026.",
+      "candidateSummary": {
+        "text": "Full-stack software engineer building web applications. My portfolio includes work with React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git.",
+        "source": "record-grounded",
+        "skillKeys": [
+          "react",
+          "typescript",
+          "python",
+          "fastapi",
+          "django",
+          "postgresql",
+          "git"
+        ],
+        "teamWork": true,
+        "plan": {
+          "version": 1,
+          "skillKeys": [
+            "react",
+            "typescript",
+            "python",
+            "fastapi",
+            "django",
+            "postgresql",
+            "git"
+          ],
+          "teamWork": true
+        }
+      }
+    }
+  },
+  "pdf": {
+    "status": 200,
+    "bytes": 32636,
+    "sha256": "b2d5759f7022094348948ffc4149b285b6b8cd82310ec2e83a07820c78483e3c",
+    "method": "Actual signed download from initial genuine provider match; candidate summary and CV geometry unchanged by final report guards."
+  }
+}

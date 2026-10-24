@@ -1,5 +1,6 @@
 // Reviewed, versioned editorial evidence. Identity, attribution, links and media
 // remain CMS-owned. Never persist these read-time presentation records.
+import { publicCaseStudy } from './case-study-public-copy.js';
 const repoSource = (repository, revision, id, label, file, access = 'public') => ({
     id, label, access, url: `${repository}/blob/${revision}/${file.split('/').map(encodeURIComponent).join('/')}`,
 });
@@ -249,8 +250,9 @@ export function caseStudyFor(project) {
     const personalWork = (project.contributions ?? []).map(value => value.trim()).filter(Boolean);
     const role = project.myRole?.trim() || null;
     const ownership = project.ownership?.trim() || null;
-    return { ...study, reviewedAt: '2026-10-09',
-        decisions: study.decisions.map(decision => ({ ...decision,
+    const presentation = publicCaseStudy(study, project.slug);
+    return { ...presentation, reviewedAt: '2026-10-09',
+        decisions: presentation.decisions.map(decision => ({ ...decision,
             evidenceKind: 'source-code observation', personalAuthorship: 'not established by code inspection',
         })),
         authorship: {
@@ -261,7 +263,7 @@ export function caseStudyFor(project) {
         }, evidenceStatus: {
         implementation: 'Inspected at the linked source revision.',
         media: `Images demonstrate their pictured interface state only. ${study.mediaQualification ?? ''} ${(study.mediaNotes ?? []).join(' ')}`.trim(),
-        projectRuntime: 'Authenticated workflows and project backend/provider tests were not rerun in this review.',
+        projectRuntime: `Authenticated workflows and project backend/provider tests were not rerun in this review. ${study.limits.join(' ')}`,
         sourceInspection: 'performed; this is observation, not an executed behavior test',
         projectBackendTests: 'not executed in this review',
     } };

@@ -98,7 +98,7 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
       </section>
       <CaseDisclosure className="story-disclosure story-support" title="Full stack and source references">
         <div className="stack-tags">{nonempty(project.stack).map(tech => <span key={tech}>{tech}</span>)}</div>
-        <p className="story-evidence-note">Source reviewed {study.reviewedAt} · revision {study.revision.slice(0, 7)}. These references document the implementation; screenshots illustrate recorded interface states, not every live operation.</p>
+        <p className="story-evidence-note">Explore the project’s stack and implementation below.</p>
         {study.mediaNotes?.map(note => <p className="story-evidence-note" key={note}>{note}</p>)}
         <ul>{study.sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}{source.access === 'private' && ' (access required)'}<FiArrowUpRight /></a></li>)}</ul>
       </CaseDisclosure>

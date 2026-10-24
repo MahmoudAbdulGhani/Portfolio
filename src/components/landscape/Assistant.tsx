@@ -72,7 +72,7 @@ export function LandscapeAssistant() {
   );
   const latestAnswer = [...messages].reverse().find((message) => message.role === "assistant");
   const announcement = running
-    ? "Reading the portfolio evidence…"
+    ? "Exploring the portfolio…"
     : latestAnswer?.error || (latestAnswer?.text ? "Response ready. Read the answer in the conversation." : "");
   const dialog = useRef<HTMLDialogElement>(null),
     input = useRef<HTMLTextAreaElement>(null),
@@ -274,7 +274,7 @@ export function LandscapeAssistant() {
                     {message.role === "user" ? "YOUR QUESTION" : "PORTFOLIO AI"}
                   </span>
                   {message.pending ? (
-                    <p>Reading the portfolio evidence…</p>
+                    <p>Exploring the portfolio…</p>
                   ) : (
                     <ReactMarkdown
                       components={{
