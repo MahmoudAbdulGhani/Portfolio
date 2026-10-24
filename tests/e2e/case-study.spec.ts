@@ -33,7 +33,7 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
       expect(await caption.locator('p').first().evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);
     }
     if (project.slug === 'home-services') await expect(page.locator('.story-credit')).toContainText('supplied');
-    if (project.slug === 'medicare-hub') await expect(page.locator('.decision-path')).toContainText('not a simulated product screen');
+    if (project.slug === 'medicare-hub') await expect(page.locator('.decision-path')).toContainText('The PHP appointment flow connects selection, confirmation and patient history.');
     if (width === 390) {
       const decision = page.locator('.engineering-decisions summary').first();
       await decision.focus(); await page.keyboard.press('Enter');

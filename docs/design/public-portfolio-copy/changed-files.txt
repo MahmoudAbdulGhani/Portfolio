@@ -79,6 +79,8 @@ src/components/landscape/profile-evidence.ts
 src/lib/hooks.ts
 src/lib/project-evidence.ts
 src/pages/JobMatch.tsx
+tests/e2e/case-study.spec.ts
+tests/e2e/cedar-boundary.spec.ts
 tests/e2e/mobile-case-media.spec.ts
 tests/e2e/portfolio-accuracy.spec.ts
 tests/e2e/profile-capabilities.spec.ts
