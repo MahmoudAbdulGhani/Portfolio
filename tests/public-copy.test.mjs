@@ -105,3 +105,12 @@ test('public match summaries use source role labels and put the AWS comparison o
   assert.deepEqual(copy.gaps, ['Kubernetes', 'The role requests AWS certification; the portfolio lists AWS re/Start training.']);
   assert.deepEqual(result.gaps, ['Kubernetes', 'AWS certification absent']);
 });
+
+test('AWS comparison does not invent a requirement from a waived or different vendor qualification', () => {
+  const context = { certifications: [{ title: 'AWS re/Start Bootcamp' }] };
+  const candidate = { skillKeys: [], text: '' }, result = { relevantExperience: [], partialMatches: [], gaps: ['Kubernetes'] };
+  for (const job of ['AWS certification is not required.', 'No AWS certification is required.', 'AWS deployment skills. Azure certification is required.', 'Experience with AWS; certification is optional.']) {
+    assert.deepEqual(publicMatchCopy(context, job, candidate, result).gaps, ['Kubernetes'], job);
+  }
+  assert.equal(publicMatchCopy(context, 'An independently verified AWS certification is preferred, not mandatory.', candidate, result).gaps.length, 2);
+});

@@ -2,13 +2,26 @@
 // facts. The model still selects relevant work and assesses other requirements.
 const awsTraining = context => context.certifications.find(row => /aws re\/start/i.test(row.title));
 const awsCredential = text => /\bAWS\b/i.test(text) && /\bcertif(?:ication|ied|icate)s?\b/i.test(text);
+function requestsAwsCredential(description) {
+  return description.split(/[.!?;\n]+/).some(clause => {
+    const credential = /\bAWS\s+(?:(?:vendor|cloud|developer|solutions?|architect|associate|professional|practitioner)\s+){0,4}certif(?:ication|icate)s?\b|\bAWS[- ]certified\b/i;
+    const match = credential.exec(clause);
+    if (!match) return false;
+    // A preference is still a relevant qualification; an explicitly waived
+    // credential is not. Keep separate vendors/clauses separate.
+    if (/\b(?:preferred|desirable|bonus)\b/i.test(clause)) return true;
+    const before = clause.slice(0, match.index), after = clause.slice(match.index + match[0].length);
+    return !/\b(?:no|without|does not require|do not require)\s*(?:an?\s*)?$/i.test(before.trim())
+      && !/^\s*(?:(?:is|are)\s+)?(?:not required|not needed|not necessary|optional|not mandatory)\b/i.test(after);
+  });
+}
 export function publicMatchCopy(context, jobDescription, candidate, result) {
   // Candidate text is already server-built from the allowed source skills.
   const work = candidate.skillKeys.length ? candidate.text.replace(/^Full-stack software engineer building web applications\. My portfolio includes work with /, 'Relevant work includes ') : 'Explore the selected experience and projects alongside the role’s requirements.';
   const experience = result.relevantExperience.length ? `Relevant background: ${result.relevantExperience.slice(0, 2).join('; ')}.` : 'Explore the selected projects and related experience.';
   const training = awsTraining(context);
   const otherAwsQualification = context.certifications.some(row => /\bAWS\b|Amazon Web Services/i.test(`${row.title} ${row.issuer}`) && !/aws re\/start/i.test(row.title));
-  const awsDiscuss = training && !otherAwsQualification && awsCredential(jobDescription);
+  const awsDiscuss = training && !otherAwsQualification && requestsAwsCredential(jobDescription);
   const keep = text => !awsDiscuss || !awsCredential(text);
   return {
     overallMatch: `${work} Requirements to discuss are listed separately below.`,
