@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
+import { jobPilotReviewAddress } from '../components/landscape/jobpilot-design-context';
 
 export function useRouteRestoration() {
   const location = useLocation(), navigation = useNavigationType();
@@ -20,8 +21,9 @@ export function useRouteRestoration() {
     const pop = (event: PopStateEvent) => {
       save(event);
       cancelAnimationFrame(popFocusFrame);
-      const preview = window.location.pathname === '/' && new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai';
-      const reader = window.location.pathname === '/projects/jobpilot-ai';
+      const review = jobPilotReviewAddress(window.location.pathname);
+      const preview = (window.location.pathname === '/' || review?.collection) && new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai';
+      const reader = window.location.pathname === '/projects/jobpilot-ai' || review?.reader;
       if (!preview && !reader) return;
       const destination = window.location.pathname + window.location.search + window.location.hash;
       // Rapid Back can cancel the destination before React commits it. The
@@ -49,14 +51,15 @@ export function useRouteRestoration() {
 
   useLayoutEffect(() => {
     const changedPage = pathname.current !== location.pathname;
-    const focusNeeded = changedPage && location.pathname !== '/' && Boolean(document.querySelector('.landscape-route'));
+    const atCollection = location.pathname === '/' || jobPilotReviewAddress(location.pathname)?.collection;
+    const focusNeeded = changedPage && !atCollection && Boolean(document.querySelector('.landscape-route'));
     pathname.current = location.pathname;
     entry.current = location.key;
     address.current = location.pathname + location.search + location.hash;
     // Explicit Collection returns reuse this owner if their history entry is
     // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
     const position = navigation === 'POP' ? positions.current.get(location.key) : location.state?.routeRestore;
-    const returningJobPilot = location.pathname === '/' && new URLSearchParams(location.search).get('project') === 'jobpilot-ai' && Boolean(position);
+    const returningJobPilot = atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai' && Boolean(position);
     let cancelled = false, frame = 0, focused = false, deadline = 0;
     restoring.current = true;
     const observer = new MutationObserver(restore);

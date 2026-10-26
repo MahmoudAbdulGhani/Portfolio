@@ -30,6 +30,8 @@ import { projectDisplayName } from "../../../shared/content-integrity";
 import "./selected-project.css";
 import { JobPilotJourneyContext, journeyBox, journeyTextBox, ordinaryActivation, type JobPilotJourney } from './jobpilot-journey';
 import type { BoundaryState } from './profile-boundary-state';
+import { useJobPilotDesign } from './jobpilot-design-context';
+import { JobPilotObjectDetail, JobPilotPreviewComposition } from './JobPilotPreviewComposition';
 
 // Labels are presentation only; full names, narratives and screenshots stay CMS-owned.
 const artwork: {
@@ -160,6 +162,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   items: Sculpture[]; selected?: Sculpture; select: (slug: string) => void; restore: () => void; origin: Origin | null; restored: boolean; journey?: JobPilotJourney; returnScreen?: string;
 }) {
   const location = useLocation();
+  const design = useJobPilotDesign();
+  const candidate = Boolean(design?.candidate && selected?.kind === 'jobpilot');
+  const collectionPath = design?.collectionPath ?? '/';
   const navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
   const [initialPreview] = useState(() => ({ boundary: journey?.boundary, disclosure: journey?.disclosure }));
@@ -362,11 +367,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     const objects = [...scope.querySelectorAll<HTMLElement>('.object')];
     if (motion.snapshot().phase === 'active') {
       const preview = activePreview ?? false;
-      gsap.set(objects.filter(item => item !== object), { opacity: 0.12 });
+      gsap.set(objects.filter(item => item !== object), { opacity: candidate ? 0 : 0.12 });
       // A recovered opening can precede a slow network/decode. Keep the real
       // photograph until a decoded screenshot can crossfade over it.
       const ctx = gsap.context(() => {
-        gsap.to(object, { opacity: preview ? 0.12 : 1, duration: reduced ? 0 : collectionTiming.handoff });
+        gsap.to(object, { opacity: preview ? (candidate ? 0 : 0.12) : 1, duration: reduced ? 0 : collectionTiming.handoff });
         if (motion.snapshot().renderer === 'webgl') gsap.set(object.querySelector('.object-core'), { opacity: 0 });
         else gsap.to(object.querySelector('.object-core'), { opacity: preview ? 0 : 1, duration: reduced ? 0 : collectionTiming.handoff });
         const rig = scope.querySelector('.motion-rig');
@@ -386,21 +391,21 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
         if (gpu) mesh.dispatchEvent(new CustomEvent('rig-frame', { detail: { progress: Math.min(1, timeline.time() / collectionTiming.articulation), closing: false } }));
       } });
       animation.current = timeline;
-      timeline.to(objects.filter(item => item !== object), { opacity: 0.12, duration: reduced ? 0.01 : 0.16 }, 0)
+      timeline.to(objects.filter(item => item !== object), { opacity: candidate ? 0 : 0.12, duration: reduced ? 0.01 : candidate ? 0.22 : 0.16 }, 0)
         .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.68)
-        .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : 0.68);
+        .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : candidate ? 0.54 : 0.68);
       if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: () => hasPreviewRef.current ? 0 : 1, duration: 0.2 }, 0.78);
-      else timeline.to(object, { opacity: 0.12, duration, ease: 'power2.inOut' }, 0);
+      else timeline.to(object, { opacity: candidate ? 0 : 0.12, duration, ease: 'power2.inOut' }, 0);
       playFiniteMotion(timeline, { complete: () => motion.activate() });
     }, scope);
     const timeline = animation.current;
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
   // An image arriving mid-articulation must not cancel its owning clock.
   // Only an active selection crossfades its held artwork into the new image.
-  }, [eligible, kind, reduced, motion, state.renderer, activePreview]);
+  }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate]);
 
-  const caseLink = selected && <Link className="solid-action open-case" to={`/projects/${selected.slug}`}
-    state={{ collection: selected.kind === 'jobpilot' ? `/${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(selected.kind === 'jobpilot' ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
+  const caseLink = selected && <Link className="solid-action open-case" to={design && selected.kind === 'jobpilot' ? design.readerPath : `/projects/${selected.slug}`}
+    state={{ collection: selected.kind === 'jobpilot' ? `${collectionPath}${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(selected.kind === 'jobpilot' ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
     onClick={event => {
       if (selected.kind !== 'jobpilot' || !ordinaryActivation(event)) return;
       const scope = root.current;
@@ -409,7 +414,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       const sameImage = image?.complete && image.naturalWidth && decoded.has(screens[chapter]?.src) && failedPreview !== screens[chapter]?.src
         && (!scope?.querySelector('.project-image-previous') || Boolean(currentImage && Number(getComputedStyle(currentImage).opacity) >= 0.99));
       journeys.set(location.key, {
-        key: location.key, url: `/${location.search}${location.hash}`, routeState: location.state ?? {}, historyIndex: history.state?.idx ?? -1,
+        key: location.key, url: `${collectionPath}${location.search}${location.hash}`, routeState: location.state ?? {}, historyIndex: history.state?.idx ?? -1,
         screen: screens[chapter]?.src, boundary: boundaryState.current,
         disclosure: scope?.querySelector('.boundary-disclosure')?.getAttribute('data-expanded') === 'true',
         position: { x: scrollX, y: scrollY }, capturedAt: performance.now(),
@@ -418,6 +423,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
         number: journeyBox(scope?.querySelector('.selection-project-number') ?? null),
       });
     }}>Open case study<FiArrowRight /></Link>;
+  const screenChoices = screens.length > 1 && <div className="chapter-switch" role="group" aria-label="Preview workflow">
+    {screens.slice(0,2).map((screen,index)=><button key={screen.src} aria-pressed={chapter===index}
+      onClick={()=>{rememberPreview({screen:screen.src});setChapter(index);}}>{screen.label}</button>)}
+  </div>;
   return (
     <main
       id="main-content"
@@ -515,8 +524,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
               onReady={readyRig}
             />
           )}
-          <div className="selection-frame">
-            {selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
+          <JobPilotPreviewComposition candidate={candidate} choices={screenChoices}
+            intro={selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
+            image={
             <div className="selection-image-frame" style={!screens[chapter] ? { aspectRatio: 2.15 } : undefined}>
               {screens[chapter] && (!decoded.has(screens[chapter].src) || (state.phase === 'selecting' && failedPreview !== screens[chapter].src)) && (
                 <p className="selection-preview-status" role="status">
@@ -558,8 +568,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                 </button>
               )}
               {screens[chapter] && decoded.has(screens[chapter].src) && failedPreview !== screens[chapter].src && <span className="screenshot-inspect-cue">Tap to inspect</span>}
-            </div>
-            <section
+            </div>}
+            detail={<section
               className="selection-detail"
               aria-label="Selected project"
               aria-describedby={
@@ -571,9 +581,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
             >
               <div className="selection-caption">
                 <div className="selection-caption-inner">
+                  {candidate && <JobPilotObjectDetail />}
                   {selected.kind === 'jobpilot' && <span className="selection-project-number">01</span>}
+                  {candidate && <span className="selection-category">{selected.category}</span>}
                   <h1>{selected.displayTitle}</h1>
-                  <p>{selected.category}</p>
+                  <p>{candidate ? 'Review before saving' : selected.category}</p>
                 </div>
               </div>
               {selected.displayTitle !== selected.project.name && (
@@ -582,23 +594,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                 </span>
               )}
               <div className="selection-actions">
-                {screens.length > 1 && (
-                  <div
-                    className="chapter-switch"
-                    role="group"
-                    aria-label="Preview workflow"
-                  >
-                    {screens.slice(0, 2).map((screen, index) => (
-                      <button
-                        key={screen.src}
-                        aria-pressed={chapter === index}
-                        onClick={() => { rememberPreview({ screen: screen.src }); setChapter(index); }}
-                      >
-                        {screen.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
+                {!candidate && screenChoices}
                 <div className="selection-project-links" role="group" aria-label="Selected project navigation">
                   {caseLink}
                   <Link className="explore-engineering" tabIndex={0} to={{ search: location.search, hash: `#${selected.kind}-engineering` }} replace state={selected.kind === 'jobpilot' ? {...location.state, routeRestore: undefined} : location.state}>Explore the engineering<FiArrowDown /></Link>
@@ -608,8 +604,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
                   Collection
                 </button>
               </div>
-            </section>
-          </div>
+            </section>}
+          />
           {selected.kind === 'jobpilot' && <div className="collection-boundary" onClick={() => {
             rememberPreview({ disclosure: root.current?.querySelector('.boundary-disclosure')?.getAttribute('data-expanded') === 'true' });
           }}><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}

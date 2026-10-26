@@ -15,18 +15,27 @@ import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { JobPilotJourneyContext, ordinaryActivation } from './jobpilot-journey';
 import { useJobPilotHandoff } from './use-jobpilot-handoff';
+import { useJobPilotDesign } from './jobpilot-design-context';
+import { JobPilotObjectDetail } from './JobPilotPreviewComposition';
+import type { BoundaryState } from './profile-boundary-state';
 import './jobpilot-handoff.css';
 import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenColumnWidth, screenGeometry, screenOriginalSource, screenSizes, type DetailScreen } from "../../lib/project-detail-screens";
 
 export function ProjectReader() {
-  const { slug = "" } = useParams();
+  const design = useJobPilotDesign();
+  const { slug = design ? 'jobpilot-ai' : '' } = useParams();
   const location = useLocation();
   const navigate = useNavigate(), navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
   const from = location.state as { collection?: string; jobpilotJourney?: { key: string; screen: string } } | null;
-  const collectionUrl = from?.collection?.startsWith('/?') && new URLSearchParams(from.collection.slice(2).split('#')[0]).get('project') === slug
-    ? from.collection : slug === 'jobpilot-ai' && from?.jobpilotJourney ? '/?project=jobpilot-ai' : undefined;
+  const collectionPath = design?.collectionPath ?? '/';
+  const collectionUrl = from?.collection?.startsWith(`${collectionPath}?`) && new URL(from.collection,window.location.origin).searchParams.get('project') === slug
+    ? from.collection : slug === 'jobpilot-ai' && (from?.jobpilotJourney || design) ? `${collectionPath}?project=jobpilot-ai` : undefined;
   const journey = slug === 'jobpilot-ai' ? journeys.get(from?.jobpilotJourney?.key ?? '') : undefined;
+  const rememberBoundary = useCallback((state: BoundaryState) => {
+    const key=from?.jobpilotJourney?.key, saved=key&&journeys.get(key);
+    if(design?.candidate&&key&&saved)journeys.set(key,{...saved,boundary:state});
+  },[design?.candidate,from?.jobpilotJourney?.key,journeys]);
   const root = useRef<HTMLElement>(null);
   const record = useProject(slug),
     projects = useProjects();
@@ -73,6 +82,10 @@ export function ProjectReader() {
   const features = nonempty(project.features);
   const stack = nonempty(project.stack);
   const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
+  // The complete approved introduction remains in Project context. The review
+  // opening uses its first clause so the product image arrives sooner on phones.
+  const openingPurpose = design?.candidate && purpose?.includes(', using candidate information')
+    ? purpose.split(', using candidate information')[0]+'.' : purpose;
   const overview = project.overview?.trim() || project.description?.trim();
   const carriedIndex = screens.findIndex(screen => screen.src === chapterRecord.source);
   const activeIndex = carriedIndex >= 0 ? carriedIndex : chapter < screens.length ? chapter : 0;
@@ -100,6 +113,7 @@ export function ProjectReader() {
         description={study?.summary || project.description || undefined}
         image={isRegistrationExcerpt(project.coverImage ?? '') ? screens[0]?.src : project.coverImage}
         canonicalPath={`/projects/${slug}`}
+        noIndex={Boolean(design)}
       />
       <article className={`case-page${study ? ` reviewed-case reviewed-case-${study.kind}` : ''}`}>
         <Link
@@ -121,10 +135,11 @@ export function ProjectReader() {
           }}
         >
           <FiArrowLeft />
-          {from?.collection ? "Collection" : "All projects"}
+          {from?.collection || design ? "Collection" : "All projects"}
         </Link>
         <header className="case-heading">
           <div>
+            {design?.candidate && <JobPilotObjectDetail />}
             <span className="eyebrow">{slug === 'jobpilot-ai' && <><span className="case-project-number">01</span> / </>}CASE STUDY / {project.type}</span>
             <h1 className="view-heading">{displayName}</h1>
             {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
@@ -139,8 +154,8 @@ export function ProjectReader() {
             {project.program?.trim() && <p>{project.program}</p>}
           </div>
           <div>
-            {purpose && <p className="case-purpose">
-              {purpose}
+            {openingPurpose && <p className="case-purpose">
+              {openingPurpose}
             </p>}
             {!study && project.impactSummary?.trim() && <p>{project.impactSummary}</p>}
             {(project.demo || project.github) && <div className="case-actions">
@@ -184,7 +199,8 @@ export function ProjectReader() {
             </figure>
           </>
         )}
-        {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery} /> : <>
+        {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery}
+          candidate={Boolean(design?.candidate)} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>

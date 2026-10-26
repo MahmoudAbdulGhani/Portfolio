@@ -103,7 +103,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
-    needs: [checks, smoke-engines, profile-boundary, portrait-review-build]
+    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -114,6 +114,37 @@ jobs:
           test "${{ needs['smoke-engines'].result }}" = 'success'
           test "${{ needs['profile-boundary'].result }}" = 'success'
           test "${{ needs['portrait-review-build'].result }}" = 'success'
+          test "${{ needs['jobpilot-design-review'].result }}" = 'success'
+  jobpilot-design-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install browser
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
+      - name: Verify normal Production exclusion and explicit review build policy
+        run: |
+          node --test tests/jobpilot-design-review-build.test.mjs
+          npm run build
+          node scripts/assert-jobpilot-design-production-build.mjs
+      - name: Verify compiled baseline and candidate journeys
+        run: npm run test:e2e -- --config=playwright.jobpilot-design.config.ts --workers=1
+      - name: Retain design review failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobpilot-design-review-failure
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
   smoke-engines:
     runs-on: ubuntu-latest
     timeout-minutes: 15

@@ -1,0 +1,134 @@
+/* Deliberately loaded only by the compiled review entry. Every visual rule is
+   scoped to the candidate; baseline and normal routes retain their styles. */
+.landscape.jobpilot-design-candidate { --journey-gutter: clamp(20px, 5.5vw, 80px); --reading-measure: 62ch; }
+.landscape.jobpilot-design-candidate h1,
+.landscape.jobpilot-design-candidate .case-narrative h2,
+.landscape.jobpilot-design-candidate .profile-boundary .boundary-title { font-family: "Space Grotesk", sans-serif; }
+.landscape.jobpilot-design-candidate .site-header { position: sticky; top: 0; }
+.landscape.jobpilot-design-candidate .stage-footer { position: fixed; inset: auto 0 0; border-top: 1px solid var(--line); }
+.landscape.jobpilot-design-candidate :is(button,a,summary,[tabindex]) { scroll-margin-block: 128px 100px; }
+.landscape.jobpilot-design-candidate .portfolio:is(.is-selected,.is-reading) { height: auto; min-height: 100svh; overflow: clip; }
+.landscape.jobpilot-design-candidate .portfolio:is(.is-selected,.is-reading) .landscape-route { height: auto; }
+.landscape.jobpilot-design-candidate .portfolio.is-selected .landscape-route > .stage.has-profile-boundary {
+  grid-template-rows: auto auto; gap: 64px; padding-block: 40px 100px; min-height: calc(100svh - 160px);
+}
+.landscape.jobpilot-design-candidate .stage.has-profile-boundary .selection-frame {
+  width: min(1240px, calc(100% - 2 * var(--journey-gutter))); margin-top: 0;
+  display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 32px; align-self: start;
+}
+.landscape.jobpilot-design-candidate .is-expanded .selection-detail {
+  grid-column: 1 / 5; align-content: start; gap: 28px; margin: 0; background: transparent;
+}
+.landscape.jobpilot-design-candidate .stage:is([data-preview-state="loading"],[data-preview-state="failed"]) .selection-detail { background: var(--paper); }
+.landscape.jobpilot-design-candidate .selection-caption { overflow: visible; }
+.landscape.jobpilot-design-candidate .selection-caption-inner { display: grid; grid-template-columns: 28px minmax(0,1fr); gap: 8px 12px; align-items: baseline; }
+.landscape.jobpilot-design-candidate .jobpilot-object-detail { width: 128px; height: 128px; object-fit: contain; grid-column: 1 / -1; margin: 0 0 16px -8px; }
+.landscape.jobpilot-design-candidate .selection-project-number { margin: 0; color: var(--accent); }
+.landscape.jobpilot-design-candidate .selection-category { font: 11px/1.65 var(--mono); color: #34483d; text-transform: uppercase; letter-spacing: .04em; }
+.landscape.jobpilot-design-candidate .is-expanded .selection-detail h1 { grid-column: 1 / -1; font-size: clamp(48px,4.8vw,72px); line-height: 1.04; letter-spacing: -.055em; margin: 12px 0 0; }
+.landscape.jobpilot-design-candidate .is-expanded .selection-detail p { grid-column: 1 / -1; margin: 6px 0 0; font-size: 18px; line-height: 1.6; color: #34483d; }
+.landscape.jobpilot-design-candidate .is-expanded .selection-actions { grid-template-columns: minmax(0,1fr); gap: 18px; }
+.landscape.jobpilot-design-candidate .selection-project-links { flex-direction: column; align-items: stretch; gap: 10px; }
+.landscape.jobpilot-design-candidate .is-expanded .open-case { min-width: 0; width: 100%; justify-content: space-between; padding: 16px 20px; }
+.landscape.jobpilot-design-candidate .is-expanded .explore-engineering { border: 0; border-bottom: 1px solid var(--line); padding: 12px 0; justify-content: space-between; white-space: normal; }
+.landscape.jobpilot-design-candidate .is-expanded .back-collection { justify-self: start; font-size: 14px; }
+.landscape.jobpilot-design-candidate .jobpilot-selected-product { grid-column: 5 / -1; min-width: 0; align-self: center; }
+.landscape.jobpilot-design-candidate .selection-image-frame { background: #f5f4ee; border: 1px solid #d2d2c6; padding: 10px; }
+/* Let the held photograph/rig remain visible through the image reserve until
+   the existing opacity owner reveals the decoded product. */
+.landscape.jobpilot-design-candidate .stage[data-motion-phase="opening"] .selection-image-frame { background: transparent; }
+.landscape.jobpilot-design-candidate .is-expanded .product-surface img { filter: none; }
+.landscape.jobpilot-design-candidate .jobpilot-screen-selection { margin-top: 28px; }
+.landscape.jobpilot-design-candidate .jobpilot-screen-selection > .eyebrow { display: block; font: 10px/1.6 var(--mono); letter-spacing: .08em; color: #34483d; margin-bottom: 8px; }
+.landscape.jobpilot-design-candidate .chapter-switch { display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 0; margin: 0; }
+.landscape.jobpilot-design-candidate .chapter-switch button { min-height: 44px; padding: 10px 0; color: #4d5249; font-size: 14px; line-height: 1.6; }
+.landscape.jobpilot-design-candidate .chapter-switch button[aria-pressed="true"] { color: #202629; border-bottom-color: #a44424; }
+.landscape.jobpilot-design-candidate .collection-boundary { width: min(1040px,calc(100% - 2 * var(--journey-gutter))); }
+.landscape.jobpilot-design-candidate .page-surface.project-reader { position: relative; inset: auto; overflow: visible; overscroll-behavior: auto; padding: 28px var(--journey-gutter) 120px; background: #ecebe3; }
+.landscape.jobpilot-design-candidate .project-reader > .case-page { max-width: 1240px; }
+.landscape.jobpilot-design-candidate .case-heading { grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 48px; margin: 32px 0 40px; }
+.landscape.jobpilot-design-candidate .case-heading > div:first-child { position: relative; }
+.landscape.jobpilot-design-candidate .case-heading .jobpilot-object-detail { position: absolute; top: -8px; right: 0; width: 88px; height: 88px; margin: 0; }
+.landscape.jobpilot-design-candidate .case-heading .eyebrow { display: block; max-width: calc(100% - 112px); font: 11px/1.7 var(--mono); }
+.landscape.jobpilot-design-candidate .case-heading h1 { max-width: calc(100% - 100px); font-size: clamp(48px,5.5vw,80px); line-height: 1.05; margin-top: 18px; letter-spacing: -.055em; }
+.landscape.jobpilot-design-candidate .case-heading .case-purpose { font-size: 17px; line-height: 1.7; max-width: 43ch; margin: 0 0 24px; }
+.landscape.jobpilot-design-candidate .case-heading .case-role { font-size: 14px; }
+.landscape.jobpilot-design-candidate .case-media-nav,
+.landscape.jobpilot-design-candidate .case-figure { width: min(1040px,100%); margin-inline: auto; }
+.landscape.jobpilot-design-candidate .case-figure .screenshot-frame { padding: 0; border: 0; outline: 1px solid #d2d2c6; outline-offset: 8px; background: #f5f4ee; }
+.landscape.jobpilot-design-candidate .case-figure .image-caption { margin-top: 14px; font-size: 14px; }
+.landscape.jobpilot-design-candidate .case-narrative { margin-top: 64px; }
+.landscape.jobpilot-design-candidate .case-narrative section { margin-top: 64px; }
+.landscape.jobpilot-design-candidate .case-narrative p,
+.landscape.jobpilot-design-candidate .case-narrative li { font-size: 16px; line-height: 1.75; max-width: 65ch; }
+.landscape.jobpilot-design-candidate .case-narrative h2 { font-size: clamp(30px,3vw,44px); letter-spacing: -.035em; font-weight: 500; line-height: 1.14; }
+.landscape.jobpilot-design-candidate .case-narrative .jobpilot-defining-decision { max-width: 1040px; margin: 0 auto 80px; scroll-margin-top: 128px; }
+.landscape.jobpilot-design-candidate .jobpilot-defining-decision > h2 { max-width: 25ch; }
+.landscape.jobpilot-design-candidate .profile-boundary { margin-top: 28px; padding: 28px 28px 0; }
+.landscape.jobpilot-design-candidate .boundary-body { grid-template-columns: 260px minmax(0,1fr); gap: 36px; }
+.landscape.jobpilot-design-candidate .boundary-progress li { max-width: none; font-size: 13px; }
+.landscape.jobpilot-design-candidate .workflow-frames { gap: 80px; }
+.landscape.jobpilot-design-candidate .workflow-frames figure { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 28px; align-items: start; }
+.landscape.jobpilot-design-candidate .workflow-frames figcaption { grid-column: 1 / 4; }
+.landscape.jobpilot-design-candidate .workflow-frames .workflow-details { grid-column: 4 / -1; }
+.landscape.jobpilot-design-candidate .workflow-frames figure:nth-child(even) figcaption { grid-column: 9 / -1; grid-row: 1; }
+.landscape.jobpilot-design-candidate .workflow-frames figure:nth-child(even) .workflow-details { grid-column: 1 / 9; grid-row: 1; }
+.landscape.jobpilot-design-candidate .workflow-frames figcaption p { font-size: 15px; line-height: 1.75; }
+.landscape.jobpilot-design-candidate .workflow-frames .workflow-image { background: #f5f4ee; padding: 0; outline: 1px solid #d2d2c6; outline-offset: 6px; }
+.landscape.jobpilot-design-candidate .story-workflow > h2 { margin-bottom: 40px; }
+.landscape.jobpilot-design-candidate .story-contribution > ul { max-width: 62ch; }
+.landscape.jobpilot-design-candidate .engineering-decisions { gap: 32px; }
+.landscape.jobpilot-design-candidate :is(#workflow,#contribution,#overview,#technical-details) { scroll-margin-top: 128px; }
+@media (min-width: 960px) and (max-height: 760px) {
+  .landscape.jobpilot-design-candidate .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { padding-top: 20px; }
+  .landscape.jobpilot-design-candidate .selection-caption-inner .jobpilot-object-detail { width: 88px; height: 88px; margin-bottom: 4px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail { gap: 20px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail h1 { font-size: 56px; }
+}
+@media (max-width: 959px) {
+  .landscape.jobpilot-design-candidate .stage.has-profile-boundary .selection-frame { grid-template-columns: minmax(0,1fr); gap: 36px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail,
+  .landscape.jobpilot-design-candidate .jobpilot-selected-product { grid-column: 1; }
+  .landscape.jobpilot-design-candidate .selection-caption-inner { position: relative; padding-right: 108px; }
+  .landscape.jobpilot-design-candidate .selection-caption-inner .jobpilot-object-detail { position: absolute; top: 0; right: 0; grid-column: auto; grid-row: auto; width: 96px; height: 96px; margin: 0; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail h1 { font-size: clamp(44px,7.2vw,64px); }
+  .landscape.jobpilot-design-candidate .selection-project-links { flex-direction: row; gap: 24px; }
+  .landscape.jobpilot-design-candidate .is-expanded .open-case { width: auto; }
+  .landscape.jobpilot-design-candidate .is-expanded .explore-engineering { flex: 1; }
+  .landscape.jobpilot-design-candidate .case-heading { grid-template-columns: 1fr; gap: 24px; }
+  .landscape.jobpilot-design-candidate .case-heading h1 { max-width: none; margin-top: 28px; }
+  .landscape.jobpilot-design-candidate .case-heading .case-purpose { max-width: 62ch; }
+  .landscape.jobpilot-design-candidate .boundary-body { grid-template-columns: 200px minmax(0,1fr); gap: 24px; }
+  .landscape.jobpilot-design-candidate .boundary-art { width: 200px; }
+  .landscape.jobpilot-design-candidate .workflow-frames figure { grid-template-columns: 1fr; gap: 18px; }
+  .landscape.jobpilot-design-candidate .workflow-frames figure :is(figcaption,.workflow-details),
+  .landscape.jobpilot-design-candidate .workflow-frames figure:nth-child(even) :is(figcaption,.workflow-details) { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 719px) {
+  .landscape.jobpilot-design-candidate .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { padding-top: 24px; gap: 48px; }
+  .landscape.jobpilot-design-candidate .selection-caption-inner { padding-right: 0; grid-template-columns: 28px minmax(0,1fr) 56px; gap: 8px; }
+  .landscape.jobpilot-design-candidate .selection-caption-inner .jobpilot-object-detail { position: static; grid-column: 3; grid-row: 1; width: 56px; height: 56px; margin: 0; }
+  .landscape.jobpilot-design-candidate .selection-project-number { grid-column: 1; grid-row: 1; align-self: center; }
+  .landscape.jobpilot-design-candidate .selection-category { grid-column: 2; grid-row: 1; align-self: center; }
+  .landscape.jobpilot-design-candidate .selection-category { font-size: 10px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail h1 { font-size: clamp(42px,12vw,52px); grid-column: 1 / -1; margin-top: 8px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail p { font-size: 17px; margin-top: 4px; }
+  .landscape.jobpilot-design-candidate .is-expanded .selection-detail { gap: 20px; }
+  .landscape.jobpilot-design-candidate .selection-project-links { flex-direction: column; gap: 6px; }
+  .landscape.jobpilot-design-candidate .is-expanded .open-case { width: 100%; }
+  .landscape.jobpilot-design-candidate .selection-actions { gap: 12px; }
+  .landscape.jobpilot-design-candidate .selection-image-frame { padding: 6px; }
+  .landscape.jobpilot-design-candidate .jobpilot-screen-selection { margin-top: 28px; }
+  .landscape.jobpilot-design-candidate .page-surface.project-reader { padding-top: 20px; }
+  .landscape.jobpilot-design-candidate .case-heading { margin-top: 24px; gap: 24px; }
+  .landscape.jobpilot-design-candidate .case-heading .jobpilot-object-detail { width: 68px; height: 68px; top: 0; }
+  .landscape.jobpilot-design-candidate .case-heading .eyebrow { max-width: calc(100% - 84px); font-size: 10px; }
+  .landscape.jobpilot-design-candidate .case-heading h1 { font-size: clamp(44px,12vw,52px); margin-top: 28px; }
+  .landscape.jobpilot-design-candidate .case-narrative,
+  .landscape.jobpilot-design-candidate .case-narrative section { margin-top: 48px; }
+  .landscape.jobpilot-design-candidate .case-narrative .jobpilot-defining-decision { margin: 0 0 56px; }
+  .landscape.jobpilot-design-candidate .profile-boundary { padding: 24px 16px 0; }
+  .landscape.jobpilot-design-candidate .boundary-body { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .landscape.jobpilot-design-candidate .boundary-art { width: min(220px,100%); }
+  .landscape.jobpilot-design-candidate .workflow-frames { gap: 48px; }
+}

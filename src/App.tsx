@@ -13,6 +13,8 @@ import { JobMatch } from "./pages/JobMatch";
 import { NotFound } from "./pages/NotFound";
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
+const JobPilotDesignReview = (import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)
+  ? lazy(() => import('./components/landscape/JobPilotDesignReview').then(m => ({ default: m.JobPilotDesignReview }))) : null;
 const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
 const CommandPalette = lazy(() => import("./components/CommandPalette").then((m) => ({ default: m.CommandPalette })));
 
@@ -104,6 +106,10 @@ export function App() {
       <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>
+          {JobPilotDesignReview && <Route path="/review/jobpilot/:variant" element={<><JobPilotDesignReview /><CommandPaletteLoader /></>}>
+            <Route index element={<Home />} />
+            <Route path="reader" element={<ProjectDetail />} />
+          </Route>}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />

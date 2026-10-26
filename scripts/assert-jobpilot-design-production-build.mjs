@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { readdir, readFile, access } from 'node:fs/promises';
+import path from 'node:path';
+const root=process.argv[2]??'dist';
+const files=await readdir(path.join(root,'assets'));
+const source=(await Promise.all(files.filter(file=>file.endsWith('.js')).map(file=>readFile(path.join(root,'assets',file),'utf8')))).join('\n');
+assert(!source.includes('/review/jobpilot/'),'Normal Production excludes JobPilot review entry addresses');
+assert(!files.some(file=>file.startsWith('JobPilotDesignReview-')),'Normal Production excludes the review stylesheet/entry');
+await assert.rejects(access(path.join(root,'review/jobpilot-comparison')));
+console.log('Normal compiled build excludes JobPilot design routes, entry styles and comparison assets.');

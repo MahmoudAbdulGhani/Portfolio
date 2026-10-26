@@ -1,0 +1,173 @@
+{
+  "method": "Additional matched settled normal-motion workflow captures from the same compiled PR50 baseline/current candidate and frozen actual public source, Windows Chrome emulation. Visible open frames ready and image opacity fully settled before capture. No writes.",
+  "results": [
+    {
+      "phase": "baseline",
+      "width": 320,
+      "height": 844,
+      "step": "workflow",
+      "file": "320-844-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 320,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "320-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 390,
+      "height": 844,
+      "step": "workflow",
+      "file": "390-844-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 390,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "390-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 430,
+      "height": 844,
+      "step": "workflow",
+      "file": "430-844-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 430,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "430-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 768,
+      "height": 1024,
+      "step": "workflow",
+      "file": "768-1024-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 768,
+      "height": 1024,
+      "step": "workflow-detail",
+      "file": "768-1024-workflow-detail.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 1280,
+      "height": 720,
+      "step": "workflow",
+      "file": "1280-720-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 1280,
+      "height": 720,
+      "step": "workflow-detail",
+      "file": "1280-720-workflow-detail.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 1440,
+      "height": 900,
+      "step": "workflow",
+      "file": "1440-900-workflow.jpg"
+    },
+    {
+      "phase": "baseline",
+      "width": 1440,
+      "height": 900,
+      "step": "workflow-detail",
+      "file": "1440-900-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 320,
+      "height": 844,
+      "step": "workflow",
+      "file": "320-844-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 320,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "320-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 390,
+      "height": 844,
+      "step": "workflow",
+      "file": "390-844-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 390,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "390-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 430,
+      "height": 844,
+      "step": "workflow",
+      "file": "430-844-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 430,
+      "height": 844,
+      "step": "workflow-detail",
+      "file": "430-844-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 768,
+      "height": 1024,
+      "step": "workflow",
+      "file": "768-1024-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 768,
+      "height": 1024,
+      "step": "workflow-detail",
+      "file": "768-1024-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 1280,
+      "height": 720,
+      "step": "workflow",
+      "file": "1280-720-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 1280,
+      "height": 720,
+      "step": "workflow-detail",
+      "file": "1280-720-workflow-detail.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 1440,
+      "height": 900,
+      "step": "workflow",
+      "file": "1440-900-workflow.jpg"
+    },
+    {
+      "phase": "candidate",
+      "width": 1440,
+      "height": 900,
+      "step": "workflow-detail",
+      "file": "1440-900-workflow-detail.jpg"
+    }
+  ]
+}

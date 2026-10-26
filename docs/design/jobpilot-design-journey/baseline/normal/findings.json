@@ -1,0 +1,339 @@
+{
+  "phase": "baseline",
+  "mode": "normal",
+  "entry": "/",
+  "baseline": "f7baa57a57e589c4171c94eb9f6f54f931a822c6",
+  "method": "Current-run Windows Chrome capture from compiled app and frozen fresh public GET data with original images. Phone/tablet widths are emulation. The GPU string identifies actual WebGL; forced fallback is explicitly separate. Videos directly record browser frames. No backend writes or synthetic screenshot assets.",
+  "findings": [
+    {
+      "width": 320,
+      "height": 844,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 0,
+      "returnedScroll": 0,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "320-844-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "320-844-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "320-844-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "320-844-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "320-844-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "320-844-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "320-844-return.jpg",
+          "overflow": false,
+          "scroll": 0
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 0,
+      "returnedScroll": 0,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "390-844-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "390-844-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "390-844-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "390-844-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "390-844-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "390-844-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "390-844-return.jpg",
+          "overflow": false,
+          "scroll": 0
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 430,
+      "height": 844,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 0,
+      "returnedScroll": 0,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "430-844-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "430-844-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "430-844-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "430-844-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "430-844-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "430-844-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "430-844-return.jpg",
+          "overflow": false,
+          "scroll": 0
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 0,
+      "returnedScroll": 0,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "768-1024-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "768-1024-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "768-1024-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "768-1024-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "768-1024-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "768-1024-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "768-1024-return.jpg",
+          "overflow": false,
+          "scroll": 0
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 394,
+      "returnedScroll": 394,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "1280-720-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "1280-720-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "1280-720-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "1280-720-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "1280-720-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "1280-720-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "1280-720-return.jpg",
+          "overflow": false,
+          "scroll": 394
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "selectedIndex": 1,
+      "sourceScroll": 0,
+      "returnedScroll": 0,
+      "captures": [
+        {
+          "step": "collection",
+          "file": "1440-900-collection.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "preview",
+          "file": "1440-900-preview.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "reader",
+          "file": "1440-900-reader.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "decision",
+          "file": "1440-900-decision.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "stale",
+          "file": "1440-900-stale.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "engineering",
+          "file": "1440-900-engineering.jpg",
+          "overflow": false,
+          "scroll": 0
+        },
+        {
+          "step": "return",
+          "file": "1440-900-return.jpg",
+          "overflow": false,
+          "scroll": 0
+        }
+      ],
+      "errors": [],
+      "writes": []
+    }
+  ]
+}
