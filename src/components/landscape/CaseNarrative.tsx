@@ -11,12 +11,16 @@ import { ProfileBoundary } from './ProfileBoundary';
 import { CedarBoundary } from './CedarBoundary';
 import { LobbyBoundary } from './LobbyBoundary';
 import './case-narrative.css';
+import type { BoundaryState } from './profile-boundary-state';
 
-export function CaseNarrative({ project, study, screens, openGallery }: {
+export function CaseNarrative({ project, study, screens, openGallery, candidate = false, boundaryState, onBoundaryStateChange }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
   openGallery: (index: number, trigger: HTMLButtonElement) => void;
+  candidate?: boolean;
+  boundaryState?: BoundaryState;
+  onBoundaryStateChange?: (state: BoundaryState) => void;
 }) {
   const workflow = study.workflow.flatMap(step => {
     const index = step.matches.map(match => screens.findIndex(screen => screenMatches(screen.src, [completeScreenSource(match)]))).find(index => index >= 0) ?? -1;
@@ -34,30 +38,35 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
   const contributions = selectedContributions(project, study);
   const team = nonempty(project.team);
   const hasContribution = Boolean(role || ownership || completeContributions.length);
+  const context = <section id="overview" className="story-context">
+    <span className="eyebrow">THE CONTEXT</span><h2>{study.problemHeading}</h2><p>{study.problem}</p>
+    {candidate && <p>{study.summary}</p>}
+    {study.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight /></a>.</p>}
+  </section>;
+  const workflowFigure = (step: (typeof workflow)[number], index: number) => <figure key={step.screen.src}>
+    <figcaption className="workflow-intro">
+      <span className="workflow-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+      <div><h3>{step.explanations[0].title}</h3><p>{step.explanations.map((explanation,i)=><span key={explanation.title}>{i>0&&<strong>{explanation.title} </strong>}{explanation.notice}{' '}</span>)}</p></div>
+    </figcaption>
+    <div className="workflow-details"><ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}`} label={step.screen.label} ratio={`${step.image.width} / ${step.image.height}`}
+      style={{'--frame-max-width':`${screenColumnWidth(step.screen)}px`} as CSSProperties} className="workflow-image" enlarge={trigger=>openGallery(step.index,trigger)} sizes={screenSizes(step.screen)} /></div>
+  </figure>;
   return (
     <div className={`case-narrative case-narrative-${study.kind}`}>
-      <section id="overview" className="story-context">
-        <span className="eyebrow">THE CONTEXT</span>
-        <h2>{study.problemHeading}</h2>
-        <p>{study.problem}</p>
-        {study.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight /></a>.</p>}
-      </section>
+      {candidate && <section id="engineering" className="jobpilot-defining-decision">
+        <span className="eyebrow">THE DEFINING DECISION</span><h2>{study.engineeringHeading}</h2>
+        <ProfileBoundary initialState={boundaryState} onStateChange={onBoundaryStateChange} />
+      </section>}
+      {!candidate && context}
       {workflow.length > 0 && <section id="workflow" className="story-workflow">
         <span className="eyebrow">{study.kind === 'compact' ? 'A CLOSER LOOK' : 'PRODUCT WORKFLOW'}</span>
         <h2>{study.workflowHeading}</h2>
         <div className="workflow-frames">
-          {workflow.map((step, index) => <figure key={step.screen.src}>
-            <figcaption className="workflow-intro">
-              <span className="workflow-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{step.explanations[0].title}</h3><p>{step.explanations.map((explanation, i) => <span key={explanation.title}>{i > 0 && <strong>{explanation.title} </strong>}{explanation.notice}{' '}</span>)}</p></div>
-            </figcaption>
-            <div className="workflow-details">
-              <ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}`} label={step.screen.label} ratio={`${step.image.width} / ${step.image.height}`}
-                style={{ '--frame-max-width': `${screenColumnWidth(step.screen)}px` } as CSSProperties}
-                className="workflow-image" enlarge={trigger => openGallery(step.index, trigger)} sizes={screenSizes(step.screen)} />
-            </div>
-          </figure>)}
+          {workflow.slice(0,candidate?2:workflow.length).map(workflowFigure)}
         </div>
+        {candidate&&workflow.length>2&&<CaseDisclosure className="story-disclosure jobpilot-secondary-workflow" title="Interview preparation workflow">
+          <div className="workflow-frames">{workflow.slice(2).map((step,index)=>workflowFigure(step,index+2))}</div>
+        </CaseDisclosure>}
       </section>}
       {study.flow && study.flowPlacement === 'workflow' && <section id="workflow" className="story-workflow">
         <span className="eyebrow">CODE-PATH WALKTHROUGH</span><h2>{study.workflowHeading}</h2>
@@ -74,11 +83,12 @@ export function CaseNarrative({ project, study, screens, openGallery }: {
         </CaseDisclosure>
       </section>}
       {!hasContribution && team.length > 0 && <section id="team"><h2>Team delivery</h2><ul>{team.map(member => <li key={member}>{member}</li>)}</ul></section>}
-      <section id="engineering" className="story-engineering">
+      {candidate && <CaseDisclosure className="story-disclosure jobpilot-context" title="Project context">{context}</CaseDisclosure>}
+      <section id={candidate ? 'technical-details' : 'engineering'} className="story-engineering">
         <span className="eyebrow">ENGINEERING DECISIONS</span>
-        <h2>{study.engineeringHeading}</h2>
+        <h2>{candidate ? 'Implementation details' : study.engineeringHeading}</h2>
         {team.length > 1 && <p className="story-evidence-note">These decisions describe the team’s implementation. Individual contributions are listed separately above.</p>}
-        {project.slug === 'jobpilot-ai' && <ProfileBoundary />}
+        {project.slug === 'jobpilot-ai' && !candidate && <ProfileBoundary />}
         {project.slug === 'construction-project-management-accounting-system' && <CedarBoundary />}
         {project.slug === 'lobby' && <LobbyBoundary />}
         {study.flow && !study.flowPlacement && project.slug !== 'jobpilot-ai' && <figure className="decision-path">

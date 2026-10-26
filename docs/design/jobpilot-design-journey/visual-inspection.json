@@ -1,0 +1,109 @@
+{
+  "method": "Side-by-side images preserve each original screenshot without cropping. Motion sheets sample decoded frames from the actual native WebM recordings, not staged screenshot animation. Each recording played to ended in desktop Chrome; decoder frame/dropped counts are recorded. This is a recording review, not an independent physical-phone or source-renderer benchmark.",
+  "pairs": [
+    {
+      "file": "comparison-390-preview.jpg",
+      "sources": [
+        "baseline\\normal\\390-844-preview.jpg",
+        "candidate\\normal\\390-844-preview.jpg"
+      ]
+    },
+    {
+      "file": "comparison-390-reader.jpg",
+      "sources": [
+        "baseline\\normal\\390-844-reader.jpg",
+        "candidate\\normal\\390-844-reader.jpg"
+      ]
+    },
+    {
+      "file": "comparison-390-decision.jpg",
+      "sources": [
+        "baseline\\normal\\390-844-decision.jpg",
+        "candidate\\normal\\390-844-decision.jpg"
+      ]
+    },
+    {
+      "file": "comparison-1440-preview.jpg",
+      "sources": [
+        "baseline\\normal\\1440-900-preview.jpg",
+        "candidate\\normal\\1440-900-preview.jpg"
+      ]
+    },
+    {
+      "file": "comparison-1440-reader.jpg",
+      "sources": [
+        "baseline\\normal\\1440-900-reader.jpg",
+        "candidate\\normal\\1440-900-reader.jpg"
+      ]
+    },
+    {
+      "file": "comparison-1440-decision.jpg",
+      "sources": [
+        "baseline\\normal\\1440-900-decision.jpg",
+        "candidate\\normal\\1440-900-decision.jpg"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "phase": "baseline",
+      "width": 1440,
+      "metadata": {
+        "duration": 12.92,
+        "width": 1440,
+        "height": 900,
+        "frames": 323,
+        "dropped": 43
+      },
+      "inspectionSheets": [
+        "baseline-1440-opening-frames.jpg",
+        "baseline-1440-journey-frames.jpg"
+      ]
+    },
+    {
+      "phase": "baseline",
+      "width": 390,
+      "metadata": {
+        "duration": 12.2,
+        "width": 390,
+        "height": 844,
+        "frames": 305,
+        "dropped": 44
+      },
+      "inspectionSheets": [
+        "baseline-390-opening-frames.jpg",
+        "baseline-390-journey-frames.jpg"
+      ]
+    },
+    {
+      "phase": "candidate",
+      "width": 1440,
+      "metadata": {
+        "duration": 12.6,
+        "width": 1440,
+        "height": 900,
+        "frames": 315,
+        "dropped": 44
+      },
+      "inspectionSheets": [
+        "candidate-1440-opening-frames.jpg",
+        "candidate-1440-journey-frames.jpg"
+      ]
+    },
+    {
+      "phase": "candidate",
+      "width": 390,
+      "metadata": {
+        "duration": 12.76,
+        "width": 390,
+        "height": 844,
+        "frames": 319,
+        "dropped": 45
+      },
+      "inspectionSheets": [
+        "candidate-390-opening-frames.jpg",
+        "candidate-390-journey-frames.jpg"
+      ]
+    }
+  ]
+}

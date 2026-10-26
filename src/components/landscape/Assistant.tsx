@@ -12,6 +12,7 @@ import {
 import { useProfile, useProject, useSiteSection } from "../../lib/hooks";
 import { apiResponse } from "../../lib/api";
 import { projectDisplayName } from "../../../shared/content-integrity";
+import { useJobPilotDesign } from './jobpilot-design-context';
 import {
   evidenceUrl,
   readAssistantResponse,
@@ -48,9 +49,11 @@ const contextual = [
 
 export function LandscapeAssistant() {
   const location = useLocation();
+  const design = useJobPilotDesign();
   const projectSlug =
     matchPath("/projects/:slug", location.pathname)?.params.slug ||
-    (location.pathname === "/"
+    (design && location.pathname === design.readerPath ? 'jobpilot-ai' : null) ||
+    (location.pathname === (design?.collectionPath ?? '/')
       ? new URLSearchParams(location.search).get("project")
       : null);
   const context = projectSlug || "portfolio";

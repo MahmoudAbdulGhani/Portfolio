@@ -13,6 +13,7 @@ import "../../landscape-integration.css";
 import './composition.css';
 import './motion-language.css';
 import './mobile-reading.css';
+import { useJobPilotDesign } from './jobpilot-design-context';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({
@@ -32,16 +33,20 @@ export function LandscapeLayout() {
   const { data: profile } = useProfile();
   const { data: projects } = useProjects();
   const location = useLocation();
-  const collectionState = location.pathname.startsWith("/projects/")
+  const design = useJobPilotDesign();
+  const collectionPath = design?.collectionPath ?? '/';
+  const atCollection = location.pathname === collectionPath;
+  const reviewReader = Boolean(design && location.pathname === design.readerPath);
+  const collectionState = reviewReader ? { returnProject: 'jobpilot-ai' } : location.pathname.startsWith("/projects/")
     ? { returnProject: location.pathname.slice("/projects/".length) }
     : undefined;
   const selected =
-    location.pathname === "/" &&
+    atCollection &&
     new URLSearchParams(location.search).has("project");
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div className="landscape">
+    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${design?.candidate && (reviewReader || (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai')) ? ' jobpilot-design-candidate' : ''}`} data-design-review={design?.variant}>
       <div
-        className={`portfolio ${location.pathname === "/" ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
+        className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >
         <a
           className="skip-link"
@@ -58,7 +63,7 @@ export function LandscapeLayout() {
         </a>
         <header className="site-header">
           <Link
-            to="/"
+            to={collectionPath}
             state={collectionState}
             className="identity"
             aria-label={`${profile?.name ?? "Portfolio"}, project collection`}
@@ -76,10 +81,10 @@ export function LandscapeLayout() {
             {links.map(([path, label]) => (
               <NavLink
                 key={path}
-                to={path}
+                to={path === '/' ? collectionPath : path}
                 state={path === "/" ? collectionState : undefined}
                 end={path === "/"}
-                className={({ isActive }) => (isActive ? "active" : "")}
+                className={({ isActive }) => (isActive || (reviewReader && path === '/projects') ? "active" : "")}
               >
                 {label}
               </NavLink>
@@ -91,13 +96,13 @@ export function LandscapeLayout() {
         </div>
         <footer className="stage-footer">
           <div className="footer-location">
-            {location.pathname === "/" && !selected ? (
+            {atCollection && !selected ? (
               <Link to="/projects">
                 Explore all {projects?.length ?? ""} projects
                 <FiArrowRight />
               </Link>
             ) : (
-              <Link to="/" state={collectionState}>
+              <Link to={collectionPath} state={collectionState}>
                 Collection
                 <FiArrowRight />
               </Link>

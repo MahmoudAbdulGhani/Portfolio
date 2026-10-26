@@ -1,0 +1,101 @@
+{
+  "method": "Current-run direct PNG byte hashes and main text for immutable PR50 normal build versus current normal build, same frozen public snapshot, Chrome reduced-motion viewport emulation, fonts and visible images decoded. No review routes or style entry loaded.",
+  "results": [
+    {
+      "width": 390,
+      "route": "/",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "d3a4634b61c1384d1348386bbe766b33cb025c0a7d3b5d49e446a71ab6f380f9",
+      "afterSha256": "06fb1f801fd2febfd1c238e960896bc8d6823080d9c42102ae55e8ae455457a8"
+    },
+    {
+      "width": 390,
+      "route": "/?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "794d0ae0dd4e480d2f2860f14d529767a8de2f2cae7dd11e1141b86ab83a9161",
+      "afterSha256": "794d0ae0dd4e480d2f2860f14d529767a8de2f2cae7dd11e1141b86ab83a9161"
+    },
+    {
+      "width": 390,
+      "route": "/projects/jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "5315a0b67145d07485e84019d6a341f0e49d0a3e7a5425227d4683120850c087",
+      "afterSha256": "5315a0b67145d07485e84019d6a341f0e49d0a3e7a5425227d4683120850c087"
+    },
+    {
+      "width": 390,
+      "route": "/?project=lobby",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "1c97b5e94d6405083310d20019701450834658e4c75905a90cf760433d2897e5",
+      "afterSha256": "e14e8027f96e59b906a58fad370a764e0ae5f84a752d1b17863914e396ae8a9c"
+    },
+    {
+      "width": 390,
+      "route": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "7ca9507329ca7291eb1287c05bf6ac5f6521504284e2353f8f03465eb54d6b30",
+      "afterSha256": "7ca9507329ca7291eb1287c05bf6ac5f6521504284e2353f8f03465eb54d6b30"
+    },
+    {
+      "width": 390,
+      "route": "/profile",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "beec00be51a746fd4b9708c61bf0362d11fed0cacc7c8e5e9d10bdb64da4b0a5",
+      "afterSha256": "beec00be51a746fd4b9708c61bf0362d11fed0cacc7c8e5e9d10bdb64da4b0a5"
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "ca013efe6a3cfe4bcda2437765e75ce922f0147e6b612c112f00148e44dd1a2a",
+      "afterSha256": "f279355a38b3a4152980bf4440a8e27fe2d98d47122cd9ee5eb37e23c48560e5"
+    },
+    {
+      "width": 1440,
+      "route": "/?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "a2c4c49df511a0e8935996aa3552ad97f8348b27b6d418ff83eabca156158d9a",
+      "afterSha256": "a2c4c49df511a0e8935996aa3552ad97f8348b27b6d418ff83eabca156158d9a"
+    },
+    {
+      "width": 1440,
+      "route": "/projects/jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "beforeSha256": "d7cf5b98a90abc5b96c1037d736a57ef9e6b9da9e853c00d50092085825dde6a",
+      "afterSha256": "d7cf5b98a90abc5b96c1037d736a57ef9e6b9da9e853c00d50092085825dde6a"
+    },
+    {
+      "width": 1440,
+      "route": "/?project=lobby",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "193ddd458277f5a05bef5e7b17992b871b558f8b84b4e885a245f97657d5efaa",
+      "afterSha256": "9195ffa35b8520c6c3e0a5f2c14afd8d68ab9a73d0c4bdf937b065eda0030318"
+    },
+    {
+      "width": 1440,
+      "route": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "081acc9fce241ee01ee0d756f8363ea3419e6c25d0d1eae5852d59269cb59d0b",
+      "afterSha256": "18a2c91ad472d72cc4a30221675df144f08a9761784394bfacc8d6e8f9ac5834"
+    },
+    {
+      "width": 1440,
+      "route": "/profile",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "beforeSha256": "95a22ec09611c6ca7ab56477bbf09735f79917c5ab3bb38baf5c90674b9347bf",
+      "afterSha256": "4a58588223a8aa94fa2b78aa5eb16b4a43f48e02a0fe9ad7b8a8acefad692902"
+    }
+  ]
+}
