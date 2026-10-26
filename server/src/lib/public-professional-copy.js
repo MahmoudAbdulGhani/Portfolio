@@ -1,20 +1,8 @@
 // Server-owned prose for fields where an evaluator must not supply candidate
 // facts. The model still selects relevant work and assesses other requirements.
+import { requestsAwsCredential, scopeMatchStatements } from './job-requirements.js';
 const awsTraining = context => context.certifications.find(row => /aws re\/start/i.test(row.title));
-const awsCredential = text => /\bAWS\b/i.test(text) && /\bcertif(?:ication|ied|icate)s?\b/i.test(text);
-function requestsAwsCredential(description) {
-  return description.split(/[.!?;\n]+/).some(clause => {
-    const credential = /\bAWS\s+(?:(?:vendor|cloud|developer|solutions?|architect|associate|professional|practitioner)\s+){0,4}certif(?:ication|icate)s?\b|\bAWS[- ]certified\b/i;
-    const match = credential.exec(clause);
-    if (!match) return false;
-    // A preference is still a relevant qualification; an explicitly waived
-    // credential is not. Keep separate vendors/clauses separate.
-    if (/\b(?:preferred|desirable|bonus)\b/i.test(clause)) return true;
-    const before = clause.slice(0, match.index), after = clause.slice(match.index + match[0].length);
-    return !/\b(?:no|without|does not require|do not require)\s*(?:an?\s*)?$/i.test(before.trim())
-      && !/^\s*(?:(?:is|are)\s+)?(?:not required|not needed|not necessary|optional|not mandatory)\b/i.test(after);
-  });
-}
+const awsCredential = text => /\bAWS\b/i.test(text) && /\b(?:certif(?:ication|ied|icate)s?|credentials?|qualifications?)\b/i.test(text);
 export function publicMatchCopy(context, jobDescription, candidate, result) {
   // Candidate text is already server-built from the allowed source skills.
   const work = candidate.skillKeys.length ? candidate.text.replace(/^Full-stack software engineer building web applications\. My portfolio includes work with /, 'Relevant work includes ') : 'Explore the selected experience and projects alongside the role’s requirements.';
@@ -26,8 +14,8 @@ export function publicMatchCopy(context, jobDescription, candidate, result) {
   return {
     overallMatch: `${work} Requirements to discuss are listed separately below.`,
     recruiterSummary: `${work} ${experience}`,
-    partialMatches: result.partialMatches.filter(keep),
-    gaps: [...result.gaps.filter(keep), ...(awsDiscuss ? ['The role requests AWS certification; the portfolio lists AWS re/Start training.'] : [])],
+    partialMatches: scopeMatchStatements(jobDescription, result.partialMatches, { discussPractical: true }).filter(keep),
+    gaps: [...scopeMatchStatements(jobDescription, result.gaps, { discussPractical: true }).filter(keep), ...(awsDiscuss ? ['The role requests AWS certification; the portfolio lists AWS re/Start training.'] : [])],
   };
 }
 
