@@ -101,7 +101,8 @@
   .landscape.jobpilot-design-candidate .boundary-body { grid-template-columns: 200px minmax(0,1fr); gap: 24px; }
   .landscape.jobpilot-design-candidate .boundary-art { width: 200px; }
   .landscape.jobpilot-design-candidate .workflow-frames figure { grid-template-columns: 1fr; gap: 18px; }
-  .landscape.jobpilot-design-candidate .workflow-frames figure :is(figcaption,.workflow-details) { grid-column: 1; grid-row: auto; }
+  .landscape.jobpilot-design-candidate .workflow-frames figure :is(figcaption,.workflow-details),
+  .landscape.jobpilot-design-candidate .workflow-frames figure:nth-child(even) :is(figcaption,.workflow-details) { grid-column: 1; grid-row: auto; }
 }
 @media (max-width: 719px) {
   .landscape.jobpilot-design-candidate .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { padding-top: 24px; gap: 48px; }

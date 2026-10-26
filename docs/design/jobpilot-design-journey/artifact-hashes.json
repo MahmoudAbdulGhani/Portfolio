@@ -63,6 +63,14 @@
     "bytes": 77199,
     "sha256": "88249f50b4d76e0ef342cd3b474f11609efa0658a77c86e0865511c1c0677b64"
   },
+  "baseline/normal/1280-720-workflow-detail.jpg": {
+    "bytes": 68376,
+    "sha256": "364fd58d95d2cd59d634f9dcbd8456b2b60d1b25d8b7b20dc2c366a93926da55"
+  },
+  "baseline/normal/1280-720-workflow.jpg": {
+    "bytes": 70281,
+    "sha256": "8e897a778d8481f1d4ccbc302bc7884274a2457b3ede20433934978c78d31e75"
+  },
   "baseline/normal/1440-900-collection.jpg": {
     "bytes": 95915,
     "sha256": "a53091135068026fd15ca39b9435c42dafbab88767f516b05059d47f69f7694e"
@@ -90,6 +98,14 @@
   "baseline/normal/1440-900-stale.jpg": {
     "bytes": 82801,
     "sha256": "70e3000f857c6ffdc093f11d9033e332f7bd8aa9232bdbaa5a11c99d444c784b"
+  },
+  "baseline/normal/1440-900-workflow-detail.jpg": {
+    "bytes": 92666,
+    "sha256": "8e541c5a5569b752704c57085800a14488f7acb23791cbe452e1edf9b9f2513a"
+  },
+  "baseline/normal/1440-900-workflow.jpg": {
+    "bytes": 93686,
+    "sha256": "051497df834fe7477575e18dab687922e2008d9cb2debd79221552444d6421b8"
   },
   "baseline/normal/1440-journey.webm": {
     "bytes": 1265644,
@@ -123,6 +139,14 @@
     "bytes": 37186,
     "sha256": "2229955557634b033c713ecf035ab3f5be46596bfdbb9e1824a2e8e97d32bd24"
   },
+  "baseline/normal/320-844-workflow-detail.jpg": {
+    "bytes": 42269,
+    "sha256": "c90b13757f4c49bebe6494ad00bc44f35f60aff37a45437381473058a01294d4"
+  },
+  "baseline/normal/320-844-workflow.jpg": {
+    "bytes": 43871,
+    "sha256": "5e28c0bff232c878ac7c8f1626d813be62d9ddd3105fc6c20e2cc702cb8d393b"
+  },
   "baseline/normal/390-844-collection.jpg": {
     "bytes": 45239,
     "sha256": "7e6002e4c91ca03a384fdce63d0be6f04880587cb471c09ead8258ac204496c1"
@@ -150,6 +174,14 @@
   "baseline/normal/390-844-stale.jpg": {
     "bytes": 41282,
     "sha256": "68204ee6eb484104796555ddef23bbcdbd9d2ef9d3bb0ba88e70b72dd26694ee"
+  },
+  "baseline/normal/390-844-workflow-detail.jpg": {
+    "bytes": 48703,
+    "sha256": "4afd4e95766bf0ec683170b01663e09fc20f8bbefa3bd3d1964e0b3c2318e8a8"
+  },
+  "baseline/normal/390-844-workflow.jpg": {
+    "bytes": 50313,
+    "sha256": "db4448365fcdbf104b171ab2c456bdb59b76bcf9d20e50ed68a478e584059c0c"
   },
   "baseline/normal/390-journey.webm": {
     "bytes": 844829,
@@ -183,6 +215,14 @@
     "bytes": 41523,
     "sha256": "cca11e2048f76ddacfe0248e94c994101976d0627e4ff0478e86d89ca9e0b03a"
   },
+  "baseline/normal/430-844-workflow-detail.jpg": {
+    "bytes": 49687,
+    "sha256": "8d6744612241231991606b1f14bfce13a21bd341c59c5dd1254db43547056191"
+  },
+  "baseline/normal/430-844-workflow.jpg": {
+    "bytes": 51401,
+    "sha256": "7d0f53666a2aa930189f7e899b245fd958c9990cce5cd9f6f4cb5575804c579f"
+  },
   "baseline/normal/768-1024-collection.jpg": {
     "bytes": 65825,
     "sha256": "51d6b1e8122afa074a29722e8a8841f56904eb9581447cce27ceb49325de70f4"
@@ -210,6 +250,14 @@
   "baseline/normal/768-1024-stale.jpg": {
     "bytes": 76037,
     "sha256": "594307d06af26ca7b45bc210813e2c74ac4f03210c66d6676ae8825fd7fc364d"
+  },
+  "baseline/normal/768-1024-workflow-detail.jpg": {
+    "bytes": 79371,
+    "sha256": "d2a264ae06f36b871512d530bafe61d0eaad82173c251bc684cc12f1ec401d7f"
+  },
+  "baseline/normal/768-1024-workflow.jpg": {
+    "bytes": 77942,
+    "sha256": "1138bb1743ebf7c910ccef441b57f3f558fa60569a9bcb7f032e6e3fb3ca58c4"
   },
   "baseline/normal/findings.json": {
     "bytes": 8452,
@@ -331,6 +379,14 @@
     "bytes": 64206,
     "sha256": "950d4d1a416e9a1766410b56fe25f543be54d68d067d38b0b2abca2e9ab99f78"
   },
+  "candidate/normal/1280-720-workflow-detail.jpg": {
+    "bytes": 67996,
+    "sha256": "709d7593ea634ceffa015710fe7bfaf3298fb1fdb6a78e08a92c0e1f05edd783"
+  },
+  "candidate/normal/1280-720-workflow.jpg": {
+    "bytes": 76269,
+    "sha256": "410441f99f5256340d97b419494c36d46a33ca720bd379c9e29f29c24072b0f4"
+  },
   "candidate/normal/1440-900-collection.jpg": {
     "bytes": 96425,
     "sha256": "a92955fdc138d612be50146d3e62ceff404dd63973d81ae5cd696d70a2d666a7"
@@ -358,6 +414,14 @@
   "candidate/normal/1440-900-stale.jpg": {
     "bytes": 84886,
     "sha256": "f4c5ec8371e10ddff044a5007817af670e60ff7b2f0c2fa494c0c6b1c2af7f03"
+  },
+  "candidate/normal/1440-900-workflow-detail.jpg": {
+    "bytes": 92210,
+    "sha256": "d8d234a52c05effee01207c24588e01a653acac8a617c619d4f5364f6a6555c0"
+  },
+  "candidate/normal/1440-900-workflow.jpg": {
+    "bytes": 98432,
+    "sha256": "99112f6cbeeb5e09275184909e8d6735c3fb5d0b006162475a254d9540fb1850"
   },
   "candidate/normal/1440-journey.webm": {
     "bytes": 1217863,
@@ -391,6 +455,14 @@
     "bytes": 37203,
     "sha256": "b19455a236d18d51d9aa6796155be799815d09b577fc00a3493688ced5a4b154"
   },
+  "candidate/normal/320-844-workflow-detail.jpg": {
+    "bytes": 40064,
+    "sha256": "71b0e8fdf15e617421bfa4e115ee8dd49ddce44e6c2ae38ce3557abd3fa1f387"
+  },
+  "candidate/normal/320-844-workflow.jpg": {
+    "bytes": 45004,
+    "sha256": "6a915b6c3ad5d6dd221f439bb73b96cc7b1976a927373eb99ab32147c9f8734a"
+  },
   "candidate/normal/390-844-collection.jpg": {
     "bytes": 45237,
     "sha256": "e2bcd84f1077fe09d3baadd458fc7b82a1c478c70a8cb23ac2087e51f7361821"
@@ -418,6 +490,14 @@
   "candidate/normal/390-844-stale.jpg": {
     "bytes": 42024,
     "sha256": "de65d13db7c5983597bb82192907ab8959c15c0a46e1d28e758095becc9cf376"
+  },
+  "candidate/normal/390-844-workflow-detail.jpg": {
+    "bytes": 47409,
+    "sha256": "ea420c1f6a1e8584d28a081f807ab1f3b59587bcde9e6675cd12d7bc5973df8c"
+  },
+  "candidate/normal/390-844-workflow.jpg": {
+    "bytes": 48587,
+    "sha256": "82a8bef37d4683204903deb3a429aea491dfeff357fab71c7618426aef015c78"
   },
   "candidate/normal/390-journey.webm": {
     "bytes": 764329,
@@ -451,6 +531,14 @@
     "bytes": 43874,
     "sha256": "730df948dd7dd497f1ec6f4cbb59d5c4283b8e247b967136ac328452025c5f4b"
   },
+  "candidate/normal/430-844-workflow-detail.jpg": {
+    "bytes": 49571,
+    "sha256": "04ab36eef2e80798ec3157d4de2948ae11e3eed5660cbcd99ea78d591df9f95e"
+  },
+  "candidate/normal/430-844-workflow.jpg": {
+    "bytes": 54024,
+    "sha256": "c1133405b43ffbea70eb79b345bdddbcf328290e4dbfabbadc7fa94a92a90f39"
+  },
   "candidate/normal/768-1024-collection.jpg": {
     "bytes": 65825,
     "sha256": "51d6b1e8122afa074a29722e8a8841f56904eb9581447cce27ceb49325de70f4"
@@ -478,6 +566,14 @@
   "candidate/normal/768-1024-stale.jpg": {
     "bytes": 74278,
     "sha256": "3c4b1532554da35e4e2da40021279c1dc252032e1276f0389365a5cbc766c11d"
+  },
+  "candidate/normal/768-1024-workflow-detail.jpg": {
+    "bytes": 82883,
+    "sha256": "665718d5d5bebd38e1f62885a278226855f0af357ba3bb8f2a5eb9744815e7fb"
+  },
+  "candidate/normal/768-1024-workflow.jpg": {
+    "bytes": 77244,
+    "sha256": "e0edcb79d77084be71a0241d179bb8a0f1ca61785951966451a14b928542801c"
   },
   "candidate/normal/findings.json": {
     "bytes": 8524,
@@ -536,8 +632,8 @@
     "sha256": "a526eecbcc4c6aa4e236a957fc4770c0949950b02090dd52d863e2f74ee72004"
   },
   "changed-files.txt": {
-    "bytes": 11667,
-    "sha256": "d6055294fd02da2283fb392c465b482cc8f8e94f829552819a019326e0dff1ed"
+    "bytes": 13613,
+    "sha256": "60b7b2c32e963be426e400c3bc7428b4cb93c0e7d4b11011b9a7e723d297a0db"
   },
   "comparison-1440-decision.jpg": {
     "bytes": 237885,
@@ -564,8 +660,8 @@
     "sha256": "924988d204203fc010ad021cc5d0228393cedeaa2abd1a306abefc2c41cd2ef8"
   },
   "index.html": {
-    "bytes": 32571,
-    "sha256": "49bfe55144a905ac137cbe7f13333cd902cd66aeb56e7e85640d898ac0106c92"
+    "bytes": 39249,
+    "sha256": "de629d5af045e191cb9a9dcf99c6a78d9cad2297cd05c25c2bec1249b8142a6a"
   },
   "local-initial-regression-failures.md": {
     "bytes": 8155,
@@ -576,11 +672,15 @@
     "sha256": "dedeb8fdf1d992a40435c739d9eaa3fe9366a3f0310c1d9fbc5fa7092cd0c168"
   },
   "review-report.md": {
-    "bytes": 12001,
-    "sha256": "0fc3f218c30087006f70b215c5647d91a689080c583071a064624be074b4d037"
+    "bytes": 12811,
+    "sha256": "69f920ec158ae486cf6271f3a89b17770c1e5a629d637df55e68b45a27da2f32"
   },
   "visual-inspection.json": {
     "bytes": 2947,
     "sha256": "a7974c6835e62fc35d8fb89b75b1d2d2eddd5b90aa53c061d34c744b09755aff"
+  },
+  "workflow-inspection.json": {
+    "bytes": 3954,
+    "sha256": "b43e30df641270962faefff018c35cbb4110c92bfeec11e57355a25ddbbc2f7b"
   }
 }

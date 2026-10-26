@@ -94,6 +94,24 @@ test('reduced motion and photographic fallback retain the same hierarchy and usa
   await expect.poll(()=>page.locator('main').evaluate(el=>el.getAnimations({subtree:true}).filter(a=>a.playState==='running').length)).toBe(0);
 });
 
+test('workflow captions precede images on narrow layouts and remain beside complete figures on desktop',async({page})=>{
+  await fixtures(page);await page.goto(entry+'/reader');
+  await page.locator('.jobpilot-secondary-workflow summary').click();
+  const figures=page.locator('#workflow .workflow-frames figure');await expect(figures).toHaveCount(3);
+  for(const width of [320,390,430,768,1280,1440]){
+    await page.setViewportSize({width,height:900});
+    const layouts=await figures.evaluateAll(nodes=>nodes.map(node=>{
+      const caption=node.querySelector('figcaption')!.getBoundingClientRect(),image=node.querySelector('.workflow-details')!.getBoundingClientRect();
+      return{caption:{top:caption.top,bottom:caption.bottom,left:caption.left,right:caption.right},image:{top:image.top,bottom:image.bottom,left:image.left,right:image.right}};
+    }));
+    for(const {caption,image}of layouts){
+      if(width<960)expect(image.top-caption.bottom).toBeGreaterThanOrEqual(17);
+      else expect(Math.max(image.left-caption.right,caption.left-image.right)).toBeGreaterThanOrEqual(20);
+    }
+    await noOverflow(page);
+  }
+});
+
 test('a visible image joins articulation before it settles and unselected objects finish fully recessed',async({page})=>{
   await fixtures(page,false);await page.addInitScript(()=>{
     const native=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl2'?null:native.call(this,type,...args);} as typeof native;
@@ -132,6 +150,10 @@ test('compiled comparison is real HTML with review metadata rather than the SPA 
   for(const phase of ['baseline','candidate'])for(const mode of ['normal','reduced','fallback']){
     const image=await request.get(`/review/jobpilot-comparison/${phase}/${mode}/390-844-preview.jpg`);
     expect(image.status()).toBe(200);expect(image.headers()['content-type']).toContain('image/jpeg');
+  }
+  for(const phase of ['baseline','candidate']){
+    const workflow=await request.get(`/review/jobpilot-comparison/${phase}/normal/390-844-workflow-detail.jpg`);
+    expect(workflow.status()).toBe(200);expect(workflow.headers()['content-type']).toContain('image/jpeg');
   }
 });
 

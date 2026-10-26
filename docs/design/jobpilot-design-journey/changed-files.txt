@@ -21,6 +21,8 @@ docs/design/jobpilot-design-journey/baseline/normal/1280-720-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1280-720-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1280-720-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1280-720-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/1280-720-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/1280-720-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-collection.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-decision.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-engineering.jpg
@@ -28,6 +30,8 @@ docs/design/jobpilot-design-journey/baseline/normal/1440-900-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-900-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/1440-900-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/1440-900-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/1440-journey.webm
 docs/design/jobpilot-design-journey/baseline/normal/320-844-collection.jpg
 docs/design/jobpilot-design-journey/baseline/normal/320-844-decision.jpg
@@ -36,6 +40,8 @@ docs/design/jobpilot-design-journey/baseline/normal/320-844-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/320-844-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/320-844-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/320-844-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/320-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/320-844-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-collection.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-decision.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-engineering.jpg
@@ -43,6 +49,8 @@ docs/design/jobpilot-design-journey/baseline/normal/390-844-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-844-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/390-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/390-844-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/390-journey.webm
 docs/design/jobpilot-design-journey/baseline/normal/430-844-collection.jpg
 docs/design/jobpilot-design-journey/baseline/normal/430-844-decision.jpg
@@ -51,6 +59,8 @@ docs/design/jobpilot-design-journey/baseline/normal/430-844-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/430-844-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/430-844-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/430-844-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/430-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/430-844-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-collection.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-decision.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-engineering.jpg
@@ -58,6 +68,8 @@ docs/design/jobpilot-design-journey/baseline/normal/768-1024-preview.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-reader.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-return.jpg
 docs/design/jobpilot-design-journey/baseline/normal/768-1024-stale.jpg
+docs/design/jobpilot-design-journey/baseline/normal/768-1024-workflow-detail.jpg
+docs/design/jobpilot-design-journey/baseline/normal/768-1024-workflow.jpg
 docs/design/jobpilot-design-journey/baseline/normal/findings.json
 docs/design/jobpilot-design-journey/baseline/reduced/1440-900-decision.jpg
 docs/design/jobpilot-design-journey/baseline/reduced/1440-900-engineering.jpg
@@ -88,6 +100,8 @@ docs/design/jobpilot-design-journey/candidate/normal/1280-720-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1280-720-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1280-720-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1280-720-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/1280-720-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/1280-720-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-collection.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-decision.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-engineering.jpg
@@ -95,6 +109,8 @@ docs/design/jobpilot-design-journey/candidate/normal/1440-900-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-900-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/1440-900-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/1440-900-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/1440-journey.webm
 docs/design/jobpilot-design-journey/candidate/normal/320-844-collection.jpg
 docs/design/jobpilot-design-journey/candidate/normal/320-844-decision.jpg
@@ -103,6 +119,8 @@ docs/design/jobpilot-design-journey/candidate/normal/320-844-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/320-844-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/320-844-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/320-844-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/320-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/320-844-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-collection.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-decision.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-engineering.jpg
@@ -110,6 +128,8 @@ docs/design/jobpilot-design-journey/candidate/normal/390-844-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-844-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/390-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/390-844-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/390-journey.webm
 docs/design/jobpilot-design-journey/candidate/normal/430-844-collection.jpg
 docs/design/jobpilot-design-journey/candidate/normal/430-844-decision.jpg
@@ -118,6 +138,8 @@ docs/design/jobpilot-design-journey/candidate/normal/430-844-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/430-844-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/430-844-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/430-844-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/430-844-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/430-844-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-collection.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-decision.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-engineering.jpg
@@ -125,6 +147,8 @@ docs/design/jobpilot-design-journey/candidate/normal/768-1024-preview.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-reader.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-return.jpg
 docs/design/jobpilot-design-journey/candidate/normal/768-1024-stale.jpg
+docs/design/jobpilot-design-journey/candidate/normal/768-1024-workflow-detail.jpg
+docs/design/jobpilot-design-journey/candidate/normal/768-1024-workflow.jpg
 docs/design/jobpilot-design-journey/candidate/normal/findings.json
 docs/design/jobpilot-design-journey/candidate/reduced/1440-900-decision.jpg
 docs/design/jobpilot-design-journey/candidate/reduced/1440-900-engineering.jpg
@@ -148,6 +172,7 @@ docs/design/jobpilot-design-journey/local-initial-regression-failures.md
 docs/design/jobpilot-design-journey/normal-production-comparison.json
 docs/design/jobpilot-design-journey/review-report.md
 docs/design/jobpilot-design-journey/visual-inspection.json
+docs/design/jobpilot-design-journey/workflow-inspection.json
 playwright.jobpilot-design.config.ts
 scripts/assert-jobpilot-design-production-build.mjs
 scripts/build-jobpilot-design-comparison.mjs
