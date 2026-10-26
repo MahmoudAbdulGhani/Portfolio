@@ -1,0 +1,148 @@
+{
+  "method": "Controlled copy fixture: the user-observed sentence is inserted into the same archived current report and passed through PR49/current source formatters. Not an archived production report or a second genuine provider response.",
+  "jobDescription": "Junior Full-Stack Developer. Build accessible React and TypeScript interfaces and Python REST APIs using FastAPI or Django. Work with PostgreSQL, authentication, automated tests and Git. Explain your individual contribution to team projects. Commercial production experience and an independently verified AWS certification are preferred, not mandatory.",
+  "before": {
+    "matchLevel": "Strong Match",
+    "overallMatch": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Requirements to discuss are listed separately below.",
+    "strongMatches": [
+      "Frontend development with React, TypeScript, and responsive interfaces",
+      "Python REST API development using both FastAPI and Django REST Framework",
+      "Relational database management with PostgreSQL, SQLAlchemy ORM, and Alembic migrations",
+      "Authentication and authorization mechanisms including JWT, Argon2, and RBAC",
+      "Automated unit and API testing using Pytest, Vitest, and Postman/Newman",
+      "Version control using Git and GitHub across individual and collaborative team projects"
+    ],
+    "relevantExperience": [
+      "Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026",
+      "Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026",
+      "Bachelor of Science in Computer Science · Lebanese International University (LIU) · Oct 2022 – Jun 2025"
+    ],
+    "relevantProjects": [
+      {
+        "slug": "jobpilot-ai",
+        "name": "JobPilot AI",
+        "portfolioUrl": "/projects/jobpilot-ai",
+        "evidence": "Developed a full-stack web application using Next.js, React, TypeScript, Python (FastAPI), and PostgreSQL with automated testing in Pytest and Vitest."
+      },
+      {
+        "slug": "full-stack-user-management-system",
+        "name": "User Management",
+        "portfolioUrl": "/projects/full-stack-user-management-system",
+        "evidence": "Built a full-stack platform using React, TypeScript, FastAPI, PostgreSQL, and JWT authentication with Pytest and Postman automated tests."
+      },
+      {
+        "slug": "construction-project-management-accounting-system",
+        "name": "Cedar Construction",
+        "portfolioUrl": "/projects/construction-project-management-accounting-system",
+        "evidence": "Contributed to a Django and Django REST Framework full-stack platform backed by PostgreSQL and deployed with Docker and Gunicorn."
+      }
+    ],
+    "partialMatches": [
+      "Commercial experience: Mahmoud has commercial backend experience at Ishtari Group, but it was with PHP, MySQL, and MariaDB rather than Python.",
+      "Dedicated web accessibility certifications or formal audits are not listed."
+    ],
+    "gaps": [
+      "The role requests AWS certification; the portfolio lists AWS re/Start training."
+    ],
+    "recruiterSummary": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Relevant background: Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026; Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026.",
+    "candidateSummary": {
+      "text": "Full-stack software engineer building web applications. My portfolio includes work with React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git.",
+      "source": "record-grounded",
+      "skillKeys": [
+        "react",
+        "typescript",
+        "python",
+        "fastapi",
+        "django",
+        "postgresql",
+        "git"
+      ],
+      "teamWork": true,
+      "plan": {
+        "version": 1,
+        "skillKeys": [
+          "react",
+          "typescript",
+          "python",
+          "fastapi",
+          "django",
+          "postgresql",
+          "git"
+        ],
+        "teamWork": true
+      }
+    }
+  },
+  "after": {
+    "matchLevel": "Strong Match",
+    "overallMatch": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Requirements to discuss are listed separately below.",
+    "strongMatches": [
+      "Frontend development with React, TypeScript, and responsive interfaces",
+      "Python REST API development using both FastAPI and Django REST Framework",
+      "Relational database management with PostgreSQL, SQLAlchemy ORM, and Alembic migrations",
+      "Authentication and authorization mechanisms including JWT, Argon2, and RBAC",
+      "Automated unit and API testing using Pytest, Vitest, and Postman/Newman",
+      "Version control using Git and GitHub across individual and collaborative team projects"
+    ],
+    "relevantExperience": [
+      "Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026",
+      "Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026",
+      "Bachelor of Science in Computer Science · Lebanese International University (LIU) · Oct 2022 – Jun 2025"
+    ],
+    "relevantProjects": [
+      {
+        "slug": "jobpilot-ai",
+        "name": "JobPilot AI",
+        "portfolioUrl": "/projects/jobpilot-ai",
+        "evidence": "Developed a full-stack web application using Next.js, React, TypeScript, Python (FastAPI), and PostgreSQL with automated testing in Pytest and Vitest."
+      },
+      {
+        "slug": "full-stack-user-management-system",
+        "name": "User Management",
+        "portfolioUrl": "/projects/full-stack-user-management-system",
+        "evidence": "Built a full-stack platform using React, TypeScript, FastAPI, PostgreSQL, and JWT authentication with Pytest and Postman automated tests."
+      },
+      {
+        "slug": "construction-project-management-accounting-system",
+        "name": "Cedar Construction",
+        "portfolioUrl": "/projects/construction-project-management-accounting-system",
+        "evidence": "Contributed to a Django and Django REST Framework full-stack platform backed by PostgreSQL and deployed with Docker and Gunicorn."
+      }
+    ],
+    "partialMatches": [
+      "Commercial experience: Mahmoud has commercial backend experience at Ishtari Group, but it was with PHP, MySQL, and MariaDB rather than Python.",
+      "Discuss the approach to implementing and testing accessible interfaces."
+    ],
+    "gaps": [
+      "The role requests AWS certification; the portfolio lists AWS re/Start training."
+    ],
+    "recruiterSummary": "Relevant work includes React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git. Relevant background: Full-Stack Developer Intern · The Digital Hub, UNRWA, Beirut, Hybrid · Jun 2026 – Sep 2026; Backend Developer · Ishtari Group, Tripoli, Onsite · Dec 2025 – Jan 2026.",
+    "candidateSummary": {
+      "text": "Full-stack software engineer building web applications. My portfolio includes work with React.js, TypeScript, Python, FastAPI, Django, PostgreSQL, Git.",
+      "source": "record-grounded",
+      "skillKeys": [
+        "react",
+        "typescript",
+        "python",
+        "fastapi",
+        "django",
+        "postgresql",
+        "git"
+      ],
+      "teamWork": true,
+      "plan": {
+        "version": 1,
+        "skillKeys": [
+          "react",
+          "typescript",
+          "python",
+          "fastapi",
+          "django",
+          "postgresql",
+          "git"
+        ],
+        "teamWork": true
+      }
+    }
+  }
+}

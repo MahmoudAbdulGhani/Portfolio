@@ -1,0 +1,116 @@
+{
+  "method": "Compiled normal build, Windows desktop Chrome viewport emulation at five widths. Before/after use the explicitly controlled copy fixture; genuine replays the archived real current report into the browser, not another hosted/provider request. Keyboard download replays the exact genuine PDF bytes through the UI. No physical-device claim.",
+  "findings": [
+    {
+      "phase": "before",
+      "width": 320,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "before",
+      "width": 390,
+      "image": "before-390.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "before",
+      "width": 430,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "before",
+      "width": 768,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "image": "before-1440.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "after",
+      "width": 320,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "after",
+      "width": 390,
+      "image": "after-390.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "after",
+      "width": 430,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "after",
+      "width": 768,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "after",
+      "width": 1440,
+      "image": "after-1440.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "genuine",
+      "width": 320,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "genuine",
+      "width": 390,
+      "image": "genuine-390.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": true
+    },
+    {
+      "phase": "genuine",
+      "width": 430,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "genuine",
+      "width": 768,
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    },
+    {
+      "phase": "genuine",
+      "width": 1440,
+      "image": "genuine-1440.jpg",
+      "horizontalOverflow": false,
+      "errors": [],
+      "keyboardDownload": false
+    }
+  ]
+}

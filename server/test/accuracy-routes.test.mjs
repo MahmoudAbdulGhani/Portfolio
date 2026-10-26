@@ -29,13 +29,13 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
     assert.match(String(url),/^https:\/\/generativelanguage\.googleapis\.com\//);
     calls.push(JSON.parse(options.body));
     if(mode==='failure')return new Response(JSON.stringify({error:{status:'UNAVAILABLE'}}),{status:503});
-    const text=mode==='invalid'?'{broken structured output':JSON.stringify({matchLevel:'Moderate Match',overallMatch:'Recorded skills overlap.',strongMatches:['React'],
+    const text=mode==='invalid'?'{broken structured output':JSON.stringify({matchLevel:'Moderate Match',overallMatch:'Recorded skills overlap.',strongMatches:['React','Certified accessibility implementation'],
       relevantExperience:[{kind:'experience',index:0,evidence:'Invented arbitrary employment claim'},'Untrusted freeform employment inference',{kind:'experience',index:0},{kind:'experience',index:999},{kind:'training',index:0}],
-      relevantProjects:[{slug:'web',evidence:'Documented team validation work.'},{slug:'web'},{slug:'invented'}],partialMatches:[],gaps:['Independent credential verification is not supplied.'],recruiterSummary:assessment});
+      relevantProjects:[{slug:'web',evidence:'Documented team validation work. Dedicated web accessibility certifications or formal audits are not listed.'},{slug:'web'},{slug:'invented'}],partialMatches:['An accessibility credential would clarify fit.'],gaps:['Independent credential verification is not supplied.','AWS certification is not listed.'],recruiterSummary:assessment});
     const result={candidates:[{content:{parts:[{text}]}}]};
     return new Response(String(url).includes('streamGenerateContent')?`data: ${JSON.stringify(result)}\n\n`:JSON.stringify(result));
   };
-  const description='Junior React and TypeScript developer working with validated APIs and team projects. Preserve recorded employment types and month-only dates.';
+  const description='Junior Full-Stack Developer. Build accessible React and TypeScript interfaces and Python REST APIs using FastAPI or Django. Work with PostgreSQL, authentication, automated tests and Git. Explain your individual contribution to team projects. Commercial production experience and an independently verified AWS certification are preferred, not mandatory.';
   let token;
   try{
     await t.test('JSON results ground experience references and sign only CV facts',async()=>{
@@ -49,6 +49,10 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
       // Context sorts newest first; index zero must name that record, never a
       // model-supplied duration, contract label or per-reference evidence string.
       assert.equal(body.result.relevantProjects.length,1);
+      assert.equal(body.result.relevantProjects[0].evidence,'Documented team validation work.');
+      assert.deepEqual(body.result.strongMatches,['React']);
+      assert.deepEqual(body.result.partialMatches,['Discuss the approach to implementing and testing accessible interfaces.']);
+      assert.deepEqual(body.result.gaps,['The role requests AWS certification; the portfolio lists AWS re/Start training.']);
       const payload=jwt.verify(token,key,{issuer:'portfolio-job-match',algorithms:['HS256']});
       assert.equal(payload.result,undefined);assert.equal(JSON.stringify(payload).includes(assessment),false);
       assert.equal(payload.cv.summaryPlan.version,1);
@@ -56,6 +60,9 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
       const backend=prompt.profile.experience.find(row=>row.company==='Ishtari');
       assert.equal(backend.employmentEvidence.dateRange,'Dec 2025 – Jan 2026');
       assert.equal(backend.employmentEvidence.exactDuration,null);assert.equal(backend.employmentEvidence.employmentType,null);
+      const formal=JSON.parse(calls[0].contents[0].parts[0].text.split('EXPLICIT FORMAL JOB REQUIREMENTS\n')[1].split('\n')[0]);
+      assert.deepEqual(formal,[{kind:'credential',subject:'aws'}]);
+      assert.match(calls[0].systemInstruction.parts[0].text,/Practical implementation skills, earned credentials, formal audits and compliance standards are distinct/);
     });
     await t.test('signed download and legacy tokens return real PDFs, invalid signatures still fail',async()=>{
       const response=await api.postBinary('/api/job-match/tailored-cv',{token});assert.equal(response.status,200);assert.equal(response.body.subarray(0,5).toString(),'%PDF-');
@@ -68,6 +75,11 @@ test('real HTTP matcher/export contracts separate assessment, source facts and c
       const response=await api.post('/api/job-match',{jobDescription:description+' Streaming variant.',stream:true});
       assert.equal(response.status,200);assert.match(response.body,/event: result/);assert.match(response.body,/event: done/);
       assert.match(response.body,/candidateSummary/);assert.doesNotMatch(response.body,/event: error/);
+      const result=JSON.parse(response.body.split('event: result\ndata: ')[1].split('\n')[0]).result;
+      assert.deepEqual(result.strongMatches,['React']);
+      assert.deepEqual(result.partialMatches,['Discuss the approach to implementing and testing accessible interfaces.']);
+      assert.deepEqual(result.gaps,['The role requests AWS certification; the portfolio lists AWS re/Start training.']);
+      assert.equal(result.relevantProjects[0].evidence,'Documented team validation work.');
     });
     await t.test('upstream failure is one diagnosed attempt with a request reference, not an automatic retry',async()=>{
       mode='failure';const count=calls.length;

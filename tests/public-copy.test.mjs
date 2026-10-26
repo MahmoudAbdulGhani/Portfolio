@@ -6,6 +6,7 @@ import { caseStudyProjects } from './fixtures/case-study-projects.ts';
 import { PUBLIC_COPY_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../server/src/lib/evidence-instructions.js';
 import { candidateCvForJob } from '../server/src/lib/candidate-cv.js';
 import { publicMatchCopy, qualificationAnswer, designCreditAnswer } from '../server/src/lib/public-professional-copy.js';
+import { formalJobRequirements, scopeMatchStatements, REQUIREMENT_SCOPE_INSTRUCTION } from '../server/src/lib/job-requirements.js';
 
 const internalCopy = /owner-confirmed|undocumented|unverified|not independently verified|available records|source inspected|source reviewed|inspected (?:source|implementation|posting)|supporting team evidence|production.*audit/i;
 test('all eight public case studies project professional copy while retaining internal review constraints', () => {
@@ -113,4 +114,54 @@ test('AWS comparison does not invent a requirement from a waived or different ve
     assert.deepEqual(publicMatchCopy(context, job, candidate, result).gaps, ['Kubernetes'], job);
   }
   assert.equal(publicMatchCopy(context, 'An independently verified AWS certification is preferred, not mandatory.', candidate, result).gaps.length, 2);
+});
+
+test('practical accessibility and security do not authorize extra credentials, audits or standards', () => {
+  const job = 'Build accessible React interfaces, authentication and secure Python APIs. Explain security testing experience.';
+  assert.deepEqual(formalJobRequirements(job), []);
+  assert.deepEqual(formalJobRequirements('Qualifications: React, accessible interfaces and AWS deployment skills.'), []);
+  assert.equal(formalJobRequirements('Computer Science degree and AWS experience.').some(row => row.kind === 'credential'), false);
+  const statements = ['Dedicated web accessibility certifications or formal audits are not listed.',
+    'An IAAP accessibility credential would establish fit.', 'Independent security audits and security certification are absent.',
+    'WCAG 2.2 AA compliance is not established.', 'React and Express.js work.', 'Discuss API authorization.'];
+  assert.deepEqual(scopeMatchStatements(job, statements), ['React and Express.js work.', 'Discuss API authorization.']);
+  assert.deepEqual(scopeMatchStatements(job, statements, { discussPractical: true }), [
+    'Discuss the approach to implementing and testing accessible interfaces.', 'Discuss the approach to application security and testing.',
+    'React and Express.js work.', 'Discuss API authorization.',
+  ]);
+  assert.deepEqual(scopeMatchStatements('Implement audit logging for authentication.', ['Audit logs record authentication changes.']), ['Audit logs record authentication changes.']);
+  assert.match(REQUIREMENT_SCOPE_INSTRUCTION, /Practical implementation skills, earned credentials, formal audits and compliance standards are distinct/);
+});
+
+test('explicit accessibility qualifications, audits and standards retain their separate scopes', () => {
+  const credential = 'An accessibility certification is required.';
+  assert.deepEqual(formalJobRequirements(credential), [{ kind: 'credential', subject: 'accessibility' }]);
+  assert.deepEqual(scopeMatchStatements(credential, ['Discuss the requested accessibility certification.']), ['Discuss the requested accessibility certification.']);
+  assert.deepEqual(scopeMatchStatements(credential, ['Accessibility certification or formal audits are not listed.'], { discussPractical: true }), ['Discuss the accessibility qualification requested by the role.']);
+  const audit = 'Conduct a formal accessibility audit against WCAG 2.2 AA.';
+  const note = 'Discuss the accessibility audit approach and WCAG 2.2 AA testing.';
+  assert.deepEqual(formalJobRequirements(audit), [{ kind: 'audit', subject: 'accessibility' }, { kind: 'standard', subject: 'accessibility', standard: 'wcag2.2aa' }]);
+  assert.deepEqual(scopeMatchStatements(audit, [note]), [note]);
+  assert.deepEqual(scopeMatchStatements(audit, ['Accessibility certification is not listed.']), []);
+  assert.deepEqual(scopeMatchStatements('Implement WCAG 2.1 AA.', ['WCAG 2.2 AA experience is needed.']), []);
+  assert.deepEqual(scopeMatchStatements('Implement WCAG 2.2 Level AA and Section 508.', ['Discuss WCAG 2.2 AA and Section 508 implementation.']), ['Discuss WCAG 2.2 AA and Section 508 implementation.']);
+});
+
+test('production reproduction keeps the AWS preference and practical React discussion without invented qualifications', () => {
+  const job = 'Junior Full-Stack Developer. Build accessible React and TypeScript interfaces and Python REST APIs using FastAPI or Django. Work with PostgreSQL, authentication, automated tests and Git. Explain your individual contribution to team projects. Commercial production experience and an independently verified AWS certification are preferred, not mandatory.';
+  const context = { certifications: [{ title: 'AWS re/Start Bootcamp' }] }, candidate = { skillKeys: ['react'], text: 'Full-stack software engineer building web applications. My portfolio includes work with React.' };
+  const result = { relevantExperience: [], partialMatches: ['React project work.', 'Dedicated web accessibility certifications or formal audits are not listed.'], gaps: ['Commercial production experience should be discussed.', 'AWS certification is not listed.'] };
+  const before = structuredClone(result), copy = publicMatchCopy(context, job, candidate, result);
+  assert.deepEqual(formalJobRequirements(job), [{ kind: 'credential', subject: 'aws' }]);
+  assert.deepEqual(copy.partialMatches, ['React project work.', 'Discuss the approach to implementing and testing accessible interfaces.']);
+  assert.deepEqual(copy.gaps, ['Commercial production experience should be discussed.', 'The role requests AWS certification; the portfolio lists AWS re/Start training.']);
+  assert.doesNotMatch(copy.overallMatch + copy.recruiterSummary, /certification|audited|accessible|employment contract|months/);
+  assert.deepEqual(result, before);
+  const waived = publicMatchCopy(context, 'React developer. AWS certification is explicitly not required.', candidate,
+    { relevantExperience: [], partialMatches: ['AWS certification is not listed.'], gaps: ['AWS credential is not listed.'] });
+  assert.deepEqual(waived.partialMatches, []);
+  assert.deepEqual(waived.gaps, []);
+  const mixed = publicMatchCopy(context, job, candidate, { relevantExperience: [], partialMatches: ['AWS certification and accessibility audits are not listed.'], gaps: [] });
+  assert.deepEqual(mixed.partialMatches, ['Discuss the approach to implementing and testing accessible interfaces.']);
+  assert.equal(mixed.gaps.length, 1);
 });

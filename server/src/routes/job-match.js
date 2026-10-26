@@ -11,6 +11,7 @@ import { getClientIp } from "../lib/client-ip.js";
 import { PUBLIC_COPY_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION } from '../lib/evidence-instructions.js';
 import { publicMatchCopy } from '../lib/public-professional-copy.js';
 import { candidateCvForJob } from '../lib/candidate-cv.js';
+import { formalJobRequirements, REQUIREMENT_SCOPE_INSTRUCTION, scopeMatchStatements } from '../lib/job-requirements.js';
 
 const router = Router();
 export const MAX_JOB_DESCRIPTION_LENGTH = 8_000;
@@ -89,7 +90,8 @@ function parseResult(text, context, jobDescription) {
     const project = item && projectsBySlug.get(item.slug);
     if (!project || seenProjects.has(project.slug)) return [];
     seenProjects.add(project.slug);
-    return [{ slug: project.slug, name: project.name, portfolioUrl: project.portfolioUrl, evidence: typeof item.evidence === "string" ? item.evidence : "Relevant portfolio project." }];
+    const evidence = typeof item.evidence === 'string' ? scopeMatchStatements(jobDescription, [item.evidence]).join(' ') : '';
+    return [{ slug: project.slug, name: project.name, portfolioUrl: project.portfolioUrl, evidence: evidence || "Relevant portfolio project." }];
   }).slice(0, 6) : [];
   const collections = { experience: context.profile.experience, education: context.education, training: context.certifications };
   const seenExperience = new Set();
@@ -107,7 +109,7 @@ function parseResult(text, context, jobDescription) {
   return {
     matchLevel: value.matchLevel,
     overallMatch: publicCopy.overallMatch,
-    strongMatches: strings(value.strongMatches),
+    strongMatches: scopeMatchStatements(jobDescription, strings(value.strongMatches)),
     relevantExperience,
     relevantProjects,
     partialMatches: publicCopy.partialMatches,
@@ -161,8 +163,8 @@ router.post("/", async (req, res) => {
     phase = 'portfolio';
     const context = await getPortfolioContextWithRetry();
     if (controller.signal.aborted) return;
-    const userPrompt = 'PUBLIC PORTFOLIO SNAPSHOT\n' + JSON.stringify(context) + '\n\nJOB DESCRIPTION\n' + jobDescription;
-    const systemInstruction = [MATCHER_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION, PUBLIC_COPY_INSTRUCTION].join(' ');
+    const userPrompt = 'PUBLIC PORTFOLIO SNAPSHOT\n' + JSON.stringify(context) + '\n\nEXPLICIT FORMAL JOB REQUIREMENTS\n' + JSON.stringify(formalJobRequirements(jobDescription)) + '\n\nJOB DESCRIPTION\n' + jobDescription;
+    const systemInstruction = [MATCHER_INSTRUCTION, LEARNING_EVIDENCE_INSTRUCTION, PROJECT_EVIDENCE_INSTRUCTION, EMPLOYMENT_EVIDENCE_INSTRUCTION, PUBLIC_COPY_INSTRUCTION, REQUIREMENT_SCOPE_INSTRUCTION].join(' ');
     streaming = parsed.data.stream === true && Boolean(req.accepts('text/event-stream'));
     if (streaming) {
       res.status(200);
