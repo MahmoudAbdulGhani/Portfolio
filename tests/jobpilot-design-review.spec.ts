@@ -139,6 +139,10 @@ test('a return to an engineering hash restores the source scroll instead of repl
   await page.setViewportSize({width:390,height:844});await fixtures(page);await selected(page);
   await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();
   await expect(page.locator('#jobpilot-engineering')).toBeFocused();
+  // Focus can settle before the route owner's next animation-frame scroll.
+  // Observe the completed hash jump before capturing its return position.
+  await expect(page.locator('#jobpilot-engineering')).toBeInViewport({ratio:1});
+  await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(0);
   const position=await page.evaluate(()=>scrollY);expect(position).toBeGreaterThan(0);
   // Activate without scrolling the source; this isolates the restoration
   // contract from the browser's ordinary pointer-target auto-scroll.
