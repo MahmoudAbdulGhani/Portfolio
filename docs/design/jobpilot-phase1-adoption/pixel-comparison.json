@@ -1,0 +1,155 @@
+{
+  "method": "Matched actual-source Chrome captures of immutable approved PR #52 review candidate and adopted normal compiled routes. Raw decoded RGB differences; independent browser raster differences are reported, not hidden.",
+  "comparisons": [
+    {
+      "name": "normal/320-844-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/320-844-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/320-844-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/390-844-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/390-844-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/390-844-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/430-844-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/430-844-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/430-844-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/768-1024-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/768-1024-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/768-1024-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/1280-720-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/1280-720-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/1280-720-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "normal/1440-900-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.02025514403292181
+    },
+    {
+      "name": "normal/1440-900-demo-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.014842078189300412
+    },
+    {
+      "name": "normal/1440-900-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "reduced/390-844-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.03193178596022198
+    },
+    {
+      "name": "reduced/390-844-demo-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.008314092437315186
+    },
+    {
+      "name": "reduced/390-844-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "reduced/1440-900-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.02025514403292181
+    },
+    {
+      "name": "reduced/1440-900-demo-preview.jpg",
+      "identical": false,
+      "meanAbsolutePixelError": 0.014842078189300412
+    },
+    {
+      "name": "reduced/1440-900-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/390-844-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/390-844-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/390-844-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/1440-900-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/1440-900-demo-preview.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    },
+    {
+      "name": "fallback/1440-900-demo-reader.jpg",
+      "identical": true,
+      "meanAbsolutePixelError": 0
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-/* PR #51 stays available as /before. These rules affect only the refined
-   review candidate, never ordinary portfolio routes or the PR #50 baseline. */
+/* Approved PR #52 refinement, shared by normal JobPilot and its review entry.
+   PR #51 /before and the PR #50 baseline retain their original presentation. */
 .landscape.jobpilot-design-refined .stage.has-profile-boundary .selection-frame { row-gap: 28px; }
 .landscape.jobpilot-design-refined .selection-detail { grid-row: 1; }
 .landscape.jobpilot-design-refined .jobpilot-selected-product { grid-row: 1 / 3; }

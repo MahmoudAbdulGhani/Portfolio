@@ -20,7 +20,10 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
     await page.setViewportSize({ width, height: width === 1363 ? 936 : width === 1024 ? 1366 : 844 });
     await page.goto(`/projects/${project.slug}`);
     await expect(page.getByRole('heading', { name: projectDisplayName(project), exact: true })).toBeVisible();
-    await expect(page.locator('.case-purpose')).toHaveText(study.summary);
+    if(project.slug==='jobpilot-ai'){
+      await expect(page.locator('.case-purpose')).toHaveText(study.summary.split(', using candidate information')[0]+'.');
+      await expect(page.locator('.jobpilot-context')).toContainText(study.summary);
+    }else await expect(page.locator('.case-purpose')).toHaveText(study.summary);
     await expect(page.locator('#overview')).toContainText(study.problemHeading);
     await expect(page.locator('#workflow')).toContainText(study.workflowHeading);
     await expect(page.locator('#scope')).toContainText(study.limits[0]);

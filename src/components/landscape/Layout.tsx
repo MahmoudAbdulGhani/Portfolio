@@ -13,7 +13,7 @@ import "../../landscape-integration.css";
 import './composition.css';
 import './motion-language.css';
 import './mobile-reading.css';
-import { useJobPilotDesign } from './jobpilot-design-context';
+import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({
@@ -43,8 +43,11 @@ export function LandscapeLayout() {
   const selected =
     atCollection &&
     new URLSearchParams(location.search).has("project");
+  const { candidate, refined } = jobPilotPresentation(design,
+    reviewReader || location.pathname.replace(/\/$/,'') === '/projects/jobpilot-ai' ||
+    (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai'));
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${design?.candidate && (reviewReader || (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai')) ? ` jobpilot-design-candidate${design.refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
+    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${candidate ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
       <div
         className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >

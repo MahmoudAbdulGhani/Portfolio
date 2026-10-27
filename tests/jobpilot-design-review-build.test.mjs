@@ -9,5 +9,6 @@ test('JobPilot design review requires explicit build opt-in and fails closed in 
   assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:jobPilotRefinementBranch}),true);
   assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'production',VERCEL_GIT_COMMIT_REF:jobPilotRefinementBranch}),false);
   assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'fix/job-match-requirement-scope'}),false);
+  assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'adopt/jobpilot-phase1'}),false);
   assert.equal(isJobPilotDesignReviewBuild('jobpilot-design-review',{VERCEL_ENV:'production',VERCEL_GIT_COMMIT_REF:jobPilotDesignBranch}),false);
 });

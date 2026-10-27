@@ -122,7 +122,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       try {
         renderer.render(scene, camera);
         if(framed){
-          // Review-only, conservative projected mesh bounds. Exclude the
+          // Conservative projected mesh bounds for framing checks. Exclude the
           // ground/shadow; recordings remain the visual motion evidence.
           subjectBounds.setFromObject(group);
           let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;

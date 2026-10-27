@@ -1,0 +1,149 @@
+{
+  "method": "Immutable PR52 normal build versus adopted normal build, same public GET snapshot, Chrome reduced-motion viewport emulation. Ordinary unselected Collection, Projects, Cedar, Lobby, Profile, Contact and Job Match are compared directly without form submissions. Geometry checks headings, image/navigation frames, header and footer. Pixel differences are reported rather than silently tolerated.",
+  "results": [
+    {
+      "width": 390,
+      "before": "/",
+      "after": "/",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/projects",
+      "after": "/projects",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/?project=lobby",
+      "after": "/?project=lobby",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/projects/lobby",
+      "after": "/projects/lobby",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/?project=construction-project-management-accounting-system",
+      "after": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/projects/construction-project-management-accounting-system",
+      "after": "/projects/construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/profile",
+      "after": "/profile",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/contact",
+      "after": "/contact",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/job-match",
+      "after": "/job-match",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/",
+      "after": "/",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/projects",
+      "after": "/projects",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/?project=lobby",
+      "after": "/?project=lobby",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/projects/lobby",
+      "after": "/projects/lobby",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/?project=construction-project-management-accounting-system",
+      "after": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/projects/construction-project-management-accounting-system",
+      "after": "/projects/construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/profile",
+      "after": "/profile",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/contact",
+      "after": "/contact",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/job-match",
+      "after": "/job-match",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    }
+  ]
+}

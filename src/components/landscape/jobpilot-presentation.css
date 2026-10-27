@@ -1,5 +1,5 @@
-/* Deliberately loaded only by the compiled review entry. Every visual rule is
-   scoped to the candidate; baseline and normal routes retain their styles. */
+/* Shared approved JobPilot presentation. Explicit historical review variants
+   select these same rules; all other projects and unselected Collection opt out. */
 .landscape.jobpilot-design-candidate { --journey-gutter: clamp(20px, 5.5vw, 80px); --reading-measure: 62ch; }
 .landscape.jobpilot-design-candidate h1,
 .landscape.jobpilot-design-candidate .case-narrative h2,

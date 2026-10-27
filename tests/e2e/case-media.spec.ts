@@ -130,6 +130,9 @@ test('primary loading space stays reserved and portrait captures keep their prop
 for (const slug of ['jobpilot-ai', 'gamezone-arena']) test(`${slug} waits offscreen beyond the deadline before loading workflow media`, async ({ page }) => {
   await page.clock.install();
   await page.goto(`/projects/${slug}`);
+  // Open JobPilot's approved secondary workflow without scrolling it into
+  // eligibility; this test still measures genuine offscreen loading behavior.
+  if(slug==='jobpilot-ai')await page.locator('.jobpilot-secondary-workflow summary').evaluate(el=>(el as HTMLElement).click());
   const frame = page.locator('.workflow-frames .screenshot-frame').last();
   await expect(frame).toBeAttached();
   expect((await frame.boundingBox())!.y).toBeGreaterThan((page.viewportSize()!.height) + 600);

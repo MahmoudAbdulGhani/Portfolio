@@ -32,7 +32,11 @@ async function bounds(page: Page) {
       const box = image.getBoundingClientRect();
       return {width:box.width,height:box.height,bottom:box.bottom,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight};
     });
-    return {imageFrameBottom:imageFrame.bottom,captionTop:caption.top,controlsTop:controls.top,images,
+    const adopted=frame.closest('.landscape')!.classList.contains('jobpilot-design-refined');
+    return {adopted,narrow:innerWidth<960,imageFrameBottom:imageFrame.bottom,captionTop:caption.top,controlsTop:controls.top,images,
+      identityBefore:caption.bottom<imageFrame.top,identityBeside:caption.right+24<=imageFrame.left,
+      actionsAfterChoices:controls.top>=selectors.getBoundingClientRect().bottom,actionsBeside:controls.right+24<=imageFrame.left,
+      selectorsBelow:selectors.getBoundingClientRect().top>=imageFrame.bottom,
       selectorOverflow:selectors.scrollWidth > selectors.clientWidth,
       pageOverflow:document.documentElement.scrollWidth > innerWidth,
       inert:(frame.querySelector('.selection-detail') as HTMLElement).inert};
@@ -40,13 +44,20 @@ async function bounds(page: Page) {
 }
 async function completeLayout(page: Page) {
   const layout = await bounds(page);
-  expect(layout.imageFrameBottom).toBeLessThanOrEqual(layout.captionTop - 23);
+  if(layout.adopted){
+    expect(layout.narrow?layout.identityBefore:layout.identityBeside).toBe(true);
+    expect(layout.narrow?layout.actionsAfterChoices:layout.actionsBeside).toBe(true);
+    expect(layout.selectorsBelow).toBe(true);
+  }else expect(layout.imageFrameBottom).toBeLessThanOrEqual(layout.captionTop - 23);
   expect(layout.inert).toBe(false);
   expect(layout.selectorOverflow).toBe(false);
   expect(layout.pageOverflow).toBe(false);
   for (const image of layout.images) {
-    expect(image.bottom).toBeLessThanOrEqual(layout.captionTop);
-    expect(image.bottom).toBeLessThanOrEqual(layout.controlsTop);
+    if(layout.adopted)expect(image.bottom).toBeLessThanOrEqual(layout.imageFrameBottom);
+    else{
+      expect(image.bottom).toBeLessThanOrEqual(layout.captionTop);
+      expect(image.bottom).toBeLessThanOrEqual(layout.controlsTop);
+    }
     if (image.naturalWidth) expect(Math.abs(image.height-image.width*image.naturalHeight/image.naturalWidth)).toBeLessThan(1);
   }
 }
@@ -72,7 +83,8 @@ for (const mode of modes) {
           await expect(choices.nth(i)).toHaveAttribute('aria-pressed','true');
           await ready(page); await completeLayout(page);
           const actionWidth=(await page.getByRole('link',{name:'Open case study',exact:true}).boundingBox())!.width;
-          if (width >= 720) expect(actionWidth).toBeLessThan(260);
+          if(slug==='jobpilot-ai'&&width>=960)expect(actionWidth).toBeCloseTo((await page.locator('.jobpilot-refined-actions').boundingBox())!.width,0);
+          else if (width >= 720) expect(actionWidth).toBeLessThan(260);
           await expect(choices.nth(i)).toBeFocused();
           expect(await choices.nth(i).evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         }
