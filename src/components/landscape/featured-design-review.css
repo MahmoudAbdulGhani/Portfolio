@@ -23,10 +23,38 @@
   .landscape.featured-design-candidate :is(.cedar-body,.lobby-body) { grid-template-columns: minmax(0,1fr); gap: 20px; }
   .landscape.featured-design-candidate :is(.cedar-content,.lobby-content) { grid-column: 1; grid-row: 1; }
   .landscape.featured-design-candidate :is(.cedar-art,.lobby-art) { grid-column: 1; grid-row: 2; width: min(180px,100%); }
-  .landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) { flex-wrap: wrap; gap: 6px; }
-  .landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) li { gap: 4px; }
-  .landscape.featured-design-candidate :is(.cedar-title,.lobby-title) { font-size: 27px; }
+  .landscape.featured-design-candidate :is(.cedar-boundary .cedar-title,.lobby-boundary .lobby-title) { font-size: clamp(26px,6.8vw,28px); line-height: 1.2; text-wrap: balance; }
 }
 @media(min-width:960px) and (max-height:760px) {
   .landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .selection-detail h1 { font-size: 48px; }
+}
+
+/* Concise review introductions only. Query actual available inline space and
+   inherited text size: the whole sequence switches, never two plus one. */
+.landscape.featured-design-candidate :is(.cedar-boundary,.lobby-boundary) { overflow-wrap: anywhere; }
+.landscape.featured-design-candidate :is(.cedar-heading,.lobby-heading) {
+  container: demo-introduction / inline-size; font-size: 1rem; gap: 8px;
+}
+.landscape.featured-design-candidate :is(.cedar-boundary .cedar-label,.lobby-boundary .lobby-label) {
+  margin: 0; font-size: 12.5px; line-height: 1.55; color: #34483d;
+}
+.landscape.featured-design-candidate :is(.cedar-boundary .cedar-title,.lobby-boundary .lobby-title) { margin: 0; overflow-wrap: anywhere; }
+.landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) {
+  display: grid; grid-template-columns: minmax(0,1fr); gap: 6px;
+  width: 100%; max-width: 28em; font-size: 13px; line-height: 1.5;
+}
+.landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) li {
+  min-width: 0; gap: 4px; white-space: normal; font-size: 13px; line-height: 1.5;
+}
+.landscape.featured-design-candidate :is(.cedar-step-number,.lobby-step-number) {
+  flex: 0 0 auto; width: 1.85em; height: 1.85em; min-width: 22px; min-height: 22px;
+}
+.landscape.featured-design-candidate :is(.cedar-step-arrow,.lobby-step-arrow) { display: none; }
+@container demo-introduction (min-width:19.5em) {
+  .landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .landscape.featured-design-candidate :is(.cedar-step-arrow,.lobby-step-arrow) { display: inline; margin-inline-start: auto; }
+}
+@media(max-width:719px) {
+  .landscape.featured-design-candidate :is(.cedar-boundary,.lobby-boundary) { padding-top: 20px; }
+  .landscape.featured-design-candidate :is(.cedar-body,.lobby-body) { padding-top: 14px; }
 }

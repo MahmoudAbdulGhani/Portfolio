@@ -6,5 +6,6 @@ const source = (await Promise.all(files.filter(f=>f.endsWith('.js')).map(f=>read
 assert(!source.includes('/review/featured/'),'Production excludes Phase 2 route addresses');
 assert(!files.some(f=>f.startsWith('FeaturedDesignReview-')),'Production excludes Phase 2 entry and stylesheet chunk');
 await assert.rejects(access(path.join(root,'review/featured-comparison')));
+await assert.rejects(access(path.join(root,'review/featured-demo-introductions')));
 assert(source.includes('jobpilot-design-refined'),'Approved JobPilot remains in the normal build');
 console.log('Normal build keeps approved JobPilot and excludes Phase 2 review routes, entry and comparison assets.');

@@ -90,8 +90,11 @@ for(const entry of entries) {
   });
   test(`${entry.kind} baseline and ordinary route keep original presentation`,async({page})=>{
     await fixtures(page);await selected(page,entry,'baseline');await expect(page.locator('.featured-design-candidate')).toHaveCount(0);await expect(page.locator('.jobpilot-selected-product')).toHaveCount(0);
+    const originalHeading=entry.kind==='cedar'?'Calculated facts support the interpretation.':'A connection becomes access only when the rules allow it.';
+    await expect(page.locator(`.${entry.kind}-title`)).toHaveText(originalHeading);
     await open(page).click();await expect(page.locator('.case-heading h1')).toHaveText(entry.name);await page.locator('.case-back').click();await expect(page).toHaveURL(new RegExp(`/review/featured/${entry.kind}/baseline\\?project=`));
     await page.goto(`/?project=${entry.slug}`);await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');await expect(page.locator('.featured-design-candidate')).toHaveCount(0);await expect(page.locator('.jobpilot-selected-product')).toHaveCount(0);
+    await expect(page.locator(`.${entry.kind}-title`)).toHaveText(originalHeading);
     await open(page).click();await expect(page.locator('.case-heading h1')).toHaveText(entry.name);await expect(page.locator('.featured-design-candidate')).toHaveCount(0);
   });
   test(`${entry.kind} opening remains inside the product through its own articulation`,async({page})=>{
@@ -133,6 +136,37 @@ for(const entry of entries) {
 }
 test('review comparison is compiled and normal JobPilot remains approved',async({page,request})=>{
   const response=await request.get('/review/featured-comparison/index.html');expect(response.status()).toBe(200);expect(await response.text()).toContain('Cedar and Lobby');
+  const demos=await request.get('/review/featured-demo-introductions/index.html');expect(demos.status()).toBe(200);expect(await demos.text()).toContain('Demonstration introductions');
   await fixtures(page);await page.goto('/?project=jobpilot-ai');await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);await expect(page.locator('.featured-design-candidate')).toHaveCount(0);
   await expect(page.locator('.selection-caption')).toContainText('Review before saving');
+});
+
+for(const entry of entries)for(const place of ['preview','reader'])for(const [width,height]of [[320,844],[390,844],[430,844],[768,1024],[1280,720],[1440,900]])test(`${entry.kind} ${place} compact introduction reflows at ${width}x${height}`,async({page})=>{
+  await page.setViewportSize({width,height});await fixtures(page);
+  await page.goto(`/review/featured/${entry.kind}/candidate${place==='reader'?'/reader':`?project=${entry.slug}`}`);
+  const boundary=page.locator(`.${entry.kind}-boundary`),heading=boundary.locator(`.${entry.kind}-title`);
+  await expect(heading).toHaveText(entry.kind==='cedar'?'Calculation and interpretation':'Invitation to call access');
+  await expect(boundary.locator(`.${entry.kind}-label`)).toHaveText(entry.kind==='cedar'?'Sample USD figures · local demo':'Sample participants · local demo');
+  const inspect=async()=>boundary.evaluate((el,kind)=>{
+    const progress=el.querySelector(`.${kind}-progress`)!;
+    const items=[...progress.children].map(node=>{const b=node.getBoundingClientRect();return{top:b.top,bottom:b.bottom,width:b.width,clipped:node.scrollWidth>node.clientWidth+1};});
+    const label=getComputedStyle(el.querySelector(`.${kind}-label`)!);
+    return{items,current:progress.querySelectorAll('[aria-current="step"]').length,overflow:document.documentElement.scrollWidth>innerWidth||el.scrollWidth>el.clientWidth+1,heading:parseFloat(getComputedStyle(el.querySelector(`.${kind}-title`)!).fontSize),label:parseFloat(label.fontSize),line:parseFloat(label.lineHeight),body:parseFloat(getComputedStyle(el.querySelector(kind==='cedar'?'.cedar-cost-basis':'.lobby-explanation')!).fontSize),control:parseFloat(getComputedStyle(el.querySelector('select')!).fontSize)};
+  },entry.kind);
+  const check=async()=>{
+    const m=await inspect(),[a,b,c]=m.items;
+    const row=Math.abs(a.top-b.top)<1&&Math.abs(b.top-c.top)<1;
+    const column=a.bottom<=b.top&&b.bottom<=c.top;
+    expect(row||column).toBe(true);expect(m.items.some(i=>i.clipped)).toBe(false);expect(m.overflow).toBe(false);expect(m.current).toBe(1);
+    if(row)expect(Math.max(...m.items.map(i=>i.width))-Math.min(...m.items.map(i=>i.width))).toBeLessThan(1);
+    return m;
+  };
+  const standard=await check();expect(standard.label).toBeGreaterThanOrEqual(12);expect(standard.label).toBeLessThanOrEqual(13);expect(standard.line).toBeGreaterThanOrEqual(standard.label*1.5);expect(standard.body).toBeGreaterThanOrEqual(14);expect(standard.control).toBeGreaterThanOrEqual(14);
+  if(width<720){expect(standard.heading).toBeGreaterThanOrEqual(26);expect(standard.heading).toBeLessThanOrEqual(28);}
+  if([320,390,430,768].includes(width)){
+    await boundary.evaluate(el=>{const nodes=[el,...el.querySelectorAll<HTMLElement>('*')];const sizes=nodes.map(node=>({node,size:parseFloat(getComputedStyle(node).fontSize)*2,line:parseFloat(getComputedStyle(node).lineHeight)*2}));for(const{node,size,line}of sizes){node.style.fontSize=`${size}px`;if(Number.isFinite(line))node.style.lineHeight=`${line}px`;}});
+    await check();await boundary.locator('select').focus();
+    const clearance=await boundary.locator('select').evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,header:document.querySelector('.site-header')!.getBoundingClientRect().bottom,footer:document.querySelector('.stage-footer')!.getBoundingClientRect().top}));
+    expect(clearance.top).toBeGreaterThanOrEqual(clearance.header);expect(clearance.bottom).toBeLessThanOrEqual(clearance.footer);
+  }
 });
