@@ -1,4 +1,6 @@
 import { createContext, type MouseEvent } from 'react';
+import type { CedarState } from './cedar-boundary-state';
+import type { LobbyState } from './lobby-boundary-state';
 import type { BoundaryState } from './profile-boundary-state';
 
 export type JourneyBox = { left: number; top: number; width: number; height: number };
@@ -9,6 +11,8 @@ export type JobPilotJourney = {
   historyIndex: number;
   screen: string;
   boundary?: BoundaryState;
+  cedar?: CedarState;
+  lobby?: LobbyState;
   disclosure: boolean;
   position: { x: number; y: number };
   frame?: JourneyBox;

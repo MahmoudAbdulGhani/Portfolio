@@ -15,7 +15,8 @@ import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { JobPilotJourneyContext, ordinaryActivation } from './jobpilot-journey';
 import { useJobPilotHandoff } from './use-jobpilot-handoff';
-import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
+import { featuredPresentation, featuredProject } from './featured-presentation';
+import { useJobPilotDesign } from './jobpilot-design-context';
 import { JobPilotObjectDetail } from './JobPilotPreviewComposition';
 import type { BoundaryState } from './profile-boundary-state';
 import './jobpilot-handoff.css';
@@ -23,16 +24,18 @@ import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenC
 
 export function ProjectReader() {
   const design = useJobPilotDesign();
-  const { slug = design ? 'jobpilot-ai' : '' } = useParams();
-  const { candidate, refined } = jobPilotPresentation(design, slug === 'jobpilot-ai');
+  const { slug = design ? design.projectSlug ?? 'jobpilot-ai' : '' } = useParams();
+  const { candidate, refined } = featuredPresentation(design, slug);
+  const sharedJourney = slug === 'jobpilot-ai' || candidate;
+  const featured = featuredProject(slug);
   const location = useLocation();
   const navigate = useNavigate(), navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
   const from = location.state as { collection?: string; jobpilotJourney?: { key: string; screen: string } } | null;
   const collectionPath = design?.collectionPath ?? '/';
   const collectionUrl = from?.collection?.startsWith(`${collectionPath}?`) && new URL(from.collection,window.location.origin).searchParams.get('project') === slug
-    ? from.collection : slug === 'jobpilot-ai' && (from?.jobpilotJourney || design) ? `${collectionPath}?project=jobpilot-ai` : undefined;
-  const journey = slug === 'jobpilot-ai' ? journeys.get(from?.jobpilotJourney?.key ?? '') : undefined;
+    ? from.collection : (sharedJourney && from?.jobpilotJourney) || design ? `${collectionPath}?project=${slug}` : undefined;
+  const journey = sharedJourney ? journeys.get(from?.jobpilotJourney?.key ?? '') : undefined;
   const rememberBoundary = useCallback((state: BoundaryState) => {
     const key=from?.jobpilotJourney?.key, saved=key&&journeys.get(key);
     if(candidate&&key&&saved)journeys.set(key,{...saved,boundary:state});
@@ -40,7 +43,7 @@ export function ProjectReader() {
   const root = useRef<HTMLElement>(null);
   const record = useProject(slug),
     projects = useProjects();
-  const [chapterRecord, setChapterRecord] = useState<{slug: string; index: number; source?: string}>({ slug, index: 0, source: slug === 'jobpilot-ai' ? from?.jobpilotJourney?.screen : undefined }),
+  const [chapterRecord, setChapterRecord] = useState<{slug: string; index: number; source?: string}>({ slug, index: 0, source: sharedJourney ? from?.jobpilotJourney?.screen : undefined }),
     [zoomRecord, setZoomRecord] = useState<{ slug: string; index: number } | null>(null);
   const chapter = chapterRecord.slug === slug ? chapterRecord.index : 0;
   const [readyRecord, setReadyRecord] = useState<{ slug: string; src: string } | null>(null);
@@ -86,7 +89,8 @@ export function ProjectReader() {
   // The complete approved introduction remains in Project context. The compact
   // opening uses its first clause so the product image arrives sooner on phones.
   const openingPurpose = candidate && purpose?.includes(', using candidate information')
-    ? purpose.split(', using candidate information')[0]+'.' : purpose;
+    ? purpose.split(', using candidate information')[0]+'.'
+    : candidate && design?.projectSlug ? purpose?.split(/(?<=\.)\s/)[0] : purpose;
   const overview = project.overview?.trim() || project.description?.trim();
   const carriedIndex = screens.findIndex(screen => screen.src === chapterRecord.source);
   const activeIndex = carriedIndex >= 0 ? carriedIndex : chapter < screens.length ? chapter : 0;
@@ -124,12 +128,12 @@ export function ProjectReader() {
               ? collectionUrl
               : "/projects"
           }
-          state={slug === 'jobpilot-ai' && from?.jobpilotJourney ? {
+          state={sharedJourney && from?.jobpilotJourney ? {
             ...journey?.routeState, jobpilotReturn: from.jobpilotJourney.key,
             jobpilotScreen: from.jobpilotJourney.screen,
             routeRestore: journey?.position ?? { x: 0, y: 0 },
           } : undefined}
-          replace={Boolean(slug === 'jobpilot-ai' && from?.jobpilotJourney)}
+          replace={Boolean(sharedJourney && from?.jobpilotJourney)}
           onClick={event => {
             if (!journey || !ordinaryActivation(event) || journey.historyIndex < 0 || history.state?.idx !== journey.historyIndex + 1) return;
             event.preventDefault(); navigate(-1);
@@ -140,8 +144,8 @@ export function ProjectReader() {
         </Link>
         <header className="case-heading">
           <div>
-            {candidate && <JobPilotObjectDetail />}
-            <span className="eyebrow">{slug === 'jobpilot-ai' && <><span className="case-project-number">01</span> / </>}CASE STUDY / {project.type}</span>
+            {candidate && <JobPilotObjectDetail asset={featured?.asset} />}
+            <span className="eyebrow">{(slug === 'jobpilot-ai'||candidate) && <><span className="case-project-number">{featured?.number}</span> / </>}CASE STUDY / {project.type}</span>
             <h1 className="view-heading">{displayName}</h1>
             {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
             {(role || teamSize) && <p className="case-role">
@@ -201,7 +205,7 @@ export function ProjectReader() {
           </>
         )}
         {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery}
-          candidate={candidate} refined={refined} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
+          candidate={candidate} refined={refined} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} cedarState={journey?.cedar} lobbyState={journey?.lobby} onCedarStateChange={state => { const key=from?.jobpilotJourney?.key; if(candidate&&key&&journeys.has(key)) journeys.set(key,{...journeys.get(key)!,cedar:state}); }} onLobbyStateChange={state => { const key=from?.jobpilotJourney?.key; if(candidate&&key&&journeys.has(key)) journeys.set(key,{...journeys.get(key)!,lobby:state}); }} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>

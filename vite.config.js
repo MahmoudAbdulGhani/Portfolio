@@ -4,14 +4,17 @@ import tailwindcss from "@tailwindcss/vite";
 import { isPortraitReviewBuild, portraitReviewArtifacts } from './scripts/profile-portrait-review-build.mjs';
 import { isJobPilotDesignReviewBuild, jobPilotDesignArtifacts } from './scripts/jobpilot-design-review-build.mjs';
 
+import { isFeaturedDesignReviewBuild, featuredDesignArtifacts } from './scripts/featured-design-review-build.mjs';
+
 const apiProxyTarget = process.env.VITE_API_PROXY_TARGET ?? "http://localhost:3001";
 
 export default defineConfig(({ mode }) => {
   const portraitReview = isPortraitReviewBuild(mode);
   const jobPilotReview = isJobPilotDesignReviewBuild(mode);
+  const featuredReview = isFeaturedDesignReviewBuild(mode);
   return {
-    define: { 'import.meta.env.PROFILE_PORTRAIT_REVIEW': JSON.stringify(portraitReview), 'import.meta.env.JOBPILOT_DESIGN_REVIEW': JSON.stringify(jobPilotReview) },
-    plugins: [react(), tailwindcss(), portraitReviewArtifacts(portraitReview), jobPilotDesignArtifacts(jobPilotReview)],
+    define: { 'import.meta.env.FEATURED_DESIGN_REVIEW': JSON.stringify(featuredReview), 'import.meta.env.PROFILE_PORTRAIT_REVIEW': JSON.stringify(portraitReview), 'import.meta.env.JOBPILOT_DESIGN_REVIEW': JSON.stringify(jobPilotReview) },
+    plugins: [featuredDesignArtifacts(featuredReview), react(), tailwindcss(), portraitReviewArtifacts(portraitReview), jobPilotDesignArtifacts(jobPilotReview)],
     build: {
       rollupOptions: {
         output: {

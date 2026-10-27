@@ -103,7 +103,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
-    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review]
+    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review, featured-design-review]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -115,6 +115,38 @@ jobs:
           test "${{ needs['profile-boundary'].result }}" = 'success'
           test "${{ needs['portrait-review-build'].result }}" = 'success'
           test "${{ needs['jobpilot-design-review'].result }}" = 'success'
+          test "${{ needs['featured-design-review'].result }}" = 'success'
+  featured-design-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install browser
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
+      - name: Verify Phase 2 opt-in and Production exclusion
+        run: |
+          node --test tests/featured-design-review-build.test.mjs
+          npm run build
+          node scripts/assert-featured-design-production-build.mjs
+          node scripts/assert-jobpilot-design-production-build.mjs
+      - name: Verify compiled Cedar and Lobby candidates and baselines
+        run: npm run test:e2e -- --config=playwright.featured-design.config.ts --workers=1
+      - name: Retain Phase 2 failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: featured-design-review-failure
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
   jobpilot-design-review:
     runs-on: ubuntu-latest
     timeout-minutes: 15

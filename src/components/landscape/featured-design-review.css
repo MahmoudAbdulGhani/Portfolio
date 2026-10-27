@@ -1,0 +1,32 @@
+/* Phase 2 candidates only. Shared hierarchy is the approved JobPilot stylesheet;
+   these explicit project/interaction adjustments never opt normal routes in. */
+.landscape.featured-design-candidate .stage:is(.has-cedar-boundary,.has-lobby-boundary) { grid-template-rows: auto auto; }
+.landscape.featured-design-candidate .stage.is-expanded .objects .object { visibility: hidden; }
+.landscape.featured-design-candidate .stage[data-featured-kind="cedar"] .cedar-object,
+.landscape.featured-design-candidate .stage[data-featured-kind="lobby"] .lobby-object { visibility: visible; }
+.landscape.featured-design-candidate :is(.collection-cedar-boundary,.collection-lobby-boundary) { width: min(1040px,calc(100% - 2 * var(--journey-gutter))); margin-inline: auto; }
+.landscape.featured-design-candidate :is(.cedar-title,.lobby-title) { font-family: "Space Grotesk",sans-serif; scroll-margin-block: 128px 100px; }
+.landscape.featured-design-candidate :is(.cedar-heading,.lobby-heading) { grid-template-columns: minmax(0,1fr); gap: 14px; }
+.landscape.featured-design-candidate :is(.cedar-label,.lobby-label) { max-width: 62ch; }
+.landscape.featured-design-candidate .jobpilot-defining-decision > :is(.cedar-boundary,.lobby-boundary) { margin-top: 0; }
+.landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .selection-detail h1 { font-size: clamp(42px,4.3vw,64px); text-wrap: balance; }
+.landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .case-heading h1 { font-size: clamp(44px,5vw,72px); text-wrap: balance; }
+.landscape.featured-design-candidate .case-heading .jobpilot-object-detail { opacity: .9; }
+@media(max-width:959px) {
+  .landscape.featured-design-candidate :is(.cedar-body,.lobby-body) { grid-template-columns: 180px minmax(0,1fr); gap: 24px; }
+  .landscape.featured-design-candidate :is(.cedar-art,.lobby-art) { width: 180px; }
+}
+@media(max-width:719px) {
+  .landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .selection-detail h1 { font-size: clamp(36px,10vw,43px); }
+  .landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .case-heading h1 { font-size: clamp(38px,10.6vw,46px); }
+  .landscape.featured-design-candidate :is(.cedar-boundary,.lobby-boundary) { padding: 24px 16px 0; }
+  .landscape.featured-design-candidate :is(.cedar-body,.lobby-body) { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .landscape.featured-design-candidate :is(.cedar-content,.lobby-content) { grid-column: 1; grid-row: 1; }
+  .landscape.featured-design-candidate :is(.cedar-art,.lobby-art) { grid-column: 1; grid-row: 2; width: min(180px,100%); }
+  .landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) { flex-wrap: wrap; gap: 6px; }
+  .landscape.featured-design-candidate :is(.cedar-progress,.lobby-progress) li { gap: 4px; }
+  .landscape.featured-design-candidate :is(.cedar-title,.lobby-title) { font-size: 27px; }
+}
+@media(min-width:960px) and (max-height:760px) {
+  .landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .selection-detail h1 { font-size: 48px; }
+}

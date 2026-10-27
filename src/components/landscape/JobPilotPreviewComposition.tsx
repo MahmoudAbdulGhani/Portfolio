@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-export function JobPilotObjectDetail() {
-  return <img className="jobpilot-object-detail" src="/landscape/jobpilot-sculpture.webp" alt="" aria-hidden="true" width="144" height="144" />;
+export function JobPilotObjectDetail({ asset = 'jobpilot-sculpture.webp' }: { asset?: string }) {
+  return <img className="jobpilot-object-detail" src={`/landscape/${asset}`} alt="" aria-hidden="true" width="144" height="144" />;
 }
 
 // Baseline keeps its exact DOM wrapper/order. Candidate changes composition,

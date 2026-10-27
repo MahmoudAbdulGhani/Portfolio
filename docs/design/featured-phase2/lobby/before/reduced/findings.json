@@ -1,0 +1,91 @@
+{
+  "phase": "before",
+  "mode": "reduced",
+  "root": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\phase2-before-dist",
+  "source": "PR #53 / c4f18c73a0184e8304327afcf80c22279b0f1bca immediate before; same fresh read-only snapshot and genuine assets.",
+  "method": "Compiled Windows Chrome. Native browser video; phone/tablet viewport emulation, separately identified WebGL or forced fallback. Local fictional demos only.",
+  "findings": [
+    {
+      "width": 390,
+      "height": 844,
+      "renderer": "reduced",
+      "gpu": null,
+      "transition": [],
+      "chosen": "/projects/lobby/audio-room.webp",
+      "selectedIndex": 0,
+      "captures": [
+        {
+          "step": "preview",
+          "file": "390-844-preview.jpg"
+        },
+        {
+          "step": "demo-preview",
+          "file": "390-844-demo-preview.jpg"
+        },
+        {
+          "step": "reader",
+          "file": "390-844-reader.jpg"
+        },
+        {
+          "step": "demo-reader",
+          "file": "390-844-demo-reader.jpg"
+        },
+        {
+          "step": "rejected",
+          "file": "390-844-rejected.jpg"
+        },
+        {
+          "step": "result",
+          "file": "390-844-result.jpg"
+        },
+        {
+          "step": "return",
+          "file": "390-844-return.jpg"
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "renderer": "reduced",
+      "gpu": null,
+      "transition": [],
+      "chosen": "/projects/lobby/audio-room.webp",
+      "selectedIndex": 0,
+      "captures": [
+        {
+          "step": "preview",
+          "file": "1440-900-preview.jpg"
+        },
+        {
+          "step": "demo-preview",
+          "file": "1440-900-demo-preview.jpg"
+        },
+        {
+          "step": "reader",
+          "file": "1440-900-reader.jpg"
+        },
+        {
+          "step": "demo-reader",
+          "file": "1440-900-demo-reader.jpg"
+        },
+        {
+          "step": "rejected",
+          "file": "1440-900-rejected.jpg"
+        },
+        {
+          "step": "result",
+          "file": "1440-900-result.jpg"
+        },
+        {
+          "step": "return",
+          "file": "1440-900-return.jpg"
+        }
+      ],
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

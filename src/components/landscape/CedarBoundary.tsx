@@ -1,13 +1,15 @@
-import { useId, useLayoutEffect, useReducer, useRef } from 'react';
+import { useEffect, useId, useLayoutEffect, useReducer, useRef } from 'react';
 import { gsap } from 'gsap';
 import { CaseDisclosure } from './CaseDisclosure';
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { useMotionPreference } from '../../lib/use-motion-preference';
 import { cedarEvidence, cedarSample, cedarMoney, cedarReducer, initialCedar, sampleFigures, progressChoices } from './cedar-boundary-state';
+import type { CedarState } from './cedar-boundary-state';
 import './cedar-boundary.css';
 
-export function CedarBoundary({ suspended = false, headingLevel = 3, headingId }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string }) {
-  const [state, dispatch] = useReducer(cedarReducer, undefined, initialCedar);
+export function CedarBoundary({ suspended = false, headingLevel = 3, headingId, concise = false, initialState, onStateChange, disclosureOpen = false }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string; concise?: boolean; initialState?: CedarState; onStateChange?: (state: CedarState) => void; disclosureOpen?: boolean }) {
+  const [state, dispatch] = useReducer(cedarReducer, initialState, value => value ?? initialCedar());
+  useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference(), id = useId();
   const interpretation = useRef<HTMLDivElement>(null), guide = useRef<SVGPathElement>(null);
   const figures = sampleFigures(state.progress);
@@ -26,17 +28,17 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId }
     return () => stopFiniteMotion(timeline);
   }, [state.phase, state.progress, state.interpretation, outdated, reduced, suspended]);
   const source = (file: string) => `${cedarEvidence.repository}/blob/${cedarEvidence.revision}/${file}`;
-  return <section className="cedar-boundary" aria-label="Cedar calculation and interpretation" data-phase={state.phase} data-outdated={outdated} inert={suspended}>
+  return <section className="cedar-boundary" data-presentation={concise ? 'concise' : undefined} aria-label="Cedar calculation and interpretation" data-phase={state.phase} data-outdated={outdated} inert={suspended}>
     <header className="cedar-heading">
       <Heading className="cedar-title" id={headingId} tabIndex={headingId ? -1 : undefined}>Calculated facts support the interpretation.</Heading>
-      <p className="cedar-label">Engineering demonstration — fictional data.</p>
+      <p className="cedar-label">{concise ? 'Fictional USD sample · local demo.' : 'Engineering demonstration — fictional data.'}</p>
       <ol className="cedar-progress" role="list" aria-label="Cedar demonstration progress">
         {['Inspect', 'Interpret', 'Recalculate'].map((label, index) => <li key={label} aria-current={step === index ? 'step' : undefined}><span className="cedar-step-number" aria-hidden="true">{index + 1}</span>{label}{index < 2 && <span aria-hidden="true">→</span>}</li>)}
       </ol>
     </header>
     <div className="cedar-body">
       <div className="cedar-content">
-        <p className="cedar-intro">Fictional project · amounts in USD. Inspect the calculation, then reveal its explanation.</p>
+        {!concise && <p className="cedar-intro">Fictional project · amounts in USD. Inspect the calculation, then reveal its explanation.</p>}
         <dl className="cedar-inputs"><div><dt>Contract value</dt><dd>{cedarMoney(cedarSample.contract)}</dd></div><div><dt>Invoiced actual cost</dt><dd>{cedarMoney(cedarSample.supplier + cedarSample.contractor)}</dd></div></dl>
         <p className="cedar-cost-basis">USD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.</p>
         <div className="cedar-input-control"><label htmlFor={`${id}-progress`}>Average phase progress</label><select id={`${id}-progress`} value={state.progress} onChange={event => dispatch({ type: 'change', progress: Number(event.target.value) })}>
@@ -68,7 +70,7 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId }
       </div>
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
-    <CaseDisclosure className="cedar-disclosure" title="Source basis and demonstration limits">
+    <CaseDisclosure defaultOpen={disclosureOpen} className="cedar-disclosure" title="Source basis and demonstration limits">
       <p>These decisions describe the team’s implementation. Mahmoud’s documented contributions and collaborators remain in the case study. The cross-beam and diagonal are artistic associations, not a literal architecture diagram; the original joined photograph stays fixed.</p>
       <p>The financial summary totals billed supplier and contractor invoices, excluding draft/cancelled records. The advisor uses this invoiced cost and clamps average phase progress to 0–100%. With a positive contract and progress, its total-cost estimate is actual cost ÷ progress ratio, never below actual cost. Otherwise it keeps actual cost. Margin is (contract − estimate) ÷ contract, or 0% for a zero contract.</p>
       <p>Groq receives project code/name, a calculated risk label, contract, actual cost, estimated total cost, margin, cost ratio and thresholds. It returns text; the GET path does not write financial records. Missing credentials/SDK, provider exceptions and empty/non-text content fall back to deterministic text. Nonempty provider text is used without checking its numerical accuracy. This is a boundary between calculation and explanation, not a guarantee that generated text is correct.</p>

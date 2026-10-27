@@ -1,44 +1,44 @@
 /* Approved PR #52 refinement, shared by normal JobPilot and its review entry.
    PR #51 /before and the PR #50 baseline retain their original presentation. */
-.landscape.jobpilot-design-refined .stage.has-profile-boundary .selection-frame { row-gap: 28px; }
-.landscape.jobpilot-design-refined .selection-detail { grid-row: 1; }
-.landscape.jobpilot-design-refined .jobpilot-selected-product { grid-row: 1 / 3; }
-.landscape.jobpilot-design-refined .jobpilot-refined-actions { grid-column: 1 / 5; grid-row: 2; align-self: start; transition: opacity 160ms; }
-.landscape.jobpilot-design-refined .stage[data-motion-phase="closing"] .jobpilot-refined-actions { opacity: 0; }
-.landscape.jobpilot-design-refined .selection-detail > .back-collection { min-height: 44px; justify-self: start; padding: 8px 0; }
-.landscape.jobpilot-design-refined .stage[data-motion-framing="product"] .motion-rig { overflow: clip; }
-.landscape.jobpilot-design-refined .stage:is([data-motion-phase="selecting"],[data-preview-state="loading"],[data-preview-state="failed"]) .selection-image-frame { background: transparent; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage:is(.has-profile-boundary,.has-cedar-boundary,.has-lobby-boundary) .selection-frame { row-gap: 28px; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-detail { grid-row: 1; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-selected-product { grid-row: 1 / 3; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-refined-actions { grid-column: 1 / 5; grid-row: 2; align-self: start; transition: opacity 160ms; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage[data-motion-phase="closing"] .jobpilot-refined-actions { opacity: 0; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-detail > .back-collection { min-height: 44px; justify-self: start; padding: 8px 0; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage[data-motion-framing="product"] .motion-rig { overflow: clip; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage:is([data-motion-phase="selecting"],[data-preview-state="loading"],[data-preview-state="failed"]) .selection-image-frame { background: transparent; }
 .landscape.jobpilot-design-refined .stage.is-expanded .objects .object:not(.jobpilot-object) { visibility: hidden; }
-.landscape.jobpilot-design-refined .case-narrative .jobpilot-defining-decision { margin-bottom: 64px; }
-.landscape.jobpilot-design-refined .jobpilot-defining-decision .profile-boundary { margin-top: 0; }
-.landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-label { font: 12px/1.6 var(--mono); }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .case-narrative .jobpilot-defining-decision { margin-bottom: 64px; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-defining-decision .profile-boundary { margin-top: 0; }
+.landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-label { font: 12px/1.6 var(--mono); }
 @media(min-width:960px){
-  .landscape.jobpilot-design-refined .selection-detail > .back-collection { position: absolute; right: 0; top: 0; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-detail > .back-collection { position: absolute; right: 0; top: 0; }
 }
 @media(max-width:959px){
-  .landscape.jobpilot-design-refined .stage.has-profile-boundary .selection-frame { gap: 24px; }
-  .landscape.jobpilot-design-refined .selection-detail,
-  .landscape.jobpilot-design-refined .jobpilot-selected-product,
-  .landscape.jobpilot-design-refined .jobpilot-refined-actions { grid-column: 1; grid-row: auto; }
-  .landscape.jobpilot-design-refined .jobpilot-screen-selection { margin-top: 24px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage:is(.has-profile-boundary,.has-cedar-boundary,.has-lobby-boundary) .selection-frame { gap: 24px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-detail,
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-selected-product,
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-refined-actions { grid-column: 1; grid-row: auto; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-screen-selection { margin-top: 24px; }
 }
 @media(max-width:719px){
-  .landscape.jobpilot-design-refined .portfolio.is-selected .landscape-route > .stage.has-profile-boundary { padding-top: 12px; gap: 40px; }
-  .landscape.jobpilot-design-refined .is-expanded .selection-detail { gap: 8px; }
-  .landscape.jobpilot-design-refined .selection-caption-inner { gap: 4px 8px; grid-template-columns: 24px minmax(0,1fr) 44px; }
-  .landscape.jobpilot-design-refined .selection-caption-inner .jobpilot-object-detail { width: 44px; height: 44px; }
-  .landscape.jobpilot-design-refined .is-expanded .selection-detail h1 { font-size: clamp(38px,10.8vw,46px); margin-top: 4px; }
-  .landscape.jobpilot-design-refined .is-expanded .selection-detail p { font-size: 16px; margin-top: 2px; }
-  .landscape.jobpilot-design-refined .stage.has-profile-boundary .selection-frame { gap: 22px; }
-  .landscape.jobpilot-design-refined .jobpilot-screen-selection { margin-top: 24px; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-art { width: min(140px,100%); }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-body { gap: 16px; padding-top: 16px; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-content { grid-row: 1; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-art { grid-row: 2; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-progress { flex-direction: row; flex-wrap: wrap; gap: 6px; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-progress li { gap: 4px; }
-  .landscape.jobpilot-design-refined .profile-boundary[data-presentation="concise"] .boundary-step-number { width: 22px; height: 22px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .portfolio.is-selected .landscape-route > .stage:is(.has-profile-boundary,.has-cedar-boundary,.has-lobby-boundary) { padding-top: 12px; gap: 40px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .is-expanded .selection-detail { gap: 8px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-caption-inner { gap: 4px 8px; grid-template-columns: 24px minmax(0,1fr) 44px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .selection-caption-inner .jobpilot-object-detail { width: 44px; height: 44px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .is-expanded .selection-detail h1 { font-size: clamp(38px,10.8vw,46px); margin-top: 4px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .is-expanded .selection-detail p { font-size: 16px; margin-top: 2px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .stage:is(.has-profile-boundary,.has-cedar-boundary,.has-lobby-boundary) .selection-frame { gap: 22px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-screen-selection { margin-top: 24px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-art { width: min(140px,100%); }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-body { gap: 16px; padding-top: 16px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-content { grid-row: 1; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-art { grid-row: 2; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-progress { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-progress li { gap: 4px; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .profile-boundary[data-presentation="concise"] .boundary-step-number { width: 22px; height: 22px; }
 }
 @media(prefers-reduced-motion:reduce){
-  .landscape.jobpilot-design-refined .jobpilot-refined-actions { transition: none; }
+  .landscape:is(.jobpilot-design-refined,.featured-design-refined) .jobpilot-refined-actions { transition: none; }
 }
