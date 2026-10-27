@@ -1,13 +1,15 @@
-import { useId, useLayoutEffect, useReducer, useRef } from 'react';
+import { useEffect, useId, useLayoutEffect, useReducer, useRef } from 'react';
 import { gsap } from 'gsap';
 import { CaseDisclosure } from './CaseDisclosure';
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { useMotionPreference } from '../../lib/use-motion-preference';
 import { initialLobby, lobbyCallPermission, lobbyEvidence, lobbyParticipants, lobbyReducer, type LobbyParticipant } from './lobby-boundary-state';
+import type { LobbyState } from './lobby-boundary-state';
 import './lobby-boundary.css';
 
-export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string }) {
-  const [state, dispatch] = useReducer(lobbyReducer, undefined, initialLobby);
+export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId, concise = false, initialState, onStateChange, disclosureOpen = false }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string; concise?: boolean; initialState?: LobbyState; onStateChange?: (state: LobbyState) => void; disclosureOpen?: boolean }) {
+  const [state, dispatch] = useReducer(lobbyReducer, initialState, value => value ?? initialLobby());
+  useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference(), id = useId();
   const result = useRef<HTMLDivElement>(null), connection = useRef<SVGGElement>(null);
   const permission = lobbyCallPermission(state), member = state.members.includes(state.participant);
@@ -30,17 +32,17 @@ export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId }
   }, [state.phase, state.participant, state.members, allowed, reduced, suspended]);
   const outcome = state.phase === 'allowed' ? 'Call access permitted' : state.phase === 'denied' ? 'Call access denied' : state.phase === 'rejected' ? 'Join rejected' : state.phase === 'joined' ? 'Membership recorded' : 'Inspect the connection';
   const explanation = state.phase === 'rejected' ? 'Rowan is blocked from this room. Having its invitation code does not override the block.' : state.phase === 'joined' ? 'Mira is now a room member. Try to enter the call to check access separately.' : state.phase === 'inspect' ? blocked ? 'Rowan has the same invitation, but a room block prevents joining.' : member ? 'Mira is a room member. Call access still needs an explicit attempt.' : 'Mira has an invitation. A shared code alone is not active membership.' : permission.reason;
-  return <section className="lobby-boundary" aria-label="Lobby connection and access" data-phase={state.phase} data-participant={state.participant} inert={suspended}>
+  return <section className="lobby-boundary" data-presentation={concise ? 'concise' : undefined} aria-label="Lobby connection and access" data-phase={state.phase} data-participant={state.participant} inert={suspended}>
     <header className="lobby-heading">
       <Heading className="lobby-title" id={headingId} tabIndex={headingId ? -1 : undefined}>A connection becomes access only when the rules allow it.</Heading>
-      <p className="lobby-label">Engineering demonstration — fictional participants.</p>
+      <p className="lobby-label">{concise ? 'Fictional participants · local demo.' : 'Engineering demonstration — fictional participants.'}</p>
       <ol className="lobby-progress" role="list" aria-label="Lobby demonstration progress">
         {['Inspect', 'Join', 'Try access'].map((label, index) => <li key={label} aria-current={step === index ? 'step' : undefined}><span aria-hidden="true" className="lobby-step-number">{index + 1}</span>{label}{index < 2 && <span aria-hidden="true" className="lobby-step-arrow">→</span>}</li>)}
       </ol>
     </header>
     <div className="lobby-body">
       <div className="lobby-content">
-        <p className="lobby-intro">An invitation offers a connection. Joining the room and entering its call are separate checks.</p>
+        {!concise && <p className="lobby-intro">An invitation offers a connection. Joining the room and entering its call are separate checks.</p>}
         <div className="lobby-participant-control"><label htmlFor={`${id}-participant`}>Fictional participant</label><select id={`${id}-participant`} value={state.participant} onChange={event => dispatch({ type: 'participant', participant: event.target.value as LobbyParticipant })}><option value="mira">Mira · invited</option><option value="rowan">Rowan · blocked from this room</option></select><span>Sample condition selector · both have an invitation.</span></div>
         <dl className="lobby-facts">
           <div><dt>1 Participant</dt><dd>{lobbyParticipants[state.participant]} · session ready</dd></div>
@@ -53,7 +55,7 @@ export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId }
           <p className="lobby-invariant">{['denied', 'rejected'].includes(state.phase) ? 'No membership or room-content changes.' : allowed ? 'Illustration only · no real call is opened.' : 'Room contents stay unchanged throughout this demonstration.'}</p>
         </div>
         <div className="lobby-actions"><button className="lobby-primary" onClick={() => dispatch({ type: 'attempt' })}>Try to enter the call</button><button className="lobby-join" onClick={() => dispatch({ type: 'join' })}>Join with the invitation</button><button onClick={() => dispatch({ type: 'reset' })}>Reset</button></div>
-        <p className="lobby-local-note">Local sample only. Joining models membership; call access models the first permission check, with available capacity assumed.</p>
+        {!concise && <p className="lobby-local-note">Local sample only. Joining models membership; call access models the first permission check, with available capacity assumed.</p>}
       </div>
       <div className="lobby-art" aria-hidden="true" data-renderer="photographic-svg" data-access={allowed ? 'allowed' : 'unresolved'}>
         <svg viewBox="0 0 1254 1254" focusable="false">
@@ -66,7 +68,8 @@ export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId }
       </div>
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
-    <CaseDisclosure className="lobby-disclosure" title="Source basis and demonstration limits">
+    <CaseDisclosure defaultOpen={disclosureOpen} className="lobby-disclosure" title="Source basis and demonstration limits">
+      {concise && <p className="lobby-local-note">Local sample only. Joining models membership; call access models the first permission check, with available capacity assumed.</p>}
       <p>This describes the team’s implementation, not individual authorship. Mahmoud’s documented contribution covers authenticated and guest access, invitations, validation and Supabase-backed workflows; the full team and role remain in the case study. Ribbon labels are artistic associations. The photograph stays fixed; only explanatory guides receive brief emphasis.</p>
       <p>The shared guest-room link carries a room code. The browser establishes a Supabase session (including anonymous guests) and invokes guest.join_channel. The SQL function checks identity, normalized code, active/unexpired room, room blocks and display-name rules. It restores an eligible existing membership or creates one after a capacity check. A block is checked before either write. Joining changes membership and room activity; it does not consume an invitation record. Existing eligible membership can be reused, and the new-member capacity check follows the restore branch.</p>
       <p>CallsService.authorizeMembership independently requires a room and membership with no left_at or removed_at, then checks active status and room expiry. The guarded HTTP token route validates the request/session before that service. Token issuance also checks LiveKit availability and call capacity, with an exception for an identity already in the call. These later operations are not simulated here.</p>

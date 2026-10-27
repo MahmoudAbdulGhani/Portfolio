@@ -1,0 +1,1288 @@
+{
+  "phase": "before",
+  "mode": "fallback",
+  "root": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\phase2-before-dist",
+  "source": "PR #53 / c4f18c73a0184e8304327afcf80c22279b0f1bca immediate before; same fresh read-only snapshot and genuine assets.",
+  "method": "Compiled Windows Chrome. Native browser video; phone/tablet viewport emulation, separately identified WebGL or forced fallback. Local fictional demos only.",
+  "findings": [
+    {
+      "width": 390,
+      "height": 844,
+      "renderer": "fallback",
+      "gpu": null,
+      "transition": [
+        {
+          "time": 1526.0999999996275,
+          "phase": "selecting",
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.15625,
+            "width": 343.1875,
+            "height": 156.75,
+            "top": 221.15625,
+            "right": 366.59375,
+            "bottom": 377.90625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.90625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.90625,
+            "right": 366.59375,
+            "bottom": 466.84375,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.84375,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.84375,
+            "right": 366.59375,
+            "bottom": 651.84375,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.84375,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.84375,
+            "right": 361.59375,
+            "bottom": 535.84375,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.84375,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.84375,
+            "right": 107.921875,
+            "bottom": 707.84375,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1582.7999999998137,
+          "phase": "selecting",
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.15625,
+            "width": 343.1875,
+            "height": 156.75,
+            "top": 221.15625,
+            "right": 366.59375,
+            "bottom": 377.90625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.90625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.90625,
+            "right": 366.59375,
+            "bottom": 466.84375,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.84375,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.84375,
+            "right": 366.59375,
+            "bottom": 651.84375,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.84375,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.84375,
+            "right": 361.59375,
+            "bottom": 535.84375,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.84375,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.84375,
+            "right": 107.921875,
+            "bottom": 707.84375,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1590.7000000001863,
+          "phase": "selecting",
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.15625,
+            "width": 343.1875,
+            "height": 156.75,
+            "top": 221.15625,
+            "right": 366.59375,
+            "bottom": 377.90625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.90625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.90625,
+            "right": 366.59375,
+            "bottom": 466.84375,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.84375,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.84375,
+            "right": 366.59375,
+            "bottom": 651.84375,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.84375,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.84375,
+            "right": 361.59375,
+            "bottom": 535.84375,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.84375,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.84375,
+            "right": 107.921875,
+            "bottom": 707.84375,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1631.2000000001863,
+          "phase": "selecting",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1634.5,
+          "phase": "selecting",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1701.5,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 1879.7999999998137,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2106.5,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2185.5999999996275,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2279.0999999996275,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2392.7999999998137,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2492.9000000003725,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        },
+        {
+          "time": 2504.7999999998137,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 106,
+            "width": 390,
+            "height": 2242.09375,
+            "top": 106,
+            "right": 390,
+            "bottom": 2348.09375,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 23.40625,
+            "y": 221.484375,
+            "width": 343.1875,
+            "height": 156.078125,
+            "top": 221.484375,
+            "right": 366.59375,
+            "bottom": 377.5625,
+            "left": 23.40625
+          },
+          "identity": {
+            "x": 23.40625,
+            "y": 401.5625,
+            "width": 343.1875,
+            "height": 64.9375,
+            "top": 401.5625,
+            "right": 366.59375,
+            "bottom": 466.5,
+            "left": 23.40625
+          },
+          "actions": {
+            "x": 23.40625,
+            "y": 542.5,
+            "width": 343.1875,
+            "height": 109,
+            "top": 542.5,
+            "right": 366.59375,
+            "bottom": 651.5,
+            "left": 23.40625
+          },
+          "choices": {
+            "x": 18.40625,
+            "y": 481.5,
+            "width": 343.1875,
+            "height": 54,
+            "top": 481.5,
+            "right": 361.59375,
+            "bottom": 535.5,
+            "left": 18.40625
+          },
+          "back": {
+            "x": 23.40625,
+            "y": 663.5,
+            "width": 84.515625,
+            "height": 44,
+            "top": 663.5,
+            "right": 107.921875,
+            "bottom": 707.5,
+            "left": 23.40625
+          }
+        }
+      ],
+      "chosen": "/projects/lobby/audio-room.webp",
+      "selectedIndex": 0,
+      "captures": [
+        {
+          "step": "preview",
+          "file": "390-844-preview.jpg"
+        },
+        {
+          "step": "demo-preview",
+          "file": "390-844-demo-preview.jpg"
+        },
+        {
+          "step": "reader",
+          "file": "390-844-reader.jpg"
+        },
+        {
+          "step": "demo-reader",
+          "file": "390-844-demo-reader.jpg"
+        },
+        {
+          "step": "rejected",
+          "file": "390-844-rejected.jpg"
+        },
+        {
+          "step": "result",
+          "file": "390-844-result.jpg"
+        },
+        {
+          "step": "return",
+          "file": "390-844-return.jpg"
+        }
+      ],
+      "errors": [],
+      "writes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "renderer": "fallback",
+      "gpu": null,
+      "transition": [
+        {
+          "time": 3255.7000000001863,
+          "phase": "selecting",
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.953125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.953125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.953125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.953125,
+            "right": 1160,
+            "bottom": 655.703125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.703125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.703125,
+            "right": 1055.484375,
+            "bottom": 792.703125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.703125,
+            "width": 890,
+            "height": 54,
+            "top": 670.703125,
+            "right": 1165,
+            "bottom": 724.703125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 744.203125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 744.203125,
+            "right": 1160,
+            "bottom": 788.203125,
+            "left": 1075.484375
+          }
+        },
+        {
+          "time": 3280.2000000001863,
+          "phase": "selecting",
+          "rig": {
+            "x": 0,
+            "y": 92,
+            "width": 1440,
+            "height": 1538.703125,
+            "top": 92,
+            "right": 1440,
+            "bottom": 1630.703125,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.453125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.453125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.453125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.453125,
+            "right": 1160,
+            "bottom": 655.203125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.203125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.203125,
+            "right": 1055.484375,
+            "bottom": 792.203125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.203125,
+            "width": 890,
+            "height": 54,
+            "top": 670.203125,
+            "right": 1165,
+            "bottom": 724.203125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 743.703125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 743.703125,
+            "right": 1160,
+            "bottom": 787.703125,
+            "left": 1075.484375
+          }
+        },
+        {
+          "time": 3292.600000000559,
+          "phase": "selecting",
+          "rig": {
+            "x": 0,
+            "y": 92,
+            "width": 1440,
+            "height": 1538.703125,
+            "top": 92,
+            "right": 1440,
+            "bottom": 1630.703125,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.453125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.453125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.453125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.453125,
+            "right": 1160,
+            "bottom": 655.203125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.203125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.203125,
+            "right": 1055.484375,
+            "bottom": 792.203125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.203125,
+            "width": 890,
+            "height": 54,
+            "top": 670.203125,
+            "right": 1165,
+            "bottom": 724.203125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 743.703125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 743.703125,
+            "right": 1160,
+            "bottom": 787.703125,
+            "left": 1075.484375
+          }
+        },
+        {
+          "time": 3326.2000000001863,
+          "phase": "selecting",
+          "rig": {
+            "x": 0,
+            "y": 92,
+            "width": 1440,
+            "height": 1538.703125,
+            "top": 92,
+            "right": 1440,
+            "bottom": 1630.703125,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.453125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.453125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.453125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.453125,
+            "right": 1160,
+            "bottom": 655.203125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.203125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.203125,
+            "right": 1055.484375,
+            "bottom": 792.203125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.203125,
+            "width": 890,
+            "height": 54,
+            "top": 670.203125,
+            "right": 1165,
+            "bottom": 724.203125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 743.703125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 743.703125,
+            "right": 1160,
+            "bottom": 787.703125,
+            "left": 1075.484375
+          }
+        },
+        {
+          "time": 3342.4000000003725,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 92,
+            "width": 1440,
+            "height": 1538.703125,
+            "top": 92,
+            "right": 1440,
+            "bottom": 1630.703125,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.453125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.453125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.453125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.453125,
+            "right": 1160,
+            "bottom": 655.203125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.203125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.203125,
+            "right": 1055.484375,
+            "bottom": 792.203125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.203125,
+            "width": 890,
+            "height": 54,
+            "top": 670.203125,
+            "right": 1165,
+            "bottom": 724.203125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 743.703125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 743.703125,
+            "right": 1160,
+            "bottom": 787.703125,
+            "left": 1075.484375
+          }
+        },
+        {
+          "time": 3357.4000000003725,
+          "phase": "opening",
+          "rig": {
+            "x": 0,
+            "y": 92,
+            "width": 1440,
+            "height": 1538.703125,
+            "top": 92,
+            "right": 1440,
+            "bottom": 1630.703125,
+            "left": 0
+          },
+          "subject": null,
+          "image": {
+            "x": 280,
+            "y": 140,
+            "width": 880,
+            "height": 401.453125,
+            "top": 140,
+            "right": 1160,
+            "bottom": 541.453125,
+            "left": 280
+          },
+          "identity": {
+            "x": 280,
+            "y": 565.453125,
+            "width": 880,
+            "height": 89.75,
+            "top": 565.453125,
+            "right": 1160,
+            "bottom": 655.203125,
+            "left": 280
+          },
+          "actions": {
+            "x": 280,
+            "y": 739.203125,
+            "width": 775.484375,
+            "height": 53,
+            "top": 739.203125,
+            "right": 1055.484375,
+            "bottom": 792.203125,
+            "left": 280
+          },
+          "choices": {
+            "x": 275,
+            "y": 670.203125,
+            "width": 890,
+            "height": 54,
+            "top": 670.203125,
+            "right": 1165,
+            "bottom": 724.203125,
+            "left": 275
+          },
+          "back": {
+            "x": 1075.484375,
+            "y": 743.703125,
+            "width": 84.515625,
+            "height": 44,
+            "top": 743.703125,
+            "right": 1160,
+            "bottom": 787.703125,
+            "left": 1075.484375
+          }
+        }
+      ],
+      "chosen": "/projects/lobby/audio-room.webp",
+      "selectedIndex": 0,
+      "captures": [
+        {
+          "step": "preview",
+          "file": "1440-900-preview.jpg"
+        },
+        {
+          "step": "demo-preview",
+          "file": "1440-900-demo-preview.jpg"
+        },
+        {
+          "step": "reader",
+          "file": "1440-900-reader.jpg"
+        },
+        {
+          "step": "demo-reader",
+          "file": "1440-900-demo-reader.jpg"
+        },
+        {
+          "step": "rejected",
+          "file": "1440-900-rejected.jpg"
+        },
+        {
+          "step": "result",
+          "file": "1440-900-result.jpg"
+        },
+        {
+          "step": "return",
+          "file": "1440-900-return.jpg"
+        }
+      ],
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

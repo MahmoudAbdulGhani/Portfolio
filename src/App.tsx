@@ -17,6 +17,9 @@ import './components/landscape/jobpilot-presentation.css';
 import './components/landscape/jobpilot-refinement.css';
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
+const FeaturedDesignReview = (import.meta.env.DEV || import.meta.env.FEATURED_DESIGN_REVIEW)
+  ? lazy(() => import('./components/landscape/FeaturedDesignReview').then(m => ({ default: m.FeaturedDesignReview }))) : null;
+
 const JobPilotDesignReview = (import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)
   ? lazy(() => import('./components/landscape/JobPilotDesignReview').then(m => ({ default: m.JobPilotDesignReview }))) : null;
 const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
@@ -110,6 +113,10 @@ export function App() {
       <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>
+          {FeaturedDesignReview && <Route path="/review/featured/:project/:variant" element={<><FeaturedDesignReview /><CommandPaletteLoader /></>}>
+            <Route index element={<Home />} />
+            <Route path="reader" element={<ProjectDetail />} />
+          </Route>}
           {JobPilotDesignReview && <Route path="/review/jobpilot/:variant" element={<><JobPilotDesignReview /><CommandPaletteLoader /></>}>
             <Route index element={<Home />} />
             <Route path="reader" element={<ProjectDetail />} />

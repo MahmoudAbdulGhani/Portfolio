@@ -107,7 +107,7 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     const ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
     const frame = host.parentElement?.querySelector<HTMLElement>('.selection-image-frame');
     const art = host.parentElement?.querySelector<HTMLElement>(`.${kind}-object`);
-    const framed = kind === 'jobpilot' && host.parentElement?.dataset.motionFraming === 'product';
+    const framed = host.parentElement?.dataset.motionFraming === 'product';
     const subjectBounds = new THREE.Box3(), projected = new THREE.Vector3();
     const framedSamples: Array<{bounds:THREE.Box3;center:THREE.Vector3}> = [];
     const pointAt = (x: number, y: number, target: THREE.Vector3) => {

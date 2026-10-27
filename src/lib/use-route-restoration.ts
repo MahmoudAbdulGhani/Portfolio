@@ -22,7 +22,7 @@ export function useRouteRestoration() {
       save(event);
       cancelAnimationFrame(popFocusFrame);
       const review = jobPilotReviewAddress(window.location.pathname);
-      const preview = (window.location.pathname === '/' || review?.collection) && new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai';
+      const preview = (window.location.pathname === '/' || review?.collection) && (new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai' || Boolean(review && 'project' in review && new URLSearchParams(window.location.search).get('project') === review.project));
       const reader = window.location.pathname === '/projects/jobpilot-ai' || review?.reader;
       if (!preview && !reader) return;
       const destination = window.location.pathname + window.location.search + window.location.hash;
@@ -30,7 +30,7 @@ export function useRouteRestoration() {
       // still-mounted JobPilot preview/reader cannot rely on a mount effect.
       popFocusFrame = requestAnimationFrame(() => {
         if (window.location.pathname + window.location.search + window.location.hash !== destination) return;
-        document.querySelector<HTMLElement>(preview ? '.stage.has-profile-boundary .open-case' : '.project-reader#main-content')?.focus({preventScroll:true});
+        document.querySelector<HTMLElement>(preview ? '.stage .open-case' : '.project-reader#main-content')?.focus({preventScroll:true});
         // A cancelled navigation also leaves the same reader mounted at its
         // previous scroll. Native Back still gives an engineering hash priority.
         if (reader && window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView({block:'start',behavior:'instant'});
@@ -58,8 +58,9 @@ export function useRouteRestoration() {
     address.current = location.pathname + location.search + location.hash;
     // Explicit Collection returns reuse this owner if their history entry is
     // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
-    const position = navigation === 'POP' ? positions.current.get(location.key) : location.state?.routeRestore;
-    const returningJobPilot = atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai' && Boolean(position);
+    const review = jobPilotReviewAddress(location.pathname);
+    const position = navigation === 'POP' ? positions.current.get(location.key) ?? (review && 'project' in review ? location.state?.routeRestore : undefined) : location.state?.routeRestore;
+    const returningJobPilot = atCollection && (new URLSearchParams(location.search).get('project') === 'jobpilot-ai' || Boolean(review && 'project' in review)) && Boolean(position);
     let cancelled = false, frame = 0, focused = false, deadline = 0;
     restoring.current = true;
     const observer = new MutationObserver(restore);

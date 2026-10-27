@@ -1,0 +1,569 @@
+{
+  "method": "Native browser recordings decoded and briefly played in Chrome, then sampled through the opening; decoded source frames sampled at 25fps over the opening with lead-in/out. DOM phase timing supplies an approximate recording anchor; actual frame timestamps are listed. No staged screenshot animation, speed changes or audio muxing. Decoder counts are not a GPU benchmark or physical-device result.",
+  "videos": [
+    {
+      "phase": "before",
+      "width": 390,
+      "metadata": {
+        "duration": 18.52,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 32,
+        "droppedFrames": 4
+      },
+      "sheet": "transitions/before-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 2.5219000000003726,
+          "key": "transitions/before-390-0.jpg"
+        },
+        {
+          "time": 2.5619000000003727
+        },
+        {
+          "time": 2.6019000000003727
+        },
+        {
+          "time": 2.6419000000003727
+        },
+        {
+          "time": 2.6819000000003728
+        },
+        {
+          "time": 2.721900000000373
+        },
+        {
+          "time": 2.761900000000373,
+          "key": "transitions/before-390-6.jpg"
+        },
+        {
+          "time": 2.801900000000373
+        },
+        {
+          "time": 2.8419000000003725
+        },
+        {
+          "time": 2.8819000000003725
+        },
+        {
+          "time": 2.9219000000003725
+        },
+        {
+          "time": 2.9619000000003726
+        },
+        {
+          "time": 3.0019000000003726,
+          "key": "transitions/before-390-12.jpg"
+        },
+        {
+          "time": 3.0419000000003726
+        },
+        {
+          "time": 3.0819000000003727
+        },
+        {
+          "time": 3.1219000000003727
+        },
+        {
+          "time": 3.1619000000003727
+        },
+        {
+          "time": 3.201900000000373
+        },
+        {
+          "time": 3.2419000000003724,
+          "key": "transitions/before-390-18.jpg"
+        },
+        {
+          "time": 3.2819000000003724
+        },
+        {
+          "time": 3.3219000000003724
+        },
+        {
+          "time": 3.3619000000003725
+        },
+        {
+          "time": 3.4019000000003725
+        },
+        {
+          "time": 3.4419000000003726
+        },
+        {
+          "time": 3.4819000000003726,
+          "key": "transitions/before-390-24.jpg"
+        },
+        {
+          "time": 3.5219000000003726
+        },
+        {
+          "time": 3.5619000000003727
+        },
+        {
+          "time": 3.6019000000003727
+        },
+        {
+          "time": 3.6419000000003727
+        },
+        {
+          "time": 3.6819000000003728
+        },
+        {
+          "time": 3.721900000000373,
+          "key": "transitions/before-390-30.jpg"
+        },
+        {
+          "time": 3.761900000000373
+        },
+        {
+          "time": 3.801900000000373
+        },
+        {
+          "time": 3.841900000000373
+        },
+        {
+          "time": 3.881900000000373
+        },
+        {
+          "time": 3.9219000000003725
+        },
+        {
+          "time": 3.9619000000003726,
+          "key": "transitions/before-390-36.jpg"
+        },
+        {
+          "time": 4.001900000000372
+        },
+        {
+          "time": 4.041900000000373
+        },
+        {
+          "time": 4.081900000000372
+        }
+      ]
+    },
+    {
+      "phase": "before",
+      "width": 1440,
+      "metadata": {
+        "duration": 19.6,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/before-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 3.0471000000005586,
+          "key": "transitions/before-1440-0.jpg"
+        },
+        {
+          "time": 3.0871000000005586
+        },
+        {
+          "time": 3.1271000000005587
+        },
+        {
+          "time": 3.1671000000005587
+        },
+        {
+          "time": 3.2071000000005587
+        },
+        {
+          "time": 3.2471000000005588
+        },
+        {
+          "time": 3.2871000000005584,
+          "key": "transitions/before-1440-6.jpg"
+        },
+        {
+          "time": 3.3271000000005584
+        },
+        {
+          "time": 3.3671000000005584
+        },
+        {
+          "time": 3.4071000000005585
+        },
+        {
+          "time": 3.4471000000005585
+        },
+        {
+          "time": 3.4871000000005585
+        },
+        {
+          "time": 3.5271000000005586,
+          "key": "transitions/before-1440-12.jpg"
+        },
+        {
+          "time": 3.5671000000005586
+        },
+        {
+          "time": 3.6071000000005586
+        },
+        {
+          "time": 3.6471000000005587
+        },
+        {
+          "time": 3.6871000000005587
+        },
+        {
+          "time": 3.7271000000005587
+        },
+        {
+          "time": 3.767100000000559,
+          "key": "transitions/before-1440-18.jpg"
+        },
+        {
+          "time": 3.807100000000559
+        },
+        {
+          "time": 3.847100000000559
+        },
+        {
+          "time": 3.8871000000005584
+        },
+        {
+          "time": 3.9271000000005585
+        },
+        {
+          "time": 3.9671000000005585
+        },
+        {
+          "time": 4.007100000000559,
+          "key": "transitions/before-1440-24.jpg"
+        },
+        {
+          "time": 4.047100000000558
+        },
+        {
+          "time": 4.087100000000559
+        },
+        {
+          "time": 4.127100000000558
+        },
+        {
+          "time": 4.167100000000559
+        },
+        {
+          "time": 4.207100000000558
+        },
+        {
+          "time": 4.247100000000558,
+          "key": "transitions/before-1440-30.jpg"
+        },
+        {
+          "time": 4.287100000000558
+        },
+        {
+          "time": 4.327100000000558
+        },
+        {
+          "time": 4.367100000000558
+        },
+        {
+          "time": 4.4071000000005585
+        },
+        {
+          "time": 4.4471000000005585
+        },
+        {
+          "time": 4.4871000000005585,
+          "key": "transitions/before-1440-36.jpg"
+        },
+        {
+          "time": 4.527100000000559
+        },
+        {
+          "time": 4.567100000000559
+        },
+        {
+          "time": 4.607100000000559
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "width": 390,
+      "metadata": {
+        "duration": 16.56,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 35,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/candidate-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 2.8812000000001863,
+          "key": "transitions/candidate-390-0.jpg"
+        },
+        {
+          "time": 2.9212000000001863
+        },
+        {
+          "time": 2.9612000000001863
+        },
+        {
+          "time": 3.0012000000001864
+        },
+        {
+          "time": 3.0412000000001864
+        },
+        {
+          "time": 3.0812000000001865
+        },
+        {
+          "time": 3.1212000000001865,
+          "key": "transitions/candidate-390-6.jpg"
+        },
+        {
+          "time": 3.1612000000001865
+        },
+        {
+          "time": 3.201200000000186
+        },
+        {
+          "time": 3.241200000000186
+        },
+        {
+          "time": 3.281200000000186
+        },
+        {
+          "time": 3.3212000000001862
+        },
+        {
+          "time": 3.3612000000001863,
+          "key": "transitions/candidate-390-12.jpg"
+        },
+        {
+          "time": 3.4012000000001863
+        },
+        {
+          "time": 3.4412000000001863
+        },
+        {
+          "time": 3.4812000000001864
+        },
+        {
+          "time": 3.5212000000001864
+        },
+        {
+          "time": 3.5612000000001864
+        },
+        {
+          "time": 3.601200000000186,
+          "key": "transitions/candidate-390-18.jpg"
+        },
+        {
+          "time": 3.641200000000186
+        },
+        {
+          "time": 3.681200000000186
+        },
+        {
+          "time": 3.721200000000186
+        },
+        {
+          "time": 3.761200000000186
+        },
+        {
+          "time": 3.801200000000186
+        },
+        {
+          "time": 3.8412000000001862,
+          "key": "transitions/candidate-390-24.jpg"
+        },
+        {
+          "time": 3.8812000000001863
+        },
+        {
+          "time": 3.9212000000001863
+        },
+        {
+          "time": 3.9612000000001863
+        },
+        {
+          "time": 4.001200000000186
+        },
+        {
+          "time": 4.041200000000186
+        },
+        {
+          "time": 4.0812000000001865,
+          "key": "transitions/candidate-390-30.jpg"
+        },
+        {
+          "time": 4.1212000000001865
+        },
+        {
+          "time": 4.1612000000001865
+        },
+        {
+          "time": 4.201200000000187
+        },
+        {
+          "time": 4.241200000000187
+        },
+        {
+          "time": 4.281200000000187
+        },
+        {
+          "time": 4.321200000000186,
+          "key": "transitions/candidate-390-36.jpg"
+        },
+        {
+          "time": 4.361200000000187
+        },
+        {
+          "time": 4.401200000000186
+        },
+        {
+          "time": 4.441200000000187
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "width": 1440,
+      "metadata": {
+        "duration": 19.64,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/candidate-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 4.1915,
+          "key": "transitions/candidate-1440-0.jpg"
+        },
+        {
+          "time": 4.2315
+        },
+        {
+          "time": 4.2715
+        },
+        {
+          "time": 4.3115
+        },
+        {
+          "time": 4.3515
+        },
+        {
+          "time": 4.3915
+        },
+        {
+          "time": 4.4315,
+          "key": "transitions/candidate-1440-6.jpg"
+        },
+        {
+          "time": 4.4715
+        },
+        {
+          "time": 4.5115
+        },
+        {
+          "time": 4.5515
+        },
+        {
+          "time": 4.5915
+        },
+        {
+          "time": 4.6315
+        },
+        {
+          "time": 4.6715,
+          "key": "transitions/candidate-1440-12.jpg"
+        },
+        {
+          "time": 4.711499999999999
+        },
+        {
+          "time": 4.7515
+        },
+        {
+          "time": 4.791499999999999
+        },
+        {
+          "time": 4.831499999999999
+        },
+        {
+          "time": 4.871499999999999
+        },
+        {
+          "time": 4.911499999999999,
+          "key": "transitions/candidate-1440-18.jpg"
+        },
+        {
+          "time": 4.951499999999999
+        },
+        {
+          "time": 4.991499999999999
+        },
+        {
+          "time": 5.031499999999999
+        },
+        {
+          "time": 5.0714999999999995
+        },
+        {
+          "time": 5.1114999999999995
+        },
+        {
+          "time": 5.1514999999999995,
+          "key": "transitions/candidate-1440-24.jpg"
+        },
+        {
+          "time": 5.1915
+        },
+        {
+          "time": 5.2315
+        },
+        {
+          "time": 5.2715
+        },
+        {
+          "time": 5.3115
+        },
+        {
+          "time": 5.3515
+        },
+        {
+          "time": 5.3915,
+          "key": "transitions/candidate-1440-30.jpg"
+        },
+        {
+          "time": 5.4315
+        },
+        {
+          "time": 5.4715
+        },
+        {
+          "time": 5.5115
+        },
+        {
+          "time": 5.5515
+        },
+        {
+          "time": 5.5915
+        },
+        {
+          "time": 5.631499999999999,
+          "key": "transitions/candidate-1440-36.jpg"
+        },
+        {
+          "time": 5.6715
+        },
+        {
+          "time": 5.711499999999999
+        },
+        {
+          "time": 5.7515
+        }
+      ]
+    }
+  ]
+}

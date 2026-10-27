@@ -11,15 +11,21 @@ import { ProfileBoundary } from './ProfileBoundary';
 import { CedarBoundary } from './CedarBoundary';
 import { LobbyBoundary } from './LobbyBoundary';
 import './case-narrative.css';
+import type { CedarState } from './cedar-boundary-state';
+import type { LobbyState } from './lobby-boundary-state';
 import type { BoundaryState } from './profile-boundary-state';
 
-export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, boundaryState, onBoundaryStateChange }: {
+export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, boundaryState, onBoundaryStateChange, cedarState, lobbyState, onCedarStateChange, onLobbyStateChange }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
   openGallery: (index: number, trigger: HTMLButtonElement) => void;
   candidate?: boolean;
   refined?: boolean;
+  cedarState?: CedarState;
+  lobbyState?: LobbyState;
+  onCedarStateChange?: (state: CedarState) => void;
+  onLobbyStateChange?: (state: LobbyState) => void;
   boundaryState?: BoundaryState;
   onBoundaryStateChange?: (state: BoundaryState) => void;
 }) {
@@ -56,7 +62,7 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
     <div className={`case-narrative case-narrative-${study.kind}`}>
       {candidate && <section id="engineering" className="jobpilot-defining-decision">
         {!refined&&<><span className="eyebrow">THE DEFINING DECISION</span><h2>{study.engineeringHeading}</h2></>}
-        <ProfileBoundary concise={refined} headingLevel={refined?2:3} initialState={boundaryState} onStateChange={onBoundaryStateChange} />
+        {project.slug === 'jobpilot-ai' ? <ProfileBoundary concise={refined} headingLevel={refined?2:3} initialState={boundaryState} onStateChange={onBoundaryStateChange} /> : project.slug === 'lobby' ? <LobbyBoundary concise={refined} headingLevel={2} initialState={lobbyState} onStateChange={onLobbyStateChange} /> : <CedarBoundary concise={refined} headingLevel={2} initialState={cedarState} onStateChange={onCedarStateChange} />}
       </section>}
       {!candidate && context}
       {workflow.length > 0 && <section id="workflow" className="story-workflow">
@@ -65,7 +71,7 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
         <div className="workflow-frames">
           {workflow.slice(0,candidate?2:workflow.length).map(workflowFigure)}
         </div>
-        {candidate&&workflow.length>2&&<CaseDisclosure className="story-disclosure jobpilot-secondary-workflow" title="Interview preparation workflow">
+        {candidate&&workflow.length>2&&<CaseDisclosure className="story-disclosure jobpilot-secondary-workflow" title={project.slug === 'jobpilot-ai' ? 'Interview preparation workflow' : 'More project workflow'}>
           <div className="workflow-frames">{workflow.slice(2).map((step,index)=>workflowFigure(step,index+2))}</div>
         </CaseDisclosure>}
       </section>}
@@ -90,8 +96,8 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
         <h2>{candidate ? 'Implementation details' : study.engineeringHeading}</h2>
         {team.length > 1 && <p className="story-evidence-note">These decisions describe the team’s implementation. Individual contributions are listed separately above.</p>}
         {project.slug === 'jobpilot-ai' && !candidate && <ProfileBoundary />}
-        {project.slug === 'construction-project-management-accounting-system' && <CedarBoundary />}
-        {project.slug === 'lobby' && <LobbyBoundary />}
+        {project.slug === 'construction-project-management-accounting-system' && !candidate && <CedarBoundary />}
+        {project.slug === 'lobby' && !candidate && <LobbyBoundary />}
         {study.flow && !study.flowPlacement && project.slug !== 'jobpilot-ai' && <figure className="decision-path">
           <h3>{study.flow.title}</h3>
           <ol>{study.flow.steps.map(step => <li key={step}>{step}</li>)}</ol>

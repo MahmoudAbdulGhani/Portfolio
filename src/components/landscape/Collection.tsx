@@ -29,8 +29,11 @@ import type { Project } from "../../types";
 import { projectDisplayName } from "../../../shared/content-integrity";
 import "./selected-project.css";
 import { JobPilotJourneyContext, journeyBox, journeyTextBox, ordinaryActivation, type JobPilotJourney } from './jobpilot-journey';
+import type { CedarState } from './cedar-boundary-state';
+import type { LobbyState } from './lobby-boundary-state';
 import type { BoundaryState } from './profile-boundary-state';
-import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
+import { featuredPresentation, featuredProject } from './featured-presentation';
+import { useJobPilotDesign } from './jobpilot-design-context';
 import { JobPilotObjectDetail, JobPilotPreviewComposition } from './JobPilotPreviewComposition';
 
 // Labels are presentation only; full names, narratives and screenshots stay CMS-owned.
@@ -80,7 +83,10 @@ export function Collection() {
   const navigate = useNavigate();
   const navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
-  const journey = new URLSearchParams(location.search).get('project') === 'jobpilot-ai' ? journeys.get(location.state?.jobpilotReturn ?? location.key) : undefined;
+  const design = useJobPilotDesign();
+  const selectedSlug = new URLSearchParams(location.search).get('project') ?? undefined;
+  const sharedJourney = selectedSlug === 'jobpilot-ai' || featuredPresentation(design, selectedSlug).candidate;
+  const journey = sharedJourney ? journeys.get(location.state?.jobpilotReturn ?? location.key) : undefined;
   const [params, setParams] = useSearchParams();
   const selectionLock = useRef(false);
   const [origin, setOrigin] = useState<Origin | null>(() => {
@@ -123,6 +129,7 @@ export function Collection() {
     );
   const select = (slug: string) => {
     if (selectionLock.current || selected) return;
+    if (design?.projectSlug && design.projectSlug !== slug) { navigate(`/?project=${slug}`); return; }
     selectionLock.current = true;
     const kind = items.find(item => item.slug === slug)!.kind;
     const objects = Object.fromEntries(items.map(item => {
@@ -151,9 +158,9 @@ export function Collection() {
       select={select}
       restore={restore}
       origin={origin}
-      restored={Boolean(journey) || Boolean(selected?.kind === 'jobpilot' && location.state?.jobpilotReturn) || (navigation === 'POP' && Boolean(location.state?.collectionReturn))}
+      restored={Boolean(journey) || Boolean(sharedJourney && location.state?.jobpilotReturn) || (navigation === 'POP' && Boolean(location.state?.collectionReturn))}
       journey={journey}
-      returnScreen={selected?.kind === 'jobpilot' ? location.state?.jobpilotScreen : undefined}
+      returnScreen={sharedJourney ? location.state?.jobpilotScreen : undefined}
     />
   );
 }
@@ -163,11 +170,13 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
 }) {
   const location = useLocation();
   const design = useJobPilotDesign();
-  const { candidate, refined } = jobPilotPresentation(design, selected?.kind === 'jobpilot');
+  const { candidate, refined } = featuredPresentation(design, selected?.slug);
+  const sharedJourney = selected?.kind === 'jobpilot' || candidate;
+  const featured = featuredProject(selected?.slug);
   const collectionPath = design?.collectionPath ?? '/';
   const navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
-  const [initialPreview] = useState(() => ({ boundary: journey?.boundary, disclosure: journey?.disclosure }));
+  const [initialPreview] = useState(() => ({ boundary: journey?.boundary, disclosure: journey?.disclosure, cedar: journey?.cedar, lobby: journey?.lobby }));
   const boundaryState = useRef<BoundaryState | undefined>(journey?.boundary);
   const rememberPreview = useCallback((patch: Partial<JobPilotJourney>) => {
     if (!journey) return;
@@ -180,6 +189,10 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     // Back without requiring another explicit case-study opening.
     rememberPreview({ boundary: value });
   }, [rememberPreview]);
+  const cedarState = useRef<CedarState | undefined>(journey?.cedar);
+  const lobbyState = useRef<LobbyState | undefined>(journey?.lobby);
+  const rememberCedar = useCallback((value: CedarState) => { cedarState.current = value; rememberPreview({cedar:value}); },[rememberPreview]);
+  const rememberLobby = useCallback((value: LobbyState) => { lobbyState.current = value; rememberPreview({lobby:value}); },[rememberPreview]);
   const root = useRef<HTMLElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null);
   const openingProgress = useRef(0);
@@ -303,7 +316,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
 
   useLayoutEffect(() => {
     if(!refined||!root.current)return;
-    const scope=root.current,object=scope.querySelector<HTMLElement>('.jobpilot-object'),frame=scope.querySelector<HTMLElement>('.selection-image-frame');
+    const scope=root.current,object=scope.querySelector<HTMLElement>(`.${kind}-object`),frame=scope.querySelector<HTMLElement>('.selection-image-frame');
     if(!object||!frame)return;
     // This owns the refined photograph's placement. The opening timeline keeps
     // ownership of opacity/rig progress; return never moves it through UI.
@@ -321,11 +334,11 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
 
   useLayoutEffect(() => {
     const headingId = selected ? `${selected.kind}-engineering` : null;
-    const returning = selected?.kind === 'jobpilot' && restored && (navigation === 'POP' || Boolean(location.state?.routeRestore));
+    const returning = sharedJourney && restored && (navigation === 'POP' || Boolean(location.state?.routeRestore));
     if (headingId && location.hash === `#${headingId}` && !returning) {
       root.current?.querySelector<HTMLElement>(`#${headingId}`)?.focus({ preventScroll: true });
     }
-  }, [items, selected, location.key, location.hash, location.state?.routeRestore, navigation, restored]);
+  }, [items, selected, location.key, location.hash, location.state?.routeRestore, navigation, restored, sharedJourney]);
 
   useEffect(() => {
     let cancelled = false;
@@ -422,10 +435,16 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   // Only an active selection crossfades its held artwork into the new image.
   }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate]);
 
-  const caseLink = selected && <Link className="solid-action open-case" to={design && selected.kind === 'jobpilot' ? design.readerPath : `/projects/${selected.slug}`}
-    state={{ collection: selected.kind === 'jobpilot' ? `${collectionPath}${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(selected.kind === 'jobpilot' ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
+  const caseLink = selected && <Link className="solid-action open-case" to={design && selected.slug === (design.projectSlug ?? 'jobpilot-ai') ? design.readerPath : `/projects/${selected.slug}`}
+    state={{ collection: sharedJourney || design?.projectSlug === selected.slug ? `${collectionPath}${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(sharedJourney ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
     onClick={event => {
-      if (selected.kind !== 'jobpilot' || !ordinaryActivation(event)) return;
+      if (!sharedJourney || !ordinaryActivation(event)) return;
+      // Keep this existing preview entry's image/position usable after a reader
+      // reload clears the in-memory teaching state. JobPilot's approved history
+      // behavior is unchanged; no new entry, timer or restoration owner.
+      if (candidate && design?.projectSlug) window.history.replaceState({ ...window.history.state,
+        usr: { ...location.state, jobpilotScreen: screens[chapter]?.src, routeRestore: { x: scrollX, y: scrollY } },
+      }, '');
       const scope = root.current;
       const image = scope?.querySelector<HTMLImageElement>('.project-image-current img');
       const currentImage = image?.closest('.project-image-current');
@@ -433,8 +452,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
         && (!scope?.querySelector('.project-image-previous') || Boolean(currentImage && Number(getComputedStyle(currentImage).opacity) >= 0.99));
       journeys.set(location.key, {
         key: location.key, url: `${collectionPath}${location.search}${location.hash}`, routeState: location.state ?? {}, historyIndex: history.state?.idx ?? -1,
-        screen: screens[chapter]?.src, boundary: boundaryState.current,
-        disclosure: scope?.querySelector('.boundary-disclosure')?.getAttribute('data-expanded') === 'true',
+        screen: screens[chapter]?.src, boundary: boundaryState.current, cedar: cedarState.current, lobby: lobbyState.current,
+        disclosure: scope?.querySelector('.boundary-disclosure, .cedar-disclosure, .lobby-disclosure')?.getAttribute('data-expanded') === 'true',
         position: { x: scrollX, y: scrollY }, capturedAt: performance.now(),
         frame: sameImage ? journeyBox(image) : undefined,
         title: journeyTextBox(scope?.querySelector('.selection-caption h1') ?? null),
@@ -447,14 +466,14 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   </div>;
   const backLink=<button className="back-collection" onClick={back}><FiArrowLeft />Collection</button>;
   const caption=<div className="selection-caption"><div className="selection-caption-inner">
-    {candidate&&<JobPilotObjectDetail />}
-    {selected?.kind==='jobpilot'&&<span className="selection-project-number">01</span>}
+    {candidate&&<JobPilotObjectDetail asset={featured?.asset} />}
+    {(selected?.kind==='jobpilot'||candidate)&&<span className="selection-project-number">{featured?.number}</span>}
     {candidate&&<span className="selection-category">{selected?.category}</span>}
-    <h1>{selected?.displayTitle}</h1><p>{candidate?'Review before saving':selected?.category}</p>
+    <h1>{selected?.displayTitle}</h1><p>{candidate?featured?.caption:selected?.category}</p>
   </div></div>;
   const fullName=selected&&selected.displayTitle!==selected.project.name&&<span id="selected-project-full-name" className="sr-only">{selected.project.name}</span>;
   const navigationLinks=selected&&<div className="selection-project-links" role="group" aria-label="Selected project navigation">
-    {caseLink}<Link className="explore-engineering" tabIndex={0} to={{search:location.search,hash:`#${selected.kind}-engineering`}} replace state={selected.kind==='jobpilot'?{...location.state,routeRestore:undefined}:location.state}>Explore the engineering<FiArrowDown /></Link>
+    {caseLink}<Link className="explore-engineering" tabIndex={0} to={{search:location.search,hash:`#${selected.kind}-engineering`}} replace state={sharedJourney?{...location.state,routeRestore:undefined}:location.state}>Explore the engineering<FiArrowDown /></Link>
   </div>;
   return (
     <main
@@ -467,6 +486,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       data-preview-state={failedPreview === screens[chapter]?.src ? 'failed' : decoded.has(screens[chapter]?.src) ? 'ready' : 'loading'}
       data-motion-renderer={state.renderer}
       data-motion-framing={refined?'product':undefined}
+      data-featured-kind={candidate ? selected?.kind : undefined}
       ref={root}
       aria-label="Project collection"
     >
@@ -621,8 +641,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
           {selected.kind === 'jobpilot' && <div className="collection-boundary" onClick={() => {
             rememberPreview({ disclosure: root.current?.querySelector('.boundary-disclosure')?.getAttribute('data-expanded') === 'true' });
           }}><ProfileBoundary concise={refined} headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}
-          {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
-          {selected.kind === 'lobby' && <div className="collection-lobby-boundary"><LobbyBoundary headingLevel={2} headingId="lobby-engineering" suspended={state.phase === 'closing'} /></div>}
+          {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary concise={refined} initialState={initialPreview.cedar} onStateChange={candidate ? rememberCedar : undefined} disclosureOpen={initialPreview.disclosure} headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
+          {selected.kind === 'lobby' && <div className="collection-lobby-boundary"><LobbyBoundary concise={refined} initialState={initialPreview.lobby} onStateChange={candidate ? rememberLobby : undefined} disclosureOpen={initialPreview.disclosure} headingLevel={2} headingId="lobby-engineering" suspended={state.phase === 'closing'} /></div>}
           {inspection && <CaseGallery screens={screens} projectName={selected.displayTitle} initialIndex={inspection.index} returnFocusTo={inspection.trigger} onClose={() => setInspection(null)} />}
         </>
       )}

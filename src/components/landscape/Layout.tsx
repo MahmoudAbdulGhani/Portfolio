@@ -13,7 +13,8 @@ import "../../landscape-integration.css";
 import './composition.css';
 import './motion-language.css';
 import './mobile-reading.css';
-import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
+import { featuredPresentation } from './featured-presentation';
+import { useJobPilotDesign } from './jobpilot-design-context';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({
@@ -37,17 +38,17 @@ export function LandscapeLayout() {
   const collectionPath = design?.collectionPath ?? '/';
   const atCollection = location.pathname === collectionPath;
   const reviewReader = Boolean(design && location.pathname === design.readerPath);
-  const collectionState = reviewReader ? { returnProject: 'jobpilot-ai' } : location.pathname.startsWith("/projects/")
+  const collectionState = reviewReader ? { returnProject: design?.projectSlug ?? 'jobpilot-ai' } : location.pathname.startsWith("/projects/")
     ? { returnProject: location.pathname.slice("/projects/".length) }
     : undefined;
   const selected =
     atCollection &&
     new URLSearchParams(location.search).has("project");
-  const { candidate, refined } = jobPilotPresentation(design,
-    reviewReader || location.pathname.replace(/\/$/,'') === '/projects/jobpilot-ai' ||
-    (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai'));
+  const activeSlug = reviewReader ? design?.projectSlug ?? 'jobpilot-ai' : atCollection ? new URLSearchParams(location.search).get('project') ?? undefined : location.pathname.replace(/\/$/,'').split('/projects/')[1];
+  const { candidate, refined } = featuredPresentation(design, activeSlug);
+  const featured = candidate && activeSlug !== 'jobpilot-ai';
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${candidate ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
+    <JobPilotJourneyContext.Provider value={journeys}><div data-featured-project={featured ? activeSlug : undefined} className={`landscape${featured ? ' featured-design-candidate featured-design-refined' : ''}${candidate && !featured ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
       <div
         className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >
