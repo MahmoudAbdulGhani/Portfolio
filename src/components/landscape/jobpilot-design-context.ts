@@ -1,8 +1,9 @@
 import { createContext, useContext } from 'react';
 
 export type JobPilotDesign = {
-  variant: 'baseline' | 'candidate';
+  variant: 'baseline' | 'before' | 'candidate';
   candidate: boolean;
+  refined: boolean;
   collectionPath: string;
   readerPath: string;
 };
@@ -13,6 +14,6 @@ export const useJobPilotDesign = () => useContext(JobPilotDesignContext);
 // behind the same compiled flag; ordinary Production has no review addresses.
 export function jobPilotReviewAddress(pathname: string) {
   if (!(import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)) return null;
-  const match = /^\/review\/jobpilot\/(baseline|candidate)(\/reader)?$/.exec(pathname);
+  const match = /^\/review\/jobpilot\/(baseline|before|candidate)(\/reader)?$/.exec(pathname);
   return match ? { collection: !match[2], reader: Boolean(match[2]) } : null;
 }

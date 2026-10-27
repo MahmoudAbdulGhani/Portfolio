@@ -200,7 +200,7 @@ export function ProjectReader() {
           </>
         )}
         {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery}
-          candidate={Boolean(design?.candidate)} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
+          candidate={Boolean(design?.candidate)} refined={Boolean(design?.refined)} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>

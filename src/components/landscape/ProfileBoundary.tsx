@@ -53,7 +53,7 @@ function BoundarySculpture({ phase, reduced, suspended }: { phase: BoundaryPhase
   </div>;
 }
 
-export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId, initialState, onStateChange, disclosureOpen = false }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string; initialState?: BoundaryState; onStateChange?: (state: BoundaryState) => void; disclosureOpen?: boolean }) {
+export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId, initialState, onStateChange, disclosureOpen = false, concise = false }: { suspended?: boolean; headingLevel?: 2 | 3; headingId?: string; initialState?: BoundaryState; onStateChange?: (state: BoundaryState) => void; disclosureOpen?: boolean; concise?: boolean }) {
   const [state, dispatch] = useReducer(boundaryReducer, initialState, saved => saved ? { ...saved, announcement: '' } : initialBoundary());
   useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference();
@@ -71,10 +71,10 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
     playFiniteMotion(timeline);
     return () => stopFiniteMotion(timeline);
   }, [state.phase, state.blocked, reduced, suspended]);
-  return <section className="profile-boundary" aria-label="The profile save boundary" data-phase={state.phase} data-stale={stale} inert={suspended}>
+  return <section className="profile-boundary" aria-label="The profile save boundary" data-phase={state.phase} data-stale={stale} data-presentation={concise?'concise':undefined} inert={suspended}>
     <header className="boundary-heading">
       <Heading className="boundary-title" id={headingId} tabIndex={headingId ? -1 : undefined}>The profile save boundary</Heading>
-      <p className="boundary-label">Engineering demonstration — sample data.</p>
+      <p className="boundary-label">{concise?'Sample data · local demo':'Engineering demonstration — sample data.'}</p>
       <ol className="boundary-progress" role="list" aria-label="Review progress">
         {['Propose', 'Review', 'Accepted'].map((label, index) => <li key={label} aria-current={currentStep === index ? 'step' : undefined} data-complete={index < currentStep}>
           <span className="boundary-step-number" aria-hidden="true">{index + 1}</span><span>{label}</span>{index < 2 && <span className="boundary-step-arrow" aria-hidden="true">→</span>}
@@ -85,7 +85,7 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
       <BoundarySculpture phase={state.phase} reduced={reduced} suspended={suspended} />
       <div className="boundary-content">
         <p className="boundary-message" ref={text}>{state.blocked ? 'The old review cannot be applied; review again before accepting.' : stale ? 'Saved information changed; this review is out of date.' : messages[state.phase]}</p>
-        <p className="boundary-source">Fictional candidate · confirmed sample CV: “Location: Tripoli”.</p>
+        {!concise&&<p className="boundary-source">Fictional candidate · confirmed sample CV: “Location: Tripoli”.</p>}
         <dl className="boundary-comparison">
           <div className="boundary-proposed" data-pending={pending}>
             <dt>{state.phase === 'accept' ? 'Reviewed change' : 'Proposed change'}</dt>
@@ -110,6 +110,7 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
     <CaseDisclosure className="boundary-disclosure" title="How this maps to the implementation" defaultOpen={disclosureOpen}>
+      {concise&&<><p>{study.engineeringHeading}</p><p>Fictional candidate · confirmed sample CV: “Location: Tripoli”.</p></>}
       <p>One ivory plate holds the proposal apart; alignment represents acceptance. Its small turn uses the original photograph, as an artistic metaphor. Fictional values live only in this page’s memory. It does not edit a real JobPilot profile.</p>
       <p>The documented service keeps current and proposed profiles separate during review. Apply checks the reviewed profile revision and confirmed CV freshness under row locks, then saves accepted values and their provenance together. A changed profile requires another review; changed CV text requires fresh suggestions. Repeating an identical accepted request returns its existing result without applying it twice.</p>
       <p>This interactive example illustrates the profile revision check with sample data. It runs locally without saving a profile or contacting a backend.</p>
