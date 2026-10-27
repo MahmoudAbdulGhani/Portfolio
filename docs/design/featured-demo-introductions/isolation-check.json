@@ -1,0 +1,181 @@
+{
+  "method": "Same archived public GET snapshot/original source bytes, Windows Chrome reduced-motion emulation, immutable PR54 compiled build vs final compiled refinement. No form submissions.",
+  "results": [
+    {
+      "width": 390,
+      "route": "/",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/?project=jobpilot-ai",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 390,
+      "route": "/projects/jobpilot-ai",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/?project=lobby",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/projects/lobby",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/?project=construction-project-management-accounting-system",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/projects/construction-project-management-accounting-system",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/profile",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 390,
+      "route": "/review/featured/cedar/candidate?project=construction-project-management-accounting-system",
+      "scope": "Accepted selection frame only; demo changes intentionally excluded",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 390,
+      "route": "/review/featured/lobby/candidate?project=lobby",
+      "scope": "Accepted selection frame only; demo changes intentionally excluded",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/?project=jobpilot-ai",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/projects/jobpilot-ai",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/?project=lobby",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/projects/lobby",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/?project=construction-project-management-accounting-system",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/projects/construction-project-management-accounting-system",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": true
+    },
+    {
+      "width": 1440,
+      "route": "/profile",
+      "scope": "Normal viewport/main content",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 1440,
+      "route": "/review/featured/cedar/candidate?project=construction-project-management-accounting-system",
+      "scope": "Accepted selection frame only; demo changes intentionally excluded",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    },
+    {
+      "width": 1440,
+      "route": "/review/featured/lobby/candidate?project=lobby",
+      "scope": "Accepted selection frame only; demo changes intentionally excluded",
+      "textIdentical": true,
+      "geometryIdentical": true,
+      "pixelsIdentical": false
+    }
+  ]
+}

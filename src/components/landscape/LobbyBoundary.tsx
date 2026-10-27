@@ -34,8 +34,8 @@ export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId, 
   const explanation = state.phase === 'rejected' ? 'Rowan is blocked from this room. Having its invitation code does not override the block.' : state.phase === 'joined' ? 'Mira is now a room member. Try to enter the call to check access separately.' : state.phase === 'inspect' ? blocked ? 'Rowan has the same invitation, but a room block prevents joining.' : member ? 'Mira is a room member. Call access still needs an explicit attempt.' : 'Mira has an invitation. A shared code alone is not active membership.' : permission.reason;
   return <section className="lobby-boundary" data-presentation={concise ? 'concise' : undefined} aria-label="Lobby connection and access" data-phase={state.phase} data-participant={state.participant} inert={suspended}>
     <header className="lobby-heading">
-      <Heading className="lobby-title" id={headingId} tabIndex={headingId ? -1 : undefined}>A connection becomes access only when the rules allow it.</Heading>
-      <p className="lobby-label">{concise ? 'Fictional participants · local demo.' : 'Engineering demonstration — fictional participants.'}</p>
+      <Heading className="lobby-title" id={headingId} tabIndex={headingId ? -1 : undefined}>{concise ? 'Invitation to call access' : 'A connection becomes access only when the rules allow it.'}</Heading>
+      <p className="lobby-label">{concise ? 'Sample participants · local demo' : 'Engineering demonstration — fictional participants.'}</p>
       <ol className="lobby-progress" role="list" aria-label="Lobby demonstration progress">
         {['Inspect', 'Join', 'Try access'].map((label, index) => <li key={label} aria-current={step === index ? 'step' : undefined}><span aria-hidden="true" className="lobby-step-number">{index + 1}</span>{label}{index < 2 && <span aria-hidden="true" className="lobby-step-arrow">→</span>}</li>)}
       </ol>
@@ -69,6 +69,7 @@ export function LobbyBoundary({ suspended = false, headingLevel = 3, headingId, 
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
     <CaseDisclosure defaultOpen={disclosureOpen} className="lobby-disclosure" title="Source basis and demonstration limits">
+      {concise && <p>A connection becomes access only when the rules allow it.</p>}
       {concise && <p className="lobby-local-note">Local sample only. Joining models membership; call access models the first permission check, with available capacity assumed.</p>}
       <p>This describes the team’s implementation, not individual authorship. Mahmoud’s documented contribution covers authenticated and guest access, invitations, validation and Supabase-backed workflows; the full team and role remain in the case study. Ribbon labels are artistic associations. The photograph stays fixed; only explanatory guides receive brief emphasis.</p>
       <p>The shared guest-room link carries a room code. The browser establishes a Supabase session (including anonymous guests) and invokes guest.join_channel. The SQL function checks identity, normalized code, active/unexpired room, room blocks and display-name rules. It restores an eligible existing membership or creates one after a capacity check. A block is checked before either write. Joining changes membership and room activity; it does not consume an invitation record. Existing eligible membership can be reused, and the new-member capacity check follows the restore branch.</p>
