@@ -1,0 +1,71 @@
+{
+  "method": "Observed conservative mesh-box projections and canvas/UI rectangles from the actual-source local WebGL run. Counts describe sampled poses, not GPU smoothness, physical-device performance or every possible future frame.",
+  "geometry": [
+    {
+      "width": 320,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 28,
+      "beforeImageTop": 315.109375,
+      "afterImageTop": 315.109375,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 8.79162031413287
+    },
+    {
+      "width": 390,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 41,
+      "beforeImageTop": 319.390625,
+      "afterImageTop": 319.390625,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 10.681398580241705
+    },
+    {
+      "width": 430,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 41,
+      "beforeImageTop": 323.421875,
+      "afterImageTop": 323.421875,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 11.29316974338883
+    },
+    {
+      "width": 768,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 42,
+      "beforeImageTop": 367.484375,
+      "afterImageTop": 367.484375,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 20.18554145115263
+    },
+    {
+      "width": 1280,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 41,
+      "beforeImageTop": 112,
+      "afterImageTop": 112,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 21.945165234587535
+    },
+    {
+      "width": 1440,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 42,
+      "beforeImageTop": 132,
+      "afterImageTop": 132,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 24.127275768064635
+    }
+  ]
+}

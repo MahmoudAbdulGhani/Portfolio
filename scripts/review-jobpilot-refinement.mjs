@@ -6,7 +6,7 @@ import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
 import path from 'node:path';
 const option=key=>process.argv.find(arg=>arg.startsWith(`--${key}=`))?.slice(key.length+3);
 const phase=process.argv[2]??'before', mode=option('mode')??'normal';
-const folder=`docs/design/jobpilot-phase1-refinement/${phase}/${mode}`;
+const folder=option('folder')??`docs/design/jobpilot-phase1-refinement/${phase}/${mode}`;
 await mkdir(folder,{recursive:true});
 const snapshot='.motion-preview/jobpilot-refinement-content.json';
 if(process.argv.includes('--refresh')){
@@ -43,10 +43,28 @@ try{for(const[width,height]of(mode==='normal'?[[320,844],[390,844],[430,844],[76
   const renderer=await page.locator('.stage').getAttribute('data-motion-renderer');
   const gpu=renderer==='webgl'?await page.locator('.motion-rig canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2'),debug=gl?.getExtension('WEBGL_debug_renderer_info');return debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):null;}):null;
   const transition=await page.evaluate(()=>window.refinementFrames);
-  await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();await expect(page.locator('#jobpilot-engineering')).toBeInViewport({ratio:1});await capture('demo-preview');
+  await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();await expect(page.locator('#jobpilot-engineering')).toBeInViewport({ratio:1});
+  if(option('folder')){
+    // Matched adoption stills observe the existing font-ready hash scroll,
+    // rather than capturing the earlier focus/pointer auto-scroll position.
+    await expect(page.locator('#jobpilot-engineering')).toBeFocused();
+    await expect.poll(()=>page.locator('#jobpilot-engineering').evaluate(el=>{
+      const desired=scrollY+el.getBoundingClientRect().top-parseFloat(getComputedStyle(el).scrollMarginTop)-parseFloat(getComputedStyle(document.scrollingElement).scrollPaddingTop);
+      return Math.abs(scrollY-Math.max(0,Math.min(desired,document.scrollingElement.scrollHeight-innerHeight)));
+    })).toBeLessThan(.5);
+  }
+  await capture('demo-preview');
   const choices=page.getByRole('group',{name:'Preview workflow'}).getByRole('button');await choices.nth(1).click();
   await expect(page.locator('.project-image-previous')).toHaveCount(0);const open=page.getByRole('link',{name:'Open case study',exact:true});await open.click();
-  await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');await expect(page.locator('[data-reader-handoff="running"]')).toHaveCount(0);
+  await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
+  if(option('folder')){
+    await expect(page.locator('.case-figure .screenshot-frame')).toHaveAttribute('data-image-state','ready');
+    await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+    // Observe the settled reader before deliberately scrolling into its demo.
+    // This is a capture hold, not an application delay or regression deadline.
+    await page.waitForTimeout(500);
+  }
+  await expect(page.locator('[data-reader-handoff="running"]')).toHaveCount(0);
   const boundary=page.getByRole('region',{name:'The profile save boundary'});
   await boundary.evaluate(el=>{const target=el.closest('#engineering')??el,header=document.querySelector('.site-header').getBoundingClientRect();scrollBy({top:target.getBoundingClientRect().top-header.bottom-24,behavior:'instant'});});
   await capture('demo-reader');await hold();
@@ -56,5 +74,5 @@ try{for(const[width,height]of(mode==='normal'?[[320,844],[390,844],[430,844],[76
   const video=page.video();await context.close();if(recording)await rename(await video.path(),`${folder}/${width}-opening-journey.webm`);
   results.push({width,height,renderer,gpu,errors,writes,transition});
 }}finally{await browser.close();server.close();}
-await writeFile(`${folder}/findings.json`,JSON.stringify({phase,mode,source:'PR #51 / a7b9c800d63f337b79ec7d6904ece544938732bf immediate before; original PR #50 remains separate.',method:'Compiled Windows Chrome with frozen fresh public GET data and original images; native video. Viewports are emulation, GPU strings identify WebGL separately from forced fallback. DOM/canvas bounds do not establish GPU smoothness.',results},null,2));
+await writeFile(`${folder}/findings.json`,JSON.stringify({phase,mode,source:option('source')??'PR #51 / a7b9c800d63f337b79ec7d6904ece544938732bf immediate before; original PR #50 remains separate.',method:'Compiled Windows Chrome with frozen fresh public GET data and original images; native video. Viewports are emulation, GPU strings identify WebGL separately from forced fallback. DOM/canvas bounds do not establish GPU smoothness.',results},null,2));
 if(results.some(r=>r.errors.length||r.writes.length))throw Error('Capture errors or attempted writes');console.log(JSON.stringify({phase,mode,viewports:results.length,renderers:results.map(({width,renderer,gpu})=>({width,renderer,gpu}))}));

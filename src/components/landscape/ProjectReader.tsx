@@ -15,7 +15,7 @@ import { CaseMediaNav } from "./CaseMediaNav";
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { JobPilotJourneyContext, ordinaryActivation } from './jobpilot-journey';
 import { useJobPilotHandoff } from './use-jobpilot-handoff';
-import { useJobPilotDesign } from './jobpilot-design-context';
+import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
 import { JobPilotObjectDetail } from './JobPilotPreviewComposition';
 import type { BoundaryState } from './profile-boundary-state';
 import './jobpilot-handoff.css';
@@ -24,6 +24,7 @@ import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenC
 export function ProjectReader() {
   const design = useJobPilotDesign();
   const { slug = design ? 'jobpilot-ai' : '' } = useParams();
+  const { candidate, refined } = jobPilotPresentation(design, slug === 'jobpilot-ai');
   const location = useLocation();
   const navigate = useNavigate(), navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
@@ -34,8 +35,8 @@ export function ProjectReader() {
   const journey = slug === 'jobpilot-ai' ? journeys.get(from?.jobpilotJourney?.key ?? '') : undefined;
   const rememberBoundary = useCallback((state: BoundaryState) => {
     const key=from?.jobpilotJourney?.key, saved=key&&journeys.get(key);
-    if(design?.candidate&&key&&saved)journeys.set(key,{...saved,boundary:state});
-  },[design?.candidate,from?.jobpilotJourney?.key,journeys]);
+    if(candidate&&key&&saved)journeys.set(key,{...saved,boundary:state});
+  },[candidate,from?.jobpilotJourney?.key,journeys]);
   const root = useRef<HTMLElement>(null);
   const record = useProject(slug),
     projects = useProjects();
@@ -82,9 +83,9 @@ export function ProjectReader() {
   const features = nonempty(project.features);
   const stack = nonempty(project.stack);
   const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
-  // The complete approved introduction remains in Project context. The review
+  // The complete approved introduction remains in Project context. The compact
   // opening uses its first clause so the product image arrives sooner on phones.
-  const openingPurpose = design?.candidate && purpose?.includes(', using candidate information')
+  const openingPurpose = candidate && purpose?.includes(', using candidate information')
     ? purpose.split(', using candidate information')[0]+'.' : purpose;
   const overview = project.overview?.trim() || project.description?.trim();
   const carriedIndex = screens.findIndex(screen => screen.src === chapterRecord.source);
@@ -139,7 +140,7 @@ export function ProjectReader() {
         </Link>
         <header className="case-heading">
           <div>
-            {design?.candidate && <JobPilotObjectDetail />}
+            {candidate && <JobPilotObjectDetail />}
             <span className="eyebrow">{slug === 'jobpilot-ai' && <><span className="case-project-number">01</span> / </>}CASE STUDY / {project.type}</span>
             <h1 className="view-heading">{displayName}</h1>
             {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
@@ -200,7 +201,7 @@ export function ProjectReader() {
           </>
         )}
         {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery}
-          candidate={Boolean(design?.candidate)} refined={Boolean(design?.refined)} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
+          candidate={candidate} refined={refined} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>
           <section id="overview">
             <span className="eyebrow">01 / OVERVIEW</span>

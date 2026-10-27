@@ -1,0 +1,56 @@
+# JobPilot Phase 1 adoption
+
+Approved source: PR #52 / `9f048b0d321153bee4f0dfc7defb6bc08da888da`. This change adopts that presentation on ordinary Collection selection (`/?project=jobpilot-ai`) and `/projects/jobpilot-ai`. It does not promote a deployment or extend the design to Cedar/Lobby.
+
+## Implementation
+
+Normal JobPilot resolves to the approved candidate/refinement flags. Explicit historical review contexts keep their own flags. Layout, Collection and ProjectReader use that shared resolution; there is no second production JSX or CSS implementation. Existing styles move from review-entry imports to the shared application entry after page styles, retaining their project-scoped selectors and accepted values. The reader now carries demo state back to the preview through the existing journey map on normal routes too.
+
+The original model, materials, complete source images, camera fit, motion clock, readiness deadlines, interruption/late-image recovery, gallery and reducer remain. No portrait/media, factual copy, AI/provider, Contact or CV implementation changes. Full project context remains available through the approved disclosure.
+
+Review entries remain opt-in, noindex and outside normal navigation/sitemaps. The adoption branch uses a normal compiled Preview, with no review flag or review artifacts. Normal Production still excludes the review entry/addresses and comparison directories, while including the approved presentation. Existing Vercel protection is unchanged; noindex is not access protection.
+
+The PR #50 baseline and PR #51 immediate-before captures/reports remain unchanged in `docs/design/jobpilot-design-journey` and `docs/design/jobpilot-phase1-refinement`. Explicit review mode continues to expose baseline/before/candidate for historical inspection; the new comparison is an offline review artifact, not a normal public route.
+
+## Comparison and methods
+
+The before side is a fresh immutable compiled PR #52 candidate built before implementation edits. The after side is the ordinary production build. Both use the same fresh read-only public GET snapshot and original assets. API interception rejects writes. Matched captures cover 320×844, 390×844, 430×844, 768×1024, 1280×720 and 1440×900; selected preview, preview demo and reader demo are captured. Reduced motion and deliberately denied WebGL are separately labelled at 390/1440px. All evidence is from this task, not relabelled PR #51 imagery.
+
+The [comparison HTML](index.html) and [offline ZIP](comparison.zip) contain matched full-size images, phone/desktop native journey recordings, decoded opening samples and observed geometry. Extract the ZIP and open index.html. Exact normal-route automatic Preview links, final SHA, anonymous access results and terminal CI are in the stacked draft PR delivery. If sign-in is required, hosted interaction remains unverified; the public evidence downloads remain available.
+
+Intentional differences from the review wrapper are ordinary URLs, canonical/index metadata, and exclusion of the review entry/artifacts. Direct reader entry retains the normal “All projects” return rather than the review wrapper's “Collection”; arrivals from Collection retain the Collection return and selected-screen journey. There is no intended visual difference in the matched Collection → preview → reader flow.
+
+Phone/tablet viewports are Windows Chrome browser emulation, not physical Android/iPhone testing. Normal-run GPU strings identify actual WebGL separately from photographic fallback. Native video playback/decoded samples and projected bounds do not establish GPU smoothness or physical-device performance. No physical-device or assistive-technology session was available.
+
+## Validation record
+
+Typecheck/lint, normal build/policy/production guards, geometry/motion/boundary and integrity/API checks are run alongside compiled normal-route and existing affected regressions. The shared journey suite runs against ordinary routes and against the opt-in historical review build. Review-only tests remain active in review mode and are intentionally inapplicable to the normal build; normal mode instead checks route exclusion, refresh, canonical/index metadata and native history. CI adds the normal compiled suite to the existing JobPilot job without changing deadlines or retry policies.
+
+Existing geometry assertions are updated only for JobPilot's accepted identity/image/actions order. Cedar/Lobby expectations remain. Reader restoration now measures document scroll, matching the approved layout. Workflow tests explicitly expand the approved secondary disclosure before inspecting its complete images. The full introduction is checked in Project context alongside the compact opening.
+
+Initial development validation is retained here: the first normal compiled run had 45 passes, 9 inapplicable review cases and 3 failures caused by a new assertion using the page title instead of the actual 404 heading. The corrected exclusion/history check passed all three configurations. An existing-test development-server run had 23 passes/13 failures: twelve initial-layout checks were placed after interaction had scrolled the identity away, and one initial page remained at Loading collection until the unchanged 30-second deadline. After correcting measurement placement, a second dev run had 25 passes/two failures: an initial navigation timeout and a tablet native-Back `ERR_ABORTED` during development. No timeout was extended and neither transient's root cause is established. Fresh compiled follow-ups and final-head CI are reported separately rather than erasing these outcomes.
+
+The first comparison revealed a real integration detail: importing shared JobPilot CSS from Layout let the later base boundary-title rule override its approved scroll margin. Loading the same project-scoped rules after page imports restores the former review cascade. Capture alignment and the exact hash regression account for both target margin and the existing document scroll padding. Evidence was regenerated after this correction; no motion timing or scroll-restoration controller changed.
+
+Settled reader-demo captures wait for image readiness, the scheduled handoff and a 500ms observation hold before deliberately scrolling. Earlier captures could scroll before that existing handoff had begun, leaving its moving image across the demo in the still; those captures were replaced. The observation hold changes neither application timing nor regression deadlines.
+
+## Final visual findings and local results
+
+- All six normal viewports on both sides identify actual Intel UHD / ANGLE Direct3D11 WebGL. Reduced/fallback modes are separately labelled; all six findings files report zero page errors and attempted writes.
+- [Pixel comparison](pixel-comparison.json): 24 of 30 matched pairs are pixel-identical after RGB decoding. The other six have mean absolute channel differences below 0.032 on the 0–255 scale. All reader-demo pairs match exactly. Complete image top positions agree at all six sizes, including 319.39px at 390px. The screenshots support visual equivalence in this run, not universal pixel identity.
+- [Opening geometry](geometry-summary.json): sampled projected subject bounds stay inside the product canvas at every size, with zero intersections with identity/actions/screen choices/back navigation. Minimum observed margin ranges from about 8.8px to 24.1px. Full opening contact sheets/keyframes show the held photograph, visible articulation and product handoff.
+- Four native recordings play to ended in Chrome; 40 decoded opening frames per recording supplement inspection. Playback reports 29–34 dropped frames per recording on this machine. These counters and still samples do not establish GPU smoothness or physical-device performance; no such claim is made.
+- [Preservation comparison](isolation-check.json): all 18 sampled non-JobPilot route pairs retain identical main text and measured heading/image/navigation/header/footer geometry. Fifteen have identical raster hashes; three differ. This includes unselected Collection, Projects, Cedar/Lobby preview/readers, Profile, Contact and Job Match, at 390/1440px, without submissions. Historical PR #50/#51 evidence folders have no diff.
+- Local typecheck/lint, normal/review builds, review policy, both production guards, 20 motion/boundary and 62 integrity/API cases passed. The initial 45 normal compiled journey cases passed, and corrected/new refresh/history/exclusion checks passed all three configurations. All 51 affected compiled follow-up cases passed; six explicit historical baseline/before checks also passed. After restoring the cascade, all three exact hash/Back checks passed again against the normal compiled build. Terminal full final-head CI and any retry/flaky outcomes are recorded in the draft PR delivery, without replacing the initial development outcomes above.
+
+Recommendation: adopt the shared implementation through this draft PR. No intentional visual change from the approved matched journey; normal URLs/index metadata and the preserved direct-entry return are the integration differences. Physical-device/assistive-technology and any sign-in-blocked hosted interactions remain gaps. No merge, manual deployment, promotion, Contact submission or live CMS/database changes.
+
+## Initial CI and fixture follow-up
+
+[CI #130](https://github.com/MahmoudAbdulGhani/Portfolio/actions/runs/40509286129) at `1a721fdae62c66554fe4b2a17b326879fdc70190` passed 13 gates and failed four (three smoke shards plus their aggregate). The shared suites passed 54 review cases and 48 normal compiled cases with retries disabled; production Profile 66, portrait review 15 and demo boundary 36 also passed.
+
+Four smoke cases exposed two remaining pre-adoption fixture assumptions. The workflow eligibility/deadline case targeted the last JobPilot image without opening its approved secondary disclosure (all three configurations). It now opens that existing disclosure before pausing the fake clock. Its exact 10,000 + 4,999 + 1ms deadline checks remain. The tablet retiring-scroll case did not establish its required nonzero scroll after compaction. An intermediate native-activation-only follow-up passed five cases but still failed that tablet precondition. The final fixture expands the existing demo disclosure, asserts genuine scroll space and a positive source position, then activates without pointer auto-scroll. It also verifies the disclosure stays expanded on return. The simulated retiring scroll event, focus return and <0.5px restoration assertions remain unchanged. No production code or layout changed in this follow-up.
+
+The screenshots/recordings correspond to the application code in `1a721fd`, unchanged by this tests/documentation follow-up. The final-head full CI is reported in the PR delivery; the failed initial run remains visible and is not counted as a pass.
+
+The final two-case local follow-up passed all six desktop/tablet/phone configurations against the normal compiled build, with retries disabled. Deadline, stale-request and exact restoration assertions were retained.

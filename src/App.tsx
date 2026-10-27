@@ -11,6 +11,10 @@ import { ProjectDetail } from "./pages/ProjectDetail";
 import { Contact } from "./pages/Contact";
 import { JobMatch } from "./pages/JobMatch";
 import { NotFound } from "./pages/NotFound";
+// Keep the approved project-scoped cascade after the shared page styles,
+// matching the former review entry without a second presentation copy.
+import './components/landscape/jobpilot-presentation.css';
+import './components/landscape/jobpilot-refinement.css';
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
 const JobPilotDesignReview = (import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)

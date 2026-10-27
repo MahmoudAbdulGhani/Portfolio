@@ -5,7 +5,8 @@ import { caseStudyFor } from '../shared/case-study-runtime';
 import { detailScreens } from '../src/lib/project-detail-screens';
 
 test.describe.configure({retries:0});
-const entry='/review/jobpilot/candidate', baseline='/review/jobpilot/baseline';
+const production=process.env.JOBPILOT_TEST_PRODUCTION==='1';
+const entry=production?'/':'/review/jobpilot/candidate', reader=production?'/projects/jobpilot-ai':entry+'/reader', baseline='/review/jobpilot/baseline';
 const open=(page:Page)=>page.getByRole('link',{name:'Open case study',exact:true});
 const choices=(page:Page)=>page.getByRole('group',{name:'Preview workflow'}).getByRole('button');
 async function fixtures(page:Page,reduced=true){
@@ -30,7 +31,7 @@ async function naturalImage(page:Page,selector:string){
 for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720],[1440,900]])test(`candidate identity, complete images, early decision and return at ${width}x${height}`,async({page})=>{
   await page.setViewportSize({width,height});await fixtures(page);await selected(page);
   await expect(page.locator('main h1')).toHaveCount(1);await expect(page.locator('.selection-caption')).toContainText('Review before saving');
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','noindex, nofollow');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content',production?'index, follow':'noindex, nofollow');
   const identity=await page.locator('.selection-caption').evaluate(el=>{
     const a=el.querySelector('h1')!.getBoundingClientRect(),b=el.querySelector('.jobpilot-object-detail')!.getBoundingClientRect();
     return {overlap:a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top,first:el.closest('.selection-detail')!.compareDocumentPosition(document.querySelector('.selection-image-frame')!)&Node.DOCUMENT_POSITION_FOLLOWING};
@@ -56,7 +57,7 @@ for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720]
   await naturalImage(page,'.selection-image-frame .project-image-current img');
   await choices(page).nth(1).click();const label=await choices(page).nth(1).innerText();
   await open(page).focus();await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(entry+'/reader');await expect(page.locator('.case-media-title strong')).toHaveText(label);
+  await expect(page).toHaveURL(reader);await expect(page.locator('.case-media-title strong')).toHaveText(label);
   await expect(page.locator('main h1')).toHaveCount(1);await naturalImage(page,'.case-figure .screenshot-button img');
   await expect(page.locator('.profile-boundary')).toHaveCount(1);
   await expect(page.locator('#engineering').getByRole('heading')).toHaveCount(1);
@@ -79,18 +80,21 @@ for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720]
   await page.locator('.back-collection').click();await expect(page.getByRole('button',{name:'Explore JobPilot AI',exact:true})).toBeFocused();
 });
 
-test('baseline and ordinary routes retain the accepted composition and review metadata is isolated',async({page})=>{
+test('historical baseline stays separate from adopted ordinary routes and review metadata is isolated',async({page})=>{
+  test.skip(production,'Historical variants are intentionally absent from the normal build.');
   await fixtures(page);await selected(page,baseline);
   await expect(page.locator('.jobpilot-design-candidate')).toHaveCount(0);await expect(page.locator('.selection-caption p')).toHaveText('AI career workspace');
   await expect(page.locator('.lobby-object')).toHaveCSS('opacity','0.12');
   await open(page).click();await expect(page).toHaveURL(baseline+'/reader');
   expect(await page.locator('#workflow').evaluate(el=>Boolean(el.compareDocumentPosition(document.querySelector('#engineering')!)&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
-  await page.goto('/?project=jobpilot-ai');await expect(page.locator('.selection-caption p')).toHaveText('AI career workspace');
+  await page.goto('/?project=jobpilot-ai');await expect(page.locator('.selection-caption p')).toHaveText('Review before saving');
+  await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);
   await expect(page.locator('[data-design-review]')).toHaveCount(0);await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','index, follow');
   await expect(page.locator('a[href="/review/jobpilot/candidate"]')).toHaveCount(0);
 });
 
 test('PR51 immediate before remains separate from the PR50 baseline and refined candidate',async({page})=>{
+  test.skip(production,'Historical variants are intentionally absent from the normal build.');
   await page.setViewportSize({width:390,height:844});await fixtures(page);await selected(page,'/review/jobpilot/before');
   await expect(page.locator('.jobpilot-design-candidate')).toHaveCount(1);await expect(page.locator('.jobpilot-design-refined')).toHaveCount(0);
   const before=await page.locator('.selection-image-frame').boundingBox();
@@ -142,7 +146,7 @@ test('a delayed or failed product keeps the framed photograph available and navi
 });
 
 test('the original workflow, contribution, source disclosures and all complete gallery images remain available',async({page})=>{
-  await fixtures(page);await page.goto(entry+'/reader');
+  await fixtures(page);await page.goto(reader);
   const study=caseStudyFor(caseStudyProjects.find(p=>p.slug==='jobpilot-ai')!)!;
   await page.locator('.jobpilot-secondary-workflow summary').click();
   for(const step of study.workflow)await expect(page.locator('#workflow')).toContainText(step.title);
@@ -165,7 +169,7 @@ test('reduced motion and photographic fallback retain the same hierarchy and usa
 });
 
 test('workflow captions precede images on narrow layouts and remain beside complete figures on desktop',async({page})=>{
-  await fixtures(page);await page.goto(entry+'/reader');
+  await fixtures(page);await page.goto(reader);
   await page.locator('.jobpilot-secondary-workflow summary').click();
   const figures=page.locator('#workflow .workflow-frames figure');await expect(figures).toHaveCount(3);
   for(const width of [320,390,430,768,1280,1440]){
@@ -205,7 +209,7 @@ test('interrupted handoff and a late image cannot reopen a retired scene or lose
 test('loading and failure keep the complete image reserve stable; footer and assistant stay keyboard accessible',async({page})=>{
   await fixtures(page);let release!:()=>void;const wait=new Promise<void>(resolve=>{release=resolve;});
   await page.route(sourceRequest('710055a0-a275-4e6a-991d-4aaa23c6e549.png'),async route=>{await wait;await route.abort();});
-  await page.goto(entry+'/reader',{waitUntil:'domcontentloaded'});await expect(page.locator('.case-heading h1')).toBeVisible();
+  await page.goto(reader,{waitUntil:'domcontentloaded'});await expect(page.locator('.case-heading h1')).toBeVisible();
   const frame=page.locator('.case-figure .screenshot-frame'),before=await frame.boundingBox();release();
   await expect(frame).toHaveAttribute('data-image-state','failed');const after=await frame.boundingBox();
   expect(Math.abs(before!.width-after!.width)).toBeLessThan(1);expect(Math.abs(before!.height-after!.height)).toBeLessThan(1);
@@ -215,6 +219,7 @@ test('loading and failure keep the complete image reserve stable; footer and ass
 });
 
 test('compiled comparison is real HTML with review metadata rather than the SPA not-found route',async({request})=>{
+  test.skip(production,'Review-only comparison artifacts are excluded from the normal build.');
   const response=await request.get('/review/jobpilot-comparison/index.html');expect(response.status()).toBe(200);expect(await response.text()).toContain('JobPilot design journey');
   const metadata=await request.get('/review/jobpilot-comparison/build.json');expect((await metadata.json()).candidate).toBe(entry);
   expect((await metadata.json()).before).toBe('/review/jobpilot/before');
@@ -244,6 +249,29 @@ test('a return to an engineering hash restores the source scroll instead of repl
   // contract from the browser's ordinary pointer-target auto-scroll.
   await open(page).evaluate(link=>(link as HTMLAnchorElement).click());
   await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');await page.locator('.case-back').click();
-  await expect(open(page)).toBeFocused();await expect(page).toHaveURL(/candidate\?project=jobpilot-ai#jobpilot-engineering$/);
+  await expect(open(page)).toBeFocused();await expect(page).toHaveURL(production?/\/\?project=jobpilot-ai#jobpilot-engineering$/:/candidate\?project=jobpilot-ai#jobpilot-engineering$/);
   await expect.poll(()=>page.evaluate(saved=>Math.abs(scrollY-Math.min(saved,document.scrollingElement!.scrollHeight-innerHeight)),position)).toBeLessThan(.5);
+});
+
+test('normal compiled routes refresh, retain native history and exclude review entries',async({page,request})=>{
+  test.skip(!production,'Normal-build adoption is verified independently from the opt-in review build.');
+  await fixtures(page);await page.goto(reader);
+  await page.goto(reader+'/');await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);
+  await page.goto(reader);
+  await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','index, follow');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',/\/projects\/jobpilot-ai$/);
+  await page.reload();await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
+  await selected(page);await choices(page).nth(1).click();const label=await choices(page).nth(1).innerText();
+  await open(page).click();await expect(page.locator('.case-media-title strong')).toHaveText(label);
+  await page.goBack();await expect(open(page)).toBeFocused();await expect(choices(page).nth(1)).toHaveAttribute('aria-pressed','true');
+  await page.goForward();await expect(page.locator('.case-media-title strong')).toHaveText(label);
+  await page.reload();await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
+  await expect(page.locator('.case-media-title strong')).toHaveText(label);
+  for(const address of ['/review/jobpilot/candidate','/review/jobpilot/before','/review/jobpilot/baseline']){
+    await page.goto(address);await expect(page.getByRole('heading',{name:'This page wandered off.'})).toBeVisible();
+    await expect(page.locator('.stage,.project-reader')).toHaveCount(0);
+  }
+  const artifact=await request.get('/review/jobpilot-refinement/index.html');
+  expect(await artifact.text()).not.toContain('JobPilot Phase 1 refinement');
 });

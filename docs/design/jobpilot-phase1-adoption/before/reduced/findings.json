@@ -1,0 +1,26 @@
+{
+  "phase": "before",
+  "mode": "reduced",
+  "source": "PR52-9f048b0-approved-candidate-versus-normal-production-build",
+  "method": "Compiled Windows Chrome with frozen fresh public GET data and original images; native video. Viewports are emulation, GPU strings identify WebGL separately from forced fallback. DOM/canvas bounds do not establish GPU smoothness.",
+  "results": [
+    {
+      "width": 390,
+      "height": 844,
+      "renderer": "reduced",
+      "gpu": null,
+      "errors": [],
+      "writes": [],
+      "transition": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "renderer": "reduced",
+      "gpu": null,
+      "errors": [],
+      "writes": [],
+      "transition": []
+    }
+  ]
+}

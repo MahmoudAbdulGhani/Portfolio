@@ -30,7 +30,7 @@ import { projectDisplayName } from "../../../shared/content-integrity";
 import "./selected-project.css";
 import { JobPilotJourneyContext, journeyBox, journeyTextBox, ordinaryActivation, type JobPilotJourney } from './jobpilot-journey';
 import type { BoundaryState } from './profile-boundary-state';
-import { useJobPilotDesign } from './jobpilot-design-context';
+import { jobPilotPresentation, useJobPilotDesign } from './jobpilot-design-context';
 import { JobPilotObjectDetail, JobPilotPreviewComposition } from './JobPilotPreviewComposition';
 
 // Labels are presentation only; full names, narratives and screenshots stay CMS-owned.
@@ -163,8 +163,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
 }) {
   const location = useLocation();
   const design = useJobPilotDesign();
-  const candidate = Boolean(design?.candidate && selected?.kind === 'jobpilot');
-  const refined = Boolean(design?.refined && selected?.kind === 'jobpilot');
+  const { candidate, refined } = jobPilotPresentation(design, selected?.kind === 'jobpilot');
   const collectionPath = design?.collectionPath ?? '/';
   const navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);

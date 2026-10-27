@@ -22,6 +22,7 @@ for (const width of [320, 390, 430, 768, 1024, 1440]) for (const project of case
     await page.setViewportSize({ width, height: 936 });
       await page.goto(`/projects/${project.slug}`);
       await expect(page.locator('.case-heading')).toBeVisible();
+      if(project.slug==='jobpilot-ai')await page.locator('.jobpilot-secondary-workflow summary').click();
       await expect(page.locator('.workflow-detail-label')).toHaveCount(0);
       for (const figure of await page.locator('.workflow-frames figure').all()) {
         const intro = figure.locator('figcaption'), details = figure.locator('.workflow-details'), full = figure.getByRole('button', { name: /^Enlarge / });

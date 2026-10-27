@@ -219,13 +219,18 @@ test('plate returns to alignment after approval and performs no perpetual update
 for (const width of [1440,768,390,320]) test(`comparison and actions stay readable at ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:width===1440?650:844});
   await page.goto('/?project=jobpilot-ai');
-  await proposeAndReview(page);
+  await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
+  await page.evaluate(()=>document.fonts.ready);
   const demo = region(page);
   const header = await page.getByRole('banner').boundingBox();
-  const intro = await page.locator('.selection-boundary-intro').boundingBox();
+  const identity = await page.locator('.selection-detail').boundingBox();
   const preview = await page.locator('.selection-image-frame').boundingBox();
-  expect(intro!.y).toBeGreaterThanOrEqual(header!.y + header!.height - 1);
-  expect(intro!.y + intro!.height).toBeLessThanOrEqual(preview!.y);
+  expect(identity!.y).toBeGreaterThanOrEqual(header!.y + header!.height - 1);
+  if(width<960)expect(identity!.y + identity!.height).toBeLessThanOrEqual(preview!.y);
+  else expect(identity!.x+identity!.width+24).toBeLessThanOrEqual(preview!.x);
+  await expect(page.locator('.selection-boundary-intro')).toHaveCount(0);
+  await expect(demo.locator('.boundary-label')).toHaveText('Sample data · local demo');
+  await proposeAndReview(page);
   await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();
   const heading=demo.getByRole('heading',{name:'The profile save boundary',exact:true});
   await expect(heading).toBeFocused();

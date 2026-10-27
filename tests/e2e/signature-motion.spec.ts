@@ -309,10 +309,14 @@ test('touch needs no hover, pixel density stays bounded and the active rig does 
 test('reader Back restores the previous reading position and hash links still reach their target', async ({ page }) => {
   await page.goto('/projects/jobpilot-ai#engineering');
   await page.evaluate(() => document.fonts.ready);
-  await expect.poll(() => page.locator('#engineering').evaluate(el => Math.abs(el.getBoundingClientRect().top - document.getElementById('main-content')!.getBoundingClientRect().top))).toBeLessThanOrEqual(1);
+  // The approved JobPilot reader uses document scrolling instead of the old
+  // inset reader scroll container. The same hash remains clear of its header.
+  await expect(page.locator('#engineering')).toBeInViewport();
+  await expect.poll(() => page.locator('#engineering').evaluate(el => Math.abs(el.getBoundingClientRect().top-parseFloat(getComputedStyle(el).scrollMarginTop)-parseFloat(getComputedStyle(document.scrollingElement!).scrollPaddingTop)))).toBeLessThanOrEqual(1);
+  await expect.poll(() => page.locator('#engineering').evaluate(el => el.getBoundingClientRect().top-document.querySelector('.site-header')!.getBoundingClientRect().bottom)).toBeGreaterThanOrEqual(0);
   const next = page.locator('.next-project');
   await next.scrollIntoViewIfNeeded();
-  const position = await page.locator('#main-content').evaluate(el => el.scrollTop);
+  const position = await page.evaluate(() => scrollY);
   expect(position).toBeGreaterThan(500);
   await next.click();
   await expect(page).toHaveURL(/construction-project-management-accounting-system$/);
@@ -322,11 +326,11 @@ test('reader Back restores the previous reading position and hash links still re
   await expect(page.locator('#engineering')).toBeInViewport();
   await page.goto('/projects/jobpilot-ai');
   await next.scrollIntoViewIfNeeded();
-  const saved = await page.locator('#main-content').evaluate(el => el.scrollTop);
+  const saved = await page.evaluate(() => scrollY);
   await next.click();
   await expect(page).toHaveURL(/construction-project-management-accounting-system$/);
   await page.goBack();
-  await expect.poll(() => page.locator('#main-content').evaluate(el => el.scrollTop)).toBeCloseTo(saved, 0);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeCloseTo(saved, 0);
   await expect(page.locator('#main-content')).toBeFocused();
 });
 
