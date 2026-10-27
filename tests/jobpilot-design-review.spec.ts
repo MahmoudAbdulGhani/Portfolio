@@ -36,6 +36,22 @@ for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720]
     return {overlap:a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top,first:el.closest('.selection-detail')!.compareDocumentPosition(document.querySelector('.selection-image-frame')!)&Node.DOCUMENT_POSITION_FOLLOWING};
   });
   expect(identity.overlap).toBe(false);expect(identity.first).toBeTruthy();await noOverflow(page);
+  const composition=await page.locator('.selection-frame').evaluate(el=>{
+    const box=(selector:string)=>el.querySelector(selector)!.getBoundingClientRect().toJSON();
+    const controls=[...el.querySelectorAll('a,button')];
+    return{identity:box('.selection-detail'),image:box('.selection-image-frame'),actions:box('.selection-project-links'),choices:box('.chapter-switch'),back:box('.back-collection'),cue:box('.screenshot-inspect-cue'),label:box('.jobpilot-screen-selection > .eyebrow'),actionIndex:controls.findIndex(node=>node.matches('.open-case')),choiceIndex:controls.indexOf(el.querySelector('.chapter-switch button:last-child')!)};
+  });
+  if(width<960){
+    expect(composition.identity.bottom).toBeLessThan(composition.image.top);
+    expect(composition.image.bottom).toBeLessThan(composition.choices.top);
+    expect(composition.choices.bottom).toBeLessThan(composition.actions.top);
+    expect(composition.back.bottom).toBeLessThan(composition.image.top);
+    expect(composition.cue.bottom).toBeLessThanOrEqual(composition.label.top-3);
+    expect(composition.actionIndex).toBeGreaterThan(composition.choiceIndex);
+  }else{
+    expect(composition.identity.right+24).toBeLessThanOrEqual(composition.image.left);
+    expect(composition.actions.right+24).toBeLessThanOrEqual(composition.image.left);
+  }
   for(const selector of ['.lobby-object','.cedar-object'])await expect(page.locator(selector)).toHaveCSS('opacity','0');
   await naturalImage(page,'.selection-image-frame .project-image-current img');
   await choices(page).nth(1).click();const label=await choices(page).nth(1).innerText();
@@ -43,6 +59,9 @@ for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720]
   await expect(page).toHaveURL(entry+'/reader');await expect(page.locator('.case-media-title strong')).toHaveText(label);
   await expect(page.locator('main h1')).toHaveCount(1);await naturalImage(page,'.case-figure .screenshot-button img');
   await expect(page.locator('.profile-boundary')).toHaveCount(1);
+  await expect(page.locator('#engineering').getByRole('heading')).toHaveCount(1);
+  await expect(page.locator('#engineering').getByRole('heading',{level:2})).toHaveText('The profile save boundary');
+  await expect(page.locator('#engineering .boundary-label')).toHaveText('Sample data · local demo');
   expect(await page.locator('#engineering').evaluate(el=>Boolean(el.compareDocumentPosition(document.querySelector('#workflow')!)&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
   const boundary=page.locator('.profile-boundary');
   await boundary.getByRole('button',{name:'Propose a change',exact:true}).click();
@@ -69,6 +88,57 @@ test('baseline and ordinary routes retain the accepted composition and review me
   await page.goto('/?project=jobpilot-ai');await expect(page.locator('.selection-caption p')).toHaveText('AI career workspace');
   await expect(page.locator('[data-design-review]')).toHaveCount(0);await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','index, follow');
   await expect(page.locator('a[href="/review/jobpilot/candidate"]')).toHaveCount(0);
+});
+
+test('PR51 immediate before remains separate from the PR50 baseline and refined candidate',async({page})=>{
+  await page.setViewportSize({width:390,height:844});await fixtures(page);await selected(page,'/review/jobpilot/before');
+  await expect(page.locator('.jobpilot-design-candidate')).toHaveCount(1);await expect(page.locator('.jobpilot-design-refined')).toHaveCount(0);
+  const before=await page.locator('.selection-image-frame').boundingBox();
+  await expect(page.locator('.stage')).not.toHaveAttribute('data-motion-framing','product');
+  expect(await page.locator('.selection-project-links').evaluate(el=>Boolean(el.compareDocumentPosition(document.querySelector('.selection-image-frame')!)&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
+  await open(page).click();await expect(page.locator('#engineering').getByRole('heading')).toHaveCount(2);
+  await selected(page);const after=await page.locator('.selection-image-frame').boundingBox();expect(before!.y-after!.y).toBeGreaterThan(140);
+});
+
+test('opening layers stay inside the product area and clear readable controls in the available renderer',async({page})=>{
+  await page.setViewportSize({width:390,height:844});await fixtures(page,false);
+  await page.addInitScript(()=>{
+    const state=window as unknown as {framingSamples:number;framingViolations:string[];meshSamples:number};state.framingSamples=0;state.meshSamples=0;state.framingViolations=[];
+    const sample=()=>{
+      const stage=document.querySelector('.stage'),phase=stage?.getAttribute('data-motion-phase');
+      if(stage&&['selecting','opening'].includes(phase??'')){
+        const frame=stage.querySelector('.selection-image-frame')?.getBoundingClientRect(),rig=stage.querySelector<HTMLElement>('.motion-rig');
+        if(frame){
+          if(phase==='selecting'&&getComputedStyle(stage.querySelector('.selection-image-frame')!).backgroundColor!=='rgba(0, 0, 0, 0)')state.framingViolations.push('opaque matte during preparation');
+          for(const node of [rig,stage.querySelector<HTMLElement>('.jobpilot-object')]){
+            if(!node||Number(getComputedStyle(node).opacity)<.02)continue;
+            const box=node.getBoundingClientRect();state.framingSamples++;
+            if(box.left<frame.left-1||box.right>frame.right+1||box.top<frame.top-1||box.bottom>frame.bottom+1)state.framingViolations.push('layer outside product frame');
+            for(const selector of ['.selection-caption','.selection-project-links','.chapter-switch','.back-collection']){
+              const control=stage.querySelector(selector)?.getBoundingClientRect();
+              if(control&&box.left<control.right&&box.right>control.left&&box.top<control.bottom&&box.bottom>control.top)state.framingViolations.push(`layer crosses ${selector}`);
+            }
+          }
+          if(rig?.dataset.subjectBounds){const bounds=JSON.parse(rig.dataset.subjectBounds);state.meshSamples++;if(bounds.left<-.5||bounds.top<-.5||bounds.right>rig.clientWidth+.5||bounds.bottom>rig.clientHeight+.5)state.framingViolations.push('measured mesh cut by canvas');}
+        }
+      }
+      requestAnimationFrame(sample);
+    };requestAnimationFrame(sample);
+  });
+  await selected(page);const samples=await page.evaluate(()=>{const s=window as unknown as {framingSamples:number;framingViolations:string[];meshSamples:number};return{framingSamples:s.framingSamples,framingViolations:s.framingViolations,meshSamples:s.meshSamples};});
+  expect(samples.framingSamples).toBeGreaterThan(0);expect(samples.framingViolations).toEqual([]);
+  if(await page.locator('.stage').getAttribute('data-motion-renderer')==='webgl')expect(samples.meshSamples).toBeGreaterThan(0);
+});
+
+test('a delayed or failed product keeps the framed photograph available and navigation usable',async({page})=>{
+  await page.setViewportSize({width:390,height:844});await fixtures(page);let release!:()=>void;const pending=new Promise<void>(resolve=>{release=resolve;});
+  await page.route(sourceRequest('710055a0-a275-4e6a-991d-4aaa23c6e549.png'),async route=>{await pending;await route.abort();});
+  await page.goto(entry+'?project=jobpilot-ai',{waitUntil:'domcontentloaded'});
+  const frame=page.locator('.selection-image-frame'),photo=page.locator('.jobpilot-object .object-core');
+  await expect(open(page)).toBeVisible();await expect(frame).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await expect(photo).toHaveCSS('opacity','1');release();
+  await expect(page.locator('.stage')).toHaveAttribute('data-preview-state','failed');await expect(frame).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await expect(photo).toBeVisible();await open(page).focus();await page.keyboard.press('Enter');await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
 });
 
 test('the original workflow, contribution, source disclosures and all complete gallery images remain available',async({page})=>{
@@ -147,9 +217,13 @@ test('loading and failure keep the complete image reserve stable; footer and ass
 test('compiled comparison is real HTML with review metadata rather than the SPA not-found route',async({request})=>{
   const response=await request.get('/review/jobpilot-comparison/index.html');expect(response.status()).toBe(200);expect(await response.text()).toContain('JobPilot design journey');
   const metadata=await request.get('/review/jobpilot-comparison/build.json');expect((await metadata.json()).candidate).toBe(entry);
+  expect((await metadata.json()).before).toBe('/review/jobpilot/before');
+  const refinement=await request.get('/review/jobpilot-refinement/index.html');expect(refinement.status()).toBe(200);expect(await refinement.text()).toContain('JobPilot Phase 1 refinement');
   for(const phase of ['baseline','candidate'])for(const mode of ['normal','reduced','fallback']){
     const image=await request.get(`/review/jobpilot-comparison/${phase}/${mode}/390-844-preview.jpg`);
     expect(image.status()).toBe(200);expect(image.headers()['content-type']).toContain('image/jpeg');
+    const refinedImage=await request.get(`/review/jobpilot-refinement/after/${mode}/390-844-preview.jpg`);
+    expect(refinedImage.status()).toBe(200);expect(refinedImage.headers()['content-type']).toContain('image/jpeg');
   }
   for(const phase of ['baseline','candidate']){
     const workflow=await request.get(`/review/jobpilot-comparison/${phase}/normal/390-844-workflow-detail.jpg`);

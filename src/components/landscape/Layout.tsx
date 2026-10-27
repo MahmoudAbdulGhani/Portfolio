@@ -44,7 +44,7 @@ export function LandscapeLayout() {
     atCollection &&
     new URLSearchParams(location.search).has("project");
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${design?.candidate && (reviewReader || (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai')) ? ' jobpilot-design-candidate' : ''}`} data-design-review={design?.variant}>
+    <JobPilotJourneyContext.Provider value={journeys}><div className={`landscape${design?.candidate && (reviewReader || (atCollection && new URLSearchParams(location.search).get('project') === 'jobpilot-ai')) ? ` jobpilot-design-candidate${design.refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
       <div
         className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >

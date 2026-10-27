@@ -164,6 +164,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
   const location = useLocation();
   const design = useJobPilotDesign();
   const candidate = Boolean(design?.candidate && selected?.kind === 'jobpilot');
+  const refined = Boolean(design?.refined && selected?.kind === 'jobpilot');
   const collectionPath = design?.collectionPath ?? '/';
   const navigation = useNavigationType();
   const journeys = useContext(JobPilotJourneyContext);
@@ -295,11 +296,29 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
         if (before) {
           const transform = { x: before.left - after.left, y: before.top - after.top, scale: before.width / after.width };
           originalTransforms.current.set(object, transform);
-          gsap.set(object, { ...transform, transformOrigin: 'top left' });
+          if(!refined)gsap.set(object, { ...transform, transformOrigin: 'top left' });
         }
       }
     }
-  }, [items, selected, origin]);
+  }, [items, selected, origin, refined]);
+
+  useLayoutEffect(() => {
+    if(!refined||!root.current)return;
+    const scope=root.current,object=scope.querySelector<HTMLElement>('.jobpilot-object'),frame=scope.querySelector<HTMLElement>('.selection-image-frame');
+    if(!object||!frame)return;
+    // This owns the refined photograph's placement. The opening timeline keeps
+    // ownership of opacity/rig progress; return never moves it through UI.
+    const fit=()=>{
+      if(motion.snapshot().phase==='closing')return;
+      gsap.set(object,{x:0,y:0,scale:1,transformOrigin:'top left'});
+      const source=object.getBoundingClientRect(),target=frame.getBoundingClientRect();
+      if(!source.width||!target.width)return;
+      const scale=Math.min(target.width/source.width,target.height/source.height)*.92;
+      gsap.set(object,{x:target.left+(target.width-source.width*scale)/2-source.left,y:target.top+(target.height-source.height*scale)/2-source.top,scale});
+    };
+    fit();const observer=new ResizeObserver(fit);observer.observe(frame);
+    return()=>observer.disconnect();
+  },[refined,motion,kind]);
 
   useLayoutEffect(() => {
     const headingId = selected ? `${selected.kind}-engineering` : null;
@@ -341,15 +360,15 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     animation.current = timeline;
     timeline.to(scope.querySelector('.selection-detail'), { opacity: 0, duration: 0.16 }, 0)
       .to(scope.querySelector('.product-surface'), { opacity: 0, duration: 0.2 }, 0)
-      .to(objects, { x: (_index, target) => originalTransforms.current.get(target)?.x ?? 0,
-        y: (_index, target) => originalTransforms.current.get(target)?.y ?? 0,
-        scale: (_index, target) => originalTransforms.current.get(target)?.scale ?? 1,
+      .to(objects, { x: (_index, target) => refined ? Number(gsap.getProperty(target,'x')) : originalTransforms.current.get(target)?.x ?? 0,
+        y: (_index, target) => refined ? Number(gsap.getProperty(target,'y')) : originalTransforms.current.get(target)?.y ?? 0,
+        scale: (_index, target) => refined ? Number(gsap.getProperty(target,'scale')) : originalTransforms.current.get(target)?.scale ?? 1,
         opacity: 1, duration, ease: 'power3.inOut' }, 0)
       .to(object.querySelector('.object-core'), { opacity: 1, duration: 0.12 }, gpu ? 0.42 : 0.1);
     if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.08 }, 0).to(mesh, { opacity: 0, duration: 0.12 }, 0.44);
     // The close owner restores navigation even if decorative tweens are killed.
     playFiniteMotion(timeline, { complete: restore });
-  }, [selected, motion, restore]);
+  }, [selected, motion, restore, refined]);
 
   useEffect(() => {
     if (!selected) return;
@@ -427,6 +446,17 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     {screens.slice(0,2).map((screen,index)=><button key={screen.src} aria-pressed={chapter===index}
       onClick={()=>{rememberPreview({screen:screen.src});setChapter(index);}}>{screen.label}</button>)}
   </div>;
+  const backLink=<button className="back-collection" onClick={back}><FiArrowLeft />Collection</button>;
+  const caption=<div className="selection-caption"><div className="selection-caption-inner">
+    {candidate&&<JobPilotObjectDetail />}
+    {selected?.kind==='jobpilot'&&<span className="selection-project-number">01</span>}
+    {candidate&&<span className="selection-category">{selected?.category}</span>}
+    <h1>{selected?.displayTitle}</h1><p>{candidate?'Review before saving':selected?.category}</p>
+  </div></div>;
+  const fullName=selected&&selected.displayTitle!==selected.project.name&&<span id="selected-project-full-name" className="sr-only">{selected.project.name}</span>;
+  const navigationLinks=selected&&<div className="selection-project-links" role="group" aria-label="Selected project navigation">
+    {caseLink}<Link className="explore-engineering" tabIndex={0} to={{search:location.search,hash:`#${selected.kind}-engineering`}} replace state={selected.kind==='jobpilot'?{...location.state,routeRestore:undefined}:location.state}>Explore the engineering<FiArrowDown /></Link>
+  </div>;
   return (
     <main
       id="main-content"
@@ -437,6 +467,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       data-content-state="ready"
       data-preview-state={failedPreview === screens[chapter]?.src ? 'failed' : decoded.has(screens[chapter]?.src) ? 'ready' : 'loading'}
       data-motion-renderer={state.renderer}
+      data-motion-framing={refined?'product':undefined}
       ref={root}
       aria-label="Project collection"
     >
@@ -524,7 +555,9 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
               onReady={readyRig}
             />
           )}
-          <JobPilotPreviewComposition candidate={candidate} choices={screenChoices}
+          <JobPilotPreviewComposition candidate={candidate} refined={refined} choices={screenChoices}
+            identity={<section className="selection-detail" aria-label="Selected project" aria-describedby={fullName?'selected-project-full-name':undefined} inert={state.phase==='closing'}>{backLink}{caption}{fullName}</section>}
+            actions={<div className="selection-actions jobpilot-refined-actions" inert={state.phase==='closing'}>{navigationLinks}</div>}
             intro={selected.kind === 'jobpilot' && <p className="selection-boundary-intro">Engineering demonstration · sample data.</p>}
             image={
             <div className="selection-image-frame" style={!screens[chapter] ? { aspectRatio: 2.15 } : undefined}>
@@ -579,36 +612,16 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
               }
               inert={state.phase === 'closing'}
             >
-              <div className="selection-caption">
-                <div className="selection-caption-inner">
-                  {candidate && <JobPilotObjectDetail />}
-                  {selected.kind === 'jobpilot' && <span className="selection-project-number">01</span>}
-                  {candidate && <span className="selection-category">{selected.category}</span>}
-                  <h1>{selected.displayTitle}</h1>
-                  <p>{candidate ? 'Review before saving' : selected.category}</p>
-                </div>
-              </div>
-              {selected.displayTitle !== selected.project.name && (
-                <span id="selected-project-full-name" className="sr-only">
-                  {selected.project.name}
-                </span>
-              )}
+              {caption}{fullName}
               <div className="selection-actions">
                 {!candidate && screenChoices}
-                <div className="selection-project-links" role="group" aria-label="Selected project navigation">
-                  {caseLink}
-                  <Link className="explore-engineering" tabIndex={0} to={{ search: location.search, hash: `#${selected.kind}-engineering` }} replace state={selected.kind === 'jobpilot' ? {...location.state, routeRestore: undefined} : location.state}>Explore the engineering<FiArrowDown /></Link>
-                </div>
-                <button className="back-collection" onClick={back}>
-                  <FiArrowLeft />
-                  Collection
-                </button>
+                {navigationLinks}{backLink}
               </div>
             </section>}
           />
           {selected.kind === 'jobpilot' && <div className="collection-boundary" onClick={() => {
             rememberPreview({ disclosure: root.current?.querySelector('.boundary-disclosure')?.getAttribute('data-expanded') === 'true' });
-          }}><ProfileBoundary headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}
+          }}><ProfileBoundary concise={refined} headingLevel={2} headingId="jobpilot-engineering" suspended={state.phase === 'closing'} initialState={initialPreview.boundary} onStateChange={rememberBoundary} disclosureOpen={initialPreview.disclosure} /></div>}
           {selected.kind === 'cedar' && <div className="collection-cedar-boundary"><CedarBoundary headingLevel={2} headingId="cedar-engineering" suspended={state.phase === 'closing'} /></div>}
           {selected.kind === 'lobby' && <div className="collection-lobby-boundary"><LobbyBoundary headingLevel={2} headingId="lobby-engineering" suspended={state.phase === 'closing'} /></div>}
           {inspection && <CaseGallery screens={screens} projectName={selected.displayTitle} initialIndex={inspection.index} returnFocusTo={inspection.trigger} onClose={() => setInspection(null)} />}

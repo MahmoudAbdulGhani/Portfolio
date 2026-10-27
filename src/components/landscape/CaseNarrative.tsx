@@ -13,12 +13,13 @@ import { LobbyBoundary } from './LobbyBoundary';
 import './case-narrative.css';
 import type { BoundaryState } from './profile-boundary-state';
 
-export function CaseNarrative({ project, study, screens, openGallery, candidate = false, boundaryState, onBoundaryStateChange }: {
+export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, boundaryState, onBoundaryStateChange }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
   openGallery: (index: number, trigger: HTMLButtonElement) => void;
   candidate?: boolean;
+  refined?: boolean;
   boundaryState?: BoundaryState;
   onBoundaryStateChange?: (state: BoundaryState) => void;
 }) {
@@ -54,8 +55,8 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
   return (
     <div className={`case-narrative case-narrative-${study.kind}`}>
       {candidate && <section id="engineering" className="jobpilot-defining-decision">
-        <span className="eyebrow">THE DEFINING DECISION</span><h2>{study.engineeringHeading}</h2>
-        <ProfileBoundary initialState={boundaryState} onStateChange={onBoundaryStateChange} />
+        {!refined&&<><span className="eyebrow">THE DEFINING DECISION</span><h2>{study.engineeringHeading}</h2></>}
+        <ProfileBoundary concise={refined} headingLevel={refined?2:3} initialState={boundaryState} onStateChange={onBoundaryStateChange} />
       </section>}
       {!candidate && context}
       {workflow.length > 0 && <section id="workflow" className="story-workflow">

@@ -1,0 +1,133 @@
+{
+  "method": "Compiled PR51 versus current compiled build, same public snapshot, Chrome reduced-motion viewport emulation. Original PR51 candidate is compared with new /before; ordinary routes are compared directly. Geometry checks headings, image/navigation frames, header and footer. Pixel differences are reported rather than silently tolerated.",
+  "results": [
+    {
+      "width": 390,
+      "before": "/review/jobpilot/candidate?project=jobpilot-ai",
+      "after": "/review/jobpilot/before?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/review/jobpilot/candidate/reader",
+      "after": "/review/jobpilot/before/reader",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/",
+      "after": "/",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/?project=jobpilot-ai",
+      "after": "/?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/projects/jobpilot-ai",
+      "after": "/projects/jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/?project=lobby",
+      "after": "/?project=lobby",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/?project=construction-project-management-accounting-system",
+      "after": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 390,
+      "before": "/profile",
+      "after": "/profile",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/review/jobpilot/candidate?project=jobpilot-ai",
+      "after": "/review/jobpilot/before?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/review/jobpilot/candidate/reader",
+      "after": "/review/jobpilot/before/reader",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/",
+      "after": "/",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/?project=jobpilot-ai",
+      "after": "/?project=jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/projects/jobpilot-ai",
+      "after": "/projects/jobpilot-ai",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/?project=lobby",
+      "after": "/?project=lobby",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/?project=construction-project-management-accounting-system",
+      "after": "/?project=construction-project-management-accounting-system",
+      "pixelsIdentical": false,
+      "textIdentical": true,
+      "geometryIdentical": true
+    },
+    {
+      "width": 1440,
+      "before": "/profile",
+      "after": "/profile",
+      "pixelsIdentical": true,
+      "textIdentical": true,
+      "geometryIdentical": true
+    }
+  ]
+}

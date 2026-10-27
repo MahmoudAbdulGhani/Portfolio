@@ -107,6 +107,9 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
     const ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
     const frame = host.parentElement?.querySelector<HTMLElement>('.selection-image-frame');
     const art = host.parentElement?.querySelector<HTMLElement>(`.${kind}-object`);
+    const framed = kind === 'jobpilot' && host.parentElement?.dataset.motionFraming === 'product';
+    const subjectBounds = new THREE.Box3(), projected = new THREE.Vector3();
+    const framedSamples: Array<{bounds:THREE.Box3;center:THREE.Vector3}> = [];
     const pointAt = (x: number, y: number, target: THREE.Vector3) => {
       const box = host.getBoundingClientRect();
       ray.setFromCamera(new THREE.Vector2((x - box.left) / box.width * 2 - 1, 1 - (y - box.top) / box.height * 2), camera);
@@ -116,7 +119,21 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       if (disposed || document.hidden || !posed || !moving) return;
       assembly.position.copy(start).lerp(destination, alignment.progress);
       assembly.scale.setScalar(THREE.MathUtils.lerp(startScale, targetScale, alignment.progress));
-      try { renderer.render(scene, camera); }
+      try {
+        renderer.render(scene, camera);
+        if(framed){
+          // Review-only, conservative projected mesh bounds. Exclude the
+          // ground/shadow; recordings remain the visual motion evidence.
+          subjectBounds.setFromObject(group);
+          let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
+          for(const x of [subjectBounds.min.x,subjectBounds.max.x])for(const y of [subjectBounds.min.y,subjectBounds.max.y])for(const z of [subjectBounds.min.z,subjectBounds.max.z]){
+            projected.set(x,y,z).project(camera);
+            const px=(projected.x+1)*host.clientWidth/2,py=(1-projected.y)*host.clientHeight/2;
+            left=Math.min(left,px);right=Math.max(right,px);top=Math.min(top,py);bottom=Math.max(bottom,py);
+          }
+          host.dataset.subjectBounds=JSON.stringify({left,top,right,bottom,progress:alignment.progress});
+        }
+      }
       catch { fallback(); }
     };
     const size = () => {
@@ -126,6 +143,32 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       // the same camera fit/centres as before and space for the ground shadow.
       const parent = host.parentElement!.getBoundingClientRect();
       const photo = art?.getBoundingClientRect(), image = frame?.getBoundingClientRect();
+      if(framed&&image){
+        // Articulate within the product's reserved area from the first pose.
+        // Keep the accepted model, joints, materials, lighting and clock; only
+        // its camera/framing changes. No travel behind readable interface.
+        Object.assign(host.style,{left:`${image.left-parent.left}px`,top:`${image.top-parent.top}px`,right:'auto',bottom:'auto',width:`${image.width}px`,height:`${image.height}px`});
+        const width=host.clientWidth,height=host.clientHeight;
+        renderer.setPixelRatio(Math.min(devicePixelRatio,width<720?1.25:1.5));renderer.setSize(width,height,false);
+        camera.clearViewOffset();camera.aspect=width/height;camera.position.z=10;
+        camera.updateProjectionMatrix();camera.updateMatrixWorld();
+        const viewHeight=2*camera.position.z*Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+        pointAt(image.left+image.width/2,image.top+image.height/2,start);destination.copy(start);
+        // Fit the full measured articulation, including intermediate joint
+        // poses and depth/perspective, rather than fitting only its endpoints.
+        const fits=(scale:number)=>framedSamples.every(({bounds,center})=>{
+          for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z]){
+            projected.set(x,y,z).sub(center).multiplyScalar(scale).add(start).project(camera);
+            if(Math.abs(projected.x)>.9||Math.abs(projected.y)>.9)return false;
+          }
+          return true;
+        });
+        let low=0,high=Math.min(width/height*viewHeight/Math.max(originalSize.x,openedSize.x),viewHeight/Math.max(originalSize.y,openedSize.y));
+        for(let i=0;i<12;i++){const middle=(low+high)/2;if(fits(middle))low=middle;else high=middle;}
+        startScale=targetScale=low*.98;
+        start.addScaledVector(originalCenter,-startScale);destination.addScaledVector(openedCenter,-targetScale);
+        render();return;
+      }
       if (photo && image) {
         const subject = artworkBounds[kind];
         const closedHeight = Math.min(photo.width * subject.width / originalSize.x, photo.height * subject.height / originalSize.y) * originalSize.y;
@@ -163,8 +206,6 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       }
       render();
     };
-    size();
-    if (disposed) return dispose;
     const timeline = gsap.timeline({ paused: true, onUpdate: render });
     release.push(() => timeline.kill());
     const duration = collectionTiming.articulation;
@@ -175,6 +216,17 @@ export function mountRig(host: HTMLElement, kind: RigKind, onReady: (renderer: '
       timeline.to(pivot.rotation, { ...rotation, duration: 0.64, ease: 'power3.inOut' }, delay)
         .to(pivot.position, { ...position, duration: 0.64, ease: 'power3.inOut' }, delay);
     });
+    if(framed){
+      // Measure the existing timeline without painting, starting an additional
+      // clock or changing its easing/duration. The Collection still owns time.
+      for(let i=0;i<=60;i++){
+        timeline.totalTime(duration*i/60,false);
+        framedSamples.push({bounds:new THREE.Box3().setFromObject(group),center:originalCenter.clone().lerp(openedCenter,alignment.progress)});
+      }
+      timeline.totalTime(0,false);
+    }
+    size();
+    if (disposed) return dispose;
     // The collection owns the only clock and sends this finite model its pose.
     // No autonomous ticker, idle render loop or disappearing close callback.
     const seek = (event: Event) => {

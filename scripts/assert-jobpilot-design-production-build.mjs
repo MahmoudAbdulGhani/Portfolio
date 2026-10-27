@@ -7,4 +7,5 @@ const source=(await Promise.all(files.filter(file=>file.endsWith('.js')).map(fil
 assert(!source.includes('/review/jobpilot/'),'Normal Production excludes JobPilot review entry addresses');
 assert(!files.some(file=>file.startsWith('JobPilotDesignReview-')),'Normal Production excludes the review stylesheet/entry');
 await assert.rejects(access(path.join(root,'review/jobpilot-comparison')));
+await assert.rejects(access(path.join(root,'review/jobpilot-refinement')));
 console.log('Normal compiled build excludes JobPilot design routes, entry styles and comparison assets.');
