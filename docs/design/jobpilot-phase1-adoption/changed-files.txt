@@ -146,6 +146,7 @@ src/components/landscape/motion-rig.ts
 tests/e2e/case-media.spec.ts
 tests/e2e/case-study.spec.ts
 tests/e2e/collection-preview.spec.ts
+tests/e2e/collection-readiness.spec.ts
 tests/e2e/engineered-landscape.spec.ts
 tests/e2e/mobile-case-media.spec.ts
 tests/e2e/profile-boundary.spec.ts

@@ -156,6 +156,8 @@ test('a workflow deadline starts once at eligibility and does not reset when vis
   });
   await page.goto('/projects/jobpilot-ai');
   await expect(page.locator('.case-heading')).toBeAttached();
+  await page.locator('.jobpilot-secondary-workflow summary').evaluate(el=>(el as HTMLElement).click());
+  await expect(page.locator('.jobpilot-secondary-workflow')).toHaveAttribute('open','');
   await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 1_000));
   const frame = page.locator('.workflow-frames .screenshot-frame').last();
   await frame.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));

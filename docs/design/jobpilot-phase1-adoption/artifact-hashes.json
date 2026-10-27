@@ -280,8 +280,8 @@
     "sha256": "7f314646a7b46caeb0c29bb9515aa1df14235a4ec8f064bf8847dc6d3eca5934"
   },
   "changed-files.txt": {
-    "bytes": 10014,
-    "sha256": "29d0cd4ee8eec82319e7166fcddd02997ff2d6bb250faac6e17afe4f49467076"
+    "bytes": 10053,
+    "sha256": "91f1d6b4a20c36d737d100fb75a38e72a030b76e28f501ae01ce08ca8977ad6a"
   },
   "comparison-1280-demo-preview.jpg": {
     "bytes": 162835,
@@ -372,8 +372,8 @@
     "sha256": "3cbe1ca33b3fe4e17c3005f7acd9e6468213d02a9e7374f2bcaefc69182caf46"
   },
   "review-report.md": {
-    "bytes": 9333,
-    "sha256": "921a836216197ebe9ecad60b5eebab30c8771ac2e404f80e3d59a609cd6608fe"
+    "bytes": 11142,
+    "sha256": "a45fc3c504c1721feab725f047f43d629d779d18786a82ff0f5b8174a2994461"
   },
   "transitions/after-1440-0.jpg": {
     "bytes": 84971,

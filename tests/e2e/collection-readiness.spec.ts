@@ -291,9 +291,13 @@ test('scroll from a retiring preview cannot overwrite its captured return positi
   await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');
   const open=page.locator('.open-case');
   await open.scrollIntoViewIfNeeded();
-  // Tall tablet viewports already contain the action; establish an intentional
-  // nonzero source position so an outgoing clamp can be distinguished.
+  // The compact approved layout can fit a tall tablet. Expand real content
+  // so this regression genuinely exercises a nonzero source scroll.
+  await page.locator('.boundary-disclosure summary').evaluate(el=>(el as HTMLElement).click());
+  await expect(page.locator('.boundary-disclosure')).toHaveAttribute('data-expanded','true');
+  await expect.poll(()=>page.evaluate(()=>document.scrollingElement!.scrollHeight-innerHeight)).toBeGreaterThan(80);
   await page.evaluate(()=>scrollTo(0,80));
+  await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(0);
   await open.evaluate(link=>link.addEventListener('click',()=>{
     (window as unknown as {returnSourcePosition:number}).returnSourcePosition=scrollY;
   },{capture:true,once:true}));
@@ -307,13 +311,16 @@ test('scroll from a retiring preview cannot overwrite its captured return positi
       (window as unknown as {retiringScrollDelivered:boolean}).retiringScrollDelivered=true;
     },{once:true});
   });
-  await open.click();
+  // Retain the intentional source scroll; pointer auto-scroll to the approved
+  // higher CTA would otherwise replace the position this regression exercises.
+  await open.evaluate(link=>(link as HTMLAnchorElement).click());
   const position=await page.evaluate(()=>(window as unknown as {returnSourcePosition:number}).returnSourcePosition);
   expect(position).toBeGreaterThan(0);
   await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
   expect(await page.evaluate(()=>(window as unknown as {retiringScrollDelivered:boolean}).retiringScrollDelivered)).toBe(true);
   await page.locator('.case-back').click();
   await expect(page.locator('.open-case')).toBeFocused();
+  await expect(page.locator('.boundary-disclosure')).toHaveAttribute('data-expanded','true');
   await expect.poll(()=>page.evaluate(saved=>{
     const root=document.scrollingElement!;
     return Math.abs(scrollY-Math.min(saved,root.scrollHeight-root.clientHeight));
