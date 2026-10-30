@@ -8,5 +8,6 @@ assert(!files.some(f=>f.startsWith('SupportingDesignReview-')),'Normal build exc
 assert(!text.includes('/review/supporting/'),'Normal build excludes review addresses');
 assert(!text.includes('.supporting-design-candidate'),'Normal build excludes candidate styling');
 await assert.rejects(access(path.join(root,'review/supporting-comparison')));
+await assert.rejects(access(path.join(root,'review/supporting-density')));
 assert(text.includes('Calculation and interpretation') && text.includes('Invitation to call access'),'Accepted featured readers remain adopted');
 console.log('Supporting index/readers and evidence remain review-only; featured designs preserved.');

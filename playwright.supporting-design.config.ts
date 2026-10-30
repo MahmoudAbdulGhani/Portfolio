@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 import base from './playwright.config';
 export default defineConfig({
-  ...base,testDir:'./tests',testIgnore:[],testMatch:'**/supporting-design-review.spec.ts',retries:0,
+  ...base,testDir:'./tests',testIgnore:[],testMatch:['**/supporting-design-review.spec.ts','**/supporting-density.spec.ts'],retries:0,
   projects:[{name:'supporting-chromium',use:{browserName:'chromium'}}],
   use:{...base.use,baseURL:'http://127.0.0.1:5253'},
   webServer:{

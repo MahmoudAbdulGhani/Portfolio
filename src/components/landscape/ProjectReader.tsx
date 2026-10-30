@@ -17,7 +17,7 @@ import { JobPilotJourneyContext, ordinaryActivation } from './jobpilot-journey';
 import { useJobPilotHandoff } from './use-jobpilot-handoff';
 import { featuredPresentation, featuredProject } from './featured-presentation';
 import { useJobPilotDesign } from './jobpilot-design-context';
-import { useSupportingDesign } from './supporting-design-context';
+import { useSupportingDesign, useSupportingCompact } from './supporting-design-context';
 import { JobPilotObjectDetail } from './JobPilotPreviewComposition';
 import type { BoundaryState } from './profile-boundary-state';
 import './jobpilot-handoff.css';
@@ -26,10 +26,14 @@ import { completeScreenSource, isRegistrationExcerpt, mediaPresentation, screenC
 function CaseOpening({ review, children }: { review?: boolean; children: ReactNode }) {
   return review ? <div className="supporting-opening">{children}</div> : <>{children}</>;
 }
+function CaseMetadata({ compact, children }: { compact: boolean; children: ReactNode }) {
+  return compact ? <div className="case-metadata">{children}</div> : <>{children}</>;
+}
 
 export function ProjectReader() {
   const design = useJobPilotDesign();
   const supporting = useSupportingDesign();
+  const compact = useSupportingCompact();
   const { slug = design ? design.projectSlug ?? 'jobpilot-ai' : '' } = useParams();
   const { candidate, refined } = featuredPresentation(design, slug);
   const sharedJourney = slug === 'jobpilot-ai' || candidate;
@@ -105,6 +109,8 @@ export function ProjectReader() {
   const features = nonempty(project.features);
   const stack = nonempty(project.stack);
   const purpose = study?.summary || project.tagline?.trim() || project.description?.trim();
+  const mobileSummary = compact && study ? supportingPresentation?.mobileSummary : undefined;
+  const mobileCard = compact && study ? supporting?.cards?.[slug] : undefined;
   // The complete approved introduction remains in Project context. The compact
   // opening uses its first clause so the product image arrives sooner on phones.
   const openingPurpose = candidate && purpose?.includes(', using candidate information')
@@ -165,9 +171,10 @@ export function ProjectReader() {
         <header className="case-heading">
           <div>
             {candidate && <JobPilotObjectDetail asset={featured?.asset} />}
-            <span className="eyebrow">{(slug === 'jobpilot-ai'||candidate) && <><span className="case-project-number">{featured?.number}</span> / </>}CASE STUDY / {project.type}</span>
+            <span className="eyebrow">{(slug === 'jobpilot-ai'||candidate) && <><span className="case-project-number">{featured?.number}</span> / </>}CASE STUDY / {mobileCard?.category ?? project.type}</span>
             <h1 className="view-heading">{displayName}</h1>
-            {displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
+            {!mobileSummary && displayName !== project.name && <p className="case-functional-name">{project.name}</p>}
+            <CaseMetadata compact={Boolean(mobileSummary && (role || teamSize || project.program?.trim()))}>
             {(role || teamSize) && <p className="case-role">
               {role && <span>{role}</span>}
               {Boolean(teamSize) && (
@@ -176,11 +183,12 @@ export function ProjectReader() {
                 </span>
               )}
             </p>}
-            {project.program?.trim() && <p>{project.program}</p>}
+            {project.program?.trim() && <p className="case-program">{project.program}</p>}
+            </CaseMetadata>
           </div>
           <div>
             {openingPurpose && <p className="case-purpose">
-              {openingPurpose}
+              {mobileSummary ?? openingPurpose}
             </p>}
             {supportingPresentation && study?.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight aria-hidden="true" /></a>.</p>}
             {!study && project.impactSummary?.trim() && <p>{project.impactSummary}</p>}
@@ -227,6 +235,7 @@ export function ProjectReader() {
         )}
         </CaseOpening>
         {study ? <CaseNarrative project={project} study={study} screens={screens} openGallery={openGallery}
+          openingDetails={mobileSummary ? { summary: study.designCredit ? study.summary.split(/(?<=\.)\s/).slice(1).join(' ') : study.summary, name: displayName !== project.name ? project.name : undefined, category: project.type } : undefined}
           supporting={supportingPresentation} selectedSource={supporting?.candidate ? current?.src : undefined}
           candidate={candidate} refined={refined} boundaryState={journey?.boundary} onBoundaryStateChange={rememberBoundary} cedarState={journey?.cedar} lobbyState={journey?.lobby} onCedarStateChange={state => { const key=from?.jobpilotJourney?.key; if(candidate&&key&&journeys.has(key)) journeys.set(key,{...journeys.get(key)!,cedar:state}); }} onLobbyStateChange={state => { const key=from?.jobpilotJourney?.key; if(candidate&&key&&journeys.has(key)) journeys.set(key,{...journeys.get(key)!,lobby:state}); }} /> : <>
         <div className={`case-notes${hasContribution || team.length ? '' : ' case-notes-single'}`}>

@@ -1,0 +1,1489 @@
+{
+  "phase": "before",
+  "root": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\supporting-density-before-dist",
+  "method": "Compiled installed Windows Chrome, reduced motion for settled matching, 1 CSS pixel per raster pixel. Archived public GET data; genuine unchanged media; not physical-device testing.",
+  "findings": [
+    {
+      "width": 320,
+      "height": 844,
+      "index": {
+        "firstCoverTop": 608.375,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 510.84375,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 466.65625,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 441.15625,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 466.65625,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 441.15625,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 517.65625,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 441.15625,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 466.65625,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 878.796875,
+          "heading": {
+            "top": 253.375,
+            "height": 89.03125,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 366.40625,
+            "height": 55.59375,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 482.796875,
+            "height": 140,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 648.796875,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 727.796875,
+            "height": 127,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "280px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-480w.avif",
+            "width": 280,
+            "height": 286.765625,
+            "naturalWidth": 288,
+            "naturalHeight": 295
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 839.78125,
+          "heading": {
+            "top": 253.375,
+            "height": 44.515625,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 321.890625,
+            "height": 55.59375,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 438.28125,
+            "height": 168,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 632.28125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 711.28125,
+            "height": 104.5,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "280px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-480w.avif",
+            "width": 280,
+            "height": 132.734375,
+            "naturalWidth": 288,
+            "naturalHeight": 136
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 946.59375,
+          "heading": {
+            "top": 253.375,
+            "height": 89.03125,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 406.203125,
+            "height": 55.59375,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 522.59375,
+            "height": 168,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 716.59375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 795.59375,
+            "height": 127,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "280px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 280,
+            "height": 454.453125,
+            "naturalWidth": 288,
+            "naturalHeight": 467
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 723.390625,
+          "heading": {
+            "top": 253.375,
+            "height": 44.515625,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 321.890625,
+            "height": 168,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 515.890625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 594.890625,
+            "height": 104.5,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "280px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-480w.avif",
+            "width": 280,
+            "height": 192.28125,
+            "naturalWidth": 288,
+            "naturalHeight": 198
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 838.484375,
+          "heading": {
+            "top": 253.375,
+            "height": 44.515625,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 366.6875,
+            "height": 168,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 608.484375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 687.484375,
+            "height": 127,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "280px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-480w.avif",
+            "width": 280,
+            "height": 1287.40625,
+            "naturalWidth": 288,
+            "naturalHeight": 1324
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "index": {
+        "firstCoverTop": 608.375,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 527.296875,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 483.109375,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 483.109375,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 483.109375,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 483.109375,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 559.609375,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 483.109375,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 483.109375,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 734.25,
+          "heading": {
+            "top": 234.6875,
+            "height": 45.46875,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 304.15625,
+            "height": 23.796875,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 388.75,
+            "height": 112,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 526.75,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 605.75,
+            "height": 104.5,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "347.125px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-480w.avif",
+            "width": 347.125,
+            "height": 355.515625,
+            "naturalWidth": 358,
+            "naturalHeight": 366
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 794.046875,
+          "heading": {
+            "top": 234.6875,
+            "height": 45.46875,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 304.15625,
+            "height": 55.59375,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 420.546875,
+            "height": 140,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 586.546875,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 665.546875,
+            "height": 104.5,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "347.125px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-480w.avif",
+            "width": 347.125,
+            "height": 164.5625,
+            "naturalWidth": 358,
+            "naturalHeight": 170
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 847.515625,
+          "heading": {
+            "top": 234.6875,
+            "height": 90.9375,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 389.421875,
+            "height": 23.796875,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 474.015625,
+            "height": 140,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 640.015625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 719.015625,
+            "height": 104.5,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "347.125px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 347.125,
+            "height": 563.40625,
+            "naturalWidth": 358,
+            "naturalHeight": 581
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 649.65625,
+          "heading": {
+            "top": 234.6875,
+            "height": 45.46875,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 304.15625,
+            "height": 112,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 442.15625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 521.15625,
+            "height": 104.5,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "347.125px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-480w.avif",
+            "width": 347.125,
+            "height": 238.375,
+            "naturalWidth": 358,
+            "naturalHeight": 246
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 770.25,
+          "heading": {
+            "top": 234.6875,
+            "height": 45.46875,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 348.953125,
+            "height": 140,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 562.75,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 641.75,
+            "height": 104.5,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "347.125px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-480w.avif",
+            "width": 347.125,
+            "height": 1596.046875,
+            "naturalWidth": 358,
+            "naturalHeight": 1646
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 844,
+      "index": {
+        "firstCoverTop": 581.1875,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 530.84375,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 505.34375,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 505.34375,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 505.34375,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 505.34375,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 556.34375,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 505.34375,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 505.34375,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 738.90625,
+          "heading": {
+            "top": 234.6875,
+            "height": 50.125,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 308.8125,
+            "height": 23.796875,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 393.40625,
+            "height": 112,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 531.40625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 610.40625,
+            "height": 104.5,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "382.719px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-480w.avif",
+            "width": 382.71875,
+            "height": 391.984375,
+            "naturalWidth": 398,
+            "naturalHeight": 407
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 770.703125,
+          "heading": {
+            "top": 234.6875,
+            "height": 50.125,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 308.8125,
+            "height": 55.59375,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 425.203125,
+            "height": 112,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 563.203125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 642.203125,
+            "height": 104.5,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "382.719px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-480w.avif",
+            "width": 382.71875,
+            "height": 181.4375,
+            "naturalWidth": 398,
+            "naturalHeight": 189
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 828.828125,
+          "heading": {
+            "top": 234.6875,
+            "height": 100.25,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 398.734375,
+            "height": 23.796875,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 483.328125,
+            "height": 112,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 621.328125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 700.328125,
+            "height": 104.5,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "382.719px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 382.71875,
+            "height": 621.171875,
+            "naturalWidth": 398,
+            "naturalHeight": 645
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 654.3125,
+          "heading": {
+            "top": 234.6875,
+            "height": 50.125,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 308.8125,
+            "height": 112,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 446.8125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 525.8125,
+            "height": 104.5,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "382.719px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-480w.avif",
+            "width": 382.71875,
+            "height": 262.8125,
+            "naturalWidth": 398,
+            "naturalHeight": 273
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 746.90625,
+          "heading": {
+            "top": 234.6875,
+            "height": 50.125,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 353.609375,
+            "height": 112,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 539.40625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 618.40625,
+            "height": 104.5,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "382.719px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-480w.avif",
+            "width": 382.71875,
+            "height": 1759.703125,
+            "naturalWidth": 398,
+            "naturalHeight": 1829
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "index": {
+        "firstCoverTop": 472.671875,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 522.28125,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 522.28125,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 503.59375,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 503.59375,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 554.59375,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 554.59375,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 503.59375,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 503.59375,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 646.265625,
+          "heading": {
+            "top": 228.6875,
+            "height": 56.984375,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 309.671875,
+            "height": 23.796875,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 394.265625,
+            "height": 56,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 476.265625,
+            "height": 52,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 552.265625,
+            "height": 70,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "683.531px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-1600w.avif",
+            "width": 683.53125,
+            "height": 700.078125,
+            "naturalWidth": 1180,
+            "naturalHeight": 1208
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 674.265625,
+          "heading": {
+            "top": 228.6875,
+            "height": 56.984375,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 309.671875,
+            "height": 23.796875,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 394.265625,
+            "height": 84,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 504.265625,
+            "height": 52,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 580.265625,
+            "height": 70,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "683.531px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-1600w.avif",
+            "width": 683.53125,
+            "height": 324.046875,
+            "naturalWidth": 1180,
+            "naturalHeight": 559
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 714.0625,
+          "heading": {
+            "top": 228.6875,
+            "height": 56.984375,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 349.46875,
+            "height": 23.796875,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 434.0625,
+            "height": 84,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 544.0625,
+            "height": 52,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 620.0625,
+            "height": 70,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "683.531px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 420,
+            "height": 681.6875,
+            "naturalWidth": 419,
+            "naturalHeight": 681
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 589.671875,
+          "heading": {
+            "top": 228.6875,
+            "height": 56.984375,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 309.671875,
+            "height": 84,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 419.671875,
+            "height": 52,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 495.671875,
+            "height": 70,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "683.531px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-1600w.avif",
+            "width": 683.53125,
+            "height": 469.390625,
+            "naturalWidth": 1180,
+            "naturalHeight": 810
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 682.265625,
+          "heading": {
+            "top": 228.6875,
+            "height": 56.984375,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 354.46875,
+            "height": 84,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 512.265625,
+            "height": 52,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 588.265625,
+            "height": 70,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "683.531px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-1600w.avif",
+            "width": 683.53125,
+            "height": 3142.8125,
+            "naturalWidth": 1180,
+            "naturalHeight": 5425
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "index": {
+        "firstCoverTop": 472.671875,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 626.296875,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 626.296875,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 626.296875,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 626.296875,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 651.796875,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 651.796875,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 626.296875,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 626.296875,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 115.3125,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 368,
+            "height": 23.796875,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 452.59375,
+            "height": 112,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 590.59375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "363.734px 727.484px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-1600w.avif",
+            "width": 727.484375,
+            "height": 745.09375,
+            "naturalWidth": 1180,
+            "naturalHeight": 1208
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 57.65625,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 310.34375,
+            "height": 55.59375,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 426.734375,
+            "height": 112,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 564.734375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "363.734px 727.484px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-1600w.avif",
+            "width": 727.484375,
+            "height": 344.890625,
+            "naturalWidth": 1180,
+            "naturalHeight": 559
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 115.3125,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 407.796875,
+            "height": 23.796875,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 492.390625,
+            "height": 140,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 658.390625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "363.734px 727.484px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 420,
+            "height": 681.6875,
+            "naturalWidth": 419,
+            "naturalHeight": 681
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 57.65625,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 310.34375,
+            "height": 112,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 448.34375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "363.734px 727.484px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-1600w.avif",
+            "width": 727.484375,
+            "height": 499.578125,
+            "naturalWidth": 1180,
+            "naturalHeight": 810
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 57.65625,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 355.140625,
+            "height": 140,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 568.9375,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "363.734px 727.484px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-1600w.avif",
+            "width": 727.484375,
+            "height": 3344.90625,
+            "naturalWidth": 1180,
+            "naturalHeight": 5425
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "index": {
+        "firstCoverTop": 479.953125,
+        "cards": [
+          {
+            "slug": "jobpilot-ai",
+            "height": 675.4375,
+            "category": "AI-powered job-search and application platform",
+            "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+          },
+          {
+            "slug": "lobby",
+            "height": 675.4375,
+            "category": "Real-time communication platform",
+            "summary": "A team-built communication platform for communities and temporary guest rooms."
+          },
+          {
+            "slug": "gamezone-arena",
+            "height": 675.4375,
+            "category": "Gaming arena reservation",
+            "summary": "A team-built reservation system for gaming rooms and devices."
+          },
+          {
+            "slug": "construction-project-management-accounting-system",
+            "height": 675.4375,
+            "category": "Full-Stack Web Application",
+            "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+          },
+          {
+            "slug": "unihub",
+            "height": 700.9375,
+            "category": "University management system",
+            "summary": "A student workspace inside a team-built university system."
+          },
+          {
+            "slug": "full-stack-user-management-system",
+            "height": 700.9375,
+            "category": "Full-Stack Web Application",
+            "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          {
+            "slug": "medicare-hub",
+            "height": 675.4375,
+            "category": "Clinic management system",
+            "summary": "A PHP clinic-management project with appointment and role-specific pages."
+          },
+          {
+            "slug": "home-services",
+            "height": 675.4375,
+            "category": "Responsive web application",
+            "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+          }
+        ]
+      },
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 129.75,
+            "text": "GameZone Arena"
+          },
+          "role": {
+            "top": 382.4375,
+            "height": 23.796875,
+            "text": "Full-Stack Developer (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 467.03125,
+            "height": 84,
+            "text": "A team-built reservation system for gaming rooms and devices. Customers choose a session and payment option; staff manage bookings and arena resources."
+          },
+          "actions": {
+            "top": 577.03125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Room selection · demonstration data1 / 15Choose image01Room selection · demonstration data02Session date and time · demonstration data03Device selection · demonstration data04Booking review · demonstration data05Customer bookings dashboard06Choose a gaming room07Booking date and time08Device selection09Booking confirmation and payment10Arena administration overview11Room management12User management13Arena landing page14Mobile gaming rooms15Tablet gaming roomsEnlarge"
+          },
+          "columns": "411.203px 822.422px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/gamezone-rooms-1600w.avif",
+            "width": 822.421875,
+            "height": 842.328125,
+            "naturalWidth": 1180,
+            "naturalHeight": 1208
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "unihub",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 64.875,
+            "text": "UniHub"
+          },
+          "role": {
+            "top": 317.5625,
+            "height": 23.796875,
+            "text": "Student Portal Contributor (team project)3-person team"
+          },
+          "program": null,
+          "summary": {
+            "top": 402.15625,
+            "height": 112,
+            "text": "A student workspace inside a team-built university system. Enrolled courses, assignments and academic progress share a portal; Mahmoud contributed to the student experience."
+          },
+          "actions": {
+            "top": 540.15625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Student dashboard1 / 6Choose image01Student dashboard02Administration dashboard03Professor course catalog04Student academic transcript05Mobile student registration06Tablet sign inEnlarge"
+          },
+          "columns": "411.203px 822.422px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-1600w.avif",
+            "width": 822.421875,
+            "height": 389.90625,
+            "naturalWidth": 1180,
+            "naturalHeight": 559
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 129.75,
+            "text": "User Management"
+          },
+          "role": {
+            "top": 422.234375,
+            "height": 23.796875,
+            "text": "Full-Stack DeveloperIndependent project."
+          },
+          "program": null,
+          "summary": {
+            "top": 506.828125,
+            "height": 112,
+            "text": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+          },
+          "actions": {
+            "top": 644.828125,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Public registration form · portrait capture1 / 2Choose image01Public registration form · portrait capture02Public platform statisticsEnlarge"
+          },
+          "columns": "411.203px 822.422px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/user-management-registration-480w.avif",
+            "width": 420,
+            "height": 681.6875,
+            "naturalWidth": 419,
+            "naturalHeight": 681
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "medicare-hub",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 64.875,
+            "text": "Medicare Hub"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 317.5625,
+            "height": 112,
+            "text": "A PHP clinic-management project with appointment and role-specific pages. The appointment flow connects patient selection, confirmation and appointment history."
+          },
+          "actions": {
+            "top": 455.5625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Public Medicare Hub homepage1 / 2Choose image01Public Medicare Hub homepage02Medicare project identityEnlarge"
+          },
+          "columns": "411.203px 822.422px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/medicare-homepage-1600w.avif",
+            "width": 822.421875,
+            "height": 564.765625,
+            "naturalWidth": 1180,
+            "naturalHeight": 810
+          },
+          "bodySize": "16px"
+        },
+        {
+          "slug": "home-services",
+          "imageTop": 278,
+          "heading": {
+            "top": 228.6875,
+            "height": 64.875,
+            "text": "Home Services"
+          },
+          "role": null,
+          "program": null,
+          "summary": {
+            "top": 362.359375,
+            "height": 112,
+            "text": "A responsive home-services landing page implemented in React from a supplied Figma UI kit. The scope is frontend presentation and navigation, rather than an operational booking service."
+          },
+          "actions": {
+            "top": 548.15625,
+            "height": 55,
+            "text": "View demoSource code"
+          },
+          "controls": {
+            "top": 192,
+            "height": 70,
+            "text": "Complete home services landing page1 / 2Choose image01Complete home services landing page02Mobile navigation on the public demonstration pageEnlarge"
+          },
+          "columns": "411.203px 822.422px",
+          "image": {
+            "src": "http://127.0.0.1:5260/projects/complete/home-services-page-1600w.avif",
+            "width": 822.421875,
+            "height": 3781.421875,
+            "naturalWidth": 1180,
+            "naturalHeight": 5425
+          },
+          "bodySize": "16px"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}
