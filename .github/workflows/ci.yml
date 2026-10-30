@@ -103,7 +103,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
-    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review, featured-design-review]
+    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review, featured-design-review, supporting-design-review]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -116,6 +116,39 @@ jobs:
           test "${{ needs['portrait-review-build'].result }}" = 'success'
           test "${{ needs['jobpilot-design-review'].result }}" = 'success'
           test "${{ needs['featured-design-review'].result }}" = 'success'
+          test "${{ needs['supporting-design-review'].result }}" = 'success'
+  supporting-design-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Install browser
+        uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
+      - name: Verify explicit review build and normal-route exclusion
+        run: |
+          node --test tests/supporting-design-review-build.test.mjs
+          npm run build
+          node scripts/assert-supporting-design-production-build.mjs
+          node scripts/assert-featured-design-production-build.mjs
+          node scripts/assert-jobpilot-design-production-build.mjs
+      - name: Verify compiled index and supporting readers
+        run: npm run test:e2e -- --config=playwright.supporting-design.config.ts --workers=1
+      - name: Retain supporting review failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supporting-design-review-failure
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
   featured-design-review:
     runs-on: ubuntu-latest
     timeout-minutes: 15

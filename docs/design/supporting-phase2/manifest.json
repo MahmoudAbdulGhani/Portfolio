@@ -1,0 +1,2101 @@
+{
+  "base": "1078b6bee63cf8999b53d6a47b77be7b2cf08c16",
+  "basis": "PR56 normal source and approved PR55 reader typography. Captures from compiled builds, with separate fixture regression tests.",
+  "files": [
+    {
+      "file": "comparison-1280-full-stack-user-management-system.jpg",
+      "bytes": 134099,
+      "sha256": "b348a08ec4868edeea9e5091be20c4a3d15edf79d4442acc30e63b7904aa9ec2"
+    },
+    {
+      "file": "comparison-1280-gamezone-arena.jpg",
+      "bytes": 149197,
+      "sha256": "a223a3667463a6543f01ac0bf28f1e2ee414d28da46a769de2011741b48902f7"
+    },
+    {
+      "file": "comparison-1280-home-services.jpg",
+      "bytes": 162020,
+      "sha256": "b449e5280258a9d14ff74763dea65b8b0a61f3482926ba3f0ce5b17512b5a0c8"
+    },
+    {
+      "file": "comparison-1280-index-card.jpg",
+      "bytes": 133701,
+      "sha256": "846e6aab55b79636fa01c95996b3376e1aab01a9815ce4ed1ce430afe4893357"
+    },
+    {
+      "file": "comparison-1280-index.jpg",
+      "bytes": 126059,
+      "sha256": "b26d5bb1aae24525e44558cd42a5be50d64564a13768c5da90d70a1885c4c0b4"
+    },
+    {
+      "file": "comparison-1280-medicare-hub.jpg",
+      "bytes": 137503,
+      "sha256": "e8a807b680b2aaffcf0fc0997b4cb68032ed9632bb46d0bf3f49987af0a8ea98"
+    },
+    {
+      "file": "comparison-1280-unihub.jpg",
+      "bytes": 154105,
+      "sha256": "d4dcbb0cfc8adf99c7795e17eda36a8aec155b6fd8861e7409cf8d46713645e1"
+    },
+    {
+      "file": "comparison-1440-full-stack-user-management-system.jpg",
+      "bytes": 166107,
+      "sha256": "dbd30ed5c22d1ce821f860a224c6867f0d732546f45a6ff31579c4df3fe014d9"
+    },
+    {
+      "file": "comparison-1440-gamezone-arena.jpg",
+      "bytes": 187191,
+      "sha256": "3e20bff4f5cfd6394b6341713520f6dde10b48c05253d9f8580a539a091fa3bf"
+    },
+    {
+      "file": "comparison-1440-home-services.jpg",
+      "bytes": 220830,
+      "sha256": "8387ccbd43f0451691da349c280253922cf5c8c35b8f0bdbfe6127e5dd52f0ec"
+    },
+    {
+      "file": "comparison-1440-index-card.jpg",
+      "bytes": 180323,
+      "sha256": "c0e77cd019eb4d6863d209040ddbb9d2d266cc57cb2c6cdf3e05068f4648baef"
+    },
+    {
+      "file": "comparison-1440-index.jpg",
+      "bytes": 162623,
+      "sha256": "7a060bad184f691a57d1039d944aaa3b250f89ecb1d00e279e0f48b801492a67"
+    },
+    {
+      "file": "comparison-1440-medicare-hub.jpg",
+      "bytes": 181343,
+      "sha256": "8d87bfc3caae809a4af862cdeaf2db3ec8381a84214d20bc1b797bcc9b94a1b8"
+    },
+    {
+      "file": "comparison-1440-unihub.jpg",
+      "bytes": 193539,
+      "sha256": "7ea60533308ca318add8df172e4ef85f98874464af7d20aa53e3027c14f48098"
+    },
+    {
+      "file": "comparison-320-full-stack-user-management-system.jpg",
+      "bytes": 80245,
+      "sha256": "6f9cf2aaaa641e0c15285520c348f85615d957cad694026d66c187c983cac74d"
+    },
+    {
+      "file": "comparison-320-gamezone-arena.jpg",
+      "bytes": 76931,
+      "sha256": "1266e9c02edeb4e7fc5603f97ca5631b58d39241c9455681948e64f5284a09ba"
+    },
+    {
+      "file": "comparison-320-home-services.jpg",
+      "bytes": 86063,
+      "sha256": "740ba3114b8e20a134f57e88d6f6223fce4b29dbde3496e61c92ddb0c9a6c2ef"
+    },
+    {
+      "file": "comparison-320-index-card.jpg",
+      "bytes": 66632,
+      "sha256": "dd0d98faf846fc33c8aab3e39bee5ed2781c66348d62e5caa0ea7ea1308a98e6"
+    },
+    {
+      "file": "comparison-320-index.jpg",
+      "bytes": 75647,
+      "sha256": "8299d930723216a701194b167a1f25b6b804f7f6a58970e95fb6f120930cdffb"
+    },
+    {
+      "file": "comparison-320-medicare-hub.jpg",
+      "bytes": 82028,
+      "sha256": "5e13c385d8ae9c8b3afb2b0d1a67127379ecd664d0d510a9cc5ff8b16acc6973"
+    },
+    {
+      "file": "comparison-320-unihub.jpg",
+      "bytes": 77916,
+      "sha256": "f9ca39cdc18d63623f081741ca36cee3d30c33732c8b51d9ce75e1ba103492e1"
+    },
+    {
+      "file": "comparison-390-full-stack-user-management-system.jpg",
+      "bytes": 90164,
+      "sha256": "bbe8f55c6cb197e7753e535eb8c3b0e1b1684eebf2e992bc24e44a745b488bef"
+    },
+    {
+      "file": "comparison-390-gamezone-arena.jpg",
+      "bytes": 91445,
+      "sha256": "2a23a4e2ee91c2d3dc37253ea97483d5c32d91ba2e1f119aa750cc608e2d4d43"
+    },
+    {
+      "file": "comparison-390-home-services.jpg",
+      "bytes": 97735,
+      "sha256": "daaa3bb8da0d280a1febe02f548216d145c5ba53d7014534fe44b6a52852efee"
+    },
+    {
+      "file": "comparison-390-index-card.jpg",
+      "bytes": 73135,
+      "sha256": "26db3b9fd8e7dc00cf1edfba6172aed3342b38f5d4c2615e89e602fca62c50ab"
+    },
+    {
+      "file": "comparison-390-index.jpg",
+      "bytes": 81266,
+      "sha256": "47207f064fbb95bc848462b6f95c95e873e5485b91e3fd4e1b875a2b16bc3e62"
+    },
+    {
+      "file": "comparison-390-medicare-hub.jpg",
+      "bytes": 93674,
+      "sha256": "c00b7bbf5507479c9807d11d39d706ee73e9c3bf7e539f4078b9df6b2999362c"
+    },
+    {
+      "file": "comparison-390-unihub.jpg",
+      "bytes": 84452,
+      "sha256": "5a9ea83ef6bc324eec9ecede79291f1acc864a707e3d976f29260df92129c70b"
+    },
+    {
+      "file": "comparison-430-full-stack-user-management-system.jpg",
+      "bytes": 92907,
+      "sha256": "a6a18127e7e8ed0b46f88d415ae279ea6dcef5336f3453031189d9de94d10ac7"
+    },
+    {
+      "file": "comparison-430-gamezone-arena.jpg",
+      "bytes": 96334,
+      "sha256": "efcedbb9bb7f40739632bb61e705a8d1119de92f437a223362badf8319d219d9"
+    },
+    {
+      "file": "comparison-430-home-services.jpg",
+      "bytes": 103438,
+      "sha256": "4d521c19294a02b6640fbbb466c3f4b744998963280fd83484f71c7d0b1a9f74"
+    },
+    {
+      "file": "comparison-430-index-card.jpg",
+      "bytes": 78974,
+      "sha256": "8f24e88426c5047c0f56729a45463558426279875d13bb0be61df79eefae4947"
+    },
+    {
+      "file": "comparison-430-index.jpg",
+      "bytes": 85064,
+      "sha256": "34bd46c7d5ef3455758665108f683e8f33bbd515666e4fd4a4d1a03f04772bb0"
+    },
+    {
+      "file": "comparison-430-medicare-hub.jpg",
+      "bytes": 96163,
+      "sha256": "fce3414358c943093c9e286591698e79ae1c548820b729bb98734fd5eabd9b9b"
+    },
+    {
+      "file": "comparison-430-unihub.jpg",
+      "bytes": 89519,
+      "sha256": "3ed6a4b3ef7913dc1591a91e83d0c61cae6b64c6114686901e874bae83b5d9f4"
+    },
+    {
+      "file": "comparison-768-full-stack-user-management-system.jpg",
+      "bytes": 129877,
+      "sha256": "c8c16b24db492d6b339eb0a694378d5857d0a6be110b1c7c77ceca22c5cfbe21"
+    },
+    {
+      "file": "comparison-768-gamezone-arena.jpg",
+      "bytes": 149881,
+      "sha256": "606ad9482628046d21a1f62523bb067cb4fe1a1877fb25a1148d68c6abab8baa"
+    },
+    {
+      "file": "comparison-768-home-services.jpg",
+      "bytes": 164429,
+      "sha256": "e213c67aef5f7a1a9cc6b1f6643f0375327dba4043a9a536ad31e47cb53d3f85"
+    },
+    {
+      "file": "comparison-768-index-card.jpg",
+      "bytes": 160154,
+      "sha256": "218881d0ebea80c9e1ec9b6c71af398c714fc06b4844afdf95bd818d8e49c8fe"
+    },
+    {
+      "file": "comparison-768-index.jpg",
+      "bytes": 157977,
+      "sha256": "6bc6d03b259f00a84125d981b39b234ee28c7beba9ea870ce8bb785f3fc47c89"
+    },
+    {
+      "file": "comparison-768-medicare-hub.jpg",
+      "bytes": 143353,
+      "sha256": "67652a919de441f33e2b7e2641d3872e4e4b2eef661daaf74d9c0cf9aca7c2a5"
+    },
+    {
+      "file": "comparison-768-unihub.jpg",
+      "bytes": 145638,
+      "sha256": "659eaa640910be9ddc95a29fe35ff31d3da2facec6a09c45b905a06c675651fd"
+    },
+    {
+      "file": "index.html",
+      "bytes": 44604,
+      "sha256": "24b8b36b7b8062c52cc07399e98cc323edaf05294a797b3e1d0a5c9683179807"
+    },
+    {
+      "file": "normal-parity.json",
+      "bytes": 8061,
+      "sha256": "efdb3749d53753ce9257eb574429e7238254f54f4785925d1ff664b11f839449"
+    },
+    {
+      "file": "normal/1280-full-stack-user-management-system-reading.jpg",
+      "bytes": 62197,
+      "sha256": "7cb12a3eb57df298923cd5fda8a1c678235b56678a5cf83cdfca7c5836c82c3b"
+    },
+    {
+      "file": "normal/1280-full-stack-user-management-system.jpg",
+      "bytes": 67848,
+      "sha256": "657118117f3951082f644d1e939b8bdb61808759ba2792951e75b078a096c4ae"
+    },
+    {
+      "file": "normal/1280-gamezone-arena-reading.jpg",
+      "bytes": 58433,
+      "sha256": "0e91b504bd107528771e2cf54164170d363b2cc626f3ece9bf3555f415bf4104"
+    },
+    {
+      "file": "normal/1280-gamezone-arena.jpg",
+      "bytes": 65333,
+      "sha256": "0b3ea41c9a1ffe4d8380743c588343b354f59166ef37d48fe58c732a0e23a5aa"
+    },
+    {
+      "file": "normal/1280-home-services-reading.jpg",
+      "bytes": 60984,
+      "sha256": "8a7dc7c2ef5198864bff6b5b4716c422973ab61b32581ca53827c1842d29cbb7"
+    },
+    {
+      "file": "normal/1280-home-services.jpg",
+      "bytes": 69156,
+      "sha256": "c29ad1521d11be07544e791d4f6afeb830806f71bdb5a5e8bbd60c71c08c6e97"
+    },
+    {
+      "file": "normal/1280-index-full.jpg",
+      "bytes": 64633,
+      "sha256": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21"
+    },
+    {
+      "file": "normal/1280-index.jpg",
+      "bytes": 64633,
+      "sha256": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21"
+    },
+    {
+      "file": "normal/1280-medicare-hub-reading.jpg",
+      "bytes": 68661,
+      "sha256": "d0143419c46ad3a4ed38fa03f323815b098e52907b7d1ffb6394ff1f8dacb46d"
+    },
+    {
+      "file": "normal/1280-medicare-hub.jpg",
+      "bytes": 58514,
+      "sha256": "c6fff3407717c7b84c9e0b81b35bbdacf52b91569023693cacf7a537b33260ee"
+    },
+    {
+      "file": "normal/1280-unihub-reading.jpg",
+      "bytes": 64214,
+      "sha256": "38023f7b3e88b3618f9b6d3b19903b232c1a714933a95ad40e2c54b9c601f21c"
+    },
+    {
+      "file": "normal/1280-unihub.jpg",
+      "bytes": 67672,
+      "sha256": "0c83dab62677c274ec89e2bf5894b14127a7f126122265dffd82564b8b8e646e"
+    },
+    {
+      "file": "normal/1440-full-stack-user-management-system-reading.jpg",
+      "bytes": 64796,
+      "sha256": "33730bb60b8b13fb3a56716e88595cc9525d4e96bcd3d650cb53821ce6b1e831"
+    },
+    {
+      "file": "normal/1440-full-stack-user-management-system.jpg",
+      "bytes": 83119,
+      "sha256": "28a134cd574038fd091e0946f2ae415790296da75d8f53c5d296c1cfe6a901c4"
+    },
+    {
+      "file": "normal/1440-gamezone-arena-reading.jpg",
+      "bytes": 64725,
+      "sha256": "baebc3bc9843cbfb4dea1374fbc1cff2cb65b5b941715530c2ac9a8991abaee4"
+    },
+    {
+      "file": "normal/1440-gamezone-arena.jpg",
+      "bytes": 87912,
+      "sha256": "ca976ea13d59957529c792cc87051e1dc3dc0670c6747012ee07b96f685cd150"
+    },
+    {
+      "file": "normal/1440-home-services-reading.jpg",
+      "bytes": 63768,
+      "sha256": "89c663b54d196c747546e29ba6748ce7f3b5fe5a79d4ac6799fcfbc209f9cb69"
+    },
+    {
+      "file": "normal/1440-home-services.jpg",
+      "bytes": 105567,
+      "sha256": "993fefa9510953afaf491e3f1bff11149238de58afc4cc6ed2ebd2b026ca558a"
+    },
+    {
+      "file": "normal/1440-index-full.jpg",
+      "bytes": 83665,
+      "sha256": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf"
+    },
+    {
+      "file": "normal/1440-index.jpg",
+      "bytes": 83665,
+      "sha256": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf"
+    },
+    {
+      "file": "normal/1440-journey.webm",
+      "bytes": 696981,
+      "sha256": "dae8d8629b61cc1e988de61d9c050f98138de060ae2522e2da153329da1c0327"
+    },
+    {
+      "file": "normal/1440-medicare-hub-reading.jpg",
+      "bytes": 84252,
+      "sha256": "1eac0dc75539156eafc3879e03f4306c06ee3d3baa2dfb3821fbe6641452c858"
+    },
+    {
+      "file": "normal/1440-medicare-hub.jpg",
+      "bytes": 89908,
+      "sha256": "8d083e9a6380201bf5539c8f30eaeef77b667e07997b395be9daedd7eef3080a"
+    },
+    {
+      "file": "normal/1440-unihub-reading.jpg",
+      "bytes": 67231,
+      "sha256": "0dc47fbbb63485a32ef3df184f9b9f96e70063d62cddbaca8492eec8951289dd"
+    },
+    {
+      "file": "normal/1440-unihub.jpg",
+      "bytes": 90447,
+      "sha256": "6fd965edbda3c183a02a9d38c7bf8a57d10c7f096ddbf50bb0eece417ac8b865"
+    },
+    {
+      "file": "normal/320-full-stack-user-management-system-reading.jpg",
+      "bytes": 46041,
+      "sha256": "39ac3051f7117cfaeee9146508b9dce17e46b9769eb60eede22602d86494ac1d"
+    },
+    {
+      "file": "normal/320-full-stack-user-management-system.jpg",
+      "bytes": 41865,
+      "sha256": "31a6922c4f1b1215c80a650d068891ed8876199cf51d7daa47a7c9303fb55d53"
+    },
+    {
+      "file": "normal/320-gamezone-arena-reading.jpg",
+      "bytes": 43257,
+      "sha256": "5d636724fa43bfad24ccc40d6d4286b5c5bfcc4e3fc03f2cb3a344f7cc5d9848"
+    },
+    {
+      "file": "normal/320-gamezone-arena.jpg",
+      "bytes": 38741,
+      "sha256": "52d6caae5c151d84db5625875e6ab3cbb3885ced6e0462296f224d371759343f"
+    },
+    {
+      "file": "normal/320-home-services-reading.jpg",
+      "bytes": 44049,
+      "sha256": "c12d2f641b4619ddb517b9ef43ad02a22a62e4247d23f86d5b564a3aae17d97b"
+    },
+    {
+      "file": "normal/320-home-services.jpg",
+      "bytes": 45162,
+      "sha256": "560c51f2064f0f83c56b1ccec17c7486c71a7c7bfa4c8a3eeb5dd05b610d6aa3"
+    },
+    {
+      "file": "normal/320-index-full.jpg",
+      "bytes": 38618,
+      "sha256": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a"
+    },
+    {
+      "file": "normal/320-index.jpg",
+      "bytes": 38618,
+      "sha256": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a"
+    },
+    {
+      "file": "normal/320-medicare-hub-reading.jpg",
+      "bytes": 42452,
+      "sha256": "46d36123914f14533e99944ced48f5fadb1ca17485b3c946519c054b95f931b9"
+    },
+    {
+      "file": "normal/320-medicare-hub.jpg",
+      "bytes": 42088,
+      "sha256": "5f7f6a584c8a26f5ad61c0d730ba2640d48bbd0a95193e9212520d01e9f85648"
+    },
+    {
+      "file": "normal/320-unihub-reading.jpg",
+      "bytes": 45210,
+      "sha256": "9c1c4c849601273d7066d8b0f0fb54c1c9389407a4560cee4c87748c5e7a9455"
+    },
+    {
+      "file": "normal/320-unihub.jpg",
+      "bytes": 40324,
+      "sha256": "04bf2c6281d29d391a80f74894a2ce2ae971996d844fab4ead128195d20f23c4"
+    },
+    {
+      "file": "normal/390-full-stack-user-management-system-reading.jpg",
+      "bytes": 48564,
+      "sha256": "ab01aec337df867a06b62806a03d2da5a521521c2492d9908b25ffdc8f20631e"
+    },
+    {
+      "file": "normal/390-full-stack-user-management-system.jpg",
+      "bytes": 45835,
+      "sha256": "a91fe94f6c9ad9771f56d9b5e69b669012edef0fe0c1256b545792f87a16136e"
+    },
+    {
+      "file": "normal/390-gamezone-arena-reading.jpg",
+      "bytes": 44227,
+      "sha256": "030dd275f86824884fab268faf6163ae37fc87cc6c7d9ee05dcae37bdf737793"
+    },
+    {
+      "file": "normal/390-gamezone-arena.jpg",
+      "bytes": 46475,
+      "sha256": "486b30ce5ff1e97de4a63e63a61d05b25f6285c1d4a7f5250014a3edb61a05aa"
+    },
+    {
+      "file": "normal/390-home-services-reading.jpg",
+      "bytes": 43914,
+      "sha256": "8729614f70e6b074287b07411a36b009440ac672e81997b5978706144173ccfc"
+    },
+    {
+      "file": "normal/390-home-services.jpg",
+      "bytes": 51669,
+      "sha256": "55c0007b1842dbc41ccc46a3e75eb27b8f0a34a2d37d30bd44a85ec92224b2e5"
+    },
+    {
+      "file": "normal/390-index-full.jpg",
+      "bytes": 40790,
+      "sha256": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92"
+    },
+    {
+      "file": "normal/390-index.jpg",
+      "bytes": 40790,
+      "sha256": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92"
+    },
+    {
+      "file": "normal/390-journey.webm",
+      "bytes": 526759,
+      "sha256": "91d98d62a3716763e9c9250fb0c031a18de0332d3d378e6999a627000fb2fb9e"
+    },
+    {
+      "file": "normal/390-medicare-hub-reading.jpg",
+      "bytes": 46338,
+      "sha256": "b5f634caebc4f1a2bc4252ee5972b7106bc374b6ac951ad1b827563f8c607e3f"
+    },
+    {
+      "file": "normal/390-medicare-hub.jpg",
+      "bytes": 46379,
+      "sha256": "ce8ffdaec7a6950c2fd8724eb8958bd171e74a926d2c75fffaa6dc6b72dae459"
+    },
+    {
+      "file": "normal/390-unihub-reading.jpg",
+      "bytes": 46850,
+      "sha256": "05724e8223247e12c47da1e685ad529d34ff8758057658d78341f53ee0882b8f"
+    },
+    {
+      "file": "normal/390-unihub.jpg",
+      "bytes": 44096,
+      "sha256": "6403c9803c1270f65447076086b952263ba508da300b5fa6fff4961a2f0310ac"
+    },
+    {
+      "file": "normal/430-full-stack-user-management-system-reading.jpg",
+      "bytes": 47437,
+      "sha256": "458cea33e1afe2cd821bbca9c8cf334af87ca76cf2896924d1d34f132ab0fe7c"
+    },
+    {
+      "file": "normal/430-full-stack-user-management-system.jpg",
+      "bytes": 45519,
+      "sha256": "9ca5541e695e95c06892b099a23a30728d3bcfbc014dd65a053105ffc5b6e2f8"
+    },
+    {
+      "file": "normal/430-gamezone-arena-reading.jpg",
+      "bytes": 45240,
+      "sha256": "e7128efd1f4126a509c00bb81e31dcda756dfab7574dac1b5894a43c7b567815"
+    },
+    {
+      "file": "normal/430-gamezone-arena.jpg",
+      "bytes": 48185,
+      "sha256": "6ec3fb0f2a7836170aa8f32e9582afbfe80910b60530592c4e41512b7ac00659"
+    },
+    {
+      "file": "normal/430-home-services-reading.jpg",
+      "bytes": 43997,
+      "sha256": "b1bd544439a35e4711a0b8c1fa84a8b4034c0e5d8ae129b4be6e0084a9a00adc"
+    },
+    {
+      "file": "normal/430-home-services.jpg",
+      "bytes": 53186,
+      "sha256": "11e152417d1477e39ed6b7c9421002a5b74f9c5398802ee17ba8d832e73a9351"
+    },
+    {
+      "file": "normal/430-index-full.jpg",
+      "bytes": 42579,
+      "sha256": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9"
+    },
+    {
+      "file": "normal/430-index.jpg",
+      "bytes": 42579,
+      "sha256": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9"
+    },
+    {
+      "file": "normal/430-medicare-hub-reading.jpg",
+      "bytes": 50659,
+      "sha256": "2423f7cbcecc89c86984019f6724b59e00b7ec5e2610182fa5696feb3ae16612"
+    },
+    {
+      "file": "normal/430-medicare-hub.jpg",
+      "bytes": 47685,
+      "sha256": "6168cd8ff993ec5a4bcd2652f412f5618103403521eb431fb1d40980607216f5"
+    },
+    {
+      "file": "normal/430-unihub-reading.jpg",
+      "bytes": 47119,
+      "sha256": "bb20ce1793cadbf3cf98d9ac057ff57bf62c0471635da41bdfc0001ac1254a3c"
+    },
+    {
+      "file": "normal/430-unihub.jpg",
+      "bytes": 46109,
+      "sha256": "c8b8b722e2269c69f7a4796b9b8627cdf0cbec3d99a4d60843a164de436fc252"
+    },
+    {
+      "file": "normal/768-full-stack-user-management-system-reading.jpg",
+      "bytes": 55043,
+      "sha256": "dd832db5539658668a5e87f57831ba71d55d3dc5d5cef9f083839bd9054ccb5b"
+    },
+    {
+      "file": "normal/768-full-stack-user-management-system.jpg",
+      "bytes": 66206,
+      "sha256": "5c52e30bda8575a147f6720e863a667cb375ec217942616e80f1a9704ccfe4fd"
+    },
+    {
+      "file": "normal/768-gamezone-arena-reading.jpg",
+      "bytes": 51769,
+      "sha256": "b2022f94bcf8fd4ab3821b731cccc553299d0f200a43254972ae8d4844b12b9f"
+    },
+    {
+      "file": "normal/768-gamezone-arena.jpg",
+      "bytes": 75538,
+      "sha256": "697fa364b450bad53ac82a3ef601a2d8a0ebd655bfe0a95845de7731a5bd23b9"
+    },
+    {
+      "file": "normal/768-home-services-reading.jpg",
+      "bytes": 51387,
+      "sha256": "05bca138f91d1e67389b8cdbad5795504bae25079cff6550b15473bd7fc4c008"
+    },
+    {
+      "file": "normal/768-home-services.jpg",
+      "bytes": 81312,
+      "sha256": "14c2a4014d7cfb302fe14d9cd0a06e50035cc574db0d97a04a1fb4311290817c"
+    },
+    {
+      "file": "normal/768-index-full.jpg",
+      "bytes": 78397,
+      "sha256": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008"
+    },
+    {
+      "file": "normal/768-index.jpg",
+      "bytes": 78397,
+      "sha256": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008"
+    },
+    {
+      "file": "normal/768-medicare-hub-reading.jpg",
+      "bytes": 72077,
+      "sha256": "40e0234a3a1898b6c2dec1ea68385469b826fff16034838e6dae7dcd692c8ca0"
+    },
+    {
+      "file": "normal/768-medicare-hub.jpg",
+      "bytes": 69828,
+      "sha256": "5b6fa342998c4372395984046ffbe6d017c2d1f47b670f7ed740a4c86dbc202f"
+    },
+    {
+      "file": "normal/768-unihub-reading.jpg",
+      "bytes": 55052,
+      "sha256": "cf08af32de4d7dd608660c7c3cd0aca9569c241dc93d4dfebf0d009c9895cf95"
+    },
+    {
+      "file": "normal/768-unihub.jpg",
+      "bytes": 73641,
+      "sha256": "83e865ffc2d6d143db46dfb58a735afc2f16eb9a70c4a5d2ed1285c5d1f48bac"
+    },
+    {
+      "file": "normal/findings.json",
+      "bytes": 3038,
+      "sha256": "d26cb58d1a432692ed5c79c926b01c23b52853b7616557d4031c31cb50ef130b"
+    },
+    {
+      "file": "iteration-1/comparison-1440-gamezone-arena.jpg",
+      "bytes": 185576,
+      "sha256": "b7cff0e309c21792f25a2ea9fe31bcd0ae6f199c2c44f771db7d23c389473886"
+    },
+    {
+      "file": "iteration-1/comparison-320-full-stack-user-management-system.jpg",
+      "bytes": 79145,
+      "sha256": "ac6af56d33b1e87492fcf2e502980862154aad3681cfe5f7af39e17f91863e1b"
+    },
+    {
+      "file": "iteration-1/comparison-390-home-services.jpg",
+      "bytes": 97225,
+      "sha256": "ec0132d36601ebd828be528d6b4fc0454b00dd6e292abc1ffe164f62847483ee"
+    },
+    {
+      "file": "iteration-1/comparison-390-index.jpg",
+      "bytes": 80280,
+      "sha256": "30ef14ebc71e4afa15c7c4fa3cffedaccd40746fd19638d08a1d780aeb6664aa"
+    },
+    {
+      "file": "candidate/1280-full-stack-user-management-system-decision.jpg",
+      "bytes": 59173,
+      "sha256": "163acda15a3827ebb2ec006a8daa52bf274415e9eea6d3fd1d387b5e349e135b"
+    },
+    {
+      "file": "candidate/1280-full-stack-user-management-system-end.jpg",
+      "bytes": 50709,
+      "sha256": "1b3e2e4dc9aea84568148e0860b8eb6a87de97e9834906f040c1bd7965aa5b66"
+    },
+    {
+      "file": "candidate/1280-full-stack-user-management-system-reading.jpg",
+      "bytes": 55870,
+      "sha256": "88a14650c54720a4fb93530d757772e744e3e8b6ff193cf67cee71bd6ea81796"
+    },
+    {
+      "file": "candidate/1280-full-stack-user-management-system.jpg",
+      "bytes": 66151,
+      "sha256": "b83955fbfe09e95530370eed3948539e62f417f88c81175e8df3c6a76db16c2f"
+    },
+    {
+      "file": "candidate/1280-gamezone-arena-decision.jpg",
+      "bytes": 62437,
+      "sha256": "2e037bb9a564f305fcc33eff533a08aefe420e5fde432273050ca6c5f976247b"
+    },
+    {
+      "file": "candidate/1280-gamezone-arena-end.jpg",
+      "bytes": 53609,
+      "sha256": "f5c027f8fe1b6417ed81448faa0ca5e6e91dcb9a5420b5754b2b126ee0690f68"
+    },
+    {
+      "file": "candidate/1280-gamezone-arena-reading.jpg",
+      "bytes": 58304,
+      "sha256": "0e1ce6d23f713cc4b57ba1080d6198cdc011ec5555ffb3dd5d8d73c214ffc104"
+    },
+    {
+      "file": "candidate/1280-gamezone-arena.jpg",
+      "bytes": 83518,
+      "sha256": "51a5bb250fceb636a3f3cb497af33e2c961c86781894d9d6ed404e650a29972e"
+    },
+    {
+      "file": "candidate/1280-home-services-decision.jpg",
+      "bytes": 54496,
+      "sha256": "690a3891ff39dae4a05a3d809d3c3f11029c2f9e29fd0c2864397ee3ed1788f6"
+    },
+    {
+      "file": "candidate/1280-home-services-end.jpg",
+      "bytes": 42963,
+      "sha256": "33dbfde559743e63eda4caa681ddfc30770498195d6d1f26ad44b8f3bd74ac21"
+    },
+    {
+      "file": "candidate/1280-home-services-reading.jpg",
+      "bytes": 46668,
+      "sha256": "5fd6735502fa169d44625b0cc3fbed56bcc92514b00c70a3f41ac5d620872016"
+    },
+    {
+      "file": "candidate/1280-home-services.jpg",
+      "bytes": 92418,
+      "sha256": "e6985c1987ed7af6719e7b05ca664f05d445c9aedf005cabf4e52675c169828c"
+    },
+    {
+      "file": "candidate/1280-index-card.jpg",
+      "bytes": 71387,
+      "sha256": "c391215e93d3b62afc75ac5e356fe4fafba77be1d9e7b99322728c911b097156"
+    },
+    {
+      "file": "candidate/1280-index-full.jpg",
+      "bytes": 351729,
+      "sha256": "770012bd63d20052695159fba1a7a566b34eefff029d7a8ec054edf668fb7beb"
+    },
+    {
+      "file": "candidate/1280-index.jpg",
+      "bytes": 61383,
+      "sha256": "4fcf129190f42cfd7bb9f427d3cd0aa6b33e158f2df215bb01b05764ad66c2ba"
+    },
+    {
+      "file": "candidate/1280-medicare-hub-decision.jpg",
+      "bytes": 57236,
+      "sha256": "4a8352b4bd8c97adca0e1f5a9d8281d00c3a3cc862d54560849034bd9eef9f5a"
+    },
+    {
+      "file": "candidate/1280-medicare-hub-end.jpg",
+      "bytes": 47824,
+      "sha256": "03d944e7fbf38803ae084453e228d5248514e597da18bfdbf36e0695c935b383"
+    },
+    {
+      "file": "candidate/1280-medicare-hub-reading.jpg",
+      "bytes": 60832,
+      "sha256": "1a1df983dfe9664274fbed2850a163c7386e2e7fbf79f941ff39c8be2e92927e"
+    },
+    {
+      "file": "candidate/1280-medicare-hub.jpg",
+      "bytes": 78762,
+      "sha256": "4dec5b8021c3568cd18d56714a6ddd558e7b3eefe83a6d56911b4a550377fcfa"
+    },
+    {
+      "file": "candidate/1280-unihub-decision.jpg",
+      "bytes": 63073,
+      "sha256": "6124cea9ebd2990f80f64034d018e683e82018b1973450639dc64b85800b7076"
+    },
+    {
+      "file": "candidate/1280-unihub-end.jpg",
+      "bytes": 50023,
+      "sha256": "b97234dd16734e1367df4042f1674257c3cf88f5c1317238bdeaf66339e474ba"
+    },
+    {
+      "file": "candidate/1280-unihub-reading.jpg",
+      "bytes": 62283,
+      "sha256": "7fafbe2b07653b7c67b49a405c8042cf514b90677a6d2accfa945f767dadaa3c"
+    },
+    {
+      "file": "candidate/1280-unihub.jpg",
+      "bytes": 85854,
+      "sha256": "efd470d233f1d397c76def31a53bc971c343626a6fa803da909902c57b005d04"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-decision.jpg",
+      "bytes": 89465,
+      "sha256": "b709bf2db5e5a6688686283593298cb664563671c0fd44c6e83dd4eb323d41ce"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-end.jpg",
+      "bytes": 65242,
+      "sha256": "a3ed3691162e92e3153567ea626d3e6d784378f01005b4291577c2dd75ac0e06"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-gallery.jpg",
+      "bytes": 85885,
+      "sha256": "6a78cb9cd1c9352d4c9601c0d2e7b8f73cb5749d45d3298285fdded17ad62dcd"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-image-1-bottom.jpg",
+      "bytes": 76314,
+      "sha256": "ea8fa973934012636b191a4d814eaab59198a82154154acd79d5f0bdce69d477"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-image-1.jpg",
+      "bytes": 84407,
+      "sha256": "83193951dd93e568e24c69e97157210798acd8dacd8f2d6e13dadbd844795c8c"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-image-2-bottom.jpg",
+      "bytes": 92113,
+      "sha256": "7fc2abc184ab3292278a035b18fb095d037868e36037272a6d4d4a27f0d5d310"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-image-2.jpg",
+      "bytes": 100320,
+      "sha256": "2ce075b348353b5cb85a32dda567a366b0d7379d22d10603d697aefc4fc2ef68"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system-reading.jpg",
+      "bytes": 72487,
+      "sha256": "9c8c904095e7347c7b280fd8ccc6c059d7a12e6b0363428f652be875da2eba18"
+    },
+    {
+      "file": "candidate/1440-full-stack-user-management-system.jpg",
+      "bytes": 82483,
+      "sha256": "bd36ce686b686bc3cda004ff541b76d1f7a30149ce217d234206a5a2316f45af"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-decision.jpg",
+      "bytes": 90753,
+      "sha256": "0e568d0d3da01d0df4f94ced72d0c6c2d2c824b25dc0362166e14e0c9726cc7c"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-end.jpg",
+      "bytes": 77889,
+      "sha256": "f8a5b764038f14af61f22ac9ba802cb8319eedc45790e0c365c598ceeea55028"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-gallery.jpg",
+      "bytes": 85999,
+      "sha256": "352e3f3ab894ecd18e43ca27e71bbcdb08f0850c062c3536f089e07b25dcce4d"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-1.jpg",
+      "bytes": 101338,
+      "sha256": "9615737095454c535edac5c9da8544a72633bd4d870f38cb4ccafe08e24e7295"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-10.jpg",
+      "bytes": 98495,
+      "sha256": "dc3cf975378ac95788669b385048a78713335547c41f76e4d6628d1f1f7ada28"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-11.jpg",
+      "bytes": 136895,
+      "sha256": "be30c627ad6552024689b20363285c3bac39d4f760b6f996839405c1f0cfbebe"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-12.jpg",
+      "bytes": 96550,
+      "sha256": "e042680017cd0ebe8181b994b8a07fc48bf1fe5fbf285f4093379391f4f214da"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-13.jpg",
+      "bytes": 112325,
+      "sha256": "fd8151a343423bf7b79eefab74c5e406d5e2e7177b6eac46282bbcf5f368279a"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-14.jpg",
+      "bytes": 80172,
+      "sha256": "c9afad03aba6abb7a024e2edc6e08e54aa36a637c1ce087488ace467facd6650"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-15.jpg",
+      "bytes": 111233,
+      "sha256": "110f8b417a1bb7fffd051c0baf53a447c2fb8166fdbe6479ca06f393a06ad3c6"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-2.jpg",
+      "bytes": 87680,
+      "sha256": "45de6c7eddb296e86be5f865e913ea0e106455f5fa8a307d0c074219c6765af0"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-3.jpg",
+      "bytes": 88201,
+      "sha256": "fb6c0137d3df56175b4d7fdbe30e096946cfa3f4da81d1f1241aae3d2ae6bc0d"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-4.jpg",
+      "bytes": 94641,
+      "sha256": "bf0d19bf68095100d8b7c53f15d99a7ce7b4cd29a7ee409c4a32ddaee9ee1c69"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-5.jpg",
+      "bytes": 89839,
+      "sha256": "2b71e433fa80c01fb07447029974e73bcd08ab0b2db4c0a545fc41fcd74cc641"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-6.jpg",
+      "bytes": 111581,
+      "sha256": "abc32aab2788c67395e7a0302dc1604c6a0642efaea57e359fbf8c11fc8beef6"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-7.jpg",
+      "bytes": 87080,
+      "sha256": "237be5170f36211c16631a9c108c9fbf7155be3f089bb4ff3233536ea3c754ea"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-8.jpg",
+      "bytes": 93874,
+      "sha256": "69a17cde400dd94325654b936b157c202b737d85874b82df29a942961d43ca07"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-image-9.jpg",
+      "bytes": 95795,
+      "sha256": "e6c726fb6d883f1c88ae1da4d71809c7de51e95deddb615cc5b5725ae2974fcb"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena-reading.jpg",
+      "bytes": 71678,
+      "sha256": "6bc5c84bcb4f9576919e71146d95d74b51c247cd7a7a971126f57a02c050ed8d"
+    },
+    {
+      "file": "candidate/1440-gamezone-arena.jpg",
+      "bytes": 98265,
+      "sha256": "e2104f400970a8515475aa3fad67f2a5f80308f039b34bf30b82569903fdf119"
+    },
+    {
+      "file": "candidate/1440-home-services-decision.jpg",
+      "bytes": 81510,
+      "sha256": "274d1b40a739b28d8e32b8d03fd2e31ca98ecc8b58b0cd1e729b7bc4512f4875"
+    },
+    {
+      "file": "candidate/1440-home-services-end.jpg",
+      "bytes": 71688,
+      "sha256": "1bafb06f5ee994f94c2b9da05747e6d282f2a398cbd8510e2ac5a82809afa6c4"
+    },
+    {
+      "file": "candidate/1440-home-services-gallery.jpg",
+      "bytes": 74985,
+      "sha256": "d990d7ac506614b3492955555805c1ecd7b01d48626c50eab3a029138ca4ba1a"
+    },
+    {
+      "file": "candidate/1440-home-services-image-1-bottom.jpg",
+      "bytes": 73667,
+      "sha256": "5af1a1578749e606bcbe035f0c9fe6f80ca373c0ac1a383081447f067316716f"
+    },
+    {
+      "file": "candidate/1440-home-services-image-1.jpg",
+      "bytes": 121580,
+      "sha256": "e5edbc6616767e907cbbe81ec6145109c1e1ffb986f1e7c055aa1b7d009a8a96"
+    },
+    {
+      "file": "candidate/1440-home-services-image-2-bottom.jpg",
+      "bytes": 50782,
+      "sha256": "e1b5090f7bd4b5e088eb36d0dd38835592657b49305186de24306fca3f7b9bd4"
+    },
+    {
+      "file": "candidate/1440-home-services-image-2.jpg",
+      "bytes": 72139,
+      "sha256": "5acb4e4cf39f729b011cbb8893e934602a6cac36a18643d1afb88fe912e9fffe"
+    },
+    {
+      "file": "candidate/1440-home-services-reading.jpg",
+      "bytes": 55777,
+      "sha256": "13cacbe8c64c903b9280b975c1973ab95a4aa9443d17569072f9fc70c07c3d47"
+    },
+    {
+      "file": "candidate/1440-home-services.jpg",
+      "bytes": 113941,
+      "sha256": "47d5201e5448ec173ac30a080ce46b80f65fcaf21e918a7e16fd8cc30e79ac35"
+    },
+    {
+      "file": "candidate/1440-index-card.jpg",
+      "bytes": 89346,
+      "sha256": "9720efb00c3e1db688a0efed17ae149bb25deb07e4b0998a7131c23103852b0a"
+    },
+    {
+      "file": "candidate/1440-index-full.jpg",
+      "bytes": 393619,
+      "sha256": "ae5792093dc927e7178c203cff7ca0d5bce98debb4400ce87212b2fe422c1beb"
+    },
+    {
+      "file": "candidate/1440-index.jpg",
+      "bytes": 78461,
+      "sha256": "d88aea8126312bcde4183c2f278d6971c3f33e2327fc964222f55c3b3ad447c5"
+    },
+    {
+      "file": "candidate/1440-journey-short.webm",
+      "bytes": 814551,
+      "sha256": "019fdfd2a804a577499b779b0fd4a65ec653ba47c2739b3fb73779211943fdfe"
+    },
+    {
+      "file": "candidate/1440-journey.webm",
+      "bytes": 3258684,
+      "sha256": "9d14aac9a40e7b4c3bc13795a9bc625318b424b4ec91166782969b2db34d6629"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-decision.jpg",
+      "bytes": 79124,
+      "sha256": "60942f19bec1deb27860f8bea41b3c6de65422c60a213e199c0902b232f0500a"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-end.jpg",
+      "bytes": 63972,
+      "sha256": "aa759d63a541f92dbb8b77fe4a41a538ddafbf15f677307b61c7c8be377b3d2e"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-gallery.jpg",
+      "bytes": 98733,
+      "sha256": "2359fd0593f6d6ad4c637e847bb4fe8e1dddff4c1f79243010028c809160fdc5"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-image-1.jpg",
+      "bytes": 96997,
+      "sha256": "7b3b056e331f9e44585b975bcbb3b7468159e31475d9da7204aa13b29e049954"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-image-2.jpg",
+      "bytes": 107053,
+      "sha256": "28aeb7510b68c90a18303df56b21c0732890380463117aab998abc8ba9e6af05"
+    },
+    {
+      "file": "candidate/1440-medicare-hub-reading.jpg",
+      "bytes": 78566,
+      "sha256": "f071471e3d717fbeca403fc811cbbedd576a076b5d08e814f03f7a805522ff6f"
+    },
+    {
+      "file": "candidate/1440-medicare-hub.jpg",
+      "bytes": 91175,
+      "sha256": "145209eb0cf34fc01959d6edf5f4f7fb020470624929a46c066990b5e24798cf"
+    },
+    {
+      "file": "candidate/1440-unihub-decision.jpg",
+      "bytes": 88293,
+      "sha256": "f13b99fd473e8db863136e8798edb4d6a2d7448aa3e06a69c365353b6fd0bd59"
+    },
+    {
+      "file": "candidate/1440-unihub-end.jpg",
+      "bytes": 77718,
+      "sha256": "04fb0fba9002241421d9227e5f18323b73bb198aafbf12076d735d5996605b55"
+    },
+    {
+      "file": "candidate/1440-unihub-gallery.jpg",
+      "bytes": 73463,
+      "sha256": "5cba6d90ef6e6e2aa5807ad7b4f3a124ac33e98dc2ac43805adf8a2cd5174687"
+    },
+    {
+      "file": "candidate/1440-unihub-image-1.jpg",
+      "bytes": 107476,
+      "sha256": "40df983f83f76525bd78101ea1ff7c54fef1b5a3cd429d9ba3a46503cd8de5f6"
+    },
+    {
+      "file": "candidate/1440-unihub-image-2.jpg",
+      "bytes": 98110,
+      "sha256": "e44312e80f57237c5e75d7267856ce199a0dd8b5dcaae32109f547cd84c19485"
+    },
+    {
+      "file": "candidate/1440-unihub-image-3.jpg",
+      "bytes": 97628,
+      "sha256": "eef484a1005f456f420db21f18e9bb9996d34acd7b1c90b71f852e7f97b8ca66"
+    },
+    {
+      "file": "candidate/1440-unihub-image-4.jpg",
+      "bytes": 97007,
+      "sha256": "7ab935b7a73b171808ffdb17663453354b90093ddcfbfd5dda9ba01a901a56ab"
+    },
+    {
+      "file": "candidate/1440-unihub-image-5.jpg",
+      "bytes": 76270,
+      "sha256": "7789f6f745246e2ad606e939accd1c6cbda2995e85e6f661a2b586f6e903aa56"
+    },
+    {
+      "file": "candidate/1440-unihub-image-6.jpg",
+      "bytes": 76001,
+      "sha256": "baaa7e2027e0560a99b53bfbd88f913dc7abf277df9025ec30cae94c78bb605a"
+    },
+    {
+      "file": "candidate/1440-unihub-reading.jpg",
+      "bytes": 90381,
+      "sha256": "74eb83a07d6ed1652b12b601817b7704852d44f550d339b0e37654a192f89d44"
+    },
+    {
+      "file": "candidate/1440-unihub.jpg",
+      "bytes": 101774,
+      "sha256": "2c18b533c9c4292c95fb44d3a7f458f242e975c50a927726b08bae2006c79dd6"
+    },
+    {
+      "file": "candidate/320-full-stack-user-management-system-decision.jpg",
+      "bytes": 37038,
+      "sha256": "15ee4e5f18012a854e4e4c0572c030bdcf57711b9c3eedc56f64903a883206b5"
+    },
+    {
+      "file": "candidate/320-full-stack-user-management-system-end.jpg",
+      "bytes": 33623,
+      "sha256": "00cb63e94b2a9caa6d9be095fae123a9390598474b354644b7a189a31dfe79d6"
+    },
+    {
+      "file": "candidate/320-full-stack-user-management-system-reading.jpg",
+      "bytes": 41440,
+      "sha256": "4eee03657091d0918d0ebf7e3d933b14dc5a84096fb7af273162ae656edb2100"
+    },
+    {
+      "file": "candidate/320-full-stack-user-management-system.jpg",
+      "bytes": 39095,
+      "sha256": "50bc9277c6acdbf0bf36914cf332e2a82125e3067894c43d6b92e0c3d3c6d802"
+    },
+    {
+      "file": "candidate/320-gamezone-arena-decision.jpg",
+      "bytes": 41281,
+      "sha256": "53497797800f48be1493a45cc2c8dd98269c0a5240ce7b6d094fb501ae1b9379"
+    },
+    {
+      "file": "candidate/320-gamezone-arena-end.jpg",
+      "bytes": 36660,
+      "sha256": "15553d43a7c45015abddc5c97762885157964a667e0a563c99b7a3f8ef6566e6"
+    },
+    {
+      "file": "candidate/320-gamezone-arena-reading.jpg",
+      "bytes": 40206,
+      "sha256": "3d97a5e0fe3cb6c90511b92c36a5b9e03f1c781858ac5d2bd6a29c7b1deaa999"
+    },
+    {
+      "file": "candidate/320-gamezone-arena.jpg",
+      "bytes": 38888,
+      "sha256": "bfaa9bf0dda8737f1e5d2ce9adf69e0777b4151b6ad7c44fdbdb207249771d21"
+    },
+    {
+      "file": "candidate/320-home-services-decision.jpg",
+      "bytes": 38273,
+      "sha256": "7c3ef4428b8690b489de4e1bc88aa3028eb49d2377f1a8db9aa9d85c0c45c1c6"
+    },
+    {
+      "file": "candidate/320-home-services-end.jpg",
+      "bytes": 36192,
+      "sha256": "042f145ac97a241f0ab4e133208f31f7817b0caac2b5e9b71bb94c0502a37620"
+    },
+    {
+      "file": "candidate/320-home-services-reading.jpg",
+      "bytes": 35316,
+      "sha256": "34bbb9b13780427211379ad568efb02fdb26434aacb805c8f13b96b25f7dac5f"
+    },
+    {
+      "file": "candidate/320-home-services.jpg",
+      "bytes": 41540,
+      "sha256": "3c9f54e1f204b48a8032310f26c1c80d1b1dd02a82669192f01eb3ce167ac0b7"
+    },
+    {
+      "file": "candidate/320-index-card.jpg",
+      "bytes": 37046,
+      "sha256": "01a9d31e455f7658c7a355d0c17a6e3c71282be7046ab65473dea5f62908370f"
+    },
+    {
+      "file": "candidate/320-index-full.jpg",
+      "bytes": 205843,
+      "sha256": "e9df0f03f201473ce3f1fe7efd450341e7da0a9334fae076602474cfd764d1f8"
+    },
+    {
+      "file": "candidate/320-index.jpg",
+      "bytes": 37792,
+      "sha256": "efa706449768af06cf7921450e6ab98f17381db99e9fffbf50cb5aa09dbbd3d9"
+    },
+    {
+      "file": "candidate/320-medicare-hub-decision.jpg",
+      "bytes": 38595,
+      "sha256": "1638a770689718837c17355024147bf3b3fde3fe7495dd3db97307dbcf965c02"
+    },
+    {
+      "file": "candidate/320-medicare-hub-end.jpg",
+      "bytes": 34071,
+      "sha256": "cd57342c23f902f7ff90434dc670094b54366d195ba24c58a463c6d4176f4c07"
+    },
+    {
+      "file": "candidate/320-medicare-hub-reading.jpg",
+      "bytes": 36526,
+      "sha256": "548bd0adda726f3fcfedeede4c06fbada97eece0d838706826f23b82f611604c"
+    },
+    {
+      "file": "candidate/320-medicare-hub.jpg",
+      "bytes": 40598,
+      "sha256": "321eee21f14c1169cd00caadee66b794ad2d0dca08c4776f884db6c71dc9a287"
+    },
+    {
+      "file": "candidate/320-unihub-decision.jpg",
+      "bytes": 48195,
+      "sha256": "2853242d36f07934152db8e83be496db400ee576295357e02c7c7275e23d81c2"
+    },
+    {
+      "file": "candidate/320-unihub-end.jpg",
+      "bytes": 35088,
+      "sha256": "40d1538121845c384b8694e8e44f88c9a717e1fe85d0cbdce9f3d0959e08f8ee"
+    },
+    {
+      "file": "candidate/320-unihub-reading.jpg",
+      "bytes": 46044,
+      "sha256": "1e39d3c7de69b12fd13ee89b660e632a2072b911fc6ae07f352c7dc8fcc3b523"
+    },
+    {
+      "file": "candidate/320-unihub.jpg",
+      "bytes": 38273,
+      "sha256": "a958c962821e47a8ae81f1585d64f2c181cfd0503795716a56ac56c8e2425830"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-decision.jpg",
+      "bytes": 38136,
+      "sha256": "860ee78be3d3f543c0f41ad03ae67129e73cbd747c3d5884e1e92ef0bee00e1a"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-end.jpg",
+      "bytes": 34639,
+      "sha256": "71ce9b9701978d848a4bc67faa4b1070e563363c89d7a4d15672afd0fa21357c"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-gallery.jpg",
+      "bytes": 41542,
+      "sha256": "923902f1d660817825d9900dab1fb033d8dc748ecd9cd3b63ba5b0b34f3a3f7f"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-image-1-bottom.jpg",
+      "bytes": 36274,
+      "sha256": "29f2a5cb1d6e236d8d80bd8976377e6586d15d97536bfd985fc3202aa73a8987"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-image-1.jpg",
+      "bytes": 37522,
+      "sha256": "689cc6870b9919df8cf1108b31ead8d6a75ef30d4fba8d6217724011ffcc7562"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-image-2-bottom.jpg",
+      "bytes": 43406,
+      "sha256": "ca4852b479273fa226cca959c4600fa93c444894f8300a39bf449266c696199c"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-image-2.jpg",
+      "bytes": 42945,
+      "sha256": "e192db07bd033a22888407925fd0d09e5ae9c200045d56bc0f26a26855a1f9ec"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system-reading.jpg",
+      "bytes": 49989,
+      "sha256": "4c02dd035733631dd3036cd20319db31f9fe09a87d66c568842ab8dcbc809df8"
+    },
+    {
+      "file": "candidate/390-full-stack-user-management-system.jpg",
+      "bytes": 44035,
+      "sha256": "89ec98aae8cb6cbe79ab5486533f96d7e28a87f15b2a15dfaf0dfd9fbcd673fd"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-decision.jpg",
+      "bytes": 43593,
+      "sha256": "399ebd9ccf868f27a2f57aee805f2fac4e89f1d165ef668578ec0fe95ef8696b"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-end.jpg",
+      "bytes": 39231,
+      "sha256": "6e7b8b2f78c6492cbfe36ce007f72a444da3d45f1ec6bdc8d94f58bc4552ba4a"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-gallery.jpg",
+      "bytes": 37424,
+      "sha256": "63d2ec22b780a46f02976d41791db2118483edb1aa7904c06279875c19046588"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-1.jpg",
+      "bytes": 41800,
+      "sha256": "7ad7be42fe893802f48d21b60f5d8c946b79a771a700bde1d9f7eebc3fab9192"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-10.jpg",
+      "bytes": 39673,
+      "sha256": "44f705219631561f2251c4f0586e1f0684022da276f59f04ebc97ac33b818082"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-11.jpg",
+      "bytes": 51193,
+      "sha256": "adcd7fef8100814058759b26b8d3cef85984e18efccb0cc17e9c33114753e0e9"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-12.jpg",
+      "bytes": 43967,
+      "sha256": "437a6f3143cc035669cddaba0948e85c10cf94c3dc5e22fd78caf0812510fd77"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-13.jpg",
+      "bytes": 48824,
+      "sha256": "1ed8c5f31aac3ad56e9ac4d6465d92ad74c452b31365e5fee454ad6f9552e4ea"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-14.jpg",
+      "bytes": 36554,
+      "sha256": "f9bc257e9c84270a786c5c80ee434c932763664e249317fba95498eb87b8bcce"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-15.jpg",
+      "bytes": 48654,
+      "sha256": "72551924335cc8fd2944fde70f717da5b32b878988ab1e2e4b50be6f2d73f6bf"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-2.jpg",
+      "bytes": 40032,
+      "sha256": "346acdedc61688e9460bb7ec2962d9f86e905f2ed8abc7a1f7273d236a1f7f66"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-3.jpg",
+      "bytes": 38224,
+      "sha256": "c8361004586e8dfafb48c2a37924697e4b959bbc1fa5d6760fe8b92b1bd8e146"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-4.jpg",
+      "bytes": 39558,
+      "sha256": "c4a93eb0cbbde19c9d316219af9123921ccbce0a616a073b6cad3d3cec84e6df"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-5.jpg",
+      "bytes": 37549,
+      "sha256": "a14101157d036d4066a51d9be432613b3ce1a316de3bfad676e5aee638af85d5"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-6.jpg",
+      "bytes": 43122,
+      "sha256": "1e9a94f23e8a2e434238aba1320a4284b667d3c06a6dd37ee02ec79c2eafbe6e"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-7.jpg",
+      "bytes": 38469,
+      "sha256": "f152dc2802b0a5029ec1f95033255f2e640a143f019811c76d5932768309b70e"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-8.jpg",
+      "bytes": 37593,
+      "sha256": "6951f7408f36c63558e10ba6ec67eb5b08ec89ea497276a03c46a7bfe6682dc2"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-image-9.jpg",
+      "bytes": 40861,
+      "sha256": "aaa6d9b308d62a0122655bf236464a7b440fbfe8fa3576b2d453eecace3f5f6c"
+    },
+    {
+      "file": "candidate/390-gamezone-arena-reading.jpg",
+      "bytes": 44536,
+      "sha256": "c8e2fcf56c3c7cc73e3dbb034092d4ada41044f24c20ae193f43b875e72024bc"
+    },
+    {
+      "file": "candidate/390-gamezone-arena.jpg",
+      "bytes": 44543,
+      "sha256": "6f998604268dfea525f47b81f25d9ff29c8f4c1346a0a982f5f87bf36a359101"
+    },
+    {
+      "file": "candidate/390-home-services-decision.jpg",
+      "bytes": 41177,
+      "sha256": "01935eb181650e941c8e5c3d167fc3450262df25a8d18357cfc1d488d8971d32"
+    },
+    {
+      "file": "candidate/390-home-services-end.jpg",
+      "bytes": 39459,
+      "sha256": "810126c13fa49925ea555d93afe2abb42b194308b2672d1bc2561f15a4590c66"
+    },
+    {
+      "file": "candidate/390-home-services-gallery.jpg",
+      "bytes": 41740,
+      "sha256": "640b5616d4ce6c117d31b67e55cb4ca66bac520e5a603df7d90d651486873a67"
+    },
+    {
+      "file": "candidate/390-home-services-image-1-bottom.jpg",
+      "bytes": 46741,
+      "sha256": "4a2cc7d04bf51f44b9feff49281272f0c0c1d07134c3a14b8bac9758ab4fe2b3"
+    },
+    {
+      "file": "candidate/390-home-services-image-1.jpg",
+      "bytes": 48029,
+      "sha256": "73ad8a37c2920e83625d02cc435fac70171141b7b51776fc9448738ea4bb6b73"
+    },
+    {
+      "file": "candidate/390-home-services-image-2-bottom.jpg",
+      "bytes": 26057,
+      "sha256": "dc537d86cdf5f444f05305a48ca292d5c66a2e2c57d3904d4e2627d44083f0a6"
+    },
+    {
+      "file": "candidate/390-home-services-image-2.jpg",
+      "bytes": 30783,
+      "sha256": "6249f7d355c6ddcd83beae7e39040d1b46d51b8a2b4e91d17c91f297610ecf59"
+    },
+    {
+      "file": "candidate/390-home-services-reading.jpg",
+      "bytes": 35967,
+      "sha256": "592a5f25b0a1fe9f12acc611c6d2b946d75e2d85ce859aac0f1ebef564211a8c"
+    },
+    {
+      "file": "candidate/390-home-services.jpg",
+      "bytes": 45867,
+      "sha256": "5848b0c45d9c227ecc592ad35451b444003240e75def0210a5feb2602fc55af4"
+    },
+    {
+      "file": "candidate/390-index-card.jpg",
+      "bytes": 39723,
+      "sha256": "6f5cdae727a2e9a2bbe23f173846a055790e079810b89ae965d792211b957055"
+    },
+    {
+      "file": "candidate/390-index-full.jpg",
+      "bytes": 241833,
+      "sha256": "06b692243c9ee0ee2643be561083520ef8eea8a820f2c17ea3774390bb76cda0"
+    },
+    {
+      "file": "candidate/390-index.jpg",
+      "bytes": 40320,
+      "sha256": "64a2b39fe0c3271e75d0a195e0ce88d251e172f59ca2a70a1c0abed92dc98907"
+    },
+    {
+      "file": "candidate/390-journey-short.webm",
+      "bytes": 585174,
+      "sha256": "1313f4a5b525547dd5b158548110e579d247466e5ab9a93e073aac11a9c21377"
+    },
+    {
+      "file": "candidate/390-journey.webm",
+      "bytes": 2620185,
+      "sha256": "eb9ea28443cdebcd4dc7ef63e6cd224e02cf9b35be8d570a9fc268a883a58826"
+    },
+    {
+      "file": "candidate/390-medicare-hub-decision.jpg",
+      "bytes": 40279,
+      "sha256": "324f64bb2b58350ba6d4c5ff511aaa85ba8b2cacceb88dd0ebce673940b8fdc1"
+    },
+    {
+      "file": "candidate/390-medicare-hub-end.jpg",
+      "bytes": 35897,
+      "sha256": "bc1210ede1587bdc631ac2e3be19d588c05239da07ca83f75a1c5b82dd33b69d"
+    },
+    {
+      "file": "candidate/390-medicare-hub-gallery.jpg",
+      "bytes": 51465,
+      "sha256": "4e907c75db9711af9cec15f0cadaf36e59bff6f42fddb8dc3a53918c827415b6"
+    },
+    {
+      "file": "candidate/390-medicare-hub-image-1.jpg",
+      "bytes": 41671,
+      "sha256": "a3851d1d0686e5f7cf929863aedafca71d36818f26152fded2498cc25035c49d"
+    },
+    {
+      "file": "candidate/390-medicare-hub-image-2.jpg",
+      "bytes": 55047,
+      "sha256": "0030bfe86e507db43fd05c9c7296f4abace68cbb978407ea53719df9ef7c91bd"
+    },
+    {
+      "file": "candidate/390-medicare-hub-reading.jpg",
+      "bytes": 38962,
+      "sha256": "e5a409613cfc7b4c2a5f7b402f652f806d2ae57c85b49755cac34338180881d2"
+    },
+    {
+      "file": "candidate/390-medicare-hub.jpg",
+      "bytes": 47164,
+      "sha256": "5c51c23f3aeeb34fd53d662a209d59f6f25e75949357e689ffdc4caf165b3ef8"
+    },
+    {
+      "file": "candidate/390-unihub-decision.jpg",
+      "bytes": 44106,
+      "sha256": "27803bb9c6dcf51a9e53c28bca17f7afcafdc7aad8cf71bc35d4d01618ecc8a6"
+    },
+    {
+      "file": "candidate/390-unihub-end.jpg",
+      "bytes": 40484,
+      "sha256": "2832e21fdaf7b08a792abab2e49a26ac4afb9eaaf50450a798369fabba2872b7"
+    },
+    {
+      "file": "candidate/390-unihub-gallery.jpg",
+      "bytes": 31468,
+      "sha256": "93791efd52c994aa068930c96e09aa76fd6c1065fd56dbce25c46f0bbf5d143e"
+    },
+    {
+      "file": "candidate/390-unihub-image-1.jpg",
+      "bytes": 48199,
+      "sha256": "6e1ca48b9e9d3e6adec5710d09b4d550df747452c7b4149f7ce3565da87430f2"
+    },
+    {
+      "file": "candidate/390-unihub-image-2.jpg",
+      "bytes": 48070,
+      "sha256": "5b55395b1a5eddd2ffc3efd8f48dde6af40aed3ef0da7e7df2173dddf5c833a4"
+    },
+    {
+      "file": "candidate/390-unihub-image-3.jpg",
+      "bytes": 47103,
+      "sha256": "b9fbe6ad358378aa8dfaa8768a97fa23bf3e1f0e312750517b9ce35c4f4359ff"
+    },
+    {
+      "file": "candidate/390-unihub-image-4.jpg",
+      "bytes": 48030,
+      "sha256": "4215fdd22178c623059b6b6636d6a076f9c63faa34b7d00d7887696954c70bc3"
+    },
+    {
+      "file": "candidate/390-unihub-image-5.jpg",
+      "bytes": 34910,
+      "sha256": "54900aa4f95591757b7103bb72bc563313c8e1b8dc1afc6eba7bab1ab6be19a1"
+    },
+    {
+      "file": "candidate/390-unihub-image-6.jpg",
+      "bytes": 32036,
+      "sha256": "57a80e7848b31de330c2fe42585a49376eeff51038bca7139ff2ad0cbc11c2b7"
+    },
+    {
+      "file": "candidate/390-unihub-reading.jpg",
+      "bytes": 51951,
+      "sha256": "f89cc890e577cf7c2ca472b09d65b7255df789ee967543d9ae2a8b7967ff8c98"
+    },
+    {
+      "file": "candidate/390-unihub.jpg",
+      "bytes": 40036,
+      "sha256": "219513e973eb1e1ad2bb4291d6f83bf463711eb7747940e6f366e9733bf71656"
+    },
+    {
+      "file": "candidate/430-full-stack-user-management-system-decision.jpg",
+      "bytes": 37209,
+      "sha256": "2270624d1ef2abe3f00c3ea97dd607518b407e724d113e7d8b374d72a735b389"
+    },
+    {
+      "file": "candidate/430-full-stack-user-management-system-end.jpg",
+      "bytes": 34539,
+      "sha256": "6371cfb9f820b6f5261a142dee5d85ed504e481f5a74044fab6c9bce3ff2a168"
+    },
+    {
+      "file": "candidate/430-full-stack-user-management-system-reading.jpg",
+      "bytes": 49004,
+      "sha256": "ac7f78708b82596285eebc1443b0a2d81fc3299b9fc1a41c30cbae9fb18e6dab"
+    },
+    {
+      "file": "candidate/430-full-stack-user-management-system.jpg",
+      "bytes": 46492,
+      "sha256": "1ee16f38c53d2e341e3f4803b56b961d4a746c16d55f50a6d50d9ffe8aefda60"
+    },
+    {
+      "file": "candidate/430-gamezone-arena-decision.jpg",
+      "bytes": 42141,
+      "sha256": "58f6e3e882ae209966f9915fba3cf083003f47bf5ec7288935152d2cfef75ea8"
+    },
+    {
+      "file": "candidate/430-gamezone-arena-end.jpg",
+      "bytes": 40897,
+      "sha256": "018e0bde7fdca6bac357c9d24d78d2f99bdb7ca7188f40252614dace761dc57b"
+    },
+    {
+      "file": "candidate/430-gamezone-arena-reading.jpg",
+      "bytes": 44627,
+      "sha256": "91133e9a7bee239ef329ae1aa391a57f6c659e89ffd7088ccae1446213d2c36a"
+    },
+    {
+      "file": "candidate/430-gamezone-arena.jpg",
+      "bytes": 46974,
+      "sha256": "f934ffd00df7f7241780a052f9c8d5d475add9795b0b795e1fbd2738fad25928"
+    },
+    {
+      "file": "candidate/430-home-services-decision.jpg",
+      "bytes": 42421,
+      "sha256": "b2f2076b83fba839f10a2a96d8fa3e35ee22796c3195c185361b33f0bfa1da80"
+    },
+    {
+      "file": "candidate/430-home-services-end.jpg",
+      "bytes": 40255,
+      "sha256": "3d111a70fbb38e65b24c888ed763be4a3c1c1abd96d528a96545b96ccdcba7e0"
+    },
+    {
+      "file": "candidate/430-home-services-reading.jpg",
+      "bytes": 36947,
+      "sha256": "03e7417b7cffd2983d50487d85e5f87149622da48527e14543feda31745d02e7"
+    },
+    {
+      "file": "candidate/430-home-services.jpg",
+      "bytes": 48804,
+      "sha256": "54af893bb64671406dfd80c60e16046f59c113df9ee3f307efc0f63376c78f85"
+    },
+    {
+      "file": "candidate/430-index-card.jpg",
+      "bytes": 41785,
+      "sha256": "950c44976ee0bdcf3fb3177b631539b365a30d362b9a15b428fae825533640f7"
+    },
+    {
+      "file": "candidate/430-index-full.jpg",
+      "bytes": 251113,
+      "sha256": "534db6792f81663104eec9c67ca47912bb19d72c05a2fa68124d2198735a92a1"
+    },
+    {
+      "file": "candidate/430-index.jpg",
+      "bytes": 41500,
+      "sha256": "3353f49eba35212706f71748429944e3ca0fff44977e3adb08345165b6b479fc"
+    },
+    {
+      "file": "candidate/430-medicare-hub-decision.jpg",
+      "bytes": 40615,
+      "sha256": "d148aaededa35f87af651c9526019a38dce7897de06f502f68f1a41a5cf68491"
+    },
+    {
+      "file": "candidate/430-medicare-hub-end.jpg",
+      "bytes": 35274,
+      "sha256": "06241abb4218bdaa492ade92aa80e0856cc4a480547ca3feac38e0e2c87ccf27"
+    },
+    {
+      "file": "candidate/430-medicare-hub-reading.jpg",
+      "bytes": 39106,
+      "sha256": "97f8307aa482a2895437c91f6101c8e2bca51c740507758f1486aad542bb68f4"
+    },
+    {
+      "file": "candidate/430-medicare-hub.jpg",
+      "bytes": 47262,
+      "sha256": "830a254b654f1b6b7ae0d097674360fd18147d5fce3790c1b3e07f557e51d05c"
+    },
+    {
+      "file": "candidate/430-unihub-decision.jpg",
+      "bytes": 54963,
+      "sha256": "fcfa544fa06b62e4f11b13640be806028ea7a57ea1da308cfdf9a75baa569cc6"
+    },
+    {
+      "file": "candidate/430-unihub-end.jpg",
+      "bytes": 40645,
+      "sha256": "ca2be469d0e083e498f66efee83cad7c0fc0c91e46bb61f00e7f4ac521d3fe24"
+    },
+    {
+      "file": "candidate/430-unihub-reading.jpg",
+      "bytes": 53366,
+      "sha256": "507158376fb2ad0a25745a4912e2c4b834a1278d09bbee2a1e3813a5ac03d312"
+    },
+    {
+      "file": "candidate/430-unihub.jpg",
+      "bytes": 42344,
+      "sha256": "3496b5343b27edf7b466c74ee332f30bb95e26df878c469852c927e0036971f1"
+    },
+    {
+      "file": "candidate/768-full-stack-user-management-system-decision.jpg",
+      "bytes": 63429,
+      "sha256": "7affa0c9c0f262af465cc94041fc7087c442c081d551b25d5a9929850fdbc001"
+    },
+    {
+      "file": "candidate/768-full-stack-user-management-system-end.jpg",
+      "bytes": 62099,
+      "sha256": "53f42115f26997f78626905d56cafc596b5d423299ae95108f3ebf6e47eb7b82"
+    },
+    {
+      "file": "candidate/768-full-stack-user-management-system-reading.jpg",
+      "bytes": 63449,
+      "sha256": "f254ca857e226928419900fa786eb4c73ad38218c114669aa584d86e31e04001"
+    },
+    {
+      "file": "candidate/768-full-stack-user-management-system.jpg",
+      "bytes": 63753,
+      "sha256": "ced1ddfac4f28d42740e0ebd97ac8adbbc2910a4c36ebdd55cea194894141684"
+    },
+    {
+      "file": "candidate/768-gamezone-arena-decision.jpg",
+      "bytes": 62858,
+      "sha256": "2d30f6bc07fa15e64cc1de65e678c7252f4ba722b626d46678feafc9585e4c1f"
+    },
+    {
+      "file": "candidate/768-gamezone-arena-end.jpg",
+      "bytes": 70602,
+      "sha256": "04acde3dfed1bf5785f380a82c73fa240f59c5c8c9e160425e87d548b88a4906"
+    },
+    {
+      "file": "candidate/768-gamezone-arena-reading.jpg",
+      "bytes": 65645,
+      "sha256": "47158400f6c24b372eacd8464958358d87a9382525787c0839ea6795553d9ecf"
+    },
+    {
+      "file": "candidate/768-gamezone-arena.jpg",
+      "bytes": 74277,
+      "sha256": "135cad56f416949858072c95a0082178959bcb57b35eac29090525d2d610f6db"
+    },
+    {
+      "file": "candidate/768-home-services-decision.jpg",
+      "bytes": 72575,
+      "sha256": "790b86520d7efba8efeff47600c7fd0abcf6292b441bc150b6068b1115db2660"
+    },
+    {
+      "file": "candidate/768-home-services-end.jpg",
+      "bytes": 60524,
+      "sha256": "6055ed697230c01e396f86281ceb347e5e0423ddb62dadfc627e4569fe0bdbf2"
+    },
+    {
+      "file": "candidate/768-home-services-reading.jpg",
+      "bytes": 46608,
+      "sha256": "5389dd95897ad00215b42945b730871066acfea11104a431de274eff4918c66a"
+    },
+    {
+      "file": "candidate/768-home-services.jpg",
+      "bytes": 82799,
+      "sha256": "0677d7bab3ff9173d4de91cbbe7eabf00567d8033112fa45446bb0f80b6bd772"
+    },
+    {
+      "file": "candidate/768-index-card.jpg",
+      "bytes": 81807,
+      "sha256": "301c40ca876eca00a9c87c19b2f6023377ddd327e4dbc254c880af252655a9e2"
+    },
+    {
+      "file": "candidate/768-index-full.jpg",
+      "bytes": 236065,
+      "sha256": "ef3adcbc3d17e24f940d298f2682ed668edf4467500da1603c3d9fc04e7ca47c"
+    },
+    {
+      "file": "candidate/768-index.jpg",
+      "bytes": 79657,
+      "sha256": "6458feb9c54e21e89b5d9d5bdfc7c1c58b2df15ee235f93085ecee86c2e88877"
+    },
+    {
+      "file": "candidate/768-medicare-hub-decision.jpg",
+      "bytes": 68249,
+      "sha256": "fdc184866ecfa732c59a2b699dd5de2113e5344d2b17dc87dbcf685d2a767084"
+    },
+    {
+      "file": "candidate/768-medicare-hub-end.jpg",
+      "bytes": 57645,
+      "sha256": "6e908afdea0ef2686801443713698d9136ec455bc357c07e2e30b98bb1999ba3"
+    },
+    {
+      "file": "candidate/768-medicare-hub-reading.jpg",
+      "bytes": 68349,
+      "sha256": "b557b098372f46c5d10117b5e6a2687865d40b2c60dc4e7e65b17992597981ef"
+    },
+    {
+      "file": "candidate/768-medicare-hub.jpg",
+      "bytes": 73764,
+      "sha256": "85e38f0f7110b7644c05a22d7fc4f30a7b6376eb60a75f46bda794caceba6291"
+    },
+    {
+      "file": "candidate/768-unihub-decision.jpg",
+      "bytes": 73662,
+      "sha256": "86671c73cf5b342fe7dd17d6becdc53502aadb7187a9a8580fddc2ad952006e0"
+    },
+    {
+      "file": "candidate/768-unihub-end.jpg",
+      "bytes": 69080,
+      "sha256": "0047c4fc4f440819f8275c301188e18636f57b7317bd5d558aee573cdd075320"
+    },
+    {
+      "file": "candidate/768-unihub-reading.jpg",
+      "bytes": 62108,
+      "sha256": "6032cd4b24a9c1d012cc256a61665a63edef009ca53f872de6c3dd73589b1c0f"
+    },
+    {
+      "file": "candidate/768-unihub.jpg",
+      "bytes": 71698,
+      "sha256": "aae6c941f93ed08ad053c9286d4127fa931171372b11986a8652ed9b953503a5"
+    },
+    {
+      "file": "candidate/findings.json",
+      "bytes": 29159,
+      "sha256": "05445aa677e61026eed0427d1954d044433ba149c685bfe34f1322143386c321"
+    },
+    {
+      "file": "before/1280-full-stack-user-management-system-reading.jpg",
+      "bytes": 66155,
+      "sha256": "65defc40eda7f8d5fc6e6d96fe646de214271b9f7fd64efdf64c307ee210f282"
+    },
+    {
+      "file": "before/1280-full-stack-user-management-system.jpg",
+      "bytes": 67848,
+      "sha256": "657118117f3951082f644d1e939b8bdb61808759ba2792951e75b078a096c4ae"
+    },
+    {
+      "file": "before/1280-gamezone-arena-reading.jpg",
+      "bytes": 58457,
+      "sha256": "0634b7ff2b9eb3da3c54f02e850a8fdba29611425ce9ddb3891472d33a426c41"
+    },
+    {
+      "file": "before/1280-gamezone-arena.jpg",
+      "bytes": 65333,
+      "sha256": "0b3ea41c9a1ffe4d8380743c588343b354f59166ef37d48fe58c732a0e23a5aa"
+    },
+    {
+      "file": "before/1280-home-services-reading.jpg",
+      "bytes": 60984,
+      "sha256": "8a7dc7c2ef5198864bff6b5b4716c422973ab61b32581ca53827c1842d29cbb7"
+    },
+    {
+      "file": "before/1280-home-services.jpg",
+      "bytes": 69156,
+      "sha256": "c29ad1521d11be07544e791d4f6afeb830806f71bdb5a5e8bbd60c71c08c6e97"
+    },
+    {
+      "file": "before/1280-index-card.jpg",
+      "bytes": 62412,
+      "sha256": "ed73ee73bc3d136af5adfe9c2ff18a06af54e21e7454c9cd85deba844615a60d"
+    },
+    {
+      "file": "before/1280-index-full.jpg",
+      "bytes": 64633,
+      "sha256": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21"
+    },
+    {
+      "file": "before/1280-index.jpg",
+      "bytes": 64633,
+      "sha256": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21"
+    },
+    {
+      "file": "before/1280-medicare-hub-reading.jpg",
+      "bytes": 68661,
+      "sha256": "d0143419c46ad3a4ed38fa03f323815b098e52907b7d1ffb6394ff1f8dacb46d"
+    },
+    {
+      "file": "before/1280-medicare-hub.jpg",
+      "bytes": 58514,
+      "sha256": "c6fff3407717c7b84c9e0b81b35bbdacf52b91569023693cacf7a537b33260ee"
+    },
+    {
+      "file": "before/1280-unihub-reading.jpg",
+      "bytes": 64460,
+      "sha256": "0071763092ecffdc286bbb3a934192d6fdd435ac705b4592b3e396232572edaf"
+    },
+    {
+      "file": "before/1280-unihub.jpg",
+      "bytes": 67672,
+      "sha256": "0c83dab62677c274ec89e2bf5894b14127a7f126122265dffd82564b8b8e646e"
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system-reading.jpg",
+      "bytes": 64796,
+      "sha256": "33730bb60b8b13fb3a56716e88595cc9525d4e96bcd3d650cb53821ce6b1e831"
+    },
+    {
+      "file": "before/1440-full-stack-user-management-system.jpg",
+      "bytes": 83119,
+      "sha256": "28a134cd574038fd091e0946f2ae415790296da75d8f53c5d296c1cfe6a901c4"
+    },
+    {
+      "file": "before/1440-gamezone-arena-reading.jpg",
+      "bytes": 64725,
+      "sha256": "baebc3bc9843cbfb4dea1374fbc1cff2cb65b5b941715530c2ac9a8991abaee4"
+    },
+    {
+      "file": "before/1440-gamezone-arena.jpg",
+      "bytes": 87912,
+      "sha256": "ca976ea13d59957529c792cc87051e1dc3dc0670c6747012ee07b96f685cd150"
+    },
+    {
+      "file": "before/1440-home-services-reading.jpg",
+      "bytes": 63768,
+      "sha256": "89c663b54d196c747546e29ba6748ce7f3b5fe5a79d4ac6799fcfbc209f9cb69"
+    },
+    {
+      "file": "before/1440-home-services.jpg",
+      "bytes": 105567,
+      "sha256": "993fefa9510953afaf491e3f1bff11149238de58afc4cc6ed2ebd2b026ca558a"
+    },
+    {
+      "file": "before/1440-index-card.jpg",
+      "bytes": 89978,
+      "sha256": "bf637bb7cabb7f1aafb17f89495e3581754971a5a72fdb3255ada88ff14dd727"
+    },
+    {
+      "file": "before/1440-index-full.jpg",
+      "bytes": 83665,
+      "sha256": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf"
+    },
+    {
+      "file": "before/1440-index.jpg",
+      "bytes": 83665,
+      "sha256": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf"
+    },
+    {
+      "file": "before/1440-journey.webm",
+      "bytes": 739541,
+      "sha256": "798d5773eb0a62acc225e84bc46ca8bbe4f25e8408932e2fa8974491fcf08d8d"
+    },
+    {
+      "file": "before/1440-medicare-hub-reading.jpg",
+      "bytes": 84252,
+      "sha256": "1eac0dc75539156eafc3879e03f4306c06ee3d3baa2dfb3821fbe6641452c858"
+    },
+    {
+      "file": "before/1440-medicare-hub.jpg",
+      "bytes": 89908,
+      "sha256": "8d083e9a6380201bf5539c8f30eaeef77b667e07997b395be9daedd7eef3080a"
+    },
+    {
+      "file": "before/1440-unihub-reading.jpg",
+      "bytes": 88960,
+      "sha256": "32cb647d5dde3ced1a6ee0f3c6bee54eb4e375c8566b9f9bb045c5981d5e5e3a"
+    },
+    {
+      "file": "before/1440-unihub.jpg",
+      "bytes": 90447,
+      "sha256": "6fd965edbda3c183a02a9d38c7bf8a57d10c7f096ddbf50bb0eece417ac8b865"
+    },
+    {
+      "file": "before/320-full-stack-user-management-system-reading.jpg",
+      "bytes": 46041,
+      "sha256": "39ac3051f7117cfaeee9146508b9dce17e46b9769eb60eede22602d86494ac1d"
+    },
+    {
+      "file": "before/320-full-stack-user-management-system.jpg",
+      "bytes": 41865,
+      "sha256": "31a6922c4f1b1215c80a650d068891ed8876199cf51d7daa47a7c9303fb55d53"
+    },
+    {
+      "file": "before/320-gamezone-arena-reading.jpg",
+      "bytes": 47584,
+      "sha256": "8664824009d9922c6374df82a546d62a23e7f069356e7e775228d6408dc8244b"
+    },
+    {
+      "file": "before/320-gamezone-arena.jpg",
+      "bytes": 38741,
+      "sha256": "52d6caae5c151d84db5625875e6ab3cbb3885ced6e0462296f224d371759343f"
+    },
+    {
+      "file": "before/320-home-services-reading.jpg",
+      "bytes": 47368,
+      "sha256": "e17688a93034aa629655374025711b923b2f91806a15994f2fe39b528442eba0"
+    },
+    {
+      "file": "before/320-home-services.jpg",
+      "bytes": 45162,
+      "sha256": "560c51f2064f0f83c56b1ccec17c7486c71a7c7bfa4c8a3eeb5dd05b610d6aa3"
+    },
+    {
+      "file": "before/320-index-card.jpg",
+      "bytes": 30241,
+      "sha256": "c6fd25a87dfb48aa86d846df05030ee2ad66c7c9128a20bc4ba9a62ccf1e2cd3"
+    },
+    {
+      "file": "before/320-index-full.jpg",
+      "bytes": 38618,
+      "sha256": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a"
+    },
+    {
+      "file": "before/320-index.jpg",
+      "bytes": 38618,
+      "sha256": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a"
+    },
+    {
+      "file": "before/320-medicare-hub-reading.jpg",
+      "bytes": 42452,
+      "sha256": "46d36123914f14533e99944ced48f5fadb1ca17485b3c946519c054b95f931b9"
+    },
+    {
+      "file": "before/320-medicare-hub.jpg",
+      "bytes": 42088,
+      "sha256": "5f7f6a584c8a26f5ad61c0d730ba2640d48bbd0a95193e9212520d01e9f85648"
+    },
+    {
+      "file": "before/320-unihub-reading.jpg",
+      "bytes": 48617,
+      "sha256": "135c14d0d7dcc56bf15a8cae5d56dd8e26e1e4dfa08934c26f57a52e4098a949"
+    },
+    {
+      "file": "before/320-unihub.jpg",
+      "bytes": 40324,
+      "sha256": "04bf2c6281d29d391a80f74894a2ce2ae971996d844fab4ead128195d20f23c4"
+    },
+    {
+      "file": "before/390-full-stack-user-management-system-reading.jpg",
+      "bytes": 47989,
+      "sha256": "ec07c85c0106c27a6f13f15631d0aa44c4ba3623f95a2b95eed9cfe606294674"
+    },
+    {
+      "file": "before/390-full-stack-user-management-system.jpg",
+      "bytes": 45835,
+      "sha256": "a91fe94f6c9ad9771f56d9b5e69b669012edef0fe0c1256b545792f87a16136e"
+    },
+    {
+      "file": "before/390-gamezone-arena-reading.jpg",
+      "bytes": 44705,
+      "sha256": "4930b97c86a5382d634804cd81221caf63271fad5c1e5811ffb47f0ef5a06554"
+    },
+    {
+      "file": "before/390-gamezone-arena.jpg",
+      "bytes": 46475,
+      "sha256": "486b30ce5ff1e97de4a63e63a61d05b25f6285c1d4a7f5250014a3edb61a05aa"
+    },
+    {
+      "file": "before/390-home-services-reading.jpg",
+      "bytes": 43914,
+      "sha256": "8729614f70e6b074287b07411a36b009440ac672e81997b5978706144173ccfc"
+    },
+    {
+      "file": "before/390-home-services.jpg",
+      "bytes": 51669,
+      "sha256": "55c0007b1842dbc41ccc46a3e75eb27b8f0a34a2d37d30bd44a85ec92224b2e5"
+    },
+    {
+      "file": "before/390-index-card.jpg",
+      "bytes": 33504,
+      "sha256": "273ef67d5073f87ad7597ad1acf912e10b04df7636e58089cb0781056761b3b2"
+    },
+    {
+      "file": "before/390-index-full.jpg",
+      "bytes": 40790,
+      "sha256": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92"
+    },
+    {
+      "file": "before/390-index.jpg",
+      "bytes": 40790,
+      "sha256": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92"
+    },
+    {
+      "file": "before/390-journey.webm",
+      "bytes": 590410,
+      "sha256": "f3527bb51badad9dc096d9e5caabc306d8d05cc657684e88e46a32afe809f053"
+    },
+    {
+      "file": "before/390-medicare-hub-reading.jpg",
+      "bytes": 46338,
+      "sha256": "b5f634caebc4f1a2bc4252ee5972b7106bc374b6ac951ad1b827563f8c607e3f"
+    },
+    {
+      "file": "before/390-medicare-hub.jpg",
+      "bytes": 46379,
+      "sha256": "ce8ffdaec7a6950c2fd8724eb8958bd171e74a926d2c75fffaa6dc6b72dae459"
+    },
+    {
+      "file": "before/390-unihub-reading.jpg",
+      "bytes": 46850,
+      "sha256": "05724e8223247e12c47da1e685ad529d34ff8758057658d78341f53ee0882b8f"
+    },
+    {
+      "file": "before/390-unihub.jpg",
+      "bytes": 44096,
+      "sha256": "6403c9803c1270f65447076086b952263ba508da300b5fa6fff4961a2f0310ac"
+    },
+    {
+      "file": "before/430-full-stack-user-management-system-reading.jpg",
+      "bytes": 47645,
+      "sha256": "551628ce59de3905f5c592739e4bf155c6a91afae76944f7c083d72ca318e572"
+    },
+    {
+      "file": "before/430-full-stack-user-management-system.jpg",
+      "bytes": 45519,
+      "sha256": "9ca5541e695e95c06892b099a23a30728d3bcfbc014dd65a053105ffc5b6e2f8"
+    },
+    {
+      "file": "before/430-gamezone-arena-reading.jpg",
+      "bytes": 45240,
+      "sha256": "e7128efd1f4126a509c00bb81e31dcda756dfab7574dac1b5894a43c7b567815"
+    },
+    {
+      "file": "before/430-gamezone-arena.jpg",
+      "bytes": 48185,
+      "sha256": "6ec3fb0f2a7836170aa8f32e9582afbfe80910b60530592c4e41512b7ac00659"
+    },
+    {
+      "file": "before/430-home-services-reading.jpg",
+      "bytes": 49595,
+      "sha256": "11b6014bc8580f53f5ff9611f23944a30f1fbd67acffc586f8f8d1225f39dfae"
+    },
+    {
+      "file": "before/430-home-services.jpg",
+      "bytes": 53186,
+      "sha256": "11e152417d1477e39ed6b7c9421002a5b74f9c5398802ee17ba8d832e73a9351"
+    },
+    {
+      "file": "before/430-index-card.jpg",
+      "bytes": 35803,
+      "sha256": "b03c3709802100c33173295c9de7f8cb7c4986a7a57696b3fb66cb5c5281a475"
+    },
+    {
+      "file": "before/430-index-full.jpg",
+      "bytes": 42579,
+      "sha256": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9"
+    },
+    {
+      "file": "before/430-index.jpg",
+      "bytes": 42579,
+      "sha256": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9"
+    },
+    {
+      "file": "before/430-medicare-hub-reading.jpg",
+      "bytes": 50659,
+      "sha256": "2423f7cbcecc89c86984019f6724b59e00b7ec5e2610182fa5696feb3ae16612"
+    },
+    {
+      "file": "before/430-medicare-hub.jpg",
+      "bytes": 47685,
+      "sha256": "6168cd8ff993ec5a4bcd2652f412f5618103403521eb431fb1d40980607216f5"
+    },
+    {
+      "file": "before/430-unihub-reading.jpg",
+      "bytes": 47119,
+      "sha256": "bb20ce1793cadbf3cf98d9ac057ff57bf62c0471635da41bdfc0001ac1254a3c"
+    },
+    {
+      "file": "before/430-unihub.jpg",
+      "bytes": 46109,
+      "sha256": "c8b8b722e2269c69f7a4796b9b8627cdf0cbec3d99a4d60843a164de436fc252"
+    },
+    {
+      "file": "before/768-full-stack-user-management-system-reading.jpg",
+      "bytes": 68842,
+      "sha256": "a75fbf267c760c2c157d1cf4d69e2a02aca22ea6440de48a83a4d29e7f082ee8"
+    },
+    {
+      "file": "before/768-full-stack-user-management-system.jpg",
+      "bytes": 66206,
+      "sha256": "5c52e30bda8575a147f6720e863a667cb375ec217942616e80f1a9704ccfe4fd"
+    },
+    {
+      "file": "before/768-gamezone-arena-reading.jpg",
+      "bytes": 51769,
+      "sha256": "b2022f94bcf8fd4ab3821b731cccc553299d0f200a43254972ae8d4844b12b9f"
+    },
+    {
+      "file": "before/768-gamezone-arena.jpg",
+      "bytes": 75538,
+      "sha256": "697fa364b450bad53ac82a3ef601a2d8a0ebd655bfe0a95845de7731a5bd23b9"
+    },
+    {
+      "file": "before/768-home-services-reading.jpg",
+      "bytes": 60801,
+      "sha256": "17562e4b5589d57c737ceff450ecf93d752cfb1b0caabf5d9c9285839b2b15e7"
+    },
+    {
+      "file": "before/768-home-services.jpg",
+      "bytes": 81312,
+      "sha256": "14c2a4014d7cfb302fe14d9cd0a06e50035cc574db0d97a04a1fb4311290817c"
+    },
+    {
+      "file": "before/768-index-card.jpg",
+      "bytes": 78315,
+      "sha256": "762c49317ab885de1171449f07b9fb131cb17e58daf8dffa5a5f6b3d81e78cc1"
+    },
+    {
+      "file": "before/768-index-full.jpg",
+      "bytes": 78397,
+      "sha256": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008"
+    },
+    {
+      "file": "before/768-index.jpg",
+      "bytes": 78397,
+      "sha256": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008"
+    },
+    {
+      "file": "before/768-medicare-hub-reading.jpg",
+      "bytes": 72077,
+      "sha256": "40e0234a3a1898b6c2dec1ea68385469b826fff16034838e6dae7dcd692c8ca0"
+    },
+    {
+      "file": "before/768-medicare-hub.jpg",
+      "bytes": 69828,
+      "sha256": "5b6fa342998c4372395984046ffbe6d017c2d1f47b670f7ed740a4c86dbc202f"
+    },
+    {
+      "file": "before/768-unihub-reading.jpg",
+      "bytes": 55707,
+      "sha256": "a243a989683738840d830cbdc8f0eeee0e9d55fa54638fcf948d4150a2b27302"
+    },
+    {
+      "file": "before/768-unihub.jpg",
+      "bytes": 73641,
+      "sha256": "83e865ffc2d6d143db46dfb58a735afc2f16eb9a70c4a5d2ed1285c5d1f48bac"
+    },
+    {
+      "file": "before/findings.json",
+      "bytes": 3314,
+      "sha256": "ee88832b468d0110b83b1f97a5e8558061e2881f84b2125f5c77c79e10c51d6f"
+    }
+  ]
+}

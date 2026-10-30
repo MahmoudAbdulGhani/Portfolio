@@ -5,6 +5,7 @@ import { isPortraitReviewBuild, portraitReviewArtifacts } from './scripts/profil
 import { isJobPilotDesignReviewBuild, jobPilotDesignArtifacts } from './scripts/jobpilot-design-review-build.mjs';
 
 import { isFeaturedDesignReviewBuild, featuredDesignArtifacts } from './scripts/featured-design-review-build.mjs';
+import { isSupportingDesignReviewBuild, supportingDesignArtifacts } from './scripts/supporting-design-review-build.mjs';
 
 const apiProxyTarget = process.env.VITE_API_PROXY_TARGET ?? "http://localhost:3001";
 
@@ -12,9 +13,10 @@ export default defineConfig(({ mode }) => {
   const portraitReview = isPortraitReviewBuild(mode);
   const jobPilotReview = isJobPilotDesignReviewBuild(mode);
   const featuredReview = isFeaturedDesignReviewBuild(mode);
+  const supportingReview = isSupportingDesignReviewBuild(mode);
   return {
-    define: { 'import.meta.env.FEATURED_DESIGN_REVIEW': JSON.stringify(featuredReview), 'import.meta.env.PROFILE_PORTRAIT_REVIEW': JSON.stringify(portraitReview), 'import.meta.env.JOBPILOT_DESIGN_REVIEW': JSON.stringify(jobPilotReview) },
-    plugins: [featuredDesignArtifacts(featuredReview), react(), tailwindcss(), portraitReviewArtifacts(portraitReview), jobPilotDesignArtifacts(jobPilotReview)],
+    define: { 'import.meta.env.SUPPORTING_DESIGN_REVIEW': JSON.stringify(supportingReview), 'import.meta.env.FEATURED_DESIGN_REVIEW': JSON.stringify(featuredReview), 'import.meta.env.PROFILE_PORTRAIT_REVIEW': JSON.stringify(portraitReview), 'import.meta.env.JOBPILOT_DESIGN_REVIEW': JSON.stringify(jobPilotReview) },
+    plugins: [supportingDesignArtifacts(supportingReview), featuredDesignArtifacts(featuredReview), react(), tailwindcss(), portraitReviewArtifacts(portraitReview), jobPilotDesignArtifacts(jobPilotReview)],
     build: {
       rollupOptions: {
         output: {

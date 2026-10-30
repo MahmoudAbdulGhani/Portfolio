@@ -15,13 +15,15 @@ import type { CedarState } from './cedar-boundary-state';
 import type { LobbyState } from './lobby-boundary-state';
 import type { BoundaryState } from './profile-boundary-state';
 
-export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, boundaryState, onBoundaryStateChange, cedarState, lobbyState, onCedarStateChange, onLobbyStateChange }: {
+export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, supporting, selectedSource, boundaryState, onBoundaryStateChange, cedarState, lobbyState, onCedarStateChange, onLobbyStateChange }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
   openGallery: (index: number, trigger: HTMLButtonElement) => void;
   candidate?: boolean;
   refined?: boolean;
+  supporting?: { contributionFirst?: boolean; workflowLimit?: number };
+  selectedSource?: string;
   cedarState?: CedarState;
   lobbyState?: LobbyState;
   onCedarStateChange?: (state: CedarState) => void;
@@ -48,49 +50,52 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
   const context = <section id="overview" className="story-context">
     <span className="eyebrow">THE CONTEXT</span><h2>{study.problemHeading}</h2><p>{study.problem}</p>
     {candidate && <p>{study.summary}</p>}
-    {study.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight /></a>.</p>}
+    {!supporting && study.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight /></a>.</p>}
   </section>;
   const workflowFigure = (step: (typeof workflow)[number], index: number) => <figure key={step.screen.src}>
     <figcaption className="workflow-intro">
       <span className="workflow-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
       <div><h3>{step.explanations[0].title}</h3><p>{step.explanations.map((explanation,i)=><span key={explanation.title}>{i>0&&<strong>{explanation.title} </strong>}{explanation.notice}{' '}</span>)}</p></div>
     </figcaption>
-    <div className="workflow-details"><ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}`} label={step.screen.label} ratio={`${step.image.width} / ${step.image.height}`}
-      style={{'--frame-max-width':`${screenColumnWidth(step.screen)}px`} as CSSProperties} className="workflow-image" enlarge={trigger=>openGallery(step.index,trigger)} sizes={screenSizes(step.screen)} /></div>
+    <div className="workflow-details">{selectedSource === step.screen.src ? <a className="text-link" href="#case-image">Inspect the selected image<FiArrowUpRight aria-hidden="true" /></a> : <ScreenshotFrame src={step.screen.src} alt={`${projectDisplayName(project)}: ${step.screen.label}`} label={step.screen.label} ratio={`${step.image.width} / ${step.image.height}`}
+      style={{'--frame-max-width':`${screenColumnWidth(step.screen)}px`} as CSSProperties} className="workflow-image" enlarge={trigger=>openGallery(step.index,trigger)} sizes={screenSizes(step.screen)} />}</div>
   </figure>;
+  const contribution = hasContribution && <section id="contribution" className="story-contribution">
+    <span className="eyebrow">MY CONTRIBUTION</span>
+    <h2>My part in the work.</h2>
+    {contributions.length > 0 && <ul>{contributions.map(item => <li key={item}>{item}</li>)}</ul>}
+    <CaseDisclosure className="story-disclosure" title="Role and collaborators">
+      {role && <p>{role}</p>}{ownership && <p>{ownership}</p>}
+      {completeContributions.length > 0 && <ul>{completeContributions.map(item => <li key={item}>{item}</li>)}</ul>}
+      {team.length > 0 && <><h3>Team</h3><ul>{team.map(member => <li key={member}>{member}</li>)}</ul></>}
+    </CaseDisclosure>
+  </section>;
+  const workflowLimit = supporting?.workflowLimit ?? (candidate ? 2 : workflow.length);
   return (
     <div className={`case-narrative case-narrative-${study.kind}`}>
       {candidate && <section id="engineering" className="jobpilot-defining-decision">
         {!refined&&<><span className="eyebrow">THE DEFINING DECISION</span><h2>{study.engineeringHeading}</h2></>}
         {project.slug === 'jobpilot-ai' ? <ProfileBoundary concise={refined} headingLevel={refined?2:3} initialState={boundaryState} onStateChange={onBoundaryStateChange} /> : project.slug === 'lobby' ? <LobbyBoundary concise={refined} headingLevel={2} initialState={lobbyState} onStateChange={onLobbyStateChange} /> : <CedarBoundary concise={refined} headingLevel={2} initialState={cedarState} onStateChange={onCedarStateChange} />}
       </section>}
-      {!candidate && context}
+      {!candidate && !supporting && context}
+      {supporting?.contributionFirst && contribution}
       {workflow.length > 0 && <section id="workflow" className="story-workflow">
         <span className="eyebrow">{study.kind === 'compact' ? 'A CLOSER LOOK' : 'PRODUCT WORKFLOW'}</span>
         <h2>{study.workflowHeading}</h2>
         <div className="workflow-frames">
-          {workflow.slice(0,candidate?2:workflow.length).map(workflowFigure)}
+          {workflow.slice(0,workflowLimit).map(workflowFigure)}
         </div>
-        {candidate&&workflow.length>2&&<CaseDisclosure className="story-disclosure jobpilot-secondary-workflow" title={project.slug === 'jobpilot-ai' ? 'Interview preparation workflow' : 'More project workflow'}>
-          <div className="workflow-frames">{workflow.slice(2).map((step,index)=>workflowFigure(step,index+2))}</div>
+        {(candidate || supporting) && workflow.length>workflowLimit&&<CaseDisclosure className="story-disclosure jobpilot-secondary-workflow" title={project.slug === 'jobpilot-ai' ? 'Interview preparation workflow' : project.slug === 'gamezone-arena' ? 'Review the booking before confirmation' : 'More project workflow'}>
+          <div className="workflow-frames">{workflow.slice(workflowLimit).map((step,index)=>workflowFigure(step,index+workflowLimit))}</div>
         </CaseDisclosure>}
       </section>}
       {study.flow && study.flowPlacement === 'workflow' && <section id="workflow" className="story-workflow">
         <span className="eyebrow">CODE-PATH WALKTHROUGH</span><h2>{study.workflowHeading}</h2>
         <figure className="decision-path"><h3>{study.flow.title}</h3><ol>{study.flow.steps.map(step => <li key={step}>{step}</li>)}</ol><figcaption>{study.flow.description}</figcaption></figure>
       </section>}
-      {hasContribution && <section id="contribution" className="story-contribution">
-        <span className="eyebrow">MY CONTRIBUTION</span>
-        <h2>My part in the work.</h2>
-        {contributions.length > 0 && <ul>{contributions.map(item => <li key={item}>{item}</li>)}</ul>}
-        <CaseDisclosure className="story-disclosure" title="Role and collaborators">
-          {role && <p>{role}</p>}{ownership && <p>{ownership}</p>}
-          {completeContributions.length > 0 && <ul>{completeContributions.map(item => <li key={item}>{item}</li>)}</ul>}
-          {team.length > 0 && <><h3>Team</h3><ul>{team.map(member => <li key={member}>{member}</li>)}</ul></>}
-        </CaseDisclosure>
-      </section>}
+      {!supporting?.contributionFirst && contribution}
       {!hasContribution && team.length > 0 && <section id="team"><h2>Team delivery</h2><ul>{team.map(member => <li key={member}>{member}</li>)}</ul></section>}
-      {candidate && <CaseDisclosure className="story-disclosure jobpilot-context" title="Project context">{context}</CaseDisclosure>}
+      {(candidate || supporting) && <CaseDisclosure className="story-disclosure jobpilot-context" title="Project context">{context}</CaseDisclosure>}
       <section id={candidate ? 'technical-details' : 'engineering'} className="story-engineering">
         <span className="eyebrow">ENGINEERING DECISIONS</span>
         <h2>{candidate ? 'Implementation details' : study.engineeringHeading}</h2>

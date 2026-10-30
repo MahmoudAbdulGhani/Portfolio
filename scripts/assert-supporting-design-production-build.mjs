@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { readdir, readFile, access } from 'node:fs/promises';
+import path from 'node:path';
+const root = process.argv[2] ?? 'dist';
+const files = await readdir(path.join(root,'assets'));
+const text = (await Promise.all(files.filter(f=>/\.(js|css)$/.test(f)).map(f=>readFile(path.join(root,'assets',f),'utf8')))).join('\n');
+assert(!files.some(f=>f.startsWith('SupportingDesignReview-')),'Normal build excludes review entry');
+assert(!text.includes('/review/supporting/'),'Normal build excludes review addresses');
+assert(!text.includes('.supporting-design-candidate'),'Normal build excludes candidate styling');
+await assert.rejects(access(path.join(root,'review/supporting-comparison')));
+assert(text.includes('Calculation and interpretation') && text.includes('Invitation to call access'),'Accepted featured readers remain adopted');
+console.log('Supporting index/readers and evidence remain review-only; featured designs preserved.');

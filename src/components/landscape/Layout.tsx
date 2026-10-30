@@ -15,6 +15,7 @@ import './motion-language.css';
 import './mobile-reading.css';
 import { featuredPresentation } from './featured-presentation';
 import { useJobPilotDesign } from './jobpilot-design-context';
+import { useSupportingDesign } from './supporting-design-context';
 
 const PortfolioAssistant = lazy(() =>
   import("../PortfolioAssistant").then((module) => ({
@@ -35,6 +36,7 @@ export function LandscapeLayout() {
   const { data: projects } = useProjects();
   const location = useLocation();
   const design = useJobPilotDesign();
+  const supporting = useSupportingDesign();
   const collectionPath = design?.collectionPath ?? '/';
   const atCollection = location.pathname === collectionPath;
   const reviewReader = Boolean(design && location.pathname === design.readerPath);
@@ -48,7 +50,7 @@ export function LandscapeLayout() {
   const { candidate, refined } = featuredPresentation(design, activeSlug);
   const featured = candidate && activeSlug !== 'jobpilot-ai';
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div data-featured-project={featured ? activeSlug : undefined} className={`landscape${featured ? ' featured-design-candidate featured-design-refined' : ''}${candidate && !featured ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant}>
+    <JobPilotJourneyContext.Provider value={journeys}><div data-featured-project={featured ? activeSlug : undefined} className={`landscape${supporting?.candidate ? ' supporting-design-candidate' : ''}${featured ? ' featured-design-candidate featured-design-refined' : ''}${candidate && !featured ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant ?? (supporting ? supporting.candidate ? 'candidate' : 'baseline' : undefined)}>
       <div
         className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >
@@ -85,7 +87,7 @@ export function LandscapeLayout() {
             {links.map(([path, label]) => (
               <NavLink
                 key={path}
-                to={path === '/' ? collectionPath : path}
+                to={path === '/' ? collectionPath : path === '/projects' && supporting ? supporting.indexPath : path}
                 state={path === "/" ? collectionState : undefined}
                 end={path === "/"}
                 className={({ isActive }) => (isActive || (reviewReader && path === '/projects') ? "active" : "")}
