@@ -2,10 +2,11 @@ import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { jobPilotReviewAddress } from '../components/landscape/jobpilot-design-context';
 import { featuredProject } from '../components/landscape/featured-presentation';
+import { supportingReviewAddress } from '../components/landscape/supporting-design-context';
 
 export function useRouteRestoration() {
   const location = useLocation(), navigation = useNavigationType();
-  const positions = useRef(new Map<string, { x: number; y: number; main?: { x: number; y: number } }>());
+  const positions = useRef(new Map<string, { x: number; y: number; main?: { x: number; y: number }; focus?: string }>());
   const entry = useRef(location.key), pathname = useRef(location.pathname), restoring = useRef(false);
   const address = useRef(location.pathname + location.search + location.hash);
   useEffect(() => {
@@ -17,7 +18,8 @@ export function useRouteRestoration() {
       // scroll must not overwrite the intentional click's source position.
       if (event.type === 'scroll' && (restoring.current || window.location.pathname + window.location.search + window.location.hash !== address.current)) return;
       const main = document.querySelector<HTMLElement>('.landscape-route > main');
-      positions.current.set(entry.current, { x: scrollX, y: scrollY, main: main ? { x: main.scrollLeft, y: main.scrollTop } : undefined });
+      const card = event.type === 'click' && event.target instanceof Element ? event.target.closest<HTMLElement>('[data-project-slug]') : null;
+      positions.current.set(entry.current, { x: scrollX, y: scrollY, main: main ? { x: main.scrollLeft, y: main.scrollTop } : undefined, focus: card?.dataset.projectSlug ?? positions.current.get(entry.current)?.focus });
     };
     const pop = (event: PopStateEvent) => {
       save(event);
@@ -62,7 +64,9 @@ export function useRouteRestoration() {
     const review = jobPilotReviewAddress(location.pathname);
     const selected = new URLSearchParams(location.search).get('project') ?? undefined;
     const phase2 = Boolean(selected && selected !== 'jobpilot-ai' && featuredProject(selected));
-    const position = navigation === 'POP' ? positions.current.get(location.key) ?? (phase2 || (review && 'project' in review) ? location.state?.routeRestore : undefined) : location.state?.routeRestore;
+    const supporting = supportingReviewAddress(location.pathname);
+    const position = navigation === 'POP' ? positions.current.get(location.key) ?? (phase2 || (review && 'project' in review) || supporting ? location.state?.routeRestore : undefined) : location.state?.routeRestore;
+    const returningIndex = supporting && !supporting[2] && position?.focus;
     const returningFeatured = atCollection && (Boolean(featuredProject(selected)) || Boolean(review && 'project' in review)) && Boolean(position);
     let cancelled = false, frame = 0, focused = false, deadline = 0;
     restoring.current = true;
@@ -71,7 +75,8 @@ export function useRouteRestoration() {
       if (cancelled) return;
       const main = document.getElementById('main-content');
       if (focusNeeded && main && !focused) {
-        main.focus({ preventScroll: true }); focused = true;
+        const target = returningIndex ? main.querySelector<HTMLElement>(`[data-project-slug="${CSS.escape(position.focus)}"]`) : main;
+        if (target) { target.focus({ preventScroll: true }); focused = true; }
       }
       if (location.hash && !returningFeatured) {
         const target = document.getElementById(location.hash.slice(1));

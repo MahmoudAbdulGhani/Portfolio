@@ -1,0 +1,133 @@
+{
+  "phase": "before",
+  "root": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\supporting-before-dist",
+  "source": "Read-only public API snapshot; genuine existing local project assets; compiled Chrome, deviceScaleFactor 1. Viewport emulation, not physical devices.",
+  "findings": [
+    {
+      "width": 320,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "unihub",
+        "unihub-reading",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "home-services",
+        "home-services-reading"
+      ],
+      "selections": [],
+      "errors": []
+    }
+  ]
+}

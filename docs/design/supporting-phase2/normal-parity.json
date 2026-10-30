@@ -1,0 +1,187 @@
+{
+  "count": 36,
+  "changed": [],
+  "method": "SHA-256 of matched native Chrome JPEG captures. Same viewport, snapshot, media, density, settled fonts.",
+  "hashes": [
+    {
+      "capture": "320-index",
+      "before": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a",
+      "normal": "77949e9ff225dc6313ca40f319b00f911306ee744e097bed328cafc0d3bf8a4a"
+    },
+    {
+      "capture": "320-gamezone-arena",
+      "before": "52d6caae5c151d84db5625875e6ab3cbb3885ced6e0462296f224d371759343f",
+      "normal": "52d6caae5c151d84db5625875e6ab3cbb3885ced6e0462296f224d371759343f"
+    },
+    {
+      "capture": "320-unihub",
+      "before": "04bf2c6281d29d391a80f74894a2ce2ae971996d844fab4ead128195d20f23c4",
+      "normal": "04bf2c6281d29d391a80f74894a2ce2ae971996d844fab4ead128195d20f23c4"
+    },
+    {
+      "capture": "320-full-stack-user-management-system",
+      "before": "31a6922c4f1b1215c80a650d068891ed8876199cf51d7daa47a7c9303fb55d53",
+      "normal": "31a6922c4f1b1215c80a650d068891ed8876199cf51d7daa47a7c9303fb55d53"
+    },
+    {
+      "capture": "320-medicare-hub",
+      "before": "5f7f6a584c8a26f5ad61c0d730ba2640d48bbd0a95193e9212520d01e9f85648",
+      "normal": "5f7f6a584c8a26f5ad61c0d730ba2640d48bbd0a95193e9212520d01e9f85648"
+    },
+    {
+      "capture": "320-home-services",
+      "before": "560c51f2064f0f83c56b1ccec17c7486c71a7c7bfa4c8a3eeb5dd05b610d6aa3",
+      "normal": "560c51f2064f0f83c56b1ccec17c7486c71a7c7bfa4c8a3eeb5dd05b610d6aa3"
+    },
+    {
+      "capture": "390-index",
+      "before": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92",
+      "normal": "6ae1c955545a5eb6f0ed3b20b29e7f1fcff4a0bf89ee6711f317e3686a670d92"
+    },
+    {
+      "capture": "390-gamezone-arena",
+      "before": "486b30ce5ff1e97de4a63e63a61d05b25f6285c1d4a7f5250014a3edb61a05aa",
+      "normal": "486b30ce5ff1e97de4a63e63a61d05b25f6285c1d4a7f5250014a3edb61a05aa"
+    },
+    {
+      "capture": "390-unihub",
+      "before": "6403c9803c1270f65447076086b952263ba508da300b5fa6fff4961a2f0310ac",
+      "normal": "6403c9803c1270f65447076086b952263ba508da300b5fa6fff4961a2f0310ac"
+    },
+    {
+      "capture": "390-full-stack-user-management-system",
+      "before": "a91fe94f6c9ad9771f56d9b5e69b669012edef0fe0c1256b545792f87a16136e",
+      "normal": "a91fe94f6c9ad9771f56d9b5e69b669012edef0fe0c1256b545792f87a16136e"
+    },
+    {
+      "capture": "390-medicare-hub",
+      "before": "ce8ffdaec7a6950c2fd8724eb8958bd171e74a926d2c75fffaa6dc6b72dae459",
+      "normal": "ce8ffdaec7a6950c2fd8724eb8958bd171e74a926d2c75fffaa6dc6b72dae459"
+    },
+    {
+      "capture": "390-home-services",
+      "before": "55c0007b1842dbc41ccc46a3e75eb27b8f0a34a2d37d30bd44a85ec92224b2e5",
+      "normal": "55c0007b1842dbc41ccc46a3e75eb27b8f0a34a2d37d30bd44a85ec92224b2e5"
+    },
+    {
+      "capture": "430-index",
+      "before": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9",
+      "normal": "cd62eeb1bb1784d263cdb7d21548e90a9429d27fdf23c41e885a7eee7c4bbcf9"
+    },
+    {
+      "capture": "430-gamezone-arena",
+      "before": "6ec3fb0f2a7836170aa8f32e9582afbfe80910b60530592c4e41512b7ac00659",
+      "normal": "6ec3fb0f2a7836170aa8f32e9582afbfe80910b60530592c4e41512b7ac00659"
+    },
+    {
+      "capture": "430-unihub",
+      "before": "c8b8b722e2269c69f7a4796b9b8627cdf0cbec3d99a4d60843a164de436fc252",
+      "normal": "c8b8b722e2269c69f7a4796b9b8627cdf0cbec3d99a4d60843a164de436fc252"
+    },
+    {
+      "capture": "430-full-stack-user-management-system",
+      "before": "9ca5541e695e95c06892b099a23a30728d3bcfbc014dd65a053105ffc5b6e2f8",
+      "normal": "9ca5541e695e95c06892b099a23a30728d3bcfbc014dd65a053105ffc5b6e2f8"
+    },
+    {
+      "capture": "430-medicare-hub",
+      "before": "6168cd8ff993ec5a4bcd2652f412f5618103403521eb431fb1d40980607216f5",
+      "normal": "6168cd8ff993ec5a4bcd2652f412f5618103403521eb431fb1d40980607216f5"
+    },
+    {
+      "capture": "430-home-services",
+      "before": "11e152417d1477e39ed6b7c9421002a5b74f9c5398802ee17ba8d832e73a9351",
+      "normal": "11e152417d1477e39ed6b7c9421002a5b74f9c5398802ee17ba8d832e73a9351"
+    },
+    {
+      "capture": "768-index",
+      "before": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008",
+      "normal": "fa19f1bc40360f6a0efdb12abd23c1872077b522636e71edc465ad0d9548a008"
+    },
+    {
+      "capture": "768-gamezone-arena",
+      "before": "697fa364b450bad53ac82a3ef601a2d8a0ebd655bfe0a95845de7731a5bd23b9",
+      "normal": "697fa364b450bad53ac82a3ef601a2d8a0ebd655bfe0a95845de7731a5bd23b9"
+    },
+    {
+      "capture": "768-unihub",
+      "before": "83e865ffc2d6d143db46dfb58a735afc2f16eb9a70c4a5d2ed1285c5d1f48bac",
+      "normal": "83e865ffc2d6d143db46dfb58a735afc2f16eb9a70c4a5d2ed1285c5d1f48bac"
+    },
+    {
+      "capture": "768-full-stack-user-management-system",
+      "before": "5c52e30bda8575a147f6720e863a667cb375ec217942616e80f1a9704ccfe4fd",
+      "normal": "5c52e30bda8575a147f6720e863a667cb375ec217942616e80f1a9704ccfe4fd"
+    },
+    {
+      "capture": "768-medicare-hub",
+      "before": "5b6fa342998c4372395984046ffbe6d017c2d1f47b670f7ed740a4c86dbc202f",
+      "normal": "5b6fa342998c4372395984046ffbe6d017c2d1f47b670f7ed740a4c86dbc202f"
+    },
+    {
+      "capture": "768-home-services",
+      "before": "14c2a4014d7cfb302fe14d9cd0a06e50035cc574db0d97a04a1fb4311290817c",
+      "normal": "14c2a4014d7cfb302fe14d9cd0a06e50035cc574db0d97a04a1fb4311290817c"
+    },
+    {
+      "capture": "1280-index",
+      "before": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21",
+      "normal": "78bd42c8a03c6599b61fda6ed849124455bdc1d2c6b652f289ae39c66ff4dd21"
+    },
+    {
+      "capture": "1280-gamezone-arena",
+      "before": "0b3ea41c9a1ffe4d8380743c588343b354f59166ef37d48fe58c732a0e23a5aa",
+      "normal": "0b3ea41c9a1ffe4d8380743c588343b354f59166ef37d48fe58c732a0e23a5aa"
+    },
+    {
+      "capture": "1280-unihub",
+      "before": "0c83dab62677c274ec89e2bf5894b14127a7f126122265dffd82564b8b8e646e",
+      "normal": "0c83dab62677c274ec89e2bf5894b14127a7f126122265dffd82564b8b8e646e"
+    },
+    {
+      "capture": "1280-full-stack-user-management-system",
+      "before": "657118117f3951082f644d1e939b8bdb61808759ba2792951e75b078a096c4ae",
+      "normal": "657118117f3951082f644d1e939b8bdb61808759ba2792951e75b078a096c4ae"
+    },
+    {
+      "capture": "1280-medicare-hub",
+      "before": "c6fff3407717c7b84c9e0b81b35bbdacf52b91569023693cacf7a537b33260ee",
+      "normal": "c6fff3407717c7b84c9e0b81b35bbdacf52b91569023693cacf7a537b33260ee"
+    },
+    {
+      "capture": "1280-home-services",
+      "before": "c29ad1521d11be07544e791d4f6afeb830806f71bdb5a5e8bbd60c71c08c6e97",
+      "normal": "c29ad1521d11be07544e791d4f6afeb830806f71bdb5a5e8bbd60c71c08c6e97"
+    },
+    {
+      "capture": "1440-index",
+      "before": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf",
+      "normal": "c4b53ba8144b2fff8d11fd05c7345d5505a6025cffe5564757231218f0d1dedf"
+    },
+    {
+      "capture": "1440-gamezone-arena",
+      "before": "ca976ea13d59957529c792cc87051e1dc3dc0670c6747012ee07b96f685cd150",
+      "normal": "ca976ea13d59957529c792cc87051e1dc3dc0670c6747012ee07b96f685cd150"
+    },
+    {
+      "capture": "1440-unihub",
+      "before": "6fd965edbda3c183a02a9d38c7bf8a57d10c7f096ddbf50bb0eece417ac8b865",
+      "normal": "6fd965edbda3c183a02a9d38c7bf8a57d10c7f096ddbf50bb0eece417ac8b865"
+    },
+    {
+      "capture": "1440-full-stack-user-management-system",
+      "before": "28a134cd574038fd091e0946f2ae415790296da75d8f53c5d296c1cfe6a901c4",
+      "normal": "28a134cd574038fd091e0946f2ae415790296da75d8f53c5d296c1cfe6a901c4"
+    },
+    {
+      "capture": "1440-medicare-hub",
+      "before": "8d083e9a6380201bf5539c8f30eaeef77b667e07997b395be9daedd7eef3080a",
+      "normal": "8d083e9a6380201bf5539c8f30eaeef77b667e07997b395be9daedd7eef3080a"
+    },
+    {
+      "capture": "1440-home-services",
+      "before": "993fefa9510953afaf491e3f1bff11149238de58afc4cc6ed2ebd2b026ca558a",
+      "normal": "993fefa9510953afaf491e3f1bff11149238de58afc4cc6ed2ebd2b026ca558a"
+    }
+  ]
+}

@@ -1,0 +1,915 @@
+{
+  "phase": "candidate",
+  "root": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\supporting-design-ci",
+  "source": "Read-only public API snapshot; genuine existing local project assets; compiled Chrome, deviceScaleFactor 1. Viewport emulation, not physical devices.",
+  "findings": [
+    {
+      "width": 320,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-end"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-image-1",
+        "gamezone-arena-image-2",
+        "gamezone-arena-image-3",
+        "gamezone-arena-image-4",
+        "gamezone-arena-image-5",
+        "gamezone-arena-image-6",
+        "gamezone-arena-image-7",
+        "gamezone-arena-image-8",
+        "gamezone-arena-image-9",
+        "gamezone-arena-image-10",
+        "gamezone-arena-image-11",
+        "gamezone-arena-image-12",
+        "gamezone-arena-image-13",
+        "gamezone-arena-image-14",
+        "gamezone-arena-image-15",
+        "gamezone-arena-gallery",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-image-1",
+        "unihub-image-2",
+        "unihub-image-3",
+        "unihub-image-4",
+        "unihub-image-5",
+        "unihub-image-6",
+        "unihub-gallery",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-image-1",
+        "full-stack-user-management-system-image-1-bottom",
+        "full-stack-user-management-system-image-2",
+        "full-stack-user-management-system-image-2-bottom",
+        "full-stack-user-management-system-gallery",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-image-1",
+        "medicare-hub-image-2",
+        "medicare-hub-gallery",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-image-1",
+        "home-services-image-1-bottom",
+        "home-services-image-2",
+        "home-services-image-2-bottom",
+        "home-services-gallery",
+        "home-services-end"
+      ],
+      "selections": [
+        {
+          "slug": "gamezone-arena",
+          "index": 0,
+          "source": "/projects/complete/gamezone-rooms.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-rooms-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 366,
+            "width": 347.125,
+            "height": 355.515625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 1,
+          "source": "/projects/complete/gamezone-session.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-session-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 394,
+            "width": 347.125,
+            "height": 382.765625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 2,
+          "source": "/projects/complete/gamezone-devices.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-devices-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 366,
+            "width": 347.125,
+            "height": 355.515625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 3,
+          "source": "/projects/complete/gamezone-review.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-review-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 366,
+            "width": 347.125,
+            "height": 355.515625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 4,
+          "source": "/projects/gamezone-arena/user_overview.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user_overview-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 378,
+            "width": 347.125,
+            "height": 367.453125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 5,
+          "source": "/projects/gamezone-arena/choose_Room.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/choose_Room-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 584,
+            "width": 347.125,
+            "height": 566.78125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 6,
+          "source": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/Booking_date_and_time-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 426,
+            "width": 347.125,
+            "height": 413.46875
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 7,
+          "source": "/projects/gamezone-arena/select_device.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/select_device-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 366,
+            "width": 347.125,
+            "height": 354.890625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 8,
+          "source": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/confirm_and_pay-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 384,
+            "width": 347.125,
+            "height": 372.25
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 9,
+          "source": "/projects/gamezone-arena/admin_overview.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_overview-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 387,
+            "width": 347.125,
+            "height": 375.328125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 10,
+          "source": "/projects/gamezone-arena/admin_Rooms.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_Rooms-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 358,
+            "width": 347.125,
+            "height": 346.75
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 11,
+          "source": "/projects/gamezone-arena/admin_Users.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_Users-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 170,
+            "width": 347.125,
+            "height": 165.59375
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 12,
+          "source": "/projects/gamezone-arena/cover.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-arena-cover-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 165,
+            "width": 347.125,
+            "height": 160.75
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 13,
+          "source": "/projects/responsive/gamezone-phone.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-phone-380w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 1130,
+            "width": 347.125,
+            "height": 1096.171875
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 14,
+          "source": "/projects/responsive/gamezone-tablet.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-tablet-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 566,
+            "width": 347.125,
+            "height": 549.53125
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 0,
+          "source": "/projects/unihub/user.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 170,
+            "width": 347.125,
+            "height": 164.5625
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 1,
+          "source": "/projects/unihub/Admin.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/Admin-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 171,
+            "width": 347.125,
+            "height": 166.046875
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 2,
+          "source": "/projects/unihub/usercourses.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/usercourses-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 169,
+            "width": 347.125,
+            "height": 164.171875
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 3,
+          "source": "/projects/unihub/transcipt.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/transcipt-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 167,
+            "width": 347.125,
+            "height": 162.484375
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 4,
+          "source": "/projects/responsive/unihub-phone.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/unihub-phone-390w.avif",
+            "naturalWidth": 357,
+            "naturalHeight": 774,
+            "width": 347.125,
+            "height": 751.203125
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 5,
+          "source": "/projects/responsive/unihub-tablet.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/unihub-tablet-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 477,
+            "width": 347.125,
+            "height": 462.828125
+          }
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "index": 0,
+          "source": "/projects/complete/user-management-registration.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user-management-registration-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 581,
+            "width": 347.125,
+            "height": 563.40625
+          }
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "index": 1,
+          "source": "/projects/user-management/dashboard.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/dashboard-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 163,
+            "width": 347.125,
+            "height": 158.546875
+          }
+        },
+        {
+          "slug": "medicare-hub",
+          "index": 0,
+          "source": "/projects/complete/medicare-homepage.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/medicare-homepage-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 246,
+            "width": 347.125,
+            "height": 238.375
+          }
+        },
+        {
+          "slug": "medicare-hub",
+          "index": 1,
+          "source": "/projects/cinematic/medicare-logo.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/medicare-logo-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 358,
+            "width": 347.125,
+            "height": 347.125
+          }
+        },
+        {
+          "slug": "home-services",
+          "index": 0,
+          "source": "/projects/complete/home-services-page.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/home-services-page-480w.avif",
+            "naturalWidth": 358,
+            "naturalHeight": 1646,
+            "width": 347.125,
+            "height": 1596.046875
+          }
+        },
+        {
+          "slug": "home-services",
+          "index": 1,
+          "source": "/projects/phase2/home-services-mobile-menu.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/home-services-mobile-menu-390w.avif",
+            "naturalWidth": 357,
+            "naturalHeight": 774,
+            "width": 347.125,
+            "height": 751.203125
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 844,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-end"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-end"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-end"
+      ],
+      "selections": [],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "captures": [
+        "index",
+        "index-full",
+        "index-card",
+        "gamezone-arena",
+        "gamezone-arena-reading",
+        "gamezone-arena-decision",
+        "gamezone-arena-image-1",
+        "gamezone-arena-image-2",
+        "gamezone-arena-image-3",
+        "gamezone-arena-image-4",
+        "gamezone-arena-image-5",
+        "gamezone-arena-image-6",
+        "gamezone-arena-image-7",
+        "gamezone-arena-image-8",
+        "gamezone-arena-image-9",
+        "gamezone-arena-image-10",
+        "gamezone-arena-image-11",
+        "gamezone-arena-image-12",
+        "gamezone-arena-image-13",
+        "gamezone-arena-image-14",
+        "gamezone-arena-image-15",
+        "gamezone-arena-gallery",
+        "gamezone-arena-end",
+        "unihub",
+        "unihub-reading",
+        "unihub-decision",
+        "unihub-image-1",
+        "unihub-image-2",
+        "unihub-image-3",
+        "unihub-image-4",
+        "unihub-image-5",
+        "unihub-image-6",
+        "unihub-gallery",
+        "unihub-end",
+        "full-stack-user-management-system",
+        "full-stack-user-management-system-reading",
+        "full-stack-user-management-system-decision",
+        "full-stack-user-management-system-image-1",
+        "full-stack-user-management-system-image-1-bottom",
+        "full-stack-user-management-system-image-2",
+        "full-stack-user-management-system-image-2-bottom",
+        "full-stack-user-management-system-gallery",
+        "full-stack-user-management-system-end",
+        "medicare-hub",
+        "medicare-hub-reading",
+        "medicare-hub-decision",
+        "medicare-hub-image-1",
+        "medicare-hub-image-2",
+        "medicare-hub-gallery",
+        "medicare-hub-end",
+        "home-services",
+        "home-services-reading",
+        "home-services-decision",
+        "home-services-image-1",
+        "home-services-image-1-bottom",
+        "home-services-image-2",
+        "home-services-image-2-bottom",
+        "home-services-gallery",
+        "home-services-end"
+      ],
+      "selections": [
+        {
+          "slug": "gamezone-arena",
+          "index": 0,
+          "source": "/projects/complete/gamezone-rooms.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-rooms-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1208,
+            "width": 822.421875,
+            "height": 842.328125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 1,
+          "source": "/projects/complete/gamezone-session.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-session-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1300,
+            "width": 822.421875,
+            "height": 906.890625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 2,
+          "source": "/projects/complete/gamezone-devices.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-devices-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1208,
+            "width": 822.421875,
+            "height": 842.328125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 3,
+          "source": "/projects/complete/gamezone-review.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-review-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1208,
+            "width": 822.421875,
+            "height": 842.328125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 4,
+          "source": "/projects/gamezone-arena/user_overview.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user_overview-1366w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1249,
+            "width": 822.421875,
+            "height": 870.578125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 5,
+          "source": "/projects/gamezone-arena/choose_Room.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/choose_Room-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1926,
+            "width": 822.421875,
+            "height": 1342.859375
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 6,
+          "source": "/projects/gamezone-arena/Booking_date_and_time.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/Booking_date_and_time-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1405,
+            "width": 822.421875,
+            "height": 979.609375
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 7,
+          "source": "/projects/gamezone-arena/select_device.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/select_device-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1206,
+            "width": 822.421875,
+            "height": 840.828125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 8,
+          "source": "/projects/gamezone-arena/confirm_and_pay.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/confirm_and_pay-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1265,
+            "width": 822.421875,
+            "height": 881.953125
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 9,
+          "source": "/projects/gamezone-arena/admin_overview.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_overview-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1275,
+            "width": 822.421875,
+            "height": 889.234375
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 10,
+          "source": "/projects/gamezone-arena/admin_Rooms.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_Rooms-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 1178,
+            "width": 822.421875,
+            "height": 821.5625
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 11,
+          "source": "/projects/gamezone-arena/admin_Users.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/admin_Users-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 562,
+            "width": 822.421875,
+            "height": 392.359375
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 12,
+          "source": "/projects/gamezone-arena/cover.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-arena-cover-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 546,
+            "width": 822.421875,
+            "height": 380.875
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 13,
+          "source": "/projects/responsive/gamezone-phone.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-phone-380w.avif",
+            "naturalWidth": 380,
+            "naturalHeight": 1200,
+            "width": 380,
+            "height": 1200
+          }
+        },
+        {
+          "slug": "gamezone-arena",
+          "index": 14,
+          "source": "/projects/responsive/gamezone-tablet.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/gamezone-tablet-758w.avif",
+            "naturalWidth": 758,
+            "naturalHeight": 1200,
+            "width": 758,
+            "height": 1200
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 0,
+          "source": "/projects/unihub/user.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 559,
+            "width": 822.421875,
+            "height": 389.90625
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 1,
+          "source": "/projects/unihub/Admin.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/Admin-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 564,
+            "width": 822.421875,
+            "height": 393.421875
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 2,
+          "source": "/projects/unihub/usercourses.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/usercourses-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 558,
+            "width": 822.421875,
+            "height": 388.96875
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 3,
+          "source": "/projects/unihub/transcipt.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/transcipt-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 552,
+            "width": 822.421875,
+            "height": 385
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 4,
+          "source": "/projects/responsive/unihub-phone.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/unihub-phone-390w.avif",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "slug": "unihub",
+          "index": 5,
+          "source": "/projects/responsive/unihub-tablet.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/unihub-tablet-768w.avif",
+            "naturalWidth": 768,
+            "naturalHeight": 1024,
+            "width": 768,
+            "height": 1024
+          }
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "index": 0,
+          "source": "/projects/complete/user-management-registration.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/user-management-registration-480w.avif",
+            "naturalWidth": 419,
+            "naturalHeight": 681,
+            "width": 420,
+            "height": 681.6875
+          }
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "index": 1,
+          "source": "/projects/user-management/dashboard.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/dashboard-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 539,
+            "width": 822.421875,
+            "height": 375.65625
+          }
+        },
+        {
+          "slug": "medicare-hub",
+          "index": 0,
+          "source": "/projects/complete/medicare-homepage.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/medicare-homepage-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 810,
+            "width": 822.421875,
+            "height": 564.765625
+          }
+        },
+        {
+          "slug": "medicare-hub",
+          "index": 1,
+          "source": "/projects/cinematic/medicare-logo.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/medicare-logo-960w.avif",
+            "naturalWidth": 520,
+            "naturalHeight": 520,
+            "width": 520,
+            "height": 520
+          }
+        },
+        {
+          "slug": "home-services",
+          "index": 0,
+          "source": "/projects/complete/home-services-page.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/home-services-page-1600w.avif",
+            "naturalWidth": 1180,
+            "naturalHeight": 5425,
+            "width": 822.421875,
+            "height": 3781.421875
+          }
+        },
+        {
+          "slug": "home-services",
+          "index": 1,
+          "source": "/projects/phase2/home-services-mobile-menu.webp",
+          "image": {
+            "url": "http://127.0.0.1:5250/projects/complete/home-services-mobile-menu-390w.avif",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 390,
+            "height": 844
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

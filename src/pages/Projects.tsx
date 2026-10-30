@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiArrowUpRight, FiSearch } from "react-icons/fi";
 import { useProjects, useSiteSection } from "../lib/hooks";
 import { detailScreens } from "../lib/project-detail-screens";
@@ -9,13 +9,27 @@ import { ProjectPreview } from "../components/ProjectPreview";
 import { galleryCovers } from "../generated/gallery-covers";
 import { galleryTitle } from "../lib/gallery-presentation";
 import { projectNumber } from '../lib/project-evidence';
+import { useSupportingDesign } from '../components/landscape/supporting-design-context';
+import { caseStudyFor } from '../../shared/case-study-runtime';
+import { ordinaryActivation } from '../components/landscape/jobpilot-journey';
 import './supporting-pages.css';
 
 export function Projects() {
+  const review = useSupportingDesign();
+  const location = useLocation(), navigate = useNavigate();
+  const params = new URLSearchParams(location.search);
   const projects = useProjects();
   const { data: section } = useSiteSection("projectsPage");
-  const [query, setQuery] = useState(""),
-    [mode, setMode] = useState("Gallery");
+  const [query, setQuery] = useState(review ? params.get('q') ?? '' : ""),
+    [mode, setMode] = useState(review && params.get('mode') === 'Index' ? 'Index' : "Gallery");
+  const remember = (nextQuery: string, nextMode: string) => {
+    setQuery(nextQuery); setMode(nextMode);
+    if (!review) return;
+    const search = new URLSearchParams();
+    if (nextQuery) search.set('q', nextQuery);
+    if (nextMode === 'Index') search.set('mode', nextMode);
+    navigate({ pathname: review.indexPath, search: search.toString() }, { replace: true, state: { routeRestore: { x: scrollX, y: scrollY } } });
+  };
   const visible =
     projects.data?.filter(
       (project) =>
@@ -30,6 +44,8 @@ export function Projects() {
       <PageMeta
         title={section?.heading || "Projects"}
         description={section?.description ?? undefined}
+        noIndex={Boolean(review)}
+        canonicalPath="/projects"
       />
       <header className="page-heading">
         <div>
@@ -48,7 +64,7 @@ export function Projects() {
             type="search"
             aria-label="Search projects or technologies"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => remember(event.target.value, mode)}
             placeholder="Search projects or technologies"
           />
         </label>
@@ -61,7 +77,7 @@ export function Projects() {
             <button
               key={value}
               aria-pressed={mode === value}
-              onClick={() => setMode(value)}
+              onClick={() => remember(query, value)}
             >
               {value}
             </button>
@@ -82,11 +98,19 @@ export function Projects() {
           const screen = detailScreens(project)[0];
           const cover = galleryCovers[project.slug];
           const preview = cover?.src ?? screen?.src;
+          const summary = caseStudyFor(project)?.summary ?? project.tagline ?? project.description;
           return (
             <Link
               key={project.id}
               className="work-entry"
-              to={`/projects/${project.slug}`}
+              data-project-slug={review ? project.slug : undefined}
+              to={review?.readerPath(project.slug) ?? `/projects/${project.slug}`}
+              onClick={event => {
+                if (!review || !ordinaryActivation(event)) return;
+                event.preventDefault();
+                const main = event.currentTarget.closest('main');
+                navigate(review.readerPath(project.slug), { state: { supportingIndex: { path: location.pathname + location.search, historyIndex: history.state?.idx, position: { x: scrollX, y: scrollY, main: { x: main?.scrollLeft ?? 0, y: main?.scrollTop ?? 0 }, focus: project.slug } } } });
+              }}
               aria-label={`Open ${project.name} case study`}
             >
               {mode === "Gallery" && preview && (
@@ -100,13 +124,14 @@ export function Projects() {
               )}
               <div className="work-caption">
                 <span className="eyebrow">
-                  {projectNumber(project.slug)}
+                  {review?.candidate ? <><span className="work-number">{projectNumber(project.slug)}</span><span className="work-category">{project.type}</span></> : projectNumber(project.slug)}
                 </span>
                 <div>
                   <h2>{galleryTitle(project)}</h2>
-                  <p>{project.type}</p>
+                  {!review?.candidate && <p>{project.type}</p>}
                 </div>
               </div>
+              {review?.candidate && <p className="work-description">{summary?.split(/(?<=\.)\s/)[0]}</p>}
               <p className="work-stack">
                 {project.stack.slice(0, 3).join(" · ")}
               </p>
@@ -118,7 +143,7 @@ export function Projects() {
       {!projects.isLoading && !projects.isError && !visible.length && (
         <div className="empty-work">
           <h2>No matching projects.</h2>
-          <button className="text-link" onClick={() => setQuery("")}>
+          <button className="text-link" onClick={() => remember("", mode)}>
             Clear search
           </button>
         </div>
