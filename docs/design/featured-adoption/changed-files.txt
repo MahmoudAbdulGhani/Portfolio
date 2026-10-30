@@ -457,12 +457,14 @@ src/App.tsx
 src/components/landscape/Collection.tsx
 src/components/landscape/FeaturedDesignReview.tsx
 src/components/landscape/ProjectReader.tsx
-src/components/landscape/featured-design-review.css
 src/components/landscape/featured-presentation.css
 src/components/landscape/featured-presentation.ts
 src/lib/use-route-restoration.ts
 tests/e2e/case-study.spec.ts
 tests/e2e/cedar-boundary.spec.ts
 tests/e2e/collection-preview.spec.ts
+tests/e2e/collection-readiness.spec.ts
+tests/e2e/engineered-landscape.spec.ts
+tests/e2e/mobile-case-media.spec.ts
 tests/featured-design-review-build.test.mjs
 tests/featured-design-review.spec.ts

@@ -118,8 +118,12 @@ test('pending decorative and preview assets cannot strand navigation or overlap 
   release();
   await expect(page.getByText('Preview unavailable. Open the case study for project details.')).toBeVisible();
   await recovered(page);
-  const boxes=await page.locator('.selection-frame').evaluate(el=>({bottom:el.querySelector('.selection-image-frame')!.getBoundingClientRect().bottom,caption:el.querySelector('.selection-detail')!.getBoundingClientRect().top}));
-  expect(boxes.caption).toBeGreaterThanOrEqual(boxes.bottom);
+  const boxes=await page.locator('.selection-frame').evaluate(el=>{
+    const image=el.querySelector('.selection-image-frame')!.getBoundingClientRect(),identity=el.querySelector('.selection-detail')!.getBoundingClientRect();
+    return {narrow:innerWidth<960,above:identity.bottom<=image.top,beside:identity.right+24<=image.left,imageBottom:image.bottom,following:document.querySelector('.collection-cedar-boundary')!.getBoundingClientRect().top};
+  });
+  expect(boxes.narrow?boxes.above:boxes.beside).toBe(true);
+  expect(boxes.following).toBeGreaterThanOrEqual(boxes.imageBottom);
   await page.locator('.open-case').click();
   await expect(page).toHaveURL(/projects\/construction-project-management-accounting-system$/);
 });

@@ -892,8 +892,8 @@
     "sha256": "a8736751915d2007005d8972e29ade6a962ef05d558542c03dd05d5613859943"
   },
   "changed-files.txt": {
-    "bytes": 32926,
-    "sha256": "98609add0926570b8520e720a4e2c0848210f72aba4fa250559217f696f04c15"
+    "bytes": 32988,
+    "sha256": "c9b54aa3e1e25916513d932b56177ef582bfaa3efe910c6fe8a73a504848d212"
   },
   "index.html": {
     "bytes": 58688,
@@ -1636,8 +1636,8 @@
     "sha256": "1d83942745367dea23810a005a3b2ed27982febace8bc896911ffeb66382acb9"
   },
   "review-report.md": {
-    "bytes": 9791,
-    "sha256": "71d0b0ba6f2d5486806dae2e022aef697ff6d06f9cf6cadbd6f88fc3327608af"
+    "bytes": 11140,
+    "sha256": "341008ca6c36664a25c783af81d6536cd84db0cd86efb6d4609714c156c6b1c9"
   },
   "text/adopted/cedar/preview/320-844-text-200.jpg": {
     "bytes": 40782,
