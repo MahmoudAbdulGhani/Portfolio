@@ -32,7 +32,7 @@ async function bounds(page: Page) {
       const box = image.getBoundingClientRect();
       return {width:box.width,height:box.height,bottom:box.bottom,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight};
     });
-    const adopted=frame.closest('.landscape')!.classList.contains('jobpilot-design-refined');
+    const adopted=frame.closest('.landscape')!.matches('.jobpilot-design-refined,.featured-design-refined');
     return {adopted,narrow:innerWidth<960,imageFrameBottom:imageFrame.bottom,captionTop:caption.top,controlsTop:controls.top,images,
       identityBefore:caption.bottom<imageFrame.top,identityBeside:caption.right+24<=imageFrame.left,
       actionsAfterChoices:controls.top>=selectors.getBoundingClientRect().bottom,actionsBeside:controls.right+24<=imageFrame.left,
@@ -66,6 +66,14 @@ async function ready(page: Page) {
   await page.locator('.project-image-current img').evaluate(image => (image as HTMLImageElement).decode());
   await expect(page.locator('.project-image-previous')).toHaveCount(0);
 }
+async function reservedImageArea(page:Page) {
+  // The approved image container has an inset. Test the reserved image area,
+  // excluding decoration, with the original ratio precision unchanged.
+  return page.locator('.selection-image-frame').evaluate(frame=>{
+    const style=getComputedStyle(frame),box=frame.getBoundingClientRect();
+    return {width:box.width-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight)-parseFloat(style.borderLeftWidth)-parseFloat(style.borderRightWidth),height:box.height-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom)-parseFloat(style.borderTopWidth)-parseFloat(style.borderBottomWidth)};
+  });
+}
 
 for (const mode of modes) {
   for (const [slug,title] of [['jobpilot-ai','JobPilot AI'],[cedar,'Cedar Construction'],['lobby','Lobby']]) {
@@ -83,7 +91,7 @@ for (const mode of modes) {
           await expect(choices.nth(i)).toHaveAttribute('aria-pressed','true');
           await ready(page); await completeLayout(page);
           const actionWidth=(await page.getByRole('link',{name:'Open case study',exact:true}).boundingBox())!.width;
-          if(slug==='jobpilot-ai'&&width>=960)expect(actionWidth).toBeCloseTo((await page.locator('.jobpilot-refined-actions').boundingBox())!.width,0);
+          if(width>=960)expect(actionWidth).toBeCloseTo((await page.locator('.jobpilot-refined-actions').boundingBox())!.width,0);
           else if (width >= 720) expect(actionWidth).toBeLessThan(260);
           await expect(choices.nth(i)).toBeFocused();
           expect(await choices.nth(i).evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
@@ -113,8 +121,8 @@ for (const mode of modes) {
     await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','loading');
     await expect(page.locator('.project-image-previous')).toHaveCount(1);
     // Metadata reserves the tall capture before its request completes.
-    const reserved=await page.locator('.selection-image-frame').boundingBox();
-    expect(reserved!.height/reserved!.width).toBeCloseTo(2333/1920,3);
+    const reserved=await reservedImageArea(page);
+    expect(reserved.height/reserved.width).toBeCloseTo(2333/1920,3);
     await completeLayout(page);
     await page.evaluate(() => {
       const choices=document.querySelectorAll<HTMLButtonElement>('.chapter-switch button');
@@ -144,8 +152,8 @@ test('a failed wide request retains the complete tall image above caption, contr
   await expect(page.locator('.project-image-handoff')).toHaveAttribute('data-image-state','failed');
   await expect(page.locator('.project-image-previous')).toHaveCount(1);
   await completeLayout(page);
-  const reserved=await page.locator('.selection-image-frame').boundingBox();
-  expect(reserved!.height).toBeGreaterThanOrEqual(reserved!.width*2333/1920);
+  const reserved=await reservedImageArea(page);
+  expect(reserved.height).toBeGreaterThanOrEqual(reserved.width*2333/1920);
   const notice=page.locator('.selection-image-frame').getByRole('status');
   await expect(notice).toContainText('Preview unavailable');
   expect((await notice.boundingBox())!.y+(await notice.boundingBox())!.height).toBeLessThanOrEqual((await page.locator('.project-image-previous img').boundingBox())!.y);
@@ -171,8 +179,8 @@ test('decoded dimensions replace estimated geometry for an unfamiliar tall sourc
   await completeLayout(page);
   await expect(page.getByRole('link',{name:'Open case study',exact:true})).toBeFocused();
   release(); await ready(page); await completeLayout(page);
-  const reserved=await page.locator('.selection-image-frame').boundingBox();
-  expect(reserved!.height/reserved!.width).toBeCloseTo(2100/900,3);
+  const reserved=await reservedImageArea(page);
+  expect(reserved.height/reserved.width).toBeCloseTo(2100/900,3);
   await page.keyboard.press('Escape');
   await expect(page.getByRole('button',{name:'Explore Cedar Construction',exact:true})).toBeFocused();
 });

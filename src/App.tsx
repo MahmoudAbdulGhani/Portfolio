@@ -15,6 +15,7 @@ import { NotFound } from "./pages/NotFound";
 // matching the former review entry without a second presentation copy.
 import './components/landscape/jobpilot-presentation.css';
 import './components/landscape/jobpilot-refinement.css';
+import './components/landscape/featured-presentation.css';
 
 const CvPage = lazy(() => import("./pages/Cv").then((m) => ({ default: m.Cv })));
 const FeaturedDesignReview = (import.meta.env.DEV || import.meta.env.FEATURED_DESIGN_REVIEW)

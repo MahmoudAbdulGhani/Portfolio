@@ -1,0 +1,95 @@
+{
+  "method": "Observed conservative mesh-box projections and canvas/UI rectangles from actual-source local WebGL runs. Normal observations and controlled predecoded/focus-warmed Cedar observations are separate. Counts describe sampled poses, not GPU smoothness, physical-device performance or every possible future frame.",
+  "geometry": [
+    {
+      "width": 320,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 28,
+      "beforeImageTop": 350.46875,
+      "afterImageTop": 350.46875,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 7.944345943529612
+    },
+    {
+      "width": 390,
+      "renderer": "fallback",
+      "gpu": null,
+      "samples": 0,
+      "beforeImageTop": 316.140625,
+      "afterImageTop": 316.140625,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": null
+    },
+    {
+      "width": 430,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 55,
+      "beforeImageTop": 320.3125,
+      "afterImageTop": 320.3125,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 11.145718003209339
+    },
+    {
+      "width": 768,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 56,
+      "beforeImageTop": 353.65625,
+      "afterImageTop": 353.65625,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 19.83751582635574
+    },
+    {
+      "width": 1280,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 56,
+      "beforeImageTop": 112,
+      "afterImageTop": 112,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 20.821729864939925
+    },
+    {
+      "width": 1440,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 57,
+      "beforeImageTop": 140.109375,
+      "afterImageTop": 140.109375,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 22.68094390352411
+    }
+  ],
+  "preparedGeometry": [
+    {
+      "width": 390,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 43,
+      "beforeImageTop": 316.140625,
+      "afterImageTop": 316.140625,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 9.756688176843312
+    },
+    {
+      "width": 1440,
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "samples": 56,
+      "beforeImageTop": 140.109375,
+      "afterImageTop": 140.109375,
+      "uiIntersections": 0,
+      "subjectOutsideCanvas": 0,
+      "minimumMargin": 22.68094390352411
+    }
+  ]
+}

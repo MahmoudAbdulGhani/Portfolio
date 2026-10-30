@@ -11,10 +11,10 @@ export function featuredProject(slug?: string) {
   return slug && slug in featuredProjects ? featuredProjects[slug as FeaturedSlug] : undefined;
 }
 
-// JobPilot retains its approved normal/historical defaults. Cedar and Lobby
-// opt in only inside their compiled review context, never on normal routes.
+// Approved featured presentations are the normal defaults. Explicit historical
+// review contexts retain their own versions without duplicating components.
 export function featuredPresentation(review: JobPilotDesign | null, slug?: string) {
   if (slug === 'jobpilot-ai') return jobPilotPresentation(review, true);
-  const matches = Boolean(review?.projectSlug && review.projectSlug === slug && featuredProject(slug));
-  return { candidate: matches && Boolean(review?.candidate), refined: matches && Boolean(review?.refined) };
+  const matches = Boolean(featuredProject(slug) && (!review || review.projectSlug === slug));
+  return { candidate: matches && (review?.candidate ?? true), refined: matches && (review?.refined ?? true) };
 }

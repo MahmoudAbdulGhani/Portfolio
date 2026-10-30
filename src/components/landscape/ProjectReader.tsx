@@ -90,7 +90,7 @@ export function ProjectReader() {
   // opening uses its first clause so the product image arrives sooner on phones.
   const openingPurpose = candidate && purpose?.includes(', using candidate information')
     ? purpose.split(', using candidate information')[0]+'.'
-    : candidate && design?.projectSlug ? purpose?.split(/(?<=\.)\s/)[0] : purpose;
+    : candidate && slug !== 'jobpilot-ai' ? purpose?.split(/(?<=\.)\s/)[0] : purpose;
   const overview = project.overview?.trim() || project.description?.trim();
   const carriedIndex = screens.findIndex(screen => screen.src === chapterRecord.source);
   const activeIndex = carriedIndex >= 0 ? carriedIndex : chapter < screens.length ? chapter : 0;

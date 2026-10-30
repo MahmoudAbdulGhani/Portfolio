@@ -442,7 +442,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       // Keep this existing preview entry's image/position usable after a reader
       // reload clears the in-memory teaching state. JobPilot's approved history
       // behavior is unchanged; no new entry, timer or restoration owner.
-      if (candidate && design?.projectSlug) window.history.replaceState({ ...window.history.state,
+      if (candidate && selected.kind !== 'jobpilot') window.history.replaceState({ ...window.history.state,
         usr: { ...location.state, jobpilotScreen: screens[chapter]?.src, routeRestore: { x: scrollX, y: scrollY } },
       }, '');
       const scope = root.current;

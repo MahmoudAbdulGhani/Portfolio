@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { jobPilotReviewAddress } from '../components/landscape/jobpilot-design-context';
+import { featuredProject } from '../components/landscape/featured-presentation';
 
 export function useRouteRestoration() {
   const location = useLocation(), navigation = useNavigationType();
@@ -22,12 +23,12 @@ export function useRouteRestoration() {
       save(event);
       cancelAnimationFrame(popFocusFrame);
       const review = jobPilotReviewAddress(window.location.pathname);
-      const preview = (window.location.pathname === '/' || review?.collection) && (new URLSearchParams(window.location.search).get('project') === 'jobpilot-ai' || Boolean(review && 'project' in review && new URLSearchParams(window.location.search).get('project') === review.project));
-      const reader = window.location.pathname === '/projects/jobpilot-ai' || review?.reader;
+      const preview = (window.location.pathname === '/' || review?.collection) && (Boolean(featuredProject(new URLSearchParams(window.location.search).get('project') ?? undefined)) || Boolean(review && 'project' in review && new URLSearchParams(window.location.search).get('project') === review.project));
+      const reader = Boolean(featuredProject(window.location.pathname.split('/projects/')[1])) || review?.reader;
       if (!preview && !reader) return;
       const destination = window.location.pathname + window.location.search + window.location.hash;
       // Rapid Back can cancel the destination before React commits it. The
-      // still-mounted JobPilot preview/reader cannot rely on a mount effect.
+      // still-mounted featured preview/reader cannot rely on a mount effect.
       popFocusFrame = requestAnimationFrame(() => {
         if (window.location.pathname + window.location.search + window.location.hash !== destination) return;
         document.querySelector<HTMLElement>(preview ? '.stage .open-case' : '.project-reader#main-content')?.focus({preventScroll:true});
@@ -59,8 +60,10 @@ export function useRouteRestoration() {
     // Explicit Collection returns reuse this owner if their history entry is
     // unavailable. Ordinary Back/Forward continue to use the entry-key cache.
     const review = jobPilotReviewAddress(location.pathname);
-    const position = navigation === 'POP' ? positions.current.get(location.key) ?? (review && 'project' in review ? location.state?.routeRestore : undefined) : location.state?.routeRestore;
-    const returningJobPilot = atCollection && (new URLSearchParams(location.search).get('project') === 'jobpilot-ai' || Boolean(review && 'project' in review)) && Boolean(position);
+    const selected = new URLSearchParams(location.search).get('project') ?? undefined;
+    const phase2 = Boolean(selected && selected !== 'jobpilot-ai' && featuredProject(selected));
+    const position = navigation === 'POP' ? positions.current.get(location.key) ?? (phase2 || (review && 'project' in review) ? location.state?.routeRestore : undefined) : location.state?.routeRestore;
+    const returningFeatured = atCollection && (Boolean(featuredProject(selected)) || Boolean(review && 'project' in review)) && Boolean(position);
     let cancelled = false, frame = 0, focused = false, deadline = 0;
     restoring.current = true;
     const observer = new MutationObserver(restore);
@@ -70,7 +73,7 @@ export function useRouteRestoration() {
       if (focusNeeded && main && !focused) {
         main.focus({ preventScroll: true }); focused = true;
       }
-      if (location.hash && !returningJobPilot) {
+      if (location.hash && !returningFeatured) {
         const target = document.getElementById(location.hash.slice(1));
         if (!target) return;
         observer.disconnect();

@@ -284,7 +284,9 @@ for (const [width, height] of [
       );
       await expect(page.locator(".selection-detail h1")).toHaveText(title);
       const jobpilot=record.slug==='jobpilot-ai';
-      await expect(page.locator(".selection-detail p")).toHaveText(jobpilot?'Review before saving':category);
+      const cedar=record.slug==='construction-project-management-accounting-system';
+      await expect(page.locator(".selection-detail p")).toHaveText(jobpilot?'Review before saving':cedar?'Calculated facts, then interpretation':'Invitation, membership, then call access');
+      await expect(page.locator('.selection-category')).toHaveText(category);
       if (record.name !== title)
         await expect(
           page.getByRole("region", { name: "Selected project" }),
@@ -344,16 +346,12 @@ for (const [width, height] of [
               controls.bottom + scrollY,
           };
         });
-      if(jobpilot){
-        expect(width<960?geometry.identityAbove:geometry.identityBeside).toBe(true);
-        expect(width<960?geometry.actionsAfterChoices:geometry.actionsBeside).toBe(true);
-        expect(geometry.fontSize).toBeCloseTo(width<720?Math.max(38,Math.min(width*.108,46)):height<=760?56:Math.max(48,Math.min(width*.048,72)),1);
-      }else{
-        expect(geometry.leftGap).toBeLessThan(1);
-        expect(geometry.captionGap).toBeCloseTo(24, 0);
-        expect(geometry.fontSize).toBe(width < 720 ? 32 : 52);
-        expect(geometry.imageBeforeCaption).toBe(true);
-      }
+      expect(width<960?geometry.identityAbove:geometry.identityBeside).toBe(true);
+      expect(width<960?geometry.actionsAfterChoices:geometry.actionsBeside).toBe(true);
+      const expectedFont=cedar
+        ? width<720?Math.max(36,Math.min(width*.10,43)):height<=760?48:Math.max(42,Math.min(width*.043,64))
+        : width<720?Math.max(38,Math.min(width*.108,46)):height<=760?56:Math.max(48,Math.min(width*.048,72));
+      expect(geometry.fontSize).toBeCloseTo(expectedFont,1);
       expect(geometry.objectFit).toBe("contain");
       expect(geometry.imageLoaded).toBe(true);
       expect(geometry.proportionError).toBeLessThan(1);
@@ -390,8 +388,7 @@ for (const [width, height] of [
         return { gap: caption.top - reserved.bottom, complete: image.bottom <= caption.top,
           contained:image.left>=reserved.left&&image.right<=reserved.right&&image.top>=reserved.top&&image.bottom<=reserved.bottom };
       });
-      if(jobpilot)expect(switched.contained).toBe(true);
-      else{expect(switched.gap).toBeCloseTo(24, 0);expect(switched.complete).toBe(true);}
+      expect(switched.contained).toBe(true);
       const cta = page.getByRole("link", {
         name: "Open case study",
         exact: true,

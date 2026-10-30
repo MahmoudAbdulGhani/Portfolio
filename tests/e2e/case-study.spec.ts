@@ -23,6 +23,9 @@ for (const project of caseStudyProjects) test(`${projectDisplayName(project)} re
     if(project.slug==='jobpilot-ai'){
       await expect(page.locator('.case-purpose')).toHaveText(study.summary.split(', using candidate information')[0]+'.');
       await expect(page.locator('.jobpilot-context')).toContainText(study.summary);
+    }else if(['lobby','construction-project-management-accounting-system'].includes(project.slug)){
+      await expect(page.locator('.case-purpose')).toHaveText(study.summary.split(/(?<=\.)\s/)[0]);
+      await expect(page.locator('.jobpilot-context')).toContainText(study.summary);
     }else await expect(page.locator('.case-purpose')).toHaveText(study.summary);
     await expect(page.locator('#overview')).toContainText(study.problemHeading);
     await expect(page.locator('#workflow')).toContainText(study.workflowHeading);

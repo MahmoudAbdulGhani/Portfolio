@@ -1,0 +1,2024 @@
+{
+  "phase": "approved",
+  "source": "C:\\Users\\Admin\\Desktop\\portfolio\\.motion-preview\\phase2-approved-dist",
+  "snapshot": "Same archived read-only public GET snapshot used for PR54; original source bytes, no content write.",
+  "method": "Windows Chrome compiled build, reduced-motion to compare settled typography. Initial/enlarged captures align the demo header; active/error/completed captures align the actual interpretation/result. Text enlargement explicitly doubles demo text sizes/line heights without scaling layout; site header/footer remain at normal size. Not whole-site text enlargement, physical-device or actual browser zoom testing.",
+  "results": [
+    {
+      "kind": "cedar",
+      "place": "preview",
+      "width": 320,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/preview/320-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 36,
+          "y": 151.265625,
+          "width": 248,
+          "height": 249.625,
+          "top": 151.265625,
+          "right": 284,
+          "bottom": 400.890625,
+          "left": 36
+        },
+        "label": {
+          "x": 36,
+          "y": 408.890625,
+          "width": 248,
+          "height": 116.25,
+          "top": 408.890625,
+          "right": 284,
+          "bottom": 525.140625,
+          "left": 36
+        },
+        "progress": {
+          "x": 36,
+          "y": 533.140625,
+          "width": 248,
+          "height": 145.171875,
+          "top": 533.140625,
+          "right": 284,
+          "bottom": 678.3125,
+          "left": 36
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 36,
+              "y": 533.140625,
+              "width": 248,
+              "height": 44.390625,
+              "top": 533.140625,
+              "right": 284,
+              "bottom": 577.53125,
+              "left": 36
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 36,
+              "y": 583.53125,
+              "width": 248,
+              "height": 44.390625,
+              "top": 583.53125,
+              "right": 284,
+              "bottom": 627.921875,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 36,
+              "y": 633.921875,
+              "width": 248,
+              "height": 44.390625,
+              "top": 633.921875,
+              "right": 284,
+              "bottom": 678.3125,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 36,
+          "y": 692.3125,
+          "width": 248,
+          "height": 395.578125,
+          "top": 692.3125,
+          "right": 284,
+          "bottom": 1087.890625,
+          "left": 36
+        },
+        "control": {
+          "x": 36,
+          "y": 1517.46875,
+          "width": 248,
+          "height": 62,
+          "top": 1517.46875,
+          "right": 284,
+          "bottom": 1579.46875,
+          "left": 36
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "52px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 320,
+          "height": 58,
+          "top": 786,
+          "right": 320,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "preview",
+      "width": 390,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/preview/390-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 37.453125,
+          "y": 150.90625,
+          "width": 315.09375,
+          "height": 254.5625,
+          "top": 150.90625,
+          "right": 352.546875,
+          "bottom": 405.46875,
+          "left": 37.453125
+        },
+        "label": {
+          "x": 37.453125,
+          "y": 413.46875,
+          "width": 315.09375,
+          "height": 77.5,
+          "top": 413.46875,
+          "right": 352.546875,
+          "bottom": 490.96875,
+          "left": 37.453125
+        },
+        "progress": {
+          "x": 37.453125,
+          "y": 498.96875,
+          "width": 315.09375,
+          "height": 145.171875,
+          "top": 498.96875,
+          "right": 352.546875,
+          "bottom": 644.140625,
+          "left": 37.453125
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 37.453125,
+              "y": 498.96875,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 498.96875,
+              "right": 352.546875,
+              "bottom": 543.359375,
+              "left": 37.453125
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 37.453125,
+              "y": 549.359375,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 549.359375,
+              "right": 352.546875,
+              "bottom": 593.75,
+              "left": 37.453125
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 37.453125,
+              "y": 599.75,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 599.75,
+              "right": 352.546875,
+              "bottom": 644.140625,
+              "left": 37.453125
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 37.453125,
+          "y": 658.140625,
+          "width": 315.09375,
+          "height": 229.1875,
+          "top": 658.140625,
+          "right": 352.546875,
+          "bottom": 887.328125,
+          "left": 37.453125
+        },
+        "control": {
+          "x": 37.453125,
+          "y": 1140.515625,
+          "width": 315.09375,
+          "height": 62,
+          "top": 1140.515625,
+          "right": 352.546875,
+          "bottom": 1202.515625,
+          "left": 37.453125
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "53.04px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 390,
+          "height": 58,
+          "top": 786,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "preview",
+      "width": 430,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/preview/430-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 39.65625,
+          "y": 150.515625,
+          "width": 350.6875,
+          "height": 201.609375,
+          "top": 150.515625,
+          "right": 390.34375,
+          "bottom": 352.125,
+          "left": 39.65625
+        },
+        "label": {
+          "x": 39.65625,
+          "y": 360.125,
+          "width": 350.6875,
+          "height": 77.5,
+          "top": 360.125,
+          "right": 390.34375,
+          "bottom": 437.625,
+          "left": 39.65625
+        },
+        "progress": {
+          "x": 39.65625,
+          "y": 445.625,
+          "width": 350.6875,
+          "height": 145.171875,
+          "top": 445.625,
+          "right": 390.34375,
+          "bottom": 590.796875,
+          "left": 39.65625
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 39.65625,
+              "y": 445.625,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 445.625,
+              "right": 390.34375,
+              "bottom": 490.015625,
+              "left": 39.65625
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 39.65625,
+              "y": 496.015625,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 496.015625,
+              "right": 390.34375,
+              "bottom": 540.40625,
+              "left": 39.65625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 39.65625,
+              "y": 546.40625,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 546.40625,
+              "right": 390.34375,
+              "bottom": 590.796875,
+              "left": 39.65625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 39.65625,
+          "y": 604.796875,
+          "width": 350.6875,
+          "height": 229.1875,
+          "top": 604.796875,
+          "right": 390.34375,
+          "bottom": 833.984375,
+          "left": 39.65625
+        },
+        "control": {
+          "x": 39.65625,
+          "y": 1087.171875,
+          "width": 350.6875,
+          "height": 62,
+          "top": 1087.171875,
+          "right": 390.34375,
+          "bottom": 1149.171875,
+          "left": 39.65625
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 430,
+          "height": 58,
+          "top": 786,
+          "right": 430,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "preview",
+      "width": 768,
+      "height": 1024,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/preview/768-1024-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 66.234375,
+          "y": 141.046875,
+          "width": 635.515625,
+          "height": 134.40625,
+          "top": 141.046875,
+          "right": 701.75,
+          "bottom": 275.453125,
+          "left": 66.234375
+        },
+        "label": {
+          "x": 66.234375,
+          "y": 283.453125,
+          "width": 635.515625,
+          "height": 38.75,
+          "top": 283.453125,
+          "right": 701.75,
+          "bottom": 322.203125,
+          "left": 66.234375
+        },
+        "progress": {
+          "x": 66.234375,
+          "y": 330.203125,
+          "width": 635.515625,
+          "height": 44.390625,
+          "top": 330.203125,
+          "right": 701.75,
+          "bottom": 374.59375,
+          "left": 66.234375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 66.234375,
+              "y": 330.203125,
+              "width": 207.828125,
+              "height": 44.390625,
+              "top": 330.203125,
+              "right": 274.0625,
+              "bottom": 374.59375,
+              "left": 66.234375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 280.0625,
+              "y": 330.203125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 330.203125,
+              "right": 487.90625,
+              "bottom": 374.59375,
+              "left": 280.0625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 493.90625,
+              "y": 330.203125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 330.203125,
+              "right": 701.75,
+              "bottom": 374.59375,
+              "left": 493.90625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 270.234375,
+          "y": 398.59375,
+          "width": 431.515625,
+          "height": 215.1875,
+          "top": 398.59375,
+          "right": 701.75,
+          "bottom": 613.78125,
+          "left": 270.234375
+        },
+        "control": {
+          "x": 270.234375,
+          "y": 822.171875,
+          "width": 431.515625,
+          "height": 62,
+          "top": 822.171875,
+          "right": 701.75,
+          "bottom": 884.171875,
+          "left": 270.234375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 956,
+          "width": 768,
+          "height": 68,
+          "top": 956,
+          "right": 768,
+          "bottom": 1024,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "reader",
+      "width": 320,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/reader/320-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 36,
+          "y": 151.359375,
+          "width": 248,
+          "height": 249.625,
+          "top": 151.359375,
+          "right": 284,
+          "bottom": 400.984375,
+          "left": 36
+        },
+        "label": {
+          "x": 36,
+          "y": 408.984375,
+          "width": 248,
+          "height": 116.25,
+          "top": 408.984375,
+          "right": 284,
+          "bottom": 525.234375,
+          "left": 36
+        },
+        "progress": {
+          "x": 36,
+          "y": 533.234375,
+          "width": 248,
+          "height": 145.171875,
+          "top": 533.234375,
+          "right": 284,
+          "bottom": 678.40625,
+          "left": 36
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 36,
+              "y": 533.234375,
+              "width": 248,
+              "height": 44.390625,
+              "top": 533.234375,
+              "right": 284,
+              "bottom": 577.625,
+              "left": 36
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 36,
+              "y": 583.625,
+              "width": 248,
+              "height": 44.390625,
+              "top": 583.625,
+              "right": 284,
+              "bottom": 628.015625,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 36,
+              "y": 634.015625,
+              "width": 248,
+              "height": 44.390625,
+              "top": 634.015625,
+              "right": 284,
+              "bottom": 678.40625,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 36,
+          "y": 692.40625,
+          "width": 248,
+          "height": 395.578125,
+          "top": 692.40625,
+          "right": 284,
+          "bottom": 1087.984375,
+          "left": 36
+        },
+        "control": {
+          "x": 36,
+          "y": 1595.984375,
+          "width": 248,
+          "height": 62,
+          "top": 1595.984375,
+          "right": 284,
+          "bottom": 1657.984375,
+          "left": 36
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "52px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 320,
+          "height": 58,
+          "top": 786,
+          "right": 320,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "reader",
+      "width": 390,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/reader/390-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 37.4375,
+          "y": 150.796875,
+          "width": 315.125,
+          "height": 190.921875,
+          "top": 150.796875,
+          "right": 352.5625,
+          "bottom": 341.71875,
+          "left": 37.4375
+        },
+        "label": {
+          "x": 37.4375,
+          "y": 349.71875,
+          "width": 315.125,
+          "height": 77.5,
+          "top": 349.71875,
+          "right": 352.5625,
+          "bottom": 427.21875,
+          "left": 37.4375
+        },
+        "progress": {
+          "x": 37.4375,
+          "y": 435.21875,
+          "width": 315.125,
+          "height": 145.171875,
+          "top": 435.21875,
+          "right": 352.5625,
+          "bottom": 580.390625,
+          "left": 37.4375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 37.4375,
+              "y": 435.21875,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 435.21875,
+              "right": 352.5625,
+              "bottom": 479.609375,
+              "left": 37.4375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 37.4375,
+              "y": 485.609375,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 485.609375,
+              "right": 352.5625,
+              "bottom": 530,
+              "left": 37.4375
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 37.4375,
+              "y": 536,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 536,
+              "right": 352.5625,
+              "bottom": 580.390625,
+              "left": 37.4375
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 37.4375,
+          "y": 594.390625,
+          "width": 315.125,
+          "height": 229.1875,
+          "top": 594.390625,
+          "right": 352.5625,
+          "bottom": 823.578125,
+          "left": 37.4375
+        },
+        "control": {
+          "x": 37.4375,
+          "y": 1177.578125,
+          "width": 315.125,
+          "height": 62,
+          "top": 1177.578125,
+          "right": 352.5625,
+          "bottom": 1239.578125,
+          "left": 37.4375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "53.04px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 390,
+          "height": 58,
+          "top": 786,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "reader",
+      "width": 430,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/reader/430-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 39.640625,
+          "y": 151.203125,
+          "width": 350.71875,
+          "height": 201.609375,
+          "top": 151.203125,
+          "right": 390.359375,
+          "bottom": 352.8125,
+          "left": 39.640625
+        },
+        "label": {
+          "x": 39.640625,
+          "y": 360.8125,
+          "width": 350.71875,
+          "height": 77.5,
+          "top": 360.8125,
+          "right": 390.359375,
+          "bottom": 438.3125,
+          "left": 39.640625
+        },
+        "progress": {
+          "x": 39.640625,
+          "y": 446.3125,
+          "width": 350.71875,
+          "height": 145.171875,
+          "top": 446.3125,
+          "right": 390.359375,
+          "bottom": 591.484375,
+          "left": 39.640625
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 39.640625,
+              "y": 446.3125,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 446.3125,
+              "right": 390.359375,
+              "bottom": 490.703125,
+              "left": 39.640625
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 39.640625,
+              "y": 496.703125,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 496.703125,
+              "right": 390.359375,
+              "bottom": 541.09375,
+              "left": 39.640625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 39.640625,
+              "y": 547.09375,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 547.09375,
+              "right": 390.359375,
+              "bottom": 591.484375,
+              "left": 39.640625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 39.640625,
+          "y": 605.484375,
+          "width": 350.71875,
+          "height": 229.1875,
+          "top": 605.484375,
+          "right": 390.359375,
+          "bottom": 834.671875,
+          "left": 39.640625
+        },
+        "control": {
+          "x": 39.640625,
+          "y": 1188.671875,
+          "width": 350.71875,
+          "height": 62,
+          "top": 1188.671875,
+          "right": 390.359375,
+          "bottom": 1250.671875,
+          "left": 39.640625
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 430,
+          "height": 58,
+          "top": 786,
+          "right": 430,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "cedar",
+      "place": "reader",
+      "width": 768,
+      "height": 1024,
+      "state": "text-200",
+      "scale": 2,
+      "file": "cedar/reader/768-1024-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 66.234375,
+          "y": 140.96875,
+          "width": 635.53125,
+          "height": 136.8125,
+          "top": 140.96875,
+          "right": 701.765625,
+          "bottom": 277.78125,
+          "left": 66.234375
+        },
+        "label": {
+          "x": 66.234375,
+          "y": 285.78125,
+          "width": 635.53125,
+          "height": 38.75,
+          "top": 285.78125,
+          "right": 701.765625,
+          "bottom": 324.53125,
+          "left": 66.234375
+        },
+        "progress": {
+          "x": 66.234375,
+          "y": 332.53125,
+          "width": 635.53125,
+          "height": 44.390625,
+          "top": 332.53125,
+          "right": 701.765625,
+          "bottom": 376.921875,
+          "left": 66.234375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 66.234375,
+              "y": 332.53125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 332.53125,
+              "right": 274.078125,
+              "bottom": 376.921875,
+              "left": 66.234375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Interpret→",
+            "box": {
+              "x": 280.078125,
+              "y": 332.53125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 332.53125,
+              "right": 487.921875,
+              "bottom": 376.921875,
+              "left": 280.078125
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Recalculate",
+            "box": {
+              "x": 493.921875,
+              "y": 332.53125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 332.53125,
+              "right": 701.765625,
+              "bottom": 376.921875,
+              "left": 493.921875
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 270.234375,
+          "y": 400.921875,
+          "width": 431.53125,
+          "height": 215.1875,
+          "top": 400.921875,
+          "right": 701.765625,
+          "bottom": 616.109375,
+          "left": 270.234375
+        },
+        "control": {
+          "x": 270.234375,
+          "y": 914.109375,
+          "width": 431.53125,
+          "height": 62,
+          "top": 914.109375,
+          "right": 701.765625,
+          "bottom": 976.109375,
+          "left": 270.234375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "60px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 956,
+          "width": 768,
+          "height": 68,
+          "top": 956,
+          "right": 768,
+          "bottom": 1024,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "preview",
+      "width": 320,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/preview/320-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 36,
+          "y": 150.859375,
+          "width": 248,
+          "height": 187.21875,
+          "top": 150.859375,
+          "right": 284,
+          "bottom": 338.078125,
+          "left": 36
+        },
+        "label": {
+          "x": 36,
+          "y": 346.078125,
+          "width": 248,
+          "height": 116.25,
+          "top": 346.078125,
+          "right": 284,
+          "bottom": 462.328125,
+          "left": 36
+        },
+        "progress": {
+          "x": 36,
+          "y": 470.328125,
+          "width": 248,
+          "height": 145.171875,
+          "top": 470.328125,
+          "right": 284,
+          "bottom": 615.5,
+          "left": 36
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 36,
+              "y": 470.328125,
+              "width": 248,
+              "height": 44.390625,
+              "top": 470.328125,
+              "right": 284,
+              "bottom": 514.71875,
+              "left": 36
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 36,
+              "y": 520.71875,
+              "width": 248,
+              "height": 44.390625,
+              "top": 520.71875,
+              "right": 284,
+              "bottom": 565.109375,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 36,
+              "y": 571.109375,
+              "width": 248,
+              "height": 44.390625,
+              "top": 571.109375,
+              "right": 284,
+              "bottom": 615.5,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 36,
+          "y": 629.5,
+          "width": 248,
+          "height": 311.625,
+          "top": 629.5,
+          "right": 284,
+          "bottom": 941.125,
+          "left": 36
+        },
+        "control": {
+          "x": 36,
+          "y": 719.5,
+          "width": 248,
+          "height": 62,
+          "top": 719.5,
+          "right": 284,
+          "bottom": 781.5,
+          "left": 36
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "52px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 320,
+          "height": 58,
+          "top": 786,
+          "right": 320,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "preview",
+      "width": 390,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/preview/390-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 37.453125,
+          "y": 150.875,
+          "width": 315.09375,
+          "height": 127.28125,
+          "top": 150.875,
+          "right": 352.546875,
+          "bottom": 278.15625,
+          "left": 37.453125
+        },
+        "label": {
+          "x": 37.453125,
+          "y": 286.15625,
+          "width": 315.09375,
+          "height": 77.5,
+          "top": 286.15625,
+          "right": 352.546875,
+          "bottom": 363.65625,
+          "left": 37.453125
+        },
+        "progress": {
+          "x": 37.453125,
+          "y": 371.65625,
+          "width": 315.09375,
+          "height": 145.171875,
+          "top": 371.65625,
+          "right": 352.546875,
+          "bottom": 516.828125,
+          "left": 37.453125
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 37.453125,
+              "y": 371.65625,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 371.65625,
+              "right": 352.546875,
+              "bottom": 416.046875,
+              "left": 37.453125
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 37.453125,
+              "y": 422.046875,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 422.046875,
+              "right": 352.546875,
+              "bottom": 466.4375,
+              "left": 37.453125
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 37.453125,
+              "y": 472.4375,
+              "width": 315.09375,
+              "height": 44.390625,
+              "top": 472.4375,
+              "right": 352.546875,
+              "bottom": 516.828125,
+              "left": 37.453125
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 37.453125,
+          "y": 530.828125,
+          "width": 315.09375,
+          "height": 231.21875,
+          "top": 530.828125,
+          "right": 352.546875,
+          "bottom": 762.046875,
+          "left": 37.453125
+        },
+        "control": {
+          "x": 37.453125,
+          "y": 578.828125,
+          "width": 315.09375,
+          "height": 62,
+          "top": 578.828125,
+          "right": 352.546875,
+          "bottom": 640.828125,
+          "left": 37.453125
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "53.04px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 390,
+          "height": 58,
+          "top": 786,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "preview",
+      "width": 430,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/preview/430-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 39.65625,
+          "y": 151.171875,
+          "width": 350.6875,
+          "height": 134.40625,
+          "top": 151.171875,
+          "right": 390.34375,
+          "bottom": 285.578125,
+          "left": 39.65625
+        },
+        "label": {
+          "x": 39.65625,
+          "y": 293.578125,
+          "width": 350.6875,
+          "height": 77.5,
+          "top": 293.578125,
+          "right": 390.34375,
+          "bottom": 371.078125,
+          "left": 39.65625
+        },
+        "progress": {
+          "x": 39.65625,
+          "y": 379.078125,
+          "width": 350.6875,
+          "height": 145.171875,
+          "top": 379.078125,
+          "right": 390.34375,
+          "bottom": 524.25,
+          "left": 39.65625
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 39.65625,
+              "y": 379.078125,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 379.078125,
+              "right": 390.34375,
+              "bottom": 423.46875,
+              "left": 39.65625
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 39.65625,
+              "y": 429.46875,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 429.46875,
+              "right": 390.34375,
+              "bottom": 473.859375,
+              "left": 39.65625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 39.65625,
+              "y": 479.859375,
+              "width": 350.6875,
+              "height": 44.390625,
+              "top": 479.859375,
+              "right": 390.34375,
+              "bottom": 524.25,
+              "left": 39.65625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 39.65625,
+          "y": 538.25,
+          "width": 350.6875,
+          "height": 231.21875,
+          "top": 538.25,
+          "right": 390.34375,
+          "bottom": 769.46875,
+          "left": 39.65625
+        },
+        "control": {
+          "x": 39.65625,
+          "y": 586.25,
+          "width": 350.6875,
+          "height": 62,
+          "top": 586.25,
+          "right": 390.34375,
+          "bottom": 648.25,
+          "left": 39.65625
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 430,
+          "height": 58,
+          "top": 786,
+          "right": 430,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "preview",
+      "width": 768,
+      "height": 1024,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/preview/768-1024-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 66.234375,
+          "y": 141.328125,
+          "width": 635.515625,
+          "height": 67.203125,
+          "top": 141.328125,
+          "right": 701.75,
+          "bottom": 208.53125,
+          "left": 66.234375
+        },
+        "label": {
+          "x": 66.234375,
+          "y": 216.53125,
+          "width": 635.515625,
+          "height": 38.75,
+          "top": 216.53125,
+          "right": 701.75,
+          "bottom": 255.28125,
+          "left": 66.234375
+        },
+        "progress": {
+          "x": 66.234375,
+          "y": 263.28125,
+          "width": 635.515625,
+          "height": 44.390625,
+          "top": 263.28125,
+          "right": 701.75,
+          "bottom": 307.671875,
+          "left": 66.234375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 66.234375,
+              "y": 263.28125,
+              "width": 207.828125,
+              "height": 44.390625,
+              "top": 263.28125,
+              "right": 274.0625,
+              "bottom": 307.671875,
+              "left": 66.234375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 280.0625,
+              "y": 263.28125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 263.28125,
+              "right": 487.90625,
+              "bottom": 307.671875,
+              "left": 280.0625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 493.90625,
+              "y": 263.28125,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 263.28125,
+              "right": 701.75,
+              "bottom": 307.671875,
+              "left": 493.90625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 270.234375,
+          "y": 331.671875,
+          "width": 431.515625,
+          "height": 192.8125,
+          "top": 331.671875,
+          "right": 701.75,
+          "bottom": 524.484375,
+          "left": 270.234375
+        },
+        "control": {
+          "x": 270.234375,
+          "y": 379.671875,
+          "width": 431.515625,
+          "height": 62,
+          "top": 379.671875,
+          "right": 701.75,
+          "bottom": 441.671875,
+          "left": 270.234375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "28px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 956,
+          "width": 768,
+          "height": 68,
+          "top": 956,
+          "right": 768,
+          "bottom": 1024,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "reader",
+      "width": 320,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/reader/320-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 36,
+          "y": 151.28125,
+          "width": 248,
+          "height": 124.8125,
+          "top": 151.28125,
+          "right": 284,
+          "bottom": 276.09375,
+          "left": 36
+        },
+        "label": {
+          "x": 36,
+          "y": 284.09375,
+          "width": 248,
+          "height": 116.25,
+          "top": 284.09375,
+          "right": 284,
+          "bottom": 400.34375,
+          "left": 36
+        },
+        "progress": {
+          "x": 36,
+          "y": 408.34375,
+          "width": 248,
+          "height": 145.171875,
+          "top": 408.34375,
+          "right": 284,
+          "bottom": 553.515625,
+          "left": 36
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 36,
+              "y": 408.34375,
+              "width": 248,
+              "height": 44.390625,
+              "top": 408.34375,
+              "right": 284,
+              "bottom": 452.734375,
+              "left": 36
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 36,
+              "y": 458.734375,
+              "width": 248,
+              "height": 44.390625,
+              "top": 458.734375,
+              "right": 284,
+              "bottom": 503.125,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 36,
+              "y": 509.125,
+              "width": 248,
+              "height": 44.390625,
+              "top": 509.125,
+              "right": 284,
+              "bottom": 553.515625,
+              "left": 36
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 36,
+          "y": 567.515625,
+          "width": 248,
+          "height": 311.625,
+          "top": 567.515625,
+          "right": 284,
+          "bottom": 879.140625,
+          "left": 36
+        },
+        "control": {
+          "x": 36,
+          "y": 657.515625,
+          "width": 248,
+          "height": 62,
+          "top": 657.515625,
+          "right": 284,
+          "bottom": 719.515625,
+          "left": 36
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "52px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 320,
+          "height": 58,
+          "top": 786,
+          "right": 320,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "reader",
+      "width": 390,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/reader/390-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 37.4375,
+          "y": 150.53125,
+          "width": 315.125,
+          "height": 127.28125,
+          "top": 150.53125,
+          "right": 352.5625,
+          "bottom": 277.8125,
+          "left": 37.4375
+        },
+        "label": {
+          "x": 37.4375,
+          "y": 285.8125,
+          "width": 315.125,
+          "height": 77.5,
+          "top": 285.8125,
+          "right": 352.5625,
+          "bottom": 363.3125,
+          "left": 37.4375
+        },
+        "progress": {
+          "x": 37.4375,
+          "y": 371.3125,
+          "width": 315.125,
+          "height": 145.171875,
+          "top": 371.3125,
+          "right": 352.5625,
+          "bottom": 516.484375,
+          "left": 37.4375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 37.4375,
+              "y": 371.3125,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 371.3125,
+              "right": 352.5625,
+              "bottom": 415.703125,
+              "left": 37.4375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 37.4375,
+              "y": 421.703125,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 421.703125,
+              "right": 352.5625,
+              "bottom": 466.09375,
+              "left": 37.4375
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 37.4375,
+              "y": 472.09375,
+              "width": 315.125,
+              "height": 44.390625,
+              "top": 472.09375,
+              "right": 352.5625,
+              "bottom": 516.484375,
+              "left": 37.4375
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 37.4375,
+          "y": 530.484375,
+          "width": 315.125,
+          "height": 231.21875,
+          "top": 530.484375,
+          "right": 352.5625,
+          "bottom": 761.703125,
+          "left": 37.4375
+        },
+        "control": {
+          "x": 37.4375,
+          "y": 578.484375,
+          "width": 315.125,
+          "height": 62,
+          "top": 578.484375,
+          "right": 352.5625,
+          "bottom": 640.484375,
+          "left": 37.4375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "53.04px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 390,
+          "height": 58,
+          "top": 786,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "reader",
+      "width": 430,
+      "height": 844,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/reader/430-844-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 39.640625,
+          "y": 150.796875,
+          "width": 350.71875,
+          "height": 134.40625,
+          "top": 150.796875,
+          "right": 390.359375,
+          "bottom": 285.203125,
+          "left": 39.640625
+        },
+        "label": {
+          "x": 39.640625,
+          "y": 293.203125,
+          "width": 350.71875,
+          "height": 77.5,
+          "top": 293.203125,
+          "right": 390.359375,
+          "bottom": 370.703125,
+          "left": 39.640625
+        },
+        "progress": {
+          "x": 39.640625,
+          "y": 378.703125,
+          "width": 350.71875,
+          "height": 145.171875,
+          "top": 378.703125,
+          "right": 390.359375,
+          "bottom": 523.875,
+          "left": 39.640625
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 39.640625,
+              "y": 378.703125,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 378.703125,
+              "right": 390.359375,
+              "bottom": 423.09375,
+              "left": 39.640625
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 39.640625,
+              "y": 429.09375,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 429.09375,
+              "right": 390.359375,
+              "bottom": 473.484375,
+              "left": 39.640625
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 39.640625,
+              "y": 479.484375,
+              "width": 350.71875,
+              "height": 44.390625,
+              "top": 479.484375,
+              "right": 390.359375,
+              "bottom": 523.875,
+              "left": 39.640625
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 39.640625,
+          "y": 537.875,
+          "width": 350.71875,
+          "height": 231.21875,
+          "top": 537.875,
+          "right": 390.359375,
+          "bottom": 769.09375,
+          "left": 39.640625
+        },
+        "control": {
+          "x": 39.640625,
+          "y": 585.875,
+          "width": 350.71875,
+          "height": 62,
+          "top": 585.875,
+          "right": 390.359375,
+          "bottom": 647.875,
+          "left": 39.640625
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "56px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 786,
+          "width": 430,
+          "height": 58,
+          "top": 786,
+          "right": 430,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    },
+    {
+      "kind": "lobby",
+      "place": "reader",
+      "width": 768,
+      "height": 1024,
+      "state": "text-200",
+      "scale": 2,
+      "file": "lobby/reader/768-1024-text-200.jpg",
+      "metrics": {
+        "title": {
+          "x": 66.234375,
+          "y": 141.453125,
+          "width": 635.53125,
+          "height": 68.40625,
+          "top": 141.453125,
+          "right": 701.765625,
+          "bottom": 209.859375,
+          "left": 66.234375
+        },
+        "label": {
+          "x": 66.234375,
+          "y": 217.859375,
+          "width": 635.53125,
+          "height": 38.75,
+          "top": 217.859375,
+          "right": 701.765625,
+          "bottom": 256.609375,
+          "left": 66.234375
+        },
+        "progress": {
+          "x": 66.234375,
+          "y": 264.609375,
+          "width": 635.53125,
+          "height": 44.390625,
+          "top": 264.609375,
+          "right": 701.765625,
+          "bottom": 309,
+          "left": 66.234375
+        },
+        "steps": [
+          {
+            "text": "1Inspect→",
+            "box": {
+              "x": 66.234375,
+              "y": 264.609375,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 264.609375,
+              "right": 274.078125,
+              "bottom": 309,
+              "left": 66.234375
+            },
+            "current": "step",
+            "overflow": false
+          },
+          {
+            "text": "2Join→",
+            "box": {
+              "x": 280.078125,
+              "y": 264.609375,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 264.609375,
+              "right": 487.921875,
+              "bottom": 309,
+              "left": 280.078125
+            },
+            "current": null,
+            "overflow": false
+          },
+          {
+            "text": "3Try access",
+            "box": {
+              "x": 493.921875,
+              "y": 264.609375,
+              "width": 207.84375,
+              "height": 44.390625,
+              "top": 264.609375,
+              "right": 701.765625,
+              "bottom": 309,
+              "left": 493.921875
+            },
+            "current": null,
+            "overflow": false
+          }
+        ],
+        "first": {
+          "x": 270.234375,
+          "y": 333,
+          "width": 431.53125,
+          "height": 192.8125,
+          "top": 333,
+          "right": 701.765625,
+          "bottom": 525.8125,
+          "left": 270.234375
+        },
+        "control": {
+          "x": 270.234375,
+          "y": 381,
+          "width": 431.53125,
+          "height": 62,
+          "top": 381,
+          "right": 701.765625,
+          "bottom": 443,
+          "left": 270.234375
+        },
+        "labelFont": "25px",
+        "labelLine": "38.75px",
+        "headingFont": "60px",
+        "bodyFont": "32px",
+        "controlFont": "28px",
+        "pageOverflow": false,
+        "footer": {
+          "x": 0,
+          "y": 956,
+          "width": 768,
+          "height": 68,
+          "top": 956,
+          "right": 768,
+          "bottom": 1024,
+          "left": 0
+        }
+      },
+      "errors": [],
+      "writes": []
+    }
+  ]
+}

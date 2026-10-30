@@ -77,7 +77,7 @@ test('engineering anchor focuses its visible heading, retains history depth, Bac
     const link=page.getByRole('link',{name:'Explore the engineering',exact:true});
     await expect(link).toBeFocused();await expect(link).toHaveAttribute('href',`/?project=${slug}#cedar-engineering`);
     const length=await page.evaluate(()=>history.length);await page.keyboard.press('Enter');
-    const heading=region(page).getByRole('heading',{name:'Calculated facts support the interpretation.',exact:true});
+    const heading=region(page).getByRole('heading',{name:'Calculation and interpretation',exact:true});
     await expect(heading).toBeFocused();await expect(heading).toBeInViewport({ratio:1});
     expect(await page.evaluate(()=>history.length)).toBe(length);
     expect(await heading.evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(0);
@@ -86,7 +86,7 @@ test('engineering anchor focuses its visible heading, retains history depth, Bac
 });
 test('direct fragment and reader keep one demonstration and source/team attribution',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto(`/?project=${slug}#cedar-engineering`);
-  await expect(region(page).getByRole('heading',{name:'Calculated facts support the interpretation.',exact:true})).toBeFocused();
+  await expect(region(page).getByRole('heading',{name:'Calculation and interpretation',exact:true})).toBeFocused();
   await page.getByRole('link',{name:'Open case study',exact:true}).click();
   await expect(page).toHaveURL(new RegExp(`/projects/${slug}$`));await expect(region(page)).toHaveCount(1);
   await expect(page.locator('.engineering-decisions summary').filter({hasText:'Calculate first, narrate second'})).toHaveCount(0);
@@ -135,10 +135,11 @@ test('fixed artwork and settled emphasis have no perpetual updates',async({page}
 for(const width of [1440,768,390,320])test(`Cedar figures, inputs and actions remain readable at ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:width===1440?650:844});await page.goto(`/?project=${slug}`);
   await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();const demo=region(page);
-  await expect(demo.getByRole('heading',{name:'Calculated facts support the interpretation.',exact:true})).toBeInViewport({ratio:1});
+  await expect(demo.getByRole('heading',{name:'Calculation and interpretation',exact:true})).toBeInViewport({ratio:1});
   await demo.getByRole('button',{name:'Interpret the figures',exact:true}).click();await demo.getByLabel('Average phase progress').selectOption('25');
   const bounds=await demo.evaluate(el=>({overflow:document.documentElement.scrollWidth>innerWidth||el.scrollWidth>el.clientWidth,background:getComputedStyle(el).backgroundColor,metadata:Math.min(...Array.from(el.querySelectorAll('.cedar-label,.cedar-unit,.cedar-interpretation-basis')).map(e=>parseFloat(getComputedStyle(e).fontSize))),copy:Math.min(...Array.from(el.querySelectorAll('.cedar-explanation,.cedar-formula,.cedar-outdated-note')).map(e=>parseFloat(getComputedStyle(e).fontSize))),art:el.querySelector('.cedar-art')!.getBoundingClientRect(),content:el.querySelector('.cedar-content')!.getBoundingClientRect()}));
   expect(bounds.overflow).toBe(false);expect(bounds.background).toBe('rgb(236, 235, 227)');expect(bounds.metadata).toBeGreaterThanOrEqual(12);expect(bounds.copy).toBeGreaterThanOrEqual(14);
-  if(width<=390)expect(bounds.art.y).toBeGreaterThanOrEqual(bounds.content.y+bounds.content.height);
+  if(width<720)expect(bounds.art.y).toBeGreaterThanOrEqual(bounds.content.y+bounds.content.height);
+  else if(width<960)expect(bounds.art.width).toBe(180);
   else expect(bounds.art.width).toBeGreaterThanOrEqual(240);
 });

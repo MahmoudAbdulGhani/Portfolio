@@ -1,0 +1,581 @@
+{
+  "method": "Native browser recordings decoded and briefly played in Chrome, then sampled through the opening; decoded source frames sampled at 25fps over the opening with lead-in/out. DOM phase timing supplies an approximate recording anchor; actual frame timestamps are listed. No staged screenshot animation, speed changes or audio muxing. Decoder counts are not a GPU benchmark or physical-device result.",
+  "videos": [
+    {
+      "phase": "approved",
+      "width": 390,
+      "videoMode": "normal",
+      "renderer": "webgl",
+      "predecodedOriginals": false,
+      "metadata": {
+        "duration": 11.12,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 32,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/approved-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 1.4742000000001863,
+          "key": "transitions/approved-390-0.jpg"
+        },
+        {
+          "time": 1.5142000000001863
+        },
+        {
+          "time": 1.5542000000001863
+        },
+        {
+          "time": 1.5942000000001864
+        },
+        {
+          "time": 1.6342000000001862
+        },
+        {
+          "time": 1.6742000000001862
+        },
+        {
+          "time": 1.7142000000001862,
+          "key": "transitions/approved-390-6.jpg"
+        },
+        {
+          "time": 1.7542000000001863
+        },
+        {
+          "time": 1.7942000000001863
+        },
+        {
+          "time": 1.8342000000001861
+        },
+        {
+          "time": 1.8742000000001862
+        },
+        {
+          "time": 1.9142000000001862
+        },
+        {
+          "time": 1.9542000000001862,
+          "key": "transitions/approved-390-12.jpg"
+        },
+        {
+          "time": 1.9942000000001863
+        },
+        {
+          "time": 2.0342000000001863
+        },
+        {
+          "time": 2.0742000000001863
+        },
+        {
+          "time": 2.1142000000001864
+        },
+        {
+          "time": 2.1542000000001864
+        },
+        {
+          "time": 2.194200000000186,
+          "key": "transitions/approved-390-18.jpg"
+        },
+        {
+          "time": 2.234200000000186
+        },
+        {
+          "time": 2.274200000000186
+        },
+        {
+          "time": 2.314200000000186
+        },
+        {
+          "time": 2.354200000000186
+        },
+        {
+          "time": 2.394200000000186
+        },
+        {
+          "time": 2.434200000000186,
+          "key": "transitions/approved-390-24.jpg"
+        },
+        {
+          "time": 2.4742000000001863
+        },
+        {
+          "time": 2.5142000000001863
+        },
+        {
+          "time": 2.5542000000001863
+        },
+        {
+          "time": 2.5942000000001864
+        },
+        {
+          "time": 2.6342000000001864
+        },
+        {
+          "time": 2.6742000000001864,
+          "key": "transitions/approved-390-30.jpg"
+        },
+        {
+          "time": 2.7142000000001865
+        },
+        {
+          "time": 2.7542000000001865
+        },
+        {
+          "time": 2.7942000000001865
+        },
+        {
+          "time": 2.8342000000001866
+        },
+        {
+          "time": 2.874200000000186
+        },
+        {
+          "time": 2.914200000000186,
+          "key": "transitions/approved-390-36.jpg"
+        },
+        {
+          "time": 2.9542000000001862
+        },
+        {
+          "time": 2.9942000000001863
+        },
+        {
+          "time": 3.0342000000001863
+        }
+      ]
+    },
+    {
+      "phase": "approved",
+      "width": 1440,
+      "videoMode": "normal",
+      "renderer": "webgl",
+      "predecodedOriginals": false,
+      "metadata": {
+        "duration": 11.32,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/approved-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 1.3962999999998138,
+          "key": "transitions/approved-1440-0.jpg"
+        },
+        {
+          "time": 1.4362999999998138
+        },
+        {
+          "time": 1.4762999999998139
+        },
+        {
+          "time": 1.5162999999998137
+        },
+        {
+          "time": 1.5562999999998137
+        },
+        {
+          "time": 1.5962999999998138
+        },
+        {
+          "time": 1.6362999999998138,
+          "key": "transitions/approved-1440-6.jpg"
+        },
+        {
+          "time": 1.6762999999998138
+        },
+        {
+          "time": 1.7162999999998139
+        },
+        {
+          "time": 1.756299999999814
+        },
+        {
+          "time": 1.796299999999814
+        },
+        {
+          "time": 1.8362999999998137
+        },
+        {
+          "time": 1.8762999999998138,
+          "key": "transitions/approved-1440-12.jpg"
+        },
+        {
+          "time": 1.9162999999998138
+        },
+        {
+          "time": 1.9562999999998139
+        },
+        {
+          "time": 1.9962999999998137
+        },
+        {
+          "time": 2.0362999999998137
+        },
+        {
+          "time": 2.0762999999998137
+        },
+        {
+          "time": 2.1162999999998138,
+          "key": "transitions/approved-1440-18.jpg"
+        },
+        {
+          "time": 2.156299999999814
+        },
+        {
+          "time": 2.196299999999814
+        },
+        {
+          "time": 2.236299999999814
+        },
+        {
+          "time": 2.276299999999814
+        },
+        {
+          "time": 2.316299999999814
+        },
+        {
+          "time": 2.3562999999998135,
+          "key": "transitions/approved-1440-24.jpg"
+        },
+        {
+          "time": 2.3962999999998136
+        },
+        {
+          "time": 2.4362999999998136
+        },
+        {
+          "time": 2.4762999999998137
+        },
+        {
+          "time": 2.5162999999998137
+        },
+        {
+          "time": 2.5562999999998137
+        },
+        {
+          "time": 2.5962999999998138,
+          "key": "transitions/approved-1440-30.jpg"
+        },
+        {
+          "time": 2.636299999999814
+        },
+        {
+          "time": 2.676299999999814
+        },
+        {
+          "time": 2.716299999999814
+        },
+        {
+          "time": 2.756299999999814
+        },
+        {
+          "time": 2.796299999999814
+        },
+        {
+          "time": 2.836299999999814,
+          "key": "transitions/approved-1440-36.jpg"
+        },
+        {
+          "time": 2.876299999999814
+        },
+        {
+          "time": 2.916299999999814
+        },
+        {
+          "time": 2.956299999999814
+        }
+      ]
+    },
+    {
+      "phase": "adopted",
+      "width": 390,
+      "videoMode": "normal",
+      "renderer": "webgl",
+      "predecodedOriginals": false,
+      "metadata": {
+        "duration": 10.52,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/adopted-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 1.0688000000002793,
+          "key": "transitions/adopted-390-0.jpg"
+        },
+        {
+          "time": 1.1088000000002793
+        },
+        {
+          "time": 1.1488000000002794
+        },
+        {
+          "time": 1.1888000000002794
+        },
+        {
+          "time": 1.2288000000002792
+        },
+        {
+          "time": 1.2688000000002793
+        },
+        {
+          "time": 1.3088000000002793,
+          "key": "transitions/adopted-390-6.jpg"
+        },
+        {
+          "time": 1.3488000000002793
+        },
+        {
+          "time": 1.3888000000002794
+        },
+        {
+          "time": 1.4288000000002792
+        },
+        {
+          "time": 1.4688000000002792
+        },
+        {
+          "time": 1.5088000000002793
+        },
+        {
+          "time": 1.5488000000002793,
+          "key": "transitions/adopted-390-12.jpg"
+        },
+        {
+          "time": 1.5888000000002793
+        },
+        {
+          "time": 1.6288000000002794
+        },
+        {
+          "time": 1.6688000000002794
+        },
+        {
+          "time": 1.7088000000002794
+        },
+        {
+          "time": 1.7488000000002795
+        },
+        {
+          "time": 1.7888000000002793,
+          "key": "transitions/adopted-390-18.jpg"
+        },
+        {
+          "time": 1.8288000000002793
+        },
+        {
+          "time": 1.8688000000002793
+        },
+        {
+          "time": 1.9088000000002792
+        },
+        {
+          "time": 1.9488000000002792
+        },
+        {
+          "time": 1.9888000000002792
+        },
+        {
+          "time": 2.0288000000002793,
+          "key": "transitions/adopted-390-24.jpg"
+        },
+        {
+          "time": 2.0688000000002793
+        },
+        {
+          "time": 2.1088000000002793
+        },
+        {
+          "time": 2.1488000000002794
+        },
+        {
+          "time": 2.1888000000002794
+        },
+        {
+          "time": 2.2288000000002794
+        },
+        {
+          "time": 2.2688000000002795,
+          "key": "transitions/adopted-390-30.jpg"
+        },
+        {
+          "time": 2.3088000000002795
+        },
+        {
+          "time": 2.3488000000002796
+        },
+        {
+          "time": 2.3888000000002796
+        },
+        {
+          "time": 2.4288000000002796
+        },
+        {
+          "time": 2.468800000000279
+        },
+        {
+          "time": 2.5088000000002793,
+          "key": "transitions/adopted-390-36.jpg"
+        },
+        {
+          "time": 2.5488000000002793
+        },
+        {
+          "time": 2.5888000000002793
+        },
+        {
+          "time": 2.6288000000002794
+        }
+      ]
+    },
+    {
+      "phase": "adopted",
+      "width": 1440,
+      "videoMode": "normal",
+      "renderer": "webgl",
+      "predecodedOriginals": false,
+      "metadata": {
+        "duration": 10.6,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/adopted-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 1.1377999999998136,
+          "key": "transitions/adopted-1440-0.jpg"
+        },
+        {
+          "time": 1.1777999999998137
+        },
+        {
+          "time": 1.2177999999998137
+        },
+        {
+          "time": 1.2577999999998135
+        },
+        {
+          "time": 1.2977999999998135
+        },
+        {
+          "time": 1.3377999999998136
+        },
+        {
+          "time": 1.3777999999998136,
+          "key": "transitions/adopted-1440-6.jpg"
+        },
+        {
+          "time": 1.4177999999998137
+        },
+        {
+          "time": 1.4577999999998137
+        },
+        {
+          "time": 1.4977999999998137
+        },
+        {
+          "time": 1.5377999999998138
+        },
+        {
+          "time": 1.5777999999998136
+        },
+        {
+          "time": 1.6177999999998136,
+          "key": "transitions/adopted-1440-12.jpg"
+        },
+        {
+          "time": 1.6577999999998136
+        },
+        {
+          "time": 1.6977999999998137
+        },
+        {
+          "time": 1.7377999999998135
+        },
+        {
+          "time": 1.7777999999998135
+        },
+        {
+          "time": 1.8177999999998136
+        },
+        {
+          "time": 1.8577999999998136,
+          "key": "transitions/adopted-1440-18.jpg"
+        },
+        {
+          "time": 1.8977999999998136
+        },
+        {
+          "time": 1.9377999999998137
+        },
+        {
+          "time": 1.9777999999998137
+        },
+        {
+          "time": 2.0177999999998137
+        },
+        {
+          "time": 2.057799999999814
+        },
+        {
+          "time": 2.097799999999814,
+          "key": "transitions/adopted-1440-24.jpg"
+        },
+        {
+          "time": 2.137799999999814
+        },
+        {
+          "time": 2.177799999999814
+        },
+        {
+          "time": 2.217799999999814
+        },
+        {
+          "time": 2.257799999999814
+        },
+        {
+          "time": 2.2977999999998135
+        },
+        {
+          "time": 2.3377999999998136,
+          "key": "transitions/adopted-1440-30.jpg"
+        },
+        {
+          "time": 2.3777999999998136
+        },
+        {
+          "time": 2.4177999999998137
+        },
+        {
+          "time": 2.4577999999998137
+        },
+        {
+          "time": 2.4977999999998137
+        },
+        {
+          "time": 2.5377999999998133
+        },
+        {
+          "time": 2.5777999999998134,
+          "key": "transitions/adopted-1440-36.jpg"
+        },
+        {
+          "time": 2.6177999999998134
+        },
+        {
+          "time": 2.6577999999998134
+        },
+        {
+          "time": 2.6977999999998135
+        }
+      ]
+    }
+  ]
+}

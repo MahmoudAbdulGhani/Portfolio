@@ -1,0 +1,585 @@
+{
+  "method": "Native browser recordings decoded and briefly played in Chrome, then sampled through the opening; decoded source frames sampled at 25fps over the opening with lead-in/out. DOM phase timing supplies an approximate recording anchor; actual frame timestamps are listed. No staged screenshot animation, speed changes or audio muxing. Decoder counts are not a GPU benchmark or physical-device result.",
+  "videos": [
+    {
+      "phase": "approved",
+      "width": 390,
+      "videoMode": "prepared",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "predecodedOriginals": true,
+      "metadata": {
+        "duration": 12.52,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 32,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/approved-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 2.258100000000093,
+          "key": "transitions/approved-390-0.jpg"
+        },
+        {
+          "time": 2.298100000000093
+        },
+        {
+          "time": 2.338100000000093
+        },
+        {
+          "time": 2.378100000000093
+        },
+        {
+          "time": 2.418100000000093
+        },
+        {
+          "time": 2.458100000000093
+        },
+        {
+          "time": 2.4981000000000932,
+          "key": "transitions/approved-390-6.jpg"
+        },
+        {
+          "time": 2.5381000000000933
+        },
+        {
+          "time": 2.578100000000093
+        },
+        {
+          "time": 2.618100000000093
+        },
+        {
+          "time": 2.658100000000093
+        },
+        {
+          "time": 2.698100000000093
+        },
+        {
+          "time": 2.738100000000093,
+          "key": "transitions/approved-390-12.jpg"
+        },
+        {
+          "time": 2.778100000000093
+        },
+        {
+          "time": 2.818100000000093
+        },
+        {
+          "time": 2.858100000000093
+        },
+        {
+          "time": 2.898100000000093
+        },
+        {
+          "time": 2.938100000000093
+        },
+        {
+          "time": 2.978100000000093,
+          "key": "transitions/approved-390-18.jpg"
+        },
+        {
+          "time": 3.018100000000093
+        },
+        {
+          "time": 3.058100000000093
+        },
+        {
+          "time": 3.098100000000093
+        },
+        {
+          "time": 3.138100000000093
+        },
+        {
+          "time": 3.178100000000093
+        },
+        {
+          "time": 3.218100000000093,
+          "key": "transitions/approved-390-24.jpg"
+        },
+        {
+          "time": 3.258100000000093
+        },
+        {
+          "time": 3.298100000000093
+        },
+        {
+          "time": 3.338100000000093
+        },
+        {
+          "time": 3.378100000000093
+        },
+        {
+          "time": 3.418100000000093
+        },
+        {
+          "time": 3.458100000000093,
+          "key": "transitions/approved-390-30.jpg"
+        },
+        {
+          "time": 3.4981000000000932
+        },
+        {
+          "time": 3.5381000000000933
+        },
+        {
+          "time": 3.5781000000000933
+        },
+        {
+          "time": 3.6181000000000934
+        },
+        {
+          "time": 3.658100000000093
+        },
+        {
+          "time": 3.698100000000093,
+          "key": "transitions/approved-390-36.jpg"
+        },
+        {
+          "time": 3.738100000000093
+        },
+        {
+          "time": 3.778100000000093
+        },
+        {
+          "time": 3.818100000000093
+        }
+      ]
+    },
+    {
+      "phase": "approved",
+      "width": 1440,
+      "videoMode": "prepared",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "predecodedOriginals": true,
+      "metadata": {
+        "duration": 11.8,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/approved-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 2.0505,
+          "key": "transitions/approved-1440-0.jpg"
+        },
+        {
+          "time": 2.0905
+        },
+        {
+          "time": 2.1305
+        },
+        {
+          "time": 2.1705
+        },
+        {
+          "time": 2.2105
+        },
+        {
+          "time": 2.2505
+        },
+        {
+          "time": 2.2904999999999998,
+          "key": "transitions/approved-1440-6.jpg"
+        },
+        {
+          "time": 2.3305
+        },
+        {
+          "time": 2.3705
+        },
+        {
+          "time": 2.4105
+        },
+        {
+          "time": 2.4505
+        },
+        {
+          "time": 2.4905
+        },
+        {
+          "time": 2.5305,
+          "key": "transitions/approved-1440-12.jpg"
+        },
+        {
+          "time": 2.5705
+        },
+        {
+          "time": 2.6105
+        },
+        {
+          "time": 2.6505
+        },
+        {
+          "time": 2.6905
+        },
+        {
+          "time": 2.7305
+        },
+        {
+          "time": 2.7705,
+          "key": "transitions/approved-1440-18.jpg"
+        },
+        {
+          "time": 2.8105
+        },
+        {
+          "time": 2.8505000000000003
+        },
+        {
+          "time": 2.8905
+        },
+        {
+          "time": 2.9305
+        },
+        {
+          "time": 2.9705
+        },
+        {
+          "time": 3.0105,
+          "key": "transitions/approved-1440-24.jpg"
+        },
+        {
+          "time": 3.0505
+        },
+        {
+          "time": 3.0905
+        },
+        {
+          "time": 3.1305
+        },
+        {
+          "time": 3.1705
+        },
+        {
+          "time": 3.2104999999999997
+        },
+        {
+          "time": 3.2504999999999997,
+          "key": "transitions/approved-1440-30.jpg"
+        },
+        {
+          "time": 3.2904999999999998
+        },
+        {
+          "time": 3.3305
+        },
+        {
+          "time": 3.3705
+        },
+        {
+          "time": 3.4105
+        },
+        {
+          "time": 3.4505
+        },
+        {
+          "time": 3.4905,
+          "key": "transitions/approved-1440-36.jpg"
+        },
+        {
+          "time": 3.5305
+        },
+        {
+          "time": 3.5705
+        },
+        {
+          "time": 3.6105
+        }
+      ]
+    },
+    {
+      "phase": "adopted",
+      "width": 390,
+      "videoMode": "prepared",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "predecodedOriginals": true,
+      "metadata": {
+        "duration": 10.96,
+        "width": 390,
+        "height": 844,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/adopted-390-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 2.0228000000002795,
+          "key": "transitions/adopted-390-0.jpg"
+        },
+        {
+          "time": 2.0628000000002795
+        },
+        {
+          "time": 2.1028000000002796
+        },
+        {
+          "time": 2.1428000000002796
+        },
+        {
+          "time": 2.1828000000002796
+        },
+        {
+          "time": 2.2228000000002797
+        },
+        {
+          "time": 2.2628000000002793,
+          "key": "transitions/adopted-390-6.jpg"
+        },
+        {
+          "time": 2.3028000000002793
+        },
+        {
+          "time": 2.3428000000002793
+        },
+        {
+          "time": 2.3828000000002794
+        },
+        {
+          "time": 2.4228000000002794
+        },
+        {
+          "time": 2.4628000000002794
+        },
+        {
+          "time": 2.5028000000002795,
+          "key": "transitions/adopted-390-12.jpg"
+        },
+        {
+          "time": 2.5428000000002795
+        },
+        {
+          "time": 2.5828000000002795
+        },
+        {
+          "time": 2.6228000000002796
+        },
+        {
+          "time": 2.6628000000002796
+        },
+        {
+          "time": 2.7028000000002796
+        },
+        {
+          "time": 2.7428000000002797,
+          "key": "transitions/adopted-390-18.jpg"
+        },
+        {
+          "time": 2.7828000000002797
+        },
+        {
+          "time": 2.8228000000002798
+        },
+        {
+          "time": 2.8628000000002793
+        },
+        {
+          "time": 2.9028000000002794
+        },
+        {
+          "time": 2.9428000000002794
+        },
+        {
+          "time": 2.9828000000002795,
+          "key": "transitions/adopted-390-24.jpg"
+        },
+        {
+          "time": 3.0228000000002795
+        },
+        {
+          "time": 3.0628000000002795
+        },
+        {
+          "time": 3.1028000000002796
+        },
+        {
+          "time": 3.1428000000002796
+        },
+        {
+          "time": 3.182800000000279
+        },
+        {
+          "time": 3.222800000000279,
+          "key": "transitions/adopted-390-30.jpg"
+        },
+        {
+          "time": 3.2628000000002793
+        },
+        {
+          "time": 3.3028000000002793
+        },
+        {
+          "time": 3.3428000000002793
+        },
+        {
+          "time": 3.3828000000002794
+        },
+        {
+          "time": 3.4228000000002794
+        },
+        {
+          "time": 3.4628000000002794,
+          "key": "transitions/adopted-390-36.jpg"
+        },
+        {
+          "time": 3.5028000000002795
+        },
+        {
+          "time": 3.5428000000002795
+        },
+        {
+          "time": 3.5828000000002795
+        }
+      ]
+    },
+    {
+      "phase": "adopted",
+      "width": 1440,
+      "videoMode": "prepared",
+      "renderer": "webgl",
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009A60) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "predecodedOriginals": true,
+      "metadata": {
+        "duration": 11.4,
+        "width": 1440,
+        "height": 900,
+        "decodedFrames": 34,
+        "droppedFrames": 0
+      },
+      "sheet": "transitions/adopted-1440-opening-sheet.jpg",
+      "frames": [
+        {
+          "time": 1.7856000000000933,
+          "key": "transitions/adopted-1440-0.jpg"
+        },
+        {
+          "time": 1.8256000000000934
+        },
+        {
+          "time": 1.8656000000000934
+        },
+        {
+          "time": 1.9056000000000934
+        },
+        {
+          "time": 1.9456000000000933
+        },
+        {
+          "time": 1.9856000000000933
+        },
+        {
+          "time": 2.025600000000093,
+          "key": "transitions/adopted-1440-6.jpg"
+        },
+        {
+          "time": 2.065600000000093
+        },
+        {
+          "time": 2.105600000000093
+        },
+        {
+          "time": 2.145600000000093
+        },
+        {
+          "time": 2.1856000000000932
+        },
+        {
+          "time": 2.2256000000000933
+        },
+        {
+          "time": 2.2656000000000933,
+          "key": "transitions/adopted-1440-12.jpg"
+        },
+        {
+          "time": 2.3056000000000934
+        },
+        {
+          "time": 2.3456000000000934
+        },
+        {
+          "time": 2.3856000000000934
+        },
+        {
+          "time": 2.4256000000000935
+        },
+        {
+          "time": 2.4656000000000935
+        },
+        {
+          "time": 2.5056000000000935,
+          "key": "transitions/adopted-1440-18.jpg"
+        },
+        {
+          "time": 2.5456000000000936
+        },
+        {
+          "time": 2.5856000000000936
+        },
+        {
+          "time": 2.625600000000093
+        },
+        {
+          "time": 2.6656000000000932
+        },
+        {
+          "time": 2.7056000000000933
+        },
+        {
+          "time": 2.7456000000000933,
+          "key": "transitions/adopted-1440-24.jpg"
+        },
+        {
+          "time": 2.7856000000000933
+        },
+        {
+          "time": 2.8256000000000934
+        },
+        {
+          "time": 2.8656000000000934
+        },
+        {
+          "time": 2.9056000000000934
+        },
+        {
+          "time": 2.945600000000093
+        },
+        {
+          "time": 2.985600000000093,
+          "key": "transitions/adopted-1440-30.jpg"
+        },
+        {
+          "time": 3.025600000000093
+        },
+        {
+          "time": 3.065600000000093
+        },
+        {
+          "time": 3.105600000000093
+        },
+        {
+          "time": 3.145600000000093
+        },
+        {
+          "time": 3.1856000000000932
+        },
+        {
+          "time": 3.2256000000000933,
+          "key": "transitions/adopted-1440-36.jpg"
+        },
+        {
+          "time": 3.2656000000000933
+        },
+        {
+          "time": 3.3056000000000934
+        },
+        {
+          "time": 3.3456000000000934
+        }
+      ]
+    }
+  ]
+}
