@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { LandscapeLayout } from './Layout';
 import { JobPilotDesignContext } from './jobpilot-design-context';
 import { NotFound } from '../../pages/NotFound';
-import './featured-design-review.css';
 
 export function FeaturedDesignReview() {
   const { project, variant } = useParams();

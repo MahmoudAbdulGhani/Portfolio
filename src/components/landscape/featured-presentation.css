@@ -1,5 +1,5 @@
-/* Phase 2 candidates only. Shared hierarchy is the approved JobPilot stylesheet;
-   these explicit project/interaction adjustments never opt normal routes in. */
+/* Approved Cedar/Lobby presentation, shared by normal routes and candidates.
+   Historical baseline contexts omit the scoped presentation classes. */
 .landscape.featured-design-candidate .stage:is(.has-cedar-boundary,.has-lobby-boundary) { grid-template-rows: auto auto; }
 .landscape.featured-design-candidate .stage.is-expanded .objects .object { visibility: hidden; }
 .landscape.featured-design-candidate .stage[data-featured-kind="cedar"] .cedar-object,
@@ -29,7 +29,7 @@
   .landscape.featured-design-candidate[data-featured-project="construction-project-management-accounting-system"] .selection-detail h1 { font-size: 48px; }
 }
 
-/* Concise review introductions only. Query actual available inline space and
+/* Concise demonstration introductions. Query actual available inline space and
    inherited text size: the whole sequence switches, never two plus one. */
 .landscape.featured-design-candidate :is(.cedar-boundary,.lobby-boundary) { overflow-wrap: anywhere; }
 .landscape.featured-design-candidate :is(.cedar-heading,.lobby-heading) {

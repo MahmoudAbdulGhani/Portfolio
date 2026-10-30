@@ -2,6 +2,9 @@ import { test, expect, type Page } from '@playwright/test';
 import { caseStudyProjects } from './fixtures/case-study-projects';
 import { caseImage } from './fixtures/case-image';
 test.describe.configure({retries:0});
+const production=process.env.FEATURED_TEST_PRODUCTION==='1';
+const collection=(kind:string,variant='candidate')=>production?'/':`/review/featured/${kind}/${variant}`;
+const reader=(entry:{kind:string;slug:string})=>production?`/projects/${entry.slug}`:`/review/featured/${entry.kind}/candidate/reader`;
 const entries = [
   {kind:'cedar',slug:'construction-project-management-accounting-system',name:'Cedar Construction',number:'03'},
   {kind:'lobby',slug:'lobby',name:'Lobby',number:'02'},
@@ -17,7 +20,7 @@ async function fixtures(page:Page,reduced=true) {
 const open=(page:Page)=>page.getByRole('link',{name:'Open case study',exact:true});
 const choices=(page:Page)=>page.getByRole('group',{name:'Preview workflow'}).getByRole('button');
 async function selected(page:Page,entry:typeof entries[number],variant='candidate') {
-  await page.goto(`/review/featured/${entry.kind}/${variant}`);
+  await page.goto(collection(entry.kind,variant));
   await page.getByRole('button',{name:`Explore ${entry.name}`,exact:true}).click();
   await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
   await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');
@@ -31,7 +34,7 @@ for(const entry of entries) {
     await page.setViewportSize({width,height});await fixtures(page);await selected(page,entry);
     await expect(page.locator('main h1')).toHaveCount(1);
     await expect(page.locator('.selection-project-number')).toHaveText(entry.number);
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','noindex, nofollow');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content',production?'index, follow':'noindex, nofollow');
     await natural(page,'.product-surface .project-image-current img');
     const geometry=await page.locator('.selection-frame').evaluate(el=>{
       const box=(s:string)=>el.querySelector(s)!.getBoundingClientRect().toJSON();
@@ -80,22 +83,24 @@ for(const entry of entries) {
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   });
   test(`${entry.kind} direct reader refresh and native history retain image identity`,async({page})=>{
-    await fixtures(page);await page.goto(`/review/featured/${entry.kind}/candidate/reader`);await expect(page.locator('h1')).toHaveText(entry.name);
+    await fixtures(page);await page.goto(reader(entry));await expect(page.locator('h1')).toHaveText(entry.name);
     await page.reload();await expect(page.locator('h1')).toHaveText(entry.name);
-    await page.locator('.case-back').click();await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
+    if(production){await expect(page.locator('.case-back')).toHaveAttribute('href','/projects');await page.locator('.case-back').click();await expect(page).toHaveURL('/projects');await selected(page,entry);}
+    else{await page.locator('.case-back').click();await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');}
     await choices(page).nth(1).click();await open(page).click();const src=await page.locator('.case-figure img').getAttribute('src');
     await page.reload();await expect(page.locator('.case-figure img')).toHaveAttribute('src',src!);
     await page.goBack();await expect(choices(page).nth(1)).toHaveAttribute('aria-pressed','true');await expect(open(page)).toBeFocused();
     await page.goForward();await expect(page.locator('h1')).toHaveText(entry.name);
   });
-  test(`${entry.kind} baseline and ordinary route keep original presentation`,async({page})=>{
+  test(`${entry.kind} explicit baseline remains historical; ordinary route adopts the approved presentation`,async({page})=>{
+    test.skip(production,'Historical baselines exist only in an explicit review build');
     await fixtures(page);await selected(page,entry,'baseline');await expect(page.locator('.featured-design-candidate')).toHaveCount(0);await expect(page.locator('.jobpilot-selected-product')).toHaveCount(0);
     const originalHeading=entry.kind==='cedar'?'Calculated facts support the interpretation.':'A connection becomes access only when the rules allow it.';
     await expect(page.locator(`.${entry.kind}-title`)).toHaveText(originalHeading);
     await open(page).click();await expect(page.locator('.case-heading h1')).toHaveText(entry.name);await page.locator('.case-back').click();await expect(page).toHaveURL(new RegExp(`/review/featured/${entry.kind}/baseline\\?project=`));
-    await page.goto(`/?project=${entry.slug}`);await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');await expect(page.locator('.featured-design-candidate')).toHaveCount(0);await expect(page.locator('.jobpilot-selected-product')).toHaveCount(0);
-    await expect(page.locator(`.${entry.kind}-title`)).toHaveText(originalHeading);
-    await open(page).click();await expect(page.locator('.case-heading h1')).toHaveText(entry.name);await expect(page.locator('.featured-design-candidate')).toHaveCount(0);
+    await page.goto(`/?project=${entry.slug}`);await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');await expect(page.locator('.featured-design-candidate')).toHaveCount(1);await expect(page.locator('.jobpilot-selected-product')).toHaveCount(1);
+    await expect(page.locator(`.${entry.kind}-title`)).toHaveText(entry.kind==='cedar'?'Calculation and interpretation':'Invitation to call access');
+    await open(page).click();await expect(page.locator('.case-heading h1')).toHaveText(entry.name);await expect(page.locator('.featured-design-candidate')).toHaveCount(1);
   });
   test(`${entry.kind} opening remains inside the product through its own articulation`,async({page})=>{
     await fixtures(page,false);await page.setViewportSize({width:1440,height:900});
@@ -111,10 +116,10 @@ for(const entry of entries) {
     await fixtures(page);let release!:()=>void;const pending=new Promise<void>(r=>{release=r;});
     const project=caseStudyProjects.find(p=>p.slug===entry.slug)!;
     await page.route('**/*',async r=>{
-      if(![project.coverImage,...project.screenshots].includes(r.request().url().replace(/^http:\/\/127.0.0.1:5243/,'')))return r.fallback();
+      if(![project.coverImage,...project.screenshots].includes(r.request().url().startsWith('https://screens.example.test/')?r.request().url():new URL(r.request().url()).pathname))return r.fallback();
       if(failure)return r.abort('failed');await pending;return r.fallback();
     });
-    await page.goto(`/review/featured/${entry.kind}/candidate?project=${entry.slug}`);
+    await page.goto(`${collection(entry.kind)}?project=${entry.slug}`);
     await expect(open(page)).toBeVisible();await open(page).focus();await page.keyboard.press('Enter');await expect(page.locator('.case-heading h1')).toHaveText(entry.name);release();
   });
   test(`${entry.kind} unavailable WebGL and reduced motion keep image and keyboard return`,async({page})=>{
@@ -126,8 +131,8 @@ for(const entry of entries) {
   test(`${entry.kind} late image after an interrupted selection cannot restore a retired scene`,async({page})=>{
     await fixtures(page,false);let release!:()=>void;const pending=new Promise<void>(r=>{release=r;});
     const image=caseStudyProjects.find(p=>p.slug===entry.slug)!.coverImage;
-    await page.route('**/*',async r=>{if(r.request().url().replace(/^http:\/\/127.0.0.1:5243/,'')!==image)return r.fallback();await pending;return r.fallback();});
-    await page.goto(`/review/featured/${entry.kind}/candidate?project=${entry.slug}`);await expect(open(page)).toBeVisible();
+    await page.route('**/*',async r=>{if((r.request().url().startsWith('https://screens.example.test/')?r.request().url():new URL(r.request().url()).pathname)!==image)return r.fallback();await pending;return r.fallback();});
+    await page.goto(`${collection(entry.kind)}?project=${entry.slug}`);await expect(open(page)).toBeVisible();
     await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Projects',exact:true}).click();release();
     await expect(page.locator('h1')).toBeVisible();await expect(page.locator('.stage.is-expanded,.motion-rig')).toHaveCount(0);
     await page.goBack();await expect(open(page)).toBeVisible();await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
@@ -135,15 +140,27 @@ for(const entry of entries) {
   });
 }
 test('review comparison is compiled and normal JobPilot remains approved',async({page,request})=>{
+  test.skip(production,'Review comparison assets are excluded from normal builds');
   const response=await request.get('/review/featured-comparison/index.html');expect(response.status()).toBe(200);expect(await response.text()).toContain('Cedar and Lobby');
   const demos=await request.get('/review/featured-demo-introductions/index.html');expect(demos.status()).toBe(200);expect(await demos.text()).toContain('Demonstration introductions');
   await fixtures(page);await page.goto('/?project=jobpilot-ai');await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);await expect(page.locator('.featured-design-candidate')).toHaveCount(0);
   await expect(page.locator('.selection-caption')).toContainText('Review before saving');
 });
 
+test('normal build excludes historical review routes while keeping approved featured defaults',async({page})=>{
+  test.skip(!production,'Normal-build exclusion is checked against its compiled output');
+  await fixtures(page);
+  await page.goto('/review/featured/cedar/candidate');
+  await expect(page.getByRole('heading',{name:'This page wandered off.',exact:true})).toBeVisible();
+  await page.goto('/?project=jobpilot-ai');
+  await expect(page.locator('.jobpilot-design-refined')).toHaveCount(1);
+  await expect(page.locator('.featured-design-candidate')).toHaveCount(0);
+  await expect(page.locator('.selection-caption')).toContainText('Review before saving');
+});
+
 for(const entry of entries)for(const place of ['preview','reader'])for(const [width,height]of [[320,844],[390,844],[430,844],[768,1024],[1280,720],[1440,900]])test(`${entry.kind} ${place} compact introduction reflows at ${width}x${height}`,async({page})=>{
   await page.setViewportSize({width,height});await fixtures(page);
-  await page.goto(`/review/featured/${entry.kind}/candidate${place==='reader'?'/reader':`?project=${entry.slug}`}`);
+  await page.goto(place==='reader'?reader(entry):`${collection(entry.kind)}?project=${entry.slug}`);
   const boundary=page.locator(`.${entry.kind}-boundary`),heading=boundary.locator(`.${entry.kind}-title`);
   await expect(heading).toHaveText(entry.kind==='cedar'?'Calculation and interpretation':'Invitation to call access');
   await expect(boundary.locator(`.${entry.kind}-label`)).toHaveText(entry.kind==='cedar'?'Sample USD figures · local demo':'Sample participants · local demo');
