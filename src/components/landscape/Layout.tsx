@@ -50,7 +50,7 @@ export function LandscapeLayout() {
   const { candidate, refined } = featuredPresentation(design, activeSlug);
   const featured = candidate && activeSlug !== 'jobpilot-ai';
   return (
-    <JobPilotJourneyContext.Provider value={journeys}><div data-featured-project={featured ? activeSlug : undefined} className={`landscape${supporting?.candidate ? ' supporting-design-candidate' : ''}${featured ? ' featured-design-candidate featured-design-refined' : ''}${candidate && !featured ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant ?? (supporting ? supporting.candidate ? 'candidate' : 'baseline' : undefined)}>
+    <JobPilotJourneyContext.Provider value={journeys}><div data-featured-project={featured ? activeSlug : undefined} className={`landscape${supporting?.candidate ? ' supporting-design-candidate' : ''}${supporting?.compact ? ' supporting-design-compact' : ''}${featured ? ' featured-design-candidate featured-design-refined' : ''}${candidate && !featured ? ` jobpilot-design-candidate${refined ? ' jobpilot-design-refined' : ''}` : ''}`} data-design-review={design?.variant ?? supporting?.variant ?? (supporting ? supporting.candidate ? 'candidate' : 'baseline' : undefined)}>
       <div
         className={`portfolio ${atCollection ? (selected ? "is-selected" : "is-collection") : "is-reading"}${location.pathname === "/contact" ? " is-contact" : ""}${location.pathname === "/profile" || location.pathname === "/review/profile-portrait" ? " is-profile" : ""}`}
       >

@@ -9,13 +9,14 @@ import { ProjectPreview } from "../components/ProjectPreview";
 import { galleryCovers } from "../generated/gallery-covers";
 import { galleryTitle } from "../lib/gallery-presentation";
 import { projectNumber } from '../lib/project-evidence';
-import { useSupportingDesign } from '../components/landscape/supporting-design-context';
+import { useSupportingDesign, useSupportingCompact } from '../components/landscape/supporting-design-context';
 import { caseStudyFor } from '../../shared/case-study-runtime';
 import { ordinaryActivation } from '../components/landscape/jobpilot-journey';
 import './supporting-pages.css';
 
 export function Projects() {
   const review = useSupportingDesign();
+  const compact = useSupportingCompact();
   const location = useLocation(), navigate = useNavigate();
   const params = new URLSearchParams(location.search);
   const projects = useProjects();
@@ -98,7 +99,9 @@ export function Projects() {
           const screen = detailScreens(project)[0];
           const cover = galleryCovers[project.slug];
           const preview = cover?.src ?? screen?.src;
-          const summary = caseStudyFor(project)?.summary ?? project.tagline ?? project.description;
+          const study = caseStudyFor(project);
+          const card = compact && study ? review?.cards?.[project.slug] : undefined;
+          const summary = study?.summary ?? project.tagline ?? project.description;
           return (
             <Link
               key={project.id}
@@ -124,14 +127,14 @@ export function Projects() {
               )}
               <div className="work-caption">
                 <span className="eyebrow">
-                  {review?.candidate ? <><span className="work-number">{projectNumber(project.slug)}</span><span className="work-category">{project.type}</span></> : projectNumber(project.slug)}
+                  {review?.candidate ? <><span className="work-number">{projectNumber(project.slug)}</span><span className="work-category">{card?.category ?? project.type}</span></> : projectNumber(project.slug)}
                 </span>
                 <div>
                   <h2>{galleryTitle(project)}</h2>
                   {!review?.candidate && <p>{project.type}</p>}
                 </div>
               </div>
-              {review?.candidate && <p className="work-description">{summary?.split(/(?<=\.)\s/)[0]}</p>}
+              {review?.candidate && <p className="work-description">{card?.summary ?? summary?.split(/(?<=\.)\s/)[0]}</p>}
               <p className="work-stack">
                 {project.stack.slice(0, 3).join(" · ")}
               </p>

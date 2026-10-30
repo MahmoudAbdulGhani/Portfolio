@@ -1,0 +1,714 @@
+{
+  "base": "2259443875cb498a6115302eaf701bb947cef535",
+  "method": "Top edge of the selected screenshot reserve in the initial viewport. Matched compiled builds, same public snapshot and genuine media, CSS-pixel density 1. No fixed screenshot-top threshold.",
+  "records": [
+    {
+      "width": 320,
+      "height": 844,
+      "firstCover": {
+        "before": 608.375,
+        "after": 509
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 510.84375,
+          "after": 439.125,
+          "category": "AI job search",
+          "summary": "A workspace for saved jobs, application drafts and interview practice."
+        },
+        {
+          "slug": "lobby",
+          "before": 466.65625,
+          "after": 439.125,
+          "category": "Real-time communication",
+          "summary": "A team-built platform for room invitations, membership and call access."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 441.15625,
+          "after": 412.734375,
+          "category": "Gaming reservations",
+          "summary": "A team-built system for reserving gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 466.65625,
+          "after": 439.125,
+          "category": "Construction accounting",
+          "summary": "A team-built workspace for construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 441.15625,
+          "after": 412.734375,
+          "category": "Student portal",
+          "summary": "A student portal within a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 517.65625,
+          "after": 412.734375,
+          "category": "Account management",
+          "summary": "React/FastAPI account self-service with separate administrative roles."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 441.15625,
+          "after": 439.125,
+          "category": "Clinic management",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 466.65625,
+          "after": 412.734375,
+          "category": "Frontend implementation",
+          "summary": "A responsive React landing page implemented from a supplied design."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 878.796875,
+          "after": 686.984375,
+          "earlierBy": 191.8125,
+          "bodySize": "16px",
+          "columnsBefore": "280px",
+          "columnsAfter": "280px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "unihub",
+          "before": 839.78125,
+          "after": 619.96875,
+          "earlierBy": 219.8125,
+          "bodySize": "16px",
+          "columnsBefore": "280px",
+          "columnsAfter": "280px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 946.59375,
+          "after": 713.375,
+          "earlierBy": 233.21875,
+          "bodySize": "16px",
+          "columnsBefore": "280px",
+          "columnsAfter": "280px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 723.390625,
+          "after": 556.78125,
+          "earlierBy": 166.609375,
+          "bodySize": "16px",
+          "columnsBefore": "280px",
+          "columnsAfter": "280px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "home-services",
+          "before": 838.484375,
+          "after": 635.078125,
+          "earlierBy": 203.40625,
+          "bodySize": "16px",
+          "columnsBefore": "280px",
+          "columnsAfter": "280px",
+          "sameWideOpening": false
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "firstCover": {
+        "before": 608.375,
+        "after": 509
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 527.296875,
+          "after": 454.6875,
+          "category": "AI job search",
+          "summary": "A workspace for saved jobs, application drafts and interview practice."
+        },
+        {
+          "slug": "lobby",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Real-time communication",
+          "summary": "A team-built platform for room invitations, membership and call access."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Gaming reservations",
+          "summary": "A team-built system for reserving gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Construction accounting",
+          "summary": "A team-built workspace for construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Student portal",
+          "summary": "A student portal within a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 559.609375,
+          "after": 454.6875,
+          "category": "Account management",
+          "summary": "React/FastAPI account self-service with separate administrative roles."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Clinic management",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 483.109375,
+          "after": 454.6875,
+          "category": "Frontend implementation",
+          "summary": "A responsive React landing page implemented from a supplied design."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 734.25,
+          "after": 594.53125,
+          "earlierBy": 139.71875,
+          "bodySize": "16px",
+          "columnsBefore": "347.125px",
+          "columnsAfter": "347.125px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "unihub",
+          "before": 794.046875,
+          "after": 620.921875,
+          "earlierBy": 173.125,
+          "bodySize": "16px",
+          "columnsBefore": "347.125px",
+          "columnsAfter": "347.125px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 847.515625,
+          "after": 666.390625,
+          "earlierBy": 181.125,
+          "bodySize": "16px",
+          "columnsBefore": "347.125px",
+          "columnsAfter": "347.125px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 649.65625,
+          "after": 531.34375,
+          "earlierBy": 118.3125,
+          "bodySize": "16px",
+          "columnsBefore": "347.125px",
+          "columnsAfter": "347.125px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "home-services",
+          "before": 770.25,
+          "after": 595.9375,
+          "earlierBy": 174.3125,
+          "bodySize": "16px",
+          "columnsBefore": "347.125px",
+          "columnsAfter": "347.125px",
+          "sameWideOpening": false
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 844,
+      "firstCover": {
+        "before": 581.1875,
+        "after": 483.40625
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 530.84375,
+          "after": 476.921875,
+          "category": "AI job search",
+          "summary": "A workspace for saved jobs, application drafts and interview practice."
+        },
+        {
+          "slug": "lobby",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Real-time communication",
+          "summary": "A team-built platform for room invitations, membership and call access."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Gaming reservations",
+          "summary": "A team-built system for reserving gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Construction accounting",
+          "summary": "A team-built workspace for construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Student portal",
+          "summary": "A student portal within a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 556.34375,
+          "after": 476.921875,
+          "category": "Account management",
+          "summary": "React/FastAPI account self-service with separate administrative roles."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Clinic management",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 505.34375,
+          "after": 476.921875,
+          "category": "Frontend implementation",
+          "summary": "A responsive React landing page implemented from a supplied design."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 738.90625,
+          "after": 599.1875,
+          "earlierBy": 139.71875,
+          "bodySize": "16px",
+          "columnsBefore": "382.719px",
+          "columnsAfter": "382.719px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "unihub",
+          "before": 770.703125,
+          "after": 599.1875,
+          "earlierBy": 171.515625,
+          "bodySize": "16px",
+          "columnsBefore": "382.719px",
+          "columnsAfter": "382.719px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 828.828125,
+          "after": 649.3125,
+          "earlierBy": 179.515625,
+          "bodySize": "16px",
+          "columnsBefore": "382.719px",
+          "columnsAfter": "382.719px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 654.3125,
+          "after": 536,
+          "earlierBy": 118.3125,
+          "bodySize": "16px",
+          "columnsBefore": "382.719px",
+          "columnsAfter": "382.719px",
+          "sameWideOpening": false
+        },
+        {
+          "slug": "home-services",
+          "before": 746.90625,
+          "after": 600.59375,
+          "earlierBy": 146.3125,
+          "bodySize": "16px",
+          "columnsBefore": "382.719px",
+          "columnsAfter": "382.719px",
+          "sameWideOpening": false
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "firstCover": {
+        "before": 472.671875,
+        "after": 472.671875
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 522.28125,
+          "after": 522.28125,
+          "category": "AI-powered job-search and application platform",
+          "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+        },
+        {
+          "slug": "lobby",
+          "before": 522.28125,
+          "after": 522.28125,
+          "category": "Real-time communication platform",
+          "summary": "A team-built communication platform for communities and temporary guest rooms."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 503.59375,
+          "after": 503.59375,
+          "category": "Gaming arena reservation",
+          "summary": "A team-built reservation system for gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 503.59375,
+          "after": 503.59375,
+          "category": "Full-Stack Web Application",
+          "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 554.59375,
+          "after": 554.59375,
+          "category": "University management system",
+          "summary": "A student workspace inside a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 554.59375,
+          "after": 554.59375,
+          "category": "Full-Stack Web Application",
+          "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 503.59375,
+          "after": 503.59375,
+          "category": "Clinic management system",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 503.59375,
+          "after": 503.59375,
+          "category": "Responsive web application",
+          "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 646.265625,
+          "after": 646.265625,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "683.531px",
+          "columnsAfter": "683.531px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "unihub",
+          "before": 674.265625,
+          "after": 674.265625,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "683.531px",
+          "columnsAfter": "683.531px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 714.0625,
+          "after": 714.0625,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "683.531px",
+          "columnsAfter": "683.531px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 589.671875,
+          "after": 589.671875,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "683.531px",
+          "columnsAfter": "683.531px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "home-services",
+          "before": 682.265625,
+          "after": 682.265625,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "683.531px",
+          "columnsAfter": "683.531px",
+          "sameWideOpening": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "firstCover": {
+        "before": 472.671875,
+        "after": 472.671875
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "AI-powered job-search and application platform",
+          "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+        },
+        {
+          "slug": "lobby",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "Real-time communication platform",
+          "summary": "A team-built communication platform for communities and temporary guest rooms."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "Gaming arena reservation",
+          "summary": "A team-built reservation system for gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "Full-Stack Web Application",
+          "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 651.796875,
+          "after": 651.796875,
+          "category": "University management system",
+          "summary": "A student workspace inside a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 651.796875,
+          "after": 651.796875,
+          "category": "Full-Stack Web Application",
+          "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "Clinic management system",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 626.296875,
+          "after": 626.296875,
+          "category": "Responsive web application",
+          "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "363.734px 727.484px",
+          "columnsAfter": "363.734px 727.484px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "unihub",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "363.734px 727.484px",
+          "columnsAfter": "363.734px 727.484px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "363.734px 727.484px",
+          "columnsAfter": "363.734px 727.484px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "363.734px 727.484px",
+          "columnsAfter": "363.734px 727.484px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "home-services",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "363.734px 727.484px",
+          "columnsAfter": "363.734px 727.484px",
+          "sameWideOpening": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "firstCover": {
+        "before": 479.953125,
+        "after": 479.953125
+      },
+      "cards": [
+        {
+          "slug": "jobpilot-ai",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "AI-powered job-search and application platform",
+          "summary": "A career workspace for saved jobs, application drafts and interview practice, using candidate information approved by the user."
+        },
+        {
+          "slug": "lobby",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "Real-time communication platform",
+          "summary": "A team-built communication platform for communities and temporary guest rooms."
+        },
+        {
+          "slug": "gamezone-arena",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "Gaming arena reservation",
+          "summary": "A team-built reservation system for gaming rooms and devices."
+        },
+        {
+          "slug": "construction-project-management-accounting-system",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "Full-Stack Web Application",
+          "summary": "A team-built workspace connecting construction budgets, invoices, payments and reports."
+        },
+        {
+          "slug": "unihub",
+          "before": 700.9375,
+          "after": 700.9375,
+          "category": "University management system",
+          "summary": "A student workspace inside a team-built university system."
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 700.9375,
+          "after": 700.9375,
+          "category": "Full-Stack Web Application",
+          "summary": "An independent React/FastAPI application separating account self-service from administrative user management, with PostgreSQL-backed records and server-side role checks."
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "Clinic management system",
+          "summary": "A PHP clinic-management project with appointment and role-specific pages."
+        },
+        {
+          "slug": "home-services",
+          "before": 675.4375,
+          "after": 675.4375,
+          "category": "Responsive web application",
+          "summary": "A responsive home-services landing page implemented in React from a supplied Figma UI kit."
+        }
+      ],
+      "readers": [
+        {
+          "slug": "gamezone-arena",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "411.203px 822.422px",
+          "columnsAfter": "411.203px 822.422px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "unihub",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "411.203px 822.422px",
+          "columnsAfter": "411.203px 822.422px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "full-stack-user-management-system",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "411.203px 822.422px",
+          "columnsAfter": "411.203px 822.422px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "medicare-hub",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "411.203px 822.422px",
+          "columnsAfter": "411.203px 822.422px",
+          "sameWideOpening": true
+        },
+        {
+          "slug": "home-services",
+          "before": 278,
+          "after": 278,
+          "earlierBy": 0,
+          "bodySize": "16px",
+          "columnsBefore": "411.203px 822.422px",
+          "columnsAfter": "411.203px 822.422px",
+          "sameWideOpening": true
+        }
+      ]
+    }
+  ]
+}

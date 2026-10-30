@@ -103,3 +103,32 @@
 @media (prefers-reduced-motion: reduce) {
   .landscape.supporting-design-candidate .index-page .work-open svg { transition: none; transform: none !important; }
 }
+/* PR57's desktop/tablet grid and historical variant remain unchanged. */
+@media (max-width: 719px) {
+  .landscape.supporting-design-compact .page-surface:is(.index-page,.project-reader) { padding-top: 12px; }
+  .landscape.supporting-design-compact .project-reader .case-back { min-height: 44px; padding-block: 0; }
+  .landscape.supporting-design-compact .supporting-opening { margin-top: 8px; gap: 20px; }
+  .landscape.supporting-design-compact .case-heading .eyebrow { line-height: 1.6; }
+  .landscape.supporting-design-compact .case-heading h1 { margin: 10px 0 0; }
+  .landscape.supporting-design-compact .case-metadata { display: grid; gap: 6px; margin-top: 14px; }
+  .landscape.supporting-design-compact .case-heading .case-metadata .case-role { margin: 0; gap: 4px 12px; line-height: 1.6; }
+  .landscape.supporting-design-compact .case-heading .case-metadata .case-program { margin: 0; font-size: 13px; line-height: 1.6; }
+  .landscape.supporting-design-compact .case-heading .case-purpose { margin: 18px 0 0; font-size: 16px; line-height: 1.65; }
+  .landscape.supporting-design-compact .case-heading .story-credit { margin: 6px 0 0; }
+  .landscape.supporting-design-compact .case-heading .case-actions { margin-top: 18px; }
+
+  .landscape.supporting-design-compact .index-page .page-heading { margin-bottom: 0; padding-block: 4px 18px; }
+  .landscape.supporting-design-compact .index-page .page-heading h1 { margin-block: 8px 0; }
+  .landscape.supporting-design-compact .index-page .page-heading > p { margin: 12px 0 0; line-height: 1.6; }
+  .landscape.supporting-design-compact .index-page .index-tools { gap: 10px; margin-block: 0 16px; }
+  .landscape.supporting-design-compact .index-page .search-field { padding-block: 0; }
+  .landscape.supporting-design-compact .index-page .search-field input { min-height: 44px; padding-block: 10px; }
+  .landscape.supporting-design-compact .index-page .index-tools .chapter-switch { padding-block: 0; gap: 24px; }
+  .landscape.supporting-design-compact .index-page .project-count { margin-block: 0 16px; }
+  .landscape.supporting-design-compact .index-page .work-entry { gap: 10px; padding-bottom: 16px; margin-bottom: 0; }
+  .landscape.supporting-design-compact .index-page .project-gallery { row-gap: 28px; }
+  .landscape.supporting-design-compact .index-page .work-caption,
+  .landscape.supporting-design-compact .index-page .project-gallery .work-caption { gap: 8px; }
+  .landscape.supporting-design-compact .index-page .work-description { font-size: 16px; line-height: 1.65; }
+  .landscape.supporting-design-compact .index-page .work-open { padding-block: 8px; }
+}

@@ -1,0 +1,33 @@
+import sharp from 'sharp';
+import {readFile,writeFile,readdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const root='docs/design/supporting-density';
+const before=JSON.parse(await readFile(`${root}/before/measurements.json`,'utf8'));
+const after=JSON.parse(await readFile(`${root}/after/measurements.json`,'utf8'));
+const surfaces=['index','card','card-users','gamezone-arena','unihub','full-stack-user-management-system','medicare-hub','home-services'];
+const records=[];
+for(const current of after.findings) {
+  const previous=before.findings.find(row=>row.width===current.width),width=current.width,height=current.height;
+  for(const surface of surfaces) {
+    await sharp({create:{width:width*2,height,channels:3,background:'#ecebe3'}}).composite([
+      {input:`${root}/before/${width}-${surface}.jpg`,left:0,top:0},
+      {input:`${root}/after/${width}-${surface}.jpg`,left:width,top:0},
+    ]).jpeg({quality:87}).toFile(`${root}/comparison-${width}-${surface}.jpg`);
+  }
+  records.push({width,height,firstCover:{before:previous.index.firstCoverTop,after:current.index.firstCoverTop},cards:current.index.cards.map(card=>({slug:card.slug,before:previous.index.cards.find(row=>row.slug===card.slug).height,after:card.height,category:card.category,summary:card.summary})),readers:current.readers.map(reader=>{
+    const old=previous.readers.find(row=>row.slug===reader.slug);
+    return {slug:reader.slug,before:old.imageTop,after:reader.imageTop,earlierBy:old.imageTop-reader.imageTop,bodySize:reader.bodySize,columnsBefore:old.columns,columnsAfter:reader.columns,sameWideOpening:width>=768&&old.heading.text===reader.heading.text&&old.summary.text===reader.summary.text&&old.imageTop===reader.imageTop&&old.columns===reader.columns};
+  })});
+}
+await writeFile(`${root}/comparison.json`,JSON.stringify({base:'2259443875cb498a6115302eaf701bb947cef535',method:'Top edge of the selected screenshot reserve in the initial viewport. Matched compiled builds, same public snapshot and genuine media, CSS-pixel density 1. No fixed screenshot-top threshold.',records},null,2));
+const names={'index':'Projects introduction','card':'First project card','card-users':'User Management card','gamezone-arena':'GameZone Arena','unihub':'UniHub','full-stack-user-management-system':'User Management','medicare-hub':'Medicare Hub','home-services':'Home Services'};
+const table=records.filter(r=>r.width<768).map(r=>`<h3>${r.width}px · screenshot top</h3><table><thead><tr><th>Reader</th><th>PR57</th><th>Refined</th><th>Earlier by</th></tr></thead><tbody>${r.readers.map(p=>`<tr><th>${names[p.slug]}</th><td>${p.before.toFixed(1)}px</td><td>${p.after.toFixed(1)}px</td><td>${p.earlierBy.toFixed(1)}px</td></tr>`).join('')}</tbody></table>`).join('');
+const comparisons=records.map(r=>`<section id="size-${r.width}"><h2>${r.width} × ${r.height}</h2>${surfaces.map(surface=>`<details${surface==='index'?' open':''}><summary>${names[surface]} · PR57 / refined</summary><p>Before left, after right; matched viewport and density. Open the image at full resolution.</p><a href="comparison-${r.width}-${surface}.jpg"><img loading="lazy" src="comparison-${r.width}-${surface}.jpg" alt="${names[surface]} before and after at ${r.width}px"></a>${!['index','card','card-users'].includes(surface)?`<p><a href="/review/supporting/candidate/projects/${surface}">Refined candidate</a> · <a href="/review/supporting/before/projects/${surface}">PR57 before</a></p>`:''}</details>`).join('')}</section>`).join('');
+const enlarged=(await readdir(`${root}/after`)).filter(f=>f.includes('text-200'));
+await writeFile(`${root}/index.html`,`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Supporting projects · mobile density review</title><style>body{margin:0;background:#ecebe3;color:#202629;font:16px/1.6 system-ui,sans-serif}main{max-width:1440px;margin:auto;padding:24px}h1,h2,h3{font-weight:500;line-height:1.2}a{color:#34483d}nav{display:flex;gap:20px;flex-wrap:wrap}summary{cursor:pointer;padding:14px 0;min-height:44px}details,section{border-top:1px solid #c8c6bc;padding-top:12px;margin-top:24px}img{max-width:100%;height:auto;display:block}table{border-collapse:collapse}th,td{text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid #c8c6bc}:focus-visible{outline:2px solid #a44424;outline-offset:4px}</style><main><h1>Supporting projects · mobile density review</h1><p>PR57 versus the refined phone candidate. Normal production routes remain unchanged. Desktop and tablet keep the accepted PR57 composition and copy.</p><p><a href="/review/supporting/candidate">Refined index</a> · <a href="/review/supporting/before">PR57 before index</a> · <a href="evidence.zip" download>Download offline evidence</a> · <a href="comparison.json">Measurements</a> · <a href="changed-files.json">Changed files</a></p><p>Compiled Windows Chrome; browser viewport emulation, genuine existing media and the same archived public GET snapshot. One CSS pixel per raster pixel. Enlarged text uses 200% CSS font-size emulation, not physical-device/native text zoom. Noindex does not provide access protection.</p><section><h2>Earlier imagery, without a fixed threshold</h2>${table}<p>Measured at the screenshot reserve's top edge before scrolling. Full image proportions and body text are retained. Tall sources still require natural scrolling.</p></section><nav aria-label="Viewport comparisons">${records.map(r=>`<a href="#size-${r.width}">${r.width}px</a>`).join('')}</nav>${comparisons}<section><h2>Enlarged-text reflow</h2><ul>${enlarged.map(file=>`<li><a href="after/${file}">${file}</a></li>`).join('')}</ul></section><p><a href="review-notes.md">QA findings and limitations</a> · <a href="manifest.json">Evidence hashes</a></p></main></html>`);
+const files=await readdir(root,{recursive:true}),hashes=[];
+for(const file of files.filter(f=>/\.(jpg|html|json|md)$/.test(f)&&!['manifest.json','changed-files.json'].includes(f))) {
+  const bytes=await readFile(`${root}/${file}`);hashes.push({file:file.replaceAll('\\','/'),bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});
+}
+await writeFile(`${root}/manifest.json`,JSON.stringify({base:'2259443875cb498a6115302eaf701bb947cef535',files:hashes},null,2));
+console.log(JSON.stringify({viewports:records.length,phoneEarlier:records.filter(r=>r.width<768).every(r=>r.readers.every(p=>p.earlierBy>0)),widePreserved:records.filter(r=>r.width>=768).every(r=>r.readers.every(p=>p.sameWideOpening)),hashedFiles:hashes.length}));

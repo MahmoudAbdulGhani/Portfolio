@@ -15,7 +15,7 @@ import type { CedarState } from './cedar-boundary-state';
 import type { LobbyState } from './lobby-boundary-state';
 import type { BoundaryState } from './profile-boundary-state';
 
-export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, supporting, selectedSource, boundaryState, onBoundaryStateChange, cedarState, lobbyState, onCedarStateChange, onLobbyStateChange }: {
+export function CaseNarrative({ project, study, screens, openGallery, candidate = false, refined = false, supporting, selectedSource, openingDetails, boundaryState, onBoundaryStateChange, cedarState, lobbyState, onCedarStateChange, onLobbyStateChange }: {
   project: Project;
   study: CaseStudy;
   screens: DetailScreen[];
@@ -24,6 +24,7 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
   refined?: boolean;
   supporting?: { contributionFirst?: boolean; workflowLimit?: number };
   selectedSource?: string;
+  openingDetails?: { summary: string; name?: string; category: string };
   cedarState?: CedarState;
   lobbyState?: LobbyState;
   onCedarStateChange?: (state: CedarState) => void;
@@ -50,6 +51,7 @@ export function CaseNarrative({ project, study, screens, openGallery, candidate 
   const context = <section id="overview" className="story-context">
     <span className="eyebrow">THE CONTEXT</span><h2>{study.problemHeading}</h2><p>{study.problem}</p>
     {candidate && <p>{study.summary}</p>}
+    {openingDetails && <><p>{[openingDetails.name, openingDetails.category].filter(Boolean).join(' · ')}</p>{openingDetails.summary && <p>{openingDetails.summary}</p>}</>}
     {!supporting && study.designCredit && <p className="story-credit">Design from a supplied <a href={study.designCredit.url} target="_blank" rel="noopener noreferrer">{study.designCredit.label}<FiArrowUpRight /></a>.</p>}
   </section>;
   const workflowFigure = (step: (typeof workflow)[number], index: number) => <figure key={step.screen.src}>
