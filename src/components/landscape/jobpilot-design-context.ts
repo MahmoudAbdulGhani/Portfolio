@@ -2,6 +2,7 @@ import { createContext, useContext } from 'react';
 
 export type JobPilotDesign = {
   projectSlug?: string;
+  motionStudy?: boolean;
   variant: 'baseline' | 'before' | 'candidate';
   candidate: boolean;
   refined: boolean;
@@ -28,6 +29,6 @@ export function jobPilotReviewAddress(pathname: string) {
     if (featured) return { collection: !featured[3], reader: Boolean(featured[3]), project: featured[1] === 'cedar' ? 'construction-project-management-accounting-system' : 'lobby' };
   }
   if (!(import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)) return null;
-  const match = /^\/review\/jobpilot\/(baseline|before|candidate)(\/reader)?$/.exec(pathname);
+  const match = /^\/review\/jobpilot\/(baseline|before|candidate|motion)(\/reader)?$/.exec(pathname);
   return match ? { collection: !match[2], reader: Boolean(match[2]) } : null;
 }

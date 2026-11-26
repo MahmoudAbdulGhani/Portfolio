@@ -5,7 +5,7 @@ export const jobPilotDesignBranch = 'prototype/jobpilot-design-journey';
 export const jobPilotRefinementBranch = 'refine/jobpilot-design-phase1';
 export function isJobPilotDesignReviewBuild(mode, env = process.env) {
   if (env.VERCEL_ENV === 'production') return false;
-  return mode === 'jobpilot-design-review' || (env.VERCEL_ENV === 'preview' && [jobPilotDesignBranch,jobPilotRefinementBranch].includes(env.VERCEL_GIT_COMMIT_REF));
+  return mode === 'jobpilot-design-review' || (env.VERCEL_ENV === 'preview' && [jobPilotDesignBranch,jobPilotRefinementBranch,'prototype/jobpilot-motion-direction'].includes(env.VERCEL_GIT_COMMIT_REF));
 }
 export function jobPilotDesignArtifacts(enabled) {
   let output;
@@ -14,6 +14,9 @@ export function jobPilotDesignArtifacts(enabled) {
     configResolved(config) { output = path.resolve(config.root,config.build.outDir); },
     async closeBundle() {
       if (!enabled) return;
+      const study = path.join(output,'review/jobpilot-motion');
+      await mkdir(study,{recursive:true});
+      await cp('docs/design/jobpilot-motion-direction',study,{recursive:true});
       const destination = path.join(output,'review/jobpilot-comparison');
       await mkdir(destination,{recursive:true});
       await cp('docs/design/jobpilot-design-journey',destination,{recursive:true});

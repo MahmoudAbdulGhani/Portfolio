@@ -12,4 +12,5 @@ assert(source.includes('Sample data · local demo'),'Normal Production includes 
 await assert.rejects(access(path.join(root,'review/jobpilot-comparison')));
 await assert.rejects(access(path.join(root,'review/jobpilot-refinement')));
 await assert.rejects(access(path.join(root,'review/jobpilot-adoption')));
+await assert.rejects(access(path.join(root,'review/jobpilot-motion')));
 console.log('Normal compiled build adopts approved JobPilot presentation and excludes review routes, entry and comparison assets.');
