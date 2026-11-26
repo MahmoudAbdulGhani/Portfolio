@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, type RefObject } from 'react';
 import { gsap } from 'gsap';
+import { useJobPilotDesign } from './jobpilot-design-context';
 import { useMotionPreference } from '../../lib/use-motion-preference';
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { journeyTextBox, type JobPilotJourney, type JourneyBox } from './jobpilot-journey';
@@ -7,6 +8,7 @@ import { journeyTextBox, type JobPilotJourney, type JourneyBox } from './jobpilo
 // Animate the reader's real elements: no cloned headings, overlay, image load
 // gate, history owner or input blocker. Natural ratios remain in document flow.
 export function useJobPilotHandoff(root: RefObject<HTMLElement | null>, journey: JobPilotJourney | undefined, key: string, ready: boolean, forward: boolean, selection: string) {
+  const study = useJobPilotDesign()?.motionStudy;
   const reduced = useMotionPreference(), consumed = useRef<{ key: string; selection: string; complete: boolean } | null>(null);
   useLayoutEffect(() => {
     if (!ready || !journey) return;
@@ -36,7 +38,7 @@ export function useJobPilotHandoff(root: RefObject<HTMLElement | null>, journey:
           if (!after.width) return;
           const scale = before.width / after.width;
           timeline!.fromTo(node, { x: before.left - after.left, y: before.top - after.top, scale, transformOrigin: 'top left' },
-            { x: 0, y: 0, scale: 1, duration: 0.38, ease: 'power2.inOut', clearProps: 'transform,transformOrigin' }, 0);
+            { x: 0, y: 0, scale: 1, duration: study ? 0.48 : 0.38, ease: study ? 'power3.inOut' : 'power2.inOut', clearProps: 'transform,transformOrigin' }, 0);
         };
         const identity = (selector: string, before: JourneyBox | undefined, y: number) => {
           const node = scope.querySelector<HTMLElement>(selector), after = journeyTextBox(node);
@@ -47,6 +49,7 @@ export function useJobPilotHandoff(root: RefObject<HTMLElement | null>, journey:
           timeline!.fromTo(node, { scale:before.width / after.width, y, opacity:0.75, transformOrigin:'top left' },
             {scale:1,y:0,opacity:1,duration:0.38,ease:'power2.inOut',clearProps:'transform,transformOrigin,opacity'},0);
         };
+        if (study) timeline.fromTo(scope.querySelector('.case-figure'), {clipPath:'inset(0 0 12% 0)'}, {clipPath:'inset(0 0 0% 0)',duration:0.48,ease:'power3.inOut',clearProps:'clipPath'},0);
         identity('.case-heading h1', journey.title, 12);
         identity('.case-project-number', journey.number, 8);
         const image = scope.querySelector('.case-figure .screenshot-frame');
@@ -59,5 +62,5 @@ export function useJobPilotHandoff(root: RefObject<HTMLElement | null>, journey:
       }, scope);
     });
     return () => { cancelAnimationFrame(frame); stopFiniteMotion(timeline); context?.revert(); delete scope.dataset.readerHandoff; };
-  }, [root, journey, key, ready, forward, reduced, selection]);
+  }, [root, journey, key, ready, forward, reduced, selection, study]);
 }

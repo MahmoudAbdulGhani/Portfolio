@@ -6,7 +6,7 @@ import { detailScreens } from '../src/lib/project-detail-screens';
 
 test.describe.configure({retries:0});
 const production=process.env.JOBPILOT_TEST_PRODUCTION==='1';
-const entry=production?'/':'/review/jobpilot/candidate', reader=production?'/projects/jobpilot-ai':entry+'/reader', baseline='/review/jobpilot/baseline';
+const entry=production?'/':process.env.JOBPILOT_TEST_MOTION==='1'?'/review/jobpilot/motion':'/review/jobpilot/candidate', reader=production?'/projects/jobpilot-ai':entry+'/reader', baseline='/review/jobpilot/baseline';
 const open=(page:Page)=>page.getByRole('link',{name:'Open case study',exact:true});
 const choices=(page:Page)=>page.getByRole('group',{name:'Preview workflow'}).getByRole('button');
 async function fixtures(page:Page,reduced=true){

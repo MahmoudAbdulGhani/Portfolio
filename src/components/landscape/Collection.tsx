@@ -425,6 +425,19 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       timeline.to(objects.filter(item => item !== object), { opacity: candidate ? 0 : 0.12, duration: reduced ? 0.01 : candidate ? 0.22 : 0.16 }, 0)
         .to(object.querySelector('.object-core'), { opacity: 0, duration: reduced ? 0.01 : 0.12 }, gpu ? 0.04 : 0.68)
         .fromTo(scope.querySelector('.product-surface'), { opacity: 0, scale: 1, y: 0 }, { opacity: 1, duration: reduced ? 0.01 : collectionTiming.handoff, ease: 'power2.inOut' }, reduced ? 0 : candidate ? 0.54 : 0.68);
+      // One owner coordinates the sculpture, real image and identity. Nothing
+      // waits for decoration: controls and the existing readiness clock stay live.
+      if (design?.motionStudy && !reduced) {
+        timeline.fromTo(scope.querySelector('.selection-image-frame'),
+          { clipPath: 'inset(0 0 100% 0)' },
+          { clipPath: 'inset(0 0 0% 0)', duration: 0.46, ease: 'power3.inOut', clearProps: 'clipPath' }, 0.36);
+        timeline.fromTo(scope.querySelectorAll('.selection-project-number, .selection-category, .selection-caption h1'),
+          { y: 14, opacity: 0.65 },
+          { y: 0, opacity: 1, duration: 0.38, stagger: 0.055, ease: 'power3.out', clearProps: 'transform,opacity' }, 0.34);
+        timeline.fromTo(scope.querySelector('.selection-project-links'),
+          { y: 6, opacity: 0.8 },
+          { y: 0, opacity: 1, duration: 0.24, ease: 'power2.out', clearProps: 'transform,opacity' }, 0.58);
+      }
       if (gpu) timeline.to(mesh, { opacity: 1, duration: 0.12 }, 0.04).to(mesh, { opacity: () => hasPreviewRef.current ? 0 : 1, duration: 0.2 }, 0.78);
       else timeline.to(object, { opacity: candidate ? 0 : 0.12, duration, ease: 'power2.inOut' }, 0);
       playFiniteMotion(timeline, { complete: () => motion.activate() });
@@ -433,7 +446,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
   // An image arriving mid-articulation must not cancel its owning clock.
   // Only an active selection crossfades its held artwork into the new image.
-  }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate]);
+  }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate, design?.motionStudy]);
 
   const caseLink = selected && <Link className="solid-action open-case" to={design && selected.slug === (design.projectSlug ?? 'jobpilot-ai') ? design.readerPath : `/projects/${selected.slug}`}
     state={{ collection: sharedJourney || design?.projectSlug === selected.slug ? `${collectionPath}${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(sharedJourney ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
@@ -481,6 +494,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
       tabIndex={-1}
       className={`stage${selected ? " is-expanded" : ""}${selected?.kind === 'jobpilot' ? ' has-profile-boundary' : selected?.kind === 'cedar' ? ' has-cedar-boundary' : selected?.kind === 'lobby' ? ' has-lobby-boundary' : ''}`}
       data-selection-state={state.phase === 'active' ? 'settled' : state.phase === 'selecting' ? 'loading' : state.phase}
+      data-motion-study={design?.motionStudy ? 'jobpilot' : undefined}
       data-motion-phase={state.phase}
       data-content-state="ready"
       data-preview-state={failedPreview === screens[chapter]?.src ? 'failed' : decoded.has(screens[chapter]?.src) ? 'ready' : 'loading'}

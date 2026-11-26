@@ -6,6 +6,7 @@ import { boundaryReducer, initialBoundary, proposedLocation, type BoundaryPhase,
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { CaseDisclosure } from './CaseDisclosure';
 import './profile-boundary.css';
+import { useJobPilotDesign } from './jobpilot-design-context';
 
 const messages: Record<BoundaryPhase, string> = {
   rest: 'Suggestions become saved information only after review.',
@@ -57,6 +58,7 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
   const [state, dispatch] = useReducer(boundaryReducer, initialState, saved => saved ? { ...saved, announcement: '' } : initialBoundary());
   useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference();
+  const motionStudy = useJobPilotDesign()?.motionStudy;
   const text = useRef<HTMLParagraphElement>(null);
   const stale = state.phase === 'review' && state.reviewed?.revision !== state.revision;
   const study = caseStudies['jobpilot-ai'];
@@ -68,9 +70,17 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
     if (reduced || suspended) { gsap.set(text.current, { opacity: 1 }); return; }
     const timeline = gsap.timeline({ paused: true });
     timeline.fromTo(text.current, { opacity: 0.35 }, { opacity: 1, duration: 0.18 });
+    const scope = text.current.closest('.profile-boundary');
+    if (motionStudy && scope) {
+      // Emphasize the record that actually changes, never animate an implied
+      // save during proposal/review. Stale data stays visibly distinct.
+      const record = scope.querySelector(state.phase === 'accept' || stale ? '.boundary-saved' : '.boundary-proposed');
+      if (record) timeline.fromTo(record.querySelectorAll('.boundary-value, .boundary-value-note'),
+        {y:6,opacity:0.6},{y:0,opacity:1,duration:0.3,stagger:0.045,ease:'power3.out',clearProps:'transform,opacity'},0);
+    }
     playFiniteMotion(timeline);
-    return () => stopFiniteMotion(timeline);
-  }, [state.phase, state.blocked, reduced, suspended]);
+    return () => { stopFiniteMotion(timeline); if (scope && motionStudy) gsap.set(scope.querySelectorAll('.boundary-value, .boundary-value-note'), {clearProps:'transform,opacity'}); };
+  }, [state.phase, state.blocked, state.revision, reduced, suspended, motionStudy, stale]);
   return <section className="profile-boundary" aria-label="The profile save boundary" data-phase={state.phase} data-stale={stale} data-presentation={concise?'concise':undefined} inert={suspended}>
     <header className="boundary-heading">
       <Heading className="boundary-title" id={headingId} tabIndex={headingId ? -1 : undefined}>The profile save boundary</Heading>
