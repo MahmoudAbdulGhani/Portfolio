@@ -14,6 +14,9 @@ export function jobPilotDesignArtifacts(enabled) {
     configResolved(config) { output = path.resolve(config.root,config.build.outDir); },
     async closeBundle() {
       if (!enabled) return;
+      const study = path.join(output,'review/jobpilot-motion');
+      await mkdir(study,{recursive:true});
+      await cp('docs/design/jobpilot-motion-direction',study,{recursive:true});
       const destination = path.join(output,'review/jobpilot-comparison');
       await mkdir(destination,{recursive:true});
       await cp('docs/design/jobpilot-design-journey',destination,{recursive:true});

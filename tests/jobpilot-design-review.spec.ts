@@ -21,6 +21,7 @@ async function selected(page:Page,address=entry){
   await page.goto(address);await page.getByRole('button',{name:'Explore JobPilot AI',exact:true}).click();
   await expect(page.locator('.stage')).toHaveAttribute('data-selection-state','settled');
   await expect(page.locator('.product-surface')).toHaveAttribute('data-image-ready','true');
+  if(process.env.JOBPILOT_TEST_MOTION==='1' && address===entry) await expect(page.locator('.stage')).toHaveAttribute('data-motion-study','jobpilot');
 }
 async function noOverflow(page:Page){expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
 async function naturalImage(page:Page,selector:string){
@@ -220,8 +221,10 @@ test('loading and failure keep the complete image reserve stable; footer and ass
 
 test('compiled comparison is real HTML with review metadata rather than the SPA not-found route',async({request})=>{
   test.skip(production,'Review-only comparison artifacts are excluded from the normal build.');
+  const motionComparison=await request.get('/review/jobpilot-motion/index.html');
+  expect(motionComparison.status()).toBe(200);expect(await motionComparison.text()).toContain('Compare the complete journey.');
   const response=await request.get('/review/jobpilot-comparison/index.html');expect(response.status()).toBe(200);expect(await response.text()).toContain('JobPilot design journey');
-  const metadata=await request.get('/review/jobpilot-comparison/build.json');expect((await metadata.json()).candidate).toBe(entry);
+  const metadata=await request.get('/review/jobpilot-comparison/build.json');expect((await metadata.json()).candidate).toBe('/review/jobpilot/candidate');
   expect((await metadata.json()).before).toBe('/review/jobpilot/before');
   const refinement=await request.get('/review/jobpilot-refinement/index.html');expect(refinement.status()).toBe(200);expect(await refinement.text()).toContain('JobPilot Phase 1 refinement');
   for(const phase of ['baseline','candidate'])for(const mode of ['normal','reduced','fallback']){
@@ -249,7 +252,7 @@ test('a return to an engineering hash restores the source scroll instead of repl
   // contract from the browser's ordinary pointer-target auto-scroll.
   await open(page).evaluate(link=>(link as HTMLAnchorElement).click());
   await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');await page.locator('.case-back').click();
-  await expect(open(page)).toBeFocused();await expect(page).toHaveURL(production?/\/\?project=jobpilot-ai#jobpilot-engineering$/:/candidate\?project=jobpilot-ai#jobpilot-engineering$/);
+  await expect(open(page)).toBeFocused();await expect(page).toHaveURL(new URL(`${entry}?project=jobpilot-ai#jobpilot-engineering`, page.url()).href);
   await expect.poll(()=>page.evaluate(saved=>Math.abs(scrollY-Math.min(saved,document.scrollingElement!.scrollHeight-innerHeight)),position)).toBeLessThan(.5);
 });
 
