@@ -1,8 +1,14 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, type ComponentType, type ReactNode } from 'react';
+import type { BoundaryState } from './profile-boundary-state';
+
+export type RegisterProps = {
+  state: BoundaryState; reduced: boolean; suspended: boolean; controls: ReactNode;
+};
 
 export type JobPilotDesign = {
   projectSlug?: string;
   motionStudy?: boolean;
+  Register?: ComponentType<RegisterProps>;
   variant: 'baseline' | 'before' | 'candidate';
   candidate: boolean;
   refined: boolean;
@@ -29,6 +35,6 @@ export function jobPilotReviewAddress(pathname: string) {
     if (featured) return { collection: !featured[3], reader: Boolean(featured[3]), project: featured[1] === 'cedar' ? 'construction-project-management-accounting-system' : 'lobby' };
   }
   if (!(import.meta.env.DEV || import.meta.env.JOBPILOT_DESIGN_REVIEW)) return null;
-  const match = /^\/review\/jobpilot\/(baseline|before|candidate|motion)(\/reader)?$/.exec(pathname);
+  const match = /^\/review\/jobpilot\/(baseline|before|candidate|motion|registration)(\/reader)?$/.exec(pathname);
   return match ? { collection: !match[2], reader: Boolean(match[2]) } : null;
 }

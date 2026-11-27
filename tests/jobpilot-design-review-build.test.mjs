@@ -1,9 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isJobPilotDesignReviewBuild, jobPilotDesignBranch, jobPilotRefinementBranch } from '../scripts/jobpilot-design-review-build.mjs';
+import { isJobPilotDesignReviewBuild, jobPilotDesignBranch, jobPilotRefinementBranch, registrationBranch } from '../scripts/jobpilot-design-review-build.mjs';
 
 test('JobPilot design review requires explicit build opt-in and fails closed in Production',()=>{
   assert.equal(isJobPilotDesignReviewBuild('production',{}),false);
+  assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:registrationBranch}),true);
+  assert.equal(isJobPilotDesignReviewBuild('jobpilot-design-review',{VERCEL_ENV:'production',VERCEL_GIT_COMMIT_REF:registrationBranch}),false);
   assert.equal(isJobPilotDesignReviewBuild('production',{VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'prototype/jobpilot-motion-direction'}),true);
   assert.equal(isJobPilotDesignReviewBuild('jobpilot-design-review',{VERCEL_ENV:'production',VERCEL_GIT_COMMIT_REF:'prototype/jobpilot-motion-direction'}),false);
   assert.equal(isJobPilotDesignReviewBuild('jobpilot-design-review',{}),true);

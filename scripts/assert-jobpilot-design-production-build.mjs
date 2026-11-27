@@ -13,4 +13,6 @@ await assert.rejects(access(path.join(root,'review/jobpilot-comparison')));
 await assert.rejects(access(path.join(root,'review/jobpilot-refinement')));
 await assert.rejects(access(path.join(root,'review/jobpilot-adoption')));
 await assert.rejects(access(path.join(root,'review/jobpilot-motion')));
+await assert.rejects(access(path.join(root,'review/jobpilot-registration')));
+assert(!source.includes('data-jobpilot-register') && !styles.includes('.jp-register'), 'The registration study does not ship in normal builds');
 console.log('Normal compiled build adopts approved JobPilot presentation and excludes review routes, entry and comparison assets.');

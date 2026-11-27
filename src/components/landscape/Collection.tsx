@@ -431,7 +431,8 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
         timeline.fromTo(scope.querySelector('.selection-image-frame'),
           { clipPath: 'inset(0 0 100% 0)' },
           { clipPath: 'inset(0 0 0% 0)', duration: 0.46, ease: 'power3.inOut', clearProps: 'clipPath' }, 0.36);
-        timeline.fromTo(scope.querySelectorAll('.selection-project-number, .selection-category, .selection-caption h1'),
+        // The registration comparison keeps identity readable while the real screen enters.
+        if (!design.Register) timeline.fromTo(scope.querySelectorAll('.selection-project-number, .selection-category, .selection-caption h1'),
           { y: 14, opacity: 0.65 },
           { y: 0, opacity: 1, duration: 0.38, stagger: 0.055, ease: 'power3.out', clearProps: 'transform,opacity' }, 0.34);
         timeline.fromTo(scope.querySelector('.selection-project-links'),
@@ -446,7 +447,7 @@ function CollectionScene({ items, selected, select, restore, origin, restored, j
     return () => { stopFiniteMotion(timeline); ctx.revert(); };
   // An image arriving mid-articulation must not cancel its owning clock.
   // Only an active selection crossfades its held artwork into the new image.
-  }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate, design?.motionStudy]);
+  }, [eligible, kind, reduced, motion, state.renderer, activePreview, candidate, design?.motionStudy, design?.Register]);
 
   const caseLink = selected && <Link className="solid-action open-case" to={design && selected.slug === (design.projectSlug ?? 'jobpilot-ai') ? design.readerPath : `/projects/${selected.slug}`}
     state={{ collection: sharedJourney || design?.projectSlug === selected.slug ? `${collectionPath}${location.search}${location.hash}` : `/?project=${selected.slug}`, ...(sharedJourney ? {jobpilotJourney: { key: location.key, screen: screens[chapter]?.src }} : {}) }}
