@@ -56,7 +56,7 @@ try{
   await demo.getByRole('button',{name:'Reset',exact:true}).click();
   await demo.getByRole('button',{name:'Propose a change',exact:true}).click();
   await demo.getByRole('button',{name:'Review the change',exact:true}).click();
-  await demo.getByRole('button',{name:'Change the saved profile during review.',exact:true}).click();await capture('changed');
+  await demo.locator('button.boundary-change').click();await capture('changed');
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await capture('stale');
   await demo.getByRole('button',{name:'Review again',exact:true}).click();
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await capture('reviewed-again');

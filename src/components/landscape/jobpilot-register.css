@@ -1,5 +1,5 @@
-/* These styles enter through the lazy review route only. The SVG exit and the
-   register use the same figure size; no layout reads or second animation clock. */
+/* The SVG exit and the register use the same figure size on Collection and in the
+   case study. No layout reads or second animation clock are needed. */
 .landscape .jp-register {
   container-type: inline-size;
   --jr-source: #984222;

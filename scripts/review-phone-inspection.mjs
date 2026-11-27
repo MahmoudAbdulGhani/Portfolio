@@ -31,7 +31,7 @@ for(const width of process.argv.includes('--recordings-only')?[]:[320,390,430,76
   }
   if(phase==='after'&&project.slug==='jobpilot-ai'){
    const demo=page.locator('.project-reader .profile-boundary');await demo.scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/${width}-boundary-rest.jpg`,quality:80});
-   await demo.getByRole('button',{name:'Propose a change',exact:true}).click();await demo.getByRole('button',{name:'Review the change',exact:true}).click();await demo.getByRole('button',{name:'Change the saved profile during review.',exact:true}).click();await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await page.screenshot({path:`${out}/${width}-boundary-stale.jpg`,quality:80});await demo.getByRole('button',{name:'Review again',exact:true}).click();await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await page.screenshot({path:`${out}/${width}-boundary-accepted.jpg`,quality:80});
+   await demo.getByRole('button',{name:'Propose a change',exact:true}).click();await demo.getByRole('button',{name:'Review the change',exact:true}).click();await demo.locator('button.boundary-change').click();await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await page.screenshot({path:`${out}/${width}-boundary-stale.jpg`,quality:80});await demo.getByRole('button',{name:'Review again',exact:true}).click();await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();await page.screenshot({path:`${out}/${width}-boundary-accepted.jpg`,quality:80});
   }
  }
  await context.close();

@@ -7,6 +7,7 @@ import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { BoundarySculpture } from './BoundarySculpture';
 import { CaseDisclosure } from './CaseDisclosure';
 import './profile-boundary.css';
+import { JobPilotRegister } from './JobPilotRegister';
 import { useJobPilotDesign } from './jobpilot-design-context';
 
 const messages: Record<BoundaryPhase, string> = {
@@ -22,7 +23,8 @@ export function ProfileBoundary({ suspended = false, headingLevel = 3, headingId
   const reduced = useMotionPreference();
   const design = useJobPilotDesign();
   const motionStudy = design?.motionStudy;
-  const Register = design?.Register;
+  // The public routes share the approved register; historical reviews keep their own renderer.
+  const Register = design === null ? JobPilotRegister : design.Register;
   const text = useRef<HTMLParagraphElement>(null);
   const stale = state.phase === 'review' && state.reviewed?.revision !== state.revision;
   const study = caseStudies['jobpilot-ai'];

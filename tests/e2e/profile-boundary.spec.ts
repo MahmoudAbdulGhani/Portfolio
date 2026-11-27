@@ -12,12 +12,12 @@ async function fixtures(page: Page) {
   });
 }
 const region = (page: Page) => page.getByRole('region', { name: 'The profile save boundary' });
-const currentStep = (page: Page) => region(page).getByRole('list', { name: 'Review progress' }).locator('[aria-current="step"]');
+const cue = (page: Page) => region(page).locator('.jp-register-cue');
 async function proposeAndReview(page: Page) {
   const demo = region(page);
   await demo.getByRole('button', { name: 'Propose a change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Beirut');
-  await expect(demo.locator('.boundary-proposed .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Beirut');
+  await expect(demo.locator('.jp-register-proposal strong')).toHaveText('Tripoli');
   await demo.getByRole('button', { name: 'Review the change', exact: true }).click();
 }
 test.beforeEach(async ({ page }) => { await fixtures(page); });
@@ -28,31 +28,30 @@ test('saved information changes only after approval, stale approval is blocked, 
   await page.goto('/?project=jobpilot-ai');
   const demo = region(page);
   await proposeAndReview(page);
-  await expect(currentStep(page)).toContainText('Review');
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Beirut');
+  await expect(cue(page)).toHaveText('Reviewed. Still not saved.');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Beirut');
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Tripoli');
   await expect(demo.getByRole('status')).toHaveText('Reviewed changes accepted. Saved location: Tripoli.');
-  await expect(currentStep(page)).toContainText('Accepted');
+  await expect(cue(page)).toHaveText('Change accepted.');
   await demo.getByRole('button', { name: 'Reset', exact: true }).click();
-  await expect(currentStep(page)).toContainText('Propose');
+  await expect(cue(page)).toHaveText('Start with a suggestion.');
   await proposeAndReview(page);
-  await demo.getByRole('button', { name: 'Change the saved profile during review.', exact: true }).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Byblos');
-  await expect(demo.locator('.boundary-changed-label')).toHaveText('Changed during review');
-  await expect(demo.locator('.boundary-review-basis')).toContainText('Outdated review.');
-  await expect(currentStep(page)).toContainText('Review');
-  await expect(demo.locator('.boundary-review-basis')).toContainText('Beirut → Tripoli');
+  await demo.getByRole('button', { name: 'Simulate another edit', exact: true }).click();
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Byblos');
+  await expect(cue(page)).toHaveText('Another edit changed the saved location.');
+  await expect(demo.locator('.jp-register-proposal small')).toHaveText('Reviewed at revision 1');
+  await expect(demo.locator('.jp-register-saved small')).toHaveText('Revision 2');
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Byblos');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Byblos');
   await expect(demo.getByRole('status')).toHaveText('Old review blocked. Review again before accepting.');
-  await expect(currentStep(page)).toContainText('Review');
-  await expect(demo.locator('.boundary-review-basis')).toContainText('Another review is required.');
+  await expect(cue(page)).toHaveText('Review the new revision before accepting.');
   await demo.getByRole('button', { name: 'Review again', exact: true }).click();
-  await expect(demo.locator('.boundary-review-basis')).toContainText('Byblos → Tripoli');
-  await expect(demo.locator('.boundary-changed-label')).toHaveCount(0);
+  await expect(cue(page)).toHaveText('Reviewed. Still not saved.');
+  await expect(demo.locator('.jp-register-proposal small')).toHaveText('Reviewed at revision 2');
+  await expect(demo.getByRole('status')).toHaveText('Reviewing Byblos to Tripoli. Your approval is required.');
   await demo.getByRole('button', { name: 'Accept reviewed change', exact: true }).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Tripoli');
   expect(writes).toEqual([]);
 });
 
@@ -112,7 +111,7 @@ test('keyboard and reduced motion preserve every state, disclosure and navigatio
   await expect(page).toHaveURL(/projects\/jobpilot-ai/);
   await expect(region(page)).toHaveCount(1);
   await expect(page.locator('.decision-path')).toHaveCount(0);
-  await expect(currentStep(page)).toContainText('Propose');
+  await expect(cue(page)).toHaveText('Start with a suggestion.');
   expect((await new AxeBuilder({page}).include('.profile-boundary').analyze()).violations).toEqual([]);
 });
 
@@ -135,7 +134,7 @@ test('engineering navigation focuses a visible heading and preserves Back and Co
     expect(await page.evaluate(()=>history.length)).toBe(length);
     expect(await heading.evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(0);
     await region(page).getByRole('button',{name:'Propose a change',exact:true}).click();
-    await expect(currentStep(page)).toContainText('Propose');
+    await expect(cue(page)).toHaveText('Ready for review.');
     await page.goBack();
     await expect(page.getByRole('button',{name:'Explore JobPilot AI',exact:true})).toBeFocused();
     await page.getByRole('button',{name:'Explore JobPilot AI',exact:true}).click();
@@ -173,7 +172,7 @@ test('unavailable WebGL retains the complete controls and explanation', async ({
   await expect(demo.locator('.boundary-art')).toHaveAttribute('data-renderer','photographic-svg');
   await expect(demo.locator('svg').first()).toBeVisible();
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Tripoli');
   await demo.locator('summary').click();
   await expect(demo.locator('.disclosure-content')).toContainText('row locks');
 });
@@ -192,10 +191,11 @@ test('context loss retains the boundary and an OS preference change finishes art
   await page.emulateMedia({reducedMotion:'reduce'});
   await expect(demo.locator('canvas')).toHaveCount(0);
   await expect(demo.locator('.boundary-plate')).toHaveAttribute('transform','rotate(-3.5 570 1035)');
-  await expect(demo.locator('.boundary-message')).toHaveCSS('opacity','1');
+  await expect(cue(page)).toHaveCSS('opacity','1');
+  await expect(demo.locator('.jp-register-tip')).toHaveCSS('transition-duration','0s');
   await demo.getByRole('button',{name:'Review the change',exact:true}).click();
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Tripoli');
 });
 
 test('plate returns to alignment after approval and performs no perpetual updates', async ({ page }) => {
@@ -235,12 +235,11 @@ for (const width of [1440,768,390,320]) test(`comparison and actions stay readab
   const heading=demo.getByRole('heading',{name:'The profile save boundary',exact:true});
   await expect(heading).toBeFocused();
   await expect(heading).toBeInViewport({ratio:1});
-  await expect(currentStep(page)).toContainText('Review');
+  await expect(cue(page)).toHaveText('Reviewed. Still not saved.');
   const sizes=await demo.evaluate(el=>({
     background:getComputedStyle(el).backgroundColor,
-    metadata:Math.min(...Array.from(el.querySelectorAll('.boundary-label,.boundary-value-note,.boundary-plate-label > span:last-child')).map(node=>parseFloat(getComputedStyle(node).fontSize))),
-    explanatory:Math.min(...Array.from(el.querySelectorAll('.boundary-message,.boundary-source,.boundary-review-basis')).map(node=>parseFloat(getComputedStyle(node).fontSize))),
-    artWidth:el.querySelector('.boundary-art')!.getBoundingClientRect().width,
+    metadata:Math.min(...Array.from(el.querySelectorAll('.boundary-label,.jp-register-values small')).map(node=>parseFloat(getComputedStyle(node).fontSize))),
+    explanatory:parseFloat(getComputedStyle(el.querySelector('.jp-register-cue')!).fontSize),
   }));
   expect(sizes.background).toBe('rgb(236, 235, 227)');
   const foreground=await page.locator('.collection-boundary').evaluate(el=>Number(getComputedStyle(el).zIndex));
@@ -248,12 +247,17 @@ for (const width of [1440,768,390,320]) test(`comparison and actions stay readab
   expect(foreground).toBeGreaterThan(decoration);
   expect(sizes.metadata).toBeGreaterThanOrEqual(12);
   expect(sizes.explanatory).toBeGreaterThanOrEqual(14);
-  if(width===1440)expect(sizes.artWidth).toBeGreaterThanOrEqual(240);
   expect(await demo.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
-  const boxes = await demo.locator('.boundary-comparison > div').evaluateAll(elements=>elements.map(el=>{
-    const box=el.getBoundingClientRect(); return {x:box.x,y:box.y,width:box.width,height:box.height};
-  }));
-  if(width<=390) expect(boxes[1].y).toBeGreaterThanOrEqual(boxes[0].y+boxes[0].height);
+  const art=(await demo.locator('.boundary-art').boundingBox())!;
+  const boxes=await demo.locator('.jp-register-values > div').evaluateAll(es=>es.map(el=>el.getBoundingClientRect().toJSON()));
+  expect(boxes).toHaveLength(2);
+  expect(Math.abs(boxes[1].y-boxes[0].y)).toBeLessThan(1);
+  expect(boxes[0].right).toBeLessThanOrEqual(boxes[1].left+1);
+  if(width<=390) expect(art.y+art.height).toBeLessThanOrEqual(boxes[0].top+1);
+  if(width===1440) {
+    expect(art.width).toBeCloseTo(176,0);
+    expect(art.x+art.width).toBeLessThanOrEqual(boxes[0].left+1);
+  }
   await demo.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
-  await expect(demo.locator('.boundary-saved .boundary-value')).toHaveText('Tripoli');
+  await expect(demo.locator('.jp-register-saved strong')).toHaveText('Tripoli');
 });
