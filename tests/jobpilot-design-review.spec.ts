@@ -68,7 +68,7 @@ for(const [width,height] of [[320,844],[390,844],[430,844],[768,1024],[1280,720]
   const boundary=page.locator('.profile-boundary');
   await boundary.getByRole('button',{name:'Propose a change',exact:true}).click();
   await boundary.getByRole('button',{name:'Review the change',exact:true}).click();
-  await boundary.getByRole('button',{name:'Change the saved profile during review.'}).click();
+  await boundary.getByRole('button',{name:production?'Simulate another edit':'Change the saved profile during review.'}).click();
   await boundary.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
   await expect(boundary).toHaveAttribute('data-stale','true');await expect(boundary.getByRole('button',{name:'Review again',exact:true})).toBeVisible();
   await boundary.getByRole('button',{name:'Review again',exact:true}).click();await boundary.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
@@ -271,7 +271,7 @@ test('normal compiled routes refresh, retain native history and exclude review e
   await page.goForward();await expect(page.locator('.case-media-title strong')).toHaveText(label);
   await page.reload();await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
   await expect(page.locator('.case-media-title strong')).toHaveText(label);
-  for(const address of ['/review/jobpilot/candidate','/review/jobpilot/before','/review/jobpilot/baseline']){
+  for(const address of ['/review/jobpilot/candidate','/review/jobpilot/before','/review/jobpilot/baseline','/review/jobpilot/motion','/review/jobpilot/registration','/review/jobpilot/registration/reader']){
     await page.goto(address);await expect(page.getByRole('heading',{name:'This page wandered off.'})).toBeVisible();
     await expect(page.locator('.stage,.project-reader')).toHaveCount(0);
   }

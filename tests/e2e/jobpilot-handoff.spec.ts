@@ -76,14 +76,14 @@ test('keyboard return retains stale review and disclosure without replaying the 
   const boundary=page.locator('.profile-boundary');
   await boundary.getByRole('button',{name:'Propose a change',exact:true}).click();
   await boundary.getByRole('button',{name:'Review the change',exact:true}).click();
-  await boundary.getByRole('button',{name:'Change the saved profile during review.'}).click();
+  await boundary.getByRole('button',{name:'Simulate another edit'}).click();
   await boundary.locator('summary').click();
   await open(page).focus(); await page.keyboard.press('Enter');
   await expect(page.locator('.case-heading h1')).toHaveText('JobPilot AI');
   await page.locator('.case-back').focus(); await page.keyboard.press('Enter');
   await expect(open(page)).toBeFocused();
   await expect(boundary).toHaveAttribute('data-stale','true');
-  await expect(boundary.locator('.boundary-saved .boundary-value')).toHaveText('Byblos');
+  await expect(boundary.locator('.jp-register-saved strong')).toHaveText('Byblos');
   await expect(boundary.locator('details')).toHaveAttribute('data-expanded','true');
   await expect(page.locator('canvas, [data-reader-handoff]')).toHaveCount(0);
   await page.getByRole('link',{name:'Explore the engineering'}).click();
@@ -203,7 +203,7 @@ test('preview edits made after returning survive Forward and Back without a new 
   const boundary = page.locator('.profile-boundary');
   await boundary.getByRole('button',{name:'Propose a change',exact:true}).click();
   await boundary.getByRole('button',{name:'Review the change',exact:true}).click();
-  await boundary.getByRole('button',{name:'Change the saved profile during review.'}).click();
+  await boundary.getByRole('button',{name:'Simulate another edit'}).click();
   await boundary.locator('summary').click();
   await page.goForward(); await readerReady(page,'Resume library and upload');
   await page.goBack();

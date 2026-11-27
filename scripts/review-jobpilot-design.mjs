@@ -91,7 +91,7 @@ try {
     await pause(500);
     await boundary.getByRole('button',{name:'Review the change',exact:true}).click();
     await pause(500);
-    await boundary.getByRole('button',{name:'Change the saved profile during review.',exact:true}).click();
+    await boundary.locator('button.boundary-change').click();
     await pause(500);
     await boundary.getByRole('button',{name:'Accept reviewed change',exact:true}).click();
     await expect(boundary).toHaveAttribute('data-stale','true');
