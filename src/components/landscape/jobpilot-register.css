@@ -1,0 +1,82 @@
+/* These styles enter through the lazy review route only. The SVG exit and the
+   register use the same figure size; no layout reads or second animation clock. */
+.landscape .jp-register {
+  container-type: inline-size;
+  --jr-source: #984222;
+  --jr-saved: #34483d;
+  --jr-gap: 2.5rem;
+  margin-block: .7rem .25rem;
+}
+.jp-register[data-jobpilot-register="review"] { --jr-gap: .625rem; }
+.jp-register:is([data-jobpilot-register="outdated"],[data-jobpilot-register="blocked"]) { --jr-gap: 1.75rem; }
+.jp-register[data-jobpilot-register="accept"] { --jr-gap: 0px; }
+.landscape .jp-register-sheet {
+  --figure: clamp(7rem, 16vw, 11rem);
+  display: grid;
+  grid-template-columns: var(--figure) minmax(0,1fr);
+  grid-template-rows: minmax(0,1fr) auto;
+  align-items: end;
+}
+.landscape .jp-register-object { grid-area: 1 / 1 / 3 / 2; width: var(--figure); align-self: end; }
+.landscape .jp-register .jp-register-object .boundary-art { width: 100%; margin: 0; }
+.landscape .jp-register-object svg { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+.jp-register-lead { fill: none; stroke: var(--jr-source); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.jp-register-pin { fill: var(--paper); stroke: var(--jr-source); stroke-width: 6; }
+.jp-register-narrow { display: none; }
+.landscape .profile-boundary .jp-register-cue {
+  min-width: 0; overflow-wrap: anywhere; grid-area: 1 / 2; align-self: end; margin: .5rem 0 .75rem;
+  padding-inline-start: .9rem; font: 500 1rem/1.4 Manrope, sans-serif; color: var(--ink);
+}
+.landscape .jp-register-values {
+  display: grid; grid-area: 2 / 2; grid-template-columns: repeat(2,minmax(0,1fr));
+  margin: 0 0 calc(var(--figure) * .075); padding: 0;
+}
+.jp-register-values > div { position: relative; min-width: 0; padding: 0 .5rem .9rem .9rem; }
+.jp-register-values dt { font-size: .92rem; line-height: 1.4; }
+.jp-register-values dd { margin: 0; overflow-wrap: anywhere; }
+.jp-register-values strong { display: block; font: 500 clamp(1.45rem,3vw,2.5rem)/1.2 Manrope, sans-serif; letter-spacing: -.045em; }
+.jp-register-values small { display: block; margin-top: .22rem; font: .81rem/1.45 var(--mono); color: #485249; }
+.jp-register-saved strong { color: var(--jr-saved); }
+.jp-register-lane,.jp-register-stop { position: absolute; pointer-events: none; bottom: -5px; height: 10px; inset-inline: 0; }
+.jp-register-lane { overflow: hidden; }
+.jp-register-tip,.jp-register-stop::before {
+  position: absolute; top: 50%; left: 0; right: 0; content: ""; display: block;
+}
+.jp-register-tip {
+  border-top: 1px dashed var(--jr-source); transform: translateX(calc(-1 * var(--jr-gap)));
+  transition: transform 230ms cubic-bezier(.25,.66,.25,1),opacity 120ms linear;
+}
+.jp-register-tip::after {
+  content: ""; position: absolute; right: 1px; top: -3.5px;
+  width: 5px; height: 5px; border: solid var(--jr-source); border-width: 1.5px 1.5px 0 0;
+  transform: rotate(45deg);
+}
+.jp-register-stop::before { border-top: 1px solid var(--jr-saved); }
+.jp-register-stop::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; border-left: 2px solid var(--jr-saved); }
+.jp-register[data-jobpilot-register="rest"] .jp-register-tip { opacity: 0; transition: none; }
+.jp-register[data-jobpilot-register="accept"] .jp-register-tip { border-top-style: solid; }
+.jp-register[data-jobpilot-register="accept"] .jp-register-tip::after { opacity: 0; }
+.landscape .jp-register-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 0 1rem; margin: .7rem 0 .8rem; }
+.landscape .jp-register-actions .boundary-option { min-height: 0; }
+.landscape .jp-register-actions .boundary-change { margin: 0; }
+.jp-register[data-static] .jp-register-tip { transition: none; }
+@container (max-width: 31rem) {
+  .landscape .jp-register-sheet {
+    --figure: clamp(5.8rem, 29vw, 7.4rem);
+    grid-template-columns: var(--figure) minmax(0,1fr); grid-template-rows: auto auto;
+  }
+  .landscape .jp-register-object { grid-area: 1 / 1; }
+  .landscape .profile-boundary .jp-register-cue { grid-area: 1 / 2; align-self: center; padding-inline: 1rem 0; margin: .5rem 0; }
+  .landscape .jp-register-values { grid-area: 2 / 1 / 3 / -1; margin: 0; }
+  .jp-register-values > div { padding: .8rem .35rem 0 0; }
+  .jp-register-values > .jp-register-saved { padding-inline-start: .5rem; }
+  .jp-register-lane,.jp-register-stop { top: -5px; bottom: auto; }
+  .jp-register-lane { left: calc(var(--figure) * .175); }
+  .jp-register-wide { display: none; }
+  .jp-register-narrow { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) { .jp-register .jp-register-tip { transition: none; } }
+@media (forced-colors: active) {
+  .jp-register-lead,.jp-register-pin { stroke: CanvasText; }
+  .jp-register-tip,.jp-register-tip::after,.jp-register-stop::before,.jp-register-stop::after { border-color: CanvasText; }
+}

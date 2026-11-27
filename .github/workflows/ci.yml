@@ -103,7 +103,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   verify:
-    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review, featured-design-review, supporting-design-review]
+    needs: [checks, smoke-engines, profile-boundary, portrait-review-build, jobpilot-design-review, jobpilot-registration, featured-design-review, supporting-design-review]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -115,6 +115,7 @@ jobs:
           test "${{ needs['profile-boundary'].result }}" = 'success'
           test "${{ needs['portrait-review-build'].result }}" = 'success'
           test "${{ needs['jobpilot-design-review'].result }}" = 'success'
+          test "${{ needs['jobpilot-registration'].result }}" = 'success'
           test "${{ needs['featured-design-review'].result }}" = 'success'
           test "${{ needs['supporting-design-review'].result }}" = 'success'
   supporting-design-review:
@@ -216,6 +217,33 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
           retention-days: 7
+  jobpilot-registration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/install-playwright
+        with:
+          browsers: chromium
+      - name: Check saved records, responsive rules and the three compiled designs
+        run: npm run test:e2e -- --config=playwright.jobpilot-registration.config.ts
+        env:
+          JOBPILOT_CAPTURE_DIR: .motion-preview/registration-captures
+      - name: Keep matched screenshots and playback
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobpilot-register-phone-and-desktop
+          path: |
+            .motion-preview/registration-captures/*.png
+            .motion-preview/registration-captures/*.webm
+          if-no-files-found: warn
+          retention-days: 14
   smoke-engines:
     runs-on: ubuntu-latest
     timeout-minutes: 15
