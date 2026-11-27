@@ -6,6 +6,8 @@ The approved demonstration from [PR #60](https://github.com/MahmoudAbdulGhani/Po
 
 [Phone: three successive states](phone.jpg) · [Desktop: both public routes](desktop.jpg)
 
+**320px alignment follow-up.** When “Proposed location” wrapped, Tripoli sat 20.6px below Beirut. The labels now share one row, so the two city names line up on both routes at the original 23.2px type size. [Compare the same reader at 320px before and after](mobile-city-alignment.png). At 390px and 1440px all 12 matched captures of the comparison panel were pixel-identical across both routes and three states (review, blocked and accepted).
+
 ## Visual comparison
 
 Compared the compiled review binary from the unmodified #60 commit with a separate ordinary build, using the same snapshot of published site content and the original sculpture. Captured the engineering section on both routes at 390 × 844 and 1440 × 900, in review, blocked and accepted states. Reduced motion was used for stills. All 12 pairs had the same dimensions and content; 11 matched pixel for pixel. In the desktop reader’s review state, 16 pixels on one sculpture edge differed by at most 4/255 per color channel. The phone reader’s review and blocked sections measured 516 CSS pixels high (517-pixel capture including the fractional edge).
@@ -18,4 +20,5 @@ Local capture and automated checks use Chromium, emulated viewports and software
 
 - `npx playwright test --config=playwright.jobpilot-production.config.ts --project=jobpilot-public-register --workers=1` — public two-route interaction, six widths, both motion modes, keyboard, history, and project isolation.
 - `npx playwright test --config=playwright.jobpilot-registration.config.ts --workers=1` — archived study and its predecessor comparisons.
+- `npx playwright test --config=playwright.cross-browser.config.ts --project=firefox-city-alignment --project=webkit-city-alignment --workers=1` — the actual text positions on both 320px routes in two more browser engines.
 - `npx playwright test tests/e2e/profile-boundary.spec.ts tests/e2e/jobpilot-handoff.spec.ts --project=chromium --workers=1` — the ordinary opening, return, focus and stale approval.

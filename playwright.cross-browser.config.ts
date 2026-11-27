@@ -1,12 +1,18 @@
 import { defineConfig, devices } from '@playwright/test';
 import base from './playwright.config';
 
-// Additional engine coverage; WebKit automation is not physical Safari proof.
+// Compare the ordinary routes on both engines. This flag selects test URLs only.
+process.env.JOBPILOT_TEST_PRODUCTION = '1';
+const engines = [
+  ['firefox', devices['Desktop Firefox']],
+  ['webkit', devices['iPhone 13']],
+] as const;
+
+// WebKit automation is not a physical Safari check.
 export default defineConfig({
   ...base,
-  testMatch: 'readiness.spec.ts',
-  projects: [
-    {name:'firefox-readiness',use:{...devices['Desktop Firefox']}},
-    {name:'webkit-readiness',use:{...devices['iPhone 13']}},
-  ],
+  projects: engines.flatMap(([engine,use]) => [
+    {name:engine+'-readiness',use,testMatch:'readiness.spec.ts'},
+    {name:engine+'-city-alignment',use,retries:0,testDir:'./tests',testMatch:'**/jobpilot-registration.spec.ts',grep:/at 320$/},
+  ]),
 });

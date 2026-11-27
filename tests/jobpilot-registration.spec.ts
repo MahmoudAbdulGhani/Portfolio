@@ -22,6 +22,17 @@ const gap=(b:Locator)=>b.evaluate(el=>el.querySelector('.jp-register-stop')!.get
 const saved=(b:Locator)=>b.locator('.jp-register-saved dd');
 const tag=(b:Locator)=>b.locator('[data-jobpilot-register]');
 
+async function expectAlignedCityNames(b:Locator) {
+  // The columns themselves can align even when a wrapped label moves one city down.
+  const tops=await b.locator('.jp-register-values strong').evaluateAll(values=>values.map(value=>{
+    const text=document.createRange();
+    text.selectNodeContents(value);
+    return text.getClientRects()[0].top;
+  }));
+  expect(tops).toHaveLength(2);
+  expect(Math.abs(tops[0]-tops[1]),'First line of each city name').toBeLessThan(1);
+}
+
 for(const [width,height] of [[320,720],[390,844],[430,844],[768,1024],[1280,720],[1440,900]]) {
   test(`Saved city and printed gap follow the real revision at ${width}`,async({page})=>{
     await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});await fixture(page);
@@ -31,11 +42,13 @@ for(const [width,height] of [[320,720],[390,844],[430,844],[768,1024],[1280,720]
     await expect(tag(b)).toHaveAttribute('data-jobpilot-register','propose'); const first=await gap(b);
     await press(b,'Review the change');const reviewed=await gap(b);expect(first).toBeGreaterThan(reviewed);expect(reviewed).toBeGreaterThan(1);
     await expect(saved(b)).toContainText('Beirut');await expect(b.locator('.jp-register-proposal dd')).toContainText('Tripoli');
+    await page.evaluate(()=>document.fonts.ready);await expectAlignedCityNames(b);
     await press(b,'Simulate another edit');expect(await gap(b)).toBeGreaterThan(reviewed);
     await expect(saved(b)).toContainText('Byblos');await expect(saved(b)).toContainText('Revision 2');
     await press(b,'Accept reviewed change');await expect(tag(b)).toHaveAttribute('data-jobpilot-register','blocked');expect(await gap(b)).toBeGreaterThan(reviewed);
     await expect(saved(b)).toContainText('Byblos');await press(b,'Review again');await press(b,'Accept reviewed change');
     await expect(saved(b)).toContainText('Tripoli');await expect(saved(b)).toContainText('Revision 3');expect(Math.abs(await gap(b))).toBeLessThan(.75);
+    await expectAlignedCityNames(b);
     await expect(b.locator('.jp-register-tip')).toHaveCSS('transition-duration','0s');
     const overflow=await b.evaluate(el=>el.scrollWidth>el.clientWidth+1 || document.documentElement.scrollWidth>innerWidth+1);
     expect(overflow).toBe(false);
@@ -43,15 +56,19 @@ for(const [width,height] of [[320,720],[390,844],[430,844],[768,1024],[1280,720]
     await press(b,'Reset');await expect(saved(b)).toContainText('Beirut');await expect(b.locator('.jp-register-tip')).toHaveCSS('opacity','0');
   });
 }
-test('Direct reader, indexing, keyboard controls and interruption',async({page})=>{
-  await page.setViewportSize({width:390,height:844});await fixture(page);await page.goto(reader+'#engineering');
+for(const width of [320,390])test(`Direct reader, indexing, keyboard controls and interruption at ${width}`,async({page})=>{
+  await page.setViewportSize({width,height:844});await fixture(page);await page.goto(reader+'#engineering');
   const b=boundary(page);
   await expect(tag(b)).toHaveAttribute('data-jobpilot-register','rest');await expect(page.locator('meta[name=robots]')).toHaveAttribute('content',ordinary?'index, follow':'noindex, nofollow');
-  await press(b,'Propose a change');await press(b,'Review the change');await press(b,'Accept reviewed change');
+  await press(b,'Propose a change');await press(b,'Review the change');
+  await page.evaluate(()=>document.fonts.ready);await expectAlignedCityNames(b);
+  await press(b,'Accept reviewed change');
+  await expectAlignedCityNames(b);
   await press(b,'Reset');await expect(saved(b)).toContainText('Beirut');await expect(b.locator('.jp-register-tip')).toHaveCSS('opacity','0');
   await page.addStyleTag({content:'html { font-size: 200% !important; }'});
   await press(b,'Propose a change');await expect(b.getByText('Tripoli',{exact:true})).toBeVisible();
   expect(await b.locator('.jp-register-sheet').evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBe(true);
+  await expectAlignedCityNames(b);
   const reset=b.getByRole('button',{name:'Reset',exact:true});await reset.focus();await page.keyboard.press('Enter');await expect(tag(b)).toHaveAttribute('data-jobpilot-register','rest');
 });
 test('Workflow choice and focus survive a case-study round trip',async({page})=>{
