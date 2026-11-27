@@ -8,6 +8,8 @@ The approved demonstration from [PR #60](https://github.com/MahmoudAbdulGhani/Po
 
 **320px alignment follow-up.** When “Proposed location” wrapped, Tripoli sat 20.6px below Beirut. The labels now share one row, so the two city names line up on both routes at the original 23.2px type size. [Compare the same reader at 320px before and after](mobile-city-alignment.png). At 390px and 1440px all 12 matched captures of the comparison panel were pixel-identical across both routes and three states (review, blocked and accepted).
 
+With the root text size doubled at 320px, the panel gives more width to the words and less to the figure. In a Firefox capture against the original release, the city names stayed at 46.4px and each went from two lines to one; the panel no longer overflows. [Compare enlarged text](mobile-large-text.png). Local Playwright Firefox and WebKit cover this alongside Chromium. Enlarged root text is a reflow check, not physical-device or native zoom testing.
+
 ## Visual comparison
 
 Compared the compiled review binary from the unmodified #60 commit with a separate ordinary build, using the same snapshot of published site content and the original sculpture. Captured the engineering section on both routes at 390 × 844 and 1440 × 900, in review, blocked and accepted states. Reduced motion was used for stills. All 12 pairs had the same dimensions and content; 11 matched pixel for pixel. In the desktop reader’s review state, 16 pixels on one sculpture edge differed by at most 4/255 per color channel. The phone reader’s review and blocked sections measured 516 CSS pixels high (517-pixel capture including the fractional edge).

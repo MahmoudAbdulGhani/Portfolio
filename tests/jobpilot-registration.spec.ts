@@ -24,13 +24,13 @@ const tag=(b:Locator)=>b.locator('[data-jobpilot-register]');
 
 async function expectAlignedCityNames(b:Locator) {
   // The columns themselves can align even when a wrapped label moves one city down.
-  const tops=await b.locator('.jp-register-values strong').evaluateAll(values=>values.map(value=>{
+  const lines=await b.locator('.jp-register-values strong').evaluateAll(values=>values.map(value=>{
     const text=document.createRange();
     text.selectNodeContents(value);
-    return text.getClientRects()[0].top;
+    return Array.from(text.getClientRects(),line=>line.top);
   }));
-  expect(tops).toHaveLength(2);
-  expect(Math.abs(tops[0]-tops[1]),'First line of each city name').toBeLessThan(1);
+  expect(lines.map(city=>city.length),'Each sample city fits on one line').toEqual([1,1]);
+  expect(Math.abs(lines[0][0]-lines[1][0]),'First line of each city name').toBeLessThan(1);
 }
 
 for(const [width,height] of [[320,720],[390,844],[430,844],[768,1024],[1280,720],[1440,900]]) {

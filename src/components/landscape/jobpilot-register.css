@@ -81,6 +81,20 @@
   .jp-register-wide { display: none; }
   .jp-register-narrow { display: inline; }
 }
+/* When large type leaves fewer than ten rem, give the cue and labels room.
+   The tracks still meet at the same point in every approval state. */
+@container (max-width: 10rem) {
+  .landscape .jp-register-sheet { --figure: 40cqi; }
+  .jp-register-values > div { padding-inline-end: 0; }
+  .jp-register-values > .jp-register-saved { padding-inline-start: .25rem; }
+  .jp-register-values dt { overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  /* Keep the normal 16px gutter; use part of it for enlarged words. */
+  .landscape:is(.jobpilot-design-candidate,.featured-design-candidate) .profile-boundary:has(.jp-register) {
+    padding-inline: clamp(4px, calc(32px - 1rem), 16px);
+  }
+}
 @media (prefers-reduced-motion: reduce) { .jp-register .jp-register-tip { transition: none; } }
 @media (forced-colors: active) {
   .jp-register-lead,.jp-register-pin { stroke: CanvasText; }
