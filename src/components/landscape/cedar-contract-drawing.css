@@ -1,0 +1,95 @@
+/* The scale belongs to the sample's contract. Nothing re-scales when the input changes. */
+.landscape .cedar-boundary[data-contract-drawing] .cedar-body {
+  display: block; container: cedar-body / inline-size;
+}
+.landscape .cedar-boundary[data-contract-drawing] .cedar-content {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px;
+  grid-template-areas: "control" "drawing" "actions" "explanation";
+}
+[data-contract-drawing] .cedar-contract { grid-area: drawing; }
+[data-contract-drawing] .cedar-input-control { grid-area: control; align-self: end; margin: 0; }
+[data-contract-drawing] .cedar-interpretation { grid-area: explanation; align-self: start; margin: 0; }
+[data-contract-drawing] .cedar-actions { grid-area: actions; align-self: start; }
+[data-contract-drawing] .cedar-intro { grid-column: 1 / -1; }
+@container cedar-body (min-width: 41rem) {
+  .landscape .cedar-boundary[data-contract-drawing] .cedar-content {
+    grid-template: "drawing control" auto "drawing actions" auto "drawing explanation" 1fr / minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 22px clamp(25px,5cqi,52px);
+  }
+}
+.landscape .cedar-contract {
+  --beam: #385040; --lead: #596557; --oxide: #804427;
+  color: var(--ink); align-self: start; min-width: 0; margin: 0;
+  container-type: inline-size; border-block: 1px solid #a4a698;
+  padding-block: 12px;
+}
+.landscape .cedar-contract-caption {
+  display: grid; justify-items: start; gap: 4px; font-size: 14px; line-height: 1.5;
+}
+.landscape .cedar-contract .cedar-total {
+  display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .2em;
+  margin: 0; font: 500 clamp(1.95rem,11cqi,3.8rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -.055em; font-variant-numeric: tabular-nums; max-width: 100%;
+}
+.cedar-contract .cedar-total small {
+  font: 500 max(.85rem,.41em)/1.2 var(--mono); letter-spacing: -.035em;
+}
+.cedar-contract .cedar-total > span { overflow-wrap: anywhere; }
+.cedar-contract-stage {
+  --art: min(41cqi,10.25rem);
+  position: relative; display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; min-height: var(--art); margin-top: 4px;
+}
+.landscape .cedar-boundary[data-contract-drawing] .cedar-art {
+  width: var(--art); max-width: 100%; grid-area: 1 / 1; align-self: end; justify-self: start; margin: 0;
+}
+.landscape .cedar-contract .cedar-art path, .landscape .cedar-contract .cedar-art circle { stroke: var(--beam); }
+.landscape .cedar-contract .cedar-art circle { fill: var(--paper); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.cedar-contract-stage::after {
+  content: ''; position: absolute; left: var(--art); right: 50%; bottom: 0;
+  height: calc(var(--art) * .06858); border-top: 1px solid var(--beam); border-right: 1px solid var(--beam);
+}
+.cedar-contract-difference { grid-column: 2; grid-row: 1; display: grid; padding-inline-start: 10px; }
+.cedar-contract-difference strong { font: 500 clamp(1rem,5.8cqi,1.55rem)/1.25 "Space Grotesk",sans-serif; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.cedar-contract-difference span { font-size: 14px; line-height: 1.45; color: var(--lead); }
+.cedar-contract-rail { position: relative; height: 34px; overflow: clip; }
+.cedar-contract-rail::before {
+  content: ''; position: absolute; inset: 50% 0 auto; height: 5px; border-top: 1px solid #929787;
+  background: repeating-linear-gradient(to right, #929787 0 1px, transparent 1px 5%);
+}
+.cedar-contract-register { position: absolute; left: 50%; inset-block: 0; border-left: 1px solid var(--beam); }
+.cedar-contract-span {
+  position: absolute; left: 50%; top: calc(50% - 1px); width: 50%; height: 3px;
+  background: var(--oxide); transform-origin: left center;
+}
+.cedar-contract-carrier { position: absolute; inset: 0; pointer-events: none; }
+.cedar-contract-carrier, .cedar-contract-span { transition: transform 440ms cubic-bezier(.22,.67,.25,1); }
+.cedar-contract-key-now::before, .cedar-contract-key-then::before,
+.cedar-contract-carrier i { box-sizing: border-box; display: block; width: 9px; height: 9px; }
+.cedar-contract-carrier i { position: absolute; left: 0; transform: translateX(-50%); }
+.cedar-contract-carrier [data-marker="estimate"], .cedar-contract-key-now::before {
+  top: calc(50% - 9px); background: var(--oxide); clip-path: polygon(0 0,100% 0,50% 100%);
+}
+[data-invoiced] .cedar-contract-carrier [data-marker="estimate"], [data-invoiced] .cedar-contract-key-now::before {
+  clip-path: none; border: 2px dashed var(--oxide); background: var(--paper);
+}
+.cedar-contract .cedar-contract-carrier [data-marker="explanation"], .cedar-contract-key-then::before {
+  top: calc(50% + 4px); background: var(--paper); border: 1.5px solid var(--beam);
+  transform: translateX(-50%) rotate(45deg); opacity: 1;
+}
+.cedar-contract-scale { display: grid; grid-template-columns: 1fr auto 1fr; gap: 4px; align-items: start; font: 12px/1.4 var(--mono); color: var(--lead); }
+.cedar-contract-scale > :last-child { text-align: right; }
+.cedar-contract-scale strong { display: grid; text-align: center; color: var(--beam); font-weight: 600; }
+.cedar-contract-key { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 16px; font-size: 13px; line-height: 1.5; }
+.cedar-contract-key > span { position: relative; padding-left: 16px; }
+.cedar-contract-key-now::before, .cedar-contract-key-then::before { content: ''; position: absolute; left: 0; top: .42em; }
+.cedar-contract-key-then::before { transform: rotate(45deg); }
+.cedar-contract-key-then[data-empty]::before { border-style: dotted; }
+.cedar-contract[data-still] :is(.cedar-contract-carrier,.cedar-contract-span) { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .cedar-contract :is(.cedar-contract-carrier,.cedar-contract-span) { transition: none; }
+}
+@media (forced-colors: active) {
+  .cedar-contract { --beam: CanvasText; --lead: CanvasText; --oxide: CanvasText; }
+  .cedar-contract-span, .cedar-contract-key-now::before, .cedar-contract-carrier i { forced-color-adjust: none; }
+}

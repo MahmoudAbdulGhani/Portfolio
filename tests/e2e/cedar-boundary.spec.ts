@@ -1,4 +1,4 @@
-import {expect,test,type Page} from '@playwright/test';
+import {expect,test,type Page,type Locator} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {caseStudyProjects} from '../fixtures/case-study-projects';
 import {caseImage} from '../fixtures/case-image';
@@ -26,7 +26,7 @@ test('calculated facts stay separate from interpretation; input change and expli
   await expect(demo.locator('.cedar-margin')).toContainText('-60.00%');
   await expect(demo.locator('.cedar-explanation')).toContainText('80,000.00');
   await expect(demo.locator('.cedar-interpretation-basis')).toHaveText('Outdated sample · 50% progress');
-  await expect(demo.locator('.cedar-outdated-note')).toContainText('teaching aid');
+  await expect(demo.locator('.cedar-outdated-note')).toHaveText('Refresh to explain the figures at 25% progress.');
   await expect(demo.locator('[aria-current="step"]')).toContainText('Recalculate');
   await demo.getByRole('button',{name:'Refresh sample interpretation',exact:true}).click();
   await expect(demo.locator('.cedar-explanation')).toContainText('160,000.00');
@@ -137,9 +137,90 @@ for(const width of [1440,768,390,320])test(`Cedar figures, inputs and actions re
   await page.getByRole('link',{name:'Explore the engineering',exact:true}).click();const demo=region(page);
   await expect(demo.getByRole('heading',{name:'Calculation and interpretation',exact:true})).toBeInViewport({ratio:1});
   await demo.getByRole('button',{name:'Interpret the figures',exact:true}).click();await demo.getByLabel('Average phase progress').selectOption('25');
-  const bounds=await demo.evaluate(el=>({overflow:document.documentElement.scrollWidth>innerWidth||el.scrollWidth>el.clientWidth,background:getComputedStyle(el).backgroundColor,metadata:Math.min(...Array.from(el.querySelectorAll('.cedar-label,.cedar-unit,.cedar-interpretation-basis')).map(e=>parseFloat(getComputedStyle(e).fontSize))),copy:Math.min(...Array.from(el.querySelectorAll('.cedar-explanation,.cedar-formula,.cedar-outdated-note')).map(e=>parseFloat(getComputedStyle(e).fontSize))),art:el.querySelector('.cedar-art')!.getBoundingClientRect(),content:el.querySelector('.cedar-content')!.getBoundingClientRect()}));
+  const bounds=await demo.evaluate(el=>({overflow:document.documentElement.scrollWidth>innerWidth||el.scrollWidth>el.clientWidth,background:getComputedStyle(el).backgroundColor,metadata:Math.min(...Array.from(el.querySelectorAll('.cedar-label,.cedar-unit,.cedar-interpretation-basis')).map(e=>parseFloat(getComputedStyle(e).fontSize))),copy:Math.min(...Array.from(el.querySelectorAll('.cedar-explanation,.cedar-formula,.cedar-outdated-note')).map(e=>parseFloat(getComputedStyle(e).fontSize))),box:Object.fromEntries(['.cedar-art','.cedar-contract-rail','.cedar-input-control','.cedar-interpretation'].map(sel=>[sel,el.querySelector(sel)!.getBoundingClientRect().toJSON()]))}));
   expect(bounds.overflow).toBe(false);expect(bounds.background).toBe('rgb(236, 235, 227)');expect(bounds.metadata).toBeGreaterThanOrEqual(12);expect(bounds.copy).toBeGreaterThanOrEqual(14);
-  if(width<720)expect(bounds.art.y).toBeGreaterThanOrEqual(bounds.content.y+bounds.content.height);
-  else if(width<960)expect(bounds.art.width).toBe(180);
-  else expect(bounds.art.width).toBeGreaterThanOrEqual(240);
+  const art=bounds.box['.cedar-art'], rail=bounds.box['.cedar-contract-rail'], control=bounds.box['.cedar-input-control'], explanation=bounds.box['.cedar-interpretation'];
+  expect(art.width).toBeGreaterThan(80);expect(rail.width).toBeGreaterThan(220);
+  expect(art.bottom).toBeLessThanOrEqual(rail.top+1);
+  if(width<720){
+    expect(art.top).toBeGreaterThanOrEqual(control.bottom);
+    expect(explanation.top).toBeGreaterThan(rail.bottom);
+    expect(rail.bottom-control.bottom).toBeLessThan(420);
+  }else if(width===1440)expect(rail.right).toBeLessThan(control.left);
+});
+
+async function markPercent(demo:Locator, marker:string){
+  return demo.locator('.cedar-contract-rail').evaluate((rail,key)=>{
+    const box=rail.getBoundingClientRect(), mark=rail.querySelector('[data-marker="'+key+'"]')!.getBoundingClientRect();
+    return Math.round(100*(mark.x+mark.width/2-box.x)/box.width);
+  },marker);
+}
+for(const [place,path] of [['Collection',`/?project=${slug}#cedar-engineering`],['reader',`/projects/${slug}#engineering`]]) {
+  test(`contract mark keeps its scale and separates calculation from refresh in the ${place}`,async({page})=>{
+    await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(path);
+    const demo=region(page), select=demo.getByLabel('Average phase progress');
+    await expect.poll(()=>markPercent(demo,'estimate')).toBe(40);
+    await expect(demo.locator('[data-marker="explanation"]')).toHaveCount(0);
+    await demo.getByRole('button',{name:'Interpret the figures',exact:true}).click();
+    await expect.poll(()=>markPercent(demo,'explanation')).toBe(40);
+    const fixed=await demo.locator('[data-marker="contract"]').boundingBox();
+    await select.selectOption('25');
+    expect(await demo.getByRole('figure').ariaSnapshot()).toContain('USD 160,000.00');
+    await expect(demo.locator('.cedar-contract-difference')).toHaveText('$60,000 over contract');
+    await expect.poll(()=>markPercent(demo,'estimate')).toBe(80);
+    expect(await markPercent(demo,'contract')).toBe(50);
+    expect(await markPercent(demo,'explanation')).toBe(40);
+    expect((await demo.locator('[data-marker="contract"]').boundingBox())!.x).toBeCloseTo(fixed!.x,0);
+    await expect(demo.locator('.cedar-contract-key-then')).toHaveText('Explanation: $80,000 at 50%');
+    await demo.getByRole('button',{name:'Refresh sample interpretation'}).click();
+    await expect.poll(()=>markPercent(demo,'explanation')).toBe(80);
+    expect(await markPercent(demo,'estimate')).toBe(80);
+    await select.selectOption('75');await demo.getByRole('button',{name:'Reset',exact:true}).click();
+    expect(await markPercent(demo,'estimate')).toBe(40);
+    await expect(demo.locator('[data-marker="explanation"]')).toHaveCount(0);
+  });
+}
+test('contract mark distinguishes invoiced-only from a 100% estimate under reduced motion and enlarged text',async({page})=>{
+  await page.setViewportSize({width:320,height:740});await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto(`/projects/${slug}`);const demo=region(page), select=demo.getByLabel('Average phase progress');
+  await page.addStyleTag({content:'html { font-size: 200% !important; }'});
+  await select.selectOption('0');
+  await expect(demo.getByRole('figure',{name:'Invoiced cost to date'})).toBeVisible();
+  await expect(demo.locator('.cedar-contract-difference')).toContainText('No forecast');
+  expect(await markPercent(demo,'estimate')).toBe(20);
+  await demo.getByRole('button',{name:'Interpret the figures',exact:true}).click();
+  await select.selectOption('100');
+  await expect(demo.getByRole('figure',{name:'Calculated total-cost estimate'})).toBeVisible();
+  await expect(demo).toHaveAttribute('data-outdated','true');
+  await expect(demo.locator('.cedar-contract-key-then')).toHaveText('Explanation: $40,000 at 0%');
+  expect(await markPercent(demo,'estimate')).toBe(20);
+  await select.selectOption('25');expect(await markPercent(demo,'estimate')).toBe(80);
+  expect(await demo.locator('.cedar-contract').evaluate(el=>({
+    overflow:el.scrollWidth>el.clientWidth+1,
+    continuous:el.getAnimations({subtree:true}).some(a=>a.playState==='running'),
+  }))).toEqual({overflow:false,continuous:false});
+});
+
+test('contract drawing moves through the reference without moving the last explanation',async({page})=>{
+  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(`/projects/${slug}#engineering`);
+  const demo=region(page);await demo.getByRole('button',{name:'Interpret the figures',exact:true}).click();
+  const travel=await demo.evaluate(el=>{
+    const rail=el.querySelector('.cedar-contract-rail')!, select=el.querySelector('select')!;
+    const center=(key:string)=>{const a=rail.getBoundingClientRect(),b=rail.querySelector('[data-marker="'+key+'"]')!.getBoundingClientRect();return (b.x+b.width/2-a.x)/a.width;};
+    select.value='25';select.dispatchEvent(new Event('change',{bubbles:true}));
+    return new Promise<{percent:number, fixed:number, last:number, duration:number}>(resolve=>{
+      requestAnimationFrame(()=>{
+        const carrier=rail.querySelector('[data-marker="estimate"]')!.parentElement!;
+        carrier.getBoundingClientRect();
+        const motion=carrier.getAnimations().find(a=>a instanceof CSSTransition);
+        const duration=Number(motion?.effect?.getComputedTiming().duration??0);
+        if(motion){motion.pause();motion.currentTime=duration/3;}
+        const sample={percent:center('estimate'),fixed:center('contract'),last:center('explanation'),duration};
+        motion?.play();resolve(sample);
+      });
+    });
+  });
+  expect(travel.duration).toBeGreaterThan(0);expect(travel.percent).toBeGreaterThan(.4);expect(travel.percent).toBeLessThan(.8);
+  expect(travel.fixed).toBeCloseTo(.5,2);expect(travel.last).toBeCloseTo(.4,2);
+  await expect.poll(()=>markPercent(demo,'estimate')).toBe(80);
 });
