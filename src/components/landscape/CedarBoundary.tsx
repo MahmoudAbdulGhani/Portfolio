@@ -1,5 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useReducer, useRef } from 'react';
 import { gsap } from 'gsap';
+import { CedarContractDrawing } from './CedarContractDrawing';
+import { useJobPilotDesign } from './jobpilot-design-context';
 import { CaseDisclosure } from './CaseDisclosure';
 import { playFiniteMotion, stopFiniteMotion } from './finite-motion';
 import { useMotionPreference } from '../../lib/use-motion-preference';
@@ -12,6 +14,7 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId, 
   useEffect(() => { onStateChange?.(state); }, [state, onStateChange]);
   const reduced = useMotionPreference(), id = useId();
   const interpretation = useRef<HTMLDivElement>(null), guide = useRef<SVGPathElement>(null);
+  const contractView = useJobPilotDesign() === null;
   const figures = sampleFigures(state.progress);
   const outdated = Boolean(state.interpretation && state.interpretation.progress !== state.progress);
   const Heading = headingLevel === 2 ? 'h2' : 'h3';
@@ -27,8 +30,18 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId, 
     playFiniteMotion(timeline);
     return () => stopFiniteMotion(timeline);
   }, [state.phase, state.progress, state.interpretation, outdated, reduced, suspended]);
+  const inputs = <>
+    <dl className="cedar-inputs"><div><dt>Contract value</dt><dd>{cedarMoney(cedarSample.contract)}</dd></div><div><dt>Invoiced actual cost</dt><dd>{cedarMoney(cedarSample.supplier + cedarSample.contractor)}</dd></div></dl>
+    <p className="cedar-cost-basis">USD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.</p>
+  </>;
+  const calculationNotes = <>
+    <p className="cedar-formula">{state.progress > 0 ? `USD 40,000 ÷ ${(state.progress / 100).toFixed(2)} progress = ${cedarMoney(figures.total)}` : '0% progress: keep the current invoiced cost; no extrapolation.'}</p>
+    <p className="cedar-margin">{contractView && state.progress === 0 ? 'No forecast margin at 0% progress.' : <>Estimated margin: <strong>{figures.margin.toFixed(2)}%</strong> · (contract − estimate) ÷ contract.</>}</p>
+    <p className="cedar-estimate-note">{contractView && state.progress === 0 ? 'Only billed costs are shown.' : 'Trend-based estimate, not a prediction.'}</p>
+  </>;
+  const actions = <div className="cedar-actions"><button className="cedar-primary" onClick={() => dispatch({ type: 'interpret' })}>{outdated ? 'Refresh sample interpretation' : 'Interpret the figures'}</button><button onClick={() => dispatch({ type: 'reset' })}>Reset</button></div>;
   const source = (file: string) => `${cedarEvidence.repository}/blob/${cedarEvidence.revision}/${file}`;
-  return <section className="cedar-boundary" data-presentation={concise ? 'concise' : undefined} aria-label="Cedar calculation and interpretation" data-phase={state.phase} data-outdated={outdated} inert={suspended}>
+  return <section className="cedar-boundary" data-contract-drawing={contractView || undefined} data-presentation={concise ? 'concise' : undefined} aria-label="Cedar calculation and interpretation" data-phase={state.phase} data-outdated={outdated} inert={suspended}>
     <header className="cedar-heading">
       <Heading className="cedar-title" id={headingId} tabIndex={headingId ? -1 : undefined}>{concise ? 'Calculation and interpretation' : 'Calculated facts support the interpretation.'}</Heading>
       <p className="cedar-label">{concise ? 'Sample USD figures · local demo' : 'Engineering demonstration — fictional data.'}</p>
@@ -39,27 +52,25 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId, 
     <div className="cedar-body">
       <div className="cedar-content">
         {!concise && <p className="cedar-intro">Fictional project · amounts in USD. Inspect the calculation, then reveal its explanation.</p>}
-        <dl className="cedar-inputs"><div><dt>Contract value</dt><dd>{cedarMoney(cedarSample.contract)}</dd></div><div><dt>Invoiced actual cost</dt><dd>{cedarMoney(cedarSample.supplier + cedarSample.contractor)}</dd></div></dl>
-        <p className="cedar-cost-basis">USD 25,000 supplier invoices + USD 15,000 contractor invoices = USD 40,000 actual cost.</p>
+        {!contractView && inputs}
         <div className="cedar-input-control"><label htmlFor={`${id}-progress`}>Average phase progress</label><select id={`${id}-progress`} value={state.progress} onChange={event => dispatch({ type: 'change', progress: Number(event.target.value) })}>
           {progressChoices.map(progress => <option key={progress} value={progress}>{progress}%{progress === 0 ? ' · no progress reported' : ''}</option>)}
-        </select><span className="cedar-unit">Percent complete · 0–100%</span></div>
-        <div className="cedar-calculation" data-changed={state.phase === 'changed'}>
+        </select><span className="cedar-unit">{contractView ? 'Invoiced to date: $40,000' : 'Percent complete · 0–100%'}</span></div>
+        {contractView ? <CedarContractDrawing total={figures.total} progress={state.progress} explained={state.interpretation?.progress ?? null} still={reduced || suspended || state.phase === 'inspect'} /> : <div className="cedar-calculation" data-changed={state.phase === 'changed'}>
           <div className="cedar-result-heading"><span>Calculated total-cost estimate</span>{state.phase === 'changed' && <strong>Recalculated</strong>}</div>
           <strong className="cedar-total">{cedarMoney(figures.total)}</strong>
-          <p className="cedar-formula">{state.progress > 0 ? `USD 40,000 ÷ ${(state.progress / 100).toFixed(2)} progress = ${cedarMoney(figures.total)}` : '0% progress: keep the current invoiced cost; no extrapolation.'}</p>
-          <p className="cedar-margin">Estimated margin: <strong>{figures.margin.toFixed(2)}%</strong> · (contract − estimate) ÷ contract.</p>
-          <p className="cedar-estimate-note">Trend-based estimate, not a prediction.</p>
-        </div>
+          {calculationNotes}
+        </div>}
+        {contractView && actions}
         <div className="cedar-interpretation" ref={interpretation} data-outdated={outdated}>
           <Subheading className="cedar-interpretation-title">Sample interpretation</Subheading>
           <p className="cedar-interpretation-basis">{state.interpretation ? `${outdated ? 'Outdated sample' : 'Based on these figures'} · ${state.interpretation.progress}% progress` : 'Prewritten sample · reveal with Interpret'}</p>
           <p className="cedar-explanation">{state.interpretation?.text ?? 'The explanation reads the calculated figures. It cannot change them.'}</p>
-          {outdated && <p className="cedar-outdated-note">Figures changed; refresh the explanation. The outdated label is a teaching aid in this demonstration.</p>}
+          {outdated && <p className="cedar-outdated-note">{contractView ? `Refresh to explain the figures at ${state.progress}% progress.` : 'Figures changed; refresh the explanation. The outdated label is a teaching aid in this demonstration.'}</p>}
         </div>
-        <div className="cedar-actions"><button className="cedar-primary" onClick={() => dispatch({ type: 'interpret' })}>{outdated ? 'Refresh sample interpretation' : 'Interpret the figures'}</button><button onClick={() => dispatch({ type: 'reset' })}>Reset</button></div>
+        {!contractView && actions}
       </div>
-      <div className="cedar-art" aria-hidden="true" data-renderer="photographic-svg" data-emphasis={outdated ? 'outdated' : state.interpretation ? 'explained' : 'figures'}>
+      {!contractView && <div className="cedar-art" aria-hidden="true" data-renderer="photographic-svg" data-emphasis={outdated ? 'outdated' : state.interpretation ? 'explained' : 'figures'}>
         <svg viewBox="0 0 1254 1254" focusable="false">
           <image href="/landscape/archive-sculpture.webp" width="1254" height="1254" />
           <g className="cedar-foundation-guide"><path d="M430 758 L180 1190 H530" /><circle cx="430" cy="758" r="50" /><text x="430" y="782">1</text></g>
@@ -67,10 +78,11 @@ export function CedarBoundary({ suspended = false, headingLevel = 3, headingId, 
         </svg>
         <div className="cedar-art-labels"><div><strong>1 Cross-beam</strong><span>Calculated facts</span></div><div><strong>2 Diagonal</strong><span>{outdated ? 'Outdated explanation' : state.interpretation ? 'Interpretation revealed' : 'Awaiting interpretation'}</span></div></div>
         <p>Connected beams: a foundation of facts supports the explanation.</p>
-      </div>
+      </div>}
     </div>
     <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{state.announcement}</p>
     <CaseDisclosure defaultOpen={disclosureOpen} className="cedar-disclosure" title="Source basis and demonstration limits">
+      {contractView && <>{inputs}{calculationNotes}</>}
       {concise && <p>Calculated facts support the interpretation.</p>}
       <p>These decisions describe the team’s implementation. Mahmoud’s documented contributions and collaborators remain in the case study. The cross-beam and diagonal are artistic associations, not a literal architecture diagram; the original joined photograph stays fixed.</p>
       <p>The financial summary totals billed supplier and contractor invoices, excluding draft/cancelled records. The advisor uses this invoiced cost and clamps average phase progress to 0–100%. With a positive contract and progress, its total-cost estimate is actual cost ÷ progress ratio, never below actual cost. Otherwise it keeps actual cost. Margin is (contract − estimate) ÷ contract, or 0% for a zero contract.</p>
